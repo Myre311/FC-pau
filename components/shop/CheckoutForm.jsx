@@ -60,6 +60,7 @@ export function CheckoutForm() {
           items: items.map((i) => ({
             variantId: i.variantId,
             quantity: i.quantity,
+            customizationId: i.customizationId ?? null,
           })),
           shipping,
           billingSameAsShipping: true,

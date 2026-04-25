@@ -52,7 +52,11 @@ export async function POST(request) {
         { status: 400 },
       );
     }
-    const unitPrice = v.priceOverride ?? v.product.basePrice;
+    // Le flocage personnalisé ajoute un supplément forfaitaire (cf.
+    // FLOCKING_PRICE dans JerseyConfigurator). Source de vérité : ce
+    // calcul serveur, pas le prix envoyé par le client.
+    const flockingPrice = line.customizationId ? 1500 : 0;
+    const unitPrice = (v.priceOverride ?? v.product.basePrice) + flockingPrice;
     const lineTotal = unitPrice * line.quantity;
     subtotal += lineTotal;
     orderItems.push({
@@ -61,6 +65,7 @@ export async function POST(request) {
       variantLabel: v.size ? `Taille ${v.size}` : null,
       unitPrice,
       quantity: line.quantity,
+      customizationId: line.customizationId ?? null,
     });
   }
 
