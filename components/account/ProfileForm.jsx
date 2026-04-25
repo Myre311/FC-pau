@@ -70,7 +70,7 @@ export function ProfileForm({ user }) {
         </Button>
         {status === 'saved' && (
           <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-jaune">
-            Enregistré ✓
+            Enregistré
           </span>
         )}
       </div>
