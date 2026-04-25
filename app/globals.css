@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-nuit: 4 9 29;
+    --color-primaire: 26 29 56;
+    --color-jaune: 255 204 0;
+    --color-dore: 203 167 77;
+    --color-blanc: 255 255 255;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-nuit text-blanc font-sans;
+    font-feature-settings: 'ss01', 'cv11';
+  }
+
+  ::selection {
+    background: #FFCC00;
+    color: #04091D;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display tracking-tightest leading-crush uppercase;
+  }
+}
+
+@layer components {
+  .corner-cut {
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 24px), calc(100% - 24px) 100%, 0 100%);
+  }
+
+  .container-fc {
+    @apply mx-auto w-full max-w-[1440px] px-5 md:px-10;
+  }
+
+  .badge-mono {
+    @apply font-mono text-[10px] tracking-[0.2em] uppercase text-jaune;
+  }
+}
