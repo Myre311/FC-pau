@@ -316,12 +316,44 @@ model User {
   customizations         JerseyCustomization[]
   cartReservations       CartReservation[]
   newsletterSubscription NewsletterSubscriber?
+  addresses              Address[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
   @@index([role])
   @@index([createdAt])
+}
+
+enum AddressType {
+  shipping
+  billing
+}
+
+model Address {
+  id     String @id @default(cuid())
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  type       AddressType @default(shipping)
+  // Libellé libre pour aider l'utilisateur ("Maison", "Bureau"…)
+  label      String?
+  firstName  String
+  lastName   String
+  line1      String
+  line2      String?
+  postalCode String
+  city       String
+  // Code ISO 3166-1 alpha-2
+  country    String      @default("FR")
+  phone      String?
+  // Une seule adresse par défaut par type et par user (logique applicative)
+  isDefault  Boolean     @default(false)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId, type])
 }
 
 // =====================================================================
