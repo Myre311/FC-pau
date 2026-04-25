@@ -110,6 +110,28 @@ export async function deleteAddressAction(formData) {
   return { success: true };
 }
 
+export async function toggleFavoriteAction(formData) {
+  const { dbUser } = await requireUser();
+  const productId = formData.get('productId');
+  if (typeof productId !== 'string' || !productId) {
+    return { error: 'Produit invalide' };
+  }
+
+  const existing = await prisma.favorite.findUnique({
+    where: { userId_productId: { userId: dbUser.id, productId } },
+  });
+
+  if (existing) {
+    await prisma.favorite.delete({ where: { id: existing.id } });
+  } else {
+    await prisma.favorite.create({ data: { userId: dbUser.id, productId } });
+  }
+
+  revalidatePath('/compte/favoris');
+  revalidatePath('/boutique');
+  return { success: true, favorited: !existing };
+}
+
 export async function updateProfileAction(formData) {
   const { dbUser } = await requireUser();
 
