@@ -15,18 +15,21 @@ const COLUMNS = [
   {
     title: 'Le club',
     links: [
+      { href: '/club', label: 'Histoire & projet' },
       { href: '/equipe', label: 'Effectif' },
       { href: '/calendrier', label: 'Calendrier' },
       { href: '/actualites', label: 'Actualités' },
       { href: '/nouste-camp', label: 'Nouste Camp' },
+      { href: '/partenaires', label: 'Partenaires' },
     ],
   },
   {
     title: 'Aide',
     links: [
       { href: '/contact', label: 'Contact' },
-      { href: '/livraison', label: 'Livraison' },
-      { href: '/retours', label: 'Retours' },
+      { href: '/cgv', label: 'CGV' },
+      { href: '/rgpd', label: 'Confidentialité' },
+      { href: '/cookies', label: 'Cookies' },
       { href: '/mentions-legales', label: 'Mentions légales' },
     ],
   },

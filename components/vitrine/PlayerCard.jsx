@@ -1,0 +1,59 @@
+import { POSITION_SHORT } from '@/lib/labels';
+
+export function PlayerCard({ player }) {
+  const isStaff = player.role !== 'player';
+  return (
+    <article className="group relative flex flex-col">
+      <div className="relative aspect-[3/4] w-full overflow-hidden border border-blanc/10 bg-primaire">
+        {player.photoUrl ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={player.photoUrl}
+            alt={`${player.firstName} ${player.lastName}`}
+            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+          />
+        ) : (
+          <PlaceholderPortrait />
+        )}
+
+        {!isStaff && player.shirtNumber != null && (
+          <span className="absolute right-3 top-3 font-display text-[80px] leading-none text-blanc/15">
+            {player.shirtNumber}
+          </span>
+        )}
+        {!isStaff && player.position && (
+          <span className="absolute left-3 top-3 bg-jaune px-2 py-1 font-mono text-[9px] uppercase tracking-[0.2em] text-nuit">
+            {POSITION_SHORT[player.position]}
+          </span>
+        )}
+        {isStaff && (
+          <span className="absolute left-3 top-3 bg-blanc/95 px-2 py-1 font-mono text-[9px] uppercase tracking-[0.2em] text-nuit">
+            Staff
+          </span>
+        )}
+      </div>
+
+      <div className="mt-4">
+        <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-blanc/40">
+          {isStaff ? player.staffTitle : player.nationality ?? '—'}
+        </p>
+        <p className="mt-2 font-display text-2xl uppercase leading-crush tracking-tightest text-blanc">
+          {player.firstName}
+          <br />
+          <span className="text-jaune">{player.lastName}</span>
+        </p>
+      </div>
+    </article>
+  );
+}
+
+function PlaceholderPortrait() {
+  return (
+    <div className="flex h-full w-full items-end justify-center bg-gradient-to-b from-primaire to-nuit">
+      <svg viewBox="0 0 100 120" className="h-full w-full text-blanc/10" fill="currentColor" aria-hidden="true">
+        <circle cx="50" cy="42" r="18" />
+        <path d="M20 120 Q50 70 80 120 Z" />
+      </svg>
+    </div>
+  );
+}
