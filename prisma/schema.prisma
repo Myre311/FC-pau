@@ -66,7 +66,8 @@ model Product {
   categoryId String?
   category   Category? @relation(fields: [categoryId], references: [id], onDelete: SetNull)
 
-  variants ProductVariant[]
+  variants  ProductVariant[]
+  favorites Favorite[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -75,6 +76,19 @@ model Product {
   @@index([featured])
   @@index([categoryId])
   @@index([createdAt])
+}
+
+// Coup de cœur utilisateur — un seul par couple (user, product).
+model Favorite {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  productId String
+  product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+
+  @@unique([userId, productId])
+  @@index([userId])
 }
 
 model ProductVariant {
@@ -317,6 +331,7 @@ model User {
   cartReservations       CartReservation[]
   newsletterSubscription NewsletterSubscriber?
   addresses              Address[]
+  favorites              Favorite[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
