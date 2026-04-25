@@ -58,7 +58,7 @@ export default async function AdminProduitsPage() {
                 {p.name}
                 {p.featured && (
                   <span className="ml-2 font-mono text-[9px] uppercase tracking-[0.2em] text-jaune">
-                    ★ Featured
+                    Featured
                   </span>
                 )}
               </Link>
