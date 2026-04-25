@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 import { ARTICLE_CATEGORY_LABELS, formatArticleDate } from '@/lib/labels';
 
@@ -16,11 +17,12 @@ export function ArticleCard({ article, featured = false }) {
         }`}
       >
         {article.coverImageUrl ? (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
+          <Image
             src={article.coverImageUrl}
             alt={article.title}
-            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+            fill
+            sizes={featured ? '(max-width: 768px) 100vw, 66vw' : '(max-width: 768px) 100vw, 33vw'}
+            className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
           />
         ) : (
           <div className="flex h-full w-full items-center justify-center font-display text-6xl uppercase text-blanc/10">

@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 import { POSITION_SHORT } from '@/lib/labels';
 
 export function PlayerCard({ player }) {
@@ -6,11 +8,12 @@ export function PlayerCard({ player }) {
     <article className="group relative flex flex-col">
       <div className="relative aspect-[3/4] w-full overflow-hidden border border-blanc/10 bg-primaire">
         {player.photoUrl ? (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
+          <Image
             src={player.photoUrl}
             alt={`${player.firstName} ${player.lastName}`}
-            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+            fill
+            sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
+            className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
           />
         ) : (
           <PlaceholderPortrait />

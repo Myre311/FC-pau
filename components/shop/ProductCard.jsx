@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 import { formatPrice } from '@/lib/format';
 
@@ -19,11 +20,12 @@ export function ProductCard({ product }) {
     >
       <div className="relative aspect-[4/5] w-full overflow-hidden border border-blanc/10 bg-primaire">
         {product.images?.[0] ? (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
+          <Image
             src={product.images[0]}
             alt={product.name}
-            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+            fill
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+            className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
           />
         ) : (
           <div className="flex h-full w-full items-center justify-center font-display text-6xl text-blanc/10">

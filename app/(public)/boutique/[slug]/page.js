@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 
 import { prisma } from '@/lib/prisma';
 import { AddToCartForm } from '@/components/shop/AddToCartForm';
@@ -43,13 +44,15 @@ export default async function ProductPage({ params }) {
     <article className="container-fc grid gap-10 py-12 md:grid-cols-2 md:gap-16 md:py-20">
       {/* Galerie */}
       <div className="space-y-3">
-        <div className="aspect-square w-full overflow-hidden border border-blanc/10 bg-primaire">
+        <div className="relative aspect-square w-full overflow-hidden border border-blanc/10 bg-primaire">
           {product.images?.[0] ? (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img
+            <Image
               src={product.images[0]}
               alt={product.name}
-              className="h-full w-full object-cover"
+              fill
+              priority
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-cover"
             />
           ) : (
             <div className="flex h-full w-full items-center justify-center font-display text-[20vw] text-blanc/10 md:text-[10vw]">
@@ -62,10 +65,15 @@ export default async function ProductPage({ params }) {
             {product.images.slice(1, 5).map((src, i) => (
               <div
                 key={src + i}
-                className="aspect-square overflow-hidden border border-blanc/10 bg-primaire"
+                className="relative aspect-square overflow-hidden border border-blanc/10 bg-primaire"
               >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={src} alt="" className="h-full w-full object-cover" />
+                <Image
+                  src={src}
+                  alt=""
+                  fill
+                  sizes="(max-width: 768px) 25vw, 12vw"
+                  className="object-cover"
+                />
               </div>
             ))}
           </div>
