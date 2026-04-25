@@ -415,3 +415,114 @@ model Coupon {
   @@index([active])
   @@index([endsAt])
 }
+
+// =====================================================================
+// VITRINE — Effectif, Calendrier, Actualités
+// =====================================================================
+
+enum PersonRole {
+  player
+  staff
+  coach
+}
+
+enum PlayerPosition {
+  goalkeeper
+  defender
+  midfielder
+  forward
+}
+
+model Player {
+  id           String          @id @default(cuid())
+  slug         String          @unique
+  firstName    String
+  lastName     String
+  shirtNumber  Int?
+  position     PlayerPosition?
+  role         PersonRole      @default(player)
+  // Code ISO 3166-1 alpha-2 ('FR', 'SN', ...)
+  nationality  String?
+  birthDate    DateTime?
+  heightCm     Int?
+  joinedAt     DateTime?
+  // URL Supabase Storage
+  photoUrl     String?
+  bio          String?         @db.Text
+  active       Boolean         @default(true)
+  displayOrder Int             @default(0)
+  // Titre poste pour le staff (« Entraîneur principal », « Préparateur physique »…)
+  staffTitle   String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([role, position, displayOrder])
+  @@index([active])
+}
+
+enum MatchStatus {
+  scheduled
+  live
+  played
+  cancelled
+  postponed
+}
+
+model Match {
+  id           String      @id @default(cuid())
+  // Compétition lisible (« Ligue 2 BKT », « Coupe de France »)
+  competition  String
+  season       String // "2025-2026"
+  kickoffAt    DateTime
+  // true = Pau joue à domicile (Nouste Camp)
+  isHome       Boolean
+  opponent     String
+  opponentLogo String?
+  venue        String      @default("Nouste Camp")
+  status       MatchStatus @default(scheduled)
+  // null tant que le match n'est pas joué
+  homeScore    Int?
+  awayScore    Int?
+  // Lien billetterie externe pour les matchs à domicile
+  ticketUrl    String?
+  broadcaster  String?
+  // Note libre admin (« huis clos », « fan day »…)
+  note         String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([season, kickoffAt])
+  @@index([status])
+}
+
+enum ArticleCategory {
+  matchday
+  club
+  transfer
+  foundation
+  other
+}
+
+model Article {
+  id            String          @id @default(cuid())
+  slug          String          @unique
+  title         String
+  // Chapeau utilisé en liste + meta description fallback
+  excerpt       String          @db.Text
+  body          String          @db.Text
+  // URL Supabase Storage
+  coverImageUrl String?
+  author        String          @default("Rédaction Pau FC")
+  category      ArticleCategory @default(other)
+  publishedAt   DateTime?
+  featured      Boolean         @default(false)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([publishedAt])
+  @@index([category, publishedAt])
+  @@index([featured])
+}
