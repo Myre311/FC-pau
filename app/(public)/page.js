@@ -1,6 +1,10 @@
+// Homepage placeholder — sera remplacée en Phase 4 par le portage de
+// fcpau-index.html (hero canvas animé, sections actu/calendrier, etc.).
+// Pour l'instant, vitrine du design system.
+
 export default function HomePage() {
   return (
-    <main className="min-h-screen bg-nuit text-blanc">
+    <>
       <section className="container-fc pt-16 pb-12 md:pt-24">
         <p className="badge-mono">FC PAU · BÉARN · 1920</p>
         <h1 className="mt-6 text-[20vw] md:text-[14vw] lg:text-[180px]">
@@ -37,13 +41,7 @@ export default function HomePage() {
           className="font-mono text-base tracking-widest"
         />
       </section>
-
-      <footer className="border-t border-blanc/10">
-        <div className="container-fc py-6 font-mono text-xs uppercase tracking-[0.2em] text-blanc/40">
-          PR-1 · scaffold sécurisé · {new Date().getFullYear()} FC PAU
-        </div>
-      </footer>
-    </main>
+    </>
   );
 }
 
