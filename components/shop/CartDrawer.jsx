@@ -38,7 +38,7 @@ export function CartDrawer() {
     <>
       {/* Overlay */}
       <div
-        className={`fixed inset-0 z-50 bg-nuit/80 backdrop-blur-sm transition-opacity duration-200 ${
+        className={`fixed inset-0 z-50 bg-nuit/85 transition-opacity duration-200 ${
           isOpen ? 'opacity-100' : 'pointer-events-none opacity-0'
         }`}
         onClick={close}
@@ -50,7 +50,7 @@ export function CartDrawer() {
         role="dialog"
         aria-modal="true"
         aria-label="Panier"
-        className={`fixed right-0 top-0 z-50 flex h-full w-full max-w-md flex-col border-l border-blanc/10 bg-nuit shadow-2xl transition-transform duration-300 ${
+        className={`fixed right-0 top-0 z-50 flex h-full w-full max-w-md flex-col border-l border-blanc/15 bg-nuit transition-transform duration-300 ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
