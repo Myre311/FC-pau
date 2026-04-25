@@ -25,7 +25,8 @@ export function Header() {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 55);
+    // Bascule "scrolled" dès qu'on passe la hauteur de la Topbar (~28-30px).
+    const onScroll = () => setScrolled(window.scrollY > 20);
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
@@ -33,10 +34,10 @@ export function Header() {
 
   return (
     <header
-      className={`fixed left-0 right-0 top-0 z-40 transition-[background-color,backdrop-filter,border-color] duration-300 ${
+      className={`sticky top-0 z-40 transition-[background-color,backdrop-filter,border-color] duration-300 ${
         scrolled
           ? 'border-b border-blanc/10 bg-nuit/[0.93] backdrop-blur-[22px]'
-          : 'border-b border-transparent bg-transparent'
+          : 'border-b border-transparent bg-nuit'
       }`}
     >
       <div className="wrap flex h-16 items-center justify-between gap-4 md:h-[66px]">

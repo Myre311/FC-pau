@@ -31,7 +31,7 @@ export default async function HomePage() {
   return (
     <>
       {/* ═══════════════════════ HERO ═══════════════════════ */}
-      <section className="relative flex min-h-[100svh] flex-col overflow-hidden bg-n4">
+      <section className="relative flex min-h-[calc(100svh-100px)] flex-col overflow-hidden bg-n4">
         <HeroCanvas />
         {/* Noise + vignette overlays */}
         <span className="hero-noise pointer-events-none absolute inset-0 z-[2]" aria-hidden="true" />
@@ -39,14 +39,14 @@ export default async function HomePage() {
         {/* Ligne jaune verticale */}
         <span
           aria-hidden="true"
-          className="pointer-events-none absolute left-0 top-0 z-[5] h-full w-[2px] bg-gradient-to-b from-transparent via-jaune to-transparent"
+          className="pointer-events-none absolute left-0 top-0 z-[5] h-full w-[2px]"
           style={{
             background:
               'linear-gradient(to bottom, transparent 0%, #FFCC00 18%, #FFCC00 82%, transparent 100%)',
           }}
         />
 
-        <div className="wrap relative z-10 flex flex-1 items-center pt-[110px]">
+        <div className="wrap relative z-10 flex flex-1 items-center py-[60px]">
           <div className="grid w-full items-center gap-10 lg:grid-cols-[1.2fr_1fr]">
             {/* Hero Left */}
             <div className="max-w-[660px]">
