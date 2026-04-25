@@ -1,5 +1,7 @@
 import { Big_Shoulders_Display, Instrument_Sans, DM_Mono } from 'next/font/google';
 
+import { OrganizationJsonLd } from '@/components/seo/OrganizationJsonLd';
+
 import './globals.css';
 
 const bigShoulders = Big_Shoulders_Display({
@@ -53,7 +55,10 @@ export default function RootLayout({ children }) {
       lang="fr"
       className={`${bigShoulders.variable} ${instrumentSans.variable} ${dmMono.variable}`}
     >
-      <body>{children}</body>
+      <body>
+        {children}
+        <OrganizationJsonLd />
+      </body>
     </html>
   );
 }
