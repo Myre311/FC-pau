@@ -88,6 +88,10 @@
   0%, 100% { box-shadow: 0 0 18px rgba(255, 204, 0, 0.2); }
   50% { box-shadow: 0 0 55px rgba(255, 204, 0, 0.55), 0 0 90px rgba(255, 204, 0, 0.12); }
 }
+@keyframes logoGlow {
+  0%, 100% { filter: drop-shadow(0 0 14px rgba(255, 204, 0, 0.25)); }
+  50% { filter: drop-shadow(0 0 35px rgba(255, 204, 0, 0.6)) drop-shadow(0 0 70px rgba(255, 204, 0, 0.18)); }
+}
 @keyframes shimmer {
   0% { background-position: -300% center; }
   100% { background-position: 300% center; }

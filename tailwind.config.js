@@ -36,6 +36,7 @@ module.exports = {
         'slide-x': 'slideX 0.85s cubic-bezier(0.16,1,0.3,1) both',
         float: 'float 7s ease-in-out infinite',
         glow: 'glow 2.5s ease-in-out infinite',
+        'logo-glow': 'logoGlow 1.8s ease-in-out infinite',
         shimmer: 'shimmer 5s linear infinite',
         'shimmer-fast': 'shimmer 3.5s linear infinite',
         marquee: 'marquee 22s linear infinite',
