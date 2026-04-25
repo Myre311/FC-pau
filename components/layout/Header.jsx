@@ -1,8 +1,16 @@
+'use client';
+
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { useEffect, useState } from 'react';
 
 import { CartButton } from '@/components/shop/CartButton';
-import { AccountLink } from '@/components/layout/AccountLink';
+import { AccountLinkClient } from '@/components/layout/AccountLinkClient';
 import { Logo } from '@/components/ui/Logo';
+
+// Header sticky avec scroll-trigger backdrop-blur, lignes hover
+// underline animées, logo composé (image + nom + sous-titre).
+// Port direct de fcpau-index.html (#nav).
 
 const NAV = [
   { href: '/boutique', label: 'Boutique' },
@@ -13,42 +21,62 @@ const NAV = [
 ];
 
 export function Header() {
+  const pathname = usePathname();
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 55);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
   return (
-    <header className="sticky top-0 z-40 border-b border-blanc/10 bg-nuit">
-      <div className="container-fc flex h-16 items-center justify-between gap-4 md:h-20">
+    <header
+      className={`fixed left-0 right-0 top-0 z-40 transition-[background-color,backdrop-filter,border-color] duration-300 ${
+        scrolled
+          ? 'border-b border-blanc/10 bg-nuit/[0.93] backdrop-blur-[22px]'
+          : 'border-b border-transparent bg-transparent'
+      }`}
+    >
+      <div className="wrap flex h-16 items-center justify-between gap-4 md:h-[66px]">
         <Link
           href="/"
-          className="flex items-center gap-3 outline-none focus-visible:ring-2 focus-visible:ring-jaune"
+          className="outline-none focus-visible:ring-2 focus-visible:ring-jaune"
           aria-label="Accueil FC Pau"
         >
-          <Logo className="text-2xl md:text-3xl" />
+          <Logo size="md" />
         </Link>
 
-        <nav
-          aria-label="Navigation principale"
-          className="hidden items-center gap-7 lg:flex"
-        >
-          {NAV.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="font-mono text-[11px] uppercase tracking-[0.2em] text-blanc/70 transition-colors hover:text-jaune"
-            >
-              {item.label}
-            </Link>
-          ))}
+        <nav aria-label="Navigation principale" className="hidden items-center gap-[2px] lg:flex">
+          {NAV.map((item) => {
+            const active =
+              item.href === '/boutique'
+                ? pathname.startsWith('/boutique')
+                : pathname.startsWith(item.href);
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`relative px-[13px] py-2 font-display text-[11.5px] uppercase tracking-[0.1em] transition-colors after:absolute after:bottom-[3px] after:left-[13px] after:right-[13px] after:h-px after:origin-left after:scale-x-0 after:bg-jaune after:transition-transform after:duration-300 hover:after:scale-x-100 ${
+                  active ? 'text-jaune after:scale-x-100' : 'text-blanc/40 hover:text-blanc'
+                }`}
+              >
+                {item.label}
+              </Link>
+            );
+          })}
         </nav>
 
-        <div className="flex items-center gap-1 md:gap-2">
-          <AccountLink />
+        <div className="flex items-center gap-1 md:gap-[6px]">
+          <AccountLinkClient />
           <CartButton />
           <button
             type="button"
-            className="flex h-10 w-10 items-center justify-center text-blanc transition-colors hover:text-jaune lg:hidden"
+            className="flex h-9 w-9 items-center justify-center border border-blanc/10 bg-blanc/[0.04] text-blanc/55 transition-colors hover:bg-blanc/[0.08] lg:hidden"
             aria-label="Ouvrir le menu"
-            data-mobile-menu-trigger
           >
-            <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+            <svg viewBox="0 0 24 24" className="h-[14px] w-[14px]" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">
               <path d="M4 7h16M4 12h16M4 17h16" strokeLinecap="square" />
             </svg>
           </button>

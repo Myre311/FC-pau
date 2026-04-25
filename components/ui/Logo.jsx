@@ -1,20 +1,38 @@
+import Image from 'next/image';
+
 import { cn } from '@/lib/utils';
 
-// Logo typographique placeholder — sera remplacé par le SVG officiel
-// tracé à la main (couronne Henri IV + paon béarnais + Pyrénées + anneau doré).
-// Cf. PLAN_FC_PAU.md §2.
+// Logo officiel FC Pau : image PNG (913x913) + nom + sous-titre
+// reproduit la composition de la nav HTML originale.
 
-export function Logo({ className, withDot = true }) {
+export function Logo({ className, size = 'md', showText = true }) {
+  const sizes = {
+    sm: { img: 32, name: 'text-[13px]', sub: 'text-[8px]' },
+    md: { img: 40, name: 'text-[14px]', sub: 'text-[8px]' },
+    lg: { img: 52, name: 'text-[16px]', sub: 'text-[9px]' },
+  };
+  const s = sizes[size] ?? sizes.md;
+
   return (
-    <span
-      className={cn(
-        'font-display uppercase leading-crush tracking-tightest',
-        'select-none',
-        className,
+    <span className={cn('flex items-center gap-[10px]', className)} aria-label="FC Pau">
+      <Image
+        src="/logo-fcpau.png"
+        alt=""
+        width={s.img}
+        height={s.img}
+        priority
+        className="object-contain drop-shadow-[0_2px_8px_rgba(255,204,0,0.2)]"
+      />
+      {showText && (
+        <span className="flex flex-col leading-none">
+          <span className={cn('font-display uppercase tracking-[0.1em] text-blanc', s.name)}>
+            FC PAU
+          </span>
+          <span className={cn('mt-[1px] font-mono uppercase tracking-[0.2em] text-blanc/20', s.sub)}>
+            Boutique Officielle
+          </span>
+        </span>
       )}
-      aria-label="FC Pau"
-    >
-      PAU{withDot && <span className="text-jaune">.</span>}FC
     </span>
   );
 }
