@@ -1,6 +1,7 @@
 import Link from 'next/link';
 
 import { Logo } from '@/components/ui/Logo';
+import { NewsletterTrigger } from '@/components/layout/NewsletterTrigger';
 
 const COLUMNS = [
   {
@@ -46,6 +47,9 @@ export function Footer() {
             Pau FC — club de football professionnel basé en Béarn. Site officiel,
             boutique et espace partenaires.
           </p>
+          <NewsletterTrigger className="mt-6 inline-flex items-center gap-2 border border-blanc/20 px-4 py-2 font-mono text-[10px] uppercase tracking-[0.2em] text-blanc transition-colors hover:border-jaune hover:text-jaune">
+            Recevoir la newsletter →
+          </NewsletterTrigger>
         </div>
 
         {COLUMNS.map((col) => (

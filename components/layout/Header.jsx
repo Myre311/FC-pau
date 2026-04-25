@@ -1,6 +1,7 @@
 import Link from 'next/link';
 
 import { CartButton } from '@/components/shop/CartButton';
+import { AccountLink } from '@/components/layout/AccountLink';
 import { Logo } from '@/components/ui/Logo';
 
 const NAV = [
@@ -39,6 +40,7 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-1 md:gap-2">
+          <AccountLink />
           <CartButton />
           <button
             type="button"
