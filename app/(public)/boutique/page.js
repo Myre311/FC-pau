@@ -7,6 +7,10 @@ export const metadata = {
     'Maillots, lifestyle, accessoires — la boutique officielle du Pau FC. Configurez votre flocage et soutenez le club.',
 };
 
+// Stock unifie POS + en ligne : pas de cache statique, on lit la BDD
+// a chaque requete pour eviter d'afficher du stock perime.
+export const dynamic = 'force-dynamic';
+
 // Server Component — Next 14 App Router. Pas de useEffect, fetch direct
 // via Prisma au rendu.
 export default async function BoutiquePage() {

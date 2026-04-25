@@ -5,6 +5,9 @@ import { prisma } from '@/lib/prisma';
 import { AddToCartForm } from '@/components/shop/AddToCartForm';
 import { formatPrice } from '@/lib/format';
 
+// Stock par variante affiche en temps reel : pas de cache statique.
+export const dynamic = 'force-dynamic';
+
 export async function generateMetadata({ params }) {
   const product = await prisma.product.findUnique({
     where: { slug: params.slug },
