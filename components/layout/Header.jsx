@@ -150,17 +150,18 @@ export function Header() {
 
           {/* Actions */}
           <div className="flex items-center gap-2">
-            {/* Bouton vidéo YouTube */}
+            {/* Bouton vidéo YouTube - BIEN VISIBLE */}
             <button
               type="button"
               onClick={() => setVideoOpen(true)}
-              className="hidden h-10 w-10 items-center justify-center border-2 border-jaune bg-transparent text-jaune transition-all hover:bg-jaune hover:text-nuit md:flex"
-              aria-label="Voir la vidéo"
+              className="flex h-10 items-center gap-2 border-2 border-jaune bg-jaune px-4 font-display text-xs font-bold uppercase tracking-wide text-nuit transition-all hover:bg-transparent hover:text-jaune md:h-12 md:px-6 md:text-sm"
+              aria-label="Voir la vidéo officielle"
               title="Vidéo officielle FC Pau"
             >
-              <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+              <svg className="h-4 w-4 md:h-5 md:w-5" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M8 5v14l11-7z" />
               </svg>
+              <span className="hidden md:inline">Vidéo</span>
             </button>
 
             {/* Bouton recherche */}

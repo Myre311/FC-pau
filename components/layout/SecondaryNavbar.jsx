@@ -66,19 +66,19 @@ export function SecondaryNavbar() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`group relative flex items-center gap-1.5 px-2 py-3 font-display text-[10px] font-bold uppercase tracking-wide transition-all md:gap-2 md:px-6 md:py-4 md:text-sm ${
+                className={`group relative flex flex-col items-center gap-1.5 px-3 py-3 font-display text-[10px] font-bold uppercase tracking-wide transition-all md:px-8 md:py-4 md:text-xs ${
                   isActive
                     ? 'text-jaune'
                     : 'text-blanc/80 hover:text-jaune'
                 }`}
               >
                 {/* Icône */}
-                <span className={`h-4 w-4 transition-transform group-hover:scale-110 md:h-5 md:w-5 ${isActive ? 'text-jaune' : ''}`}>
+                <span className={`h-5 w-5 transition-transform group-hover:scale-110 md:h-6 md:w-6 ${isActive ? 'text-jaune' : ''}`}>
                   {item.icon}
                 </span>
 
-                {/* Label - toujours visible */}
-                <span className="whitespace-nowrap">{item.label}</span>
+                {/* Label - en dessous */}
+                <span className="whitespace-nowrap text-center leading-tight">{item.label}</span>
 
                 {/* Indicateur actif */}
                 {isActive && (

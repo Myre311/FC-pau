@@ -1,5 +1,6 @@
 import { prisma } from '@/lib/prisma';
 import { ProductCard } from '@/components/shop/ProductCard';
+import { CategoryNav } from '@/components/shop/CategoryNav';
 
 export const metadata = {
   title: 'Boutique',
@@ -27,6 +28,9 @@ export default async function BoutiquePage() {
 
   return (
     <>
+      {/* Navigation catégories */}
+      <CategoryNav />
+
       <section className="container-fc py-[clamp(80px,12vh,160px)]">
         <p className="badge-mono">Catalogue officiel · Saison 2025-2026</p>
         <h1 className="mt-8 font-display text-[clamp(52px,12vw,160px)] uppercase leading-crush tracking-display-tight">
