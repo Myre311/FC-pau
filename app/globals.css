@@ -3,23 +3,16 @@
 @tailwind utilities;
 
 /* =====================================================================
-   FC Pau — Globals
-   Charte "Sport de luxe — Tension Industrielle"
-   Source : maquettes HTML originales (fcpau-index/boutique/produit)
+   FC Pau — Globals LIGHT MODE
+   Charte officielle inspirée du site paufc.fr
+   Bleu primaire + fond blanc/gris clair
    ===================================================================== */
 
 @layer base {
   :root {
-    --color-nuit: 4 9 29;
-    --color-primaire: 26 29 56;
-    --color-jaune: 255 204 0;
-    --color-dore: 203 167 77;
-    --color-blanc: 255 255 255;
-
-    /* Variantes de fond pour les sections */
-    --n2: #080c1a;
-    --n3: #0d1228;
-    --n4: #060918;
+    --pau-blue: 30 64 175;      /* #1E40AF */
+    --pau-blue-dark: 30 58 138; /* #1E3A8A */
+    --pau-blue-light: 59 130 246; /* #3B82F6 */
 
     --ease: cubic-bezier(0.16, 1, 0.3, 1);
     --ease-s: cubic-bezier(0.4, 0, 0.2, 1);
@@ -33,54 +26,227 @@
   }
 
   body {
-    @apply bg-nuit text-blanc font-sans;
-    line-height: 1;
+    @apply bg-white text-gray-900 font-sans;
+    line-height: 1.6;
   }
 
   ::selection {
-    background: #ffcc00;
-    color: #04091d;
+    background: #3B82F6;
+    color: #FFFFFF;
   }
 
   ::-webkit-scrollbar {
-    width: 4px;
+    width: 6px;
   }
   ::-webkit-scrollbar-track {
-    background: #04091d;
+    background: #F3F4F6;
   }
   ::-webkit-scrollbar-thumb {
-    background: rgba(255, 204, 0, 0.3);
-    border-radius: 2px;
+    background: rgba(30, 64, 175, 0.3);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(30, 64, 175, 0.5);
   }
 
   :focus-visible {
-    outline: 3px solid #ffcc00;
-    outline-offset: 4px;
-    box-shadow: 0 0 0 6px rgba(255, 204, 0, 0.2);
+    outline: 3px solid #3B82F6;
+    outline-offset: 3px;
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2);
   }
 
   h1 {
-    @apply font-display uppercase;
+    @apply font-display uppercase text-gray-900;
     letter-spacing: -0.03em;
-    line-height: 0.88;
+    line-height: 0.9;
   }
 
   h2 {
-    @apply font-display uppercase;
+    @apply font-display uppercase text-gray-900;
     letter-spacing: -0.02em;
-    line-height: 0.92;
+    line-height: 0.95;
   }
 
   h3 {
-    @apply font-display uppercase;
+    @apply font-display uppercase text-gray-800;
     letter-spacing: -0.01em;
     line-height: 1.05;
   }
 
   h4 {
-    @apply font-display uppercase;
+    @apply font-display uppercase text-gray-700;
     letter-spacing: 0;
     line-height: 1.15;
+  }
+}
+
+/* ─── KEYFRAMES ──────────────────────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes slideX {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(32px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-32px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulseDot {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.5); opacity: 0.6; }
+}
+@keyframes shimmer {
+  0% { background-position: -300% center; }
+  100% { background-position: 300% center; }
+}
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes ripple {
+  0% { transform: scale(0); opacity: 0.6; }
+  100% { transform: scale(2.5); opacity: 0; }
+}
+@keyframes countdown {
+  0% { opacity: 1; }
+  50% { opacity: 0.7; }
+  100% { opacity: 1; }
+}
+
+@layer components {
+  /* ─── Layout containers ──────────────────────────────────────── */
+  .wrap {
+    @apply mx-auto w-full px-6 md:px-12 lg:px-16;
+    max-width: 1400px;
+  }
+
+  .container-fc {
+    @apply mx-auto w-full px-6 md:px-12 lg:px-16;
+    max-width: 1400px;
+  }
+
+  /* ─── Badge mono ─────────────────────────────────────────────── */
+  .badge-mono {
+    @apply font-mono text-[11px] uppercase tracking-[0.15em] text-pau-blue-light;
+  }
+
+  /* ─── Boutons ────────────────────────────────────────────────── */
+  .btn-primary {
+    @apply bg-pau-blue text-white px-6 py-3 font-display text-sm uppercase tracking-wider
+           transition-all duration-300 hover:bg-pau-blue-dark hover:shadow-blue-medium
+           active:scale-[0.98];
+  }
+
+  .btn-secondary {
+    @apply border-2 border-pau-blue text-pau-blue px-6 py-3 font-display text-sm uppercase tracking-wider
+           transition-all duration-300 hover:bg-pau-blue hover:text-white
+           active:scale-[0.98];
+  }
+
+  .btn-ripple {
+    overflow: hidden;
+    position: relative;
+  }
+  .btn-ripple::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle, rgba(255,255,255,0.4) 0%, transparent 70%);
+    opacity: 0;
+    transform: scale(0);
+    transition: transform 0.6s var(--ease), opacity 0.4s;
+  }
+  .btn-ripple:active::before {
+    transform: scale(2);
+    opacity: 1;
+    transition: 0s;
+  }
+
+  /* ─── Cards ──────────────────────────────────────────────────── */
+  .card {
+    @apply bg-white border border-gray-200 shadow-card transition-shadow duration-300
+           hover:shadow-card-hover;
+  }
+
+  /* ─── Link hover underline ───────────────────────────────────── */
+  .link-hover {
+    position: relative;
+    transition: color 0.2s var(--ease);
+  }
+  .link-hover::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s var(--ease);
+  }
+  .link-hover:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  /* ─── Countdown timer ────────────────────────────────────────── */
+  .countdown-unit {
+    @apply flex flex-col items-center justify-center bg-gradient-to-b from-gray-50 to-white
+           border border-gray-200 rounded-lg p-4 min-w-[70px];
+  }
+  .countdown-value {
+    @apply font-display text-3xl md:text-4xl text-pau-blue leading-none;
+  }
+  .countdown-label {
+    @apply font-mono text-[10px] uppercase tracking-wider text-gray-500 mt-1;
+  }
+
+  /* ─── Match card ─────────────────────────────────────────────── */
+  .match-card {
+    @apply bg-gradient-to-br from-blue-50 to-white border-2 border-pau-blue/20
+           rounded-xl p-6 md:p-8 transition-all duration-300
+           hover:border-pau-blue/40 hover:shadow-blue-soft;
+  }
+
+  /* ─── Skeleton loader ────────────────────────────────────────── */
+  .skeleton {
+    background: linear-gradient(90deg, #F3F4F6 25%, #E5E7EB 50%, #F3F4F6 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s ease-in-out infinite;
+  }
+
+  /* ─── Performance optimizations ──────────────────────────────── */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  img[loading="lazy"] {
+    content-visibility: auto;
   }
 }
 
