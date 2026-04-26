@@ -17,7 +17,7 @@ export function MatchCountdown({ match }) {
     return () => clearInterval(timer);
   }, [match.kickoffAt]);
 
-  const opponentName = match.isHome ? match.awayTeam : match.homeTeam;
+  const opponentName = match.opponent;
   const location = match.isHome ? 'Nouste Camp' : 'Extérieur';
 
   return (
