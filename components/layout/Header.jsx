@@ -16,7 +16,6 @@ import { VideoModal } from '@/components/layout/VideoModal';
 
 const NAV = [
   { href: '/equipe', label: 'Équipe pro' },
-  { href: '/calendrier', label: 'Calendrier' },
   {
     label: 'Billetterie',
     submenu: [
@@ -26,7 +25,6 @@ const NAV = [
       { href: '/billetterie/cashless/faq', label: 'FAQ' },
     ],
   },
-  { href: '/boutique', label: 'Boutique' },
   {
     label: 'Club',
     submenu: [
@@ -35,19 +33,11 @@ const NAV = [
       { href: '/contact', label: 'Contact' },
     ],
   },
-  {
-    label: 'Academy',
-    submenu: [
-      { href: '/academy', label: 'Présentation' },
-      { href: '/academy/masculin', label: 'Pôle masculin' },
-      { href: '/academy/feminin', label: 'Pôle féminin' },
-      { href: '/academy/integrer', label: 'Rejoindre' },
-      { href: '/academy/stages', label: 'Stages' },
-    ],
-  },
   { href: '/actualites', label: 'Actus' },
   { href: '/partenaires', label: 'Partenaires' },
   { href: '/galerie', label: 'Galerie' },
+  { href: '/videos', label: 'Vidéos' },
+  { href: '/presse', label: 'Presse' },
 ];
 
 function NavItem({ item, pathname }) {

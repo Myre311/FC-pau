@@ -1,10 +1,12 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 import { prisma } from '@/lib/prisma';
 import { MatchCountdown } from '@/components/vitrine/MatchCountdown';
 import { AnimatedHero } from '@/components/animations/AnimatedHero';
 import { FadeIn, StaggerContainer, StaggerItem } from '@/components/animations/FadeIn';
 import { HoverCard } from '@/components/animations/HoverCard';
+import { formatPrice } from '@/lib/format';
 
 export const dynamic = 'force-dynamic';
 
@@ -24,6 +26,21 @@ export default async function HomePage() {
       },
       orderBy: { kickoffAt: 'asc' },
       take: 2,
+    })
+    .catch(() => []);
+
+  // Récupérer 4 produits mis en avant pour la boutique
+  const featuredProducts = await prisma.product
+    .findMany({
+      where: { status: 'active', featured: true },
+      take: 4,
+      include: {
+        category: true,
+        variants: {
+          include: { stockItem: true },
+          take: 1,
+        },
+      },
     })
     .catch(() => []);
 
@@ -56,6 +73,84 @@ export default async function HomePage() {
           )}
         </div>
       </section>
+
+      {/* ─── BOUTIQUE OFFICIELLE ──────────────────────────────────────────────── */}
+      {featuredProducts.length > 0 && (
+        <section className="section-pau border-t border-blanc/10">
+          <div className="container-pau">
+            <FadeIn>
+              <div className="mb-12 flex items-end justify-between">
+                <div>
+                  <div className="mb-4 h-1 w-16 bg-jaune" />
+                  <h2 className="font-display text-3xl font-bold uppercase text-blanc md:text-4xl">
+                    Boutique officielle
+                  </h2>
+                </div>
+                <Link
+                  href="/boutique"
+                  className="group flex items-center gap-2 font-display text-sm font-bold uppercase tracking-wide text-jaune transition-all hover:gap-3"
+                >
+                  Tout voir
+                  <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                    <path d="M9 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </Link>
+              </div>
+            </FadeIn>
+
+            <StaggerContainer staggerDelay={0.1} className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">
+              {featuredProducts.map((product) => {
+                const firstVariant = product.variants[0];
+                const price = firstVariant?.priceEur || product.basePriceEur || 0;
+
+                return (
+                  <StaggerItem key={product.id}>
+                    <Link href={`/boutique/${product.slug}`}>
+                      <HoverCard className="group relative overflow-hidden border-2 border-blanc/20 bg-blanc/5 transition-all hover:border-jaune">
+                        {/* Image placeholder */}
+                        <div className="relative aspect-square w-full overflow-hidden bg-gradient-to-br from-nuit to-primaire">
+                          {product.imageUrl ? (
+                            <Image
+                              src={product.imageUrl}
+                              alt={product.name}
+                              fill
+                              className="object-cover transition-transform duration-300 group-hover:scale-110"
+                            />
+                          ) : (
+                            <div className="flex h-full items-center justify-center">
+                              <span className="font-display text-4xl font-black text-jaune/20 md:text-5xl">
+                                {product.name.substring(0, 2).toUpperCase()}
+                              </span>
+                            </div>
+                          )}
+                          {product.featured && (
+                            <div className="absolute right-2 top-2 bg-jaune px-2 py-1 font-mono text-[9px] font-bold uppercase tracking-wider text-nuit">
+                              ★ Top
+                            </div>
+                          )}
+                        </div>
+
+                        {/* Info */}
+                        <div className="p-4">
+                          <p className="mb-1 font-mono text-[10px] uppercase tracking-wider text-jaune">
+                            {product.category?.name || 'Produit'}
+                          </p>
+                          <h3 className="mb-2 font-display text-sm font-bold uppercase leading-tight text-blanc md:text-base">
+                            {product.name}
+                          </h3>
+                          <p className="font-display text-lg font-black text-jaune md:text-xl">
+                            {formatPrice(price)}
+                          </p>
+                        </div>
+                      </HoverCard>
+                    </Link>
+                  </StaggerItem>
+                );
+              })}
+            </StaggerContainer>
+          </div>
+        </section>
+      )}
 
       {/* ─── PARTENAIRES ANIMÉS ──────────────────────────────────────────────── */}
       <section className="section-pau border-y border-blanc/10">
