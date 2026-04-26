@@ -173,13 +173,13 @@
 
   /* ─── CARDS SIMPLES ───────────────────────────────────────────── */
   .card-pau {
-    @apply border-2 border-gray-300 bg-blanc p-6 transition-all duration-200
-           hover:border-jaune;
+    @apply border-2 border-blanc/20 bg-blanc/5 p-6 transition-all duration-200
+           hover:border-jaune hover:bg-blanc/10;
   }
 
   .card-match-pau {
-    @apply border-2 border-gray-300 bg-blanc p-8
-           transition-all duration-200 hover:border-nuit;
+    @apply border-2 border-blanc/20 bg-blanc/5 p-8
+           transition-all duration-200 hover:border-jaune hover:bg-blanc/10;
   }
 
   /* ─── SÉPARATEURS ────────────────────────────────────────────────── */

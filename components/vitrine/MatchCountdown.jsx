@@ -23,7 +23,7 @@ export function MatchCountdown({ match }) {
     <div className="card-match-pau">
       {/* Header avec date/heure */}
       <div className="mb-6 text-center">
-        <p className="font-mono text-sm font-medium uppercase tracking-wider text-gray-600">
+        <p className="font-mono text-sm font-medium uppercase tracking-wider text-blanc/60">
           {formatMatchDate(match.kickoffAt)} · {location} · {formatMatchTime(match.kickoffAt)}
         </p>
       </div>
@@ -57,11 +57,11 @@ export function MatchCountdown({ match }) {
 
       {/* Compétition */}
       <div className="mb-6 flex items-center justify-center gap-3">
-        <div className="h-px flex-1 bg-gray-300" />
+        <div className="h-px flex-1 bg-blanc/20" />
         <span className="badge-pau">
           {match.competition || 'Ligue 2 BKT'}
         </span>
-        <div className="h-px flex-1 bg-gray-300" />
+        <div className="h-px flex-1 bg-blanc/20" />
       </div>
 
       {/* CTA Billetterie */}
@@ -86,16 +86,16 @@ function TeamLogo({ name = '???', isHome = false }) {
   return (
     <div className="flex flex-col items-center gap-3">
       <div className={`flex h-24 w-24 items-center justify-center border-4 transition-all md:h-28 md:w-28 ${
-        isHome ? 'border-nuit bg-nuit' : 'border-gray-400 bg-blanc'
+        isHome ? 'border-nuit bg-nuit' : 'border-blanc/30 bg-blanc/10'
       }`}>
         <span className={`font-display text-3xl font-black md:text-4xl ${
-          isHome ? 'text-jaune' : 'text-nuit'
+          isHome ? 'text-jaune' : 'text-blanc'
         }`}>
           {name.substring(0, 3).toUpperCase()}
         </span>
       </div>
       <p className={`max-w-[100px] text-center font-display text-sm font-bold uppercase leading-tight md:text-base ${
-        isHome ? 'text-nuit' : 'text-gray-700'
+        isHome ? 'text-jaune' : 'text-blanc/70'
       }`}>
         {name}
       </p>
@@ -113,11 +113,11 @@ function VsLabel() {
 
 function CountdownUnit({ value, label }) {
   return (
-    <div className="flex flex-col items-center gap-1 border-2 border-gray-300 bg-blanc px-4 py-3">
-      <div className="font-display text-3xl font-black leading-none text-nuit md:text-4xl">
+    <div className="flex flex-col items-center gap-1 border-2 border-jaune/40 bg-nuit/60 px-4 py-3">
+      <div className="font-display text-3xl font-black leading-none text-jaune md:text-4xl">
         {String(value).padStart(2, '0')}
       </div>
-      <div className="font-mono text-xs font-bold uppercase tracking-wider text-gray-600">
+      <div className="font-mono text-xs font-bold uppercase tracking-wider text-blanc/60">
         {label}
       </div>
     </div>

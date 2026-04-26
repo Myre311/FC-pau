@@ -28,12 +28,23 @@ export default async function HomePage() {
     <>
       {/* ─── HERO AVEC VIDEO/IMAGE ──────────────────────────── */}
       <section className="relative overflow-hidden border-b-4 border-jaune">
-        {/* Background - image/video à remplacer */}
+        {/* Background - vidéo ou image */}
         <div className="absolute inset-0">
-          {/* Fond avec dégradé élégant */}
+          {/* Conteneur vidéo prêt à l'emploi */}
+          {/* Pour ajouter une vidéo : remplacer le div suivant par :
+              <video
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="h-full w-full object-cover"
+              >
+                <source src="/videos/hero.mp4" type="video/mp4" />
+              </video>
+          */}
           <div className="h-full w-full bg-gradient-to-br from-[#1a1d38] via-[#262646] to-[#04091D]" />
-          {/* Overlay subtil pour le texte */}
-          <div className="absolute inset-0 bg-black/20" />
+          {/* Overlay pour contraste texte */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent" />
         </div>
 
         {/* Contenu */}
@@ -61,7 +72,7 @@ export default async function HomePage() {
         <div className="container-pau">
           {upcomingMatches.length === 0 ? (
             <div className="card-pau mx-auto max-w-2xl p-10 text-center">
-              <p className="text-lead">
+              <p className="text-lead text-blanc/70">
                 Aucun match programmé pour le moment. Le calendrier sera mis à jour prochainement.
               </p>
             </div>
