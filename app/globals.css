@@ -103,7 +103,8 @@
 
 @layer components {
   /* ─── LAYOUT OFFICIEL PAU FC ──────────────────────────────────── */
-  .container-pau {
+  .container-pau,
+  .container-fc {
     @apply mx-auto w-full;
     max-width: 1400px;
     padding-left: clamp(1.5rem, 4vw, 3rem);
@@ -145,6 +146,10 @@
   .badge-pau {
     @apply inline-flex items-center gap-2 border-2 border-jaune bg-jaune
            px-3 py-1 font-mono text-xs font-bold uppercase tracking-wider text-nuit;
+  }
+
+  .badge-mono {
+    @apply inline-block font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-jaune;
   }
 
   /* ─── BOUTONS SIMPLES ──────────────────────────────────────────── */

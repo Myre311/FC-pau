@@ -30,14 +30,10 @@ export default async function HomePage() {
       <section className="relative overflow-hidden border-b-4 border-jaune">
         {/* Background - image/video à remplacer */}
         <div className="absolute inset-0">
-          {/* Temporaire : fond bleu avec pattern jusqu'à ajout d'une vraie image/vidéo */}
-          <div className="h-full w-full bg-[#1E40AF]" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23FFFFFF' fill-opacity='0.08'%3E%3Cpath d='M50 25c-1.8 0-3.2 1.4-3.2 3.2 0 1.3.8 2.4 2 2.8-1.1.4-1.8 1.5-1.8 2.7 0 1.6 1.4 3 3 3 .4 0 .9-.1 1.3-.3-.3.7-.4 1.5-.4 2.3 0 3 2.4 5.4 5.4 5.4 1.1 0 2.1-.3 2.9-.9-.2.4-.3.9-.3 1.4 0 1.6 1.4 3 3 3 1.2 0 2.2-.7 2.7-1.8.4 1.1 1.4 1.8 2.5 1.8 1.4 0 2.5-.9 2.9-2.1.4 1.1 1.5 1.8 2.7 1.8 1.6 0 3-1.4 3-3 0-.5-.1-.9-.3-1.4.8.6 1.8.9 2.9.9 3 0 5.4-2.4 5.4-5.4 0-.8-.2-1.6-.4-2.3.4.2.8.3 1.3.3 1.6 0 3-1.4 3-3 0-1.2-.7-2.3-1.8-2.7 1.1-.4 2-1.5 2-2.8 0-1.8-1.4-3.2-3.2-3.2h-23z'/%3E%3C/g%3E%3C/svg%3E")`,
-            backgroundSize: '100px 100px',
-            backgroundAttachment: 'fixed'
-          }} />
-          {/* Overlay pour contraste */}
-          <div className="absolute inset-0 bg-nuit/50" />
+          {/* Fond avec dégradé élégant */}
+          <div className="h-full w-full bg-gradient-to-br from-[#1a1d38] via-[#262646] to-[#04091D]" />
+          {/* Overlay subtil pour le texte */}
+          <div className="absolute inset-0 bg-black/20" />
         </div>
 
         {/* Contenu */}
@@ -61,7 +57,7 @@ export default async function HomePage() {
       </section>
 
       {/* ─── PROCHAINS MATCHS ──────────────────────────── */}
-      <section className="section-pau bg-blanc">
+      <section className="section-pau border-t border-blanc/10">
         <div className="container-pau">
           {upcomingMatches.length === 0 ? (
             <div className="card-pau mx-auto max-w-2xl p-10 text-center">
@@ -86,11 +82,11 @@ export default async function HomePage() {
       </section>
 
       {/* ─── PARTENAIRES ──────────────────────────────────────────────── */}
-      <section className="section-pau border-y-4 border-gray-300 bg-gray-50">
+      <section className="section-pau border-y border-blanc/10">
         <div className="container-pau">
           <div className="mb-12">
             <div className="mb-4 h-1 w-16 bg-jaune" />
-            <h2 className="font-display text-3xl font-bold uppercase text-nuit md:text-4xl">
+            <h2 className="font-display text-3xl font-bold uppercase text-blanc md:text-4xl">
               Nos partenaires
             </h2>
           </div>
@@ -98,9 +94,9 @@ export default async function HomePage() {
             {['Joma', 'Holy', 'Intersport', 'Groupama', 'Sarthou', 'Ville de Pau'].map((partner, idx) => (
               <div
                 key={idx}
-                className="flex items-center justify-center border-2 border-gray-300 bg-blanc p-6 transition-colors hover:border-jaune"
+                className="flex items-center justify-center border-2 border-blanc/20 bg-blanc/5 p-6 transition-colors hover:border-jaune hover:bg-blanc/10"
               >
-                <span className="font-display text-base font-bold uppercase text-gray-500">
+                <span className="font-display text-base font-bold uppercase text-blanc/70">
                   {partner}
                 </span>
               </div>
@@ -110,7 +106,7 @@ export default async function HomePage() {
       </section>
 
       {/* ─── NEWSLETTER ──────────────────────────────────────────────── */}
-      <section className="section-pau bg-nuit">
+      <section className="section-pau border-t border-jaune/40 bg-nuit">
         <div className="container-pau">
           <div className="mx-auto max-w-3xl text-center">
             <div className="mx-auto mb-6 inline-block">

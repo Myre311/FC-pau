@@ -13,7 +13,7 @@ export default function PublicLayout({ children }) {
       <LoaderScreen />
       <Topbar />
       <Header />
-      <main id="main-content" className="min-h-[60vh]">{children}</main>
+      <main id="main-content" className="min-h-[60vh] bg-[#262646] text-blanc">{children}</main>
       <Footer />
       <CartDrawer />
       <NewsletterModal />
