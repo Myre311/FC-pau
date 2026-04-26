@@ -1,31 +1,34 @@
-import { Big_Shoulders_Display, Instrument_Sans, DM_Mono } from 'next/font/google';
+import { Poppins, Inter, Roboto_Mono } from 'next/font/google';
 
 import { OrganizationJsonLd } from '@/components/seo/OrganizationJsonLd';
 
 import './globals.css';
 
-const bigShoulders = Big_Shoulders_Display({
+// Poppins - Titres modernes sportifs (style Barça)
+const poppins = Poppins({
   subsets: ['latin'],
-  weight: ['400', '600', '700', '900'],
-  variable: '--font-big-shoulders',
+  weight: ['400', '500', '600', '700', '800', '900'],
+  variable: '--font-poppins',
   display: 'swap',
   preload: true,
 });
 
-const instrumentSans = Instrument_Sans({
+// Inter - Corps de texte professionnel
+const inter = Inter({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
-  variable: '--font-instrument-sans',
+  variable: '--font-inter',
   display: 'swap',
   preload: true,
 });
 
-const dmMono = DM_Mono({
+// Roboto Mono - Détails techniques
+const robotoMono = Roboto_Mono({
   subsets: ['latin'],
-  weight: ['400', '500'],
-  variable: '--font-dm-mono',
+  weight: ['400', '500', '600'],
+  variable: '--font-roboto-mono',
   display: 'swap',
-  preload: false, // Moins critique
+  preload: false,
 });
 
 export const metadata = {
@@ -56,7 +59,7 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="fr"
-      className={`${bigShoulders.variable} ${instrumentSans.variable} ${dmMono.variable}`}
+      className={`${poppins.variable} ${inter.variable} ${robotoMono.variable}`}
     >
       <body>
         {children}

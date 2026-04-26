@@ -56,27 +56,32 @@
   }
 
   h1 {
-    @apply font-display uppercase text-gray-900;
-    letter-spacing: -0.03em;
-    line-height: 0.9;
+    @apply font-display font-bold text-gray-900;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
   }
 
   h2 {
-    @apply font-display uppercase text-gray-900;
-    letter-spacing: -0.02em;
-    line-height: 0.95;
+    @apply font-display font-bold text-gray-900;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
   }
 
   h3 {
-    @apply font-display uppercase text-gray-800;
-    letter-spacing: -0.01em;
-    line-height: 1.05;
+    @apply font-display font-semibold text-gray-800;
+    letter-spacing: 0;
+    line-height: 1.3;
   }
 
   h4 {
-    @apply font-display uppercase text-gray-700;
+    @apply font-display font-semibold text-gray-700;
     letter-spacing: 0;
-    line-height: 1.15;
+    line-height: 1.4;
+  }
+
+  p {
+    @apply font-sans text-gray-700;
+    line-height: 1.6;
   }
 }
 
@@ -145,18 +150,18 @@
 
   /* ─── Badge mono ─────────────────────────────────────────────── */
   .badge-mono {
-    @apply font-mono text-[11px] uppercase tracking-[0.15em] text-pau-blue-light;
+    @apply font-mono text-xs font-medium uppercase tracking-wider text-pau-blue-light;
   }
 
-  /* ─── Boutons ────────────────────────────────────────────────── */
+  /* ─── Boutons style Barça (coins arrondis modérés) ─────────── */
   .btn-primary {
-    @apply bg-pau-blue text-white px-6 py-3 font-display text-sm uppercase tracking-wider
+    @apply bg-pau-blue text-white px-6 py-3 font-display font-semibold text-sm rounded-lg
            transition-all duration-300 hover:bg-pau-blue-dark hover:shadow-blue-medium
            active:scale-[0.98];
   }
 
   .btn-secondary {
-    @apply border-2 border-pau-blue text-pau-blue px-6 py-3 font-display text-sm uppercase tracking-wider
+    @apply border-2 border-pau-blue text-pau-blue px-6 py-3 font-display font-semibold text-sm rounded-lg
            transition-all duration-300 hover:bg-pau-blue hover:text-white
            active:scale-[0.98];
   }
@@ -180,10 +185,20 @@
     transition: 0s;
   }
 
-  /* ─── Cards ──────────────────────────────────────────────────── */
+  /* ─── Cards style Barça (minimalistes, ombres subtiles) ────── */
   .card {
-    @apply bg-white border border-gray-200 shadow-card transition-shadow duration-300
-           hover:shadow-card-hover;
+    @apply bg-white rounded-xl border border-gray-100 shadow-sm transition-all duration-300
+           hover:shadow-lg hover:-translate-y-1;
+  }
+
+  .card-match {
+    @apply bg-gradient-to-br from-blue-50/50 to-white rounded-2xl border-2 border-pau-blue/10
+           p-6 md:p-8 transition-all duration-300 hover:border-pau-blue/30 hover:shadow-blue-soft;
+  }
+
+  .card-article {
+    @apply bg-white rounded-xl overflow-hidden shadow-sm transition-all duration-300
+           hover:shadow-xl hover:-translate-y-2;
   }
 
   /* ─── Link hover underline ───────────────────────────────────── */

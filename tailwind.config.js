@@ -45,9 +45,9 @@ module.exports = {
         accent: '#3B82F6',
       },
       fontFamily: {
-        display: ['var(--font-big-shoulders)', 'Impact', 'sans-serif'],
-        sans: ['var(--font-instrument-sans)', 'system-ui', 'sans-serif'],
-        mono: ['var(--font-dm-mono)', 'ui-monospace', 'monospace'],
+        display: ['var(--font-poppins)', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
+        mono: ['var(--font-roboto-mono)', 'ui-monospace', 'monospace'],
       },
       letterSpacing: {
         tightest: '-0.03em',
