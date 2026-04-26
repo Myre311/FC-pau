@@ -1,0 +1,174 @@
+═══════════════════════════════════════════════════════════════
+🚀 DÉPLOIEMENT VERCEL — ÉTAPES EXACTES
+═══════════════════════════════════════════════════════════════
+
+ÉTAPE 1 : ALLER SUR VERCEL
+──────────────────────────────────────────────────────────────
+👉 Ouvrir dans le navigateur : https://vercel.com/new
+
+Si pas de compte :
+- Cliquer "Continue with GitHub"
+- Autoriser Vercel à accéder à GitHub
+
+
+ÉTAPE 2 : IMPORTER LE PROJET
+──────────────────────────────────────────────────────────────
+1. Dans "Import Git Repository"
+2. Chercher : "FC-pau" ou "Myre311/FC-pau"
+3. Cliquer "Import"
+
+
+ÉTAPE 3 : CONFIGURATION (IMPORTANT !)
+──────────────────────────────────────────────────────────────
+Sur la page de configuration :
+
+☑ Framework Preset : Next.js (auto-détecté)
+☑ Root Directory : ./
+☑ Build Command : npm run build (auto)
+☑ Output Directory : .next (auto)
+
+→ Laisser tout par défaut, Vercel détecte automatiquement
+
+
+ÉTAPE 4 : VARIABLES D'ENVIRONNEMENT (CRITIQUE)
+──────────────────────────────────────────────────────────────
+Cliquer sur "Environment Variables"
+
+Ajouter CES VARIABLES UNE PAR UNE :
+
+1. NEXT_PUBLIC_SITE_URL
+   Valeur : https://ton-domaine.vercel.app
+   (Tu auras l'URL après déploiement, mettre temporairement "https://fcpau.vercel.app")
+
+2. APP_ENV
+   Valeur : production
+
+3. NEXT_PUBLIC_SUPABASE_URL
+   Valeur : https://oakjepaincpifhxlsdzo.supabase.co
+
+4. NEXT_PUBLIC_SUPABASE_ANON_KEY
+   Valeur : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9ha2plcGFpbmNwaWZoeGxzZHpvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzcxNjYxMjksImV4cCI6MjA5Mjc0MjEyOX0.FQwpfJnNwyt7Y3ogJ6-ThOApNdXGft1bunfDvkuVVLc
+
+5. SUPABASE_SERVICE_ROLE_KEY
+   Valeur : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9ha2plcGFpbmNwaWZoeGxzZHpvIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3NzE2NjEyOSwiZXhwIjoyMDkyNzQyMTI5fQ.rWZyLKuMu70-n5fKy84h3eFp4_od8GquktsVZnCJCqk
+
+6. DATABASE_URL
+   Valeur : postgresql://postgres.oakjepaincpifhxlsdzo:Qgvtk051197%2F@aws-0-eu-west-1.pooler.supabase.com:6543/postgres?pgbouncer=true
+
+7. STRIPE_SECRET_KEY
+   Valeur : sk_test_stub_not_real
+   (Remplacer plus tard par vraie clé Stripe)
+
+8. NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
+   Valeur : pk_test_stub_not_real
+   (Remplacer plus tard par vraie clé Stripe)
+
+9. STRIPE_WEBHOOK_SECRET
+   Valeur : whsec_stub_not_real
+   (Remplacer plus tard par vraie clé Stripe)
+
+10. SESSION_SECRET
+    Valeur : 7e8acb4b09e0ba9bcf12b505feb9644b0c04c54f1b1c7658a7c51f58ca5140846ee33fc56724b9d193b38adcc6a09ad56e8db475a489d96ab474dac739b47698
+
+11. POS_WEBHOOK_SECRET
+    Valeur : 25968cea3f7aa3614043398e044b14db92c61adaadf18f75615ef460aeb72d39
+
+12. ALLOWED_ORIGINS
+    Valeur : https://ton-domaine.vercel.app
+    (Même valeur que NEXT_PUBLIC_SITE_URL)
+
+
+ÉTAPE 5 : DEPLOY !
+──────────────────────────────────────────────────────────────
+Cliquer sur le gros bouton bleu "Deploy"
+
+⏱️ Durée : ~3-5 minutes
+
+Vercel va :
+1. Cloner le repo GitHub
+2. Installer les dépendances
+3. Générer Prisma Client
+4. Builder Next.js avec toutes les pages
+5. Déployer sur CDN global
+
+
+ÉTAPE 6 : VÉRIFIER LE DÉPLOIEMENT
+──────────────────────────────────────────────────────────────
+Une fois terminé :
+
+✅ Copier l'URL : https://fc-pau-xyz123.vercel.app
+✅ Ouvrir dans le navigateur
+✅ Vérifier que la homepage charge
+✅ Tester /equipe → joueurs s'affichent
+✅ Tester /boutique → produits s'affichent
+✅ Tester /admin → redirige vers /connexion
+
+
+ÉTAPE 7 : CORRIGER L'URL (si nécessaire)
+──────────────────────────────────────────────────────────────
+Si tu as mis une URL temporaire :
+
+1. Dashboard Vercel → Ton projet → Settings → Environment Variables
+2. Éditer NEXT_PUBLIC_SITE_URL → mettre la vraie URL Vercel
+3. Éditer ALLOWED_ORIGINS → mettre la vraie URL Vercel
+4. Deployments → Redeploy (latest)
+
+
+═══════════════════════════════════════════════════════════════
+⚠️ NOTES IMPORTANTES
+═══════════════════════════════════════════════════════════════
+
+1. STRIPE ne marche pas (clés stub)
+   → Le checkout va planter
+   → Tout le reste fonctionne (vitrine, admin, boutique, 3D)
+
+2. ADMIN accessible via : /admin
+   → Email : admin@paufc.local
+   → Mot de passe : À définir dans Supabase Dashboard
+
+3. ERREURS POSSIBLES :
+   - "Error connecting to database"
+     → Vérifier DATABASE_URL
+   - "Unauthorized"
+     → Vérifier SUPABASE_SERVICE_ROLE_KEY
+   - "Cannot find module"
+     → Build échoué, voir logs Vercel
+
+4. LOGS EN TEMPS RÉEL :
+   Dashboard Vercel → Deployments → [Latest] → View Function Logs
+
+
+═══════════════════════════════════════════════════════════════
+🎯 RÉSULTAT FINAL
+═══════════════════════════════════════════════════════════════
+
+Site en ligne sur : https://ton-domaine.vercel.app
+
+Pages publiques :
+- Homepage avec hero
+- /boutique (4 produits)
+- /equipe (11 joueurs + 3 staff)
+- /calendrier (6 matchs)
+- /actualites (4 articles)
+- /videos (6 vidéos YouTube)
+- /galerie (8 photos)
+- /billetterie + sélecteur 3D
+- /partenaires
+- i18n FR/EN/ES
+
+Dashboard admin :
+- /admin (stats, commandes, produits, stock, clients, etc.)
+
+Fonctionnalités :
+- PWA installable
+- Configurateur maillot 3D
+- Sélecteur sièges 3D
+- Live score
+- Commentaires
+- Recherche
+- Analytics
+
+
+═══════════════════════════════════════════════════════════════
+✅ PRÊT À DÉPLOYER ! → https://vercel.com/new
+═══════════════════════════════════════════════════════════════
