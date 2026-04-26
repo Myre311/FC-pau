@@ -12,10 +12,91 @@ import { Logo } from '@/components/ui/Logo';
 // underline animées, logo composé (image + nom + sous-titre).
 // Port direct de fcpau-index.html (#nav).
 
+// Composant pour les items avec sous-menu (dropdown)
+function NavItemWithSubmenu({ item, pathname }) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  // Vérifier si un lien du submenu est actif
+  const isActive = item.submenu.some((sub) => pathname.startsWith(sub.href));
+
+  return (
+    <div
+      className="relative"
+      onMouseEnter={() => setIsOpen(true)}
+      onMouseLeave={() => setIsOpen(false)}
+    >
+      <button
+        type="button"
+        className={`relative px-[13px] py-2 font-display text-[11.5px] uppercase tracking-[0.1em] transition-colors after:absolute after:bottom-[3px] after:left-[13px] after:right-[13px] after:h-px after:origin-left after:scale-x-0 after:bg-jaune after:transition-transform after:duration-300 hover:after:scale-x-100 ${
+          isActive ? 'text-jaune after:scale-x-100' : 'text-blanc/40 hover:text-blanc'
+        }`}
+      >
+        {item.label}
+        <svg
+          className={`ml-1 inline-block h-3 w-3 transition-transform ${isOpen ? 'rotate-180' : ''}`}
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+        >
+          <path d="M19 9l-7 7-7-7" strokeLinecap="square" />
+        </svg>
+      </button>
+
+      {/* Dropdown */}
+      {isOpen && (
+        <div className="absolute left-0 top-full z-50 min-w-[200px] border border-blanc/10 bg-nuit/[0.98] backdrop-blur-xl">
+          {item.submenu.map((sub) => {
+            const subActive = pathname === sub.href;
+            return (
+              <Link
+                key={sub.href}
+                href={sub.href}
+                className={`block border-b border-blanc/5 px-4 py-3 font-sans text-sm transition-colors last:border-b-0 ${
+                  subActive
+                    ? 'bg-jaune/10 text-jaune'
+                    : 'text-blanc/70 hover:bg-blanc/5 hover:text-blanc'
+                }`}
+              >
+                {sub.label}
+              </Link>
+            );
+          })}
+        </div>
+      )}
+    </div>
+  );
+}
+
 const NAV = [
-  { href: '/boutique', label: 'Boutique' },
-  { href: '/equipe', label: 'Équipe' },
+  { href: '/equipe', label: 'Équipe pro' },
   { href: '/calendrier', label: 'Calendrier' },
+  {
+    label: 'Billetterie',
+    submenu: [
+      { href: '/billetterie', label: 'Acheter billets' },
+      { href: '/billetterie/cashless', label: 'Carte cashless' },
+    ],
+  },
+  { href: '/boutique', label: 'Boutique' },
+  {
+    label: 'Club',
+    submenu: [
+      { href: '/club', label: 'Présentation' },
+      { href: '/club/histoire', label: 'Histoire' },
+      { href: '/contact', label: 'Contact' },
+    ],
+  },
+  {
+    label: 'Academy',
+    submenu: [
+      { href: '/academy', label: 'Accueil Academy' },
+      { href: '/academy/masculin', label: 'Pôle masculin' },
+      { href: '/academy/feminin', label: 'Pôle féminin' },
+      { href: '/academy/integrer', label: 'Rejoindre' },
+      { href: '/academy/stages', label: 'Stages' },
+    ],
+  },
   { href: '/actualites', label: 'Actus' },
   { href: '/partenaires', label: 'Partenaires' },
 ];
@@ -50,7 +131,11 @@ export function Header() {
         </Link>
 
         <nav aria-label="Navigation principale" className="hidden items-center gap-[2px] lg:flex">
-          {NAV.map((item) => {
+          {NAV.map((item, idx) => {
+            if (item.submenu) {
+              return <NavItemWithSubmenu key={idx} item={item} pathname={pathname} />;
+            }
+
             const active =
               item.href === '/boutique'
                 ? pathname.startsWith('/boutique')

@@ -16,7 +16,8 @@ const COLUMNS = [
   {
     title: 'Le club',
     links: [
-      { href: '/club', label: 'Histoire & projet' },
+      { href: '/club', label: 'Présentation' },
+      { href: '/club/histoire', label: 'Histoire' },
       { href: '/equipe', label: 'Effectif' },
       { href: '/calendrier', label: 'Calendrier' },
       { href: '/actualites', label: 'Actualités' },
@@ -25,10 +26,21 @@ const COLUMNS = [
     ],
   },
   {
-    title: 'Aide',
+    title: 'Academy & Billetterie',
+    links: [
+      { href: '/academy', label: 'Academy' },
+      { href: '/academy/integrer', label: 'Rejoindre l\'Academy' },
+      { href: '/academy/stages', label: 'Stages' },
+      { href: '/billetterie', label: 'Billetterie' },
+      { href: '/billetterie/cashless', label: 'Carte cashless' },
+    ],
+  },
+  {
+    title: 'Aide & Légal',
     links: [
       { href: '/contact', label: 'Contact' },
-      { href: '/cgv', label: 'CGV' },
+      { href: '/cgv', label: 'CGV Boutique' },
+      { href: '/cgv-billetterie', label: 'CGV Billetterie' },
       { href: '/rgpd', label: 'Confidentialité' },
       { href: '/cookies', label: 'Cookies' },
       { href: '/mentions-legales', label: 'Mentions légales' },
