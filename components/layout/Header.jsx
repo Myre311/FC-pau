@@ -129,14 +129,15 @@ export function Header() {
           scrolled ? 'border-jaune shadow-lg' : 'border-jaune/50'
         }`}
       >
-        <div className="container-pau flex h-16 items-center justify-between gap-4 md:h-20">
+        <div className="container-pau flex h-14 items-center justify-between gap-2 sm:h-16 md:h-20 md:gap-4">
           {/* Logo */}
           <Link
             href="/"
-            className="outline-none focus-visible:ring-2 focus-visible:ring-jaune"
+            className="flex-shrink-0 outline-none focus-visible:ring-2 focus-visible:ring-jaune"
             aria-label="Accueil FC Pau"
           >
-            <Logo size="md" />
+            <Logo size="sm" className="sm:hidden" />
+            <Logo size="md" className="hidden sm:block" />
           </Link>
 
           {/* Navigation desktop */}
@@ -147,15 +148,15 @@ export function Header() {
           </nav>
 
           {/* Actions */}
-          <div className="flex items-center gap-2">
-            {/* Bouton recherche */}
+          <div className="flex items-center gap-1 sm:gap-2">
+            {/* Bouton recherche - caché sur très petit mobile */}
             <button
               type="button"
               onClick={() => setSearchOpen(true)}
-              className="flex h-10 w-10 items-center justify-center border-2 border-blanc bg-transparent text-blanc transition-colors hover:bg-blanc hover:text-nuit"
+              className="hidden h-9 w-9 items-center justify-center border-2 border-blanc bg-transparent text-blanc transition-colors hover:bg-blanc hover:text-nuit xs:flex sm:h-10 sm:w-10"
               aria-label="Rechercher"
             >
-              <svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+              <svg className="h-4 w-4 sm:h-5 sm:w-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                 <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </button>

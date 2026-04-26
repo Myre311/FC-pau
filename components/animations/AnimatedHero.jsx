@@ -44,20 +44,20 @@ export function AnimatedHero() {
       </motion.div>
 
       {/* Contenu animé */}
-      <div className="container-pau relative z-10 py-24 text-center md:py-32 lg:py-40">
+      <div className="container-pau relative z-10 px-4 py-16 text-center sm:py-20 md:py-32 lg:py-40">
 
         {/* Badge animé */}
         <motion.p
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="mb-4 font-mono text-sm font-semibold uppercase tracking-wider text-jaune"
+          className="mb-3 font-mono text-xs font-semibold uppercase tracking-wide text-jaune sm:mb-4 sm:text-sm"
         >
           Saison 2025-2026 · Ligue 2 BKT
         </motion.p>
 
         {/* Titre avec effet stagger lettre par lettre */}
-        <h1 className="mb-6 font-display text-5xl font-black uppercase leading-tight text-blanc md:text-6xl lg:text-7xl">
+        <h1 className="mb-4 font-display text-4xl font-black uppercase leading-tight text-blanc sm:mb-6 sm:text-5xl md:text-6xl lg:text-7xl">
           <motion.span
             initial="hidden"
             animate="visible"
@@ -98,7 +98,7 @@ export function AnimatedHero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="mx-auto mb-8 max-w-2xl text-lg text-blanc/90"
+          className="mx-auto mb-6 max-w-2xl px-4 text-base text-blanc/90 sm:mb-8 sm:text-lg"
         >
           Soutenez les Sang et Or au Nouste Camp
         </motion.p>
@@ -123,10 +123,10 @@ export function AnimatedHero() {
                 stiffness: 400,
                 damping: 17
               }}
-              className="inline-flex items-center gap-3 border-2 border-jaune bg-jaune px-8 py-4 font-display text-sm font-bold uppercase tracking-wide text-nuit transition-colors hover:bg-nuit hover:border-nuit hover:text-jaune"
+              className="inline-flex items-center gap-2 border-2 border-jaune bg-jaune px-6 py-3 font-display text-xs font-bold uppercase tracking-wide text-nuit transition-colors hover:bg-nuit hover:border-nuit hover:text-jaune sm:gap-3 sm:px-8 sm:py-4 sm:text-sm"
             >
               <motion.svg
-                className="h-5 w-5"
+                className="h-4 w-4 sm:h-5 sm:w-5"
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="2"
@@ -140,7 +140,7 @@ export function AnimatedHero() {
               >
                 <path d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z" strokeLinecap="round" strokeLinejoin="round" />
               </motion.svg>
-              Vos places
+              <span>Vos places</span>
             </motion.div>
           </Link>
         </motion.div>
