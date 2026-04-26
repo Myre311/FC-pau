@@ -9,7 +9,6 @@ import { AccountLinkClient } from '@/components/layout/AccountLinkClient';
 import { Logo } from '@/components/ui/Logo';
 import { SearchModal } from '@/components/layout/SearchModal';
 import { LanguageSwitcher } from '@/components/layout/LanguageSwitcher';
-import { VideoModal } from '@/components/layout/VideoModal';
 
 // Header sombre inspiré site officiel paufc.fr
 // Navigation horizontale, fond nuit, sticky avec bordure jaune au scroll
@@ -100,7 +99,6 @@ export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
-  const [videoOpen, setVideoOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10);
@@ -150,25 +148,6 @@ export function Header() {
 
           {/* Actions */}
           <div className="flex items-center gap-2">
-            {/* Bouton vidéo YouTube - TRÈS VISIBLE */}
-            <button
-              type="button"
-              onClick={() => setVideoOpen(true)}
-              className="group relative flex h-12 items-center gap-2 overflow-hidden border-2 border-jaune bg-jaune px-5 font-display text-sm font-black uppercase tracking-wider text-nuit shadow-lg shadow-jaune/50 transition-all hover:scale-105 hover:shadow-xl hover:shadow-jaune/60 md:h-14 md:px-8 md:text-base"
-              aria-label="Voir la vidéo officielle FC Pau"
-            >
-              {/* Animation pulse sur l'icône */}
-              <svg className="h-5 w-5 animate-pulse md:h-6 md:w-6" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M8 5v14l11-7z" />
-              </svg>
-              <span className="font-black">VIDÉO</span>
-
-              {/* Badge "NOUVEAU" */}
-              <span className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-red-500 text-[8px] font-bold text-white">
-                ●
-              </span>
-            </button>
-
             {/* Bouton recherche */}
             <button
               type="button"
@@ -295,13 +274,6 @@ export function Header() {
 
       {/* Modal de recherche */}
       <SearchModal isOpen={searchOpen} onClose={() => setSearchOpen(false)} />
-
-      {/* Modal vidéo YouTube */}
-      <VideoModal
-        isOpen={videoOpen}
-        onClose={() => setVideoOpen(false)}
-        videoId="0zS2GEkFwOc"
-      />
     </>
   );
 }
