@@ -59,26 +59,26 @@ export function SecondaryNavbar() {
       aria-label="Navigation secondaire"
     >
       <div className="container-pau">
-        <div className="flex items-center justify-center gap-1 md:gap-2">
+        <div className="flex items-center justify-center gap-0.5 md:gap-2">
           {SECONDARY_NAV.map((item) => {
             const isActive = pathname.startsWith(item.href);
             return (
               <Link
                 key={item.href}
                 href={item.href}
-                className={`group relative flex items-center gap-2 px-4 py-4 font-display text-sm font-bold uppercase tracking-wide transition-all md:px-6 md:text-base ${
+                className={`group relative flex items-center gap-1.5 px-2 py-3 font-display text-[10px] font-bold uppercase tracking-wide transition-all md:gap-2 md:px-6 md:py-4 md:text-sm ${
                   isActive
                     ? 'text-jaune'
                     : 'text-blanc/80 hover:text-jaune'
                 }`}
               >
                 {/* Icône */}
-                <span className={`transition-transform group-hover:scale-110 ${isActive ? 'text-jaune' : ''}`}>
+                <span className={`h-4 w-4 transition-transform group-hover:scale-110 md:h-5 md:w-5 ${isActive ? 'text-jaune' : ''}`}>
                   {item.icon}
                 </span>
 
-                {/* Label */}
-                <span className="hidden sm:inline">{item.label}</span>
+                {/* Label - toujours visible */}
+                <span className="whitespace-nowrap">{item.label}</span>
 
                 {/* Indicateur actif */}
                 {isActive && (

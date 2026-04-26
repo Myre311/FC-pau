@@ -1,10 +1,9 @@
-// Bandeau jaune en haut du site, animation shimmer.
-// Porté de fcpau-index.html (#topbar).
+// Bandeau info livraison en haut du site
 
 export function Topbar() {
   return (
-    <div className="topbar-shimmer relative overflow-hidden bg-jaune px-5 py-[9px] text-center font-mono text-[10px] uppercase tracking-[0.18em] text-nuit">
-      Livraison offerte dès 80€ · Personnalisation officielle · Made in Béarn
+    <div className="relative overflow-hidden bg-jaune px-4 py-2 text-center font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-nuit md:text-[11px]">
+      ✓ Livraison gratuite dès 120€ d'achat · Personnalisation officielle · Made in Béarn
     </div>
   );
 }
