@@ -240,7 +240,7 @@ const matches = [
     season: '2025-2026',
     kickoffAt: daysFromNow(17, 20, 0),
     isHome: true,
-    opponent: 'Caen',
+    opponent: 'SC Bastia',
     venue: 'Nouste Camp',
     status: 'scheduled',
     ticketUrl: 'https://billetterie.paufc.fr',
