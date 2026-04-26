@@ -6,17 +6,15 @@ import { cn } from '@/lib/utils';
 
 const VARIANTS = {
   primary:
-    'bg-jaune text-nuit shadow-y-soft hover:bg-jaune-light hover:shadow-y-strong hover:-translate-y-[2px]',
+    'bg-pau-blue text-white rounded-lg shadow-sm hover:bg-pau-blue-dark hover:shadow-blue-medium hover:-translate-y-0.5',
   secondary:
-    'bg-blanc text-nuit hover:bg-blanc/95 hover:-translate-y-[2px]',
-  gold:
-    'bg-dore text-nuit shadow-g-soft hover:bg-dore-light hover:-translate-y-[2px]',
-  ghost:
-    'bg-transparent text-blanc border border-blanc/25 hover:border-blanc/50 hover:bg-blanc/[0.06] hover:-translate-y-[2px]',
+    'bg-white text-pau-blue border-2 border-pau-blue rounded-lg hover:bg-pau-blue hover:text-white hover:-translate-y-0.5',
   outline:
-    'bg-transparent text-jaune border border-jaune/50 hover:bg-jaune hover:text-nuit hover:shadow-y-soft hover:-translate-y-[2px]',
+    'bg-transparent text-pau-blue border-2 border-pau-blue rounded-lg hover:bg-pau-blue/5 hover:border-pau-blue-dark hover:-translate-y-0.5',
+  ghost:
+    'bg-transparent text-gray-700 border border-gray-300 rounded-lg hover:border-gray-400 hover:bg-gray-50 hover:-translate-y-0.5',
   danger:
-    'bg-transparent text-blanc/85 hover:text-blanc border border-blanc/15 hover:border-blanc/35',
+    'bg-red-500 text-white rounded-lg shadow-sm hover:bg-red-600 hover:shadow-md hover:-translate-y-0.5',
 };
 
 const SIZES = {

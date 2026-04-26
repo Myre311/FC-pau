@@ -20,10 +20,10 @@ export function MatchCountdown({ match }) {
   const location = match.isHome ? 'Nouste Camp' : 'Extérieur';
 
   return (
-    <div className="match-card">
+    <div className="card-match">
       {/* Header avec date/heure */}
       <div className="mb-6 text-center">
-        <p className="font-mono text-sm uppercase tracking-wider text-gray-600">
+        <p className="font-mono text-sm font-medium uppercase tracking-wider text-gray-600">
           {formatMatchDate(match.kickoffAt)} · {location} · {formatMatchTime(match.kickoffAt)}
         </p>
       </div>
