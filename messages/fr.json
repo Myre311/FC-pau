@@ -1,0 +1,102 @@
+{
+  "nav": {
+    "team": "Équipe pro",
+    "calendar": "Calendrier",
+    "tickets": "Billetterie",
+    "shop": "Boutique",
+    "club": "Club",
+    "academy": "Academy",
+    "news": "Actus",
+    "partners": "Partenaires",
+    "gallery": "Galerie",
+    "videos": "Vidéos"
+  },
+  "tickets_menu": {
+    "buy": "Acheter des places",
+    "cashless": "Carte Cashless",
+    "offers": "Offres",
+    "faq": "FAQ"
+  },
+  "club_menu": {
+    "presentation": "Présentation",
+    "history": "Histoire",
+    "contact": "Contact"
+  },
+  "academy_menu": {
+    "presentation": "Présentation",
+    "men": "Pôle masculin",
+    "women": "Pôle féminin",
+    "join": "Rejoindre",
+    "training_camps": "Stages"
+  },
+  "home": {
+    "hero_season": "Saison 2025-2026 · Ligue 2 BKT",
+    "hero_title": "Pau Football Club",
+    "hero_subtitle": "Soutenez les Sang et Or au Nouste Camp",
+    "hero_cta": "Vos places",
+    "upcoming_matches": "Prochains matchs",
+    "no_matches": "Aucun match programmé pour le moment. Le calendrier sera mis à jour prochainement.",
+    "partners_title": "Nos partenaires",
+    "newsletter_title": "Restez informé",
+    "newsletter_subtitle": "Recevez les actualités, offres exclusives et informations billetterie directement dans votre boîte mail.",
+    "newsletter_placeholder": "votre@email.fr",
+    "newsletter_submit": "S'inscrire"
+  },
+  "news": {
+    "title": "Actualités",
+    "subtitle": "Suivez toute l'actualité du Pau FC : résultats, transferts, vie du club et academy.",
+    "categories": {
+      "all": "Toutes",
+      "matchday": "Matchs",
+      "club": "Club",
+      "transfer": "Transferts",
+      "foundation": "Academy"
+    },
+    "no_articles": "Aucun article publié pour le moment.",
+    "previous": "Précédent",
+    "next": "Suivant",
+    "page": "Page"
+  },
+  "team": {
+    "title": "L'Équipe",
+    "subtitle_players": "joueurs et",
+    "subtitle_staff": "membres du staff au service d'un seul objectif : porter haut les couleurs du Béarn.",
+    "positions": {
+      "goalkeeper": "Gardiens",
+      "defender": "Défenseurs",
+      "midfielder": "Milieux",
+      "forward": "Attaquants"
+    },
+    "staff": "Staff"
+  },
+  "gallery": {
+    "title": "Galerie",
+    "subtitle": "Revivez les meilleurs moments du Pau FC : matchs, entraînements, coulisses du club.",
+    "categories": {
+      "all": "Toutes",
+      "matchday": "Matchs",
+      "training": "Entraînements",
+      "event": "Événements",
+      "stadium": "Stade"
+    },
+    "no_photos": "Aucune photo disponible pour cette catégorie."
+  },
+  "search": {
+    "placeholder": "Rechercher un article, produit ou joueur...",
+    "min_chars": "Tapez au moins 2 caractères pour rechercher",
+    "searching": "Recherche...",
+    "no_results": "Aucun résultat trouvé",
+    "articles": "Actualités",
+    "products": "Boutique",
+    "players": "Équipe",
+    "close": "Fermer"
+  },
+  "common": {
+    "close": "Fermer",
+    "open_menu": "Ouvrir le menu",
+    "search": "Rechercher",
+    "account": "Compte",
+    "cart": "Panier",
+    "loading": "Chargement..."
+  }
+}

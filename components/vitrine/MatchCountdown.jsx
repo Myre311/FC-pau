@@ -20,7 +20,7 @@ export function MatchCountdown({ match }) {
   const location = match.isHome ? 'Nouste Camp' : 'Extérieur';
 
   return (
-    <div className="card-match">
+    <div className="card-match-pau">
       {/* Header avec date/heure */}
       <div className="mb-6 text-center">
         <p className="font-mono text-sm font-medium uppercase tracking-wider text-gray-600">
@@ -56,12 +56,12 @@ export function MatchCountdown({ match }) {
       )}
 
       {/* Compétition */}
-      <div className="mb-6 flex items-center justify-center gap-2">
-        <div className="h-px flex-1 bg-gradient-to-r from-transparent via-gray-300 to-transparent" />
-        <span className="font-mono text-xs uppercase tracking-widest text-pau-blue">
+      <div className="mb-6 flex items-center justify-center gap-3">
+        <div className="h-px flex-1 bg-gray-300" />
+        <span className="badge-pau">
           {match.competition || 'Ligue 2 BKT'}
         </span>
-        <div className="h-px flex-1 bg-gradient-to-r from-transparent via-gray-300 to-transparent" />
+        <div className="h-px flex-1 bg-gray-300" />
       </div>
 
       {/* CTA Billetterie */}
@@ -69,7 +69,7 @@ export function MatchCountdown({ match }) {
         <div className="text-center">
           <Link
             href="/billetterie"
-            className="btn-primary btn-ripple inline-flex items-center gap-2"
+            className="btn-pau-accent inline-flex items-center"
           >
             <svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
               <path d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z" strokeLinecap="round" strokeLinejoin="round" />
@@ -82,18 +82,20 @@ export function MatchCountdown({ match }) {
   );
 }
 
-function TeamLogo({ name, isHome = false }) {
+function TeamLogo({ name = '???', isHome = false }) {
   return (
     <div className="flex flex-col items-center gap-3">
-      <div className={`flex h-24 w-24 items-center justify-center rounded-full border-4 transition-all md:h-32 md:w-32 ${
-        isHome ? 'border-pau-blue bg-gradient-to-br from-blue-50 to-blue-100' : 'border-gray-300 bg-gray-100'
+      <div className={`flex h-24 w-24 items-center justify-center border-4 transition-all md:h-28 md:w-28 ${
+        isHome ? 'border-nuit bg-nuit' : 'border-gray-400 bg-blanc'
       }`}>
-        <span className="font-display text-3xl font-bold md:text-4xl" style={{ color: isHome ? '#1E40AF' : '#6B7280' }}>
+        <span className={`font-display text-3xl font-black md:text-4xl ${
+          isHome ? 'text-jaune' : 'text-nuit'
+        }`}>
           {name.substring(0, 3).toUpperCase()}
         </span>
       </div>
-      <p className={`max-w-[100px] text-center font-display text-sm uppercase leading-tight md:text-base ${
-        isHome ? 'text-pau-blue' : 'text-gray-700'
+      <p className={`max-w-[100px] text-center font-display text-sm font-bold uppercase leading-tight md:text-base ${
+        isHome ? 'text-nuit' : 'text-gray-700'
       }`}>
         {name}
       </p>
@@ -103,17 +105,21 @@ function TeamLogo({ name, isHome = false }) {
 
 function VsLabel() {
   return (
-    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-pau-blue text-white">
-      <span className="font-display text-lg font-bold">VS</span>
+    <div className="flex h-12 w-12 items-center justify-center border-2 border-jaune bg-jaune text-nuit">
+      <span className="font-display text-base font-bold">VS</span>
     </div>
   );
 }
 
 function CountdownUnit({ value, label }) {
   return (
-    <div className="countdown-unit animate-countdown">
-      <div className="countdown-value">{String(value).padStart(2, '0')}</div>
-      <div className="countdown-label">{label}</div>
+    <div className="flex flex-col items-center gap-1 border-2 border-gray-300 bg-blanc px-4 py-3">
+      <div className="font-display text-3xl font-black leading-none text-nuit md:text-4xl">
+        {String(value).padStart(2, '0')}
+      </div>
+      <div className="font-mono text-xs font-bold uppercase tracking-wider text-gray-600">
+        {label}
+      </div>
     </div>
   );
 }

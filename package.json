@@ -29,6 +29,7 @@
     "seed": "node prisma/seed.js"
   },
   "dependencies": {
+    "@next/third-parties": "^16.2.4",
     "@prisma/client": "5.22.0",
     "@react-three/drei": "9.114.0",
     "@react-three/fiber": "8.17.10",
@@ -39,8 +40,10 @@
     "clsx": "2.1.1",
     "dotenv": "^17.4.2",
     "next": "14.2.18",
+    "next-intl": "^4.9.1",
     "react": "18.3.1",
     "react-dom": "18.3.1",
+    "recharts": "^3.8.1",
     "stripe": "17.4.0",
     "three": "0.169.0",
     "zod": "3.23.8",

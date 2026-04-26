@@ -149,7 +149,6 @@ export function NewsletterModal() {
                 }}
                 variant="primary"
                 size="lg"
-                cornerCut
                 className="w-full"
               >
                 Continuer
@@ -205,10 +204,9 @@ export function NewsletterModal() {
                   disabled={pending}
                   variant="primary"
                   size="lg"
-                  cornerCut
                   className="w-full"
                 >
-                  {pending ? 'Envoi…' : 'Je m’abonne'}
+                  {pending ? "Envoi..." : "Je m’abonne"}
                 </Button>
                 <button
                   type="button"
@@ -228,8 +226,7 @@ export function NewsletterModal() {
               </p>
               <p className="font-sans text-sm text-blanc/80">
                 Un email vient de partir vers <strong className="text-blanc">{email}</strong>.
-                Cliquez sur le lien pour valider votre inscription (RGPD —
-                double opt-in).
+                Cliquez sur le lien pour valider votre inscription (RGPD - double opt-in).
               </p>
               <p className="font-sans text-xs text-blanc/50">
                 Vous gérerez vos préférences à tout moment depuis votre{' '}

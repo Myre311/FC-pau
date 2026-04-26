@@ -1,0 +1,102 @@
+{
+  "nav": {
+    "team": "Equipo",
+    "calendar": "Calendario",
+    "tickets": "Entradas",
+    "shop": "Tienda",
+    "club": "Club",
+    "academy": "Academia",
+    "news": "Noticias",
+    "partners": "Socios",
+    "gallery": "Galería",
+    "videos": "Vídeos"
+  },
+  "tickets_menu": {
+    "buy": "Comprar Entradas",
+    "cashless": "Tarjeta Cashless",
+    "offers": "Ofertas",
+    "faq": "FAQ"
+  },
+  "club_menu": {
+    "presentation": "Presentación",
+    "history": "Historia",
+    "contact": "Contacto"
+  },
+  "academy_menu": {
+    "presentation": "Presentación",
+    "men": "Academia Masculina",
+    "women": "Academia Femenina",
+    "join": "Únete",
+    "training_camps": "Etapas"
+  },
+  "home": {
+    "hero_season": "Temporada 2025-2026 · Ligue 2 BKT",
+    "hero_title": "Pau Football Club",
+    "hero_subtitle": "Apoya a los Sang et Or en Nouste Camp",
+    "hero_cta": "Tus Entradas",
+    "upcoming_matches": "Próximos Partidos",
+    "no_matches": "Ningún partido programado por el momento. El calendario se actualizará pronto.",
+    "partners_title": "Nuestros Socios",
+    "newsletter_title": "Mantente Informado",
+    "newsletter_subtitle": "Recibe noticias, ofertas exclusivas e información sobre entradas directamente en tu correo.",
+    "newsletter_placeholder": "tu@email.com",
+    "newsletter_submit": "Suscribirse"
+  },
+  "news": {
+    "title": "Noticias",
+    "subtitle": "Sigue todas las noticias del Pau FC: resultados, fichajes, vida del club y academia.",
+    "categories": {
+      "all": "Todas",
+      "matchday": "Partidos",
+      "club": "Club",
+      "transfer": "Fichajes",
+      "foundation": "Academia"
+    },
+    "no_articles": "Ningún artículo publicado todavía.",
+    "previous": "Anterior",
+    "next": "Siguiente",
+    "page": "Página"
+  },
+  "team": {
+    "title": "El Equipo",
+    "subtitle_players": "jugadores y",
+    "subtitle_staff": "miembros del cuerpo técnico al servicio de un solo objetivo: llevar en alto los colores de Béarn.",
+    "positions": {
+      "goalkeeper": "Porteros",
+      "defender": "Defensas",
+      "midfielder": "Centrocampistas",
+      "forward": "Delanteros"
+    },
+    "staff": "Cuerpo Técnico"
+  },
+  "gallery": {
+    "title": "Galería",
+    "subtitle": "Revive los mejores momentos del Pau FC: partidos, entrenamientos, detrás de escena.",
+    "categories": {
+      "all": "Todas",
+      "matchday": "Partidos",
+      "training": "Entrenamientos",
+      "event": "Eventos",
+      "stadium": "Estadio"
+    },
+    "no_photos": "No hay fotos disponibles para esta categoría."
+  },
+  "search": {
+    "placeholder": "Buscar un artículo, producto o jugador...",
+    "min_chars": "Escribe al menos 2 caracteres para buscar",
+    "searching": "Buscando...",
+    "no_results": "No se encontraron resultados",
+    "articles": "Noticias",
+    "products": "Tienda",
+    "players": "Equipo",
+    "close": "Cerrar"
+  },
+  "common": {
+    "close": "Cerrar",
+    "open_menu": "Abrir menú",
+    "search": "Buscar",
+    "account": "Cuenta",
+    "cart": "Carrito",
+    "loading": "Cargando..."
+  }
+}

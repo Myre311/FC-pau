@@ -8,46 +8,44 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // LIGHT MODE - Palette Pau FC Officielle
-        // Couleurs principales
-        'pau-blue': '#1E40AF',      // Bleu primaire club (bleu 700)
-        'pau-blue-dark': '#1E3A8A', // Bleu foncé (bleu 800)
-        'pau-blue-light': '#3B82F6', // Bleu clair (bleu 500)
+        // CHARTE OFFICIELLE PAU FC
+        nuit: '#04091D',       // Header, footer, fond boutique (noir bleuté)
+        primaire: '#1A1D38',   // Surfaces identité club (bleu nuit)
+        jaune: '#FFCC00',      // Accent identité club (jaune vif)
+        dore: '#CBA74D',       // EXCLUSIVEMENT espace partenaires
+        blanc: '#FFFFFF',      // Fonds clairs
 
-        // Backgrounds
-        white: '#FFFFFF',
+        // BLEUS DOMINANTS (couleur principale)
+        'blue-600': '#1E40AF',
+        'blue-700': '#1E3A8A',
+        'blue-800': '#1E3A8A',
+        'blue-900': '#1E3A8A',
+
+        // Nuances pour interfaces
+        'nuit-soft': '#0A1028',
+        'primaire-light': '#252A48',
+
+        // Grays neutres
         'gray-50': '#F9FAFB',
         'gray-100': '#F3F4F6',
         'gray-200': '#E5E7EB',
-
-        // Textes
-        'gray-900': '#111827',
-        'gray-800': '#1F2937',
-        'gray-700': '#374151',
-        'gray-600': '#4B5563',
-        'gray-500': '#6B7280',
-        'gray-400': '#9CA3AF',
         'gray-300': '#D1D5DB',
+        'gray-400': '#9CA3AF',
+        'gray-500': '#6B7280',
+        'gray-600': '#4B5563',
+        'gray-700': '#374151',
+        'gray-800': '#1F2937',
+        'gray-900': '#111827',
 
-        // Accents bleu
-        'blue-50': '#EFF6FF',
-        'blue-100': '#DBEAFE',
-        'blue-200': '#BFDBFE',
-        'blue-600': '#2563EB',
-
-        // Accents fonctionnels
+        // Fonctionnels
         'red-500': '#EF4444',
         'green-500': '#10B981',
         'orange-500': '#F97316',
-
-        // Aliases legacy (pour compatibilité)
-        primaire: '#1E40AF',
-        accent: '#3B82F6',
       },
       fontFamily: {
-        display: ['var(--font-poppins)', 'system-ui', 'sans-serif'],
-        sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
-        mono: ['var(--font-roboto-mono)', 'ui-monospace', 'monospace'],
+        display: ['var(--font-display)', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],
+        mono: ['var(--font-mono)', 'ui-monospace', 'monospace'],
       },
       letterSpacing: {
         tightest: '-0.03em',

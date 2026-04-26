@@ -1,32 +1,33 @@
-import { Poppins, Inter, Roboto_Mono } from 'next/font/google';
+import { Big_Shoulders_Display, Instrument_Sans, DM_Mono } from 'next/font/google';
+import { GoogleAnalytics } from '@next/third-parties/google';
 
 import { OrganizationJsonLd } from '@/components/seo/OrganizationJsonLd';
 
 import './globals.css';
 
-// Poppins - Titres modernes sportifs (style Barça)
-const poppins = Poppins({
+// Big Shoulders Display - Titres (sport, condensed, musclé)
+const bigShoulders = Big_Shoulders_Display({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700', '800', '900'],
-  variable: '--font-poppins',
+  variable: '--font-display',
   display: 'swap',
   preload: true,
 });
 
-// Inter - Corps de texte professionnel
-const inter = Inter({
+// Instrument Sans - Corps de texte
+const instrumentSans = Instrument_Sans({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
-  variable: '--font-inter',
+  variable: '--font-sans',
   display: 'swap',
   preload: true,
 });
 
-// Roboto Mono - Détails techniques
-const robotoMono = Roboto_Mono({
+// DM Mono - Détails techniques, badges, numéros
+const dmMono = DM_Mono({
   subsets: ['latin'],
-  weight: ['400', '500', '600'],
-  variable: '--font-roboto-mono',
+  weight: ['400', '500'],
+  variable: '--font-mono',
   display: 'swap',
   preload: false,
 });
@@ -47,6 +48,12 @@ export const metadata = {
     follow: true,
     googleBot: { index: true, follow: true, 'max-image-preview': 'large' },
   },
+  manifest: '/manifest.json',
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'black-translucent',
+    title: 'FC Pau',
+  },
 };
 
 export const viewport = {
@@ -59,11 +66,14 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="fr"
-      className={`${poppins.variable} ${inter.variable} ${robotoMono.variable}`}
+      className={`${bigShoulders.variable} ${instrumentSans.variable} ${dmMono.variable}`}
     >
       <body>
         {children}
         <OrganizationJsonLd />
+        {process.env.NEXT_PUBLIC_GA_ID && (
+          <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
+        )}
       </body>
     </html>
   );

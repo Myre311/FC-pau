@@ -1,0 +1,50 @@
+{
+  "name": "FC Pau - Football Club Officiel",
+  "short_name": "FC Pau",
+  "description": "Site officiel du Pau FC. Actualités, billetterie, boutique et résultats en direct.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#04091D",
+  "theme_color": "#04091D",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["sports", "entertainment"],
+  "lang": "fr-FR",
+  "dir": "ltr",
+  "shortcuts": [
+    {
+      "name": "Billetterie",
+      "short_name": "Billets",
+      "description": "Acheter vos places",
+      "url": "/billetterie",
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Boutique",
+      "short_name": "Shop",
+      "description": "Produits officiels",
+      "url": "/boutique",
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Actualités",
+      "short_name": "Actus",
+      "description": "Dernières news",
+      "url": "/actualites",
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
+    }
+  ]
+}

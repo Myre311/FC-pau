@@ -6,15 +6,17 @@ import { cn } from '@/lib/utils';
 
 const VARIANTS = {
   primary:
-    'bg-pau-blue text-white rounded-lg shadow-sm hover:bg-pau-blue-dark hover:shadow-blue-medium hover:-translate-y-0.5',
+    'border-2 border-nuit bg-nuit text-blanc hover:bg-primaire hover:border-primaire',
   secondary:
-    'bg-white text-pau-blue border-2 border-pau-blue rounded-lg hover:bg-pau-blue hover:text-white hover:-translate-y-0.5',
+    'border-2 border-nuit bg-blanc text-nuit hover:bg-nuit hover:text-blanc',
   outline:
-    'bg-transparent text-pau-blue border-2 border-pau-blue rounded-lg hover:bg-pau-blue/5 hover:border-pau-blue-dark hover:-translate-y-0.5',
+    'border-2 border-nuit bg-transparent text-nuit hover:bg-nuit/5',
+  accent:
+    'border-2 border-jaune bg-jaune text-nuit hover:bg-nuit hover:border-nuit hover:text-jaune',
   ghost:
-    'bg-transparent text-gray-700 border border-gray-300 rounded-lg hover:border-gray-400 hover:bg-gray-50 hover:-translate-y-0.5',
+    'border border-gray-300 bg-transparent text-gray-700 hover:bg-gray-50',
   danger:
-    'bg-red-500 text-white rounded-lg shadow-sm hover:bg-red-600 hover:shadow-md hover:-translate-y-0.5',
+    'border-2 border-red-500 bg-red-500 text-white hover:bg-red-600 hover:border-red-600',
 };
 
 const SIZES = {
@@ -26,7 +28,6 @@ const SIZES = {
 export function Button({
   variant = 'primary',
   size = 'md',
-  cornerCut = false,
   className,
   children,
   ...props
@@ -34,14 +35,13 @@ export function Button({
   return (
     <button
       className={cn(
-        'inline-flex items-center justify-center gap-[10px] font-display uppercase tracking-[0.08em]',
-        'transition-[transform,box-shadow,background-color,border-color,color] duration-200 ease-[cubic-bezier(0.16,1,0.3,1)]',
-        'active:scale-[.97]',
-        'disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:translate-y-0',
-        'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-jaune focus-visible:ring-offset-2 focus-visible:ring-offset-nuit',
+        'inline-flex items-center justify-center gap-3 font-display font-bold uppercase tracking-wide',
+        'transition-all duration-200',
+        'active:scale-[.98]',
+        'disabled:opacity-40 disabled:cursor-not-allowed',
+        'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pau-blue focus-visible:ring-offset-2',
         VARIANTS[variant],
         SIZES[size],
-        cornerCut && 'clip-cta-md',
         className,
       )}
       {...props}

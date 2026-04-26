@@ -1,0 +1,102 @@
+{
+  "nav": {
+    "team": "Team",
+    "calendar": "Calendar",
+    "tickets": "Tickets",
+    "shop": "Shop",
+    "club": "Club",
+    "academy": "Academy",
+    "news": "News",
+    "partners": "Partners",
+    "gallery": "Gallery",
+    "videos": "Videos"
+  },
+  "tickets_menu": {
+    "buy": "Buy Tickets",
+    "cashless": "Cashless Card",
+    "offers": "Offers",
+    "faq": "FAQ"
+  },
+  "club_menu": {
+    "presentation": "About",
+    "history": "History",
+    "contact": "Contact"
+  },
+  "academy_menu": {
+    "presentation": "About",
+    "men": "Men's Academy",
+    "women": "Women's Academy",
+    "join": "Join Us",
+    "training_camps": "Training Camps"
+  },
+  "home": {
+    "hero_season": "Season 2025-2026 · Ligue 2 BKT",
+    "hero_title": "Pau Football Club",
+    "hero_subtitle": "Support the Sang et Or at Nouste Camp",
+    "hero_cta": "Get Tickets",
+    "upcoming_matches": "Upcoming Matches",
+    "no_matches": "No upcoming matches at the moment. The calendar will be updated soon.",
+    "partners_title": "Our Partners",
+    "newsletter_title": "Stay Informed",
+    "newsletter_subtitle": "Receive news, exclusive offers and ticket information directly in your inbox.",
+    "newsletter_placeholder": "your@email.com",
+    "newsletter_submit": "Subscribe"
+  },
+  "news": {
+    "title": "News",
+    "subtitle": "Follow all Pau FC news: results, transfers, club life and academy.",
+    "categories": {
+      "all": "All",
+      "matchday": "Matches",
+      "club": "Club",
+      "transfer": "Transfers",
+      "foundation": "Academy"
+    },
+    "no_articles": "No articles published yet.",
+    "previous": "Previous",
+    "next": "Next",
+    "page": "Page"
+  },
+  "team": {
+    "title": "The Team",
+    "subtitle_players": "players and",
+    "subtitle_staff": "staff members serving one goal: proudly representing Béarn.",
+    "positions": {
+      "goalkeeper": "Goalkeepers",
+      "defender": "Defenders",
+      "midfielder": "Midfielders",
+      "forward": "Forwards"
+    },
+    "staff": "Staff"
+  },
+  "gallery": {
+    "title": "Gallery",
+    "subtitle": "Relive the best Pau FC moments: matches, training sessions, behind the scenes.",
+    "categories": {
+      "all": "All",
+      "matchday": "Matches",
+      "training": "Training",
+      "event": "Events",
+      "stadium": "Stadium"
+    },
+    "no_photos": "No photos available for this category."
+  },
+  "search": {
+    "placeholder": "Search for an article, product or player...",
+    "min_chars": "Type at least 2 characters to search",
+    "searching": "Searching...",
+    "no_results": "No results found",
+    "articles": "News",
+    "products": "Shop",
+    "players": "Team",
+    "close": "Close"
+  },
+  "common": {
+    "close": "Close",
+    "open_menu": "Open menu",
+    "search": "Search",
+    "account": "Account",
+    "cart": "Cart",
+    "loading": "Loading..."
+  }
+}
