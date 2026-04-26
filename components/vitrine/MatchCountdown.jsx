@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { formatDate } from '@/lib/format';
+import { TeamLogo } from '@/components/vitrine/TeamLogo';
 
 // Composant compte à rebours pour un match
 export function MatchCountdown({ match }) {
@@ -82,52 +83,7 @@ export function MatchCountdown({ match }) {
   );
 }
 
-function TeamLogo({ name = '???', isHome = false }) {
-  // Liste des logos disponibles (à étendre avec de vrais logos)
-  const teamLogos = {
-    'Pau FC': '🔵🟡', // Remplacer par <Image src="/logos/pau.svg" />
-    'Paris FC': '🔵⚪',
-    'Guingamp': '🔴⚫',
-    'Ajaccio': '⚪🔴',
-    'Bastia': '🔵⚪',
-    'Caen': '🔴🔵',
-    'Grenoble': '🔵⚪',
-    'Laval': '🟠⚪',
-    'Annecy': '🔴⚪',
-    'Amiens': '⚪🔵',
-    'Rodez': '🔴🟡',
-    'Troyes': '🔵⚪',
-    'Dunkerque': '🔵⚪',
-    'Martigues': '🔵⚪',
-    'Lorient': '🟠⚫',
-    'Red Star': '🟢⚪',
-  };
-
-  const logo = teamLogos[name];
-
-  return (
-    <div className="flex flex-col items-center gap-3">
-      <div className={`relative flex h-24 w-24 items-center justify-center overflow-hidden rounded-full border-4 transition-all md:h-28 md:w-28 ${
-        isHome ? 'border-jaune bg-nuit' : 'border-blanc/30 bg-blanc/10'
-      }`}>
-        {logo ? (
-          <span className="text-3xl md:text-4xl">{logo}</span>
-        ) : (
-          <span className={`font-display text-2xl font-black md:text-3xl ${
-            isHome ? 'text-jaune' : 'text-blanc'
-          }`}>
-            {name.substring(0, 3).toUpperCase()}
-          </span>
-        )}
-      </div>
-      <p className={`max-w-[100px] text-center font-display text-xs font-bold uppercase leading-tight md:text-sm ${
-        isHome ? 'text-jaune' : 'text-blanc/70'
-      }`}>
-        {name}
-      </p>
-    </div>
-  );
-}
+// TeamLogo importé depuis composant dédié
 
 function VsLabel() {
   return (

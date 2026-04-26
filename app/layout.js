@@ -68,7 +68,7 @@ export default function RootLayout({ children }) {
       lang="fr"
       className={`${bigShoulders.variable} ${instrumentSans.variable} ${dmMono.variable}`}
     >
-      <body>
+      <body className="font-sans antialiased">
         {children}
         <OrganizationJsonLd />
         {process.env.NEXT_PUBLIC_GA_ID && (

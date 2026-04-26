@@ -1,6 +1,5 @@
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
-import { Topbar } from '@/components/layout/Topbar';
 import { SecondaryNavbar } from '@/components/layout/SecondaryNavbar';
 import { LoaderScreen } from '@/components/layout/LoaderScreen';
 import { CartDrawer } from '@/components/shop/CartDrawer';
@@ -13,10 +12,7 @@ export default function PublicLayout({ children }) {
       <SkipToContent />
       <LoaderScreen />
 
-      {/* Bandeau livraison */}
-      <Topbar />
-
-      {/* Navbar principale sticky */}
+      {/* Navbar principale sticky (sans topbar) */}
       <div className="sticky top-0 z-50">
         <Header />
         <SecondaryNavbar />

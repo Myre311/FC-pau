@@ -1,6 +1,7 @@
 import { prisma } from '@/lib/prisma';
 import { ProductCard } from '@/components/shop/ProductCard';
 import { CategoryNav } from '@/components/shop/CategoryNav';
+import { Topbar } from '@/components/layout/Topbar';
 
 export const metadata = {
   title: 'Boutique',
@@ -28,6 +29,11 @@ export default async function BoutiquePage() {
 
   return (
     <>
+      {/* Bandeau livraison 120€ - uniquement sur la boutique */}
+      <div className="sticky top-[calc(theme(spacing.16)+theme(spacing.14))] z-40 md:top-[calc(theme(spacing.20)+theme(spacing.16))]">
+        <Topbar />
+      </div>
+
       {/* Navigation catégories */}
       <CategoryNav />
 

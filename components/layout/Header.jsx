@@ -150,18 +150,23 @@ export function Header() {
 
           {/* Actions */}
           <div className="flex items-center gap-2">
-            {/* Bouton vidéo YouTube - BIEN VISIBLE */}
+            {/* Bouton vidéo YouTube - TRÈS VISIBLE */}
             <button
               type="button"
               onClick={() => setVideoOpen(true)}
-              className="flex h-10 items-center gap-2 border-2 border-jaune bg-jaune px-4 font-display text-xs font-bold uppercase tracking-wide text-nuit transition-all hover:bg-transparent hover:text-jaune md:h-12 md:px-6 md:text-sm"
-              aria-label="Voir la vidéo officielle"
-              title="Vidéo officielle FC Pau"
+              className="group relative flex h-12 items-center gap-2 overflow-hidden border-2 border-jaune bg-jaune px-5 font-display text-sm font-black uppercase tracking-wider text-nuit shadow-lg shadow-jaune/50 transition-all hover:scale-105 hover:shadow-xl hover:shadow-jaune/60 md:h-14 md:px-8 md:text-base"
+              aria-label="Voir la vidéo officielle FC Pau"
             >
-              <svg className="h-4 w-4 md:h-5 md:w-5" fill="currentColor" viewBox="0 0 24 24">
+              {/* Animation pulse sur l'icône */}
+              <svg className="h-5 w-5 animate-pulse md:h-6 md:w-6" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M8 5v14l11-7z" />
               </svg>
-              <span className="hidden md:inline">Vidéo</span>
+              <span className="font-black">VIDÉO</span>
+
+              {/* Badge "NOUVEAU" */}
+              <span className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-red-500 text-[8px] font-bold text-white">
+                ●
+              </span>
             </button>
 
             {/* Bouton recherche */}
