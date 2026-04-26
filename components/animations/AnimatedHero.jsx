@@ -23,9 +23,7 @@ export function AnimatedHero() {
         animate={{ opacity: 1 }}
         transition={{ duration: 1.2, ease: "easeOut" }}
       >
-        {/* OPTION 1: Vidéo MP4 hébergée (recommandé) */}
-        {/* Placer la vidéo dans /public/videos/hero.mp4 */}
-        {/*
+        {/* Vidéo MP4 hébergée */}
         <video
           autoPlay
           muted
@@ -35,27 +33,6 @@ export function AnimatedHero() {
         >
           <source src="/videos/hero.mp4" type="video/mp4" />
         </video>
-        */}
-
-        {/* OPTION 2: Dégradé animé en attendant (actuel) */}
-        <div className="absolute inset-0">
-          {/* Dégradé de fond */}
-          <div className="h-full w-full bg-gradient-to-br from-[#1a1d38] via-[#262646] to-[#04091D]" />
-
-          {/* Animation subtile */}
-          <motion.div
-            className="absolute inset-0 bg-gradient-to-tr from-jaune/5 via-transparent to-transparent"
-            animate={{
-              opacity: [0.3, 0.5, 0.3],
-              scale: [1, 1.1, 1],
-            }}
-            transition={{
-              duration: 8,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-        </div>
 
         {/* Overlay pour lisibilité du texte */}
         <motion.div
