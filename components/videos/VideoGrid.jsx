@@ -94,7 +94,7 @@ function VideoCard({ video, onClick }) {
         )}
         {video.views > 0 && (
           <p className="mt-3 font-mono text-xs text-gray-500">
-            👁️ {video.views.toLocaleString()} vues
+            ️ {video.views.toLocaleString()} vues
           </p>
         )}
       </div>

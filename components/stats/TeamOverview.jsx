@@ -1,10 +1,10 @@
 export function TeamOverview({ stats }) {
   const metrics = [
-    { label: 'Buts marqués', value: stats.goals, icon: '⚽' },
-    { label: 'Passes décisives', value: stats.assists, icon: '🎯' },
-    { label: 'Cartons jaunes', value: stats.yellowCards, icon: '🟨' },
-    { label: 'Cartons rouges', value: stats.redCards, icon: '🟥' },
-    { label: 'Matchs joués', value: stats.matchesPlayed, icon: '📅' },
+    { label: 'Buts marqués', value: stats.goals, icon: '' },
+    { label: 'Passes décisives', value: stats.assists, icon: '' },
+    { label: 'Cartons jaunes', value: stats.yellowCards, icon: '' },
+    { label: 'Cartons rouges', value: stats.redCards, icon: '' },
+    { label: 'Matchs joués', value: stats.matchesPlayed, icon: '' },
   ];
 
   return (

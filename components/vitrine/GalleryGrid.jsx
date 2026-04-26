@@ -23,7 +23,7 @@ export function GalleryGrid({ photos }) {
             />
             {photo.featured && (
               <div className="absolute right-2 top-2 bg-jaune px-2 py-1 font-mono text-xs font-bold uppercase text-nuit">
-                ★
+                
               </div>
             )}
           </button>

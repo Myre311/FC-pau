@@ -59,32 +59,26 @@ export default function CashlessPage() {
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 lg:gap-12">
           <AvantageCard
-            icon="⚡"
             title="Rapidité"
             description="File d'attente réduite : paye en 2 secondes au lieu de chercher de la monnaie."
           />
           <AvantageCard
-            icon="🔒"
             title="Sécurité"
             description="Zéro risque de perte ou vol d'espèces. Carte bloquable depuis ton compte en cas de perte."
           />
           <AvantageCard
-            icon="💰"
             title="Remboursable"
             description="Solde non utilisé remboursé à tout moment. Aucune perte d'argent."
           />
           <AvantageCard
-            icon="🎁"
             title="Offres exclusives"
             description="Promos et bons plans réservés aux détenteurs de carte cashless."
           />
           <AvantageCard
-            icon="📱"
             title="Application mobile"
             description="Consulte ton solde, recharge ta carte et gère tes dépenses depuis l'app."
           />
           <AvantageCard
-            icon="🌍"
             title="Écologique"
             description="Moins de plastique jetable, moins de papier. Un geste pour la planète."
           />
@@ -228,7 +222,7 @@ function Step({ number, title, description }) {
 function AvantageCard({ icon, title, description }) {
   return (
     <div>
-      <div className="text-5xl">{icon}</div>
+      
       <h3 className="mt-4 font-display text-2xl uppercase leading-tight tracking-tight text-blanc md:text-3xl">
         {title}
       </h3>

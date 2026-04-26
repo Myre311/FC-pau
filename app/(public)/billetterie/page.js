@@ -176,12 +176,12 @@ export default async function BilletteriePage() {
             </h3>
             <div className="mt-4 space-y-3 font-sans text-base text-blanc/75">
               <p>
-                ❌ Interdiction de fumigènes, pétards, objets dangereux
+                 Interdiction de fumigènes, pétards, objets dangereux
               </p>
-              <p>❌ Pas de bouteilles en verre</p>
-              <p>❌ Interdiction d'introduire de la nourriture extérieure</p>
-              <p>✅ Contrôle de sécurité à l'entrée obligatoire</p>
-              <p>✅ Billet dématérialisé (QR code) sur smartphone ou papier</p>
+              <p> Pas de bouteilles en verre</p>
+              <p> Interdiction d'introduire de la nourriture extérieure</p>
+              <p> Contrôle de sécurité à l'entrée obligatoire</p>
+              <p> Billet dématérialisé (QR code) sur smartphone ou papier</p>
             </div>
           </div>
         </div>

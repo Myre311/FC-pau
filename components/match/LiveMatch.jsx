@@ -41,13 +41,13 @@ export function LiveMatch({ match, events = [] }) {
   ).length;
 
   const EVENT_ICONS = {
-    goal: '⚽',
-    penalty: '⚽',
-    yellow_card: '🟨',
-    red_card: '🟥',
-    substitution: '🔄',
-    var: '📺',
-    own_goal: '⚽',
+    goal: '',
+    penalty: '',
+    yellow_card: '',
+    red_card: '',
+    substitution: '',
+    var: '',
+    own_goal: '',
   };
 
   return (

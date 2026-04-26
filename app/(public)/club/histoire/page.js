@@ -143,7 +143,7 @@ export default function HistoirePage() {
           </div>
 
           <div className="group relative overflow-hidden border border-blanc/10 bg-gradient-to-br from-primaire/50 to-nuit p-10 transition-all duration-400 hover:border-jaune/30 hover:shadow-card-hover md:p-12">
-            <span className="absolute right-4 top-4 font-display text-[100px] leading-none text-blanc/5">⚽</span>
+            <span className="absolute right-4 top-4 font-display text-[100px] leading-none text-blanc/5"></span>
             <h2 className="relative z-10 font-display text-[clamp(32px,5vw,52px)] uppercase leading-crush tracking-display-tight text-blanc">
               Nouste<br />Camp
             </h2>
