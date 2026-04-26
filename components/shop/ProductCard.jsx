@@ -6,7 +6,7 @@ import { formatPrice } from '@/lib/format';
 // Carte produit — port direct de la maquette HTML (.pc).
 // Clip-path bottom-right + border + glow card-hover + image scale + overlay
 // "Voir le produit" + tag rupture/featured + initiale géante en filigrane.
-export function ProductCard({ product }) {
+export function ProductCard({ product, featured = false }) {
   const totalStock = product.variants?.reduce(
     (sum, v) => sum + (v.stockItem?.onHand ?? 0),
     0,
@@ -14,14 +14,18 @@ export function ProductCard({ product }) {
   const isOut = totalStock === 0;
   const initial = product.name?.[0]?.toUpperCase() ?? 'F';
 
+  const cardHeight = featured ? 'min-h-[520px]' : '';
+  const hoverTranslate = featured ? 'hover:-translate-y-[14px]' : 'hover:-translate-y-[12px]';
+  const cardShadow = featured ? 'hover:shadow-card-hover-strong' : 'hover:shadow-card-hover';
+
   return (
     <Link
       href={`/boutique/${product.slug}`}
-      className="group block outline-none focus-visible:ring-2 focus-visible:ring-jaune"
+      className="group block outline-none focus-visible:ring-2 focus-visible:ring-jaune focus-visible:ring-offset-4"
       aria-label={`${product.name} — ${formatPrice(product.basePrice)}`}
     >
       <article
-        className="clip-card relative cursor-pointer overflow-hidden border border-blanc/[0.07] bg-gradient-to-br from-[#141728] to-[#0c0f1e] transition-[border-color,box-shadow,transform] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-[7px] hover:border-jaune/30 hover:shadow-card-hover"
+        className={`clip-card relative cursor-pointer overflow-hidden border border-blanc/[0.07] bg-gradient-to-br from-[#141728] to-[#0c0f1e] transition-[border-color,box-shadow,transform] duration-400 ease-premium ${hoverTranslate} hover:border-jaune/40 ${cardShadow} ${cardHeight}`}
       >
         <div className="relative flex aspect-square items-center justify-center overflow-hidden bg-gradient-to-br from-[#18213c] to-[#0b1020]">
           {product.images?.[0] ? (
@@ -74,21 +78,21 @@ export function ProductCard({ product }) {
           </div>
         </div>
 
-        <div className="px-4 pb-4 pt-[14px]">
+        <div className={`px-4 pb-4 ${featured ? 'pt-5' : 'pt-[14px]'}`}>
           {product.category?.name && (
-            <p className="mb-[5px] font-mono text-[8.5px] uppercase tracking-[0.16em] text-blanc/20">
+            <p className={`mb-[5px] font-mono uppercase tracking-[0.16em] text-blanc/40 ${featured ? 'text-[9.5px]' : 'text-[8.5px]'}`}>
               {product.category.name}
             </p>
           )}
-          <h3 className="mb-[13px] font-display text-[16px] uppercase leading-[1.05] tracking-[0.02em] text-blanc">
+          <h3 className={`mb-[13px] font-display uppercase leading-crush-soft tracking-[0.02em] text-blanc ${featured ? 'text-[19px]' : 'text-[16px]'}`}>
             {product.name}
           </h3>
           <div className="flex items-center justify-between">
-            <p className="font-display text-[21px] leading-none text-jaune">
+            <p className={`font-display leading-none text-jaune ${featured ? 'text-[26px]' : 'text-[21px]'}`}>
               {formatPrice(product.basePrice)}
             </p>
-            <span className="clip-cta flex h-[31px] w-[31px] items-center justify-center border border-jaune/20 bg-jaune/[0.08] transition-colors group-hover:border-jaune group-hover:bg-jaune">
-              <svg viewBox="0 0 24 24" className="h-[13px] w-[13px] stroke-jaune transition-colors group-hover:stroke-nuit" fill="none" strokeWidth="2.5" aria-hidden="true">
+            <span className={`clip-cta flex items-center justify-center border border-jaune/20 bg-jaune/[0.08] transition-all duration-300 group-hover:border-jaune group-hover:bg-jaune group-hover:scale-110 ${featured ? 'h-[36px] w-[36px]' : 'h-[31px] w-[31px]'}`}>
+              <svg viewBox="0 0 24 24" className={`stroke-jaune transition-colors group-hover:stroke-nuit ${featured ? 'h-[15px] w-[15px]' : 'h-[13px] w-[13px]'}`} fill="none" strokeWidth="2.5" aria-hidden="true">
                 <path d="M12 5v14M5 12h14" strokeLinecap="square" />
               </svg>
             </span>

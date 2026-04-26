@@ -39,13 +39,13 @@ export default async function BoutiquePage() {
         </p>
       </section>
 
-      <section className="container-fc pb-24">
-        <div className="mb-8 flex items-end justify-between border-b border-blanc/10 pb-5">
+      <section className="container-fc pb-32">
+        <div className="mb-12 flex items-end justify-between border-b border-blanc/10 pb-6">
           <h2 className="font-mono text-[11px] uppercase tracking-[0.2em] text-jaune">
             {products.length} produit{products.length > 1 ? 's' : ''}
           </h2>
           {featured.length > 0 && (
-            <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-blanc/40">
+            <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-blanc/60">
               {featured.length} mis{featured.length > 1 ? 'es' : 'e'} en avant
             </span>
           )}
@@ -54,14 +54,76 @@ export default async function BoutiquePage() {
         {products.length === 0 ? (
           <EmptyCatalog />
         ) : (
-          <div className="grid grid-cols-1 gap-x-4 gap-y-12 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            {products.map((p) => (
-              <ProductCard key={p.id} product={p} />
-            ))}
-          </div>
+          <AsymmetricProductGrid products={products} />
         )}
       </section>
     </>
+  );
+}
+
+// Grille asymétrique Nike-level : featured items en 2-col span, pattern varié
+function AsymmetricProductGrid({ products }) {
+  const featured = products.filter(p => p.featured);
+  const regular = products.filter(p => !p.featured);
+
+  return (
+    <div className="space-y-16">
+      {/* Featured products - large cards */}
+      {featured.length > 0 && (
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:gap-10">
+          {featured.slice(0, 2).map((p, idx) => (
+            <div
+              key={p.id}
+              className="animate-fade-up"
+              style={{ animationDelay: `${idx * 0.15}s` }}
+            >
+              <ProductCard product={p} featured />
+            </div>
+          ))}
+        </div>
+      )}
+
+      {/* Regular products - asymmetric grid pattern */}
+      {regular.length > 0 && (
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+          {regular.map((p, idx) => {
+            // Pattern 2-1-1 / 1-2-1 / 1-1-2
+            const spanClass = (() => {
+              const position = idx % 9;
+              if (position === 0 || position === 4 || position === 8) {
+                return 'lg:col-span-2';
+              }
+              return '';
+            })();
+
+            return (
+              <div
+                key={p.id}
+                className={`animate-fade-up ${spanClass}`}
+                style={{ animationDelay: `${(idx + featured.length) * 0.08}s` }}
+              >
+                <ProductCard product={p} />
+              </div>
+            );
+          })}
+        </div>
+      )}
+
+      {/* Remaining featured if more than 2 */}
+      {featured.length > 2 && (
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:gap-10">
+          {featured.slice(2).map((p, idx) => (
+            <div
+              key={p.id}
+              className="animate-fade-up"
+              style={{ animationDelay: `${(idx + regular.length + 2) * 0.1}s` }}
+            >
+              <ProductCard product={p} featured />
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
   );
 }
 
@@ -71,9 +133,9 @@ function EmptyCatalog() {
       <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-jaune">
         Catalogue vide
       </p>
-      <p className="mt-4 font-sans text-blanc/60">
+      <p className="mt-4 font-sans text-blanc/85">
         Aucun produit publié pour le moment. Lance le seed (
-        <code className="font-mono text-blanc">npm run db:seed</code>) pour
+        <code className="font-mono text-jaune">npm run db:seed</code>) pour
         peupler la boutique.
       </p>
     </div>

@@ -31,49 +31,38 @@ export default async function HomePage() {
   return (
     <>
       {/* ═══════════════════════ HERO ═══════════════════════ */}
-      <section className="relative flex min-h-[calc(100svh-100px)] flex-col overflow-hidden bg-n4">
+      <section className="relative flex min-h-[calc(100svh-80px)] flex-col overflow-hidden bg-gradient-to-b from-n4 via-n2 to-n4">
         <HeroCanvas />
         {/* Noise + vignette overlays */}
         <span className="hero-noise pointer-events-none absolute inset-0 z-[2]" aria-hidden="true" />
         <span className="hero-vignette pointer-events-none absolute inset-0 z-[3]" aria-hidden="true" />
-        {/* Ligne jaune verticale */}
-        <span
-          aria-hidden="true"
-          className="pointer-events-none absolute left-0 top-0 z-[5] h-full w-[2px]"
-          style={{
-            background:
-              'linear-gradient(to bottom, transparent 0%, #FFCC00 18%, #FFCC00 82%, transparent 100%)',
-          }}
-        />
 
-        <div className="wrap relative z-10 flex flex-1 items-center py-[60px]">
-          <div className="grid w-full items-center gap-10 lg:grid-cols-[1.2fr_1fr]">
+        <div className="wrap relative z-10 flex flex-1 items-center py-[clamp(80px,12vh,140px)]">
+          <div className="grid w-full items-center gap-16 lg:grid-cols-[1.3fr_1fr]">
             {/* Hero Left */}
-            <div className="max-w-[660px]">
-              <p className="mb-[32px] inline-flex items-center gap-2 animate-count-up">
-                <span className="h-px w-6 bg-jaune" />
-                <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-jaune/70">
+            <div className="max-w-[720px]">
+              <p className="mb-10 inline-flex items-center gap-3 animate-count-up">
+                <span className="h-px w-8 bg-blanc/30" />
+                <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-blanc/60">
                   Saison 2025-2026 · Boutique Officielle
                 </span>
               </p>
 
-              <h1 className="mb-1 font-display text-[clamp(68px,11vw,144px)] uppercase leading-[0.82] tracking-[-0.03em] animate-count-up [animation-delay:.35s]">
-                <span className="block text-blanc">Hala</span>
-                <span className="block text-shimmer">Pau FC</span>
-                <span className="text-ghost block">2025·26</span>
+              <h1 className="mb-6 font-display text-[clamp(48px,11vw,140px)] uppercase leading-[0.88] tracking-[-0.03em] animate-count-up [animation-delay:.35s]">
+                <span className="block text-blanc/95">Hala</span>
+                <span className="block text-shimmer" style={{ textShadow: '0 0 60px rgba(255,204,0,0.3)' }}>Pau FC</span>
+                <span className="text-ghost block text-[0.65em]">2025·26</span>
               </h1>
 
-              <span className="my-[26px] block h-[2px] origin-left scale-x-0 bg-jaune animate-slide-x [animation-delay:.9s]" />
-
-              <p className="mb-9 max-w-[420px] font-sans text-[15px] leading-[1.7] text-blanc/50 animate-count-up [animation-delay:1s]">
+              <p className="mb-12 max-w-[480px] font-sans text-[16px] leading-[1.75] text-blanc/85 animate-count-up [animation-delay:1s]">
                 Maillots officiels, lifestyle, accessoires, et personnalisation
                 en flocage live. La boutique du Pau FC, faite à Pau, faite pour les
                 supporters.
               </p>
 
-              <div className="flex flex-wrap gap-3 animate-count-up [animation-delay:1.1s]">
+              <div className="flex flex-wrap gap-4 animate-count-up [animation-delay:1.1s]">
                 <Link href="/boutique">
-                  <Button variant="primary" size="lg" cornerCut>
+                  <Button variant="primary" size="lg" cornerCut className="btn-ripple shadow-y-massive">
                     Voir la boutique
                     <svg viewBox="0 0 24 24" className="h-[14px] w-[14px] stroke-current" fill="none" strokeWidth="2" aria-hidden="true">
                       <path d="M5 12h14M13 5l7 7-7 7" strokeLinecap="square" />
@@ -81,21 +70,21 @@ export default async function HomePage() {
                   </Button>
                 </Link>
                 <Link href="/boutique/maillot-domicile-2026/personnaliser">
-                  <Button variant="ghost" size="lg">
+                  <Button variant="ghost" size="lg" className="btn-ripple">
                     Personnaliser un maillot
                   </Button>
                 </Link>
               </div>
 
-              <dl className="mt-8 flex gap-9 border-t border-blanc/[0.06] pt-8 animate-count-up [animation-delay:1.2s]">
-                <Stat value="2 000+" label="Supporters équipés" />
-                <Stat value="100%" label="Officiel club" />
-                <Stat value="48h" label="Préparation" />
+              <dl className="mt-14 grid grid-cols-3 gap-6 border-t border-blanc/10 pt-10 animate-count-up [animation-delay:1.2s]">
+                <StatEnhanced value="2 000+" label="Supporters équipés" />
+                <StatEnhanced value="100%" label="Officiel club" />
+                <StatEnhanced value="48h" label="Préparation" />
               </dl>
             </div>
 
             {/* Hero Right — Jersey card */}
-            <div className="hidden lg:flex lg:items-center lg:justify-center lg:pb-10">
+            <div className="hidden lg:flex lg:items-center lg:justify-center">
               <JerseyCard />
             </div>
           </div>
@@ -109,19 +98,19 @@ export default async function HomePage() {
       <Marquee />
 
       {/* ═══════════════════════ PRODUITS PHARES ═══════════════════════ */}
-      <section className="relative bg-gradient-to-b from-n4 to-n2 py-[96px]">
+      <section className="relative bg-gradient-to-b from-n4 to-n2 py-[clamp(120px,15vh,200px)]">
         <div className="wrap">
-          <header className="mb-10 flex items-end justify-between gap-5">
-            <div>
+          <header className="mb-16 flex items-end justify-between gap-5">
+            <div className="animate-fade-up">
               <p className="badge-mono">Top de la saison</p>
-              <h2 className="mt-3 font-display text-[clamp(40px,6.5vw,84px)] uppercase leading-[0.86] tracking-[-0.02em]">
+              <h2 className="mt-4 font-display text-[clamp(44px,7vw,88px)] uppercase leading-[0.92] tracking-[-0.02em]">
                 Produits<br />
                 <span className="text-jaune">phares</span>
               </h2>
             </div>
             <Link
               href="/boutique"
-              className="hidden font-display text-[12px] uppercase tracking-[0.1em] text-blanc/60 transition-colors hover:text-jaune md:inline-flex md:items-center md:gap-2"
+              className="link-hover hidden font-display text-[12px] uppercase tracking-[0.1em] text-blanc/85 transition-colors hover:text-jaune md:inline-flex md:items-center md:gap-2"
             >
               Tout voir
               <svg viewBox="0 0 24 24" className="h-3 w-3 stroke-current" fill="none" strokeWidth="2" aria-hidden="true">
@@ -131,15 +120,21 @@ export default async function HomePage() {
           </header>
 
           {featured.length === 0 ? (
-            <p className="border border-dashed border-blanc/15 p-10 text-center font-sans text-blanc/60">
+            <p className="border border-dashed border-blanc/15 p-10 text-center font-sans text-blanc/85">
               Aucun produit en avant pour le moment. Lance le seed (
-              <code className="font-mono text-blanc">npm run db:seed</code>) pour
+              <code className="font-mono text-jaune">npm run db:seed</code>) pour
               peupler la boutique.
             </p>
           ) : (
-            <div className="grid grid-cols-1 gap-[14px] sm:grid-cols-2 lg:grid-cols-4">
-              {featured.map((p) => (
-                <ProductCard key={p.id} product={p} />
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              {featured.map((p, idx) => (
+                <div
+                  key={p.id}
+                  className={`animate-fade-up`}
+                  style={{ animationDelay: `${idx * 0.1}s` }}
+                >
+                  <ProductCard product={p} />
+                </div>
               ))}
             </div>
           )}
@@ -147,18 +142,18 @@ export default async function HomePage() {
       </section>
 
       {/* ═══════════════════════ CONFIGURATEUR TEASER ═══════════════════════ */}
-      <section className="relative overflow-hidden py-[96px]" style={{ background: 'linear-gradient(135deg, #080c1a 0%, #1A1D38 50%, #080c1a 100%)' }}>
+      <section className="relative overflow-hidden py-[clamp(120px,15vh,200px)]" style={{ background: 'linear-gradient(135deg, #080c1a 0%, #1A1D38 50%, #080c1a 100%)' }}>
         <span
           aria-hidden="true"
-          className="pointer-events-none absolute left-[-15px] top-1/2 -translate-y-1/2 select-none font-display text-[clamp(180px,28vw,340px)] leading-none tracking-[-0.05em] text-jaune/[0.022]"
+          className="pointer-events-none absolute left-[-15px] top-1/2 -translate-y-1/2 select-none font-display text-[clamp(180px,28vw,340px)] leading-none tracking-[-0.05em] text-jaune/[0.018]"
         >
           3D
         </span>
         <div className="wrap relative z-10">
-          <div className="grid items-center gap-[72px] lg:grid-cols-2">
-            <div>
+          <div className="grid items-center gap-20 lg:grid-cols-2">
+            <div className="animate-fade-up">
               <p className="badge-mono">Personnalisation officielle</p>
-              <h2 className="mt-4 font-display text-[clamp(40px,6vw,72px)] uppercase leading-[0.86] tracking-[-0.02em]">
+              <h2 className="mt-6 font-display text-[clamp(44px,6.5vw,76px)] uppercase leading-[0.92] tracking-[-0.02em]">
                 Votre nom.<br />
                 <span className="text-jaune">Votre numéro.</span>
               </h2>
@@ -210,13 +205,16 @@ export default async function HomePage() {
   );
 }
 
-function Stat({ value, label }) {
+function StatEnhanced({ value, label }) {
   return (
-    <div>
-      <dt className="font-display text-[26px] leading-none text-jaune">{value}</dt>
-      <dd className="mt-1 font-mono text-[9px] uppercase tracking-[0.2em] text-blanc/20">
+    <div className="group relative">
+      <dt className="font-display text-[clamp(32px,4vw,44px)] leading-none text-jaune transition-all duration-300 group-hover:scale-105 group-hover:text-jaune-light">
+        {value}
+      </dt>
+      <dd className="mt-2 font-mono text-[10px] uppercase tracking-[0.2em] text-blanc/60 transition-colors group-hover:text-blanc/85">
         {label}
       </dd>
+      <span className="absolute -bottom-2 left-0 h-[2px] w-0 bg-jaune transition-all duration-300 group-hover:w-full" />
     </div>
   );
 }
