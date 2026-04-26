@@ -2,7 +2,7 @@
 // Le contenu est dupliqué pour boucler sans saut visuel.
 
 const ITEMS = [
-  'Hala Pau · Boutique Officielle',
+  'Boutique Officielle',
   'Saison 2025-2026',
   'Maillots authentiques',
   'Personnalisation flocage',

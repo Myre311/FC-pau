@@ -173,7 +173,7 @@ export function JerseyConfigurator({ product, variants }) {
             value={name}
             onChange={(e) => setName(e.target.value)}
             maxLength={MAX_NAME_LENGTH}
-            placeholder="HALA PAU"
+            placeholder="BERNARD"
             className="mt-2 block h-11 w-full border border-blanc/15 bg-transparent px-3 font-display text-xl uppercase tracking-tightest text-blanc outline-none transition-colors focus:border-jaune"
           />
           <span className="mt-1 block font-mono text-[10px] tracking-[0.15em] text-blanc/40">
