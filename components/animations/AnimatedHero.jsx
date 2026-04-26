@@ -16,27 +16,50 @@ export function AnimatedHero() {
 
   return (
     <section className="relative overflow-hidden border-b-4 border-jaune">
-      {/* Vidéo YouTube en background */}
+      {/* Vidéo background avec fallback */}
       <motion.div
         className="absolute inset-0"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.2, ease: "easeOut" }}
       >
-        {/* Vidéo YouTube embedded */}
-        <div className="absolute inset-0 overflow-hidden">
-          <iframe
-            src="https://www.youtube.com/embed/0zS2GEkFwOc?autoplay=1&mute=1&loop=1&playlist=0zS2GEkFwOc&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1"
-            title="FC Pau - Vidéo officielle"
-            allow="autoplay; encrypted-media"
-            className="absolute left-1/2 top-1/2 h-[300%] w-[300%] -translate-x-1/2 -translate-y-1/2 md:h-[200%] md:w-[200%]"
-            style={{ border: 'none', pointerEvents: 'none' }}
+        {/* OPTION 1: Vidéo MP4 hébergée (recommandé) */}
+        {/* Placer la vidéo dans /public/videos/hero.mp4 */}
+        {/*
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 h-full w-full object-cover"
+        >
+          <source src="/videos/hero.mp4" type="video/mp4" />
+        </video>
+        */}
+
+        {/* OPTION 2: Dégradé animé en attendant (actuel) */}
+        <div className="absolute inset-0">
+          {/* Dégradé de fond */}
+          <div className="h-full w-full bg-gradient-to-br from-[#1a1d38] via-[#262646] to-[#04091D]" />
+
+          {/* Animation subtile */}
+          <motion.div
+            className="absolute inset-0 bg-gradient-to-tr from-jaune/5 via-transparent to-transparent"
+            animate={{
+              opacity: [0.3, 0.5, 0.3],
+              scale: [1, 1.1, 1],
+            }}
+            transition={{
+              duration: 8,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
           />
         </div>
 
         {/* Overlay pour lisibilité du texte */}
         <motion.div
-          className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/30"
+          className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.3 }}

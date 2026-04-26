@@ -28,9 +28,6 @@ export function Logo({ className, size = 'md', showText = true }) {
           <span className={cn('font-display uppercase tracking-[0.1em] text-blanc', s.name)}>
             FC PAU
           </span>
-          <span className={cn('mt-[1px] font-mono uppercase tracking-[0.2em] text-blanc/20', s.sub)}>
-            Boutique Officielle
-          </span>
         </span>
       )}
     </span>
