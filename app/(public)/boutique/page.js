@@ -27,13 +27,13 @@ export default async function BoutiquePage() {
 
   return (
     <>
-      <section className="container-fc pt-16 pb-10 md:pt-24 md:pb-16">
+      <section className="container-fc py-[clamp(80px,12vh,160px)]">
         <p className="badge-mono">Catalogue officiel · Saison 2025-2026</p>
-        <h1 className="mt-6 text-[18vw] md:text-[12vw] lg:text-[160px]">
+        <h1 className="mt-8 font-display text-[clamp(52px,12vw,160px)] uppercase leading-crush tracking-display-tight">
           LA<br />
           <span className="text-jaune">BOUTIQUE</span>
         </h1>
-        <p className="mt-6 max-w-2xl font-sans text-lg leading-relaxed text-blanc/70 md:text-xl">
+        <p className="mt-8 max-w-2xl font-sans text-[17px] leading-relaxed text-blanc/85">
           Maillots, lifestyle, accessoires. Stocks réels caisse + entrepôt,
           flocage personnalisable sur les maillots officiels.
         </p>

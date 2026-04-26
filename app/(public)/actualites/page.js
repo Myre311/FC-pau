@@ -21,9 +21,9 @@ export default async function ActualitesPage() {
 
   return (
     <>
-      <section className="container-fc pt-16 pb-10 md:pt-24 md:pb-16">
+      <section className="container-fc py-[clamp(80px,12vh,160px)]">
         <p className="badge-mono">Vie du club · Mercato · Matchday</p>
-        <h1 className="mt-6 text-[16vw] md:text-[11vw] lg:text-[150px]">
+        <h1 className="mt-8 font-display text-[clamp(48px,11vw,150px)] uppercase leading-crush tracking-display-tight">
           ACTUA<span className="text-jaune">LITÉS</span>
         </h1>
       </section>

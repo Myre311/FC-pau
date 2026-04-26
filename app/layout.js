@@ -9,6 +9,7 @@ const bigShoulders = Big_Shoulders_Display({
   weight: ['400', '600', '700', '900'],
   variable: '--font-big-shoulders',
   display: 'swap',
+  preload: true,
 });
 
 const instrumentSans = Instrument_Sans({
@@ -16,6 +17,7 @@ const instrumentSans = Instrument_Sans({
   weight: ['400', '500', '600', '700'],
   variable: '--font-instrument-sans',
   display: 'swap',
+  preload: true,
 });
 
 const dmMono = DM_Mono({
@@ -23,6 +25,7 @@ const dmMono = DM_Mono({
   weight: ['400', '500'],
   variable: '--font-dm-mono',
   display: 'swap',
+  preload: false, // Moins critique
 });
 
 export const metadata = {

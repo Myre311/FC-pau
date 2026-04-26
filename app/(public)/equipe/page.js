@@ -28,15 +28,15 @@ export default async function EquipePage() {
 
   return (
     <>
-      <section className="container-fc pt-16 pb-10 md:pt-24 md:pb-16">
+      <section className="container-fc py-[clamp(80px,12vh,160px)]">
         <p className="badge-mono">Effectif professionnel · Saison 2025-2026</p>
-        <h1 className="mt-6 text-[18vw] md:text-[12vw] lg:text-[160px]">
+        <h1 className="mt-8 font-display text-[clamp(52px,12vw,160px)] uppercase leading-crush tracking-display-tight">
           L&apos;<span className="text-jaune">ÉQUIPE</span>
         </h1>
-        <p className="mt-6 max-w-2xl font-sans text-lg leading-relaxed text-blanc/70 md:text-xl">
-          {players.length} joueurs et {staffAndCoach.length} membres du staff
-          au service d&apos;un seul objectif : porter haut les couleurs du
-          Béarn.
+        <p className="mt-8 max-w-2xl font-sans text-[17px] leading-relaxed text-blanc/85">
+          <span className="font-display text-[28px] text-jaune">{players.length}</span> joueurs et{' '}
+          <span className="font-display text-[28px] text-jaune">{staffAndCoach.length}</span> membres du staff
+          au service d&apos;un seul objectif : porter haut les couleurs du Béarn.
         </p>
       </section>
 

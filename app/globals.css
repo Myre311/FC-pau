@@ -350,4 +350,20 @@
     background-size: 180px;
     pointer-events: none;
   }
+
+  /* Performance : respecter prefers-reduced-motion */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  /* Optimisation : images lazy load */
+  img[loading="lazy"] {
+    content-visibility: auto;
+  }
 }

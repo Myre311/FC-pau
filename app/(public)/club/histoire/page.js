@@ -1,3 +1,6 @@
+import Link from 'next/link';
+import { Button } from '@/components/ui/Button';
+
 export const metadata = {
   title: 'Histoire du club',
   description:
@@ -7,115 +10,153 @@ export const metadata = {
 export default function HistoirePage() {
   return (
     <article>
-      <section className="container-fc pt-16 pb-12 md:pt-24 md:pb-20">
-        <p className="badge-mono">Le Club · Histoire</p>
-        <h1 className="mt-6 text-[14vw] md:text-[10vw] lg:text-[140px]">
-          DATES <span className="text-jaune">CLÉS</span>
-        </h1>
-        <p className="mt-6 max-w-3xl font-sans text-lg leading-relaxed text-blanc/70 md:text-xl">
-          Plus d'un siècle d'histoire paloise. Des racines amateurs béarnaises
-          aux ambitions professionnelles actuelles, retour sur les moments qui
-          ont forgé l'identité du club.
-        </p>
+      {/* Hero visuel */}
+      <section className="relative overflow-hidden bg-gradient-to-b from-n4 to-n2 py-[clamp(100px,15vh,180px)]">
+        <span
+          aria-hidden="true"
+          className="pointer-events-none absolute right-[-10%] top-1/2 -translate-y-1/2 select-none font-display text-[clamp(200px,30vw,420px)] leading-none tracking-[-0.05em] text-jaune/[0.015]"
+        >
+          1920
+        </span>
+        <div className="container-fc relative z-10">
+          <p className="badge-mono animate-fade-up">Le Club · Histoire</p>
+          <h1 className="mt-8 font-display text-[clamp(48px,10vw,140px)] uppercase leading-crush tracking-display-tight animate-fade-up [animation-delay:.15s]">
+            <span className="text-jaune">105 ans</span><br />
+            d'histoire
+          </h1>
+          <p className="mt-10 max-w-3xl font-sans text-[17px] leading-relaxed text-blanc/85 animate-fade-up [animation-delay:.3s]">
+            Plus d'un siècle d'histoire paloise. Des racines amateurs béarnaises
+            aux ambitions professionnelles actuelles, retour sur les moments qui
+            ont forgé l'identité du club.
+          </p>
+        </div>
       </section>
 
-      {/* Timeline */}
-      <section className="container-fc border-t border-blanc/10 py-12 md:py-20">
-        <div className="space-y-12">
-          {/* 1920 */}
-          <TimelineItem
+      {/* Pull quote */}
+      <section className="container-fc py-[clamp(80px,12vh,140px)]">
+        <blockquote className="relative border-l-4 border-jaune bg-jaune/5 px-10 py-12 md:px-16 md:py-16">
+          <svg
+            className="absolute left-8 top-8 h-12 w-12 text-jaune/20 md:h-16 md:w-16"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" />
+          </svg>
+          <p className="relative z-10 font-display text-[clamp(24px,4vw,40px)] uppercase leading-crush-medium tracking-display-base text-blanc">
+            « Un club ancré en Béarn, <span className="text-jaune">porté par ses supporters</span> et ouvert sur l'avenir. »
+          </p>
+          <footer className="mt-6 font-mono text-[11px] uppercase tracking-[0.2em] text-blanc/60">
+            — Devise officielle du Pau FC
+          </footer>
+        </blockquote>
+      </section>
+
+      {/* Timeline premium */}
+      <section className="container-fc border-t border-blanc/10 py-[clamp(80px,12vh,140px)]">
+        <h2 className="mb-16 font-display text-[clamp(36px,6vw,64px)] uppercase leading-crush-medium tracking-display-tight">
+          Dates <span className="text-jaune">clés</span>
+        </h2>
+
+        <div className="relative space-y-20">
+          {/* Ligne verticale continue */}
+          <div className="absolute left-[99px] top-0 bottom-0 hidden w-px bg-gradient-to-b from-transparent via-jaune/30 to-transparent md:block" />
+
+          <TimelineItemPremium
             year="1920"
             title="Fondation du club"
             description="Création du Pau Football Club par des passionnés béarnais. Le club évolue en championnats régionaux amateurs pendant plusieurs décennies."
+            stat="1"
+            statLabel="Siècle d'histoire"
           />
 
-          {/* 1974 */}
-          <TimelineItem
+          <TimelineItemPremium
             year="1974"
             title="Premier titre national amateur"
             description="Le Pau FC remporte le championnat de France amateur et accède pour la première fois à un niveau semi-professionnel."
+            highlight="Champion de France"
           />
 
-          {/* 2000s */}
-          <TimelineItem
+          <TimelineItemPremium
             year="2000-2010"
             title="Professionnalisation"
             description="Le club change de statut et devient société sportive professionnelle. Début d'un projet structuré autour de la formation et de la montée en puissance sportive."
           />
 
-          {/* 2019 */}
-          <TimelineItem
+          <TimelineItemPremium
             year="2019"
             title="Montée en Ligue 2"
             description="Victoire en National et accession à la Ligue 2 BKT, deuxième division française. Le Pau FC retrouve le football professionnel de haut niveau après plusieurs décennies."
+            highlight="Ligue 2 BKT"
+            stat="50+"
+            statLabel="Années d'attente"
           />
 
-          {/* 2020 */}
-          <TimelineItem
+          <TimelineItemPremium
             year="2020"
             title="Centenaire"
             description="Le club célèbre ses 100 ans d'histoire. Une saison symbolique malgré le contexte sanitaire, marquée par la fierté d'un siècle d'ancrage béarnais."
+            stat="100"
+            statLabel="Ans"
           />
 
-          {/* 2024 */}
-          <TimelineItem
+          <TimelineItemPremium
             year="2024"
-            title="Lancement du plan stratégique 2024-2028"
+            title="Plan stratégique 2024-2028"
             description="Le Pau FC dévoile son projet à moyen terme : infrastructures modernisées (nouvelle tribune Béarn), académie renforcée, objectif de maintien solide en Ligue 2 et ambition de montée vers l'élite."
           />
 
-          {/* 2026 */}
-          <TimelineItem
+          <TimelineItemPremium
             year="2026"
             title="Aujourd'hui"
             description="Le Pau FC évolue en Ligue 2 BKT avec une identité revendiquée : un club formateur, ancré en Béarn, porté par ses supporters et ouvert sur l'avenir."
             isCurrent
+            stat="15k"
+            statLabel="Supporters"
           />
         </div>
       </section>
 
-      {/* Call to action */}
-      <section className="container-fc border-t border-blanc/10 py-12 md:py-20">
-        <div className="grid gap-10 md:grid-cols-2 md:gap-16">
-          <div>
-            <h2 className="font-display text-5xl uppercase leading-crush tracking-tightest text-blanc md:text-6xl">
-              Découvrir le club
+      {/* CTA Grid */}
+      <section className="container-fc border-t border-blanc/10 py-[clamp(80px,12vh,140px)]">
+        <div className="grid gap-12 md:grid-cols-2 lg:gap-20">
+          <div className="group relative overflow-hidden border border-blanc/10 bg-gradient-to-br from-primaire/50 to-nuit p-10 transition-all duration-400 hover:border-jaune/30 hover:shadow-card-hover md:p-12">
+            <span className="absolute right-4 top-4 font-display text-[100px] leading-none text-blanc/5">?</span>
+            <h2 className="relative z-10 font-display text-[clamp(32px,5vw,52px)] uppercase leading-crush tracking-display-tight text-blanc">
+              Découvrir<br />le club
             </h2>
-            <p className="mt-6 font-sans text-base leading-relaxed text-blanc/75 md:text-lg">
+            <p className="relative z-10 mt-6 font-sans text-[15px] leading-relaxed text-blanc/85">
               Plongez dans l'univers du Pau FC : effectif, calendrier,
               actualités, espace partenaires.
             </p>
-            <div className="mt-8 flex flex-wrap gap-4">
-              <a
-                href="/club"
-                className="inline-block bg-blanc px-6 py-3 font-mono text-sm uppercase tracking-wider text-nuit transition-transform hover:scale-105"
-              >
-                Présentation
-              </a>
-              <a
-                href="/equipe"
-                className="inline-block border border-blanc/20 px-6 py-3 font-mono text-sm uppercase tracking-wider text-blanc transition-colors hover:border-jaune hover:text-jaune"
-              >
-                Effectif
-              </a>
+            <div className="relative z-10 mt-10 flex flex-wrap gap-3">
+              <Link href="/club">
+                <Button variant="primary" size="md" cornerCut className="btn-ripple">
+                  Présentation
+                </Button>
+              </Link>
+              <Link href="/equipe">
+                <Button variant="ghost" size="md" className="btn-ripple">
+                  Effectif
+                </Button>
+              </Link>
             </div>
           </div>
 
-          <div>
-            <h2 className="font-display text-5xl uppercase leading-crush tracking-tightest text-blanc md:text-6xl">
-              Nouste Camp
+          <div className="group relative overflow-hidden border border-blanc/10 bg-gradient-to-br from-primaire/50 to-nuit p-10 transition-all duration-400 hover:border-jaune/30 hover:shadow-card-hover md:p-12">
+            <span className="absolute right-4 top-4 font-display text-[100px] leading-none text-blanc/5">⚽</span>
+            <h2 className="relative z-10 font-display text-[clamp(32px,5vw,52px)] uppercase leading-crush tracking-display-tight text-blanc">
+              Nouste<br />Camp
             </h2>
-            <p className="mt-6 font-sans text-base leading-relaxed text-blanc/75 md:text-lg">
+            <p className="relative z-10 mt-6 font-sans text-[15px] leading-relaxed text-blanc/85">
               Découvrez le stade du Pau FC, son histoire, ses travaux de
               modernisation et comment venir assister aux matchs.
             </p>
-            <div className="mt-8">
-              <a
-                href="/nouste-camp"
-                className="inline-block border border-blanc/20 px-6 py-3 font-mono text-sm uppercase tracking-wider text-blanc transition-colors hover:border-jaune hover:text-jaune"
-              >
-                Le stade
-              </a>
+            <div className="relative z-10 mt-10">
+              <Link href="/nouste-camp">
+                <Button variant="ghost" size="md" className="btn-ripple">
+                  Le stade
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -124,34 +165,48 @@ export default function HistoirePage() {
   );
 }
 
-// Composant réutilisable pour chaque événement de la timeline
-function TimelineItem({ year, title, description, isCurrent = false }) {
+// Timeline item premium avec stats inline et highlights
+function TimelineItemPremium({ year, title, description, isCurrent = false, stat, statLabel, highlight }) {
   return (
-    <div className="grid gap-6 md:grid-cols-[200px_1fr] md:gap-12">
-      {/* Année */}
+    <div className="group grid gap-8 md:grid-cols-[200px_1fr] md:gap-16">
+      {/* Année + dot */}
       <div className="relative">
+        {/* Dot sur la ligne verticale (desktop uniquement) */}
+        <div className="absolute -right-[101px] top-8 hidden h-3 w-3 rounded-full border-2 border-jaune bg-nuit transition-transform md:block group-hover:scale-150" />
+
         <div
-          className={`font-display text-6xl uppercase leading-none tracking-tightest md:text-7xl ${
-            isCurrent ? 'text-jaune' : 'text-blanc/30'
+          className={`font-display text-[clamp(56px,8vw,88px)] uppercase leading-none tracking-display-tight transition-colors ${
+            isCurrent ? 'text-jaune' : 'text-blanc/40 group-hover:text-blanc/70'
           }`}
         >
           {year}
         </div>
         {isCurrent && (
-          <span className="mt-2 inline-block font-mono text-xs uppercase tracking-wider text-jaune">
-            Aujourd'hui
+          <span className="mt-3 inline-block animate-pulse-dot font-mono text-[10px] uppercase tracking-[0.2em] text-jaune">
+            → Aujourd'hui
           </span>
         )}
       </div>
 
       {/* Contenu */}
-      <div className="border-l-2 border-blanc/10 pl-6 md:pl-10">
-        <h3 className="font-display text-3xl uppercase leading-tight tracking-tight text-blanc md:text-4xl">
+      <div className="border-l-2 border-blanc/10 pl-8 transition-colors group-hover:border-jaune/30 md:pl-12">
+        {highlight && (
+          <span className="mb-3 inline-block border border-jaune/40 bg-jaune/10 px-3 py-1 font-mono text-[9px] uppercase tracking-[0.2em] text-jaune">
+            {highlight}
+          </span>
+        )}
+        <h3 className="font-display text-[clamp(28px,4vw,44px)] uppercase leading-crush-soft tracking-display-base text-blanc">
           {title}
         </h3>
-        <p className="mt-4 font-sans text-base leading-relaxed text-blanc/75 md:text-lg">
+        <p className="mt-5 max-w-2xl font-sans text-[16px] leading-relaxed text-blanc/85">
           {description}
         </p>
+        {stat && (
+          <div className="mt-6 inline-flex items-baseline gap-2">
+            <span className="font-display text-[36px] leading-none text-jaune">{stat}</span>
+            <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-blanc/60">{statLabel}</span>
+          </div>
+        )}
       </div>
     </div>
   );

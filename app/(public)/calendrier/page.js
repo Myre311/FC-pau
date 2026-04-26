@@ -32,9 +32,9 @@ export default async function CalendrierPage() {
 
   return (
     <>
-      <section className="container-fc pt-16 pb-10 md:pt-24 md:pb-16">
+      <section className="container-fc py-[clamp(80px,12vh,160px)]">
         <p className="badge-mono">Saison 2025-2026 · Calendrier officiel</p>
-        <h1 className="mt-6 text-[16vw] md:text-[11vw] lg:text-[150px]">
+        <h1 className="mt-8 font-display text-[clamp(48px,11vw,150px)] uppercase leading-crush tracking-display-tight">
           CALEN<span className="text-jaune">DRIER</span>
         </h1>
       </section>
