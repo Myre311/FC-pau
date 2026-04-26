@@ -8,12 +8,12 @@ import { motion } from 'framer-motion';
  * Navigation par catégories boutique
  */
 const CATEGORIES = [
-  { slug: 'all', label: 'Tous les produits', icon: '🛍️' },
-  { slug: 'tenues-officielles', label: 'Tenues Officielles 25/26', icon: '👕' },
-  { slug: 'training', label: 'Training', icon: '🏃' },
-  { slug: 'lifestyle', label: 'Lifestyle', icon: '✨' },
-  { slug: 'enfant', label: 'Enfant', icon: '👶' },
-  { slug: 'accessoires', label: 'Accessoires', icon: '🎒' },
+  { slug: 'all', label: 'Tous les produits' },
+  { slug: 'tenues-officielles', label: 'Tenues Officielles 25/26' },
+  { slug: 'training', label: 'Training' },
+  { slug: 'lifestyle', label: 'Lifestyle' },
+  { slug: 'enfant', label: 'Enfant' },
+  { slug: 'accessoires', label: 'Accessoires' },
 ];
 
 export function CategoryNav() {
@@ -39,9 +39,6 @@ export function CategoryNav() {
                     : 'border-blanc/20 bg-transparent text-blanc/80 hover:border-jaune hover:bg-jaune/10 hover:text-jaune'
                 }`}
               >
-                {/* Icône */}
-                <span className="text-base md:text-lg">{cat.icon}</span>
-
                 {/* Label */}
                 <span>{cat.label}</span>
 

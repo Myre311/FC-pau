@@ -34,9 +34,6 @@ export default async function BoutiquePage() {
         <Topbar />
       </div>
 
-      {/* Navigation catégories */}
-      <CategoryNav />
-
       <section className="container-fc py-[clamp(80px,12vh,160px)]">
         <p className="badge-mono">Catalogue officiel · Saison 2025-2026</p>
         <h1 className="mt-8 font-display text-[clamp(52px,12vw,160px)] uppercase leading-crush tracking-display-tight">
@@ -48,6 +45,9 @@ export default async function BoutiquePage() {
           flocage personnalisable sur les maillots officiels.
         </p>
       </section>
+
+      {/* Navigation catégories */}
+      <CategoryNav />
 
       <section className="container-fc pb-32">
         <div className="mb-12 flex items-end justify-between border-b border-blanc/10 pb-6">
