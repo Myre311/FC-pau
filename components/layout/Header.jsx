@@ -9,6 +9,7 @@ import { AccountLinkClient } from '@/components/layout/AccountLinkClient';
 import { Logo } from '@/components/ui/Logo';
 import { SearchModal } from '@/components/layout/SearchModal';
 import { LanguageSwitcher } from '@/components/layout/LanguageSwitcher';
+import { VideoModal } from '@/components/layout/VideoModal';
 
 // Header sombre inspiré site officiel paufc.fr
 // Navigation horizontale, fond nuit, sticky avec bordure jaune au scroll
@@ -109,6 +110,7 @@ export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
+  const [videoOpen, setVideoOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10);
@@ -135,11 +137,11 @@ export function Header() {
   return (
     <>
       <header
-        className={`sticky top-0 z-40 border-b-4 bg-nuit transition-all duration-300 ${
-          scrolled ? 'border-jaune' : 'border-jaune/50'
+        className={`border-b-4 bg-nuit transition-all duration-300 ${
+          scrolled ? 'border-jaune shadow-lg' : 'border-jaune/50'
         }`}
       >
-        <div className="wrap flex h-16 items-center justify-between gap-6 md:h-20">
+        <div className="container-pau flex h-16 items-center justify-between gap-4 md:h-20">
           {/* Logo */}
           <Link
             href="/"
@@ -158,6 +160,19 @@ export function Header() {
 
           {/* Actions */}
           <div className="flex items-center gap-2">
+            {/* Bouton vidéo YouTube */}
+            <button
+              type="button"
+              onClick={() => setVideoOpen(true)}
+              className="hidden h-10 w-10 items-center justify-center border-2 border-jaune bg-transparent text-jaune transition-all hover:bg-jaune hover:text-nuit md:flex"
+              aria-label="Voir la vidéo"
+              title="Vidéo officielle FC Pau"
+            >
+              <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            </button>
+
             {/* Bouton recherche */}
             <button
               type="button"
@@ -284,6 +299,13 @@ export function Header() {
 
       {/* Modal de recherche */}
       <SearchModal isOpen={searchOpen} onClose={() => setSearchOpen(false)} />
+
+      {/* Modal vidéo YouTube */}
+      <VideoModal
+        isOpen={videoOpen}
+        onClose={() => setVideoOpen(false)}
+        videoId="0zS2GEkFwOc"
+      />
     </>
   );
 }

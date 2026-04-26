@@ -5,14 +5,20 @@ import { LoaderScreen } from '@/components/layout/LoaderScreen';
 import { CartDrawer } from '@/components/shop/CartDrawer';
 import { NewsletterModal } from '@/components/layout/NewsletterModal';
 import { SkipToContent } from '@/components/ui/SkipToContent';
+import { StickyNavbar } from '@/components/layout/StickyNavbar';
 
 export default function PublicLayout({ children }) {
   return (
     <>
       <SkipToContent />
       <LoaderScreen />
-      <Topbar />
-      <Header />
+
+      {/* Navbar sticky style FC Barcelone */}
+      <StickyNavbar
+        topbar={<Topbar />}
+        header={<Header />}
+      />
+
       <main id="main-content" className="min-h-[60vh] bg-[#262646] text-blanc">{children}</main>
       <Footer />
       <CartDrawer />
