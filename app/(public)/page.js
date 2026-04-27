@@ -128,10 +128,10 @@ export default async function HomePage() {
               </div>
             </FadeIn>
           ) : (
-            <StaggerContainer staggerDelay={0.2} className="grid gap-8 md:grid-cols-2 max-w-6xl mx-auto justify-items-center">
+            <StaggerContainer staggerDelay={0.2} className="grid gap-8 md:grid-cols-2 max-w-6xl mx-auto">
               {upcomingMatches.map((match) => (
-                <StaggerItem key={match.id} className="w-full max-w-md sm:max-w-none">
-                  <HoverCard className="w-full">
+                <StaggerItem key={match.id} className="w-full">
+                  <HoverCard className="w-full max-w-sm mx-auto sm:max-w-none">
                     <MatchCountdown match={match} />
                   </HoverCard>
                 </StaggerItem>
