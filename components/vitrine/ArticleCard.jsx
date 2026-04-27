@@ -35,17 +35,17 @@ export function ArticleCard({ article, featured = false }) {
       </div>
 
       <div className="mt-4 flex-1">
-        <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/40">
+        <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-pau-primary/40">
           {formatArticleDate(article.publishedAt ?? article.createdAt)}
         </p>
         <h3
-          className={`mt-2 font-display uppercase leading-crush tracking-tightest text-white transition-colors group-hover:text-pau-yellow ${
+          className={`mt-2 font-display uppercase leading-crush tracking-tightest text-pau-primary transition-colors group-hover:text-pau-yellow ${
             featured ? 'text-4xl md:text-5xl' : 'text-2xl md:text-3xl'
           }`}
         >
           {article.title}
         </h3>
-        <p className="mt-3 line-clamp-3 font-sans text-sm leading-relaxed text-white/60">
+        <p className="mt-3 line-clamp-3 font-sans text-sm leading-relaxed text-pau-primary/60">
           {article.excerpt}
         </p>
       </div>
