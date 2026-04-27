@@ -5,11 +5,11 @@ import { redirect } from 'next/navigation';
 import { prisma } from '@/lib/prisma';
 
 export async function createMatch(formData) {
-  try {
-    const kickoffDate = formData.get('kickoffDate');
-    const kickoffTime = formData.get('kickoffTime');
-    const kickoffAt = new Date(`${kickoffDate}T${kickoffTime}`);
+  const kickoffDate = formData.get('kickoffDate');
+  const kickoffTime = formData.get('kickoffTime');
+  const kickoffAt = new Date(`${kickoffDate}T${kickoffTime}`);
 
+  try {
     await prisma.match.create({
       data: {
         competition: formData.get('competition'),
@@ -27,23 +27,23 @@ export async function createMatch(formData) {
         note: formData.get('note') || null,
       },
     });
-
-    revalidatePath('/admin/matchs');
-    revalidatePath('/calendrier');
-    redirect('/admin/matchs');
   } catch (error) {
     console.error('Erreur création match:', error);
     return { error: error.message || 'Erreur lors de la création du match' };
   }
+
+  revalidatePath('/admin/matchs');
+  revalidatePath('/calendrier');
+  redirect('/admin/matchs');
 }
 
 export async function updateMatch(formData) {
-  try {
-    const id = formData.get('id');
-    const kickoffDate = formData.get('kickoffDate');
-    const kickoffTime = formData.get('kickoffTime');
-    const kickoffAt = new Date(`${kickoffDate}T${kickoffTime}`);
+  const id = formData.get('id');
+  const kickoffDate = formData.get('kickoffDate');
+  const kickoffTime = formData.get('kickoffTime');
+  const kickoffAt = new Date(`${kickoffDate}T${kickoffTime}`);
 
+  try {
     await prisma.match.update({
       where: { id },
       data: {
@@ -62,29 +62,29 @@ export async function updateMatch(formData) {
         note: formData.get('note') || null,
       },
     });
-
-    revalidatePath('/admin/matchs');
-    revalidatePath('/calendrier');
-    redirect('/admin/matchs');
   } catch (error) {
     console.error('Erreur mise à jour match:', error);
     return { error: error.message || 'Erreur lors de la mise à jour du match' };
   }
+
+  revalidatePath('/admin/matchs');
+  revalidatePath('/calendrier');
+  redirect('/admin/matchs');
 }
 
 export async function deleteMatch(formData) {
-  try {
-    const id = formData.get('id');
+  const id = formData.get('id');
 
+  try {
     await prisma.match.delete({
       where: { id },
     });
-
-    revalidatePath('/admin/matchs');
-    revalidatePath('/calendrier');
-    redirect('/admin/matchs');
   } catch (error) {
     console.error('Erreur suppression match:', error);
     return { error: error.message || 'Erreur lors de la suppression du match' };
   }
+
+  revalidatePath('/admin/matchs');
+  revalidatePath('/calendrier');
+  redirect('/admin/matchs');
 }
