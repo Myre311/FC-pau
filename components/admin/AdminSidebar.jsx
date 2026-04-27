@@ -32,6 +32,7 @@ const SECTIONS = [
   {
     title: 'Communication',
     items: [
+      { href: '/admin/actualites', label: 'Actualités' },
       { href: '/admin/partenaires', label: 'Partenaires' },
       { href: '/admin/newsletter', label: 'Newsletter' },
     ],

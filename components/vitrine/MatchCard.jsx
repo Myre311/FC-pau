@@ -23,7 +23,7 @@ export function MatchCard({ match }) {
           : 'draw';
 
   return (
-    <article className="border border-blanc/10 bg-primaire/20 p-5 transition-colors hover:border-blanc/25">
+    <article className="border border-blanc/10 bg-primaire p-5 transition-colors hover:border-blanc/25">
       <header className="flex items-center justify-between font-mono text-[10px] uppercase tracking-[0.2em]">
         <span className="text-jaune">{match.competition}</span>
         <span
