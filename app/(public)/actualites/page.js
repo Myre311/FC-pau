@@ -16,7 +16,7 @@ export default async function ActualitesPage() {
     where: { publishedAt: { not: null, lte: new Date() } },
     orderBy: [{ featured: 'desc' }, { publishedAt: 'desc' }],
     take: 24,
-  });
+  }).catch(() => []);
 
   const featured = articles.find((a) => a.featured) ?? articles[0];
   const rest = articles.filter((a) => a.id !== featured?.id);

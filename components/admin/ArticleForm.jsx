@@ -2,10 +2,12 @@
 
 import { useState } from 'react';
 import { Button } from '@/components/ui/Button';
+import { ImageUpload } from '@/components/admin/ImageUpload';
 
 export function ArticleForm({ article, action, deleteAction }) {
   const [slug, setSlug] = useState(article?.slug || '');
   const [title, setTitle] = useState(article?.title || '');
+  const [coverImageUrl, setCoverImageUrl] = useState(article?.coverImageUrl || '');
 
   const generateSlug = (text) => {
     return text
@@ -80,19 +82,14 @@ export function ArticleForm({ article, action, deleteAction }) {
         </div>
 
         <div>
-          <label className="mb-2 block font-mono text-xs uppercase tracking-wider text-blanc/60">
-            Image de couverture (URL)
-          </label>
-          <input
-            type="url"
-            name="coverImage"
-            defaultValue={article?.coverImage || ''}
-            className="w-full rounded border border-blanc/20 bg-nuit px-4 py-3 font-sans text-blanc placeholder-blanc/40 focus:border-jaune focus:outline-none"
-            placeholder="https://example.com/image.jpg"
+          <input type="hidden" name="coverImageUrl" value={coverImageUrl} />
+          <ImageUpload
+            currentUrl={coverImageUrl}
+            onUploadComplete={(url) => setCoverImageUrl(url)}
+            bucket="articles"
+            folder="covers"
+            label="Image de couverture (1200x630px recommandé)"
           />
-          <p className="mt-1 font-mono text-xs text-blanc/40">
-            Taille recommandée : 1200x630px
-          </p>
         </div>
       </div>
 
