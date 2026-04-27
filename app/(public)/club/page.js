@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import PageHero from '@/components/PageHero';
 import SectionLight from '@/components/SectionLight';
 
@@ -96,6 +97,31 @@ export default function ClubPage() {
           </dl>
         </div>
       </SectionLight>
+
+      <SectionLight className="border-t border-[#0F1E45]/10">
+        <div className="space-y-10">
+          <h2 className="font-display text-5xl uppercase leading-crush tracking-tightest text-[#0F1E45] md:text-6xl">
+            Direction
+          </h2>
+          <div className="grid gap-8 md:grid-cols-3">
+            <FounderCard
+              name="Bernard Laporte-Fray"
+              role="Président"
+              image="/images/club/BernardLaporte-Fray.png"
+            />
+            <FounderCard
+              name="Luis de Sousa"
+              role="Dirigeant"
+              image="/images/club/luis-de-sousa-1.png"
+            />
+            <FounderCard
+              name="Direction Générale"
+              role="Membre de la direction"
+              image="/images/club/DSC00082.png"
+            />
+          </div>
+        </div>
+      </SectionLight>
     </article>
   );
 }
@@ -127,6 +153,29 @@ function Stat({ label, value }) {
       <dd className="mt-2 font-display text-3xl uppercase leading-crush tracking-tightest text-[#0F1E45] md:text-4xl">
         {value}
       </dd>
+    </div>
+  );
+}
+
+function FounderCard({ name, role, image }) {
+  return (
+    <div className="group relative overflow-hidden bg-pau-primary">
+      <div className="relative aspect-[3/4] overflow-hidden">
+        <Image
+          src={image}
+          alt={name}
+          fill
+          className="object-cover transition-transform duration-500 group-hover:scale-105"
+        />
+      </div>
+      <div className="border-t-4 border-pau-yellow p-6">
+        <h3 className="font-display text-2xl uppercase leading-tight tracking-tight text-white">
+          {name}
+        </h3>
+        <p className="mt-2 font-mono text-xs uppercase tracking-wider text-pau-yellow">
+          {role}
+        </p>
+      </div>
     </div>
   );
 }
