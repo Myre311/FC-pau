@@ -15,7 +15,7 @@ export default async function AdminLayout({ children }) {
 
   return (
     <div className="min-h-screen bg-gray-50 font-sans">
-      <header className="sticky top-0 z-30 border-b border-gray-200 bg-white shadow-sm">
+      <header className="sticky top-0 z-30 border-b-4 border-pau-yellow bg-pau-night shadow-lg">
         <div className="flex h-16 items-center justify-between gap-4 px-4 lg:px-6">
           <Link href="/admin" className="flex items-center gap-3" aria-label="Admin Pau FC">
             <Logo className="text-xl md:text-2xl" />
@@ -24,7 +24,7 @@ export default async function AdminLayout({ children }) {
             </span>
           </Link>
           <div className="flex items-center gap-4">
-            <span className="hidden text-sm text-gray-600 md:inline">
+            <span className="hidden text-sm text-white/80 md:inline">
               {dbUser.email}
             </span>
           </div>
