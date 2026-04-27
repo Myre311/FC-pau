@@ -164,16 +164,21 @@ const players = [
   // Milieux
   { slug: 'm-fall', firstName: 'Cheikh', lastName: 'Fall', shirtNumber: 6, position: 'midfielder', nationality: 'SN', displayOrder: 1, photoUrl: '/images/players/Cheikh-fall-6.jpg' },
   { slug: 'm-basse', firstName: 'Souleymane', lastName: 'Basse', shirtNumber: 8, position: 'midfielder', nationality: 'ML', displayOrder: 2, photoUrl: '/images/players/souleymane-basse-8.jpg' },
-  { slug: 'm-gasnier', firstName: 'Kyllian', lastName: 'Gasnier', shirtNumber: 11, position: 'midfielder', nationality: 'FR', displayOrder: 3, photoUrl: '/images/players/Kyllian-Gasnier-11.jpg' },
-  { slug: 'm-bobichon', firstName: 'Antonin', lastName: 'Bobichon', shirtNumber: 14, position: 'midfielder', nationality: 'FR', displayOrder: 4, photoUrl: '/images/players/antonin-bobichon-14.jpg' },
-  { slug: 'm-kante', firstName: 'Ousmane', lastName: 'Kante', shirtNumber: 19, position: 'midfielder', nationality: 'ML', displayOrder: 5, photoUrl: '/images/players/Ousmane-Kante-19.jpg' },
-  { slug: 'm-anziani', firstName: 'Julien', lastName: 'Anziani', shirtNumber: 20, position: 'midfielder', nationality: 'FR', displayOrder: 6, photoUrl: '/images/players/Julien-Anziani-20.jpg' },
-  { slug: 'm-beusnard', firstName: 'Steeve', lastName: 'Beusnard', shirtNumber: 21, position: 'midfielder', nationality: 'FR', displayOrder: 7, photoUrl: '/images/players/steeve-beusnard-21.jpg' },
+  { slug: 'm-versini', firstName: 'Giovani', lastName: 'Versini', shirtNumber: 10, position: 'midfielder', nationality: 'FR', displayOrder: 3, photoUrl: '/images/players/Giovani-versini-10.jpg' },
+  { slug: 'm-gasnier', firstName: 'Kyllian', lastName: 'Gasnier', shirtNumber: 11, position: 'midfielder', nationality: 'FR', displayOrder: 4, photoUrl: '/images/players/Kyllian-Gasnier-11.jpg' },
+  { slug: 'm-bobichon', firstName: 'Antonin', lastName: 'Bobichon', shirtNumber: 14, position: 'midfielder', nationality: 'FR', displayOrder: 5, photoUrl: '/images/players/antonin-bobichon-14.jpg' },
+  { slug: 'm-kante', firstName: 'Ousmane', lastName: 'Kante', shirtNumber: 19, position: 'midfielder', nationality: 'ML', displayOrder: 6, photoUrl: '/images/players/Ousmane-Kante-19.jpg' },
+  { slug: 'm-anziani', firstName: 'Julien', lastName: 'Anziani', shirtNumber: 20, position: 'midfielder', nationality: 'FR', displayOrder: 7, photoUrl: '/images/players/Julien-Anziani-20.jpg' },
+  { slug: 'm-beusnard', firstName: 'Steeve', lastName: 'Beusnard', shirtNumber: 21, position: 'midfielder', nationality: 'FR', displayOrder: 8, photoUrl: '/images/players/steeve-beusnard-21.jpg' },
   // Attaquants
-  { slug: 'a-ruiz', firstName: 'Jean', lastName: 'Ruiz', shirtNumber: 25, position: 'forward', nationality: 'FR', displayOrder: 1, photoUrl: '/images/players/jean-ruiz-25.jpg' },
-  { slug: 'a-glossoa', firstName: 'Neil', lastName: 'Glossoa', shirtNumber: 26, position: 'forward', nationality: 'FR', displayOrder: 2, photoUrl: '/images/players/Neil-glossoa-26.jpg' },
-  { slug: 'a-touzghar', firstName: 'Rayan', lastName: 'Touzghar', shirtNumber: 84, position: 'forward', nationality: 'FR', displayOrder: 3, photoUrl: '/images/players/Rayan-touzghar-84.jpg' },
-  { slug: 'a-meddah', firstName: 'Daylam', lastName: 'Meddah', shirtNumber: 97, position: 'forward', nationality: 'DZ', displayOrder: 4, photoUrl: '/images/players/daylam-meddah-97.jpg' },
+  { slug: 'a-dong', firstName: 'Kyliane', lastName: 'Dong', shirtNumber: 9, position: 'forward', nationality: 'FR', displayOrder: 1, photoUrl: '/images/players/Kyliane-Dong-9.jpg' },
+  { slug: 'a-sissoko', firstName: 'Omar', lastName: 'Sissoko', shirtNumber: 17, position: 'forward', nationality: 'ML', displayOrder: 2, photoUrl: '/images/players/Omar-sissoko-17.jpg' },
+  { slug: 'a-sadik', firstName: 'Omar', lastName: 'Sadik', shirtNumber: 18, position: 'forward', nationality: 'MA', displayOrder: 3, photoUrl: '/images/players/Omar-sadik-18.jpg' },
+  { slug: 'a-ruiz', firstName: 'Jean', lastName: 'Ruiz', shirtNumber: 25, position: 'forward', nationality: 'FR', displayOrder: 4, photoUrl: '/images/players/jean-ruiz-25.jpg' },
+  { slug: 'a-glossoa', firstName: 'Neil', lastName: 'Glossoa', shirtNumber: 26, position: 'forward', nationality: 'FR', displayOrder: 5, photoUrl: '/images/players/Neil-glossoa-26.jpg' },
+  { slug: 'a-touzghar', firstName: 'Rayan', lastName: 'Touzghar', shirtNumber: 84, position: 'forward', nationality: 'FR', displayOrder: 6, photoUrl: '/images/players/Rayan-touzghar-84.jpg' },
+  { slug: 'a-zuliani', firstName: 'Edhy', lastName: 'Zuliani', shirtNumber: 87, position: 'forward', nationality: 'FR', displayOrder: 7, photoUrl: '/images/players/Edhy-zuliani-87.jpg' },
+  { slug: 'a-meddah', firstName: 'Daylam', lastName: 'Meddah', shirtNumber: 97, position: 'forward', nationality: 'DZ', displayOrder: 8, photoUrl: '/images/players/daylam-meddah-97.jpg' },
 ];
 
 const staff = [
