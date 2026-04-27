@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import PageHero from '@/components/PageHero';
 import SectionLight from '@/components/SectionLight';
 
 export const metadata = {
@@ -11,12 +10,18 @@ export const metadata = {
 export default function CashlessPage() {
   return (
     <article>
-      <PageHero
-        image="/images/hero-cashless.jpg"
-        surtitle="Billetterie · Cashless"
-        title="100% CASHLESS"
-        subtitle="Le Nouste Camp est entièrement cashless. Paye tes consommations avec ta carte sans contact ou ton smartphone. Rapide, sécurisé, moderne."
-      />
+      {/* Hero */}
+      <section className="bg-pau-primary py-16 md:py-24">
+        <div className="container-fc">
+          <p className="badge-mono">Billetterie · Cashless</p>
+          <h1 className="mt-6 text-[14vw] md:text-[10vw] lg:text-[140px] text-white">
+            100% <span className="text-pau-yellow">CASHLESS</span>
+          </h1>
+          <p className="mt-6 max-w-3xl font-sans text-lg leading-relaxed text-white/70 md:text-xl">
+            Le Nouste Camp est entièrement cashless. Paye tes consommations avec ta carte sans contact ou ton smartphone. Rapide, sécurisé, moderne.
+          </p>
+        </div>
+      </section>
 
       <SectionLight>
 
