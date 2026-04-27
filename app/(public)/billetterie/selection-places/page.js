@@ -7,10 +7,10 @@ import dynamic from 'next/dynamic';
 const Stadium3D = dynamic(() => import('@/components/ticketing/Stadium3D').then((mod) => ({ default: mod.Stadium3D })), {
   ssr: false,
   loading: () => (
-    <div className="flex h-[600px] items-center justify-center bg-nuit">
+    <div className="flex h-[600px] items-center justify-center bg-pau-night">
       <div className="text-center">
-        <div className="mx-auto mb-4 h-12 w-12 animate-spin border-4 border-jaune border-t-transparent" />
-        <p className="font-mono text-xs uppercase tracking-wider text-blanc">
+        <div className="mx-auto mb-4 h-12 w-12 animate-spin border-4 border-pau-yellow border-t-transparent" />
+        <p className="font-mono text-xs uppercase tracking-wider text-white">
           Chargement de la vue 3D...
         </p>
       </div>
@@ -53,22 +53,22 @@ export default function SelectionPlacesPage() {
   return (
     <>
       {/* Hero */}
-      <section className="border-b-4 border-jaune bg-nuit py-12">
+      <section className="border-b-4 border-pau-yellow bg-pau-night py-12">
         <div className="container-pau">
-          <div className="mb-4 h-1 w-16 bg-jaune" />
-          <h1 className="title-hero text-blanc">Sélection de places</h1>
-          <p className="mt-4 max-w-2xl text-lg text-blanc/80">
-            Match : Pau FC vs FC Bastia-Borgo · Ligue 2 BKT<br />
+          <div className="mb-4 h-1 w-16 bg-pau-yellow" />
+          <h1 className="title-hero text-white">Sélection de places</h1>
+          <p className="mt-4 max-w-2xl text-lg text-white/80">
+            Match : Pau FC vs Clermont Foot · Ligue 2 BKT<br />
             <span className="font-mono text-sm">Samedi 10 mai 2026 · 19h00 · Nouste Camp</span>
           </p>
         </div>
       </section>
 
       {/* Vue 3D */}
-      <section className="bg-blanc py-8">
+      <section className="bg-white py-8">
         <div className="container-pau">
           <div className="mb-6">
-            <h2 className="mb-2 font-display text-xl font-bold uppercase text-nuit">
+            <h2 className="mb-2 font-display text-xl font-bold uppercase text-pau-night">
               Vue 3D du stade
             </h2>
             <p className="font-mono text-xs text-gray-600">
@@ -90,8 +90,8 @@ export default function SelectionPlacesPage() {
       <section className="border-t-4 border-gray-300 bg-gray-50 py-12">
         <div className="container-pau">
           <div className="mx-auto max-w-2xl">
-            <div className="border-2 border-nuit bg-blanc p-8">
-              <h2 className="mb-6 font-display text-2xl font-bold uppercase text-nuit">
+            <div className="border-2 border-nuit bg-white p-8">
+              <h2 className="mb-6 font-display text-2xl font-bold uppercase text-pau-night">
                 Votre sélection
               </h2>
 
@@ -112,7 +112,7 @@ export default function SelectionPlacesPage() {
                           className="flex items-center justify-between border-b border-gray-200 pb-3"
                         >
                           <div>
-                            <p className="font-display text-sm font-bold uppercase text-nuit">
+                            <p className="font-display text-sm font-bold uppercase text-pau-night">
                               {section.replace('-', ' ')}
                             </p>
                             <p className="font-mono text-xs text-gray-600">
@@ -120,7 +120,7 @@ export default function SelectionPlacesPage() {
                             </p>
                           </div>
                           <div className="flex items-center gap-4">
-                            <p className="font-display text-lg font-bold text-nuit">
+                            <p className="font-display text-lg font-bold text-pau-night">
                               {price}€
                             </p>
                             <button
@@ -140,17 +140,17 @@ export default function SelectionPlacesPage() {
 
                   <div className="mb-6 border-t-2 border-nuit pt-4">
                     <div className="flex items-center justify-between">
-                      <p className="font-display text-lg font-bold uppercase text-nuit">
+                      <p className="font-display text-lg font-bold uppercase text-pau-night">
                         Total
                       </p>
-                      <p className="font-display text-3xl font-black text-nuit">
+                      <p className="font-display text-3xl font-black text-pau-night">
                         {totalPrice}€
                       </p>
                     </div>
                   </div>
 
                   <button
-                    className="w-full border-2 border-nuit bg-nuit py-4 font-display text-sm font-bold uppercase tracking-wide text-blanc transition-colors hover:bg-jaune hover:border-jaune hover:text-nuit"
+                    className="w-full border-2 border-nuit bg-pau-night py-4 font-display text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-pau-yellow hover:border-pau-yellow hover:text-pau-night"
                   >
                     Continuer vers le paiement
                   </button>
