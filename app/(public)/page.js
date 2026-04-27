@@ -118,7 +118,7 @@ export default async function HomePage() {
 
       {/* ─── PROCHAINS MATCHS ANIMÉS ──────────────────────────── */}
       <section className="section-pau border-t border-pau-primary/10 bg-white">
-        <div className="container-pau">
+        <div className="container-pau px-4 sm:px-6">
           {upcomingMatches.length === 0 ? (
             <FadeIn>
               <div className="card-pau mx-auto max-w-2xl p-10 text-center">
@@ -128,10 +128,10 @@ export default async function HomePage() {
               </div>
             </FadeIn>
           ) : (
-            <StaggerContainer staggerDelay={0.2} className="grid gap-8 md:grid-cols-2">
+            <StaggerContainer staggerDelay={0.2} className="grid gap-8 md:grid-cols-2 max-w-6xl mx-auto">
               {upcomingMatches.map((match) => (
                 <StaggerItem key={match.id}>
-                  <HoverCard>
+                  <HoverCard className="w-full">
                     <MatchCountdown match={match} />
                   </HoverCard>
                 </StaggerItem>
