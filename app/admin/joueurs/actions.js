@@ -6,13 +6,20 @@ import { prisma } from '@/lib/prisma';
 
 export async function createPlayerAction(formData) {
   try {
+    const slug = `${formData.get('firstName')}-${formData.get('lastName')}`
+      .toLowerCase()
+      .normalize('NFD')
+      .replace(/[̀-ͯ]/g, '')
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/^-+|-+$/g, '');
+
     const data = {
-      number: parseInt(formData.get('number')),
+      slug,
+      shirtNumber: formData.get('number') ? parseInt(formData.get('number')) : null,
       firstName: formData.get('firstName'),
       lastName: formData.get('lastName'),
-      position: formData.get('position'),
-      height: formData.get('height') ? parseInt(formData.get('height')) : null,
-      weight: formData.get('weight') ? parseInt(formData.get('weight')) : null,
+      position: formData.get('position') || null,
+      heightCm: formData.get('height') ? parseInt(formData.get('height')) : null,
       nationality: formData.get('nationality') || null,
       birthDate: formData.get('birthDate') ? new Date(formData.get('birthDate')) : null,
       photoUrl: formData.get('photoUrl') || null,
@@ -35,12 +42,11 @@ export async function updatePlayerAction(formData) {
     const id = formData.get('id');
 
     const data = {
-      number: parseInt(formData.get('number')),
+      shirtNumber: formData.get('number') ? parseInt(formData.get('number')) : null,
       firstName: formData.get('firstName'),
       lastName: formData.get('lastName'),
-      position: formData.get('position'),
-      height: formData.get('height') ? parseInt(formData.get('height')) : null,
-      weight: formData.get('weight') ? parseInt(formData.get('weight')) : null,
+      position: formData.get('position') || null,
+      heightCm: formData.get('height') ? parseInt(formData.get('height')) : null,
       nationality: formData.get('nationality') || null,
       birthDate: formData.get('birthDate') ? new Date(formData.get('birthDate')) : null,
       photoUrl: formData.get('photoUrl') || null,

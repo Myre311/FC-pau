@@ -31,7 +31,7 @@ export function PlayerForm({ player, action, deleteAction }) {
             <input
               type="number"
               name="number"
-              defaultValue={player?.number}
+              defaultValue={player?.shirtNumber}
               required
               min="1"
               max="99"
@@ -45,14 +45,14 @@ export function PlayerForm({ player, action, deleteAction }) {
             </label>
             <select
               name="position"
-              defaultValue={player?.position || 'Milieu'}
+              defaultValue={player?.position || 'midfielder'}
               required
               className="w-full px-4 py-3 bg-nuit border border-blanc/20 text-blanc focus:border-jaune focus:outline-none"
             >
-              <option value="Gardien">Gardien</option>
-              <option value="Défenseur">Défenseur</option>
-              <option value="Milieu">Milieu</option>
-              <option value="Attaquant">Attaquant</option>
+              <option value="goalkeeper">Gardien</option>
+              <option value="defender">Défenseur</option>
+              <option value="midfielder">Milieu</option>
+              <option value="forward">Attaquant</option>
             </select>
           </div>
         </div>
@@ -85,7 +85,7 @@ export function PlayerForm({ player, action, deleteAction }) {
           </div>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-2">
           <div>
             <label className="block text-sm font-semibold text-blanc mb-2">
               Taille (cm)
@@ -93,23 +93,9 @@ export function PlayerForm({ player, action, deleteAction }) {
             <input
               type="number"
               name="height"
-              defaultValue={player?.height || ''}
+              defaultValue={player?.heightCm || ''}
               min="150"
               max="220"
-              className="w-full px-4 py-3 bg-nuit border border-blanc/20 text-blanc focus:border-jaune focus:outline-none"
-            />
-          </div>
-
-          <div>
-            <label className="block text-sm font-semibold text-blanc mb-2">
-              Poids (kg)
-            </label>
-            <input
-              type="number"
-              name="weight"
-              defaultValue={player?.weight || ''}
-              min="50"
-              max="120"
               className="w-full px-4 py-3 bg-nuit border border-blanc/20 text-blanc focus:border-jaune focus:outline-none"
             />
           </div>

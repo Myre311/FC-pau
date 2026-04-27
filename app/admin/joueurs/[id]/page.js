@@ -21,7 +21,7 @@ export default async function EditJoueurPage({ params }) {
           Modifier joueur
         </h1>
         <p className="mt-2 text-blanc/60">
-          {player.firstName} {player.lastName} · N°{player.number}
+          {player.firstName} {player.lastName} · N°{player.shirtNumber}
         </p>
       </div>
 

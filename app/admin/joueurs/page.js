@@ -10,7 +10,7 @@ export const metadata = {
 
 export default async function JoueursAdminPage() {
   const players = await prisma.player.findMany({
-    orderBy: [{ number: 'asc' }],
+    orderBy: [{ shirtNumber: 'asc' }],
   }).catch(() => []);
 
   return (
@@ -54,14 +54,14 @@ export default async function JoueursAdminPage() {
                   </div>
                 ) : (
                   <div className="flex h-20 w-20 items-center justify-center rounded-full bg-nuit font-display text-2xl text-jaune">
-                    {player.number}
+                    {player.shirtNumber}
                   </div>
                 )}
                 <div className="flex-1">
                   <div className="flex items-start justify-between">
                     <div>
                       <p className="font-mono text-xs uppercase tracking-wider text-jaune">
-                        N°{player.number} · {player.position}
+                        N°{player.shirtNumber} · {player.position}
                       </p>
                       <h3 className="mt-1 font-display text-lg uppercase text-blanc">
                         {player.firstName} {player.lastName}
@@ -72,8 +72,8 @@ export default async function JoueursAdminPage() {
                     {player.nationality && (
                       <span>{player.nationality}</span>
                     )}
-                    {player.height && (
-                      <span>{player.height} cm</span>
+                    {player.heightCm && (
+                      <span>{player.heightCm} cm</span>
                     )}
                   </div>
                 </div>
