@@ -60,7 +60,7 @@ export default async function HomePage() {
 
       {/* ─── ACTUALITÉS ──────────────────────────── */}
       {latestArticles.length > 0 && (
-        <section className="border-b border-nuit/10 bg-blanc py-8 md:py-12 text-nuit">
+        <section className="border-b border-nuit/10 py-8 md:py-12">
           <div className="container-pau">
             <FadeIn>
               <div className="mb-6 flex items-center justify-between">
@@ -116,7 +116,7 @@ export default async function HomePage() {
       )}
 
       {/* ─── PROCHAINS MATCHS ANIMÉS ──────────────────────────── */}
-      <section className="section-pau border-t border-nuit/10 bg-blanc text-nuit">
+      <section className="section-pau border-t border-nuit/10">
         <div className="container-pau">
           {upcomingMatches.length === 0 ? (
             <FadeIn>

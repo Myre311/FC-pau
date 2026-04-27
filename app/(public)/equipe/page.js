@@ -47,7 +47,7 @@ export default async function EquipePage() {
         return (
           <section
             key={pos}
-            className="container-fc border-t border-nuit/10 py-12 md:py-16 bg-blanc"
+            className="container-fc border-t border-nuit/10 py-12 md:py-16"
           >
             <header className="mb-8 flex items-end justify-between">
               <h2 className="font-display text-4xl uppercase leading-crush tracking-tightest text-nuit md:text-5xl">
@@ -67,7 +67,7 @@ export default async function EquipePage() {
       })}
 
       {staffAndCoach.length > 0 && (
-        <section className="container-fc border-t border-nuit/10 py-12 md:py-16 bg-blanc">
+        <section className="container-fc border-t border-nuit/10 py-12 md:py-16">
           <header className="mb-8 flex items-end justify-between">
             <h2 className="font-display text-4xl uppercase leading-crush tracking-tightest text-nuit md:text-5xl">
               Staff

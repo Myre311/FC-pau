@@ -50,8 +50,7 @@ export default async function BoutiquePage() {
       {/* Navigation catégories */}
       <CategoryNav />
 
-      {/* Contenu - Fond blanc */}
-      <section className="container-fc pb-32 bg-blanc">
+      <section className="container-fc pb-32">
         <div className="mb-12 flex items-end justify-between border-b border-nuit/10 pb-6">
           <h2 className="font-mono text-[11px] uppercase tracking-[0.2em] text-nuit">
             {products.length} produit{products.length > 1 ? 's' : ''}

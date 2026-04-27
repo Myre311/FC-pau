@@ -40,9 +40,8 @@ export default async function CalendrierPage() {
         </h1>
       </section>
 
-      {/* Contenu - Fond blanc */}
       {next && (
-        <section className="container-fc pb-12 md:pb-16 bg-blanc">
+        <section className="container-fc pb-12 md:pb-16">
           <h2 className="mb-6 font-mono text-[11px] uppercase tracking-[0.2em] text-nuit">
             Prochain match
           </h2>
@@ -53,7 +52,7 @@ export default async function CalendrierPage() {
       )}
 
       {upcoming.length > 1 && (
-        <section className="container-fc border-t border-nuit/10 py-12 md:py-16 bg-blanc">
+        <section className="container-fc border-t border-nuit/10 py-12 md:py-16">
           <header className="mb-8 flex items-end justify-between">
             <h2 className="font-display text-4xl uppercase leading-crush tracking-tightest text-nuit md:text-5xl">
               À venir
@@ -71,7 +70,7 @@ export default async function CalendrierPage() {
       )}
 
       {recent.length > 0 && (
-        <section className="container-fc border-t border-nuit/10 py-12 md:py-16 bg-blanc">
+        <section className="container-fc border-t border-nuit/10 py-12 md:py-16">
           <header className="mb-8 flex items-end justify-between">
             <h2 className="font-display text-4xl uppercase leading-crush tracking-tightest text-nuit md:text-5xl">
               Résultats récents
@@ -89,7 +88,7 @@ export default async function CalendrierPage() {
       )}
 
       {upcoming.length === 0 && recent.length === 0 && (
-        <section className="container-fc py-24 bg-blanc">
+        <section className="container-fc py-24">
           <div className="border border-dashed border-nuit/15 p-10 text-center">
             <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-nuit">
               Calendrier vide
