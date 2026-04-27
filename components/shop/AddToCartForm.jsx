@@ -20,7 +20,7 @@ export function AddToCartForm({ product, variants }) {
 
   if (!variants.length) {
     return (
-      <p className="font-mono text-xs uppercase tracking-[0.2em] text-blanc/40">
+      <p className="font-mono text-xs uppercase tracking-[0.2em] text-pau-primary/40">
         Aucune variante disponible
       </p>
     );
@@ -49,7 +49,7 @@ export function AddToCartForm({ product, variants }) {
     <div className="space-y-6">
       {variants.some((v) => v.size) && (
         <div>
-          <p className="mb-3 font-mono text-[10px] uppercase tracking-[0.2em] text-blanc/60">
+          <p className="mb-3 font-mono text-[10px] uppercase tracking-[0.2em] text-pau-primary/60">
             Taille
           </p>
           <div className="flex flex-wrap gap-2">
@@ -66,9 +66,9 @@ export function AddToCartForm({ product, variants }) {
                   disabled={disabled}
                   className={`min-w-12 px-3 py-2 font-mono text-xs uppercase tracking-[0.2em] transition-colors ${
                     active
-                      ? 'border border-jaune bg-jaune text-nuit'
-                      : 'border border-blanc/15 text-blanc hover:border-jaune'
-                  } ${disabled ? 'cursor-not-allowed opacity-30 line-through hover:border-blanc/15' : ''}`}
+                      ? 'border border-pau-yellow bg-pau-yellow text-pau-night'
+                      : 'border border-pau-primary/20 text-pau-primary hover:border-pau-yellow'
+                  } ${disabled ? 'cursor-not-allowed opacity-30 line-through hover:border-pau-primary/20' : ''}`}
                   aria-pressed={active}
                   aria-label={`Taille ${v.size}${disabled ? ' — épuisée' : ''}`}
                 >
@@ -80,12 +80,12 @@ export function AddToCartForm({ product, variants }) {
         </div>
       )}
 
-      <div className="flex flex-col gap-2 border-t border-blanc/10 pt-6 md:flex-row md:items-center md:justify-between">
+      <div className="flex flex-col gap-2 border-t border-pau-primary/10 pt-6 md:flex-row md:items-center md:justify-between">
         <div>
-          <p className="font-display text-3xl uppercase leading-crush text-blanc">
+          <p className="font-display text-3xl uppercase leading-crush text-pau-yellow">
             {formatPrice(unitPrice)}
           </p>
-          <p className="mt-1 font-mono text-[10px] uppercase tracking-[0.2em] text-blanc/40">
+          <p className="mt-1 font-mono text-[10px] uppercase tracking-[0.2em] text-pau-primary/60">
             {isOut
               ? 'Rupture sur cette taille'
               : available <= 5
