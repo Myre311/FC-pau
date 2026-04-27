@@ -118,7 +118,7 @@ export default async function HomePage() {
 
       {/* ─── PROCHAINS MATCHS ANIMÉS ──────────────────────────── */}
       <section className="section-pau border-t border-pau-primary/10 bg-white">
-        <div className="container-pau px-4 sm:px-6">
+        <div className="container-pau">
           {upcomingMatches.length === 0 ? (
             <FadeIn>
               <div className="card-pau mx-auto max-w-2xl p-10 text-center">

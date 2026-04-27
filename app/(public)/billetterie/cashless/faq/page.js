@@ -13,17 +13,17 @@ export default function FAQCashlessPage() {
       <section className="container-fc pt-16 pb-12 md:pt-24 md:pb-20">
         <p className="badge-mono">Billetterie · Cashless · FAQ</p>
         <h1 className="mt-6 text-[14vw] md:text-[10vw] lg:text-[140px]">
-          QUESTIONS <span className="text-jaune">FRÉQUENTES</span>
+          QUESTIONS <span className="text-pau-yellow">FRÉQUENTES</span>
         </h1>
-        <p className="mt-6 max-w-3xl font-sans text-lg leading-relaxed text-blanc/70 md:text-xl">
+        <p className="mt-6 max-w-3xl font-sans text-lg leading-relaxed text-white/70 md:text-xl">
           Tout ce que tu dois savoir sur le système cashless du Nouste Camp.
           Rechargement, remboursement, carte perdue, application mobile.
         </p>
       </section>
 
       {/* Général */}
-      <section className="container-fc border-t border-blanc/10 py-12 md:py-20">
-        <h2 className="mb-12 font-display text-5xl uppercase leading-crush tracking-tightest text-blanc md:text-6xl">
+      <section className="container-fc border-t border-white/10 py-12 md:py-20">
+        <h2 className="mb-12 font-display text-5xl uppercase leading-crush tracking-tightest text-white md:text-6xl">
           Général
         </h2>
 
@@ -44,8 +44,8 @@ export default function FAQCashlessPage() {
       </section>
 
       {/* Rechargement */}
-      <section className="container-fc border-t border-blanc/10 py-12 md:py-20">
-        <h2 className="mb-12 font-display text-5xl uppercase leading-crush tracking-tightest text-blanc md:text-6xl">
+      <section className="container-fc border-t border-white/10 py-12 md:py-20">
+        <h2 className="mb-12 font-display text-5xl uppercase leading-crush tracking-tightest text-white md:text-6xl">
           Rechargement
         </h2>
 
@@ -70,8 +70,8 @@ export default function FAQCashlessPage() {
       </section>
 
       {/* Utilisation */}
-      <section className="container-fc border-t border-blanc/10 py-12 md:py-20">
-        <h2 className="mb-12 font-display text-5xl uppercase leading-crush tracking-tightest text-blanc md:text-6xl">
+      <section className="container-fc border-t border-white/10 py-12 md:py-20">
+        <h2 className="mb-12 font-display text-5xl uppercase leading-crush tracking-tightest text-white md:text-6xl">
           Utilisation
         </h2>
 
@@ -92,8 +92,8 @@ export default function FAQCashlessPage() {
       </section>
 
       {/* Remboursement */}
-      <section className="container-fc border-t border-blanc/10 py-12 md:py-20">
-        <h2 className="mb-12 font-display text-5xl uppercase leading-crush tracking-tightest text-blanc md:text-6xl">
+      <section className="container-fc border-t border-white/10 py-12 md:py-20">
+        <h2 className="mb-12 font-display text-5xl uppercase leading-crush tracking-tightest text-white md:text-6xl">
           Remboursement
         </h2>
 
@@ -114,8 +114,8 @@ export default function FAQCashlessPage() {
       </section>
 
       {/* Problèmes */}
-      <section className="container-fc border-t border-blanc/10 py-12 md:py-20">
-        <h2 className="mb-12 font-display text-5xl uppercase leading-crush tracking-tightest text-blanc md:text-6xl">
+      <section className="container-fc border-t border-white/10 py-12 md:py-20">
+        <h2 className="mb-12 font-display text-5xl uppercase leading-crush tracking-tightest text-white md:text-6xl">
           Problèmes techniques
         </h2>
 
@@ -136,8 +136,8 @@ export default function FAQCashlessPage() {
       </section>
 
       {/* Sécurité */}
-      <section className="container-fc border-t border-blanc/10 py-12 md:py-20">
-        <h2 className="mb-12 font-display text-5xl uppercase leading-crush tracking-tightest text-blanc md:text-6xl">
+      <section className="container-fc border-t border-white/10 py-12 md:py-20">
+        <h2 className="mb-12 font-display text-5xl uppercase leading-crush tracking-tightest text-white md:text-6xl">
           Sécurité & données
         </h2>
 
@@ -158,33 +158,33 @@ export default function FAQCashlessPage() {
       </section>
 
       {/* CTA */}
-      <section className="container-fc border-t border-blanc/10 py-12 md:py-20">
+      <section className="container-fc border-t border-white/10 py-12 md:py-20">
         <div className="max-w-2xl">
-          <h2 className="font-display text-5xl uppercase leading-crush tracking-tightest text-blanc md:text-6xl">
+          <h2 className="font-display text-5xl uppercase leading-crush tracking-tightest text-white md:text-6xl">
             Toujours une question ?
           </h2>
-          <p className="mt-6 font-sans text-base leading-relaxed text-blanc/75 md:text-lg">
+          <p className="mt-6 font-sans text-base leading-relaxed text-white/75 md:text-lg">
             Si tu ne trouves pas la réponse à ta question, contacte notre
             service billetterie. Nous te répondrons dans les plus brefs délais.
           </p>
 
           <div className="mt-8 space-y-4">
-            <p className="font-sans text-base text-blanc/75">
+            <p className="font-sans text-base text-white/75">
               Email :{' '}
               <a
                 href="mailto:cashless@paufc.fr"
-                className="text-jaune hover:underline"
+                className="text-pau-yellow hover:underline"
               >
                 cashless@paufc.fr
               </a>
             </p>
-            <p className="font-sans text-base text-blanc/75">
+            <p className="font-sans text-base text-white/75">
               Téléphone :{' '}
-              <a href="tel:+33559000000" className="text-jaune hover:underline">
+              <a href="tel:+33559000000" className="text-pau-yellow hover:underline">
                 +33 5 59 00 00 00
               </a>
             </p>
-            <p className="font-sans text-base text-blanc/75">
+            <p className="font-sans text-base text-white/75">
               Horaires : Lundi au vendredi, 9h-17h
             </p>
           </div>
@@ -192,13 +192,13 @@ export default function FAQCashlessPage() {
           <div className="mt-8 flex flex-wrap gap-4">
             <Link
               href="/billetterie/cashless"
-              className="inline-block border border-blanc/20 px-6 py-3 font-mono text-sm uppercase tracking-wider text-blanc transition-colors hover:border-jaune hover:text-jaune"
+              className="inline-block border border-white/20 px-6 py-3 font-mono text-sm uppercase tracking-wider text-white transition-colors hover:border-pau-yellow hover:text-pau-yellow"
             >
               Retour Cashless
             </Link>
             <Link
               href="/rgpd"
-              className="font-mono text-sm uppercase tracking-wider text-blanc/60 hover:text-jaune"
+              className="font-mono text-sm uppercase tracking-wider text-white/60 hover:text-pau-yellow"
             >
               Politique RGPD →
             </Link>
@@ -212,11 +212,11 @@ export default function FAQCashlessPage() {
 // Composant FAQ Item
 function FAQItem({ question, answer }) {
   return (
-    <div className="border-l-2 border-jaune pl-6 md:pl-10">
-      <h3 className="font-display text-2xl uppercase leading-tight tracking-tight text-blanc md:text-3xl">
+    <div className="border-l-2 border-pau-yellow pl-6 md:pl-10">
+      <h3 className="font-display text-2xl uppercase leading-tight tracking-tight text-white md:text-3xl">
         {question}
       </h3>
-      <p className="mt-4 font-sans text-base leading-relaxed text-blanc/75 md:text-lg">
+      <p className="mt-4 font-sans text-base leading-relaxed text-white/75 md:text-lg">
         {answer}
       </p>
     </div>
