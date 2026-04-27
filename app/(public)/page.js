@@ -58,36 +58,65 @@ export default async function HomePage() {
       {/* ─── HERO ANIMÉ NIVEAU BARÇA ──────────────────────────── */}
       <AnimatedHero />
 
-      {/* ─── NEWSLETTER ──────────────────────────── */}
-      <section className="border-b border-nuit/10 bg-blanc py-12">
-        <div className="container-pau">
-          <FadeIn className="mx-auto max-w-2xl text-center">
-            <h2 className="mb-4 font-display text-2xl font-bold uppercase text-nuit md:text-3xl">
-              Restez informé
-            </h2>
-            <p className="mb-6 text-sm text-nuit/70 md:text-base">
-              Recevez les actualités, offres exclusives et informations billetterie directement dans votre boîte mail.
-            </p>
-            <form className="flex flex-col gap-3 sm:flex-row">
-              <input
-                type="email"
-                placeholder="votre@email.fr"
-                className="flex-1 border-2 border-nuit/20 bg-blanc px-6 py-3 text-nuit placeholder-nuit/40 transition-all focus:border-jaune focus:outline-none"
-                required
-              />
-              <button
-                type="submit"
-                className="border-2 border-jaune bg-jaune px-8 py-3 font-display text-sm font-bold uppercase tracking-wide text-nuit transition-colors hover:border-nuit hover:bg-nuit hover:text-jaune"
-              >
-                S'inscrire
-              </button>
-            </form>
-          </FadeIn>
-        </div>
-      </section>
+      {/* ─── ACTUALITÉS ──────────────────────────── */}
+      {latestArticles.length > 0 && (
+        <section className="border-b border-nuit/10 bg-blanc py-8 md:py-12">
+          <div className="container-pau">
+            <FadeIn>
+              <div className="mb-6 flex items-center justify-between">
+                <h2 className="font-display text-2xl font-bold uppercase text-nuit md:text-3xl">
+                  Actualités
+                </h2>
+                <Link
+                  href="/actualites"
+                  className="group flex items-center gap-2 font-display text-xs font-bold uppercase tracking-wide text-nuit transition-all hover:gap-3 hover:text-jaune md:text-sm"
+                >
+                  Voir tout
+                  <svg className="h-3 w-3 transition-transform group-hover:translate-x-1 md:h-4 md:w-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                    <path d="M9 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </Link>
+              </div>
+            </FadeIn>
+
+            <StaggerContainer staggerDelay={0.1} className="grid gap-4 md:grid-cols-3">
+              {latestArticles.map((article) => (
+                <StaggerItem key={article.id}>
+                  <Link href={`/actualites/${article.slug}`}>
+                    <HoverCard className="group overflow-hidden border border-nuit/10 bg-blanc transition-all hover:border-jaune hover:shadow-md">
+                      {article.coverImage && (
+                        <div className="relative aspect-video w-full overflow-hidden bg-gradient-to-br from-nuit to-primaire">
+                          <Image
+                            src={article.coverImage}
+                            alt={article.title}
+                            fill
+                            className="object-cover transition-transform duration-300 group-hover:scale-110"
+                          />
+                        </div>
+                      )}
+                      <div className="p-4">
+                        <p className="mb-2 font-mono text-[9px] font-bold uppercase tracking-wider text-jaune">
+                          {new Date(article.publishedAt).toLocaleDateString('fr-FR', {
+                            day: 'numeric',
+                            month: 'long',
+                            year: 'numeric'
+                          })}
+                        </p>
+                        <h3 className="line-clamp-2 font-display text-base font-bold uppercase leading-tight text-nuit group-hover:text-jaune">
+                          {article.title}
+                        </h3>
+                      </div>
+                    </HoverCard>
+                  </Link>
+                </StaggerItem>
+              ))}
+            </StaggerContainer>
+          </div>
+        </section>
+      )}
 
       {/* ─── PROCHAINS MATCHS ANIMÉS ──────────────────────────── */}
-      <section className="section-pau border-t border-blanc/10">
+      <section className="section-pau border-t border-nuit/10 bg-blanc">
         <div className="container-pau">
           {upcomingMatches.length === 0 ? (
             <FadeIn>
