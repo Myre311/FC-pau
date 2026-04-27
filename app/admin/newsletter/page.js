@@ -17,16 +17,16 @@ export default async function AdminNewsletterPage({ searchParams }) {
   };
 
   const [active, confirmed, all, list] = await Promise.all([
-    prisma.newsletterSubscriber.count({ where: { unsubscribedAt: null } }),
+    prisma.newsletterSubscriber.count({ where: { unsubscribedAt: null } }).catch(() => 0),
     prisma.newsletterSubscriber.count({
       where: { unsubscribedAt: null, confirmedAt: { not: null } },
-    }),
-    prisma.newsletterSubscriber.count(),
+    }).catch(() => 0),
+    prisma.newsletterSubscriber.count().catch(() => 0),
     prisma.newsletterSubscriber.findMany({
       where,
       orderBy: { createdAt: 'desc' },
       take: 200,
-    }),
+    }).catch(() => []),
   ]);
 
   const exportHref = segment

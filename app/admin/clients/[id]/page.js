@@ -15,7 +15,7 @@ export default async function ClientFichePage({ params }) {
       orders: { orderBy: { createdAt: 'desc' }, include: { items: true } },
       addresses: true,
     },
-  });
+  }).catch(() => null);
   if (!customer) notFound();
 
   const lifetimeValue = customer.orders

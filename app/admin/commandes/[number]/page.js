@@ -15,7 +15,7 @@ export default async function AdminOrderPage({ params }) {
       items: { include: { variant: { include: { product: true } } } },
       user: true,
     },
-  });
+  }).catch(() => null);
   if (!order) notFound();
 
   return (

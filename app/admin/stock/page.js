@@ -21,12 +21,12 @@ export default async function AdminStockPage() {
     prisma.productVariant.findMany({
       include: { product: true, stockItem: true },
       orderBy: [{ product: { name: 'asc' } }, { size: 'asc' }],
-    }),
+    }).catch(() => []),
     prisma.stockMovement.findMany({
       orderBy: { occurredAt: 'desc' },
       take: 30,
       include: { variant: { include: { product: true } } },
-    }),
+    }).catch(() => []),
   ]);
 
   const lowStock = variants.filter(

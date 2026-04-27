@@ -25,7 +25,7 @@ export default async function AdminPersonnalisationsPage() {
         },
       },
     },
-  });
+  }).catch(() => []);
 
   return (
     <div className="space-y-8">

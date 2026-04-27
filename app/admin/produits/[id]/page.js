@@ -13,8 +13,8 @@ export default async function AdminProduitPage({ params }) {
     prisma.product.findUnique({
       where: { id: params.id },
       include: { variants: { include: { stockItem: true } } },
-    }),
-    prisma.category.findMany({ orderBy: { position: 'asc' } }),
+    }).catch(() => null),
+    prisma.category.findMany({ orderBy: { position: 'asc' } }).catch(() => []),
   ]);
 
   if (!product) notFound();

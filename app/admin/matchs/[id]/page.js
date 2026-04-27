@@ -10,7 +10,7 @@ export const metadata = {
 export default async function EditMatchPage({ params }) {
   const match = await prisma.match.findUnique({
     where: { id: params.id },
-  });
+  }).catch(() => null);
 
   if (!match) {
     notFound();

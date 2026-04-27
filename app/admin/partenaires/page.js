@@ -7,7 +7,7 @@ export const metadata = { title: 'Partenaires' };
 export default async function AdminPartenairesPage() {
   const partners = await prisma.partner.findMany({
     orderBy: [{ tier: 'asc' }, { position: 'asc' }],
-  });
+  }).catch(() => []);
 
   return (
     <div className="space-y-8">

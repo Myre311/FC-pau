@@ -10,7 +10,7 @@ export const metadata = {
 export default async function EditJoueurPage({ params }) {
   const player = await prisma.player.findUnique({
     where: { id: params.id },
-  });
+  }).catch(() => null);
 
   if (!player) notFound();
 

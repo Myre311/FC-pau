@@ -9,7 +9,7 @@ export const metadata = { title: 'Modifier actualité' };
 export default async function ModifierActualitePage({ params }) {
   const article = await prisma.article.findUnique({
     where: { id: params.id },
-  });
+  }).catch(() => null);
 
   if (!article) {
     redirect('/admin/actualites');
