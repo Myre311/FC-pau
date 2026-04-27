@@ -51,10 +51,10 @@ export default async function CalendrierPage() {
       <SectionLight>
         {next && (
           <>
-            <h2 className="mb-6 font-mono text-[11px] uppercase tracking-[0.2em] text-[#0F1E45]">
+            <h2 className="mb-6 font-mono text-[11px] uppercase tracking-[0.2em] text-pau-primary">
               Prochain match
             </h2>
-            <div className="border border-[#FFD60A]/40 bg-[#1A1D38]/10 p-2 mb-12">
+            <div className="border border-pau-yellow/40 bg-pau-primary/10 p-2 mb-12">
               <MatchCard match={next} />
             </div>
           </>
@@ -62,11 +62,11 @@ export default async function CalendrierPage() {
 
         {upcoming.length > 1 && (
           <>
-            <header className="mb-8 flex items-end justify-between pt-8 border-t border-[#0F1E45]/10">
-              <h2 className="font-display text-4xl uppercase leading-crush tracking-tightest text-[#0F1E45] md:text-5xl">
+            <header className="mb-8 flex items-end justify-between pt-8 border-t border-pau-primary/10">
+              <h2 className="font-display text-4xl uppercase leading-crush tracking-tightest text-pau-primary md:text-5xl">
                 À venir
               </h2>
-              <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#0F1E45]/40">
+              <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-pau-primary/40">
                 {upcoming.length - 1}
               </span>
             </header>
@@ -80,11 +80,11 @@ export default async function CalendrierPage() {
 
         {recent.length > 0 && (
           <>
-            <header className="mb-8 flex items-end justify-between pt-12 border-t border-[#0F1E45]/10">
-              <h2 className="font-display text-4xl uppercase leading-crush tracking-tightest text-[#0F1E45] md:text-5xl">
+            <header className="mb-8 flex items-end justify-between pt-12 border-t border-pau-primary/10">
+              <h2 className="font-display text-4xl uppercase leading-crush tracking-tightest text-pau-primary md:text-5xl">
                 Résultats récents
               </h2>
-              <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#0F1E45]/40">
+              <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-pau-primary/40">
                 {recent.length}
               </span>
             </header>
@@ -97,11 +97,11 @@ export default async function CalendrierPage() {
         )}
 
         {upcoming.length === 0 && recent.length === 0 && (
-          <div className="border border-dashed border-[#0F1E45]/15 p-10 text-center">
-            <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#0F1E45]">
+          <div className="border border-dashed border-pau-primary/15 p-10 text-center">
+            <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-pau-primary">
               Calendrier vide
             </p>
-            <p className="mt-4 font-sans text-[#0F1E45]/60">
+            <p className="mt-4 font-sans text-pau-primary/60">
               Aucun match programmé pour le moment.
             </p>
           </div>
