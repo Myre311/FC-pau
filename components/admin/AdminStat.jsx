@@ -1,12 +1,12 @@
 export function AdminStat({ label, value, hint, tone = 'default' }) {
   const tones = {
-    default: 'text-blanc',
-    accent: 'text-jaune',
-    warn: 'text-jaune',
+    default: 'text-gray-900',
+    accent: 'text-pau-yellow',
+    warn: 'text-pau-yellow',
   };
   return (
-    <div className="border border-blanc/10 bg-primaire/20 p-5">
-      <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-blanc/50">
+    <div className="border border-gray-200/10 bg-pau-primary/20 p-5">
+      <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-gray-900/50">
         {label}
       </p>
       <p
@@ -15,7 +15,7 @@ export function AdminStat({ label, value, hint, tone = 'default' }) {
         {value}
       </p>
       {hint && (
-        <p className="mt-2 font-mono text-[10px] uppercase tracking-[0.2em] text-blanc/40">
+        <p className="mt-2 font-mono text-[10px] uppercase tracking-[0.2em] text-gray-900/40">
           {hint}
         </p>
       )}

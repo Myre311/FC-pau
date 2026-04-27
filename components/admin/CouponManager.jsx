@@ -20,39 +20,39 @@ export function CouponManager({ coupons }) {
       </div>
 
       {adding && (
-        <div className="border border-blanc/15 p-5">
+        <div className="border border-gray-200/15 p-5">
           <CouponForm onCancel={() => setAdding(false)} onSuccess={() => setAdding(false)} />
         </div>
       )}
 
       {coupons.length === 0 ? (
-        <p className="border border-dashed border-blanc/15 p-6 font-sans text-sm text-blanc/60">
+        <p className="border border-dashed border-gray-200/15 p-6 font-sans text-sm text-gray-900/60">
           Aucun code promo configuré.
         </p>
       ) : (
-        <ul className="divide-y divide-blanc/10 border border-blanc/10">
+        <ul className="divide-y divide-blanc/10 border border-gray-200/10">
           {coupons.map((c) => (
             <li
               key={c.id}
               className="grid gap-2 px-4 py-3 md:grid-cols-[140px_1fr_auto_auto_auto] md:items-center md:gap-4"
             >
-              <span className="font-mono text-sm text-blanc">{c.code}</span>
-              <span className="font-sans text-sm text-blanc/70">
+              <span className="font-mono text-sm text-gray-900">{c.code}</span>
+              <span className="font-sans text-sm text-gray-900/70">
                 {c.type === 'percent'
                   ? `Remise ${c.value}%`
                   : `Remise ${formatPrice(c.value)}`}
                 {c.minSubtotal != null && (
-                  <span className="ml-2 font-mono text-[10px] uppercase tracking-[0.2em] text-blanc/40">
+                  <span className="ml-2 font-mono text-[10px] uppercase tracking-[0.2em] text-gray-900/40">
                     Min {formatPrice(c.minSubtotal)}
                   </span>
                 )}
               </span>
-              <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-blanc/50">
+              <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-gray-900/50">
                 {c.usesCount} utilisations
               </span>
               <span
                 className={`font-mono text-[10px] uppercase tracking-[0.2em] ${
-                  c.active ? 'text-jaune' : 'text-blanc/30'
+                  c.active ? 'text-pau-yellow' : 'text-gray-900/30'
                 }`}
               >
                 {c.active ? 'Actif' : 'Inactif'}
@@ -61,7 +61,7 @@ export function CouponManager({ coupons }) {
                 <input type="hidden" name="id" value={c.id} />
                 <button
                   type="submit"
-                  className="font-mono text-[10px] uppercase tracking-[0.2em] text-blanc/40 transition-colors hover:text-blanc"
+                  className="font-mono text-[10px] uppercase tracking-[0.2em] text-gray-900/40 transition-colors hover:text-gray-900"
                 >
                   Supprimer
                 </button>
@@ -138,7 +138,7 @@ function CouponForm({ onCancel, onSuccess }) {
       <Toggle label="Code actif" name="active" defaultChecked />
 
       {error && (
-        <p className="border border-jaune/40 bg-jaune/10 px-4 py-2 font-mono text-[10px] uppercase tracking-[0.15em] text-jaune">
+        <p className="border border-pau-yellow/40 bg-jaune/10 px-4 py-2 font-mono text-[10px] uppercase tracking-[0.15em] text-pau-yellow">
           {error}
         </p>
       )}
@@ -150,7 +150,7 @@ function CouponForm({ onCancel, onSuccess }) {
         <button
           type="button"
           onClick={onCancel}
-          className="font-mono text-[10px] uppercase tracking-[0.2em] text-blanc/50 transition-colors hover:text-blanc"
+          className="font-mono text-[10px] uppercase tracking-[0.2em] text-gray-900/50 transition-colors hover:text-gray-900"
         >
           Annuler
         </button>
@@ -162,9 +162,9 @@ function CouponForm({ onCancel, onSuccess }) {
 function Field({ label, name, type = 'text', required = true, hint, step, min }) {
   return (
     <label className="block">
-      <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-blanc/50">
+      <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-gray-900/50">
         {label}
-        {required && <span className="ml-1 text-jaune">*</span>}
+        {required && <span className="ml-1 text-pau-yellow">*</span>}
       </span>
       <input
         type={type}
@@ -172,10 +172,10 @@ function Field({ label, name, type = 'text', required = true, hint, step, min })
         required={required}
         step={step}
         min={min}
-        className="mt-2 block h-11 w-full border border-blanc/15 bg-transparent px-3 font-sans text-sm text-blanc outline-none transition-colors focus:border-jaune"
+        className="mt-2 block h-11 w-full border border-gray-200/15 bg-transparent px-3 font-sans text-sm text-gray-900 outline-none transition-colors focus:border-pau-yellow"
       />
       {hint && (
-        <span className="mt-1.5 block font-mono text-[10px] tracking-[0.15em] text-blanc/40">
+        <span className="mt-1.5 block font-mono text-[10px] tracking-[0.15em] text-gray-900/40">
           {hint}
         </span>
       )}
@@ -186,14 +186,14 @@ function Field({ label, name, type = 'text', required = true, hint, step, min })
 function Select({ label, name, value, onChange, children }) {
   return (
     <label className="block">
-      <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-blanc/50">
+      <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-gray-900/50">
         {label}
       </span>
       <select
         name={name}
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="mt-2 block h-11 w-full border border-blanc/15 bg-nuit px-3 font-sans text-sm text-blanc outline-none transition-colors focus:border-jaune"
+        className="mt-2 block h-11 w-full border border-gray-200/15 bg-pau-night px-3 font-sans text-sm text-gray-900 outline-none transition-colors focus:border-pau-yellow"
       >
         {children}
       </select>
@@ -208,9 +208,9 @@ function Toggle({ label, name, defaultChecked }) {
         type="checkbox"
         name={name}
         defaultChecked={defaultChecked}
-        className="h-4 w-4 flex-none border-blanc/30 bg-transparent accent-jaune"
+        className="h-4 w-4 flex-none border-gray-200/30 bg-transparent accent-jaune"
       />
-      <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-blanc/70">
+      <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-gray-900/70">
         {label}
       </span>
     </label>

@@ -33,13 +33,13 @@ export function OrderStatusForm({ order }) {
   return (
     <form action={action} className="space-y-4">
       <label className="block">
-        <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-blanc/50">
+        <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-gray-900/50">
           Statut commande
         </span>
         <select
           value={status}
           onChange={(e) => setStatus(e.target.value)}
-          className="mt-2 block h-11 w-full border border-blanc/15 bg-nuit px-3 font-sans text-sm text-blanc outline-none transition-colors focus:border-jaune"
+          className="mt-2 block h-11 w-full border border-gray-200/15 bg-pau-night px-3 font-sans text-sm text-gray-900 outline-none transition-colors focus:border-pau-yellow"
         >
           {STATUSES.map((s) => (
             <option key={s.value} value={s.value}>
@@ -50,7 +50,7 @@ export function OrderStatusForm({ order }) {
       </label>
 
       {error && (
-        <p className="border border-jaune/40 bg-jaune/10 px-4 py-2 font-mono text-[10px] uppercase tracking-[0.15em] text-jaune">
+        <p className="border border-pau-yellow/40 bg-jaune/10 px-4 py-2 font-mono text-[10px] uppercase tracking-[0.15em] text-pau-yellow">
           {error}
         </p>
       )}

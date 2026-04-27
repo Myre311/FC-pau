@@ -20,12 +20,12 @@ export function PlayerForm({ player, action, deleteAction }) {
 
   return (
     <div className="max-w-3xl">
-      <form action={action} className="space-y-6 bg-primaire/20 border border-blanc/10 p-8">
+      <form action={action} className="space-y-6 bg-pau-primary/20 border border-gray-200/10 p-8">
         {player && <input type="hidden" name="id" value={player.id} />}
 
         <div className="grid gap-6 md:grid-cols-2">
           <div>
-            <label className="block text-sm font-semibold text-blanc mb-2">
+            <label className="block text-sm font-semibold text-gray-900 mb-2">
               Numéro *
             </label>
             <input
@@ -35,19 +35,19 @@ export function PlayerForm({ player, action, deleteAction }) {
               required
               min="1"
               max="99"
-              className="w-full px-4 py-3 bg-nuit border border-blanc/20 text-blanc focus:border-jaune focus:outline-none"
+              className="w-full px-4 py-3 bg-pau-night border border-gray-200/20 text-gray-900 focus:border-pau-yellow focus:outline-none"
             />
           </div>
 
           <div>
-            <label className="block text-sm font-semibold text-blanc mb-2">
+            <label className="block text-sm font-semibold text-gray-900 mb-2">
               Position *
             </label>
             <select
               name="position"
               defaultValue={player?.position || 'midfielder'}
               required
-              className="w-full px-4 py-3 bg-nuit border border-blanc/20 text-blanc focus:border-jaune focus:outline-none"
+              className="w-full px-4 py-3 bg-pau-night border border-gray-200/20 text-gray-900 focus:border-pau-yellow focus:outline-none"
             >
               <option value="goalkeeper">Gardien</option>
               <option value="defender">Défenseur</option>
@@ -59,7 +59,7 @@ export function PlayerForm({ player, action, deleteAction }) {
 
         <div className="grid gap-6 md:grid-cols-2">
           <div>
-            <label className="block text-sm font-semibold text-blanc mb-2">
+            <label className="block text-sm font-semibold text-gray-900 mb-2">
               Prénom *
             </label>
             <input
@@ -67,12 +67,12 @@ export function PlayerForm({ player, action, deleteAction }) {
               name="firstName"
               defaultValue={player?.firstName}
               required
-              className="w-full px-4 py-3 bg-nuit border border-blanc/20 text-blanc focus:border-jaune focus:outline-none"
+              className="w-full px-4 py-3 bg-pau-night border border-gray-200/20 text-gray-900 focus:border-pau-yellow focus:outline-none"
             />
           </div>
 
           <div>
-            <label className="block text-sm font-semibold text-blanc mb-2">
+            <label className="block text-sm font-semibold text-gray-900 mb-2">
               Nom *
             </label>
             <input
@@ -80,14 +80,14 @@ export function PlayerForm({ player, action, deleteAction }) {
               name="lastName"
               defaultValue={player?.lastName}
               required
-              className="w-full px-4 py-3 bg-nuit border border-blanc/20 text-blanc focus:border-jaune focus:outline-none"
+              className="w-full px-4 py-3 bg-pau-night border border-gray-200/20 text-gray-900 focus:border-pau-yellow focus:outline-none"
             />
           </div>
         </div>
 
         <div className="grid gap-6 md:grid-cols-2">
           <div>
-            <label className="block text-sm font-semibold text-blanc mb-2">
+            <label className="block text-sm font-semibold text-gray-900 mb-2">
               Taille (cm)
             </label>
             <input
@@ -96,25 +96,25 @@ export function PlayerForm({ player, action, deleteAction }) {
               defaultValue={player?.heightCm || ''}
               min="150"
               max="220"
-              className="w-full px-4 py-3 bg-nuit border border-blanc/20 text-blanc focus:border-jaune focus:outline-none"
+              className="w-full px-4 py-3 bg-pau-night border border-gray-200/20 text-gray-900 focus:border-pau-yellow focus:outline-none"
             />
           </div>
 
           <div>
-            <label className="block text-sm font-semibold text-blanc mb-2">
+            <label className="block text-sm font-semibold text-gray-900 mb-2">
               Date de naissance
             </label>
             <input
               type="date"
               name="birthDate"
               defaultValue={birthDate}
-              className="w-full px-4 py-3 bg-nuit border border-blanc/20 text-blanc focus:border-jaune focus:outline-none"
+              className="w-full px-4 py-3 bg-pau-night border border-gray-200/20 text-gray-900 focus:border-pau-yellow focus:outline-none"
             />
           </div>
         </div>
 
         <div>
-          <label className="block text-sm font-semibold text-blanc mb-2">
+          <label className="block text-sm font-semibold text-gray-900 mb-2">
             Nationalité
           </label>
           <input
@@ -122,12 +122,12 @@ export function PlayerForm({ player, action, deleteAction }) {
             name="nationality"
             defaultValue={player?.nationality || ''}
             placeholder="France"
-            className="w-full px-4 py-3 bg-nuit border border-blanc/20 text-blanc focus:border-jaune focus:outline-none"
+            className="w-full px-4 py-3 bg-pau-night border border-gray-200/20 text-gray-900 focus:border-pau-yellow focus:outline-none"
           />
         </div>
 
         <div>
-          <label className="block text-sm font-semibold text-blanc mb-2">
+          <label className="block text-sm font-semibold text-gray-900 mb-2">
             Photo (URL)
           </label>
           <input
@@ -135,15 +135,15 @@ export function PlayerForm({ player, action, deleteAction }) {
             name="photoUrl"
             defaultValue={player?.photoUrl || ''}
             placeholder="https://..."
-            className="w-full px-4 py-3 bg-nuit border border-blanc/20 text-blanc focus:border-jaune focus:outline-none"
+            className="w-full px-4 py-3 bg-pau-night border border-gray-200/20 text-gray-900 focus:border-pau-yellow focus:outline-none"
           />
-          <p className="mt-2 text-xs text-blanc/40">
+          <p className="mt-2 text-xs text-gray-900/40">
             URL de la photo du joueur (Supabase Storage ou externe)
           </p>
         </div>
 
         <div>
-          <label className="block text-sm font-semibold text-blanc mb-2">
+          <label className="block text-sm font-semibold text-gray-900 mb-2">
             Biographie
           </label>
           <textarea
@@ -151,11 +151,11 @@ export function PlayerForm({ player, action, deleteAction }) {
             defaultValue={player?.bio || ''}
             rows={4}
             placeholder="Parcours du joueur..."
-            className="w-full px-4 py-3 bg-nuit border border-blanc/20 text-blanc focus:border-jaune focus:outline-none resize-none"
+            className="w-full px-4 py-3 bg-pau-night border border-gray-200/20 text-gray-900 focus:border-pau-yellow focus:outline-none resize-none"
           />
         </div>
 
-        <div className="flex items-center justify-between gap-4 pt-6 border-t border-blanc/10">
+        <div className="flex items-center justify-between gap-4 pt-6 border-t border-gray-200/10">
           <div>
             {player && deleteAction && (
               <button
@@ -172,13 +172,13 @@ export function PlayerForm({ player, action, deleteAction }) {
           <div className="flex gap-3">
             <a
               href="/admin/joueurs"
-              className="px-6 py-3 border-2 border-blanc/20 text-blanc font-bold uppercase hover:bg-blanc/10 transition-colors"
+              className="px-6 py-3 border-2 border-gray-200/20 text-gray-900 font-bold uppercase hover:bg-blanc/10 transition-colors"
             >
               Annuler
             </a>
             <button
               type="submit"
-              className="bg-jaune text-nuit px-8 py-3 font-bold uppercase hover:bg-jaune/90 transition-colors"
+              className="bg-jaune text-nuit px-8 py-3 font-bold uppercase hover:bg-pau-yellow/90 transition-colors"
             >
               {player ? 'Mettre à jour' : 'Créer'}
             </button>

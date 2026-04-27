@@ -27,30 +27,30 @@ const TONE_STYLES = {
   success: 'border-green-500/20 bg-green-500/5',
   warning: 'border-yellow-500/20 bg-yellow-500/5',
   danger: 'border-red-500/20 bg-red-500/5',
-  default: 'border-blanc/10 bg-primaire/30',
+  default: 'border-gray-200 bg-white',
 };
 
 const ICON_TONE_STYLES = {
   success: 'bg-green-500/10 text-green-400',
   warning: 'bg-yellow-500/10 text-yellow-400',
   danger: 'bg-red-500/10 text-red-400',
-  default: 'bg-jaune/10 text-jaune',
+  default: 'bg-pau-yellow/10 text-pau-yellow',
 };
 
 export function DashboardStatCard({ label, value, subtitle, icon = 'revenue', trend, tone = 'default' }) {
   return (
-    <div className={`rounded-lg border p-6 transition-all hover:shadow-lg ${TONE_STYLES[tone]}`}>
+    <div className={`rounded-lg border p-6 shadow-sm transition-all hover:shadow-md ${TONE_STYLES[tone]}`}>
       <div className="flex items-start justify-between">
         <div className="flex-1">
-          <p className="font-mono text-xs uppercase tracking-wider text-blanc/60">
+          <p className="text-sm font-medium text-gray-600">
             {label}
           </p>
-          <p className="mt-3 font-display text-3xl text-blanc">{value}</p>
+          <p className="mt-3 text-3xl font-bold text-gray-900">{value}</p>
           {subtitle && (
-            <p className="mt-2 font-mono text-xs text-blanc/40">{subtitle}</p>
+            <p className="mt-2 text-xs text-gray-500">{subtitle}</p>
           )}
           {trend && (
-            <p className="mt-2 font-mono text-xs text-green-400">
+            <p className="mt-2 text-xs text-green-600">
               {trend} vs mois dernier
             </p>
           )}

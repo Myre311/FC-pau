@@ -33,7 +33,7 @@ export function StockAdjustForm({ variant }) {
       <button
         type="button"
         onClick={() => setOpen(true)}
-        className="font-mono text-[10px] uppercase tracking-[0.2em] text-blanc/60 transition-colors hover:text-jaune"
+        className="font-mono text-[10px] uppercase tracking-[0.2em] text-gray-900/60 transition-colors hover:text-pau-yellow"
       >
         Ajuster
       </button>
@@ -43,7 +43,7 @@ export function StockAdjustForm({ variant }) {
   return (
     <form action={action} className="flex flex-wrap items-end gap-2">
       <label className="block">
-        <span className="block font-mono text-[9px] uppercase tracking-[0.2em] text-blanc/50">
+        <span className="block font-mono text-[9px] uppercase tracking-[0.2em] text-gray-900/50">
           Delta
         </span>
         <input
@@ -53,11 +53,11 @@ export function StockAdjustForm({ variant }) {
           value={delta}
           onChange={(e) => setDelta(e.target.value)}
           placeholder="+10 / -2"
-          className="mt-1 block h-9 w-24 border border-blanc/15 bg-transparent px-2 font-mono text-sm text-blanc outline-none transition-colors focus:border-jaune"
+          className="mt-1 block h-9 w-24 border border-gray-200/15 bg-transparent px-2 font-mono text-sm text-gray-900 outline-none transition-colors focus:border-pau-yellow"
         />
       </label>
       <label className="block flex-1 min-w-[140px]">
-        <span className="block font-mono text-[9px] uppercase tracking-[0.2em] text-blanc/50">
+        <span className="block font-mono text-[9px] uppercase tracking-[0.2em] text-gray-900/50">
           Note
         </span>
         <input
@@ -65,7 +65,7 @@ export function StockAdjustForm({ variant }) {
           value={note}
           onChange={(e) => setNote(e.target.value)}
           placeholder="livraison fournisseur…"
-          className="mt-1 block h-9 w-full border border-blanc/15 bg-transparent px-2 font-sans text-sm text-blanc outline-none transition-colors focus:border-jaune"
+          className="mt-1 block h-9 w-full border border-gray-200/15 bg-transparent px-2 font-sans text-sm text-gray-900 outline-none transition-colors focus:border-pau-yellow"
         />
       </label>
       <Button type="submit" variant="primary" size="sm" disabled={pending}>
@@ -74,12 +74,12 @@ export function StockAdjustForm({ variant }) {
       <button
         type="button"
         onClick={() => setOpen(false)}
-        className="font-mono text-[10px] uppercase tracking-[0.2em] text-blanc/40 transition-colors hover:text-blanc"
+        className="font-mono text-[10px] uppercase tracking-[0.2em] text-gray-900/40 transition-colors hover:text-gray-900"
       >
         Annuler
       </button>
       {error && (
-        <p className="basis-full font-mono text-[10px] uppercase tracking-[0.15em] text-jaune">
+        <p className="basis-full font-mono text-[10px] uppercase tracking-[0.15em] text-pau-yellow">
           {error}
         </p>
       )}

@@ -74,13 +74,13 @@ export function ImageUpload({
 
   return (
     <div className="space-y-4">
-      <label className="block text-sm font-semibold text-blanc mb-2">
+      <label className="block text-sm font-semibold text-gray-900 mb-2">
         {label}
       </label>
 
       {preview ? (
         <div className="relative">
-          <div className="relative aspect-video w-full max-w-md overflow-hidden border border-blanc/20 bg-nuit">
+          <div className="relative aspect-video w-full max-w-md overflow-hidden border border-gray-200/20 bg-pau-night">
             <Image
               src={preview}
               alt="Preview"
@@ -98,10 +98,10 @@ export function ImageUpload({
         </div>
       ) : (
         <div>
-          <label className="flex flex-col items-center justify-center w-full max-w-md h-64 border-2 border-dashed border-blanc/20 cursor-pointer hover:border-jaune/50 transition-colors bg-nuit/50">
+          <label className="flex flex-col items-center justify-center w-full max-w-md h-64 border-2 border-dashed border-gray-200/20 cursor-pointer hover:border-pau-yellow/50 transition-colors bg-pau-night/50">
             <div className="flex flex-col items-center justify-center pt-5 pb-6">
               <svg
-                className="w-10 h-10 mb-3 text-blanc/40"
+                className="w-10 h-10 mb-3 text-gray-900/40"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -113,10 +113,10 @@ export function ImageUpload({
                   d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
                 />
               </svg>
-              <p className="mb-2 text-sm text-blanc/60">
+              <p className="mb-2 text-sm text-gray-900/60">
                 <span className="font-semibold">Cliquez pour uploader</span>
               </p>
-              <p className="text-xs text-blanc/40">
+              <p className="text-xs text-gray-900/40">
                 PNG, JPG, GIF, WebP (max 5MB)
               </p>
             </div>
@@ -132,8 +132,8 @@ export function ImageUpload({
       )}
 
       {uploading && (
-        <div className="flex items-center gap-2 text-sm text-jaune">
-          <div className="h-4 w-4 animate-spin border-2 border-jaune border-t-transparent rounded-full" />
+        <div className="flex items-center gap-2 text-sm text-pau-yellow">
+          <div className="h-4 w-4 animate-spin border-2 border-pau-yellow border-t-transparent rounded-full" />
           Upload en cours...
         </div>
       )}

@@ -18,7 +18,7 @@ const SECTIONS = [
     items: [
       { href: '/admin/commandes', label: 'Commandes' },
       { href: '/admin/clients', label: 'Clients' },
-      { href: '/admin/personnalisations', label: 'Personnalisations' },
+      { href: '/admin/personnalisations', label: 'Flocage' },
     ],
   },
   {

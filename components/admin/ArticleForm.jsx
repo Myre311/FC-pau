@@ -30,13 +30,13 @@ export function ArticleForm({ article, action, deleteAction }) {
     <form action={action} className="space-y-8">
       {article && <input type="hidden" name="id" value={article.id} />}
 
-      <div className="space-y-6 rounded-lg border border-blanc/10 bg-primaire/30 p-6">
-        <h2 className="font-display text-xl uppercase text-blanc">
+      <div className="space-y-6 rounded-lg border border-gray-200/10 bg-pau-primary/30 p-6">
+        <h2 className="font-display text-xl uppercase text-gray-900">
           Informations générales
         </h2>
 
         <div>
-          <label className="mb-2 block font-mono text-xs uppercase tracking-wider text-blanc/60">
+          <label className="mb-2 block font-mono text-xs uppercase tracking-wider text-gray-900/60">
             Titre *
           </label>
           <input
@@ -45,13 +45,13 @@ export function ArticleForm({ article, action, deleteAction }) {
             value={title}
             onChange={handleTitleChange}
             required
-            className="w-full rounded border border-blanc/20 bg-nuit px-4 py-3 font-sans text-blanc placeholder-blanc/40 focus:border-jaune focus:outline-none"
+            className="w-full rounded border border-gray-200/20 bg-pau-night px-4 py-3 font-sans text-gray-900 placeholder-blanc/40 focus:border-pau-yellow focus:outline-none"
             placeholder="Titre de l'article"
           />
         </div>
 
         <div>
-          <label className="mb-2 block font-mono text-xs uppercase tracking-wider text-blanc/60">
+          <label className="mb-2 block font-mono text-xs uppercase tracking-wider text-gray-900/60">
             Slug (URL) *
           </label>
           <input
@@ -60,23 +60,23 @@ export function ArticleForm({ article, action, deleteAction }) {
             value={slug}
             onChange={(e) => setSlug(e.target.value)}
             required
-            className="w-full rounded border border-blanc/20 bg-nuit px-4 py-3 font-mono text-sm text-blanc placeholder-blanc/40 focus:border-jaune focus:outline-none"
+            className="w-full rounded border border-gray-200/20 bg-pau-night px-4 py-3 font-mono text-sm text-gray-900 placeholder-blanc/40 focus:border-pau-yellow focus:outline-none"
             placeholder="mon-article"
           />
-          <p className="mt-1 font-mono text-xs text-blanc/40">
+          <p className="mt-1 font-mono text-xs text-gray-900/40">
             URL: /actualites/{slug || 'mon-article'}
           </p>
         </div>
 
         <div>
-          <label className="mb-2 block font-mono text-xs uppercase tracking-wider text-blanc/60">
+          <label className="mb-2 block font-mono text-xs uppercase tracking-wider text-gray-900/60">
             Extrait (optionnel)
           </label>
           <textarea
             name="excerpt"
             defaultValue={article?.excerpt || ''}
             rows={3}
-            className="w-full rounded border border-blanc/20 bg-nuit px-4 py-3 font-sans text-blanc placeholder-blanc/40 focus:border-jaune focus:outline-none"
+            className="w-full rounded border border-gray-200/20 bg-pau-night px-4 py-3 font-sans text-gray-900 placeholder-blanc/40 focus:border-pau-yellow focus:outline-none"
             placeholder="Court résumé de l'article..."
           />
         </div>
@@ -93,11 +93,11 @@ export function ArticleForm({ article, action, deleteAction }) {
         </div>
       </div>
 
-      <div className="space-y-6 rounded-lg border border-blanc/10 bg-primaire/30 p-6">
-        <h2 className="font-display text-xl uppercase text-blanc">Contenu</h2>
+      <div className="space-y-6 rounded-lg border border-gray-200/10 bg-pau-primary/30 p-6">
+        <h2 className="font-display text-xl uppercase text-gray-900">Contenu</h2>
 
         <div>
-          <label className="mb-2 block font-mono text-xs uppercase tracking-wider text-blanc/60">
+          <label className="mb-2 block font-mono text-xs uppercase tracking-wider text-gray-900/60">
             Contenu *
           </label>
           <textarea
@@ -105,27 +105,27 @@ export function ArticleForm({ article, action, deleteAction }) {
             defaultValue={article?.body || ''}
             required
             rows={15}
-            className="w-full rounded border border-blanc/20 bg-nuit px-4 py-3 font-sans text-blanc placeholder-blanc/40 focus:border-jaune focus:outline-none"
+            className="w-full rounded border border-gray-200/20 bg-pau-night px-4 py-3 font-sans text-gray-900 placeholder-blanc/40 focus:border-pau-yellow focus:outline-none"
             placeholder="Contenu de l'article (Markdown supporté)..."
           />
         </div>
       </div>
 
-      <div className="space-y-6 rounded-lg border border-blanc/10 bg-primaire/30 p-6">
-        <h2 className="font-display text-xl uppercase text-blanc">
+      <div className="space-y-6 rounded-lg border border-gray-200/10 bg-pau-primary/30 p-6">
+        <h2 className="font-display text-xl uppercase text-gray-900">
           Publication
         </h2>
 
         <div className="grid gap-6 md:grid-cols-2">
           <div>
-            <label className="mb-2 block font-mono text-xs uppercase tracking-wider text-blanc/60">
+            <label className="mb-2 block font-mono text-xs uppercase tracking-wider text-gray-900/60">
               Catégorie *
             </label>
             <select
               name="category"
               defaultValue={article?.category || 'other'}
               required
-              className="w-full rounded border border-blanc/20 bg-nuit px-4 py-3 font-sans text-blanc focus:border-jaune focus:outline-none"
+              className="w-full rounded border border-gray-200/20 bg-pau-night px-4 py-3 font-sans text-gray-900 focus:border-pau-yellow focus:outline-none"
             >
               <option value="matchday">Match</option>
               <option value="club">Club</option>
@@ -136,7 +136,7 @@ export function ArticleForm({ article, action, deleteAction }) {
           </div>
 
           <div>
-            <label className="mb-2 block font-mono text-xs uppercase tracking-wider text-blanc/60">
+            <label className="mb-2 block font-mono text-xs uppercase tracking-wider text-gray-900/60">
               Date de publication
             </label>
             <input
@@ -147,7 +147,7 @@ export function ArticleForm({ article, action, deleteAction }) {
                   ? new Date(article.publishedAt).toISOString().slice(0, 16)
                   : new Date().toISOString().slice(0, 16)
               }
-              className="w-full rounded border border-blanc/20 bg-nuit px-4 py-3 font-sans text-blanc focus:border-jaune focus:outline-none"
+              className="w-full rounded border border-gray-200/20 bg-pau-night px-4 py-3 font-sans text-gray-900 focus:border-pau-yellow focus:outline-none"
             />
           </div>
         </div>
@@ -158,15 +158,15 @@ export function ArticleForm({ article, action, deleteAction }) {
             name="featured"
             id="featured"
             defaultChecked={article?.featured}
-            className="h-4 w-4 rounded border-blanc/20 bg-nuit text-jaune focus:ring-jaune"
+            className="h-4 w-4 rounded border-gray-200/20 bg-pau-night text-pau-yellow focus:ring-jaune"
           />
-          <label htmlFor="featured" className="font-mono text-xs uppercase tracking-wider text-blanc/60">
+          <label htmlFor="featured" className="font-mono text-xs uppercase tracking-wider text-gray-900/60">
             Mettre en avant (À la une)
           </label>
         </div>
       </div>
 
-      <div className="flex items-center justify-between gap-4 border-t border-blanc/10 pt-6">
+      <div className="flex items-center justify-between gap-4 border-t border-gray-200/10 pt-6">
         {deleteAction && (
           <form action={deleteAction}>
             <input type="hidden" name="id" value={article.id} />

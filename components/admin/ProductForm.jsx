@@ -97,7 +97,7 @@ export function ProductForm({ product, categories }) {
         </Select>
       </div>
 
-      <div className="flex flex-wrap gap-6 border-t border-blanc/10 pt-5">
+      <div className="flex flex-wrap gap-6 border-t border-gray-200/10 pt-5">
         <Toggle label="Mise en avant" name="featured" defaultChecked={product?.featured ?? false} />
         <Toggle
           label="Personnalisable (flocage)"
@@ -107,12 +107,12 @@ export function ProductForm({ product, categories }) {
       </div>
 
       {error && (
-        <p className="border border-jaune/40 bg-jaune/10 px-4 py-3 font-mono text-[11px] uppercase tracking-[0.15em] text-jaune">
+        <p className="border border-pau-yellow/40 bg-jaune/10 px-4 py-3 font-mono text-[11px] uppercase tracking-[0.15em] text-pau-yellow">
           {error}
         </p>
       )}
 
-      <div className="flex items-center gap-4 border-t border-blanc/10 pt-5">
+      <div className="flex items-center gap-4 border-t border-gray-200/10 pt-5">
         <Button
           type="submit"
           variant="primary"
@@ -127,7 +127,7 @@ export function ProductForm({ product, categories }) {
               : 'Créer le produit'}
         </Button>
         {success && (
-          <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-jaune">
+          <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-pau-yellow">
             Enregistré
           </span>
         )}
@@ -140,25 +140,25 @@ function Field({ label, name, type = 'text', defaultValue, required = true, hint
   if (type === 'textarea') {
     return (
       <label className="block">
-        <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-blanc/50">
+        <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-gray-900/50">
           {label}
-          {required && <span className="ml-1 text-jaune">*</span>}
+          {required && <span className="ml-1 text-pau-yellow">*</span>}
         </span>
         <textarea
           name={name}
           defaultValue={defaultValue}
           required={required}
           rows={5}
-          className="mt-2 block w-full resize-y border border-blanc/15 bg-transparent p-3 font-sans text-sm text-blanc outline-none transition-colors focus:border-jaune"
+          className="mt-2 block w-full resize-y border border-gray-200/15 bg-transparent p-3 font-sans text-sm text-gray-900 outline-none transition-colors focus:border-pau-yellow"
         />
       </label>
     );
   }
   return (
     <label className="block">
-      <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-blanc/50">
+      <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-gray-900/50">
         {label}
-        {required && <span className="ml-1 text-jaune">*</span>}
+        {required && <span className="ml-1 text-pau-yellow">*</span>}
       </span>
       <input
         type={type}
@@ -167,10 +167,10 @@ function Field({ label, name, type = 'text', defaultValue, required = true, hint
         required={required}
         step={step}
         min={min}
-        className="mt-2 block h-11 w-full border border-blanc/15 bg-transparent px-3 font-sans text-sm text-blanc outline-none transition-colors focus:border-jaune"
+        className="mt-2 block h-11 w-full border border-gray-200/15 bg-transparent px-3 font-sans text-sm text-gray-900 outline-none transition-colors focus:border-pau-yellow"
       />
       {hint && (
-        <span className="mt-1.5 block font-mono text-[10px] tracking-[0.15em] text-blanc/40">
+        <span className="mt-1.5 block font-mono text-[10px] tracking-[0.15em] text-gray-900/40">
           {hint}
         </span>
       )}
@@ -181,13 +181,13 @@ function Field({ label, name, type = 'text', defaultValue, required = true, hint
 function Select({ label, name, defaultValue, children }) {
   return (
     <label className="block">
-      <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-blanc/50">
+      <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-gray-900/50">
         {label}
       </span>
       <select
         name={name}
         defaultValue={defaultValue}
-        className="mt-2 block h-11 w-full border border-blanc/15 bg-nuit px-3 font-sans text-sm text-blanc outline-none transition-colors focus:border-jaune"
+        className="mt-2 block h-11 w-full border border-gray-200/15 bg-pau-night px-3 font-sans text-sm text-gray-900 outline-none transition-colors focus:border-pau-yellow"
       >
         {children}
       </select>
@@ -202,9 +202,9 @@ function Toggle({ label, name, defaultChecked }) {
         type="checkbox"
         name={name}
         defaultChecked={defaultChecked}
-        className="h-4 w-4 flex-none border-blanc/30 bg-transparent accent-jaune"
+        className="h-4 w-4 flex-none border-gray-200/30 bg-transparent accent-jaune"
       />
-      <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-blanc/70">
+      <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-gray-900/70">
         {label}
       </span>
     </label>
