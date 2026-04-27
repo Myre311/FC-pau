@@ -91,7 +91,7 @@ export function ImageUpload({
           <button
             type="button"
             onClick={handleRemove}
-            className="mt-2 px-4 py-2 text-sm bg-red-500/20 border border-red-500 text-red-500 hover:bg-red-500 hover:text-white transition-colors"
+            className="mt-2 px-4 py-2 text-sm bg-red-500/20 border border-red-500 text-red-500 hover:bg-red-500 hover:text-gray-900 transition-colors"
           >
             Supprimer l'image
           </button>

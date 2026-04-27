@@ -35,7 +35,7 @@ export function PlayerForm({ player, action, deleteAction }) {
               required
               min="1"
               max="99"
-              className="w-full px-4 py-3 bg-pau-night border border-gray-200/20 text-gray-900 focus:border-pau-yellow focus:outline-none"
+              className="w-full px-4 py-3 bg-white border border-gray-200/20 text-gray-900 focus:border-pau-yellow focus:outline-none"
             />
           </div>
 
@@ -47,7 +47,7 @@ export function PlayerForm({ player, action, deleteAction }) {
               name="position"
               defaultValue={player?.position || 'midfielder'}
               required
-              className="w-full px-4 py-3 bg-pau-night border border-gray-200/20 text-gray-900 focus:border-pau-yellow focus:outline-none"
+              className="w-full px-4 py-3 bg-white border border-gray-200/20 text-gray-900 focus:border-pau-yellow focus:outline-none"
             >
               <option value="goalkeeper">Gardien</option>
               <option value="defender">Défenseur</option>
@@ -67,7 +67,7 @@ export function PlayerForm({ player, action, deleteAction }) {
               name="firstName"
               defaultValue={player?.firstName}
               required
-              className="w-full px-4 py-3 bg-pau-night border border-gray-200/20 text-gray-900 focus:border-pau-yellow focus:outline-none"
+              className="w-full px-4 py-3 bg-white border border-gray-200/20 text-gray-900 focus:border-pau-yellow focus:outline-none"
             />
           </div>
 
@@ -80,7 +80,7 @@ export function PlayerForm({ player, action, deleteAction }) {
               name="lastName"
               defaultValue={player?.lastName}
               required
-              className="w-full px-4 py-3 bg-pau-night border border-gray-200/20 text-gray-900 focus:border-pau-yellow focus:outline-none"
+              className="w-full px-4 py-3 bg-white border border-gray-200/20 text-gray-900 focus:border-pau-yellow focus:outline-none"
             />
           </div>
         </div>
@@ -96,7 +96,7 @@ export function PlayerForm({ player, action, deleteAction }) {
               defaultValue={player?.heightCm || ''}
               min="150"
               max="220"
-              className="w-full px-4 py-3 bg-pau-night border border-gray-200/20 text-gray-900 focus:border-pau-yellow focus:outline-none"
+              className="w-full px-4 py-3 bg-white border border-gray-200/20 text-gray-900 focus:border-pau-yellow focus:outline-none"
             />
           </div>
 
@@ -108,7 +108,7 @@ export function PlayerForm({ player, action, deleteAction }) {
               type="date"
               name="birthDate"
               defaultValue={birthDate}
-              className="w-full px-4 py-3 bg-pau-night border border-gray-200/20 text-gray-900 focus:border-pau-yellow focus:outline-none"
+              className="w-full px-4 py-3 bg-white border border-gray-200/20 text-gray-900 focus:border-pau-yellow focus:outline-none"
             />
           </div>
         </div>
@@ -122,7 +122,7 @@ export function PlayerForm({ player, action, deleteAction }) {
             name="nationality"
             defaultValue={player?.nationality || ''}
             placeholder="France"
-            className="w-full px-4 py-3 bg-pau-night border border-gray-200/20 text-gray-900 focus:border-pau-yellow focus:outline-none"
+            className="w-full px-4 py-3 bg-white border border-gray-200/20 text-gray-900 focus:border-pau-yellow focus:outline-none"
           />
         </div>
 
@@ -135,7 +135,7 @@ export function PlayerForm({ player, action, deleteAction }) {
             name="photoUrl"
             defaultValue={player?.photoUrl || ''}
             placeholder="https://..."
-            className="w-full px-4 py-3 bg-pau-night border border-gray-200/20 text-gray-900 focus:border-pau-yellow focus:outline-none"
+            className="w-full px-4 py-3 bg-white border border-gray-200/20 text-gray-900 focus:border-pau-yellow focus:outline-none"
           />
           <p className="mt-2 text-xs text-gray-900/40">
             URL de la photo du joueur (Supabase Storage ou externe)
@@ -151,7 +151,7 @@ export function PlayerForm({ player, action, deleteAction }) {
             defaultValue={player?.bio || ''}
             rows={4}
             placeholder="Parcours du joueur..."
-            className="w-full px-4 py-3 bg-pau-night border border-gray-200/20 text-gray-900 focus:border-pau-yellow focus:outline-none resize-none"
+            className="w-full px-4 py-3 bg-white border border-gray-200/20 text-gray-900 focus:border-pau-yellow focus:outline-none resize-none"
           />
         </div>
 
@@ -162,7 +162,7 @@ export function PlayerForm({ player, action, deleteAction }) {
                 type="button"
                 onClick={handleDelete}
                 disabled={isDeleting}
-                className="px-6 py-3 border-2 border-red-500 text-red-500 font-bold uppercase hover:bg-red-500 hover:text-white transition-colors disabled:opacity-50"
+                className="px-6 py-3 border-2 border-red-500 text-red-500 font-bold uppercase hover:bg-red-500 hover:text-gray-900 transition-colors disabled:opacity-50"
               >
                 {isDeleting ? 'Suppression...' : 'Supprimer'}
               </button>

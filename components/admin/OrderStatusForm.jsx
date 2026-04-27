@@ -39,7 +39,7 @@ export function OrderStatusForm({ order }) {
         <select
           value={status}
           onChange={(e) => setStatus(e.target.value)}
-          className="mt-2 block h-11 w-full border border-gray-200/15 bg-pau-night px-3 font-sans text-sm text-gray-900 outline-none transition-colors focus:border-pau-yellow"
+          className="mt-2 block h-11 w-full border border-gray-200/15 bg-white px-3 font-sans text-sm text-gray-900 outline-none transition-colors focus:border-pau-yellow"
         >
           {STATUSES.map((s) => (
             <option key={s.value} value={s.value}>

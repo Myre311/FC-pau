@@ -8,17 +8,17 @@ const STYLES = {
   preparing: 'bg-blanc text-nuit',
   shipped: 'bg-blanc/15 text-gray-900',
   delivered: 'bg-blanc/5 text-gray-900/70',
-  cancelled: 'bg-pau-night border border-gray-200/30 text-gray-900/50',
+  cancelled: 'bg-white border border-gray-200/30 text-gray-900/50',
   refunded: 'bg-pau-night border border-pau-yellow/40 text-pau-yellow',
   // Product
   draft: 'bg-blanc/5 text-gray-900/60',
   active: 'bg-jaune text-nuit',
-  archived: 'bg-pau-night border border-gray-200/20 text-gray-900/40',
+  archived: 'bg-white border border-gray-200/20 text-gray-900/40',
   // Match
   scheduled: 'bg-blanc/10 text-gray-900',
   live: 'bg-jaune text-nuit',
   played: 'bg-blanc/5 text-gray-900/60',
-  postponed: 'bg-pau-night border border-gray-200/30 text-gray-900/60',
+  postponed: 'bg-white border border-gray-200/30 text-gray-900/60',
 };
 
 const LABELS = {

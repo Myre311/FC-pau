@@ -235,7 +235,7 @@ export function MatchForm({ match, action, deleteAction }) {
                 type="button"
                 onClick={handleDelete}
                 disabled={isDeleting}
-                className="px-6 py-3 border-2 border-red-500 text-red-500 font-bold uppercase hover:bg-red-500 hover:text-white transition-colors disabled:opacity-50"
+                className="px-6 py-3 border-2 border-red-500 text-red-500 font-bold uppercase hover:bg-red-500 hover:text-gray-900 transition-colors disabled:opacity-50"
               >
                 {isDeleting ? 'Suppression...' : 'Supprimer'}
               </button>
@@ -245,7 +245,7 @@ export function MatchForm({ match, action, deleteAction }) {
           <div className="flex gap-3">
             <a
               href="/admin/matchs"
-              className="px-6 py-3 border-2 border-pau-primary text-pau-primary font-bold uppercase hover:bg-pau-primary hover:text-white transition-colors"
+              className="px-6 py-3 border-2 border-pau-primary text-pau-primary font-bold uppercase hover:bg-pau-primary hover:text-gray-900 transition-colors"
             >
               Annuler
             </a>

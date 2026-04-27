@@ -187,7 +187,7 @@ function Select({ label, name, defaultValue, children }) {
       <select
         name={name}
         defaultValue={defaultValue}
-        className="mt-2 block h-11 w-full border border-gray-200/15 bg-pau-night px-3 font-sans text-sm text-gray-900 outline-none transition-colors focus:border-pau-yellow"
+        className="mt-2 block h-11 w-full border border-gray-200/15 bg-white px-3 font-sans text-sm text-gray-900 outline-none transition-colors focus:border-pau-yellow"
       >
         {children}
       </select>

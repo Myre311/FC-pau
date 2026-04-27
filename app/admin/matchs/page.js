@@ -27,7 +27,7 @@ export default async function MatchsAdminPage() {
             href="/calendrier"
             target="_blank"
             rel="noopener noreferrer"
-            className="border-2 border-pau-primary text-pau-primary px-6 py-3 font-bold uppercase hover:bg-pau-primary hover:text-white transition-colors"
+            className="border-2 border-pau-primary text-pau-primary px-6 py-3 font-bold uppercase hover:bg-pau-primary hover:text-gray-900 transition-colors"
           >
             Voir sur le site ↗
           </Link>

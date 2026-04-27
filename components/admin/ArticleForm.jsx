@@ -45,7 +45,7 @@ export function ArticleForm({ article, action, deleteAction }) {
             value={title}
             onChange={handleTitleChange}
             required
-            className="w-full rounded border border-gray-200/20 bg-pau-night px-4 py-3 font-sans text-gray-900 placeholder-blanc/40 focus:border-pau-yellow focus:outline-none"
+            className="w-full rounded border border-gray-200/20 bg-white px-4 py-3 font-sans text-gray-900 placeholder-gray-400/40 focus:border-pau-yellow focus:outline-none"
             placeholder="Titre de l'article"
           />
         </div>
@@ -60,7 +60,7 @@ export function ArticleForm({ article, action, deleteAction }) {
             value={slug}
             onChange={(e) => setSlug(e.target.value)}
             required
-            className="w-full rounded border border-gray-200/20 bg-pau-night px-4 py-3 font-mono text-sm text-gray-900 placeholder-blanc/40 focus:border-pau-yellow focus:outline-none"
+            className="w-full rounded border border-gray-200/20 bg-white px-4 py-3 font-mono text-sm text-gray-900 placeholder-gray-400/40 focus:border-pau-yellow focus:outline-none"
             placeholder="mon-article"
           />
           <p className="mt-1 font-mono text-xs text-gray-900/40">
@@ -76,7 +76,7 @@ export function ArticleForm({ article, action, deleteAction }) {
             name="excerpt"
             defaultValue={article?.excerpt || ''}
             rows={3}
-            className="w-full rounded border border-gray-200/20 bg-pau-night px-4 py-3 font-sans text-gray-900 placeholder-blanc/40 focus:border-pau-yellow focus:outline-none"
+            className="w-full rounded border border-gray-200/20 bg-white px-4 py-3 font-sans text-gray-900 placeholder-gray-400/40 focus:border-pau-yellow focus:outline-none"
             placeholder="Court résumé de l'article..."
           />
         </div>
@@ -105,7 +105,7 @@ export function ArticleForm({ article, action, deleteAction }) {
             defaultValue={article?.body || ''}
             required
             rows={15}
-            className="w-full rounded border border-gray-200/20 bg-pau-night px-4 py-3 font-sans text-gray-900 placeholder-blanc/40 focus:border-pau-yellow focus:outline-none"
+            className="w-full rounded border border-gray-200/20 bg-white px-4 py-3 font-sans text-gray-900 placeholder-gray-400/40 focus:border-pau-yellow focus:outline-none"
             placeholder="Contenu de l'article (Markdown supporté)..."
           />
         </div>
@@ -125,7 +125,7 @@ export function ArticleForm({ article, action, deleteAction }) {
               name="category"
               defaultValue={article?.category || 'other'}
               required
-              className="w-full rounded border border-gray-200/20 bg-pau-night px-4 py-3 font-sans text-gray-900 focus:border-pau-yellow focus:outline-none"
+              className="w-full rounded border border-gray-200/20 bg-white px-4 py-3 font-sans text-gray-900 focus:border-pau-yellow focus:outline-none"
             >
               <option value="matchday">Match</option>
               <option value="club">Club</option>
@@ -147,7 +147,7 @@ export function ArticleForm({ article, action, deleteAction }) {
                   ? new Date(article.publishedAt).toISOString().slice(0, 16)
                   : new Date().toISOString().slice(0, 16)
               }
-              className="w-full rounded border border-gray-200/20 bg-pau-night px-4 py-3 font-sans text-gray-900 focus:border-pau-yellow focus:outline-none"
+              className="w-full rounded border border-gray-200/20 bg-white px-4 py-3 font-sans text-gray-900 focus:border-pau-yellow focus:outline-none"
             />
           </div>
         </div>
