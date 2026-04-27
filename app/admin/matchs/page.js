@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { prisma } from '@/lib/prisma';
 
 export const dynamic = 'force-dynamic';
@@ -67,10 +68,20 @@ export default async function MatchsAdminPage() {
                     {match.opponent}
                   </td>
                   <td className="px-6 py-4 text-sm text-pau-primary/60">
-                    {match.competition}
+                    {match.competition?.includes('Ligue 2') ? (
+                      <Image
+                        src="/LFP_LOGOTYPE_L2_BKT_MASTER_WHITE_RVB-2048x581.png"
+                        alt="Ligue 2 BKT"
+                        width={80}
+                        height={23}
+                        className="h-auto w-20"
+                      />
+                    ) : (
+                      match.competition
+                    )}
                   </td>
                   <td className="px-6 py-4 text-sm text-pau-primary/60">
-                    {match.isHome ? '🏠 Domicile' : '✈️ Extérieur'}
+                    {match.isHome ? 'Domicile' : 'Extérieur'}
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap">
                     <span className={`px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full ${

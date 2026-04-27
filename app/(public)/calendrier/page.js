@@ -1,5 +1,6 @@
 import { prisma } from '@/lib/prisma';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export const dynamic = 'force-dynamic';
 
@@ -63,9 +64,19 @@ export default async function CalendrierPage() {
               {upcoming.map((match) => (
                 <div key={match.id} className="border-2 border-pau-primary/10 p-6 hover:border-pau-yellow transition-colors">
                   <div className="flex items-center justify-between mb-4">
-                    <span className="text-xs font-mono uppercase text-pau-yellow">
-                      {match.competition}
-                    </span>
+                    {match.competition?.includes('Ligue 2') ? (
+                      <Image
+                        src="/LFP_LOGOTYPE_L2_BKT_MASTER_WHITE_RVB-2048x581.png"
+                        alt="Ligue 2 BKT"
+                        width={80}
+                        height={23}
+                        className="h-auto w-20"
+                      />
+                    ) : (
+                      <span className="text-xs font-mono uppercase text-pau-yellow">
+                        {match.competition}
+                      </span>
+                    )}
                     <span className="text-xs text-pau-primary/60">
                       {match.status}
                     </span>
@@ -91,10 +102,12 @@ export default async function CalendrierPage() {
                     </span>
                   </div>
 
-                  <p className="text-sm text-pau-primary/60">
-                    📍 {match.venue}
-                    {match.isHome ? ' 🏠' : ' ✈️'}
-                  </p>
+                  <div className="text-sm text-pau-primary/60">
+                    <p className="mb-1">{match.venue}</p>
+                    <p className="font-mono text-xs uppercase text-pau-primary/40">
+                      {match.isHome ? 'Domicile' : 'Extérieur'}
+                    </p>
+                  </div>
 
                   {match.ticketUrl && (
                     <a
@@ -103,7 +116,7 @@ export default async function CalendrierPage() {
                       rel="noopener noreferrer"
                       className="mt-4 inline-block bg-pau-yellow text-pau-night px-4 py-2 font-bold uppercase text-sm hover:bg-pau-yellow/90 transition-colors"
                     >
-                      Billetterie →
+                      Billetterie
                     </a>
                   )}
                 </div>
@@ -122,9 +135,19 @@ export default async function CalendrierPage() {
               {recent.map((match) => (
                 <div key={match.id} className="border border-pau-primary/10 bg-pau-primary/5 p-6">
                   <div className="flex items-center justify-between mb-4">
-                    <span className="text-xs font-mono uppercase text-pau-primary/60">
-                      {match.competition}
-                    </span>
+                    {match.competition?.includes('Ligue 2') ? (
+                      <Image
+                        src="/LFP_LOGOTYPE_L2_BKT_MASTER_WHITE_RVB-2048x581.png"
+                        alt="Ligue 2 BKT"
+                        width={80}
+                        height={23}
+                        className="h-auto w-20"
+                      />
+                    ) : (
+                      <span className="text-xs font-mono uppercase text-pau-primary/60">
+                        {match.competition}
+                      </span>
+                    )}
                     <span className="text-xs text-pau-primary/40">
                       {new Date(match.kickoffAt).toLocaleDateString('fr-FR')}
                     </span>
