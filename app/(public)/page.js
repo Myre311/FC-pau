@@ -6,6 +6,7 @@ import { MatchCountdown } from '@/components/vitrine/MatchCountdown';
 import { AnimatedHero } from '@/components/animations/AnimatedHero';
 import { FadeIn, StaggerContainer, StaggerItem } from '@/components/animations/FadeIn';
 import { HoverCard } from '@/components/animations/HoverCard';
+import { PartnersGrid } from '@/components/vitrine/PartnersGrid';
 import { formatPrice } from '@/lib/format';
 
 export const dynamic = 'force-dynamic';
@@ -164,16 +165,16 @@ export default async function HomePage() {
               </div>
             </FadeIn>
 
-            <StaggerContainer staggerDelay={0.1} className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">
+            <StaggerContainer staggerDelay={0.1} className="grid grid-cols-2 gap-4 md:grid-cols-4">
               {featuredProducts.map((product) => {
                 const firstVariant = product.variants[0];
                 const price = firstVariant?.priceEur || product.basePriceEur || 0;
 
                 return (
                   <StaggerItem key={product.id}>
-                    <Link href={`/boutique/${product.slug}`}>
-                      <HoverCard className="group relative overflow-hidden border-2 border-blanc/20 bg-blanc/5 transition-all hover:border-jaune">
-                        {/* Image placeholder */}
+                    <Link href={`/boutique/${product.slug}`} className="flex h-full">
+                      <HoverCard className="group relative flex h-full w-full flex-col overflow-hidden border-2 border-blanc/20 bg-blanc/5 transition-all hover:border-jaune">
+                        {/* Image placeholder - aspect square */}
                         <div className="relative aspect-square w-full overflow-hidden bg-gradient-to-br from-nuit to-primaire">
                           {product.imageUrl ? (
                             <Image
@@ -196,15 +197,15 @@ export default async function HomePage() {
                           )}
                         </div>
 
-                        {/* Info */}
-                        <div className="p-4">
+                        {/* Info - hauteur fixe pour alignement */}
+                        <div className="mt-auto flex min-h-[110px] flex-col p-4">
                           <p className="mb-1 font-mono text-[10px] uppercase tracking-wider text-jaune">
                             {product.category?.name || 'Produit'}
                           </p>
-                          <h3 className="mb-2 font-display text-sm font-bold uppercase leading-tight text-blanc md:text-base">
+                          <h3 className="mb-2 line-clamp-2 font-display text-sm font-bold uppercase leading-tight text-blanc md:text-base">
                             {product.name}
                           </h3>
-                          <p className="font-display text-lg font-black text-jaune md:text-xl">
+                          <p className="mt-auto font-display text-lg font-black text-jaune md:text-xl">
                             {formatPrice(price)}
                           </p>
                         </div>
@@ -218,7 +219,7 @@ export default async function HomePage() {
         </section>
       )}
 
-      {/* ─── PARTENAIRES ANIMÉS ──────────────────────────────────────────────── */}
+      {/* ─── PARTENAIRES ──────────────────────────────────────────────── */}
       <section className="section-pau border-y border-blanc/10 bg-nuit">
         <div className="container-pau">
           <FadeIn>
@@ -229,17 +230,7 @@ export default async function HomePage() {
               </h2>
             </div>
           </FadeIn>
-          <StaggerContainer staggerDelay={0.05} className="grid grid-cols-2 gap-4 md:grid-cols-4 lg:grid-cols-6">
-            {['Joma', 'Holy', 'Intersport', 'Groupama', 'Sarthou', 'Ville de Pau'].map((partner, idx) => (
-              <StaggerItem key={idx}>
-                <HoverCard className="flex items-center justify-center border-2 border-blanc/20 bg-blanc/5 p-6 transition-colors hover:border-jaune hover:bg-blanc/10">
-                  <span className="font-display text-base font-bold uppercase text-blanc/70">
-                    {partner}
-                  </span>
-                </HoverCard>
-              </StaggerItem>
-            ))}
-          </StaggerContainer>
+          <PartnersGrid />
         </div>
       </section>
 
