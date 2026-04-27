@@ -49,7 +49,7 @@ export function LoaderScreen() {
         <span className="absolute inset-0 -translate-x-full bg-jaune animate-loader-fill" />
       </div>
       <p className="font-mono text-[9px] uppercase tracking-[0.28em] text-blanc/30">
-        Boutique Officielle · Chargement
+        Pau FC · Chargement
       </p>
     </div>
   );

@@ -2,7 +2,7 @@
 // Le contenu est dupliqué pour boucler sans saut visuel.
 
 const ITEMS = [
-  'Boutique Officielle',
+  'Pau FC Boutique',
   'Saison 2025-2026',
   'Maillots authentiques',
   'Personnalisation flocage',
