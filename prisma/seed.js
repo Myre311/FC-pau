@@ -181,13 +181,6 @@ const players = [
   { slug: 'a-meddah', firstName: 'Daylam', lastName: 'Meddah', shirtNumber: 97, position: 'forward', nationality: 'DZ', displayOrder: 8, photoUrl: '/images/players/daylam-meddah-97.jpg' },
 ];
 
-const staff = [
-  { slug: 's-batlles', firstName: 'Laurent', lastName: 'Batlles', role: 'coach', staffTitle: 'Entraîneur principal', nationality: 'FR', displayOrder: 1, photoUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=800&fit=crop&crop=faces' },
-  { slug: 's-adjoint', firstName: 'Pierre', lastName: 'Marichal', role: 'staff', staffTitle: 'Entraîneur adjoint', nationality: 'FR', displayOrder: 2, photoUrl: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600&h=800&fit=crop&crop=faces' },
-  { slug: 's-prep', firstName: 'Julien', lastName: 'Casanova', role: 'staff', staffTitle: 'Préparateur physique', nationality: 'FR', displayOrder: 3, photoUrl: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=600&h=800&fit=crop&crop=faces' },
-  { slug: 's-gardien', firstName: 'Cédric', lastName: 'Hengbart', role: 'staff', staffTitle: 'Entraîneur des gardiens', nationality: 'FR', displayOrder: 4, photoUrl: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=600&h=800&fit=crop&crop=faces' },
-];
-
 // ---- Calendrier (mock matchs saison 2025-2026) ----------------------
 
 function daysFromNow(days, hour = 20, minute = 0) {
@@ -574,9 +567,9 @@ async function main() {
     create: adminUser,
   });
 
-  await logStep('Effectif (joueurs + staff)');
+  await logStep('Effectif (joueurs)');
   const playerBySlug = {};
-  for (const p of [...players, ...staff]) {
+  for (const p of players) {
     const created = await prisma.player.upsert({
       where: { slug: p.slug },
       update: p,

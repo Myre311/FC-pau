@@ -37,10 +37,10 @@ export function PlayerCard({ player }) {
       </div>
 
       <div className="mt-4">
-        <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/40">
+        <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-pau-primary/40">
           {isStaff ? player.staffTitle : player.nationality ?? '—'}
         </p>
-        <p className="mt-2 font-display text-2xl uppercase leading-crush tracking-tightest text-white">
+        <p className="mt-2 font-display text-2xl uppercase leading-crush tracking-tightest text-pau-primary">
           {player.firstName}
           <br />
           <span className="text-pau-yellow">{player.lastName}</span>

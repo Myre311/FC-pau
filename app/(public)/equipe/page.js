@@ -21,7 +21,6 @@ export default async function EquipePage() {
   });
 
   const players = all.filter((p) => p.role === 'player');
-  const staffAndCoach = all.filter((p) => p.role !== 'player');
 
   const grouped = POSITION_ORDER.reduce((acc, pos) => {
     acc[pos] = players.filter((p) => p.position === pos);
@@ -34,7 +33,7 @@ export default async function EquipePage() {
         image="/images/hero-equipe.jpg"
         surtitle="Effectif professionnel · Saison 2025-2026"
         title="L'ÉQUIPE"
-        subtitle={`${players.length} joueurs et ${staffAndCoach.length} membres du staff au service d'un seul objectif : porter haut les couleurs du Béarn.`}
+        subtitle={`${players.length} joueurs au service d'un seul objectif : porter haut les couleurs du Béarn.`}
       />
 
       <SectionLight>
@@ -62,24 +61,6 @@ export default async function EquipePage() {
             </div>
           );
         })}
-
-        {staffAndCoach.length > 0 && (
-          <div className="border-t border-[#0F1E45]/10 pt-12 mt-12">
-            <header className="mb-8 flex items-end justify-between">
-              <h2 className="font-display text-4xl uppercase leading-crush tracking-tightest text-[#0F1E45] md:text-5xl">
-                Staff
-              </h2>
-              <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#0F1E45]/40">
-                {staffAndCoach.length}
-              </span>
-            </header>
-            <div className="grid grid-cols-2 gap-x-4 gap-y-10 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-              {staffAndCoach.map((p) => (
-                <PlayerCard key={p.id} player={p} />
-              ))}
-            </div>
-          </div>
-        )}
       </SectionLight>
 
       {all.length === 0 && <EmptyEquipe />}

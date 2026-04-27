@@ -168,7 +168,7 @@ export default async function HomePage() {
             <StaggerContainer staggerDelay={0.1} className="grid grid-cols-2 gap-4 md:grid-cols-4 items-stretch">
               {featuredProducts.map((product) => {
                 const firstVariant = product.variants[0];
-                const price = firstVariant?.priceEur || product.basePriceEur || 0;
+                const price = firstVariant?.priceOverride || product.basePrice || 0;
 
                 return (
                   <StaggerItem key={product.id}>
@@ -176,9 +176,9 @@ export default async function HomePage() {
                       <HoverCard className="group relative flex h-full w-full flex-col overflow-hidden border border-pau-primary/20 bg-white transition-all hover:border-pau-yellow hover:shadow-md">
                         {/* Image placeholder - aspect 3/4 */}
                         <div className="relative aspect-[3/4] w-full overflow-hidden bg-gradient-to-br from-pau-night to-pau-primary">
-                          {product.imageUrl ? (
+                          {product.images?.[0] ? (
                             <Image
-                              src={product.imageUrl}
+                              src={product.images[0]}
                               alt={product.name}
                               fill
                               className="object-cover transition-transform duration-300 group-hover:scale-110"
