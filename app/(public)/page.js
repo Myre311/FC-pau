@@ -60,7 +60,7 @@ export default async function HomePage() {
 
       {/* ─── ACTUALITÉS ──────────────────────────── */}
       {latestArticles.length > 0 && (
-        <section className="border-b border-nuit/10 bg-blanc py-8 md:py-12">
+        <section className="border-b border-nuit/10 bg-blanc py-8 md:py-12 text-nuit">
           <div className="container-pau">
             <FadeIn>
               <div className="mb-6 flex items-center justify-between">
@@ -116,12 +116,12 @@ export default async function HomePage() {
       )}
 
       {/* ─── PROCHAINS MATCHS ANIMÉS ──────────────────────────── */}
-      <section className="section-pau border-t border-nuit/10 bg-blanc">
+      <section className="section-pau border-t border-nuit/10 bg-blanc text-nuit">
         <div className="container-pau">
           {upcomingMatches.length === 0 ? (
             <FadeIn>
               <div className="card-pau mx-auto max-w-2xl p-10 text-center">
-                <p className="text-lead text-blanc/70">
+                <p className="text-lead text-nuit/70">
                   Aucun match programmé pour le moment. Le calendrier sera mis à jour prochainement.
                 </p>
               </div>
