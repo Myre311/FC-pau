@@ -78,9 +78,9 @@ export function ProductCard({ product, featured = false }) {
           </div>
         </div>
 
-        <div className={`px-4 pb-4 ${featured ? 'pt-5' : 'pt-[14px]'}`}>
+        <div className={`px-4 pb-4 ${featured ? 'pt-5' : 'pt-[14px]'} bg-pau-night`}>
           {product.category?.name && (
-            <p className={`mb-[5px] font-mono uppercase tracking-[0.16em] text-white/40 ${featured ? 'text-[9.5px]' : 'text-[8.5px]'}`}>
+            <p className={`mb-[5px] font-mono uppercase tracking-[0.16em] text-pau-yellow/60 ${featured ? 'text-[9.5px]' : 'text-[8.5px]'}`}>
               {product.category.name}
             </p>
           )}
