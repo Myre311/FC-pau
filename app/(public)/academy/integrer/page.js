@@ -189,7 +189,7 @@ export default function IntegrerPage() {
           <div className="mt-8 flex flex-wrap gap-4">
             <a
               href="mailto:recrutement.academy@paufc.fr?subject=Candidature Academy Pau FC"
-              className="inline-block bg-jaune px-6 py-3 font-mono text-sm uppercase tracking-wider text-nuit transition-transform hover:scale-105"
+              className="inline-block bg-pau-yellow px-6 py-3 font-mono text-sm uppercase tracking-wider text-pau-night transition-transform hover:scale-105"
             >
               Envoyer ma candidature
             </a>

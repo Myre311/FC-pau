@@ -114,7 +114,7 @@ export default function OffresCashlessPage() {
             <div className="mt-6">
               <Link
                 href="/billetterie/cashless"
-                className="inline-block bg-jaune px-6 py-3 font-mono text-sm uppercase tracking-wider text-nuit transition-transform hover:scale-105"
+                className="inline-block bg-pau-yellow px-6 py-3 font-mono text-sm uppercase tracking-wider text-pau-night transition-transform hover:scale-105"
               >
                 Commander ma carte
               </Link>
@@ -171,7 +171,7 @@ function OffreCard({
 }) {
   return (
     <div
-      className={`border bg-primaire p-8 md:p-10 ${
+      className={`border bg-white p-8 md:p-10 ${
         active ? 'border-pau-yellow' : 'border-gray-200/10'
       }`}
     >

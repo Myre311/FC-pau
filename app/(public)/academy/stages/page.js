@@ -232,7 +232,7 @@ export default function StagesPage() {
           <div className="mt-8 flex flex-wrap gap-4">
             <a
               href="mailto:stages@paufc.fr?subject=Inscription stage Academy"
-              className="inline-block bg-jaune px-6 py-3 font-mono text-sm uppercase tracking-wider text-nuit transition-transform hover:scale-105"
+              className="inline-block bg-pau-yellow px-6 py-3 font-mono text-sm uppercase tracking-wider text-pau-night transition-transform hover:scale-105"
             >
               Demander une inscription
             </a>
@@ -252,7 +252,7 @@ export default function StagesPage() {
 // Composant Formule Card
 function FormuleCard({ title, badge, duration, description, price, priceDetail }) {
   return (
-    <div className="border border-gray-200/10 bg-primaire p-8 md:p-10">
+    <div className="border border-gray-200/10 bg-white p-8 md:p-10">
       <span className="inline-block font-mono text-xs uppercase tracking-wider text-pau-yellow">
         {badge}
       </span>
@@ -305,8 +305,8 @@ function CalendarItem({ period, dates, status, available }) {
         <span
           className={`inline-block px-4 py-2 font-mono text-xs uppercase tracking-wider ${
             available
-              ? 'bg-jaune/20 text-pau-yellow'
-              : 'bg-blanc/10 text-pau-primary/40'
+              ? 'bg-pau-yellow/20 text-pau-yellow'
+              : 'bg-gray-100 text-pau-primary/40'
           }`}
         >
           {status}

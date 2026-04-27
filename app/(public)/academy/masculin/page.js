@@ -178,7 +178,7 @@ export default function PoleMasculinPage() {
           <div className="mt-8 flex flex-wrap gap-4">
             <Link
               href="/academy/integrer"
-              className="inline-block bg-jaune px-6 py-3 font-mono text-sm uppercase tracking-wider text-nuit transition-transform hover:scale-105"
+              className="inline-block bg-pau-yellow px-6 py-3 font-mono text-sm uppercase tracking-wider text-pau-night transition-transform hover:scale-105"
             >
               Candidater
             </Link>
@@ -219,7 +219,7 @@ function StaffCard({ title, items }) {
       <ul className="mt-4 space-y-2 font-sans text-base text-pau-primary/75">
         {items.map((item, idx) => (
           <li key={idx} className="flex items-start gap-2">
-            <span className="mt-1.5 inline-block h-1.5 w-1.5 flex-shrink-0 bg-jaune" />
+            <span className="mt-1.5 inline-block h-1.5 w-1.5 flex-shrink-0 bg-pau-yellow" />
             <span>{item}</span>
           </li>
         ))}
