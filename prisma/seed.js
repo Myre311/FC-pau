@@ -290,7 +290,7 @@ const articles = [
     title: `La Fondation Pau FC visite le service pédiatrie`,
     excerpt: `Cinq joueurs de l'effectif se sont rendus au CHU de Pau ce mercredi pour rencontrer les enfants hospitalisés.`,
     body: `Toujours engagée auprès des plus jeunes, la Fondation Pau FC a organisé une nouvelle visite au service pédiatrie du CHU de Pau ce mercredi après-midi. Cinq joueurs de l'effectif professionnel se sont prêtés au jeu : photos, dédicaces, échanges, et même un atelier de coloriage avec les plus petits.\n\nUne demi-journée riche en émotions pour les enfants hospitalisés et pour les joueurs eux-mêmes. « Ce sont des moments qui rappellent ce qui compte vraiment », souligne le capitaine Steeve Yago.\n\nLa Fondation poursuit sa mission tout au long de la saison, avec d'autres actions prévues dans les écoles et les hôpitaux du Béarn.`,
-    coverImageUrl: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1200&h=600&fit=crop',
+    coverImageUrl: 'https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=1200&h=600&fit=crop',
     category: 'foundation',
     featured: false,
     publishedAt: daysFromNow(-2),
