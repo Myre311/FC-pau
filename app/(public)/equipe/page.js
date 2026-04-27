@@ -30,7 +30,7 @@ export default async function EquipePage() {
   return (
     <>
       <PageHero
-        image="/images/hero-equipe-new.jpg"
+        image="/images/hero-equipe.jpg"
         surtitle="Effectif professionnel · Saison 2025-2026"
         title="L'ÉQUIPE"
         subtitle={`${players.length} joueurs au service d'un seul objectif : porter haut les couleurs du Béarn.`}
