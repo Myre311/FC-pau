@@ -1,62 +1,62 @@
 export const metadata = {
-  title: 'Contenus du site',
+  title: "Contenus du site",
 };
 
 export default function ContenusPage() {
   const sections = [
     {
-      id: 'home',
-      name: 'Page d'accueil',
-      icon: '🏠',
+      id: "home",
+      name: "Page d'accueil",
+      icon: "HOME",
       fields: [
-        { key: 'hero_title', label: 'Titre principal', value: 'VIVEZ LA PASSION DU PAU FC', type: 'text' },
-        { key: 'hero_subtitle', label: 'Sous-titre', value: 'Ligue 2 BKT • Saison 2025-2026', type: 'text' },
-        { key: 'home_cta', label: 'Texte bouton principal', value: 'Réserver vos places', type: 'text' },
-        { key: 'newsletter_title', label: 'Titre newsletter', value: 'Restez informé', type: 'text' },
-        { key: 'newsletter_desc', label: 'Description newsletter', value: 'Recevez les actualités, offres exclusives et informations billetterie directement dans votre boîte mail.', type: 'textarea' },
+        { key: "hero_title", label: "Titre principal", value: "VIVEZ LA PASSION DU PAU FC", type: "text" },
+        { key: "hero_subtitle", label: "Sous-titre", value: "Ligue 2 BKT - Saison 2025-2026", type: "text" },
+        { key: "home_cta", label: "Texte bouton principal", value: "Réserver vos places", type: "text" },
+        { key: "newsletter_title", label: "Titre newsletter", value: "Restez informé", type: "text" },
+        { key: "newsletter_desc", label: "Description newsletter", value: "Recevez les actualités, offres exclusives et informations billetterie directement dans votre boîte mail.", type: "textarea" },
       ],
     },
     {
-      id: 'billetterie',
-      name: 'Billetterie',
-      icon: '🎫',
+      id: "billetterie",
+      name: "Billetterie",
+      icon: "TICKET",
       fields: [
-        { key: 'billetterie_title', label: 'Titre principal', value: 'Vivez chaque match à domicile', type: 'text' },
-        { key: 'billetterie_subtitle', label: 'Sous-titre', value: 'Viens soutenir le Pau FC au Nouste Camp ! Achète tes billets en ligne et profite d\'une ambiance unique au cœur du Béarn.', type: 'textarea' },
-        { key: 'tarif_plein', label: 'Tarif plein (description)', value: 'Tribune Principale · Catégorie A', type: 'text' },
-        { key: 'cashless_title', label: 'Titre cashless', value: 'Carte cashless', type: 'text' },
+        { key: "billetterie_title", label: "Titre principal", value: "Vivez chaque match à domicile", type: "text" },
+        { key: "billetterie_subtitle", label: "Sous-titre", value: "Viens soutenir le Pau FC au Nouste Camp ! Achète tes billets en ligne et profite d'une ambiance unique au cœur du Béarn.", type: "textarea" },
+        { key: "tarif_plein", label: "Tarif plein (description)", value: "Tribune Principale - Catégorie A", type: "text" },
+        { key: "cashless_title", label: "Titre cashless", value: "Carte cashless", type: "text" },
       ],
     },
     {
-      id: 'boutique',
-      name: 'Boutique',
-      icon: '🛍️',
+      id: "boutique",
+      name: "Boutique",
+      icon: "SHOP",
       fields: [
-        { key: 'shop_title', label: 'Titre boutique', value: 'Boutique officielle', type: 'text' },
-        { key: 'shop_cta', label: 'Bouton voir tout', value: 'Tout voir', type: 'text' },
-        { key: 'product_featured_badge', label: 'Badge produit vedette', value: '★ Top', type: 'text' },
+        { key: "shop_title", label: "Titre boutique", value: "Boutique officielle", type: "text" },
+        { key: "shop_cta", label: "Bouton voir tout", value: "Tout voir", type: "text" },
+        { key: "product_featured_badge", label: "Badge produit vedette", value: "Top", type: "text" },
       ],
     },
     {
-      id: 'footer',
-      name: 'Pied de page',
-      icon: '📄',
+      id: "footer",
+      name: "Pied de page",
+      icon: "FOOTER",
       fields: [
-        { key: 'footer_tagline', label: 'Slogan footer', value: 'Plus qu\'un club, une passion', type: 'text' },
-        { key: 'footer_address', label: 'Adresse', value: 'Nouste Camp, 8 Boulevard de l\'Aviation, 64320 Bizanos', type: 'text' },
-        { key: 'footer_phone', label: 'Téléphone', value: '+33 5 59 00 00 00', type: 'text' },
-        { key: 'footer_email', label: 'Email', value: 'contact@paufc.fr', type: 'text' },
+        { key: "footer_tagline", label: "Slogan footer", value: "Plus qu'un club, une passion", type: "text" },
+        { key: "footer_address", label: "Adresse", value: "Nouste Camp, 8 Boulevard de l'Aviation, 64320 Bizanos", type: "text" },
+        { key: "footer_phone", label: "Téléphone", value: "+33 5 59 00 00 00", type: "text" },
+        { key: "footer_email", label: "Email", value: "contact@paufc.fr", type: "text" },
       ],
     },
     {
-      id: 'seo',
-      name: 'SEO & Métadonnées',
-      icon: '🔍',
+      id: "seo",
+      name: "SEO et Métadonnées",
+      icon: "SEO",
       fields: [
-        { key: 'site_title', label: 'Titre du site', value: 'Pau FC — Club de football professionnel', type: 'text' },
-        { key: 'site_description', label: 'Description du site', value: 'Site officiel du Pau FC. Billetterie, boutique, actualités, équipe et calendrier. Ligue 2 BKT.', type: 'textarea' },
-        { key: 'og_title', label: 'Titre Open Graph', value: 'Pau FC — Club de football professionnel', type: 'text' },
-        { key: 'twitter_handle', label: 'Compte Twitter', value: '@PauFC', type: 'text' },
+        { key: "site_title", label: "Titre du site", value: "Pau FC - Club de football professionnel", type: "text" },
+        { key: "site_description", label: "Description du site", value: "Site officiel du Pau FC. Billetterie, boutique, actualités, équipe et calendrier. Ligue 2 BKT.", type: "textarea" },
+        { key: "og_title", label: "Titre Open Graph", value: "Pau FC - Club de football professionnel", type: "text" },
+        { key: "twitter_handle", label: "Compte Twitter", value: "@PauFC", type: "text" },
       ],
     },
   ];
@@ -72,18 +72,22 @@ export default function ContenusPage() {
           </p>
         </div>
         <button className="rounded-lg bg-pau-yellow px-4 py-2 text-sm font-semibold text-pau-night shadow-sm hover:bg-pau-yellow/90">
-          💾 Enregistrer les modifications
+          Enregistrer les modifications
         </button>
       </div>
 
       {/* Info box */}
       <div className="rounded-lg border border-blue-200 bg-blue-50 p-4">
         <div className="flex gap-3">
-          <span className="text-2xl">💡</span>
+          <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-blue-100">
+            <svg className="h-5 w-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
           <div>
             <h3 className="font-semibold text-blue-900">Comment ça marche ?</h3>
             <p className="mt-1 text-sm text-blue-700">
-              Modifiez les textes ci-dessous, puis cliquez sur "Enregistrer". Les changements seront
+              Modifiez les textes ci-dessous, puis cliquez sur Enregistrer. Les changements seront
               visibles immédiatement sur le site public. Vous pouvez revenir en arrière à tout moment.
             </p>
           </div>
@@ -100,11 +104,13 @@ export default function ContenusPage() {
             {/* Header section */}
             <div className="border-b border-gray-200 p-6">
               <div className="flex items-center gap-3">
-                <span className="text-3xl">{section.icon}</span>
+                <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-pau-yellow/10 text-xs font-bold text-pau-yellow">
+                  {section.icon}
+                </div>
                 <div>
                   <h2 className="text-lg font-semibold text-gray-900">{section.name}</h2>
                   <p className="text-sm text-gray-500">
-                    {section.fields.length} champ{section.fields.length > 1 ? 's' : ''} modifiable{section.fields.length > 1 ? 's' : ''}
+                    {section.fields.length} champ{section.fields.length > 1 ? "s" : ""} modifiable{section.fields.length > 1 ? "s" : ""}
                   </p>
                 </div>
               </div>
@@ -193,7 +199,7 @@ export default function ContenusPage() {
             Annuler
           </button>
           <button className="rounded-lg bg-pau-yellow px-4 py-2 text-sm font-semibold text-pau-night shadow-sm hover:bg-pau-yellow/90">
-            💾 Enregistrer tout
+            Enregistrer tout
           </button>
         </div>
       </div>

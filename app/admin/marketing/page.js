@@ -141,7 +141,7 @@ export default function MarketingPage() {
                   </td>
                   <td className="px-6 py-4">
                     <span className="inline-flex items-center gap-1.5 rounded-full bg-blue-100 px-2.5 py-0.5 text-xs font-medium text-blue-800">
-                      {campaign.platform === 'Google Ads' ? '🔍' : '📘'} {campaign.platform}
+                      {campaign.platform === 'Google Ads' ? '' : ''} {campaign.platform}
                     </span>
                   </td>
                   <td className="px-6 py-4">
@@ -177,31 +177,25 @@ export default function MarketingPage() {
 
       {/* Insights & Recommandations */}
       <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
-        <h2 className="mb-4 text-lg font-semibold text-gray-900">💡 Recommandations</h2>
+        <h2 className="mb-4 text-lg font-semibold text-gray-900">Recommandations</h2>
         <div className="space-y-3">
-          <div className="flex items-start gap-3 rounded-lg bg-blue-50 p-4">
-            <span className="text-2xl">📈</span>
-            <div>
-              <p className="font-medium text-gray-900">
-                Augmenter le budget "Maillots 2025/26"
-              </p>
-              <p className="mt-1 text-sm text-gray-600">
-                Cette campagne a un ROAS de 3.2x. Augmenter le budget de 200€ pourrait générer
-                ~15 conversions supplémentaires.
-              </p>
-            </div>
+          <div className="rounded-lg bg-blue-50 p-4">
+            <p className="font-medium text-gray-900">
+              Augmenter le budget "Maillots 2025/26"
+            </p>
+            <p className="mt-1 text-sm text-gray-600">
+              Cette campagne a un ROAS de 3.2x. Augmenter le budget de 200€ pourrait générer
+              environ 15 conversions supplémentaires.
+            </p>
           </div>
-          <div className="flex items-start gap-3 rounded-lg bg-green-50 p-4">
-            <span className="text-2xl">✅</span>
-            <div>
-              <p className="font-medium text-gray-900">
-                Réactiver "Abonnements Saison"
-              </p>
-              <p className="mt-1 text-sm text-gray-600">
-                Cette campagne en pause a le meilleur ROAS (4.1x). La réactiver maintenant
-                pourrait booster les ventes d'abonnements.
-              </p>
-            </div>
+          <div className="rounded-lg bg-green-50 p-4">
+            <p className="font-medium text-gray-900">
+              Réactiver "Abonnements Saison"
+            </p>
+            <p className="mt-1 text-sm text-gray-600">
+              Cette campagne en pause a le meilleur ROAS (4.1x). La réactiver maintenant
+              pourrait booster les ventes d'abonnements.
+            </p>
           </div>
         </div>
       </div>

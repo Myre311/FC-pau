@@ -10,47 +10,47 @@ const SECTIONS = [
   {
     title: 'Pilotage',
     items: [
-      { href: '/admin', label: 'Tableau de bord', match: 'exact', icon: '📊' },
+      { href: '/admin', label: 'Tableau de bord', match: 'exact' },
     ],
   },
   {
     title: 'Ventes',
     items: [
-      { href: '/admin/commandes', label: 'Commandes', icon: '📦' },
-      { href: '/admin/clients', label: 'Clients', icon: '👥' },
-      { href: '/admin/personnalisations', label: 'Personnalisations', icon: '🎨' },
+      { href: '/admin/commandes', label: 'Commandes' },
+      { href: '/admin/clients', label: 'Clients' },
+      { href: '/admin/personnalisations', label: 'Personnalisations' },
     ],
   },
   {
     title: 'Catalogue',
     items: [
-      { href: '/admin/produits', label: 'Produits', icon: '🛍️' },
-      { href: '/admin/stock', label: 'Stock', icon: '📋' },
-      { href: '/admin/codes-promo', label: 'Codes promo', icon: '🎫' },
+      { href: '/admin/produits', label: 'Produits' },
+      { href: '/admin/stock', label: 'Stock' },
+      { href: '/admin/codes-promo', label: 'Codes promo' },
     ],
   },
   {
     title: 'Marketing',
     items: [
-      { href: '/admin/marketing', label: 'Campagnes', icon: '📢' },
-      { href: '/admin/canaux', label: 'Canaux de vente', icon: '🌐' },
+      { href: '/admin/marketing', label: 'Campagnes' },
+      { href: '/admin/canaux', label: 'Canaux de vente' },
     ],
   },
   {
     title: 'Contenu',
     items: [
-      { href: '/admin/matchs', label: 'Matchs & Calendrier', icon: '⚽' },
-      { href: '/admin/joueurs', label: 'Joueurs', icon: '👕' },
-      { href: '/admin/actualites', label: 'Actualités', icon: '📰' },
-      { href: '/admin/partenaires', label: 'Partenaires', icon: '🤝' },
-      { href: '/admin/contenus', label: 'Textes du site', icon: '✏️' },
-      { href: '/admin/newsletter', label: 'Newsletter', icon: '📧' },
+      { href: '/admin/matchs', label: 'Matchs & Calendrier' },
+      { href: '/admin/joueurs', label: 'Joueurs' },
+      { href: '/admin/actualites', label: 'Actualités' },
+      { href: '/admin/partenaires', label: 'Partenaires' },
+      { href: '/admin/contenus', label: 'Textes du site' },
+      { href: '/admin/newsletter', label: 'Newsletter' },
     ],
   },
   {
     title: 'Système',
     items: [
-      { href: '/admin/parametres', label: 'Paramètres', icon: '⚙️' },
+      { href: '/admin/parametres', label: 'Paramètres' },
     ],
   },
 ];
@@ -130,13 +130,12 @@ function SidebarBody({ user, sections, isActive, onLink }) {
                   <Link
                     href={item.href}
                     onClick={onLink}
-                    className={`flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-colors ${
+                    className={`block rounded-lg px-3 py-2 text-sm font-medium transition-colors ${
                       isActive(item)
                         ? 'bg-pau-yellow text-pau-night'
                         : 'text-gray-700 hover:bg-gray-100'
                     }`}
                   >
-                    {item.icon && <span className="text-lg">{item.icon}</span>}
                     {item.label}
                   </Link>
                 </li>

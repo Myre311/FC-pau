@@ -7,7 +7,7 @@ export default function CanauxPage() {
     {
       id: 'instagram',
       name: 'Instagram Shopping',
-      icon: '📷',
+      icon: 'IG',
       color: 'from-pink-500 to-purple-600',
       connected: true,
       stats: { products: 45, sales: '2,340€', orders: 34 },
@@ -109,11 +109,13 @@ export default function CanauxPage() {
               {/* Header avec gradient */}
               <div className={`h-24 bg-gradient-to-r ${channel.color} p-6`}>
                 <div className="flex items-center gap-3">
-                  <span className="text-4xl">{channel.icon}</span>
+                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-white/20 text-sm font-bold text-white">
+                    {channel.icon}
+                  </div>
                   <div>
                     <h3 className="font-semibold text-white">{channel.name}</h3>
                     <span className="inline-flex items-center gap-1 rounded-full bg-white/20 px-2 py-0.5 text-xs font-medium text-white">
-                      ✓ Connecté
+                      Connecté
                     </span>
                   </div>
                 </div>
@@ -164,7 +166,9 @@ export default function CanauxPage() {
               {/* Header avec gradient */}
               <div className={`h-24 bg-gradient-to-r ${channel.color} opacity-80 p-6`}>
                 <div className="flex items-center gap-3">
-                  <span className="text-4xl opacity-80">{channel.icon}</span>
+                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-white/20 text-sm font-bold text-white">
+                    {channel.icon}
+                  </div>
                   <div>
                     <h3 className="font-semibold text-white">{channel.name}</h3>
                     <span className="inline-flex items-center gap-1 rounded-full bg-white/20 px-2 py-0.5 text-xs font-medium text-white">

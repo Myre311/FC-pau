@@ -91,10 +91,10 @@ export default async function AdminDashboardPage() {
         </div>
         <div className="flex gap-3">
           <button className="rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50">
-            📅 Derniers 30 jours
+            Derniers 30 jours
           </button>
           <button className="rounded-lg bg-pau-yellow px-4 py-2 text-sm font-semibold text-pau-night shadow-sm hover:bg-pau-yellow/90">
-            📊 Rapport complet
+            Rapport complet
           </button>
         </div>
       </div>
@@ -181,43 +181,31 @@ export default async function AdminDashboardPage() {
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <Link
           href="/admin/produits/nouveau"
-          className="flex items-start gap-4 rounded-lg border border-gray-200 bg-white p-4 shadow-sm transition-all hover:border-pau-yellow hover:shadow-md"
+          className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm transition-all hover:border-pau-yellow hover:shadow-md"
         >
-          <span className="text-3xl">📦</span>
-          <div>
-            <p className="font-medium text-gray-900">Nouveau produit</p>
-            <p className="text-sm text-gray-500">Ajouter au catalogue</p>
-          </div>
+          <p className="font-medium text-gray-900">Nouveau produit</p>
+          <p className="text-sm text-gray-500">Ajouter au catalogue</p>
         </Link>
         <Link
           href="/admin/matchs/nouveau"
-          className="flex items-start gap-4 rounded-lg border border-gray-200 bg-white p-4 shadow-sm transition-all hover:border-pau-yellow hover:shadow-md"
+          className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm transition-all hover:border-pau-yellow hover:shadow-md"
         >
-          <span className="text-3xl">⚽</span>
-          <div>
-            <p className="font-medium text-gray-900">Nouveau match</p>
-            <p className="text-sm text-gray-500">Programmer un match</p>
-          </div>
+          <p className="font-medium text-gray-900">Nouveau match</p>
+          <p className="text-sm text-gray-500">Programmer un match</p>
         </Link>
         <Link
           href="/admin/actualites/nouveau"
-          className="flex items-start gap-4 rounded-lg border border-gray-200 bg-white p-4 shadow-sm transition-all hover:border-pau-yellow hover:shadow-md"
+          className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm transition-all hover:border-pau-yellow hover:shadow-md"
         >
-          <span className="text-3xl">📰</span>
-          <div>
-            <p className="font-medium text-gray-900">Nouvelle actualité</p>
-            <p className="text-sm text-gray-500">Publier une actu</p>
-          </div>
+          <p className="font-medium text-gray-900">Nouvelle actualité</p>
+          <p className="text-sm text-gray-500">Publier une actu</p>
         </Link>
         <Link
           href="/admin/marketing"
-          className="flex items-start gap-4 rounded-lg border border-gray-200 bg-white p-4 shadow-sm transition-all hover:border-pau-yellow hover:shadow-md"
+          className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm transition-all hover:border-pau-yellow hover:shadow-md"
         >
-          <span className="text-3xl">📊</span>
-          <div>
-            <p className="font-medium text-gray-900">Marketing</p>
-            <p className="text-sm text-gray-500">Gérer les campagnes</p>
-          </div>
+          <p className="font-medium text-gray-900">Marketing</p>
+          <p className="text-sm text-gray-500">Gérer les campagnes</p>
         </Link>
       </div>
 
@@ -253,9 +241,9 @@ export default async function AdminDashboardPage() {
               <p className="text-sm font-medium text-gray-600">Commandes à préparer</p>
               <p className="mt-2 text-3xl font-bold text-gray-900">{pendingOrders}</p>
             </div>
-            <span className={`text-sm font-medium ${pendingOrders > 0 ? 'text-orange-600' : 'text-green-600'}`}>
-              {pendingOrders > 0 ? '⚠️' : '✓'}
-            </span>
+            {pendingOrders > 0 && (
+              <span className="text-xs font-semibold text-orange-600">À traiter</span>
+            )}
           </div>
         </div>
 
@@ -265,9 +253,9 @@ export default async function AdminDashboardPage() {
               <p className="text-sm font-medium text-gray-600">Alertes stock</p>
               <p className="mt-2 text-3xl font-bold text-gray-900">{lowStockCount}</p>
             </div>
-            <span className={`text-sm font-medium ${lowStockCount > 0 ? 'text-red-600' : 'text-green-600'}`}>
-              {lowStockCount > 0 ? '🔴' : '✓'}
-            </span>
+            {lowStockCount > 0 && (
+              <span className="text-xs font-semibold text-red-600">Alerte</span>
+            )}
           </div>
         </div>
       </div>
