@@ -173,7 +173,7 @@ export default async function HomePage() {
                 return (
                   <StaggerItem key={product.id}>
                     <Link href={`/boutique/${product.slug}`} className="flex h-full">
-                      <HoverCard className="group relative flex h-full w-full flex-col overflow-hidden border-2 border-white/20 bg-white/5 transition-all hover:border-jaune">
+                      <HoverCard className="group relative flex h-full w-full flex-col overflow-hidden border border-pau-primary/20 bg-white transition-all hover:border-pau-yellow hover:shadow-md">
                         {/* Image placeholder - aspect 3/4 */}
                         <div className="relative aspect-[3/4] w-full overflow-hidden bg-gradient-to-br from-pau-night to-pau-primary">
                           {product.imageUrl ? (
@@ -191,7 +191,7 @@ export default async function HomePage() {
                             </div>
                           )}
                           {product.featured && (
-                            <div className="absolute right-2 top-2 bg-pau-yellow px-2 py-1 font-mono text-[9px] font-bold uppercase tracking-wider text-pau-primary">
+                            <div className="absolute right-2 top-2 bg-pau-yellow px-2 py-1 font-mono text-[9px] font-bold uppercase tracking-wider text-pau-night">
                               ★ Top
                             </div>
                           )}
