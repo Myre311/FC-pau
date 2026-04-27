@@ -43,10 +43,10 @@ export default async function CalendrierPage() {
           <p className="font-mono text-sm uppercase tracking-wider text-pau-yellow mb-4">
             Saison 2025-2026
           </p>
-          <h1 className="font-display text-5xl md:text-7xl uppercase font-black">
+          <h1 className="font-display text-5xl md:text-7xl uppercase font-black text-white">
             CALENDRIER
           </h1>
-          <p className="mt-4 text-white/70">
+          <p className="mt-4 text-white/80 text-lg">
             {upcoming.length} matchs à venir • {recent.length} matchs joués
           </p>
         </div>
