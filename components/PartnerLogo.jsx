@@ -12,7 +12,7 @@ export default function PartnerLogo({ name, logo, href }) {
       href={href}
       target={href ? "_blank" : undefined}
       rel={href ? "noopener noreferrer" : undefined}
-      className="flex items-center justify-center h-24 md:h-28 rounded-lg border border-pau-gold/20 bg-white/5 hover:border-pau-gold/60 transition-colors p-6"
+      className="flex items-center justify-center h-24 md:h-28 rounded-lg border-2 border-pau-primary/10 bg-pau-primary/5 hover:border-pau-gold hover:bg-pau-primary/10 transition-all p-6"
     >
       {logo && !errored ? (
         <Image
@@ -21,10 +21,10 @@ export default function PartnerLogo({ name, logo, href }) {
           width={140}
           height={60}
           onError={() => setErrored(true)}
-          className="object-contain max-h-14 w-auto brightness-0 invert opacity-90 hover:opacity-100 transition-opacity"
+          className="object-contain max-h-14 w-auto opacity-90 hover:opacity-100 transition-opacity"
         />
       ) : (
-        <span className="text-white/80 text-sm tracking-widest font-semibold uppercase">
+        <span className="text-pau-primary text-sm tracking-widest font-semibold uppercase">
           {name}
         </span>
       )}
