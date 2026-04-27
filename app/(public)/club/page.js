@@ -1,3 +1,5 @@
+import { PageHero } from '@/components/ui/PageHero';
+
 export const metadata = {
   title: 'Le Club',
   description:
@@ -7,24 +9,19 @@ export const metadata = {
 export default function ClubPage() {
   return (
     <article>
-      <section className="container-fc pt-16 pb-12 md:pt-24 md:pb-20">
-        <p className="badge-mono">Le Club · Béarn · Depuis 1920</p>
-        <h1 className="mt-6 text-[14vw] md:text-[10vw] lg:text-[140px]">
-          LE <span className="text-jaune">CLUB</span>
-        </h1>
-        <p className="mt-6 max-w-3xl font-sans text-lg leading-relaxed text-blanc/70 md:text-xl">
-          Le Pau FC est un club de football professionnel français basé à Pau,
-          en Béarn. Plus d&apos;un siècle d&apos;histoire, une identité forte,
-          un ancrage territorial revendiqué.
-        </p>
-      </section>
+      <PageHero
+        image="/images/hero-club.jpg"
+        surtitle="Le Club · Béarn · Depuis 1920"
+        title="LE CLUB"
+        subtitle="Le Pau FC est un club de football professionnel français basé à Pau, en Béarn. Plus d'un siècle d'histoire, une identité forte, un ancrage territorial revendiqué."
+      />
 
-      <section className="container-fc border-t border-blanc/10 py-12 md:py-20">
+      <section className="container-fc border-t border-nuit/10 py-12 md:py-20 bg-blanc">
         <div className="grid gap-10 md:grid-cols-[1fr_2fr] md:gap-16">
-          <h2 className="font-display text-5xl uppercase leading-crush tracking-tightest text-blanc md:text-6xl">
+          <h2 className="font-display text-5xl uppercase leading-crush tracking-tightest text-nuit md:text-6xl">
             Notre histoire
           </h2>
-          <div className="space-y-5 font-sans text-base leading-relaxed text-blanc/75 md:text-lg">
+          <div className="space-y-5 font-sans text-base leading-relaxed text-nuit/75 md:text-lg">
             <p>
               Fondé en 1920, le Pau FC plonge ses racines dans le sport
               amateur béarnais avant de se professionnaliser dans les années
@@ -47,9 +44,9 @@ export default function ClubPage() {
         </div>
       </section>
 
-      <section className="container-fc border-t border-blanc/10 py-12 md:py-20">
+      <section className="container-fc border-t border-nuit/10 py-12 md:py-20 bg-blanc">
         <div className="grid gap-10 md:grid-cols-[1fr_2fr] md:gap-16">
-          <h2 className="font-display text-5xl uppercase leading-crush tracking-tightest text-blanc md:text-6xl">
+          <h2 className="font-display text-5xl uppercase leading-crush tracking-tightest text-nuit md:text-6xl">
             Nos valeurs
           </h2>
           <ul className="space-y-8">
@@ -77,13 +74,13 @@ export default function ClubPage() {
         </div>
       </section>
 
-      <section className="container-fc border-t border-blanc/10 py-12 md:py-20">
+      <section className="container-fc border-t border-nuit/10 py-12 md:py-20 bg-blanc">
         <div className="grid gap-10 md:grid-cols-2 md:gap-16">
           <div>
-            <h2 className="font-display text-5xl uppercase leading-crush tracking-tightest text-blanc md:text-6xl">
+            <h2 className="font-display text-5xl uppercase leading-crush tracking-tightest text-nuit md:text-6xl">
               Le projet
             </h2>
-            <p className="mt-6 font-sans text-base leading-relaxed text-blanc/75 md:text-lg">
+            <p className="mt-6 font-sans text-base leading-relaxed text-nuit/75 md:text-lg">
               Le plan stratégique 2024-2028 articule trois axes : performance
               sportive, modernisation des installations (dont la nouvelle
               tribune Béarn livrée en août 2026), et politique RSE renforcée

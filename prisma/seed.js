@@ -263,7 +263,7 @@ const articles = [
     slug: 'victoire-grenoble-resume',
     title: `Pau enchaîne face à Grenoble au Nouste Camp`,
     excerpt: `Portés par un public bouillant, les Palois s'imposent 2-1 dans un match maîtrisé dès l'entame. Retour sur les temps forts.`,
-    body: `Le Nouste Camp a vibré samedi soir. Devant 8 200 spectateurs, le Pau FC s'est imposé 2-1 face à Grenoble dans un match au scénario maîtrisé. Ouverture du score dès la 12e minute par Antoine Evans sur un service en retrait de Henri Saivet, puis doublé en seconde période sur penalty.\n\nLes Isérois ont réduit l'écart en fin de match mais n'auront jamais réellement inquiété la défense paloise, solide. Une victoire qui place le Pau FC dans le ventre mou du classement et confirme la dynamique amorcée depuis le début du printemps.\n\nProchaine échéance : déplacement à Saint-Étienne dans une semaine, avant la réception de Bastia au Nouste Camp.`,
+    body: `Le Nouste Camp a vibré samedi soir. Devant 8 200 spectateurs, le Pau FC s'est imposé 2-1 face à Grenoble dans un match au scénario maîtrisé. Ouverture du score dès la 12e minute par Antoine Evans sur un service en retrait de Henri Saivet, puis doublé en seconde période sur penalty.\n\nLes Isérois ont réduit l'écart en fin de match mais n'auront jamais réellement inquiété la défense paloise, solide. Une victoire qui place le Pau FC dans le ventre mou du classement et confirme la dynamique amorcée depuis le début du printemps.\n\nProchaine échéance : déplacement à Saint-Étienne dans une semaine, avant la réception de Rodez au Nouste Camp.`,
     coverImageUrl: 'https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=1200&h=600&fit=crop',
     category: 'matchday',
     featured: true,
@@ -435,7 +435,7 @@ const videos = [
     publishedAt: daysFromNow(-5),
   },
   {
-    title: 'Entraînement : préparation du match contre Bastia',
+    title: 'Entraînement : préparation du match contre Rodez',
     description: 'Séance intensive pour préparer le prochain match à domicile',
     videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     videoId: 'dQw4w9WgXcQ',
