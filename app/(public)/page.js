@@ -6,7 +6,7 @@ import { MatchCountdown } from '@/components/vitrine/MatchCountdown';
 import { AnimatedHero } from '@/components/animations/AnimatedHero';
 import { FadeIn, StaggerContainer, StaggerItem } from '@/components/animations/FadeIn';
 import { HoverCard } from '@/components/animations/HoverCard';
-import { PartnersGrid } from '@/components/vitrine/PartnersGrid';
+import PartnerLogo from '@/components/PartnerLogo';
 import { formatPrice } from '@/lib/format';
 
 export const dynamic = 'force-dynamic';
@@ -165,7 +165,7 @@ export default async function HomePage() {
               </div>
             </FadeIn>
 
-            <StaggerContainer staggerDelay={0.1} className="grid grid-cols-2 gap-4 md:grid-cols-4">
+            <StaggerContainer staggerDelay={0.1} className="grid grid-cols-2 gap-4 md:grid-cols-4 items-stretch">
               {featuredProducts.map((product) => {
                 const firstVariant = product.variants[0];
                 const price = firstVariant?.priceEur || product.basePriceEur || 0;
@@ -174,8 +174,8 @@ export default async function HomePage() {
                   <StaggerItem key={product.id}>
                     <Link href={`/boutique/${product.slug}`} className="flex h-full">
                       <HoverCard className="group relative flex h-full w-full flex-col overflow-hidden border-2 border-blanc/20 bg-blanc/5 transition-all hover:border-jaune">
-                        {/* Image placeholder - aspect square */}
-                        <div className="relative aspect-square w-full overflow-hidden bg-gradient-to-br from-nuit to-primaire">
+                        {/* Image placeholder - aspect 3/4 */}
+                        <div className="relative aspect-[3/4] w-full overflow-hidden bg-gradient-to-br from-nuit to-primaire">
                           {product.imageUrl ? (
                             <Image
                               src={product.imageUrl}
@@ -198,7 +198,7 @@ export default async function HomePage() {
                         </div>
 
                         {/* Info - hauteur fixe pour alignement */}
-                        <div className="mt-auto flex min-h-[110px] flex-col p-4">
+                        <div className="mt-auto flex min-h-[120px] flex-col p-4">
                           <p className="mb-1 font-mono text-[10px] uppercase tracking-wider text-jaune">
                             {product.category?.name || 'Produit'}
                           </p>
@@ -230,7 +230,14 @@ export default async function HomePage() {
               </h2>
             </div>
           </FadeIn>
-          <PartnersGrid />
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+            <PartnerLogo name="Joma" logo="/logos/partners/joma.svg" href="https://www.joma-sport.com" />
+            <PartnerLogo name="Holy" logo="/logos/partners/holy.svg" href="https://holy-fr.com" />
+            <PartnerLogo name="Intersport" logo="/logos/partners/intersport.svg" href="https://www.intersport.fr" />
+            <PartnerLogo name="Groupama" logo="/logos/partners/groupama.svg" href="https://www.groupama.fr" />
+            <PartnerLogo name="Sarthou" logo="/logos/partners/sarthou.svg" />
+            <PartnerLogo name="Ville de Pau" logo="/logos/partners/ville-de-pau.svg" href="https://www.pau.fr" />
+          </div>
         </div>
       </section>
 
