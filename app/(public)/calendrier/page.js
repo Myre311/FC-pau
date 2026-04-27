@@ -97,7 +97,7 @@ export default async function CalendrierPage() {
                       {match.isHome && (
                         <div className="relative w-8 h-8 flex-shrink-0">
                           <Image
-                            src="/logo-fcpau.svg"
+                            src="/logos/pau-fc.svg"
                             alt="PAU FC"
                             fill
                             className="object-contain"
@@ -126,7 +126,7 @@ export default async function CalendrierPage() {
                       {!match.isHome && (
                         <div className="relative w-8 h-8 flex-shrink-0">
                           <Image
-                            src="/logo-fcpau.svg"
+                            src="/logos/pau-fc.svg"
                             alt="PAU FC"
                             fill
                             className="object-contain"
@@ -202,7 +202,7 @@ export default async function CalendrierPage() {
                       {match.isHome && (
                         <div className="relative w-8 h-8 flex-shrink-0">
                           <Image
-                            src="/logo-fcpau.svg"
+                            src="/logos/pau-fc.svg"
                             alt="PAU FC"
                             fill
                             className="object-contain"
@@ -233,7 +233,7 @@ export default async function CalendrierPage() {
                       {!match.isHome && (
                         <div className="relative w-8 h-8 flex-shrink-0">
                           <Image
-                            src="/logo-fcpau.svg"
+                            src="/logos/pau-fc.svg"
                             alt="PAU FC"
                             fill
                             className="object-contain"
