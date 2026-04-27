@@ -34,8 +34,6 @@ const NAV = [
   },
   { href: '/actualites', label: 'Actus' },
   { href: '/partenaires', label: 'Partenaires' },
-  { href: '/galerie', label: 'Galerie' },
-  { href: '/videos', label: 'Vidéos' },
   { href: '/presse', label: 'Presse' },
 ];
 
