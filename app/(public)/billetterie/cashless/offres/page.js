@@ -13,17 +13,17 @@ export default function OffresCashlessPage() {
       <section className="container-fc pt-16 pb-12 md:pt-24 md:pb-20">
         <p className="badge-mono">Billetterie · Cashless · Offres</p>
         <h1 className="mt-6 text-[14vw] md:text-[10vw] lg:text-[140px]">
-          OFFRES <span className="text-jaune">CASHLESS</span>
+          OFFRES <span className="text-pau-yellow">CASHLESS</span>
         </h1>
-        <p className="mt-6 max-w-3xl font-sans text-lg leading-relaxed text-blanc/70 md:text-xl">
+        <p className="mt-6 max-w-3xl font-sans text-lg leading-relaxed text-pau-primary/70 md:text-xl">
           Profite d'offres exclusives en rechargeant ta carte cashless. Bonus,
           menus spéciaux, promotions buvette réservées aux détenteurs de carte.
         </p>
       </section>
 
       {/* Offres en cours */}
-      <section className="container-fc border-t border-blanc/10 py-12 md:py-20">
-        <h2 className="mb-12 font-display text-5xl uppercase leading-crush tracking-tightest text-blanc md:text-6xl">
+      <section className="container-fc border-t border-gray-200/10 py-12 md:py-20">
+        <h2 className="mb-12 font-display text-5xl uppercase leading-crush tracking-tightest text-pau-primary md:text-6xl">
           Offres en cours
         </h2>
 
@@ -61,8 +61,8 @@ export default function OffresCashlessPage() {
       </section>
 
       {/* Offres à venir */}
-      <section className="container-fc border-t border-blanc/10 py-12 md:py-20">
-        <h2 className="mb-12 font-display text-5xl uppercase leading-crush tracking-tightest text-blanc md:text-6xl">
+      <section className="container-fc border-t border-gray-200/10 py-12 md:py-20">
+        <h2 className="mb-12 font-display text-5xl uppercase leading-crush tracking-tightest text-pau-primary md:text-6xl">
           Offres à venir
         </h2>
 
@@ -90,24 +90,24 @@ export default function OffresCashlessPage() {
       </section>
 
       {/* Comment en profiter */}
-      <section className="container-fc border-t border-blanc/10 py-12 md:py-20">
+      <section className="container-fc border-t border-gray-200/10 py-12 md:py-20">
         <div className="grid gap-10 md:grid-cols-[1fr_2fr] md:gap-16">
-          <h2 className="font-display text-5xl uppercase leading-crush tracking-tightest text-blanc md:text-6xl">
+          <h2 className="font-display text-5xl uppercase leading-crush tracking-tightest text-pau-primary md:text-6xl">
             Comment en profiter
           </h2>
-          <div className="space-y-5 font-sans text-base leading-relaxed text-blanc/75 md:text-lg">
+          <div className="space-y-5 font-sans text-base leading-relaxed text-pau-primary/75 md:text-lg">
             <p>
-              <strong className="text-blanc">1. Obtiens ta carte</strong> —
+              <strong className="text-pau-primary">1. Obtiens ta carte</strong> —
               Commande ta carte cashless gratuitement en ligne ou récupère-la au
               stade.
             </p>
             <p>
-              <strong className="text-blanc">2. Recharge</strong> — Recharge ta
+              <strong className="text-pau-primary">2. Recharge</strong> — Recharge ta
               carte depuis ton espace client avant le match. Les bonus sont
               automatiquement crédités.
             </p>
             <p>
-              <strong className="text-blanc">3. Profite</strong> — Utilise ta
+              <strong className="text-pau-primary">3. Profite</strong> — Utilise ta
               carte aux bornes cashless du stade pour bénéficier des offres
               exclusives.
             </p>
@@ -124,12 +124,12 @@ export default function OffresCashlessPage() {
       </section>
 
       {/* CGV */}
-      <section className="container-fc border-t border-blanc/10 py-12 md:py-20">
+      <section className="container-fc border-t border-gray-200/10 py-12 md:py-20">
         <div className="max-w-2xl">
-          <h2 className="font-display text-5xl uppercase leading-crush tracking-tightest text-blanc md:text-6xl">
+          <h2 className="font-display text-5xl uppercase leading-crush tracking-tightest text-pau-primary md:text-6xl">
             Conditions générales
           </h2>
-          <div className="mt-6 space-y-4 font-sans text-base text-blanc/75">
+          <div className="mt-6 space-y-4 font-sans text-base text-pau-primary/75">
             <p>
               Les offres cashless sont soumises aux conditions générales de
               vente du Pau FC. Les bonus de rechargement ne sont pas
@@ -148,7 +148,7 @@ export default function OffresCashlessPage() {
           <div className="mt-8">
             <Link
               href="/cgv-billetterie"
-              className="font-mono text-sm uppercase tracking-wider text-blanc/60 hover:text-jaune"
+              className="font-mono text-sm uppercase tracking-wider text-pau-primary/60 hover:text-pau-yellow"
             >
               Lire les CGV complètes →
             </Link>
@@ -172,35 +172,35 @@ function OffreCard({
   return (
     <div
       className={`border bg-primaire p-8 md:p-10 ${
-        active ? 'border-jaune' : 'border-blanc/10'
+        active ? 'border-pau-yellow' : 'border-gray-200/10'
       }`}
     >
       <span
         className={`inline-block font-mono text-xs uppercase tracking-wider ${
-          active ? 'text-jaune' : 'text-blanc/40'
+          active ? 'text-pau-yellow' : 'text-pau-primary/40'
         }`}
       >
         {badge}
       </span>
-      <h3 className="mt-4 font-display text-4xl uppercase leading-tight tracking-tight text-blanc md:text-5xl">
+      <h3 className="mt-4 font-display text-4xl uppercase leading-tight tracking-tight text-pau-primary md:text-5xl">
         {title}
       </h3>
-      <p className="mt-4 font-sans text-base leading-relaxed text-blanc/75 md:text-lg">
+      <p className="mt-4 font-sans text-base leading-relaxed text-pau-primary/75 md:text-lg">
         {description}
       </p>
-      <p className="mt-4 font-sans text-sm italic text-blanc/60">
+      <p className="mt-4 font-sans text-sm italic text-pau-primary/60">
         {conditions}
       </p>
       <div className="mt-6">
         {active ? (
           <Link
             href={ctaHref}
-            className="inline-block border border-blanc/20 px-6 py-3 font-mono text-sm uppercase tracking-wider text-blanc transition-colors hover:border-jaune hover:text-jaune"
+            className="inline-block border border-gray-200/20 px-6 py-3 font-mono text-sm uppercase tracking-wider text-pau-primary transition-colors hover:border-pau-yellow hover:text-pau-yellow"
           >
             {ctaText}
           </Link>
         ) : (
-          <span className="inline-block border border-blanc/10 px-6 py-3 font-mono text-sm uppercase tracking-wider text-blanc/40">
+          <span className="inline-block border border-gray-200/10 px-6 py-3 font-mono text-sm uppercase tracking-wider text-pau-primary/40">
             {ctaText}
           </span>
         )}

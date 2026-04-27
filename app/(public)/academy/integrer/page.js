@@ -13,9 +13,9 @@ export default function IntegrerPage() {
       <section className="container-fc pt-16 pb-12 md:pt-24 md:pb-20">
         <p className="badge-mono">Academy · Candidature</p>
         <h1 className="mt-6 text-[14vw] md:text-[10vw] lg:text-[140px]">
-          REJOINDRE <span className="text-jaune">L&apos;ACADEMY</span>
+          REJOINDRE <span className="text-pau-yellow">L&apos;ACADEMY</span>
         </h1>
-        <p className="mt-6 max-w-3xl font-sans text-lg leading-relaxed text-blanc/70 md:text-xl">
+        <p className="mt-6 max-w-3xl font-sans text-lg leading-relaxed text-pau-primary/70 md:text-xl">
           Tu as entre 12 et 18 ans et tu veux intégrer un projet ambitieux ?
           Découvre comment candidater au pôle masculin ou féminin de l'Academy
           Pau FC.
@@ -23,12 +23,12 @@ export default function IntegrerPage() {
       </section>
 
       {/* Critères */}
-      <section className="container-fc border-t border-blanc/10 py-12 md:py-20">
+      <section className="container-fc border-t border-gray-200/10 py-12 md:py-20">
         <div className="grid gap-10 md:grid-cols-[1fr_2fr] md:gap-16">
-          <h2 className="font-display text-5xl uppercase leading-crush tracking-tightest text-blanc md:text-6xl">
+          <h2 className="font-display text-5xl uppercase leading-crush tracking-tightest text-pau-primary md:text-6xl">
             Critères d&apos;entrée
           </h2>
-          <div className="space-y-5 font-sans text-base leading-relaxed text-blanc/75 md:text-lg">
+          <div className="space-y-5 font-sans text-base leading-relaxed text-pau-primary/75 md:text-lg">
             <p>
               L'Academy Pau FC recrute des jeunes joueurs et joueuses motivés,
               talentueux et capables de s'inscrire dans un projet exigeant à la
@@ -36,23 +36,23 @@ export default function IntegrerPage() {
             </p>
             <ul className="ml-5 list-disc space-y-2">
               <li>
-                <strong className="text-blanc">Âge</strong> : 12 à 18 ans
+                <strong className="text-pau-primary">Âge</strong> : 12 à 18 ans
                 (U13 à U19)
               </li>
               <li>
-                <strong className="text-blanc">Niveau</strong> : Joueur/joueuse
+                <strong className="text-pau-primary">Niveau</strong> : Joueur/joueuse
                 évoluant en club, niveau district minimum, idéalement ligue
               </li>
               <li>
-                <strong className="text-blanc">Motivation</strong> : Envie de
+                <strong className="text-pau-primary">Motivation</strong> : Envie de
                 progresser et de s'investir pleinement
               </li>
               <li>
-                <strong className="text-blanc">Scolarité</strong> : Résultats
+                <strong className="text-pau-primary">Scolarité</strong> : Résultats
                 scolaires satisfaisants, assiduité
               </li>
               <li>
-                <strong className="text-blanc">Attitude</strong> : Respect,
+                <strong className="text-pau-primary">Attitude</strong> : Respect,
                 engagement, esprit d'équipe
               </li>
             </ul>
@@ -61,8 +61,8 @@ export default function IntegrerPage() {
       </section>
 
       {/* Process */}
-      <section className="container-fc border-t border-blanc/10 py-12 md:py-20">
-        <h2 className="mb-12 font-display text-5xl uppercase leading-crush tracking-tightest text-blanc md:text-6xl">
+      <section className="container-fc border-t border-gray-200/10 py-12 md:py-20">
+        <h2 className="mb-12 font-display text-5xl uppercase leading-crush tracking-tightest text-pau-primary md:text-6xl">
           Processus de candidature
         </h2>
 
@@ -96,25 +96,25 @@ export default function IntegrerPage() {
       </section>
 
       {/* Détections */}
-      <section className="container-fc border-t border-blanc/10 py-12 md:py-20">
+      <section className="container-fc border-t border-gray-200/10 py-12 md:py-20">
         <div className="grid gap-10 md:grid-cols-2 md:gap-16">
           <div>
-            <h2 className="font-display text-5xl uppercase leading-crush tracking-tightest text-blanc md:text-6xl">
+            <h2 className="font-display text-5xl uppercase leading-crush tracking-tightest text-pau-primary md:text-6xl">
               Calendrier détections
             </h2>
-            <div className="mt-6 space-y-4 font-sans text-base leading-relaxed text-blanc/75 md:text-lg">
+            <div className="mt-6 space-y-4 font-sans text-base leading-relaxed text-pau-primary/75 md:text-lg">
               <p>
                 Les détections ont lieu plusieurs fois par an, généralement
                 pendant les vacances scolaires et en fin de saison.
               </p>
               <p>
-                <strong className="text-blanc">Printemps</strong> — Avril / Mai
+                <strong className="text-pau-primary">Printemps</strong> — Avril / Mai
               </p>
               <p>
-                <strong className="text-blanc">Été</strong> — Juin / Juillet
+                <strong className="text-pau-primary">Été</strong> — Juin / Juillet
               </p>
               <p>
-                <strong className="text-blanc">Automne</strong> — Octobre
+                <strong className="text-pau-primary">Automne</strong> — Octobre
               </p>
               <p>
                 Les dates exactes sont communiquées par email aux candidats
@@ -124,26 +124,26 @@ export default function IntegrerPage() {
           </div>
 
           <div>
-            <h2 className="font-display text-5xl uppercase leading-crush tracking-tightest text-blanc md:text-6xl">
+            <h2 className="font-display text-5xl uppercase leading-crush tracking-tightest text-pau-primary md:text-6xl">
               Internat & Scolarité
             </h2>
-            <div className="mt-6 space-y-4 font-sans text-base leading-relaxed text-blanc/75 md:text-lg">
+            <div className="mt-6 space-y-4 font-sans text-base leading-relaxed text-pau-primary/75 md:text-lg">
               <p>
                 Les joueurs résidant en dehors du département peuvent intégrer
                 l'internat du Nouste Camp (pôle masculin uniquement pour
                 l'instant).
               </p>
               <p>
-                <strong className="text-blanc">Hébergement</strong> —
+                <strong className="text-pau-primary">Hébergement</strong> —
                 Pension complète, chambres doubles, encadrement 24/7.
               </p>
               <p>
-                <strong className="text-blanc">Scolarité</strong> —
+                <strong className="text-pau-primary">Scolarité</strong> —
                 Partenariats avec collèges et lycées locaux. Aménagement
                 horaires pour concilier sport et études.
               </p>
               <p>
-                <strong className="text-blanc">Coût</strong> — Tarif internat
+                <strong className="text-pau-primary">Coût</strong> — Tarif internat
                 et inscription communiqués lors de l'entretien.
               </p>
             </div>
@@ -152,16 +152,16 @@ export default function IntegrerPage() {
       </section>
 
       {/* CTA */}
-      <section className="container-fc border-t border-blanc/10 py-12 md:py-20">
+      <section className="container-fc border-t border-gray-200/10 py-12 md:py-20">
         <div className="max-w-2xl">
-          <h2 className="font-display text-5xl uppercase leading-crush tracking-tightest text-blanc md:text-6xl">
+          <h2 className="font-display text-5xl uppercase leading-crush tracking-tightest text-pau-primary md:text-6xl">
             Candidater maintenant
           </h2>
-          <p className="mt-6 font-sans text-base leading-relaxed text-blanc/75 md:text-lg">
+          <p className="mt-6 font-sans text-base leading-relaxed text-pau-primary/75 md:text-lg">
             Prêt(e) à rejoindre l'Academy du Pau FC ? Envoie ton dossier de
             candidature par email avec les documents suivants :
           </p>
-          <ul className="mt-4 ml-5 list-disc space-y-2 font-sans text-base text-blanc/75">
+          <ul className="mt-4 ml-5 list-disc space-y-2 font-sans text-base text-pau-primary/75">
             <li>CV sportif (parcours club, poste, niveau)</li>
             <li>Bulletin scolaire du dernier trimestre</li>
             <li>Lettre de motivation (optionnel mais apprécié)</li>
@@ -169,18 +169,18 @@ export default function IntegrerPage() {
           </ul>
 
           <div className="mt-8 space-y-4">
-            <p className="font-sans text-base text-blanc/75">
+            <p className="font-sans text-base text-pau-primary/75">
               Email :{' '}
               <a
                 href="mailto:recrutement.academy@paufc.fr"
-                className="text-jaune hover:underline"
+                className="text-pau-yellow hover:underline"
               >
                 recrutement.academy@paufc.fr
               </a>
             </p>
-            <p className="font-sans text-base text-blanc/75">
+            <p className="font-sans text-base text-pau-primary/75">
               Téléphone :{' '}
-              <a href="tel:+33559000000" className="text-jaune hover:underline">
+              <a href="tel:+33559000000" className="text-pau-yellow hover:underline">
                 +33 5 59 00 00 00
               </a>
             </p>
@@ -195,7 +195,7 @@ export default function IntegrerPage() {
             </a>
             <Link
               href="/academy"
-              className="inline-block border border-blanc/20 px-6 py-3 font-mono text-sm uppercase tracking-wider text-blanc transition-colors hover:border-jaune hover:text-jaune"
+              className="inline-block border border-gray-200/20 px-6 py-3 font-mono text-sm uppercase tracking-wider text-pau-primary transition-colors hover:border-pau-yellow hover:text-pau-yellow"
             >
               Retour Academy
             </Link>
@@ -212,17 +212,17 @@ function Step({ number, title, description }) {
     <div className="grid gap-6 md:grid-cols-[100px_1fr] md:gap-12">
       {/* Numéro */}
       <div className="relative">
-        <div className="font-display text-6xl uppercase leading-none tracking-tightest text-jaune md:text-7xl">
+        <div className="font-display text-6xl uppercase leading-none tracking-tightest text-pau-yellow md:text-7xl">
           {number}
         </div>
       </div>
 
       {/* Contenu */}
-      <div className="border-l-2 border-blanc/10 pl-6 md:pl-10">
-        <h3 className="font-display text-3xl uppercase leading-tight tracking-tight text-blanc md:text-4xl">
+      <div className="border-l-2 border-gray-200/10 pl-6 md:pl-10">
+        <h3 className="font-display text-3xl uppercase leading-tight tracking-tight text-pau-primary md:text-4xl">
           {title}
         </h3>
-        <p className="mt-4 font-sans text-base leading-relaxed text-blanc/75 md:text-lg">
+        <p className="mt-4 font-sans text-base leading-relaxed text-pau-primary/75 md:text-lg">
           {description}
         </p>
       </div>

@@ -112,7 +112,7 @@ export default function CGVBilletterieePage() {
         <p>
           Les données collectées lors de l&apos;achat de billets (nom, email,
           téléphone) sont traitées conformément à notre{' '}
-          <a className="text-jaune hover:underline" href="/rgpd">
+          <a className="text-pau-yellow hover:underline" href="/rgpd">
             politique de confidentialité RGPD
           </a>
           . Elles sont conservées pour la durée de validité du billet + 1 an
@@ -132,7 +132,7 @@ export default function CGVBilletterieePage() {
         <p>
           Pour toute question :{' '}
           <a
-            className="text-jaune hover:underline"
+            className="text-pau-yellow hover:underline"
             href="mailto:billetterie@paufc.fr"
           >
             billetterie@paufc.fr

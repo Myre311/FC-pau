@@ -13,21 +13,21 @@ export default function StagesPage() {
       <section className="container-fc pt-16 pb-12 md:pt-24 md:pb-20">
         <p className="badge-mono">Academy · Stages vacances</p>
         <h1 className="mt-6 text-[14vw] md:text-[10vw] lg:text-[140px]">
-          STAGES <span className="text-jaune">ACADEMY</span>
+          STAGES <span className="text-pau-yellow">ACADEMY</span>
         </h1>
-        <p className="mt-6 max-w-3xl font-sans text-lg leading-relaxed text-blanc/70 md:text-xl">
+        <p className="mt-6 max-w-3xl font-sans text-lg leading-relaxed text-pau-primary/70 md:text-xl">
           Des stages intensifs de football pendant les vacances scolaires pour
           les jeunes de 8 à 16 ans, encadrés par le staff de l'Academy Pau FC.
         </p>
       </section>
 
       {/* Présentation */}
-      <section className="container-fc border-t border-blanc/10 py-12 md:py-20">
+      <section className="container-fc border-t border-gray-200/10 py-12 md:py-20">
         <div className="grid gap-10 md:grid-cols-[1fr_2fr] md:gap-16">
-          <h2 className="font-display text-5xl uppercase leading-crush tracking-tightest text-blanc md:text-6xl">
+          <h2 className="font-display text-5xl uppercase leading-crush tracking-tightest text-pau-primary md:text-6xl">
             Le concept
           </h2>
-          <div className="space-y-5 font-sans text-base leading-relaxed text-blanc/75 md:text-lg">
+          <div className="space-y-5 font-sans text-base leading-relaxed text-pau-primary/75 md:text-lg">
             <p>
               Les stages Academy du Pau FC offrent aux jeunes passionnés de
               football l'opportunité de progresser dans un cadre professionnel
@@ -49,8 +49,8 @@ export default function StagesPage() {
       </section>
 
       {/* Formules */}
-      <section className="container-fc border-t border-blanc/10 py-12 md:py-20">
-        <h2 className="mb-12 font-display text-5xl uppercase leading-crush tracking-tightest text-blanc md:text-6xl">
+      <section className="container-fc border-t border-gray-200/10 py-12 md:py-20">
+        <h2 className="mb-12 font-display text-5xl uppercase leading-crush tracking-tightest text-pau-primary md:text-6xl">
           Formules
         </h2>
 
@@ -74,15 +74,15 @@ export default function StagesPage() {
           />
         </div>
 
-        <p className="mt-8 font-sans text-sm text-blanc/60">
+        <p className="mt-8 font-sans text-sm text-pau-primary/60">
           Réduction de 10% à partir du 2ème enfant inscrit. Réduction de 15%
           pour les abonnés du club.
         </p>
       </section>
 
       {/* Programme */}
-      <section className="container-fc border-t border-blanc/10 py-12 md:py-20">
-        <h2 className="mb-12 font-display text-5xl uppercase leading-crush tracking-tightest text-blanc md:text-6xl">
+      <section className="container-fc border-t border-gray-200/10 py-12 md:py-20">
+        <h2 className="mb-12 font-display text-5xl uppercase leading-crush tracking-tightest text-pau-primary md:text-6xl">
           Programme type
         </h2>
 
@@ -111,8 +111,8 @@ export default function StagesPage() {
       </section>
 
       {/* Calendrier */}
-      <section className="container-fc border-t border-blanc/10 py-12 md:py-20">
-        <h2 className="mb-12 font-display text-5xl uppercase leading-crush tracking-tightest text-blanc md:text-6xl">
+      <section className="container-fc border-t border-gray-200/10 py-12 md:py-20">
+        <h2 className="mb-12 font-display text-5xl uppercase leading-crush tracking-tightest text-pau-primary md:text-6xl">
           Calendrier 2026
         </h2>
 
@@ -151,47 +151,47 @@ export default function StagesPage() {
       </section>
 
       {/* Infos pratiques */}
-      <section className="container-fc border-t border-blanc/10 py-12 md:py-20">
+      <section className="container-fc border-t border-gray-200/10 py-12 md:py-20">
         <div className="grid gap-10 md:grid-cols-2 md:gap-16">
           <div>
-            <h2 className="font-display text-5xl uppercase leading-crush tracking-tightest text-blanc md:text-6xl">
+            <h2 className="font-display text-5xl uppercase leading-crush tracking-tightest text-pau-primary md:text-6xl">
               Infos pratiques
             </h2>
-            <div className="mt-6 space-y-4 font-sans text-base leading-relaxed text-blanc/75 md:text-lg">
+            <div className="mt-6 space-y-4 font-sans text-base leading-relaxed text-pau-primary/75 md:text-lg">
               <p>
-                <strong className="text-blanc">Lieu</strong> — Nouste Camp, 8
+                <strong className="text-pau-primary">Lieu</strong> — Nouste Camp, 8
                 Boulevard de l'Aviation, 64320 Bizanos
               </p>
               <p>
-                <strong className="text-blanc">À prévoir</strong> — Tenue de
+                <strong className="text-pau-primary">À prévoir</strong> — Tenue de
                 sport, chaussures de foot (crampons moulés), gourde, casquette
               </p>
               <p>
-                <strong className="text-blanc">Encadrement</strong> —
+                <strong className="text-pau-primary">Encadrement</strong> —
                 Éducateurs diplômés UEFA, 1 encadrant pour 12 stagiaires
               </p>
               <p>
-                <strong className="text-blanc">Assurance</strong> — Obligatoire
+                <strong className="text-pau-primary">Assurance</strong> — Obligatoire
                 (attestation à fournir à l'inscription)
               </p>
             </div>
           </div>
 
           <div>
-            <h2 className="font-display text-5xl uppercase leading-crush tracking-tightest text-blanc md:text-6xl">
+            <h2 className="font-display text-5xl uppercase leading-crush tracking-tightest text-pau-primary md:text-6xl">
               Inscription
             </h2>
-            <div className="mt-6 space-y-4 font-sans text-base leading-relaxed text-blanc/75 md:text-lg">
+            <div className="mt-6 space-y-4 font-sans text-base leading-relaxed text-pau-primary/75 md:text-lg">
               <p>
                 Les inscriptions se font en ligne ou par email. Nombre de places
                 limité à 60 stagiaires par session.
               </p>
               <p>
-                <strong className="text-blanc">Paiement</strong> — Carte
+                <strong className="text-pau-primary">Paiement</strong> — Carte
                 bancaire en ligne, chèque ou espèces (sur place)
               </p>
               <p>
-                <strong className="text-blanc">Annulation</strong> —
+                <strong className="text-pau-primary">Annulation</strong> —
                 Remboursement intégral jusqu'à 7 jours avant le début du stage
               </p>
             </div>
@@ -200,30 +200,30 @@ export default function StagesPage() {
       </section>
 
       {/* CTA */}
-      <section className="container-fc border-t border-blanc/10 py-12 md:py-20">
+      <section className="container-fc border-t border-gray-200/10 py-12 md:py-20">
         <div className="max-w-2xl">
-          <h2 className="font-display text-5xl uppercase leading-crush tracking-tightest text-blanc md:text-6xl">
+          <h2 className="font-display text-5xl uppercase leading-crush tracking-tightest text-pau-primary md:text-6xl">
             Inscrire mon enfant
           </h2>
-          <p className="mt-6 font-sans text-base leading-relaxed text-blanc/75 md:text-lg">
+          <p className="mt-6 font-sans text-base leading-relaxed text-pau-primary/75 md:text-lg">
             Pour inscrire ton enfant à l'un de nos stages, contacte-nous par
             email ou téléphone. Nous te transmettrons le formulaire
             d'inscription et les modalités de paiement.
           </p>
 
           <div className="mt-8 space-y-4">
-            <p className="font-sans text-base text-blanc/75">
+            <p className="font-sans text-base text-pau-primary/75">
               Email :{' '}
               <a
                 href="mailto:stages@paufc.fr"
-                className="text-jaune hover:underline"
+                className="text-pau-yellow hover:underline"
               >
                 stages@paufc.fr
               </a>
             </p>
-            <p className="font-sans text-base text-blanc/75">
+            <p className="font-sans text-base text-pau-primary/75">
               Téléphone :{' '}
-              <a href="tel:+33559000000" className="text-jaune hover:underline">
+              <a href="tel:+33559000000" className="text-pau-yellow hover:underline">
                 +33 5 59 00 00 00
               </a>
             </p>
@@ -238,7 +238,7 @@ export default function StagesPage() {
             </a>
             <Link
               href="/academy"
-              className="inline-block border border-blanc/20 px-6 py-3 font-mono text-sm uppercase tracking-wider text-blanc transition-colors hover:border-jaune hover:text-jaune"
+              className="inline-block border border-gray-200/20 px-6 py-3 font-mono text-sm uppercase tracking-wider text-pau-primary transition-colors hover:border-pau-yellow hover:text-pau-yellow"
             >
               Retour Academy
             </Link>
@@ -252,22 +252,22 @@ export default function StagesPage() {
 // Composant Formule Card
 function FormuleCard({ title, badge, duration, description, price, priceDetail }) {
   return (
-    <div className="border border-blanc/10 bg-primaire p-8 md:p-10">
-      <span className="inline-block font-mono text-xs uppercase tracking-wider text-jaune">
+    <div className="border border-gray-200/10 bg-primaire p-8 md:p-10">
+      <span className="inline-block font-mono text-xs uppercase tracking-wider text-pau-yellow">
         {badge}
       </span>
-      <h3 className="mt-4 font-display text-4xl uppercase leading-tight tracking-tight text-blanc md:text-5xl">
+      <h3 className="mt-4 font-display text-4xl uppercase leading-tight tracking-tight text-pau-primary md:text-5xl">
         {title}
       </h3>
-      <p className="mt-2 font-mono text-sm uppercase tracking-wider text-blanc/60">
+      <p className="mt-2 font-mono text-sm uppercase tracking-wider text-pau-primary/60">
         {duration}
       </p>
-      <p className="mt-4 font-sans text-base leading-relaxed text-blanc/75">
+      <p className="mt-4 font-sans text-base leading-relaxed text-pau-primary/75">
         {description}
       </p>
       <div className="mt-6 flex items-baseline gap-2">
-        <span className="font-display text-5xl text-jaune">{price}</span>
-        <span className="font-mono text-sm uppercase tracking-wider text-blanc/60">
+        <span className="font-display text-5xl text-pau-yellow">{price}</span>
+        <span className="font-mono text-sm uppercase tracking-wider text-pau-primary/60">
           {priceDetail}
         </span>
       </div>
@@ -278,11 +278,11 @@ function FormuleCard({ title, badge, duration, description, price, priceDetail }
 // Composant Program Item
 function ProgramItem({ title, description }) {
   return (
-    <div className="border-l-2 border-jaune pl-6 md:pl-10">
-      <h3 className="font-display text-3xl uppercase leading-tight tracking-tight text-blanc md:text-4xl">
+    <div className="border-l-2 border-pau-yellow pl-6 md:pl-10">
+      <h3 className="font-display text-3xl uppercase leading-tight tracking-tight text-pau-primary md:text-4xl">
         {title}
       </h3>
-      <p className="mt-4 font-sans text-base leading-relaxed text-blanc/75 md:text-lg">
+      <p className="mt-4 font-sans text-base leading-relaxed text-pau-primary/75 md:text-lg">
         {description}
       </p>
     </div>
@@ -292,12 +292,12 @@ function ProgramItem({ title, description }) {
 // Composant Calendar Item
 function CalendarItem({ period, dates, status, available }) {
   return (
-    <div className="flex flex-wrap items-center justify-between gap-4 border-b border-blanc/10 pb-6">
+    <div className="flex flex-wrap items-center justify-between gap-4 border-b border-gray-200/10 pb-6">
       <div>
-        <h3 className="font-display text-2xl uppercase leading-tight tracking-tight text-blanc md:text-3xl">
+        <h3 className="font-display text-2xl uppercase leading-tight tracking-tight text-pau-primary md:text-3xl">
           {period}
         </h3>
-        <p className="mt-1 font-mono text-sm uppercase tracking-wider text-blanc/60">
+        <p className="mt-1 font-mono text-sm uppercase tracking-wider text-pau-primary/60">
           {dates}
         </p>
       </div>
@@ -305,8 +305,8 @@ function CalendarItem({ period, dates, status, available }) {
         <span
           className={`inline-block px-4 py-2 font-mono text-xs uppercase tracking-wider ${
             available
-              ? 'bg-jaune/20 text-jaune'
-              : 'bg-blanc/10 text-blanc/40'
+              ? 'bg-jaune/20 text-pau-yellow'
+              : 'bg-blanc/10 text-pau-primary/40'
           }`}
         >
           {status}

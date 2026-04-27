@@ -80,7 +80,7 @@ export default function CGVPage() {
       <LegalSection title="8. Service client">
         <p>
           Pour toute question relative à votre commande :{' '}
-          <a className="text-jaune hover:underline" href="mailto:boutique@paufc.fr">
+          <a className="text-pau-yellow hover:underline" href="mailto:boutique@paufc.fr">
             boutique@paufc.fr
           </a>
           .
