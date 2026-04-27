@@ -30,8 +30,9 @@ const SECTIONS = [
     ],
   },
   {
-    title: 'Communication',
+    title: 'Contenu',
     items: [
+      { href: '/admin/matchs', label: 'Matchs & Calendrier' },
       { href: '/admin/actualites', label: 'Actualités' },
       { href: '/admin/partenaires', label: 'Partenaires' },
       { href: '/admin/newsletter', label: 'Newsletter' },
