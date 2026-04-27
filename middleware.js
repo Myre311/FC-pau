@@ -31,7 +31,9 @@ export async function middleware(request) {
   // Empêche d'aller sur /connexion si déjà connecté
   if ((pathname === '/connexion' || pathname === '/inscription') && user) {
     const url = request.nextUrl.clone();
-    url.pathname = '/compte';
+    // Rediriger vers 'next' si présent, sinon vers /compte
+    const next = request.nextUrl.searchParams.get('next');
+    url.pathname = next || '/compte';
     url.search = '';
     return NextResponse.redirect(url);
   }

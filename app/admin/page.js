@@ -14,6 +14,18 @@ const DAYS_30 = 30 * 24 * 60 * 60 * 1000;
 export default async function AdminDashboardPage() {
   const since = new Date(Date.now() - DAYS_30);
 
+  // Données mockées pour les nouvelles métriques Shopify
+  const mockStats = {
+    siteVisits: '12,847',
+    siteVisitsChange: '+12.5%',
+    recurringCustomersRate: '34.2%',
+    recurringCustomersChange: '+2.1%',
+    conversionRate: '3.8%',
+    conversionRateChange: '-0.3%',
+    avgOrderValue: '68.50€',
+    avgOrderValueChange: '+5.2%',
+  };
+
   const [
     revenue30dAgg,
     paidOrders30d,
@@ -71,221 +83,267 @@ export default async function AdminDashboardPage() {
 
   return (
     <div className="space-y-8">
-      <AdminPageHeader
-        kicker="Bienvenue sur le dashboard"
-        title="Tableau de bord"
-      />
+      {/* En-tête moderne */}
+      <div className="flex items-center justify-between">
+        <div>
+          <h1 className="text-2xl font-bold text-gray-900">Tableau de bord</h1>
+          <p className="mt-1 text-sm text-gray-500">Vue d'ensemble de votre boutique Pau FC</p>
+        </div>
+        <div className="flex gap-3">
+          <button className="rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50">
+            📅 Derniers 30 jours
+          </button>
+          <button className="rounded-lg bg-pau-yellow px-4 py-2 text-sm font-semibold text-pau-night shadow-sm hover:bg-pau-yellow/90">
+            📊 Rapport complet
+          </button>
+        </div>
+      </div>
 
-      {/* Stats principales */}
-      <section className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-        <DashboardStatCard
-          label="Chiffre d'affaires"
-          value={formatPrice(revenue30dAgg._sum.total ?? 0)}
-          subtitle={`${paidOrders30d} commande${paidOrders30d > 1 ? 's' : ''} · 30 jours`}
-          icon="revenue"
-          trend="+12%"
-        />
-        <DashboardStatCard
-          label="Commandes à préparer"
-          value={pendingOrders}
-          subtitle="Payées · En attente d'expédition"
-          icon="orders"
-          tone={pendingOrders > 0 ? 'warning' : 'success'}
-        />
-        <DashboardStatCard
-          label="Paniers actifs"
-          value={activeReservations}
-          subtitle="Réservations stock actives"
-          icon="cart"
-        />
-        <DashboardStatCard
-          label="Alertes stock"
-          value={lowStockCount}
-          subtitle="Produits en rupture"
-          icon="alert"
-          tone={lowStockCount > 0 ? 'danger' : 'success'}
-        />
-      </section>
+      {/* Métriques Shopify-style */}
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+          <p className="text-sm font-medium text-gray-600">Visites du site</p>
+          <div className="mt-2 flex items-baseline justify-between">
+            <p className="text-2xl font-bold text-gray-900">{mockStats.siteVisits}</p>
+            <span className="text-sm font-medium text-green-600">
+              ↑ {mockStats.siteVisitsChange}
+            </span>
+          </div>
+        </div>
+        <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+          <p className="text-sm font-medium text-gray-600">Clients récurrents</p>
+          <div className="mt-2 flex items-baseline justify-between">
+            <p className="text-2xl font-bold text-gray-900">{mockStats.recurringCustomersRate}</p>
+            <span className="text-sm font-medium text-green-600">
+              ↑ {mockStats.recurringCustomersChange}
+            </span>
+          </div>
+        </div>
+        <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+          <p className="text-sm font-medium text-gray-600">Taux de conversion</p>
+          <div className="mt-2 flex items-baseline justify-between">
+            <p className="text-2xl font-bold text-gray-900">{mockStats.conversionRate}</p>
+            <span className="text-sm font-medium text-red-600">
+              ↓ {mockStats.conversionRateChange}
+            </span>
+          </div>
+        </div>
+        <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+          <p className="text-sm font-medium text-gray-600">Valeur moyenne</p>
+          <div className="mt-2 flex items-baseline justify-between">
+            <p className="text-2xl font-bold text-gray-900">{mockStats.avgOrderValue}</p>
+            <span className="text-sm font-medium text-green-600">
+              ↑ {mockStats.avgOrderValueChange}
+            </span>
+          </div>
+        </div>
+        <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+          <p className="text-sm font-medium text-gray-600">Total commandes</p>
+          <div className="mt-2 flex items-baseline justify-between">
+            <p className="text-2xl font-bold text-gray-900">{paidOrders30d}</p>
+            <span className="text-sm font-medium text-green-600">↑ +18%</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Graphique ventes - Mockup visuel */}
+      <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+        <div className="mb-6 flex items-center justify-between">
+          <h2 className="text-lg font-semibold text-gray-900">Ventes sur 7 jours</h2>
+          <div className="flex gap-2">
+            <button className="rounded-lg border border-gray-300 bg-white px-3 py-1.5 text-xs font-medium text-gray-700 hover:bg-gray-50">
+              7 jours
+            </button>
+            <button className="rounded-lg bg-gray-100 px-3 py-1.5 text-xs font-medium text-gray-900">
+              30 jours
+            </button>
+            <button className="rounded-lg border border-gray-300 bg-white px-3 py-1.5 text-xs font-medium text-gray-700 hover:bg-gray-50">
+              90 jours
+            </button>
+          </div>
+        </div>
+        <div className="flex h-64 items-end justify-around gap-2">
+          {[65, 85, 45, 92, 78, 88, 95].map((height, i) => (
+            <div key={i} className="flex flex-1 flex-col items-center gap-2">
+              <div
+                className="w-full rounded-t bg-pau-yellow transition-all hover:bg-pau-yellow/80"
+                style={{ height: `${height}%` }}
+              />
+              <span className="text-xs text-gray-500">
+                {['Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam', 'Dim'][i]}
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
 
       {/* Actions rapides */}
-      <section>
-        <h2 className="mb-4 font-mono text-xs uppercase tracking-wider text-blanc/60">
-          Actions rapides
-        </h2>
-        <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-4">
-          <QuickAction
-            href="/admin/produits/nouveau"
-            icon="plus"
-            label="Nouveau produit"
-            description="Ajouter au catalogue"
-          />
-          <QuickAction
-            href="/admin/actualites/nouveau"
-            icon="article"
-            label="Nouvelle actualité"
-            description="Publier un article"
-          />
-          <QuickAction
-            href="/admin/commandes"
-            icon="orders"
-            label="Commandes"
-            description={`${pendingOrders} à traiter`}
-            badge={pendingOrders > 0 ? pendingOrders : null}
-          />
-          <QuickAction
-            href="/admin/stock"
-            icon="stock"
-            label="Gestion stock"
-            description={`${lowStockCount} alerte${lowStockCount > 1 ? 's' : ''}`}
-            badge={lowStockCount > 0 ? lowStockCount : null}
-          />
-        </div>
-      </section>
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <Link
+          href="/admin/produits/nouveau"
+          className="flex items-start gap-4 rounded-lg border border-gray-200 bg-white p-4 shadow-sm transition-all hover:border-pau-yellow hover:shadow-md"
+        >
+          <span className="text-3xl">📦</span>
+          <div>
+            <p className="font-medium text-gray-900">Nouveau produit</p>
+            <p className="text-sm text-gray-500">Ajouter au catalogue</p>
+          </div>
+        </Link>
+        <Link
+          href="/admin/matchs/nouveau"
+          className="flex items-start gap-4 rounded-lg border border-gray-200 bg-white p-4 shadow-sm transition-all hover:border-pau-yellow hover:shadow-md"
+        >
+          <span className="text-3xl">⚽</span>
+          <div>
+            <p className="font-medium text-gray-900">Nouveau match</p>
+            <p className="text-sm text-gray-500">Programmer un match</p>
+          </div>
+        </Link>
+        <Link
+          href="/admin/actualites/nouveau"
+          className="flex items-start gap-4 rounded-lg border border-gray-200 bg-white p-4 shadow-sm transition-all hover:border-pau-yellow hover:shadow-md"
+        >
+          <span className="text-3xl">📰</span>
+          <div>
+            <p className="font-medium text-gray-900">Nouvelle actualité</p>
+            <p className="text-sm text-gray-500">Publier une actu</p>
+          </div>
+        </Link>
+        <Link
+          href="/admin/marketing"
+          className="flex items-start gap-4 rounded-lg border border-gray-200 bg-white p-4 shadow-sm transition-all hover:border-pau-yellow hover:shadow-md"
+        >
+          <span className="text-3xl">📊</span>
+          <div>
+            <p className="font-medium text-gray-900">Marketing</p>
+            <p className="text-sm text-gray-500">Gérer les campagnes</p>
+          </div>
+        </Link>
+      </div>
 
       {/* Vue d'ensemble */}
-      <section className="grid gap-4 md:grid-cols-3">
-        <div className="rounded-lg border border-blanc/10 bg-primaire/30 p-6">
+      <div className="grid gap-4 md:grid-cols-4">
+        <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
           <div className="flex items-center justify-between">
             <div>
-              <p className="font-mono text-xs uppercase tracking-wider text-blanc/60">
-                Produits actifs
-              </p>
-              <p className="mt-2 font-display text-3xl text-blanc">{totalProducts}</p>
+              <p className="text-sm font-medium text-gray-600">Produits actifs</p>
+              <p className="mt-2 text-3xl font-bold text-gray-900">{totalProducts}</p>
             </div>
-            <Link
-              href="/admin/produits"
-              className="font-mono text-xs uppercase tracking-wider text-jaune hover:underline"
-            >
+            <Link href="/admin/produits" className="text-sm font-medium text-pau-yellow hover:text-pau-yellow/80">
               Voir →
             </Link>
           </div>
         </div>
 
-        <div className="rounded-lg border border-blanc/10 bg-primaire/30 p-6">
+        <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
           <div className="flex items-center justify-between">
             <div>
-              <p className="font-mono text-xs uppercase tracking-wider text-blanc/60">
-                Articles publiés
-              </p>
-              <p className="mt-2 font-display text-3xl text-blanc">{totalArticles}</p>
+              <p className="text-sm font-medium text-gray-600">Articles publiés</p>
+              <p className="mt-2 text-3xl font-bold text-gray-900">{totalArticles}</p>
             </div>
-            <Link
-              href="/admin/actualites"
-              className="font-mono text-xs uppercase tracking-wider text-jaune hover:underline"
-            >
+            <Link href="/admin/actualites" className="text-sm font-medium text-pau-yellow hover:text-pau-yellow/80">
               Voir →
             </Link>
           </div>
         </div>
 
-        <div className="rounded-lg border border-blanc/10 bg-primaire/30 p-6">
+        <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
           <div className="flex items-center justify-between">
             <div>
-              <p className="font-mono text-xs uppercase tracking-wider text-blanc/60">
-                Commandes 30j
-              </p>
-              <p className="mt-2 font-display text-3xl text-blanc">{paidOrders30d}</p>
+              <p className="text-sm font-medium text-gray-600">Commandes à préparer</p>
+              <p className="mt-2 text-3xl font-bold text-gray-900">{pendingOrders}</p>
             </div>
-            <Link
-              href="/admin/commandes"
-              className="font-mono text-xs uppercase tracking-wider text-jaune hover:underline"
-            >
-              Voir →
-            </Link>
+            <span className={`text-sm font-medium ${pendingOrders > 0 ? 'text-orange-600' : 'text-green-600'}`}>
+              {pendingOrders > 0 ? '⚠️' : '✓'}
+            </span>
           </div>
         </div>
-      </section>
+
+        <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+          <div className="flex items-center justify-between">
+            <div>
+              <p className="text-sm font-medium text-gray-600">Alertes stock</p>
+              <p className="mt-2 text-3xl font-bold text-gray-900">{lowStockCount}</p>
+            </div>
+            <span className={`text-sm font-medium ${lowStockCount > 0 ? 'text-red-600' : 'text-green-600'}`}>
+              {lowStockCount > 0 ? '🔴' : '✓'}
+            </span>
+          </div>
+        </div>
+      </div>
 
       {/* Activité récente */}
-      <section className="grid gap-6 lg:grid-cols-[1.5fr_1fr]">
-        <div className="rounded-lg border border-blanc/10 bg-primaire/20 p-6">
-          <header className="mb-6 flex items-center justify-between">
-            <h2 className="font-display text-xl uppercase text-blanc">
-              Dernières commandes
-            </h2>
-            <Link
-              href="/admin/commandes"
-              className="font-mono text-xs uppercase tracking-wider text-jaune hover:underline"
-            >
+      <div className="grid gap-6 lg:grid-cols-2">
+        {/* Dernières commandes */}
+        <div className="rounded-lg border border-gray-200 bg-white shadow-sm">
+          <div className="flex items-center justify-between border-b border-gray-200 p-6">
+            <h2 className="text-lg font-semibold text-gray-900">Dernières commandes</h2>
+            <Link href="/admin/commandes" className="text-sm font-medium text-pau-yellow hover:text-pau-yellow/80">
               Voir tout →
             </Link>
-          </header>
-
-          {recentOrders.length === 0 ? (
-            <div className="rounded border border-dashed border-blanc/15 p-8 text-center">
-              <p className="font-sans text-sm text-blanc/60">
-                Aucune commande pour le moment.
-              </p>
-            </div>
-          ) : (
-            <div className="space-y-3">
-              {recentOrders.map((o) => (
+          </div>
+          <div className="divide-y divide-gray-100">
+            {recentOrders.length === 0 ? (
+              <div className="p-8 text-center">
+                <p className="text-sm text-gray-500">Aucune commande pour le moment.</p>
+              </div>
+            ) : (
+              recentOrders.map((o) => (
                 <Link
                   key={o.id}
                   href={`/admin/commandes/${o.number}`}
-                  className="block rounded-lg border border-blanc/10 bg-nuit/50 p-4 transition-colors hover:border-jaune/30 hover:bg-nuit/70"
+                  className="flex items-center justify-between p-4 hover:bg-gray-50"
                 >
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <p className="font-mono text-sm text-blanc">{o.number}</p>
-                      <p className="mt-1 font-mono text-xs text-blanc/40">
-                        {formatDate(o.createdAt)} · {o.items.length} article{o.items.length > 1 ? 's' : ''}
-                      </p>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <StatusBadge status={o.status} />
-                      <span className="font-mono text-sm text-jaune">
-                        {formatPrice(o.total)}
-                      </span>
-                    </div>
+                  <div className="flex-1">
+                    <p className="text-sm font-medium text-gray-900">{o.number}</p>
+                    <p className="text-xs text-gray-500">
+                      {formatDate(o.createdAt)} · {o.items.length} article{o.items.length > 1 ? 's' : ''}
+                    </p>
+                  </div>
+                  <div className="text-right">
+                    <p className="text-sm font-semibold text-gray-900">{formatPrice(o.total)}</p>
+                    <StatusBadge status={o.status} />
                   </div>
                 </Link>
-              ))}
-            </div>
-          )}
+              ))
+            )}
+          </div>
         </div>
 
-        <div className="rounded-lg border border-blanc/10 bg-primaire/20 p-6">
-          <header className="mb-6">
-            <h2 className="font-display text-xl uppercase text-blanc">
-              Top produits 30j
-            </h2>
-          </header>
-          {topProducts.length === 0 ? (
-            <div className="rounded border border-dashed border-blanc/15 p-8 text-center">
-              <p className="font-sans text-sm text-blanc/60">
-                Pas encore de ventes.
-              </p>
-            </div>
-          ) : (
-            <ol className="space-y-3">
-              {topProducts.map((row, i) => {
+        {/* Top produits */}
+        <div className="rounded-lg border border-gray-200 bg-white shadow-sm">
+          <div className="flex items-center justify-between border-b border-gray-200 p-6">
+            <h2 className="text-lg font-semibold text-gray-900">Top produits 30j</h2>
+          </div>
+          <div className="divide-y divide-gray-100">
+            {topProducts.length === 0 ? (
+              <div className="p-8 text-center">
+                <p className="text-sm text-gray-500">Pas encore de ventes.</p>
+              </div>
+            ) : (
+              topProducts.map((row, i) => {
                 const v = variantById.get(row.variantId);
                 return (
-                  <li key={row.variantId} className="flex items-center gap-3 rounded-lg border border-blanc/5 bg-nuit/30 p-3">
-                    <span className="flex h-8 w-8 items-center justify-center rounded-full bg-jaune/10 font-display text-sm text-jaune">
-                      {i + 1}
-                    </span>
-                    <div className="min-w-0 flex-1">
-                      <p className="truncate font-sans text-sm text-blanc">
-                        {v?.product?.name ?? '— produit retiré —'}
-                      </p>
-                      {v?.size && (
-                        <p className="font-mono text-xs text-blanc/40">
-                          Taille {v.size}
+                  <div key={row.variantId} className="flex items-center justify-between p-4 hover:bg-gray-50">
+                    <div className="flex items-center gap-3 flex-1">
+                      <span className="flex h-8 w-8 items-center justify-center rounded-full bg-pau-yellow/10 text-sm font-bold text-pau-yellow">
+                        {i + 1}
+                      </span>
+                      <div className="min-w-0 flex-1">
+                        <p className="truncate text-sm font-medium text-gray-900">
+                          {v?.product?.name ?? '— produit retiré —'}
                         </p>
-                      )}
+                        {v?.size && <p className="text-xs text-gray-500">Taille {v.size}</p>}
+                      </div>
                     </div>
-                    <span className="font-mono text-sm font-bold text-jaune">
-                      ×{row._sum.quantity}
-                    </span>
-                  </li>
+                    <span className="text-sm font-semibold text-gray-900">×{row._sum.quantity}</span>
+                  </div>
                 );
-              })}
-            </ol>
-          )}
+              })
+            )}
+          </div>
         </div>
-      </section>
+      </div>
     </div>
   );
 }
