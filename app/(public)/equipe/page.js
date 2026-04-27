@@ -1,7 +1,8 @@
 import { prisma } from '@/lib/prisma';
 import { PlayerCard } from '@/components/vitrine/PlayerCard';
 import { POSITION_LABELS } from '@/lib/labels';
-import { PageHero } from '@/components/ui/PageHero';
+import PageHero from '@/components/PageHero';
+import SectionLight from '@/components/SectionLight';
 
 export const dynamic = 'force-dynamic';
 
@@ -36,48 +37,50 @@ export default async function EquipePage() {
         subtitle={`${players.length} joueurs et ${staffAndCoach.length} membres du staff au service d'un seul objectif : porter haut les couleurs du Béarn.`}
       />
 
-      {POSITION_ORDER.map((pos) => {
-        const list = grouped[pos];
-        if (!list || list.length === 0) return null;
-        return (
-          <section
-            key={pos}
-            className="container-fc border-t border-nuit/10 py-12 md:py-16 bg-blanc"
-          >
+      <SectionLight>
+        {POSITION_ORDER.map((pos, idx) => {
+          const list = grouped[pos];
+          if (!list || list.length === 0) return null;
+          return (
+            <div
+              key={pos}
+              className={idx > 0 ? "border-t border-[#0F1E45]/10 pt-12 mt-12" : ""}
+            >
+              <header className="mb-8 flex items-end justify-between">
+                <h2 className="font-display text-4xl uppercase leading-crush tracking-tightest text-[#0F1E45] md:text-5xl">
+                  {POSITION_LABELS[pos]}
+                </h2>
+                <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#0F1E45]/40">
+                  {list.length}
+                </span>
+              </header>
+              <div className="grid grid-cols-2 gap-x-4 gap-y-10 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+                {list.map((p) => (
+                  <PlayerCard key={p.id} player={p} />
+                ))}
+              </div>
+            </div>
+          );
+        })}
+
+        {staffAndCoach.length > 0 && (
+          <div className="border-t border-[#0F1E45]/10 pt-12 mt-12">
             <header className="mb-8 flex items-end justify-between">
-              <h2 className="font-display text-4xl uppercase leading-crush tracking-tightest text-nuit md:text-5xl">
-                {POSITION_LABELS[pos]}
+              <h2 className="font-display text-4xl uppercase leading-crush tracking-tightest text-[#0F1E45] md:text-5xl">
+                Staff
               </h2>
-              <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-nuit/40">
-                {list.length}
+              <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#0F1E45]/40">
+                {staffAndCoach.length}
               </span>
             </header>
             <div className="grid grid-cols-2 gap-x-4 gap-y-10 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-              {list.map((p) => (
+              {staffAndCoach.map((p) => (
                 <PlayerCard key={p.id} player={p} />
               ))}
             </div>
-          </section>
-        );
-      })}
-
-      {staffAndCoach.length > 0 && (
-        <section className="container-fc border-t border-nuit/10 py-12 md:py-16 bg-blanc">
-          <header className="mb-8 flex items-end justify-between">
-            <h2 className="font-display text-4xl uppercase leading-crush tracking-tightest text-nuit md:text-5xl">
-              Staff
-            </h2>
-            <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-nuit/40">
-              {staffAndCoach.length}
-            </span>
-          </header>
-          <div className="grid grid-cols-2 gap-x-4 gap-y-10 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-            {staffAndCoach.map((p) => (
-              <PlayerCard key={p.id} player={p} />
-            ))}
           </div>
-        </section>
-      )}
+        )}
+      </SectionLight>
 
       {all.length === 0 && <EmptyEquipe />}
     </>

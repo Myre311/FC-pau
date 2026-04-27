@@ -2,7 +2,8 @@ import { prisma } from '@/lib/prisma';
 import { ProductCard } from '@/components/shop/ProductCard';
 import { CategoryNav } from '@/components/shop/CategoryNav';
 import { Topbar } from '@/components/layout/Topbar';
-import { PageHero } from '@/components/ui/PageHero';
+import PageHero from '@/components/PageHero';
+import SectionLight from '@/components/SectionLight';
 
 export const metadata = {
   title: 'Boutique',
@@ -42,11 +43,11 @@ export default async function BoutiquePage() {
         subtitle="Maillots, lifestyle, accessoires. Stocks réels caisse + entrepôt, flocage personnalisable sur les maillots officiels."
       />
 
-      {/* Navigation catégories */}
-      <CategoryNav />
+      <SectionLight>
+        {/* Navigation catégories */}
+        <CategoryNav />
 
-      <section className="container-fc pb-32 bg-blanc">
-        <div className="mb-12 flex items-end justify-between border-b border-nuit/10 pb-6">
+        <div className="mb-12 flex items-end justify-between border-b border-nuit/10 pb-6 mt-8">
           <h2 className="font-mono text-[11px] uppercase tracking-[0.2em] text-nuit">
             {products.length} produit{products.length > 1 ? 's' : ''}
           </h2>
@@ -62,7 +63,7 @@ export default async function BoutiquePage() {
         ) : (
           <AsymmetricProductGrid products={products} />
         )}
-      </section>
+      </SectionLight>
     </>
   );
 }

@@ -1,6 +1,7 @@
 import { prisma } from '@/lib/prisma';
 import { MatchCard } from '@/components/vitrine/MatchCard';
-import { PageHero } from '@/components/ui/PageHero';
+import PageHero from '@/components/PageHero';
+import SectionLight from '@/components/SectionLight';
 
 export const dynamic = 'force-dynamic';
 
@@ -39,65 +40,65 @@ export default async function CalendrierPage() {
         title="CALENDRIER"
       />
 
-      {next && (
-        <section className="container-fc pb-12 md:pb-16 bg-blanc">
-          <h2 className="mb-6 font-mono text-[11px] uppercase tracking-[0.2em] text-nuit">
-            Prochain match
-          </h2>
-          <div className="border border-jaune/40 bg-primaire/30 p-2">
-            <MatchCard match={next} />
-          </div>
-        </section>
-      )}
-
-      {upcoming.length > 1 && (
-        <section className="container-fc border-t border-nuit/10 py-12 md:py-16 bg-blanc">
-          <header className="mb-8 flex items-end justify-between">
-            <h2 className="font-display text-4xl uppercase leading-crush tracking-tightest text-nuit md:text-5xl">
-              À venir
+      <SectionLight>
+        {next && (
+          <>
+            <h2 className="mb-6 font-mono text-[11px] uppercase tracking-[0.2em] text-[#0F1E45]">
+              Prochain match
             </h2>
-            <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-nuit/40">
-              {upcoming.length - 1}
-            </span>
-          </header>
-          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-            {upcoming.slice(1).map((m) => (
-              <MatchCard key={m.id} match={m} />
-            ))}
-          </div>
-        </section>
-      )}
+            <div className="border border-[#FFD60A]/40 bg-[#1A1D38]/10 p-2 mb-12">
+              <MatchCard match={next} />
+            </div>
+          </>
+        )}
 
-      {recent.length > 0 && (
-        <section className="container-fc border-t border-nuit/10 py-12 md:py-16 bg-blanc">
-          <header className="mb-8 flex items-end justify-between">
-            <h2 className="font-display text-4xl uppercase leading-crush tracking-tightest text-nuit md:text-5xl">
-              Résultats récents
-            </h2>
-            <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-nuit/40">
-              {recent.length}
-            </span>
-          </header>
-          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-            {recent.map((m) => (
-              <MatchCard key={m.id} match={m} />
-            ))}
-          </div>
-        </section>
-      )}
+        {upcoming.length > 1 && (
+          <>
+            <header className="mb-8 flex items-end justify-between pt-8 border-t border-[#0F1E45]/10">
+              <h2 className="font-display text-4xl uppercase leading-crush tracking-tightest text-[#0F1E45] md:text-5xl">
+                À venir
+              </h2>
+              <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#0F1E45]/40">
+                {upcoming.length - 1}
+              </span>
+            </header>
+            <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+              {upcoming.slice(1).map((m) => (
+                <MatchCard key={m.id} match={m} />
+              ))}
+            </div>
+          </>
+        )}
 
-      {upcoming.length === 0 && recent.length === 0 && (
-        <section className="container-fc py-24 bg-blanc">
-          <div className="border border-dashed border-nuit/15 p-10 text-center">
-            <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-nuit">
+        {recent.length > 0 && (
+          <>
+            <header className="mb-8 flex items-end justify-between pt-12 border-t border-[#0F1E45]/10">
+              <h2 className="font-display text-4xl uppercase leading-crush tracking-tightest text-[#0F1E45] md:text-5xl">
+                Résultats récents
+              </h2>
+              <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#0F1E45]/40">
+                {recent.length}
+              </span>
+            </header>
+            <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+              {recent.map((m) => (
+                <MatchCard key={m.id} match={m} />
+              ))}
+            </div>
+          </>
+        )}
+
+        {upcoming.length === 0 && recent.length === 0 && (
+          <div className="border border-dashed border-[#0F1E45]/15 p-10 text-center">
+            <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#0F1E45]">
               Calendrier vide
             </p>
-            <p className="mt-4 font-sans text-nuit/60">
+            <p className="mt-4 font-sans text-[#0F1E45]/60">
               Aucun match programmé pour le moment.
             </p>
           </div>
-        </section>
-      )}
+        )}
+      </SectionLight>
     </>
   );
 }

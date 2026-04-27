@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { prisma } from '@/lib/prisma';
-import { PageHero } from '@/components/ui/PageHero';
+import PageHero from '@/components/PageHero';
+import SectionLight from '@/components/SectionLight';
 
 export const metadata = {
   title: 'Billetterie',
@@ -32,15 +33,15 @@ export default async function BilletteriePage() {
       />
 
       {/* Prochains matchs */}
-      <section className="container-fc border-t border-blanc/10 py-12 md:py-20">
-        <h2 className="mb-12 font-display text-5xl uppercase leading-crush tracking-tightest text-blanc md:text-6xl">
+      <SectionLight>
+        <h2 className="mb-12 font-display text-5xl uppercase leading-crush tracking-tightest text-[#0F1E45] md:text-6xl">
           Prochains matchs à domicile
         </h2>
 
         {matchsAVenir.length === 0 ? (
-          <p className="font-sans text-base text-blanc/60">
+          <p className="font-sans text-base text-[#0F1E45]/60">
             Aucun match à domicile programmé pour le moment. Consulte le{' '}
-            <Link href="/calendrier" className="text-jaune hover:underline">
+            <Link href="/calendrier" className="text-[#FFD60A] hover:underline">
               calendrier complet
             </Link>
             .
@@ -52,11 +53,11 @@ export default async function BilletteriePage() {
             ))}
           </div>
         )}
-      </section>
+      </SectionLight>
 
       {/* Tarifs */}
-      <section className="container-fc border-t border-blanc/10 py-12 md:py-20">
-        <h2 className="mb-12 font-display text-5xl uppercase leading-crush tracking-tightest text-blanc md:text-6xl">
+      <SectionLight className="border-t border-[#0F1E45]/10">
+        <h2 className="mb-12 font-display text-5xl uppercase leading-crush tracking-tightest text-[#0F1E45] md:text-6xl">
           Tarifs
         </h2>
 
@@ -93,84 +94,84 @@ export default async function BilletteriePage() {
           />
         </div>
 
-        <p className="mt-8 font-sans text-sm text-blanc/60">
+        <p className="mt-8 font-sans text-sm text-[#0F1E45]/60">
           Tarifs indicatifs pour matchs de Ligue 2. Les tarifs peuvent varier
           selon la catégorie de match (Coupe de France, matchs de gala, etc.).
         </p>
-      </section>
+      </SectionLight>
 
       {/* Cashless */}
-      <section className="container-fc border-t border-blanc/10 py-12 md:py-20">
+      <SectionLight className="border-t border-[#0F1E45]/10">
         <div className="grid gap-10 md:grid-cols-[1fr_2fr] md:gap-16">
-          <h2 className="font-display text-5xl uppercase leading-crush tracking-tightest text-blanc md:text-6xl">
+          <h2 className="font-display text-5xl uppercase leading-crush tracking-tightest text-[#0F1E45] md:text-6xl">
             Carte cashless
           </h2>
-          <div className="space-y-5 font-sans text-base leading-relaxed text-blanc/75 md:text-lg">
+          <div className="space-y-5 font-sans text-base leading-relaxed text-[#0F1E45]/75 md:text-lg">
             <p>
               Le Nouste Camp est 100% cashless. Paye tes consommations
               (buvette, boutique) directement avec ta carte cashless ou ton
               smartphone.
             </p>
             <p>
-              <strong className="text-blanc">Rapide</strong> — Plus besoin
+              <strong className="text-[#0F1E45]">Rapide</strong> — Plus besoin
               d'espèces, recharge ta carte en ligne avant le match.
             </p>
             <p>
-              <strong className="text-blanc">Sécurisé</strong> — Paiement sans
+              <strong className="text-[#0F1E45]">Sécurisé</strong> — Paiement sans
               contact, zéro risque de perte ou vol.
             </p>
             <p>
-              <strong className="text-blanc">Remboursable</strong> — Solde non
+              <strong className="text-[#0F1E45]">Remboursable</strong> — Solde non
               utilisé remboursé à tout moment.
             </p>
             <div className="mt-6">
               <Link
                 href="/billetterie/cashless"
-                className="inline-block border border-blanc/20 px-6 py-3 font-mono text-sm uppercase tracking-wider text-blanc transition-colors hover:border-jaune hover:text-jaune"
+                className="inline-block border border-[#0F1E45]/20 px-6 py-3 font-mono text-sm uppercase tracking-wider text-[#0F1E45] transition-colors hover:border-[#FFD60A] hover:text-[#FFD60A]"
               >
                 En savoir plus
               </Link>
             </div>
           </div>
         </div>
-      </section>
+      </SectionLight>
 
       {/* Infos pratiques */}
-      <section className="container-fc border-t border-blanc/10 py-12 md:py-20">
-        <h2 className="mb-12 font-display text-5xl uppercase leading-crush tracking-tightest text-blanc md:text-6xl">
+      <SectionLight className="border-t border-[#0F1E45]/10">
+        <h2 className="mb-12 font-display text-5xl uppercase leading-crush tracking-tightest text-[#0F1E45] md:text-6xl">
           Infos pratiques
         </h2>
 
         <div className="grid gap-10 md:grid-cols-2 md:gap-16">
           <div>
-            <h3 className="font-display text-3xl uppercase leading-tight tracking-tight text-jaune">
+            <h3 className="font-display text-3xl uppercase leading-tight tracking-tight text-[#FFD60A]">
               Accès au stade
             </h3>
-            <div className="mt-4 space-y-3 font-sans text-base text-blanc/75">
+            <div className="mt-4 space-y-3 font-sans text-base text-[#0F1E45]/75">
               <p>
-                <strong className="text-blanc">Adresse</strong> — Nouste Camp, 8
+                <strong className="text-[#0F1E45]">Adresse</strong> — Nouste Camp, 8
                 Boulevard de l'Aviation, 64320 Bizanos
               </p>
               <p>
-                <strong className="text-blanc">Parking</strong> — Gratuit autour
+                <strong className="text-[#0F1E45]">Parking</strong> — Gratuit autour
                 du stade (places limitées)
               </p>
               <p>
-                <strong className="text-blanc">Bus</strong> — Ligne 4, arrêt
+                <strong className="text-[#0F1E45]">Bus</strong> — Ligne 4, arrêt
                 "Nouste Camp"
               </p>
               <p>
-                <strong className="text-blanc">Ouverture portes</strong> — 1h
+                <strong className="text-[#0F1E45]">Ouverture portes</strong> — 1h
                 avant le coup d'envoi
               </p>
             </div>
           </div>
 
           <div>
-            <h3 className="font-display text-3xl uppercase leading-tight tracking-tight text-jaune">
+            <h3 className="font-display text-3xl uppercase leading-tight tracking-tight text-[#FFD60A]">
               Règlement intérieur
             </h3>
-            <div className="mt-4 space-y-3 font-sans text-base text-blanc/75">
+            <div className="mt-4 space-y-3 font-sans text-base text-[#0F1E45]/75">
               <p>
                  Interdiction de fumigènes, pétards, objets dangereux
               </p>
@@ -181,32 +182,32 @@ export default async function BilletteriePage() {
             </div>
           </div>
         </div>
-      </section>
+      </SectionLight>
 
       {/* CTA */}
-      <section className="container-fc border-t border-blanc/10 py-12 md:py-20">
+      <SectionLight className="border-t border-[#0F1E45]/10">
         <div className="max-w-2xl">
-          <h2 className="font-display text-5xl uppercase leading-crush tracking-tightest text-blanc md:text-6xl">
+          <h2 className="font-display text-5xl uppercase leading-crush tracking-tightest text-[#0F1E45] md:text-6xl">
             Contact billetterie
           </h2>
-          <p className="mt-6 font-sans text-base leading-relaxed text-blanc/75 md:text-lg">
+          <p className="mt-6 font-sans text-base leading-relaxed text-[#0F1E45]/75 md:text-lg">
             Pour toute question sur la billetterie, les tarifs de groupe ou les
             abonnements :
           </p>
 
-          <div className="mt-6 space-y-3 font-sans text-base text-blanc/75">
+          <div className="mt-6 space-y-3 font-sans text-base text-[#0F1E45]/75">
             <p>
               Email :{' '}
               <a
                 href="mailto:billetterie@paufc.fr"
-                className="text-jaune hover:underline"
+                className="text-[#FFD60A] hover:underline"
               >
                 billetterie@paufc.fr
               </a>
             </p>
             <p>
               Téléphone :{' '}
-              <a href="tel:+33559000000" className="text-jaune hover:underline">
+              <a href="tel:+33559000000" className="text-[#FFD60A] hover:underline">
                 +33 5 59 00 00 00
               </a>
             </p>
@@ -216,13 +217,13 @@ export default async function BilletteriePage() {
           <div className="mt-8">
             <Link
               href="/cgv-billetterie"
-              className="font-mono text-sm uppercase tracking-wider text-blanc/60 hover:text-jaune"
+              className="font-mono text-sm uppercase tracking-wider text-[#0F1E45]/60 hover:text-[#FFD60A]"
             >
               Conditions générales de vente →
             </Link>
           </div>
         </div>
-      </section>
+      </SectionLight>
     </article>
   );
 }
@@ -283,14 +284,14 @@ function MatchCard({ match }) {
 // Composant Tarif Card
 function TarifCard({ title, price, description }) {
   return (
-    <div className="border-l-2 border-jaune pl-6">
-      <h3 className="font-display text-3xl uppercase leading-tight tracking-tight text-blanc">
+    <div className="border-l-2 border-[#FFD60A] pl-6">
+      <h3 className="font-display text-3xl uppercase leading-tight tracking-tight text-[#0F1E45]">
         {title}
       </h3>
       <div className="mt-3 flex items-baseline gap-2">
-        <span className="font-display text-4xl text-jaune">{price}</span>
+        <span className="font-display text-4xl text-[#FFD60A]">{price}</span>
       </div>
-      <p className="mt-3 font-sans text-sm text-blanc/75">{description}</p>
+      <p className="mt-3 font-sans text-sm text-[#0F1E45]/75">{description}</p>
     </div>
   );
 }

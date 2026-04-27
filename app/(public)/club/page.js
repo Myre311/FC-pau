@@ -1,4 +1,5 @@
-import { PageHero } from '@/components/ui/PageHero';
+import PageHero from '@/components/PageHero';
+import SectionLight from '@/components/SectionLight';
 
 export const metadata = {
   title: 'Le Club',
@@ -16,12 +17,12 @@ export default function ClubPage() {
         subtitle="Le Pau FC est un club de football professionnel français basé à Pau, en Béarn. Plus d'un siècle d'histoire, une identité forte, un ancrage territorial revendiqué."
       />
 
-      <section className="container-fc border-t border-nuit/10 py-12 md:py-20 bg-blanc">
+      <SectionLight>
         <div className="grid gap-10 md:grid-cols-[1fr_2fr] md:gap-16">
-          <h2 className="font-display text-5xl uppercase leading-crush tracking-tightest text-nuit md:text-6xl">
+          <h2 className="font-display text-5xl uppercase leading-crush tracking-tightest text-[#0F1E45] md:text-6xl">
             Notre histoire
           </h2>
-          <div className="space-y-5 font-sans text-base leading-relaxed text-nuit/75 md:text-lg">
+          <div className="space-y-5 font-sans text-base leading-relaxed text-[#0F1E45]/75 md:text-lg">
             <p>
               Fondé en 1920, le Pau FC plonge ses racines dans le sport
               amateur béarnais avant de se professionnaliser dans les années
@@ -37,16 +38,16 @@ export default function ClubPage() {
             <p>
               La saison 2025-2026 s&apos;inscrit dans le plan stratégique
               2024-2028 piloté par la direction du club : montée en puissance
-              sportive, modernisation des infrastructures, ouverture sur le
+              sportive, modernisation des installations, ouverture sur le
               territoire.
             </p>
           </div>
         </div>
-      </section>
+      </SectionLight>
 
-      <section className="container-fc border-t border-nuit/10 py-12 md:py-20 bg-blanc">
+      <SectionLight className="border-t border-[#0F1E45]/10">
         <div className="grid gap-10 md:grid-cols-[1fr_2fr] md:gap-16">
-          <h2 className="font-display text-5xl uppercase leading-crush tracking-tightest text-nuit md:text-6xl">
+          <h2 className="font-display text-5xl uppercase leading-crush tracking-tightest text-[#0F1E45] md:text-6xl">
             Nos valeurs
           </h2>
           <ul className="space-y-8">
@@ -72,15 +73,15 @@ export default function ClubPage() {
             />
           </ul>
         </div>
-      </section>
+      </SectionLight>
 
-      <section className="container-fc border-t border-nuit/10 py-12 md:py-20 bg-blanc">
+      <SectionLight className="border-t border-[#0F1E45]/10">
         <div className="grid gap-10 md:grid-cols-2 md:gap-16">
           <div>
-            <h2 className="font-display text-5xl uppercase leading-crush tracking-tightest text-nuit md:text-6xl">
+            <h2 className="font-display text-5xl uppercase leading-crush tracking-tightest text-[#0F1E45] md:text-6xl">
               Le projet
             </h2>
-            <p className="mt-6 font-sans text-base leading-relaxed text-nuit/75 md:text-lg">
+            <p className="mt-6 font-sans text-base leading-relaxed text-[#0F1E45]/75 md:text-lg">
               Le plan stratégique 2024-2028 articule trois axes : performance
               sportive, modernisation des installations (dont la nouvelle
               tribune Béarn livrée en août 2026), et politique RSE renforcée
@@ -94,22 +95,22 @@ export default function ClubPage() {
             <Stat label="Saison en cours" value="2025-2026" />
           </dl>
         </div>
-      </section>
+      </SectionLight>
     </article>
   );
 }
 
 function ValueItem({ num, title, text }) {
   return (
-    <li className="flex gap-6 border-t border-blanc/10 pt-6">
-      <span className="flex-none font-display text-3xl leading-none text-jaune">
+    <li className="flex gap-6 border-t border-[#0F1E45]/10 pt-6">
+      <span className="flex-none font-display text-3xl leading-none text-[#FFD60A]">
         {num}
       </span>
       <div>
-        <h3 className="font-display text-2xl uppercase leading-crush tracking-tightest text-blanc">
+        <h3 className="font-display text-2xl uppercase leading-crush tracking-tightest text-[#0F1E45]">
           {title}
         </h3>
-        <p className="mt-2 font-sans text-base leading-relaxed text-blanc/70">
+        <p className="mt-2 font-sans text-base leading-relaxed text-[#0F1E45]/70">
           {text}
         </p>
       </div>
@@ -119,11 +120,11 @@ function ValueItem({ num, title, text }) {
 
 function Stat({ label, value }) {
   return (
-    <div className="border-t border-blanc/10 pt-4">
-      <dt className="font-mono text-[10px] uppercase tracking-[0.2em] text-blanc/40">
+    <div className="border-t border-[#0F1E45]/10 pt-4">
+      <dt className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#0F1E45]/40">
         {label}
       </dt>
-      <dd className="mt-2 font-display text-3xl uppercase leading-crush tracking-tightest text-blanc md:text-4xl">
+      <dd className="mt-2 font-display text-3xl uppercase leading-crush tracking-tightest text-[#0F1E45] md:text-4xl">
         {value}
       </dd>
     </div>
