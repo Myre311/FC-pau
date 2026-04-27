@@ -142,7 +142,7 @@ export default async function HomePage() {
 
       {/* ─── BOUTIQUE OFFICIELLE ──────────────────────────────────────────────── */}
       {featuredProducts.length > 0 && (
-        <section className="section-pau border-t border-blanc/10">
+        <section className="section-pau border-t border-blanc/10 bg-nuit">
           <div className="container-pau">
             <FadeIn>
               <div className="mb-12 flex items-end justify-between">
@@ -219,7 +219,7 @@ export default async function HomePage() {
       )}
 
       {/* ─── PARTENAIRES ANIMÉS ──────────────────────────────────────────────── */}
-      <section className="section-pau border-y border-blanc/10">
+      <section className="section-pau border-y border-blanc/10 bg-nuit">
         <div className="container-pau">
           <FadeIn>
             <div className="mb-12">

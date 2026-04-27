@@ -18,7 +18,7 @@ export default function PublicLayout({ children }) {
         <SecondaryNavbar />
       </div>
 
-      <main id="main-content" className="min-h-[60vh] bg-[#262646] text-blanc">{children}</main>
+      <main id="main-content" className="min-h-[60vh] bg-blanc text-nuit">{children}</main>
       <Footer />
       <CartDrawer />
       <NewsletterModal />

@@ -1,4 +1,5 @@
 import { formatMatchDate, MATCH_STATUS_LABELS } from '@/lib/labels';
+import { TeamLogo } from '@/components/vitrine/TeamLogo';
 
 export function MatchCard({ match }) {
   const isPlayed = match.status === 'played';
@@ -42,29 +43,30 @@ export function MatchCard({ match }) {
         {formatMatchDate(match.kickoffAt)}
       </p>
 
-      <div className="mt-5 flex items-center justify-between gap-4">
+      {/* Logos équipes comme dans MatchCountdown */}
+      <div className="my-6 flex items-center justify-center gap-4 md:gap-6">
+        {match.isHome ? (
+          <>
+            <TeamLogo name="Pau FC" isHome />
+            <VsLabel isPlayed={isPlayed} result={result} palois={palois} adverse={adverse} />
+            <TeamLogo name={match.opponent} />
+          </>
+        ) : (
+          <>
+            <TeamLogo name={match.opponent} />
+            <VsLabel isPlayed={isPlayed} result={result} palois={palois} adverse={adverse} />
+            <TeamLogo name="Pau FC" isHome />
+          </>
+        )}
+      </div>
+
+      {/* Noms équipes en dessous */}
+      <div className="flex items-center justify-between">
         <Side
           name="Pau FC"
           isHome={match.isHome}
           highlightWin={result === 'win'}
         />
-
-        {isPlayed ? (
-          <div className="flex items-center gap-3 font-display text-3xl leading-crush md:text-4xl">
-            <span className={result === 'win' ? 'text-jaune' : 'text-blanc'}>
-              {palois}
-            </span>
-            <span className="text-blanc/30">·</span>
-            <span className={result === 'loss' ? 'text-jaune' : 'text-blanc'}>
-              {adverse}
-            </span>
-          </div>
-        ) : (
-          <span className="font-display text-2xl leading-crush text-blanc/40 md:text-3xl">
-            VS
-          </span>
-        )}
-
         <Side
           name={match.opponent}
           isHome={!match.isHome}
@@ -90,6 +92,31 @@ export function MatchCard({ match }) {
         </div>
       </footer>
     </article>
+  );
+}
+
+function VsLabel({ isPlayed, result, palois, adverse }) {
+  if (isPlayed) {
+    return (
+      <div className="flex items-center gap-2 font-display text-2xl leading-none md:gap-3 md:text-3xl">
+        <span className={result === 'win' ? 'text-jaune' : 'text-blanc'}>
+          {palois}
+        </span>
+        <span className="text-blanc/30">·</span>
+        <span className={result === 'loss' ? 'text-jaune' : 'text-blanc'}>
+          {adverse}
+        </span>
+      </div>
+    );
+  }
+
+  return (
+    <div className="flex flex-col items-center justify-center gap-1 border-2 border-jaune bg-jaune px-3 py-2 text-nuit">
+      <span className="font-display text-sm font-black leading-none md:text-base">VS</span>
+      <span className="font-mono text-[8px] font-bold uppercase leading-none tracking-tight md:text-[9px]">
+        Ligue 2<br/>BKT
+      </span>
+    </div>
   );
 }
 
