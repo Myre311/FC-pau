@@ -23,23 +23,23 @@ export function MatchCard({ match }) {
           : 'draw';
 
   return (
-    <article className="border border-blanc/10 bg-primaire p-5 transition-colors hover:border-blanc/25">
+    <article className="border border-white/10 bg-pau-primary p-5 transition-colors hover:border-white/25">
       <header className="flex items-center justify-between font-mono text-[10px] uppercase tracking-[0.2em]">
-        <span className="text-jaune">{match.competition}</span>
+        <span className="text-pau-yellow">{match.competition}</span>
         <span
           className={
             match.status === 'live'
-              ? 'text-jaune'
+              ? 'text-pau-yellow'
               : isPlayed
-                ? 'text-blanc/40'
-                : 'text-blanc/60'
+                ? 'text-white/40'
+                : 'text-white/60'
           }
         >
           {MATCH_STATUS_LABELS[match.status]}
         </span>
       </header>
 
-      <p className="mt-3 font-mono text-xs text-blanc/50">
+      <p className="mt-3 font-mono text-xs text-white/50">
         {formatMatchDate(match.kickoffAt)}
       </p>
 
@@ -75,7 +75,7 @@ export function MatchCard({ match }) {
         />
       </div>
 
-      <footer className="mt-5 flex flex-wrap items-center justify-between gap-3 border-t border-blanc/10 pt-4 font-mono text-[10px] uppercase tracking-[0.15em] text-blanc/50">
+      <footer className="mt-5 flex flex-wrap items-center justify-between gap-3 border-t border-white/10 pt-4 font-mono text-[10px] uppercase tracking-[0.15em] text-white/50">
         <span>{match.venue}</span>
         <div className="flex items-center gap-3">
           {match.broadcaster && <span>{match.broadcaster}</span>}
@@ -84,7 +84,7 @@ export function MatchCard({ match }) {
               href={match.ticketUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="border-b border-jaune/40 pb-0.5 text-jaune transition-colors hover:border-jaune"
+              className="border-b border-pau-yellow/40 pb-0.5 text-pau-yellow transition-colors hover:border-pau-yellow"
             >
               Billetterie →
             </a>
@@ -99,11 +99,11 @@ function VsLabel({ isPlayed, result, palois, adverse }) {
   if (isPlayed) {
     return (
       <div className="flex items-center gap-2 font-display text-2xl leading-none md:gap-3 md:text-3xl">
-        <span className={result === 'win' ? 'text-jaune' : 'text-blanc'}>
+        <span className={result === 'win' ? 'text-pau-yellow' : 'text-white'}>
           {palois}
         </span>
-        <span className="text-blanc/30">·</span>
-        <span className={result === 'loss' ? 'text-jaune' : 'text-blanc'}>
+        <span className="text-white/30">·</span>
+        <span className={result === 'loss' ? 'text-pau-yellow' : 'text-white'}>
           {adverse}
         </span>
       </div>
@@ -111,7 +111,7 @@ function VsLabel({ isPlayed, result, palois, adverse }) {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center gap-1 border-2 border-jaune bg-jaune px-3 py-2 text-nuit">
+    <div className="flex flex-col items-center justify-center gap-1 border-2 border-pau-yellow bg-pau-yellow px-3 py-2 text-pau-night">
       <span className="font-display text-sm font-black leading-none md:text-base">VS</span>
       <span className="font-mono text-[8px] font-bold uppercase leading-none tracking-tight md:text-[9px]">
         Ligue 2<br/>BKT
@@ -125,12 +125,12 @@ function Side({ name, isHome, highlightWin, align = 'left' }) {
     <div className={`flex-1 ${align === 'right' ? 'text-right' : ''}`}>
       <p
         className={`font-display text-base uppercase leading-tight tracking-tightest md:text-lg ${
-          highlightWin ? 'text-jaune' : 'text-blanc'
+          highlightWin ? 'text-pau-yellow' : 'text-white'
         }`}
       >
         {name}
       </p>
-      <p className="mt-1 font-mono text-[9px] uppercase tracking-[0.2em] text-blanc/40">
+      <p className="mt-1 font-mono text-[9px] uppercase tracking-[0.2em] text-white/40">
         {isHome ? 'Domicile' : 'Extérieur'}
       </p>
     </div>

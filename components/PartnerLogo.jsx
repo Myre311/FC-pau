@@ -12,7 +12,7 @@ export default function PartnerLogo({ name, logo, href }) {
       href={href}
       target={href ? "_blank" : undefined}
       rel={href ? "noopener noreferrer" : undefined}
-      className="flex items-center justify-center h-24 md:h-28 rounded-lg border border-white/10 bg-[#0F1E45] hover:bg-[#16285a] transition-colors p-6"
+      className="flex items-center justify-center h-24 md:h-28 rounded-lg border border-pau-gold/20 bg-white/5 hover:border-pau-gold/60 transition-colors p-6"
     >
       {logo && !errored ? (
         <Image

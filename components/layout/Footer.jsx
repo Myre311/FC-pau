@@ -99,13 +99,13 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t-4 border-jaune bg-nuit text-blanc">
+    <footer className="border-t-4 border-pau-yellow bg-pau-night text-white">
       {/* Main footer */}
       <div className="wrap py-12 md:py-16">
         <div className="grid gap-8 md:grid-cols-3 lg:grid-cols-6">
           {FOOTER_SECTIONS.map((section) => (
             <nav key={section.title} aria-label={section.title}>
-              <h3 className="mb-4 font-display text-sm uppercase tracking-wider text-jaune">
+              <h3 className="mb-4 font-display text-sm uppercase tracking-wider text-pau-yellow">
                 {section.title}
               </h3>
               <ul className="space-y-2">
@@ -113,7 +113,7 @@ export function Footer() {
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="link-hover block text-sm text-blanc/80 transition-colors hover:text-jaune"
+                      className="link-hover block text-sm text-white/80 transition-colors hover:text-pau-yellow"
                     >
                       {link.label}
                     </Link>
@@ -126,11 +126,11 @@ export function Footer() {
       </div>
 
       {/* Bottom bar */}
-      <div className="border-t-2 border-blanc/10">
+      <div className="border-t-2 border-white/10">
         <div className="wrap py-6">
           <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
             {/* Copyright */}
-            <div className="flex flex-col gap-2 text-sm text-blanc/70">
+            <div className="flex flex-col gap-2 text-sm text-white/70">
               <p>© {year} Pau FC. Tous droits réservés.</p>
               <p className="text-xs">
                 Nouste Camp, 8 Boulevard de l'Aviation, 64320 Bizanos
@@ -145,7 +145,7 @@ export function Footer() {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex h-10 w-10 items-center justify-center border-2 border-blanc/30 text-blanc transition-colors hover:border-jaune hover:bg-jaune hover:text-nuit"
+                  className="flex h-10 w-10 items-center justify-center border-2 border-white/30 text-white transition-colors hover:border-pau-yellow hover:bg-pau-yellow hover:text-pau-night"
                   aria-label={social.name}
                 >
                   <svg

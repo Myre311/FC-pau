@@ -12,7 +12,7 @@ import { formatPrice } from '@/lib/format';
 export const dynamic = 'force-dynamic';
 
 export const metadata = {
-  title: 'FC Pau — Club de football professionnel',
+  title: 'Pau FC — Club de football professionnel',
   description:
     'Site officiel du Pau FC. Billetterie, boutique, actualités, équipe et calendrier. Ligue 2 BKT.',
 };

@@ -12,14 +12,14 @@ export default function CheckoutPage() {
   return (
     <div className="container-fc grid gap-12 py-10 md:grid-cols-[1.5fr_1fr] md:gap-16 md:py-16">
       <section>
-        <header className="mb-10 border-b border-blanc/10 pb-6">
+        <header className="mb-10 border-b border-white/10 pb-6">
           <p className="badge-mono">Commande sécurisée Stripe</p>
           <h1 className="mt-3 font-display text-5xl uppercase leading-crush tracking-tightest md:text-6xl">
             Finaliser
           </h1>
           <Link
             href="/panier"
-            className="mt-4 inline-block font-mono text-[10px] uppercase tracking-[0.2em] text-blanc/60 transition-colors hover:text-jaune"
+            className="mt-4 inline-block font-mono text-[10px] uppercase tracking-[0.2em] text-white/60 transition-colors hover:text-pau-yellow"
           >
             ← Modifier le panier
           </Link>

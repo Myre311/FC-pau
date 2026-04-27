@@ -47,7 +47,7 @@ function NavItem({ item, pathname }) {
       <Link
         href={item.href}
         className={`relative px-4 py-2 font-display text-sm font-bold uppercase tracking-wide transition-colors ${
-          active ? 'text-jaune' : 'text-blanc hover:text-jaune'
+          active ? 'text-pau-yellow' : 'text-white hover:text-pau-yellow'
         }`}
       >
         {item.label}
@@ -66,7 +66,7 @@ function NavItem({ item, pathname }) {
     >
       <button
         className={`flex items-center gap-1 px-4 py-2 font-display text-sm font-bold uppercase tracking-wide transition-colors ${
-          isActive ? 'text-jaune' : 'text-blanc hover:text-jaune'
+          isActive ? 'text-pau-yellow' : 'text-white hover:text-pau-yellow'
         }`}
       >
         {item.label}
@@ -76,12 +76,12 @@ function NavItem({ item, pathname }) {
       </button>
 
       {showSubmenu && (
-        <div className="absolute left-0 top-full z-50 min-w-[200px] border-2 border-jaune bg-nuit pt-2">
+        <div className="absolute left-0 top-full z-50 min-w-[200px] border-2 border-pau-yellow bg-pau-night pt-2">
           {item.submenu.map((sub) => (
             <Link
               key={sub.href}
               href={sub.href}
-              className="block border-b border-blanc/10 px-4 py-3 font-display text-sm font-bold uppercase tracking-wide text-blanc transition-colors hover:bg-jaune hover:text-nuit last:border-b-0"
+              className="block border-b border-white/10 px-4 py-3 font-display text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-pau-yellow hover:text-pau-night last:border-b-0"
             >
               {sub.label}
             </Link>
@@ -123,15 +123,15 @@ export function Header() {
   return (
     <>
       <header
-        className={`border-b-4 bg-nuit transition-all duration-300 ${
-          scrolled ? 'border-jaune shadow-lg' : 'border-jaune/50'
+        className={`border-b-4 bg-pau-night transition-all duration-300 ${
+          scrolled ? 'border-pau-yellow shadow-lg' : 'border-pau-yellow/50'
         }`}
       >
         <div className="container-pau flex h-14 items-center justify-between gap-2 sm:h-16 md:h-20 md:gap-4">
           {/* Logo */}
           <Link
             href="/"
-            className="flex-shrink-0 outline-none focus-visible:ring-2 focus-visible:ring-jaune"
+            className="flex-shrink-0 outline-none focus-visible:ring-2 focus-visible:ring-pau-yellow"
             aria-label="Accueil FC Pau"
           >
             <Logo size="sm" className="sm:hidden" />
@@ -151,7 +151,7 @@ export function Header() {
             <button
               type="button"
               onClick={() => setSearchOpen(true)}
-              className="hidden h-9 w-9 items-center justify-center border-2 border-blanc bg-transparent text-blanc transition-colors hover:bg-blanc hover:text-nuit xs:flex sm:h-10 sm:w-10"
+              className="hidden h-9 w-9 items-center justify-center border-2 border-white bg-transparent text-white transition-colors hover:bg-white hover:text-pau-night xs:flex sm:h-10 sm:w-10"
               aria-label="Rechercher"
             >
               <svg className="h-4 w-4 sm:h-5 sm:w-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
@@ -167,7 +167,7 @@ export function Header() {
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="flex h-10 w-10 items-center justify-center border-2 border-blanc bg-nuit text-blanc transition-colors hover:bg-blanc hover:text-nuit lg:hidden"
+              className="flex h-10 w-10 items-center justify-center border-2 border-white bg-pau-night text-white transition-colors hover:bg-white hover:text-pau-night lg:hidden"
               aria-label={mobileMenuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
               aria-expanded={mobileMenuOpen}
             >
@@ -199,7 +199,7 @@ export function Header() {
             <div className="flex h-full flex-col">
               {/* Header */}
               <div className="flex h-16 items-center justify-between border-b border-gray-200 px-6">
-                <span className="font-display text-sm uppercase tracking-wider text-pau-blue">Menu</span>
+                <span className="font-display text-sm uppercase tracking-wider text-pau-primary">Menu</span>
                 <button
                   onClick={() => setMobileMenuOpen(false)}
                   className="flex h-10 w-10 items-center justify-center border border-gray-200 text-gray-700 transition-colors hover:bg-gray-50"
@@ -225,7 +225,7 @@ export function Header() {
                             onClick={() => setMobileMenuOpen(false)}
                             className={`block border-l-4 px-4 py-3 font-display text-base uppercase tracking-wide transition-colors ${
                               active
-                                ? 'border-nuit bg-gray-100 text-nuit'
+                                ? 'border-pau-night bg-gray-100 text-pau-night'
                                 : 'border-transparent text-gray-700 hover:border-gray-300 hover:bg-gray-50'
                             }`}
                           >
@@ -251,7 +251,7 @@ export function Header() {
                                   onClick={() => setMobileMenuOpen(false)}
                                   className={`block border-l-4 px-4 py-2 text-sm transition-colors ${
                                     active
-                                      ? 'border-jaune bg-gray-50 font-bold text-nuit'
+                                      ? 'border-pau-yellow bg-gray-50 font-bold text-pau-night'
                                       : 'border-transparent text-gray-700 hover:border-gray-300 hover:bg-gray-50'
                                   }`}
                                 >

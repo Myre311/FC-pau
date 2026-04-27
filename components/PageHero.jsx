@@ -18,7 +18,7 @@ export default function PageHero({
         sizes="100vw"
       />
       {/* Overlay pour lisibilité */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0F1E45]/60 via-[#0F1E45]/50 to-[#0F1E45]/85" />
+      <div className="absolute inset-0 bg-gradient-to-b from-pau-primary/60 via-pau-primary/50 to-pau-primary/85" />
       <div className="absolute inset-0 flex items-end">
         <div
           className={`mx-auto w-full max-w-7xl px-6 pb-10 md:pb-14 ${
@@ -26,7 +26,7 @@ export default function PageHero({
           }`}
         >
           {surtitle && (
-            <p className="text-[11px] md:text-xs font-semibold tracking-[0.25em] text-[#FFD60A] uppercase mb-3">
+            <p className="text-[11px] md:text-xs font-semibold tracking-[0.25em] text-pau-yellow uppercase mb-3">
               {surtitle}
             </p>
           )}

@@ -14,7 +14,7 @@ export function Logo({ className, size = 'md', showText = true }) {
   const s = sizes[size] ?? sizes.md;
 
   return (
-    <span className={cn('flex items-center gap-[10px]', className)} aria-label="FC Pau">
+    <span className={cn('flex items-center gap-[10px]', className)} aria-label="Pau FC">
       <Image
         src="/logo-fcpau.png"
         alt=""
@@ -25,8 +25,8 @@ export function Logo({ className, size = 'md', showText = true }) {
       />
       {showText && (
         <span className="flex flex-col leading-none">
-          <span className={cn('font-display uppercase tracking-[0.1em] text-blanc', s.name)}>
-            FC PAU
+          <span className={cn('font-display uppercase tracking-[0.1em] text-white', s.name)}>
+            PAU FC
           </span>
         </span>
       )}
