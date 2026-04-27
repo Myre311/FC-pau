@@ -224,7 +224,7 @@ export default async function HomePage() {
         <div className="container-pau">
           <FadeIn>
             <div className="mb-12">
-              <div className="mb-4 h-1 w-16 bg-pau-yellow" />
+              <div className="mb-4 h-1 w-16 bg-pau-gold" />
               <h2 className="font-display text-3xl font-bold uppercase text-pau-primary md:text-4xl">
                 Nos partenaires
               </h2>
