@@ -2,7 +2,8 @@ import Link from 'next/link';
 
 import { prisma } from '@/lib/prisma';
 import { AdminPageHeader } from '@/components/admin/AdminPageHeader';
-import { AdminStat } from '@/components/admin/AdminStat';
+import { DashboardStatCard } from '@/components/admin/DashboardStatCard';
+import { QuickAction } from '@/components/admin/QuickAction';
 import { StatusBadge } from '@/components/admin/StatusBadge';
 import { formatPrice, formatDate } from '@/lib/format';
 
@@ -21,6 +22,8 @@ export default async function AdminDashboardPage() {
     lowStockItems,
     topProducts,
     recentOrders,
+    totalProducts,
+    totalArticles,
   ] = await Promise.all([
     prisma.order.aggregate({
       _sum: { total: true },
@@ -31,8 +34,6 @@ export default async function AdminDashboardPage() {
     }),
     prisma.order.count({ where: { status: 'preparing' } }),
     prisma.cartReservation.count({ where: { expiresAt: { gt: new Date() } } }),
-    // Comparaison field-à-field pas supportée en where Prisma — on tire
-    // les lignes minimales et filtre côté JS (volume SKU < quelques centaines).
     prisma.stockItem.findMany({ select: { onHand: true, reserved: true, lowStock: true } }),
     prisma.orderItem.groupBy({
       by: ['variantId'],
@@ -51,6 +52,8 @@ export default async function AdminDashboardPage() {
       take: 6,
       include: { items: true },
     }),
+    prisma.product.count({ where: { status: 'active' } }),
+    prisma.article.count({ where: { status: 'published' } }),
   ]);
 
   const lowStockCount = lowStockItems.filter(
@@ -67,110 +70,213 @@ export default async function AdminDashboardPage() {
   const variantById = new Map(variantInfos.map((v) => [v.id, v]));
 
   return (
-    <div className="space-y-10">
+    <div className="space-y-8">
       <AdminPageHeader
-        kicker="Vue 30 jours"
+        kicker="Bienvenue sur le dashboard"
         title="Tableau de bord"
       />
 
-      <section className="grid gap-3 md:grid-cols-2 lg:grid-cols-4">
-        <AdminStat
-          label="CA 30 jours"
+      {/* Stats principales */}
+      <section className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+        <DashboardStatCard
+          label="Chiffre d'affaires"
           value={formatPrice(revenue30dAgg._sum.total ?? 0)}
-          hint={`${paidOrders30d} commande${paidOrders30d > 1 ? 's' : ''}`}
-          tone="accent"
+          subtitle={`${paidOrders30d} commande${paidOrders30d > 1 ? 's' : ''} · 30 jours`}
+          icon="revenue"
+          trend="+12%"
         />
-        <AdminStat
-          label="À préparer"
+        <DashboardStatCard
+          label="Commandes à préparer"
           value={pendingOrders}
-          hint="Commandes payées non expédiées"
+          subtitle="Payées · En attente d'expédition"
+          icon="orders"
+          tone={pendingOrders > 0 ? 'warning' : 'success'}
         />
-        <AdminStat
+        <DashboardStatCard
           label="Paniers actifs"
           value={activeReservations}
-          hint="Réservations stock TTL 15 min"
+          subtitle="Réservations stock actives"
+          icon="cart"
         />
-        <AdminStat
-          label="Alertes rupture"
+        <DashboardStatCard
+          label="Alertes stock"
           value={lowStockCount}
-          hint="Variantes ≤ seuil bas"
-          tone={lowStockCount > 0 ? 'warn' : 'default'}
+          subtitle="Produits en rupture"
+          icon="alert"
+          tone={lowStockCount > 0 ? 'danger' : 'success'}
         />
       </section>
 
-      <section className="grid gap-8 lg:grid-cols-[1.5fr_1fr]">
-        <div>
-          <header className="mb-4 flex items-end justify-between border-b border-blanc/10 pb-3">
-            <h2 className="font-mono text-[11px] uppercase tracking-[0.2em] text-jaune">
+      {/* Actions rapides */}
+      <section>
+        <h2 className="mb-4 font-mono text-xs uppercase tracking-wider text-blanc/60">
+          Actions rapides
+        </h2>
+        <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-4">
+          <QuickAction
+            href="/admin/produits/nouveau"
+            icon="plus"
+            label="Nouveau produit"
+            description="Ajouter au catalogue"
+          />
+          <QuickAction
+            href="/admin/actualites/nouveau"
+            icon="article"
+            label="Nouvelle actualité"
+            description="Publier un article"
+          />
+          <QuickAction
+            href="/admin/commandes"
+            icon="orders"
+            label="Commandes"
+            description={`${pendingOrders} à traiter`}
+            badge={pendingOrders > 0 ? pendingOrders : null}
+          />
+          <QuickAction
+            href="/admin/stock"
+            icon="stock"
+            label="Gestion stock"
+            description={`${lowStockCount} alerte${lowStockCount > 1 ? 's' : ''}`}
+            badge={lowStockCount > 0 ? lowStockCount : null}
+          />
+        </div>
+      </section>
+
+      {/* Vue d'ensemble */}
+      <section className="grid gap-4 md:grid-cols-3">
+        <div className="rounded-lg border border-blanc/10 bg-primaire/30 p-6">
+          <div className="flex items-center justify-between">
+            <div>
+              <p className="font-mono text-xs uppercase tracking-wider text-blanc/60">
+                Produits actifs
+              </p>
+              <p className="mt-2 font-display text-3xl text-blanc">{totalProducts}</p>
+            </div>
+            <Link
+              href="/admin/produits"
+              className="font-mono text-xs uppercase tracking-wider text-jaune hover:underline"
+            >
+              Voir →
+            </Link>
+          </div>
+        </div>
+
+        <div className="rounded-lg border border-blanc/10 bg-primaire/30 p-6">
+          <div className="flex items-center justify-between">
+            <div>
+              <p className="font-mono text-xs uppercase tracking-wider text-blanc/60">
+                Articles publiés
+              </p>
+              <p className="mt-2 font-display text-3xl text-blanc">{totalArticles}</p>
+            </div>
+            <Link
+              href="/admin/actualites"
+              className="font-mono text-xs uppercase tracking-wider text-jaune hover:underline"
+            >
+              Voir →
+            </Link>
+          </div>
+        </div>
+
+        <div className="rounded-lg border border-blanc/10 bg-primaire/30 p-6">
+          <div className="flex items-center justify-between">
+            <div>
+              <p className="font-mono text-xs uppercase tracking-wider text-blanc/60">
+                Commandes 30j
+              </p>
+              <p className="mt-2 font-display text-3xl text-blanc">{paidOrders30d}</p>
+            </div>
+            <Link
+              href="/admin/commandes"
+              className="font-mono text-xs uppercase tracking-wider text-jaune hover:underline"
+            >
+              Voir →
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Activité récente */}
+      <section className="grid gap-6 lg:grid-cols-[1.5fr_1fr]">
+        <div className="rounded-lg border border-blanc/10 bg-primaire/20 p-6">
+          <header className="mb-6 flex items-center justify-between">
+            <h2 className="font-display text-xl uppercase text-blanc">
               Dernières commandes
             </h2>
             <Link
               href="/admin/commandes"
-              className="font-mono text-[10px] uppercase tracking-[0.2em] text-blanc/60 hover:text-jaune"
+              className="font-mono text-xs uppercase tracking-wider text-jaune hover:underline"
             >
-              Voir tout
+              Voir tout →
             </Link>
           </header>
 
           {recentOrders.length === 0 ? (
-            <p className="border border-dashed border-blanc/15 p-6 font-sans text-sm text-blanc/60">
-              Aucune commande pour le moment.
-            </p>
+            <div className="rounded border border-dashed border-blanc/15 p-8 text-center">
+              <p className="font-sans text-sm text-blanc/60">
+                Aucune commande pour le moment.
+              </p>
+            </div>
           ) : (
-            <ul className="divide-y divide-blanc/10 border border-blanc/10">
+            <div className="space-y-3">
               {recentOrders.map((o) => (
-                <li key={o.id} className="grid gap-2 px-4 py-3 md:grid-cols-[1fr_auto_auto] md:items-center md:gap-6">
-                  <div>
-                    <Link
-                      href={`/admin/commandes/${o.number}`}
-                      className="font-mono text-sm text-blanc transition-colors hover:text-jaune"
-                    >
-                      {o.number}
-                    </Link>
-                    <p className="mt-0.5 font-mono text-[10px] uppercase tracking-[0.2em] text-blanc/40">
-                      {formatDate(o.createdAt)} · {o.items.length} article{o.items.length > 1 ? 's' : ''}
-                    </p>
+                <Link
+                  key={o.id}
+                  href={`/admin/commandes/${o.number}`}
+                  className="block rounded-lg border border-blanc/10 bg-nuit/50 p-4 transition-colors hover:border-jaune/30 hover:bg-nuit/70"
+                >
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <p className="font-mono text-sm text-blanc">{o.number}</p>
+                      <p className="mt-1 font-mono text-xs text-blanc/40">
+                        {formatDate(o.createdAt)} · {o.items.length} article{o.items.length > 1 ? 's' : ''}
+                      </p>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <StatusBadge status={o.status} />
+                      <span className="font-mono text-sm text-jaune">
+                        {formatPrice(o.total)}
+                      </span>
+                    </div>
                   </div>
-                  <StatusBadge status={o.status} />
-                  <span className="font-mono text-sm text-blanc md:text-right">
-                    {formatPrice(o.total)}
-                  </span>
-                </li>
+                </Link>
               ))}
-            </ul>
+            </div>
           )}
         </div>
 
-        <div>
-          <header className="mb-4 border-b border-blanc/10 pb-3">
-            <h2 className="font-mono text-[11px] uppercase tracking-[0.2em] text-jaune">
+        <div className="rounded-lg border border-blanc/10 bg-primaire/20 p-6">
+          <header className="mb-6">
+            <h2 className="font-display text-xl uppercase text-blanc">
               Top produits 30j
             </h2>
           </header>
           {topProducts.length === 0 ? (
-            <p className="border border-dashed border-blanc/15 p-6 font-sans text-sm text-blanc/60">
-              Pas encore de ventes.
-            </p>
+            <div className="rounded border border-dashed border-blanc/15 p-8 text-center">
+              <p className="font-sans text-sm text-blanc/60">
+                Pas encore de ventes.
+              </p>
+            </div>
           ) : (
-            <ol className="divide-y divide-blanc/10 border border-blanc/10">
+            <ol className="space-y-3">
               {topProducts.map((row, i) => {
                 const v = variantById.get(row.variantId);
                 return (
-                  <li key={row.variantId} className="flex items-center gap-3 px-4 py-3">
-                    <span className="font-display text-2xl leading-none text-blanc/20">
-                      {String(i + 1).padStart(2, '0')}
+                  <li key={row.variantId} className="flex items-center gap-3 rounded-lg border border-blanc/5 bg-nuit/30 p-3">
+                    <span className="flex h-8 w-8 items-center justify-center rounded-full bg-jaune/10 font-display text-sm text-jaune">
+                      {i + 1}
                     </span>
                     <div className="min-w-0 flex-1">
                       <p className="truncate font-sans text-sm text-blanc">
                         {v?.product?.name ?? '— produit retiré —'}
                       </p>
                       {v?.size && (
-                        <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-blanc/40">
+                        <p className="font-mono text-xs text-blanc/40">
                           Taille {v.size}
                         </p>
                       )}
                     </div>
-                    <span className="font-mono text-sm text-jaune">
+                    <span className="font-mono text-sm font-bold text-jaune">
                       ×{row._sum.quantity}
                     </span>
                   </li>
