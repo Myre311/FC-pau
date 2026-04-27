@@ -60,35 +60,32 @@ export default async function HomePage() {
 
       {/* ─── ACTUALITÉS / NEWSLETTER ──────────────────────────── */}
       {latestArticles.length > 0 && (
-        <section className="border-b border-nuit/10 bg-blanc py-12 md:py-16">
+        <section className="border-b border-nuit/10 bg-blanc py-8 md:py-10">
           <div className="container-pau">
             <FadeIn>
-              <div className="mb-8 flex items-end justify-between">
-                <div>
-                  <div className="mb-3 h-1 w-16 bg-jaune" />
-                  <h2 className="font-display text-2xl font-bold uppercase text-nuit md:text-3xl">
-                    Actualités
-                  </h2>
-                </div>
+              <div className="mb-6 flex items-center justify-between">
+                <h2 className="font-display text-xl font-bold uppercase text-nuit md:text-2xl">
+                  Dernières actualités
+                </h2>
                 <Link
                   href="/actualites"
-                  className="group flex items-center gap-2 font-display text-sm font-bold uppercase tracking-wide text-nuit transition-all hover:gap-3 hover:text-jaune"
+                  className="group flex items-center gap-2 font-display text-xs font-bold uppercase tracking-wide text-nuit transition-all hover:gap-3 hover:text-jaune md:text-sm"
                 >
-                  Toutes les actus
-                  <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                  Tout voir
+                  <svg className="h-3 w-3 transition-transform group-hover:translate-x-1 md:h-4 md:w-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                     <path d="M9 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </Link>
               </div>
             </FadeIn>
 
-            <StaggerContainer staggerDelay={0.1} className="grid gap-6 md:grid-cols-3">
+            <StaggerContainer staggerDelay={0.1} className="grid gap-4 md:grid-cols-3">
               {latestArticles.map((article) => (
                 <StaggerItem key={article.id}>
                   <Link href={`/actualites/${article.slug}`}>
-                    <HoverCard className="group h-full overflow-hidden border-2 border-nuit/20 bg-blanc transition-all hover:border-jaune hover:shadow-lg">
+                    <HoverCard className="group flex h-full gap-3 overflow-hidden border border-nuit/10 bg-blanc p-3 transition-all hover:border-jaune hover:shadow-md md:flex-col md:gap-0 md:p-0">
                       {article.coverImage && (
-                        <div className="relative aspect-video w-full overflow-hidden bg-gradient-to-br from-nuit to-primaire">
+                        <div className="relative h-20 w-20 flex-shrink-0 overflow-hidden bg-gradient-to-br from-nuit to-primaire md:aspect-video md:h-auto md:w-full">
                           <Image
                             src={article.coverImage}
                             alt={article.title}
@@ -97,22 +94,16 @@ export default async function HomePage() {
                           />
                         </div>
                       )}
-                      <div className="p-5">
-                        <p className="mb-2 font-mono text-[10px] font-bold uppercase tracking-wider text-jaune">
+                      <div className="flex-1 md:p-4">
+                        <p className="mb-1 font-mono text-[9px] font-bold uppercase tracking-wider text-jaune md:text-[10px]">
                           {new Date(article.publishedAt).toLocaleDateString('fr-FR', {
                             day: 'numeric',
-                            month: 'long',
-                            year: 'numeric'
+                            month: 'short',
                           })}
                         </p>
-                        <h3 className="mb-3 line-clamp-2 font-display text-lg font-bold uppercase leading-tight text-nuit group-hover:text-jaune">
+                        <h3 className="line-clamp-2 font-display text-sm font-bold uppercase leading-tight text-nuit group-hover:text-jaune md:text-base">
                           {article.title}
                         </h3>
-                        {article.excerpt && (
-                          <p className="line-clamp-3 text-sm leading-relaxed text-nuit/70">
-                            {article.excerpt}
-                          </p>
-                        )}
                       </div>
                     </HoverCard>
                   </Link>
