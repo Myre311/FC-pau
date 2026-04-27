@@ -1,5 +1,6 @@
 import { formatMatchDate, MATCH_STATUS_LABELS } from '@/lib/labels';
 import { TeamLogo } from '@/components/vitrine/TeamLogo';
+import Image from 'next/image';
 
 export function MatchCard({ match }) {
   const isPlayed = match.status === 'played';
@@ -22,10 +23,24 @@ export function MatchCard({ match }) {
           ? 'loss'
           : 'draw';
 
+  const isLigue2 = match.competition?.includes('Ligue 2') || match.competition?.includes('L2');
+
   return (
     <article className="border border-white/10 bg-pau-primary p-5 transition-colors hover:border-white/25">
-      <header className="flex items-center justify-between font-mono text-[10px] uppercase tracking-[0.2em]">
-        <span className="text-pau-yellow">{match.competition}</span>
+      <header className="flex items-center justify-between">
+        {isLigue2 ? (
+          <Image
+            src="/LFP_LOGOTYPE_L2_BKT_MASTER_WHITE_RVB-2048x581.png"
+            alt="Ligue 2 BKT"
+            width={80}
+            height={23}
+            className="h-auto w-16 md:w-20"
+          />
+        ) : (
+          <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-pau-yellow">
+            {match.competition}
+          </span>
+        )}
         <span
           className={
             match.status === 'live'
@@ -111,11 +126,8 @@ function VsLabel({ isPlayed, result, palois, adverse }) {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center gap-1 border-2 border-pau-yellow bg-pau-yellow px-3 py-2 text-pau-night">
-      <span className="font-display text-sm font-black leading-none md:text-base">VS</span>
-      <span className="font-mono text-[8px] font-bold uppercase leading-none tracking-tight md:text-[9px]">
-        Ligue 2<br/>BKT
-      </span>
+    <div className="flex items-center justify-center border-2 border-pau-yellow bg-pau-yellow px-4 py-2 text-pau-night">
+      <span className="font-display text-lg font-black leading-none md:text-xl">VS</span>
     </div>
   );
 }

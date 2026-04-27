@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { formatDate } from '@/lib/format';
 import { TeamLogo } from '@/components/vitrine/TeamLogo';
+import { CompetitionBadge } from '@/components/CompetitionBadge';
 
 // Composant compte à rebours pour un match
 export function MatchCountdown({ match }) {
@@ -59,9 +60,7 @@ export function MatchCountdown({ match }) {
       {/* Compétition */}
       <div className="mb-6 flex items-center justify-center gap-3">
         <div className="h-px flex-1 bg-blanc/20" />
-        <span className="badge-pau">
-          {match.competition || 'Ligue 2 BKT'}
-        </span>
+        <CompetitionBadge competition={match.competition || 'Ligue 2 BKT'} />
         <div className="h-px flex-1 bg-blanc/20" />
       </div>
 
@@ -87,9 +86,8 @@ export function MatchCountdown({ match }) {
 
 function VsLabel() {
   return (
-    <div className="flex flex-col items-center justify-center gap-1 border-2 border-jaune bg-jaune px-3 py-2 text-nuit">
-      <span className="font-display text-sm font-black leading-none md:text-base">VS</span>
-      <span className="font-mono text-[8px] font-bold uppercase leading-none tracking-tight md:text-[9px]">Ligue 2<br/>BKT</span>
+    <div className="flex items-center justify-center border-2 border-jaune bg-jaune px-4 py-2 text-nuit">
+      <span className="font-display text-lg font-black leading-none md:text-xl">VS</span>
     </div>
   );
 }

@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 
 /**
  * Hero animé niveau FC Barcelone
@@ -47,14 +48,25 @@ export function AnimatedHero() {
       <div className="container-pau relative z-10 px-4 py-16 text-center sm:py-20 md:py-32 lg:py-40">
 
         {/* Badge animé */}
-        <motion.p
+        <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="mb-3 font-mono text-xs font-semibold uppercase tracking-wide text-jaune sm:mb-4 sm:text-sm"
+          className="mb-3 flex items-center justify-center gap-2 sm:mb-4 sm:gap-3"
         >
-          Saison 2025-2026 · Ligue 2 BKT
-        </motion.p>
+          <span className="font-mono text-xs font-semibold uppercase tracking-wide text-jaune sm:text-sm">
+            Saison 2025-2026
+          </span>
+          <span className="text-jaune/50">·</span>
+          <Image
+            src="/LFP_LOGOTYPE_L2_BKT_MASTER_WHITE_RVB-2048x581.png"
+            alt="Ligue 2 BKT"
+            width={100}
+            height={28}
+            className="h-auto w-16 sm:w-20 md:w-24"
+            priority
+          />
+        </motion.div>
 
         {/* Titre avec effet stagger lettre par lettre */}
         <h1 className="mb-4 font-display text-4xl font-black uppercase leading-tight text-blanc sm:mb-6 sm:text-5xl md:text-6xl lg:text-7xl">
