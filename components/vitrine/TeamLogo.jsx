@@ -2,7 +2,7 @@
  * Composant Logo d'équipe avec vrais logos
  * Pour ajouter un vrai logo : placer le fichier dans /public/logos/[slug].svg
  */
-export function TeamLogo({ name = '???', isHome = false }) {
+export function TeamLogo({ name = '???', isHome = false, compact = false }) {
   // Mapping nom → slug pour les logos
   const teamSlugs = {
     'Pau FC': 'pau-fc',
@@ -41,6 +41,30 @@ export function TeamLogo({ name = '???', isHome = false }) {
     text: isHome ? 'text-jaune' : 'text-blanc',
     border: isHome ? 'border-jaune' : 'border-blanc/30'
   };
+
+  if (compact) {
+    return (
+      <div className={`relative flex h-full w-full items-center justify-center overflow-hidden rounded-full border-2 ${colors.border} ${colors.bg}`}>
+        {logoPath ? (
+          <img
+            src={logoPath}
+            alt={`Logo ${name}`}
+            className="h-8 w-8 object-contain"
+            onError={(e) => {
+              e.target.style.display = 'none';
+              e.target.nextSibling.style.display = 'block';
+            }}
+          />
+        ) : null}
+        <span
+          className={`font-display text-xs font-black ${colors.text}`}
+          style={{ display: logoPath ? 'none' : 'block' }}
+        >
+          {name.substring(0, 3).toUpperCase()}
+        </span>
+      </div>
+    );
+  }
 
   return (
     <div className="flex flex-col items-center gap-3">

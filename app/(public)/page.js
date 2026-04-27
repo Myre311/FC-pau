@@ -29,6 +29,15 @@ export default async function HomePage() {
     })
     .catch(() => []);
 
+  // Récupérer 3 derniers articles pour la newsletter
+  const latestArticles = await prisma.article
+    .findMany({
+      where: { status: 'published' },
+      orderBy: { publishedAt: 'desc' },
+      take: 3,
+    })
+    .catch(() => []);
+
   // Récupérer 4 produits mis en avant pour la boutique
   const featuredProducts = await prisma.product
     .findMany({
@@ -48,6 +57,71 @@ export default async function HomePage() {
     <>
       {/* ─── HERO ANIMÉ NIVEAU BARÇA ──────────────────────────── */}
       <AnimatedHero />
+
+      {/* ─── ACTUALITÉS / NEWSLETTER ──────────────────────────── */}
+      {latestArticles.length > 0 && (
+        <section className="border-b border-nuit/10 bg-blanc py-12 md:py-16">
+          <div className="container-pau">
+            <FadeIn>
+              <div className="mb-8 flex items-end justify-between">
+                <div>
+                  <div className="mb-3 h-1 w-16 bg-jaune" />
+                  <h2 className="font-display text-2xl font-bold uppercase text-nuit md:text-3xl">
+                    Actualités
+                  </h2>
+                </div>
+                <Link
+                  href="/actualites"
+                  className="group flex items-center gap-2 font-display text-sm font-bold uppercase tracking-wide text-nuit transition-all hover:gap-3 hover:text-jaune"
+                >
+                  Toutes les actus
+                  <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                    <path d="M9 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </Link>
+              </div>
+            </FadeIn>
+
+            <StaggerContainer staggerDelay={0.1} className="grid gap-6 md:grid-cols-3">
+              {latestArticles.map((article) => (
+                <StaggerItem key={article.id}>
+                  <Link href={`/actualites/${article.slug}`}>
+                    <HoverCard className="group h-full overflow-hidden border-2 border-nuit/20 bg-blanc transition-all hover:border-jaune hover:shadow-lg">
+                      {article.coverImage && (
+                        <div className="relative aspect-video w-full overflow-hidden bg-gradient-to-br from-nuit to-primaire">
+                          <Image
+                            src={article.coverImage}
+                            alt={article.title}
+                            fill
+                            className="object-cover transition-transform duration-300 group-hover:scale-110"
+                          />
+                        </div>
+                      )}
+                      <div className="p-5">
+                        <p className="mb-2 font-mono text-[10px] font-bold uppercase tracking-wider text-jaune">
+                          {new Date(article.publishedAt).toLocaleDateString('fr-FR', {
+                            day: 'numeric',
+                            month: 'long',
+                            year: 'numeric'
+                          })}
+                        </p>
+                        <h3 className="mb-3 line-clamp-2 font-display text-lg font-bold uppercase leading-tight text-nuit group-hover:text-jaune">
+                          {article.title}
+                        </h3>
+                        {article.excerpt && (
+                          <p className="line-clamp-3 text-sm leading-relaxed text-nuit/70">
+                            {article.excerpt}
+                          </p>
+                        )}
+                      </div>
+                    </HoverCard>
+                  </Link>
+                </StaggerItem>
+              ))}
+            </StaggerContainer>
+          </div>
+        </section>
+      )}
 
       {/* ─── PROCHAINS MATCHS ANIMÉS ──────────────────────────── */}
       <section className="section-pau border-t border-nuit/10 bg-blanc">
