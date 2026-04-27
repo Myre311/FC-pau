@@ -178,8 +178,8 @@
   }
 
   .card-match-pau {
-    @apply border-2 border-blanc/20 bg-primaire/30 p-8
-           transition-all duration-200 hover:border-jaune hover:bg-primaire/50;
+    @apply border-2 border-blanc/20 bg-primaire p-8
+           transition-all duration-200 hover:border-jaune hover:bg-primaire;
   }
 
   /* ─── SÉPARATEURS ────────────────────────────────────────────────── */

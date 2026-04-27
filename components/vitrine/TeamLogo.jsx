@@ -9,7 +9,7 @@ export function TeamLogo({ name = '???', isHome = false, compact = false }) {
     'Paris FC': 'paris-fc',
     'EA Guingamp': 'guingamp',
     'AC Ajaccio': 'ajaccio',
-    'SC Bastia': 'bastia',
+    'Clermont Foot': 'clermont',
     'SM Caen': 'caen',
     'Grenoble Foot 38': 'grenoble',
     'Stade Lavallois': 'laval',
@@ -32,7 +32,7 @@ export function TeamLogo({ name = '???', isHome = false, compact = false }) {
     'Paris FC': { bg: 'bg-[#003087]', text: 'text-white', border: 'border-white' },
     'EA Guingamp': { bg: 'bg-red-600', text: 'text-white', border: 'border-white' },
     'AC Ajaccio': { bg: 'bg-red-700', text: 'text-white', border: 'border-white' },
-    'SC Bastia': { bg: 'bg-blue-700', text: 'text-white', border: 'border-white' },
+    'Clermont Foot': { bg: 'bg-red-700', text: 'text-blue-900', border: 'border-blue-900' },
     'SM Caen': { bg: 'bg-red-600', text: 'text-blue-700', border: 'border-blue-700' },
   };
 
