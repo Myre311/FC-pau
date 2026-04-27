@@ -69,17 +69,27 @@ export default async function MatchsAdminPage() {
     <div>
       <div className="mb-8 flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-bold text-pau-primary">Matchs</h1>
+          <h1 className="text-3xl font-bold text-pau-primary">Matchs & Calendrier</h1>
           <p className="mt-2 text-pau-primary/60">
             Gérer le calendrier des matchs du Pau FC
           </p>
         </div>
-        <Link
-          href="/admin/matchs/nouveau"
-          className="bg-pau-yellow text-pau-night px-6 py-3 font-bold uppercase hover:bg-pau-yellow/90 transition-colors"
-        >
-          + Nouveau match
-        </Link>
+        <div className="flex gap-3">
+          <Link
+            href="/calendrier"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="border-2 border-pau-primary text-pau-primary px-6 py-3 font-bold uppercase hover:bg-pau-primary hover:text-white transition-colors"
+          >
+            Voir sur le site ↗
+          </Link>
+          <Link
+            href="/admin/matchs/nouveau"
+            className="bg-pau-yellow text-pau-night px-6 py-3 font-bold uppercase hover:bg-pau-yellow/90 transition-colors"
+          >
+            + Nouveau match
+          </Link>
+        </div>
       </div>
 
       <AdminTable
