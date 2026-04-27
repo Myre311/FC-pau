@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import PageHero from '@/components/PageHero';
+import SectionLight from '@/components/SectionLight';
 
 export const metadata = {
   title: 'Stages Academy',
@@ -9,19 +11,14 @@ export const metadata = {
 export default function StagesPage() {
   return (
     <article>
-      {/* Hero */}
-      <section className="bg-pau-primary py-16 md:py-24">
-        <div className="container-fc">
-          <p className="badge-mono">Academy · Stages vacances</p>
-          <h1 className="mt-6 text-[14vw] md:text-[10vw] lg:text-[140px] text-white">
-            STAGES <span className="text-pau-yellow">ACADEMY</span>
-          </h1>
-          <p className="mt-6 max-w-3xl font-sans text-lg leading-relaxed text-white/70 md:text-xl">
-            Des stages intensifs de football pendant les vacances scolaires pour
-            les jeunes de 8 à 16 ans, encadrés par le staff de l'Academy Pau FC.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        image="/images/hero-academy-stages.jpg"
+        surtitle="Academy · Stages vacances"
+        title="STAGES ACADEMY"
+        subtitle="Des stages intensifs de football pendant les vacances scolaires pour les jeunes de 8 à 16 ans, encadrés par le staff de l'Academy Pau FC."
+      />
+
+      <SectionLight>
 
       {/* Présentation */}
       <section className="container-fc border-t border-gray-200/10 py-12 md:py-20">
@@ -247,6 +244,7 @@ export default function StagesPage() {
           </div>
         </div>
       </section>
+      </SectionLight>
     </article>
   );
 }
