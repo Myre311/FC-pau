@@ -41,7 +41,7 @@ export default async function AdminNewsletterPage({ searchParams }) {
         actions={
           <a
             href={exportHref}
-            className="border border-jaune/40 bg-jaune/10 px-4 py-2 font-mono text-[10px] uppercase tracking-[0.2em] text-jaune transition-colors hover:bg-jaune hover:text-nuit"
+            className="border border-pau-yellow/40 bg-jaune/10 px-4 py-2 font-mono text-[10px] uppercase tracking-[0.2em] text-pau-yellow transition-colors hover:bg-jaune hover:text-nuit"
           >
             Exporter CSV ↓
           </a>
@@ -71,7 +71,7 @@ export default async function AdminNewsletterPage({ searchParams }) {
               key={s.label}
               href={href}
               className={`px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.2em] transition-colors ${
-                active ? 'bg-jaune text-nuit' : 'border border-blanc/15 text-blanc/70 hover:border-blanc/40'
+                active ? 'bg-jaune text-nuit' : 'border border-gray-200/15 text-gray-900/70 hover:border-gray-200/40'
               }`}
             >
               {s.label}
@@ -92,27 +92,27 @@ export default async function AdminNewsletterPage({ searchParams }) {
         empty="Aucun abonné pour ce filtre"
         mobileCardLabel={(s) => s.email}
         renderRow={(s) => ({
-          email: <span className="font-mono text-xs text-blanc/85">{s.email}</span>,
+          email: <span className="font-mono text-xs text-gray-900/85">{s.email}</span>,
           segments: (
-            <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-blanc/60">
+            <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-gray-900/60">
               {s.segments.join(' · ')}
             </span>
           ),
           status: (
             <span
               className={`font-mono text-[10px] uppercase tracking-[0.2em] ${
-                s.confirmedAt ? 'text-jaune' : 'text-blanc/40'
+                s.confirmedAt ? 'text-pau-yellow' : 'text-gray-900/40'
               }`}
             >
               {s.confirmedAt ? 'Confirmé' : 'En attente'}
             </span>
           ),
           source: (
-            <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-blanc/50">
+            <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-gray-900/50">
               {s.source ?? '—'}
             </span>
           ),
-          date: <span className="font-mono text-xs text-blanc/60">{formatDate(s.createdAt)}</span>,
+          date: <span className="font-mono text-xs text-gray-900/60">{formatDate(s.createdAt)}</span>,
         })}
       />
     </div>

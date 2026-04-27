@@ -42,17 +42,17 @@ export default async function ClientFichePage({ params }) {
 
       <section className="grid gap-8 lg:grid-cols-[1.5fr_1fr]">
         <div>
-          <header className="mb-4 border-b border-blanc/10 pb-3">
-            <h2 className="font-mono text-[11px] uppercase tracking-[0.2em] text-jaune">
+          <header className="mb-4 border-b border-gray-200/10 pb-3">
+            <h2 className="font-mono text-[11px] uppercase tracking-[0.2em] text-pau-yellow">
               Commandes · {customer.orders.length}
             </h2>
           </header>
           {customer.orders.length === 0 ? (
-            <p className="border border-dashed border-blanc/15 p-6 font-sans text-sm text-blanc/60">
+            <p className="border border-dashed border-gray-200/15 p-6 font-sans text-sm text-gray-900/60">
               Pas encore de commande.
             </p>
           ) : (
-            <ul className="divide-y divide-blanc/10 border border-blanc/10">
+            <ul className="divide-y divide-blanc/10 border border-gray-200/10">
               {customer.orders.map((o) => (
                 <li
                   key={o.id}
@@ -60,7 +60,7 @@ export default async function ClientFichePage({ params }) {
                 >
                   <Link
                     href={`/admin/commandes/${o.number}`}
-                    className="font-mono text-sm text-blanc transition-colors hover:text-jaune"
+                    className="font-mono text-sm text-gray-900 transition-colors hover:text-pau-yellow"
                   >
                     {o.number}
                   </Link>
@@ -75,29 +75,29 @@ export default async function ClientFichePage({ params }) {
         </div>
 
         <div>
-          <header className="mb-4 border-b border-blanc/10 pb-3">
-            <h2 className="font-mono text-[11px] uppercase tracking-[0.2em] text-jaune">
+          <header className="mb-4 border-b border-gray-200/10 pb-3">
+            <h2 className="font-mono text-[11px] uppercase tracking-[0.2em] text-pau-yellow">
               Adresses · {customer.addresses.length}
             </h2>
           </header>
           {customer.addresses.length === 0 ? (
-            <p className="border border-dashed border-blanc/15 p-6 font-sans text-sm text-blanc/60">
+            <p className="border border-dashed border-gray-200/15 p-6 font-sans text-sm text-gray-900/60">
               Aucune adresse enregistrée.
             </p>
           ) : (
             <ul className="space-y-3">
               {customer.addresses.map((a) => (
-                <li key={a.id} className="border border-blanc/10 p-4">
-                  <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-jaune">
+                <li key={a.id} className="border border-gray-200/10 p-4">
+                  <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-pau-yellow">
                     {a.type === 'shipping' ? 'Livraison' : 'Facturation'}
                     {a.isDefault && (
-                      <span className="ml-2 text-blanc/60">· Par défaut</span>
+                      <span className="ml-2 text-gray-900/60">· Par défaut</span>
                     )}
                   </p>
-                  <p className="mt-2 font-sans text-sm text-blanc">
+                  <p className="mt-2 font-sans text-sm text-gray-900">
                     {a.firstName} {a.lastName}
                   </p>
-                  <p className="font-sans text-sm text-blanc/70">
+                  <p className="font-sans text-sm text-gray-900/70">
                     {a.line1}
                     {a.line2 && <>, {a.line2}</>}
                     <br />
@@ -115,11 +115,11 @@ export default async function ClientFichePage({ params }) {
 
 function Stat({ label, value }) {
   return (
-    <div className="border border-blanc/10 bg-primaire/20 p-5">
-      <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-blanc/50">
+    <div className="border border-gray-200/10 bg-pau-primary/20 p-5">
+      <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-gray-900/50">
         {label}
       </p>
-      <p className="mt-3 font-display text-3xl uppercase leading-crush tracking-tightest text-blanc">
+      <p className="mt-3 font-display text-3xl uppercase leading-crush tracking-tightest text-gray-900">
         {value}
       </p>
     </div>

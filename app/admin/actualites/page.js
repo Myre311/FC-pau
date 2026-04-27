@@ -41,18 +41,18 @@ export default async function AdminActualitesPage() {
           title: (
             <Link
               href={`/admin/actualites/${a.id}`}
-              className="font-sans text-sm text-blanc transition-colors hover:text-jaune"
+              className="font-sans text-sm text-gray-900 transition-colors hover:text-pau-yellow"
             >
               {a.title}
             </Link>
           ),
           category: (
-            <span className="font-mono text-xs uppercase text-blanc/60">
+            <span className="font-mono text-xs uppercase text-gray-900/60">
               {a.category}
             </span>
           ),
           publishedAt: (
-            <span className="font-mono text-xs text-blanc/60">
+            <span className="font-mono text-xs text-gray-900/60">
               {a.publishedAt
                 ? new Date(a.publishedAt).toLocaleDateString('fr-FR', {
                     day: 'numeric',
@@ -63,7 +63,7 @@ export default async function AdminActualitesPage() {
             </span>
           ),
           featured: (
-            <span className="font-mono text-xs text-blanc/60">
+            <span className="font-mono text-xs text-gray-900/60">
               {a.featured ? '⭐' : '—'}
             </span>
           ),

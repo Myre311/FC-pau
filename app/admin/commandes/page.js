@@ -41,7 +41,7 @@ export default async function AdminCommandesPage({ searchParams }) {
               key={f.value}
               href={f.value === 'all' ? '/admin/commandes' : `/admin/commandes?statut=${f.value}`}
               className={`px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.2em] transition-colors ${
-                active ? 'bg-jaune text-nuit' : 'border border-blanc/15 text-blanc/70 hover:border-blanc/40'
+                active ? 'bg-jaune text-nuit' : 'border border-gray-200/15 text-gray-900/70 hover:border-gray-200/40'
               }`}
             >
               {f.label}
@@ -66,14 +66,14 @@ export default async function AdminCommandesPage({ searchParams }) {
           number: (
             <Link
               href={`/admin/commandes/${o.number}`}
-              className="font-mono text-sm text-blanc transition-colors hover:text-jaune"
+              className="font-mono text-sm text-gray-900 transition-colors hover:text-pau-yellow"
             >
               {o.number}
             </Link>
           ),
-          date: <span className="font-mono text-xs text-blanc/70">{formatDate(o.createdAt)}</span>,
+          date: <span className="font-mono text-xs text-gray-900/70">{formatDate(o.createdAt)}</span>,
           client: (
-            <span className="text-blanc/85">
+            <span className="text-gray-900/85">
               {o.user
                 ? `${o.user.firstName ?? ''} ${o.user.lastName ?? ''}`.trim() || o.user.email
                 : (o.guestEmail ?? 'Invité')}

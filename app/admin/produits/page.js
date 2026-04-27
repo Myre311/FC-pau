@@ -53,24 +53,24 @@ export default async function AdminProduitsPage() {
             name: (
               <Link
                 href={`/admin/produits/${p.id}`}
-                className="font-sans text-sm text-blanc transition-colors hover:text-jaune"
+                className="font-sans text-sm text-gray-900 transition-colors hover:text-pau-yellow"
               >
                 {p.name}
                 {p.featured && (
-                  <span className="ml-2 font-mono text-[9px] uppercase tracking-[0.2em] text-jaune">
+                  <span className="ml-2 font-mono text-[9px] uppercase tracking-[0.2em] text-pau-yellow">
                     Featured
                   </span>
                 )}
               </Link>
             ),
             category: (
-              <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-blanc/60">
+              <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-gray-900/60">
                 {p.category?.name ?? '—'}
               </span>
             ),
             price: <span className="font-mono text-sm">{formatPrice(p.basePrice)}</span>,
             stock: (
-              <span className={`font-mono text-sm ${stock === 0 ? 'text-blanc/40' : 'text-blanc'}`}>
+              <span className={`font-mono text-sm ${stock === 0 ? 'text-gray-900/40' : 'text-gray-900'}`}>
                 {stock}
               </span>
             ),

@@ -34,7 +34,7 @@ export default async function AdminPersonnalisationsPage() {
         title="File de flocage"
       />
 
-      <p className="font-sans text-sm text-blanc/60">
+      <p className="font-sans text-sm text-gray-900/60">
         Maillots personnalisés en attente de flocage. Triés par ancienneté.
       </p>
 
@@ -54,40 +54,40 @@ export default async function AdminPersonnalisationsPage() {
           order: c.orderItem ? (
             <Link
               href={`/admin/commandes/${c.orderItem.order.number}`}
-              className="font-mono text-sm text-blanc transition-colors hover:text-jaune"
+              className="font-mono text-sm text-gray-900 transition-colors hover:text-pau-yellow"
             >
               {c.orderItem.order.number}
             </Link>
           ) : (
-            <span className="text-blanc/40">—</span>
+            <span className="text-gray-900/40">—</span>
           ),
           product: (
-            <span className="font-sans text-sm text-blanc">
+            <span className="font-sans text-sm text-gray-900">
               {c.orderItem?.variant?.product?.name ?? '—'}
               {c.orderItem?.variant?.size && (
-                <span className="ml-2 font-mono text-[10px] uppercase tracking-[0.2em] text-blanc/50">
+                <span className="ml-2 font-mono text-[10px] uppercase tracking-[0.2em] text-gray-900/50">
                   {c.orderItem.variant.size}
                 </span>
               )}
             </span>
           ),
           name: (
-            <span className="font-display text-base uppercase leading-tight tracking-tightest text-blanc">
+            <span className="font-display text-base uppercase leading-tight tracking-tightest text-gray-900">
               {c.name ?? 'SANS NOM'}
             </span>
           ),
           number: (
-            <span className="font-display text-xl text-jaune">
+            <span className="font-display text-xl text-pau-yellow">
               {c.number ?? '—'}
             </span>
           ),
           font: (
-            <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-blanc/70">
+            <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-gray-900/70">
               {c.font}
             </span>
           ),
           date: (
-            <span className="font-mono text-xs text-blanc/60">
+            <span className="font-mono text-xs text-gray-900/60">
               {formatDate(c.createdAt)}
             </span>
           ),

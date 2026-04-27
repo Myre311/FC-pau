@@ -53,7 +53,7 @@ export default function AdminParametresPage() {
         </Block>
       </section>
 
-      <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-blanc/40">
+      <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-gray-900/40">
         Ces paramètres sont aujourd&apos;hui définis dans le code et les
         variables d&apos;environnement. Une page d&apos;édition complète
         arrivera dans une prochaine version.
@@ -64,8 +64,8 @@ export default function AdminParametresPage() {
 
 function Block({ title, children }) {
   return (
-    <div className="border border-blanc/10 bg-primaire/20 p-5">
-      <h2 className="font-mono text-[11px] uppercase tracking-[0.2em] text-jaune">
+    <div className="border border-gray-200/10 bg-pau-primary/20 p-5">
+      <h2 className="font-mono text-[11px] uppercase tracking-[0.2em] text-pau-yellow">
         {title}
       </h2>
       <dl className="mt-4 space-y-3 font-sans text-sm">{children}</dl>
@@ -76,10 +76,10 @@ function Block({ title, children }) {
 function Line({ label, value }) {
   return (
     <div>
-      <dt className="font-mono text-[10px] uppercase tracking-[0.2em] text-blanc/40">
+      <dt className="font-mono text-[10px] uppercase tracking-[0.2em] text-gray-900/40">
         {label}
       </dt>
-      <dd className="mt-1 text-blanc">{value}</dd>
+      <dd className="mt-1 text-gray-900">{value}</dd>
     </div>
   );
 }

@@ -42,11 +42,11 @@ export default async function AdminClientsPage({ searchParams }) {
           name="q"
           defaultValue={q}
           placeholder="Email, nom, prénom…"
-          className="block h-10 w-full border border-blanc/15 bg-transparent px-3 font-sans text-sm text-blanc outline-none transition-colors focus:border-jaune"
+          className="block h-10 w-full border border-gray-200/15 bg-transparent px-3 font-sans text-sm text-gray-900 outline-none transition-colors focus:border-pau-yellow"
         />
         <button
           type="submit"
-          className="border border-blanc/20 px-4 font-mono text-[10px] uppercase tracking-[0.2em] text-blanc transition-colors hover:border-jaune hover:text-jaune"
+          className="border border-gray-200/20 px-4 font-mono text-[10px] uppercase tracking-[0.2em] text-gray-900 transition-colors hover:border-pau-yellow hover:text-pau-yellow"
         >
           Rechercher
         </button>
@@ -71,15 +71,15 @@ export default async function AdminClientsPage({ searchParams }) {
             name: (
               <Link
                 href={`/admin/clients/${c.id}`}
-                className="font-sans text-sm text-blanc transition-colors hover:text-jaune"
+                className="font-sans text-sm text-gray-900 transition-colors hover:text-pau-yellow"
               >
                 {`${c.firstName ?? ''} ${c.lastName ?? ''}`.trim() || '—'}
               </Link>
             ),
-            email: <span className="font-mono text-xs text-blanc/70">{c.email}</span>,
+            email: <span className="font-mono text-xs text-gray-900/70">{c.email}</span>,
             orders: <span className="font-mono text-sm">{c.orders.length}</span>,
             total: <span className="font-mono text-sm">{formatPrice(total)}</span>,
-            since: <span className="font-mono text-xs text-blanc/60">{formatDate(c.createdAt)}</span>,
+            since: <span className="font-mono text-xs text-gray-900/60">{formatDate(c.createdAt)}</span>,
           };
         }}
       />
