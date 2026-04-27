@@ -18,10 +18,6 @@ export function PageHero({ image, surtitle, title, subtitle }) {
           fill
           className="object-cover"
           priority
-          onError={(e) => {
-            // Fallback si l'image n'existe pas
-            e.target.style.display = 'none';
-          }}
         />
         {/* Overlay gradient sombre pour lisibilité */}
         <div className="absolute inset-0 bg-gradient-to-b from-nuit/40 to-nuit/80" />
