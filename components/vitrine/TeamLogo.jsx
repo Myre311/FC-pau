@@ -46,22 +46,28 @@ export function TeamLogo({ name = '???', isHome = false, compact = false }) {
     return (
       <div className={`relative flex h-full w-full items-center justify-center overflow-hidden rounded-full border-2 ${colors.border} ${colors.bg}`}>
         {logoPath ? (
-          <img
-            src={logoPath}
-            alt={`Logo ${name}`}
-            className="h-8 w-8 object-contain"
-            onError={(e) => {
-              e.target.style.display = 'none';
-              e.target.nextSibling.style.display = 'block';
-            }}
-          />
-        ) : null}
-        <span
-          className={`font-display text-xs font-black ${colors.text}`}
-          style={{ display: logoPath ? 'none' : 'block' }}
-        >
-          {name.substring(0, 3).toUpperCase()}
-        </span>
+          <>
+            <img
+              src={logoPath}
+              alt={`Logo ${name}`}
+              className="h-8 w-8 object-contain"
+              onError={(e) => {
+                e.target.style.display = 'none';
+                e.target.nextElementSibling.style.display = 'block';
+              }}
+            />
+            <span
+              className={`font-display text-xs font-black ${colors.text}`}
+              style={{ display: 'none' }}
+            >
+              {name.substring(0, 3).toUpperCase()}
+            </span>
+          </>
+        ) : (
+          <span className={`font-display text-xs font-black ${colors.text}`}>
+            {name.substring(0, 3).toUpperCase()}
+          </span>
+        )}
       </div>
     );
   }
