@@ -14,21 +14,29 @@ export const metadata = {
 export default async function CalendrierPage() {
   const now = new Date();
 
-  const [upcoming, recent] = await Promise.all([
-    prisma.match.findMany({
-      where: {
-        kickoffAt: { gte: now },
-        status: { in: ['scheduled', 'live', 'postponed'] },
-      },
-      orderBy: { kickoffAt: 'asc' },
-      take: 12,
-    }),
-    prisma.match.findMany({
-      where: { status: 'played' },
-      orderBy: { kickoffAt: 'desc' },
-      take: 6,
-    }),
-  ]);
+  let upcoming = [];
+  let recent = [];
+
+  try {
+    [upcoming, recent] = await Promise.all([
+      prisma.match.findMany({
+        where: {
+          kickoffAt: { gte: now },
+          status: { in: ['scheduled', 'live', 'postponed'] },
+        },
+        orderBy: { kickoffAt: 'asc' },
+        take: 12,
+      }),
+      prisma.match.findMany({
+        where: { status: 'played' },
+        orderBy: { kickoffAt: 'desc' },
+        take: 6,
+      }),
+    ]);
+  } catch (error) {
+    console.error('Erreur chargement matchs:', error);
+    // Continue avec des tableaux vides
+  }
 
   const next = upcoming[0];
 
