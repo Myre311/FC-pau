@@ -92,14 +92,58 @@ export default async function CalendrierPage() {
                     })}
                   </p>
 
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="font-display text-xl text-white">
-                      {match.isHome ? 'PAU FC' : match.opponent}
-                    </span>
-                    <span className="font-display text-2xl text-pau-yellow">VS</span>
-                    <span className="font-display text-xl text-white">
-                      {match.isHome ? match.opponent : 'PAU FC'}
-                    </span>
+                  <div className="flex items-center justify-between mb-4 gap-2">
+                    <div className="flex items-center gap-2 flex-1 min-w-0">
+                      {match.isHome && (
+                        <div className="relative w-8 h-8 flex-shrink-0">
+                          <Image
+                            src="/logo-fcpau.svg"
+                            alt="PAU FC"
+                            fill
+                            className="object-contain"
+                          />
+                        </div>
+                      )}
+                      {!match.isHome && match.opponentLogo && (
+                        <div className="relative w-8 h-8 flex-shrink-0">
+                          <Image
+                            src={match.opponentLogo}
+                            alt={match.opponent}
+                            fill
+                            className="object-contain"
+                          />
+                        </div>
+                      )}
+                      <span className="font-display text-lg text-white truncate">
+                        {match.isHome ? 'PAU FC' : match.opponent}
+                      </span>
+                    </div>
+                    <span className="font-display text-2xl text-pau-yellow flex-shrink-0">VS</span>
+                    <div className="flex items-center gap-2 flex-1 min-w-0 justify-end">
+                      <span className="font-display text-lg text-white truncate">
+                        {match.isHome ? match.opponent : 'PAU FC'}
+                      </span>
+                      {!match.isHome && (
+                        <div className="relative w-8 h-8 flex-shrink-0">
+                          <Image
+                            src="/logo-fcpau.svg"
+                            alt="PAU FC"
+                            fill
+                            className="object-contain"
+                          />
+                        </div>
+                      )}
+                      {match.isHome && match.opponentLogo && (
+                        <div className="relative w-8 h-8 flex-shrink-0">
+                          <Image
+                            src={match.opponentLogo}
+                            alt={match.opponent}
+                            fill
+                            className="object-contain"
+                          />
+                        </div>
+                      )}
+                    </div>
                   </div>
 
                   <div className="text-sm text-white/70">
@@ -153,20 +197,64 @@ export default async function CalendrierPage() {
                     </span>
                   </div>
 
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="font-display text-lg text-white">
-                      {match.isHome ? 'PAU FC' : match.opponent}
-                    </span>
-                    <span className="font-display text-3xl text-pau-yellow">
+                  <div className="flex items-center justify-between mb-2 gap-2">
+                    <div className="flex items-center gap-2 flex-1 min-w-0">
+                      {match.isHome && (
+                        <div className="relative w-8 h-8 flex-shrink-0">
+                          <Image
+                            src="/logo-fcpau.svg"
+                            alt="PAU FC"
+                            fill
+                            className="object-contain"
+                          />
+                        </div>
+                      )}
+                      {!match.isHome && match.opponentLogo && (
+                        <div className="relative w-8 h-8 flex-shrink-0">
+                          <Image
+                            src={match.opponentLogo}
+                            alt={match.opponent}
+                            fill
+                            className="object-contain"
+                          />
+                        </div>
+                      )}
+                      <span className="font-display text-lg text-white truncate">
+                        {match.isHome ? 'PAU FC' : match.opponent}
+                      </span>
+                    </div>
+                    <span className="font-display text-3xl text-pau-yellow flex-shrink-0">
                       {match.isHome ? match.homeScore : match.awayScore}
                     </span>
                   </div>
 
-                  <div className="flex items-center justify-between">
-                    <span className="font-display text-lg text-white">
-                      {match.isHome ? match.opponent : 'PAU FC'}
-                    </span>
-                    <span className="font-display text-3xl text-white/60">
+                  <div className="flex items-center justify-between gap-2">
+                    <div className="flex items-center gap-2 flex-1 min-w-0">
+                      {!match.isHome && (
+                        <div className="relative w-8 h-8 flex-shrink-0">
+                          <Image
+                            src="/logo-fcpau.svg"
+                            alt="PAU FC"
+                            fill
+                            className="object-contain"
+                          />
+                        </div>
+                      )}
+                      {match.isHome && match.opponentLogo && (
+                        <div className="relative w-8 h-8 flex-shrink-0">
+                          <Image
+                            src={match.opponentLogo}
+                            alt={match.opponent}
+                            fill
+                            className="object-contain"
+                          />
+                        </div>
+                      )}
+                      <span className="font-display text-lg text-white truncate">
+                        {match.isHome ? match.opponent : 'PAU FC'}
+                      </span>
+                    </div>
+                    <span className="font-display text-3xl text-white/60 flex-shrink-0">
                       {match.isHome ? match.awayScore : match.homeScore}
                     </span>
                   </div>
