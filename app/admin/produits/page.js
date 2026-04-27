@@ -16,7 +16,7 @@ export default async function AdminProduitsPage() {
       category: true,
       variants: { include: { stockItem: true } },
     },
-  });
+  }).catch(() => []);
 
   return (
     <div className="space-y-8">

@@ -27,7 +27,7 @@ export default async function AdminCommandesPage({ searchParams }) {
     orderBy: { createdAt: 'desc' },
     take: 100,
     include: { items: true, user: true },
-  });
+  }).catch(() => []);
 
   return (
     <div className="space-y-8">

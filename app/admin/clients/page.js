@@ -30,7 +30,7 @@ export default async function AdminClientsPage({ searchParams }) {
         select: { total: true, status: true, createdAt: true },
       },
     },
-  });
+  }).catch(() => []);
 
   return (
     <div className="space-y-8">

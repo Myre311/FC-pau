@@ -7,7 +7,7 @@ export const metadata = { title: 'Codes promo' };
 export default async function AdminCouponsPage() {
   const coupons = await prisma.coupon.findMany({
     orderBy: [{ active: 'desc' }, { createdAt: 'desc' }],
-  });
+  }).catch(() => []);
 
   return (
     <div className="space-y-8">
