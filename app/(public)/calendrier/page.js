@@ -62,7 +62,7 @@ export default async function CalendrierPage() {
             </h2>
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {upcoming.map((match) => (
-                <div key={match.id} className="border-2 border-pau-primary/10 p-6 hover:border-pau-yellow transition-colors">
+                <div key={match.id} className="bg-pau-primary border-2 border-pau-yellow/50 p-6 hover:border-pau-yellow transition-colors">
                   <div className="flex items-center justify-between mb-4">
                     {match.competition?.includes('Ligue 2') ? (
                       <Image
@@ -77,12 +77,12 @@ export default async function CalendrierPage() {
                         {match.competition}
                       </span>
                     )}
-                    <span className="text-xs text-pau-primary/60">
+                    <span className="text-xs text-white/60">
                       {match.status}
                     </span>
                   </div>
 
-                  <p className="text-sm text-pau-primary/60 mb-4">
+                  <p className="text-sm text-white/80 mb-4">
                     {new Date(match.kickoffAt).toLocaleDateString('fr-FR', {
                       weekday: 'long',
                       day: 'numeric',
@@ -93,18 +93,18 @@ export default async function CalendrierPage() {
                   </p>
 
                   <div className="flex items-center justify-between mb-4">
-                    <span className="font-display text-xl text-pau-primary">
+                    <span className="font-display text-xl text-white">
                       {match.isHome ? 'PAU FC' : match.opponent}
                     </span>
                     <span className="font-display text-2xl text-pau-yellow">VS</span>
-                    <span className="font-display text-xl text-pau-primary">
+                    <span className="font-display text-xl text-white">
                       {match.isHome ? match.opponent : 'PAU FC'}
                     </span>
                   </div>
 
-                  <div className="text-sm text-pau-primary/60">
+                  <div className="text-sm text-white/70">
                     <p className="mb-1">{match.venue}</p>
-                    <p className="font-mono text-xs uppercase text-pau-primary/40">
+                    <p className="font-mono text-xs uppercase text-white/50">
                       {match.isHome ? 'Domicile' : 'Extérieur'}
                     </p>
                   </div>
@@ -133,7 +133,7 @@ export default async function CalendrierPage() {
             </h2>
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {recent.map((match) => (
-                <div key={match.id} className="border border-pau-primary/10 bg-pau-primary/5 p-6">
+                <div key={match.id} className="border border-pau-yellow/30 bg-pau-primary p-6">
                   <div className="flex items-center justify-between mb-4">
                     {match.competition?.includes('Ligue 2') ? (
                       <Image
@@ -144,17 +144,17 @@ export default async function CalendrierPage() {
                         className="h-auto w-20"
                       />
                     ) : (
-                      <span className="text-xs font-mono uppercase text-pau-primary/60">
+                      <span className="text-xs font-mono uppercase text-white/60">
                         {match.competition}
                       </span>
                     )}
-                    <span className="text-xs text-pau-primary/40">
+                    <span className="text-xs text-white/50">
                       {new Date(match.kickoffAt).toLocaleDateString('fr-FR')}
                     </span>
                   </div>
 
                   <div className="flex items-center justify-between mb-2">
-                    <span className="font-display text-lg text-pau-primary">
+                    <span className="font-display text-lg text-white">
                       {match.isHome ? 'PAU FC' : match.opponent}
                     </span>
                     <span className="font-display text-3xl text-pau-yellow">
@@ -163,10 +163,10 @@ export default async function CalendrierPage() {
                   </div>
 
                   <div className="flex items-center justify-between">
-                    <span className="font-display text-lg text-pau-primary">
+                    <span className="font-display text-lg text-white">
                       {match.isHome ? match.opponent : 'PAU FC'}
                     </span>
-                    <span className="font-display text-3xl text-pau-primary/60">
+                    <span className="font-display text-3xl text-white/60">
                       {match.isHome ? match.awayScore : match.homeScore}
                     </span>
                   </div>

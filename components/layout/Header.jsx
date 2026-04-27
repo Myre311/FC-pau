@@ -14,7 +14,14 @@ import { LanguageSwitcher } from '@/components/layout/LanguageSwitcher';
 // Pages avec fond nuit/image : home, billetterie, équipe, club
 
 const NAV = [
-  { href: '/equipe', label: 'Équipe pro' },
+  {
+    label: 'Équipe pro',
+    submenu: [
+      { href: '/equipe', label: 'Effectif' },
+      { href: '/calendrier', label: 'Calendrier' },
+      { href: '/actualites', label: 'Actualités' },
+    ],
+  },
   {
     label: 'Billetterie',
     submenu: [
@@ -25,15 +32,31 @@ const NAV = [
     ],
   },
   {
+    label: 'Boutique',
+    submenu: [
+      { href: '/boutique', label: 'Catalogue' },
+      { href: '/cgv', label: 'CGV' },
+    ],
+  },
+  {
+    label: 'Academy',
+    submenu: [
+      { href: '/academy', label: 'Présentation' },
+      { href: '/academy/masculin', label: 'Pôle masculin' },
+      { href: '/academy/feminin', label: 'Pôle féminin' },
+      { href: '/academy/integrer', label: 'Rejoindre' },
+      { href: '/academy/stages', label: 'Stages' },
+    ],
+  },
+  {
     label: 'Club',
     submenu: [
       { href: '/club', label: 'Présentation' },
       { href: '/club/histoire', label: 'Histoire' },
+      { href: '/partenaires', label: 'Partenaires' },
       { href: '/contact', label: 'Contact' },
     ],
   },
-  { href: '/actualites', label: 'Actus' },
-  { href: '/partenaires', label: 'Partenaires' },
   { href: '/presse', label: 'Presse' },
 ];
 
