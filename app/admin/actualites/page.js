@@ -11,7 +11,7 @@ export const metadata = { title: 'Actualités' };
 export default async function AdminActualitesPage() {
   const articles = await prisma.article.findMany({
     orderBy: [{ status: 'desc' }, { publishedAt: 'desc' }],
-  });
+  }).catch(() => []);
 
   return (
     <div className="space-y-8">

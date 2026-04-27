@@ -12,7 +12,7 @@ export const metadata = {
 export default async function MatchsAdminPage() {
   const matches = await prisma.match.findMany({
     orderBy: [{ kickoffAt: 'desc' }],
-  });
+  }).catch(() => []);
 
   const columns = [
     {
