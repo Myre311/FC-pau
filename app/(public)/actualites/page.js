@@ -1,20 +1,20 @@
-import { prisma } from ‘@/lib/prisma’;
-import { ArticleCard } from ‘@/components/vitrine/ArticleCard’;
-import PageHero from ‘@/components/PageHero’;
-import SectionLight from ‘@/components/SectionLight’;
+import { prisma } from '@/lib/prisma';
+import { ArticleCard } from '@/components/vitrine/ArticleCard';
+import PageHero from '@/components/PageHero';
+import SectionLight from '@/components/SectionLight';
 
-export const dynamic = ‘force-dynamic’;
+export const dynamic = 'force-dynamic';
 
 export const metadata = {
-  title: ‘Actualités’,
+  title: 'Actualités',
   description:
-    ‘Toute l’actualité du Pau FC — résumés de matchs, mercato, fondation et vie du club.’,
+    'Toute l\'actualité du Pau FC — résumés de matchs, mercato, fondation et vie du club.',
 };
 
 export default async function ActualitesPage() {
   const articles = await prisma.article.findMany({
     where: { publishedAt: { not: null, lte: new Date() } },
-    orderBy: [{ featured: ‘desc’ }, { publishedAt: ‘desc’ }],
+    orderBy: [{ featured: 'desc' }, { publishedAt: 'desc' }],
     take: 24,
   });
 
@@ -27,11 +27,10 @@ export default async function ActualitesPage() {
         image="/images/hero-actualites.jpg"
         surtitle="Vie du club · Mercato · Matchday"
         title="ACTUALITÉS"
-        subtitle="Toute l’actualité du Pau FC — résumés de matchs, mercato, fondation et vie du club."
+        subtitle="Toute l'actualité du Pau FC — résumés de matchs, mercato, fondation et vie du club."
       />
 
       <SectionLight>
-
         {articles.length === 0 ? (
           <div className="border border-dashed border-pau-primary/15 p-10 text-center">
             <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-pau-primary">
