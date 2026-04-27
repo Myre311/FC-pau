@@ -21,10 +21,10 @@ export function MatchCountdown({ match }) {
   const location = match.isHome ? 'Nouste Camp' : 'Extérieur';
 
   return (
-    <div className="card-match-pau">
+    <div className="card-match-pau bg-[#04091D]">
       {/* Header avec date/heure */}
       <div className="mb-6 text-center">
-        <p className="font-mono text-sm font-medium uppercase tracking-wider text-blanc/60">
+        <p className="font-mono text-sm font-medium uppercase tracking-wider text-blanc/70">
           {formatMatchDate(match.kickoffAt)} · {location} · {formatMatchTime(match.kickoffAt)}
         </p>
       </div>
@@ -87,8 +87,9 @@ export function MatchCountdown({ match }) {
 
 function VsLabel() {
   return (
-    <div className="flex h-12 w-12 items-center justify-center border-2 border-jaune bg-jaune text-nuit">
-      <span className="font-display text-base font-bold">VS</span>
+    <div className="flex flex-col items-center justify-center gap-1 border-2 border-jaune bg-jaune px-3 py-2 text-nuit">
+      <span className="font-display text-sm font-black leading-none md:text-base">VS</span>
+      <span className="font-mono text-[8px] font-bold uppercase leading-none tracking-tight md:text-[9px]">Ligue 2<br/>BKT</span>
     </div>
   );
 }

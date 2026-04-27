@@ -10,8 +10,8 @@ import { Logo } from '@/components/ui/Logo';
 import { SearchModal } from '@/components/layout/SearchModal';
 import { LanguageSwitcher } from '@/components/layout/LanguageSwitcher';
 
-// Header sombre inspiré site officiel paufc.fr
-// Navigation horizontale, fond nuit, sticky avec bordure jaune au scroll
+// Header adaptatif : fond blanc par défaut, fond nuit sur certaines pages
+// Pages avec fond nuit/image : home, billetterie, équipe, club
 
 const NAV = [
   { href: '/equipe', label: 'Équipe pro' },
@@ -100,6 +100,10 @@ export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
 
+  // Pages avec fond sombre/image : home, billetterie, équipe, club
+  const darkPages = ['/', '/billetterie', '/equipe', '/club'];
+  const isDarkPage = darkPages.some(page => pathname === page || pathname.startsWith(page + '/'));
+
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10);
     onScroll();
@@ -125,8 +129,10 @@ export function Header() {
   return (
     <>
       <header
-        className={`border-b-4 bg-nuit transition-all duration-300 ${
-          scrolled ? 'border-jaune shadow-lg' : 'border-jaune/50'
+        className={`border-b-4 transition-all duration-300 ${
+          isDarkPage
+            ? `bg-nuit ${scrolled ? 'border-jaune shadow-lg' : 'border-jaune/50'}`
+            : `bg-blanc ${scrolled ? 'border-nuit shadow-lg' : 'border-nuit/20'}`
         }`}
       >
         <div className="container-pau flex h-14 items-center justify-between gap-2 sm:h-16 md:h-20 md:gap-4">
@@ -153,7 +159,11 @@ export function Header() {
             <button
               type="button"
               onClick={() => setSearchOpen(true)}
-              className="hidden h-9 w-9 items-center justify-center border-2 border-blanc bg-transparent text-blanc transition-colors hover:bg-blanc hover:text-nuit xs:flex sm:h-10 sm:w-10"
+              className={`hidden h-9 w-9 items-center justify-center border-2 transition-colors xs:flex sm:h-10 sm:w-10 ${
+                isDarkPage
+                  ? 'border-blanc bg-transparent text-blanc hover:bg-blanc hover:text-nuit'
+                  : 'border-nuit bg-transparent text-nuit hover:bg-nuit hover:text-blanc'
+              }`}
               aria-label="Rechercher"
             >
               <svg className="h-4 w-4 sm:h-5 sm:w-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
@@ -161,15 +171,19 @@ export function Header() {
               </svg>
             </button>
 
-            <AccountLinkClient />
-            <CartButton />
-            <LanguageSwitcher className="hidden lg:flex" />
+            <AccountLinkClient isDark={isDarkPage} />
+            <CartButton isDark={isDarkPage} />
+            <LanguageSwitcher className="hidden lg:flex" isDark={isDarkPage} />
 
             {/* Mobile menu button */}
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="flex h-10 w-10 items-center justify-center border-2 border-blanc bg-nuit text-blanc transition-colors hover:bg-blanc hover:text-nuit lg:hidden"
+              className={`flex h-10 w-10 items-center justify-center border-2 transition-colors lg:hidden ${
+                isDarkPage
+                  ? 'border-blanc bg-nuit text-blanc hover:bg-blanc hover:text-nuit'
+                  : 'border-nuit bg-blanc text-nuit hover:bg-nuit hover:text-blanc'
+              }`}
               aria-label={mobileMenuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
               aria-expanded={mobileMenuOpen}
             >

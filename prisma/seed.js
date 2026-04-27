@@ -240,7 +240,7 @@ const matches = [
     season: '2025-2026',
     kickoffAt: daysFromNow(17, 20, 0),
     isHome: true,
-    opponent: 'SC Bastia',
+    opponent: 'Rodez AF',
     venue: 'Nouste Camp',
     status: 'scheduled',
     ticketUrl: 'https://billetterie.paufc.fr',

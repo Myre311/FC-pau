@@ -50,7 +50,7 @@ export default async function HomePage() {
       <AnimatedHero />
 
       {/* ─── PROCHAINS MATCHS ANIMÉS ──────────────────────────── */}
-      <section className="section-pau border-t border-blanc/10">
+      <section className="section-pau border-t border-nuit/10 bg-blanc">
         <div className="container-pau">
           {upcomingMatches.length === 0 ? (
             <FadeIn>
