@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { prisma } from '@/lib/prisma';
+import { PageHero } from '@/components/ui/PageHero';
 
 export const metadata = {
   title: 'Billetterie',
@@ -23,17 +24,12 @@ export default async function BilletteriePage() {
 
   return (
     <article>
-      {/* Hero */}
-      <section className="container-fc pt-16 pb-12 md:pt-24 md:pb-20">
-        <p className="badge-mono">Billetterie · Nouste Camp</p>
-        <h1 className="mt-6 text-[14vw] md:text-[10vw] lg:text-[140px]">
-          HALA <span className="text-jaune">PAU</span>
-        </h1>
-        <p className="mt-6 max-w-3xl font-sans text-lg leading-relaxed text-blanc/70 md:text-xl">
-          Viens soutenir le Pau FC au Nouste Camp ! Achète tes billets en ligne
-          et profite d'une ambiance unique au cœur du Béarn.
-        </p>
-      </section>
+      <PageHero
+        image="/images/hero-billetterie.jpg"
+        surtitle="Billetterie officielle · Nouste Camp"
+        title="Vivez chaque match à domicile"
+        subtitle="Viens soutenir le Pau FC au Nouste Camp ! Achète tes billets en ligne et profite d'une ambiance unique au cœur du Béarn."
+      />
 
       {/* Prochains matchs */}
       <section className="container-fc border-t border-blanc/10 py-12 md:py-20">

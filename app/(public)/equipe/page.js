@@ -1,6 +1,7 @@
 import { prisma } from '@/lib/prisma';
 import { PlayerCard } from '@/components/vitrine/PlayerCard';
 import { POSITION_LABELS } from '@/lib/labels';
+import { PageHero } from '@/components/ui/PageHero';
 
 export const dynamic = 'force-dynamic';
 
@@ -28,18 +29,12 @@ export default async function EquipePage() {
 
   return (
     <>
-      {/* Titre - Garde fond sombre */}
-      <section className="container-fc py-[clamp(80px,12vh,160px)] bg-nuit">
-        <p className="badge-mono">Effectif professionnel · Saison 2025-2026</p>
-        <h1 className="mt-8 font-display text-[clamp(52px,12vw,160px)] uppercase leading-crush tracking-display-tight">
-          L&apos;<span className="text-jaune">ÉQUIPE</span>
-        </h1>
-        <p className="mt-8 max-w-2xl font-sans text-[17px] leading-relaxed text-blanc/85">
-          <span className="font-display text-[28px] text-jaune">{players.length}</span> joueurs et{' '}
-          <span className="font-display text-[28px] text-jaune">{staffAndCoach.length}</span> membres du staff
-          au service d&apos;un seul objectif : porter haut les couleurs du Béarn.
-        </p>
-      </section>
+      <PageHero
+        image="/images/hero-equipe.jpg"
+        surtitle="Effectif professionnel · Saison 2025-2026"
+        title="L'ÉQUIPE"
+        subtitle={`${players.length} joueurs et ${staffAndCoach.length} membres du staff au service d'un seul objectif : porter haut les couleurs du Béarn.`}
+      />
 
       {POSITION_ORDER.map((pos) => {
         const list = grouped[pos];

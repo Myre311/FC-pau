@@ -1,5 +1,6 @@
 import { prisma } from '@/lib/prisma';
 import { MatchCard } from '@/components/vitrine/MatchCard';
+import { PageHero } from '@/components/ui/PageHero';
 
 export const dynamic = 'force-dynamic';
 
@@ -32,13 +33,11 @@ export default async function CalendrierPage() {
 
   return (
     <>
-      {/* Titre - Garde fond sombre */}
-      <section className="container-fc py-[clamp(80px,12vh,160px)] bg-nuit">
-        <p className="badge-mono">Saison 2025-2026 · Calendrier officiel</p>
-        <h1 className="mt-8 font-display text-[clamp(48px,11vw,150px)] uppercase leading-crush tracking-display-tight">
-          CALEN<span className="text-jaune">DRIER</span>
-        </h1>
-      </section>
+      <PageHero
+        image="/images/hero-calendrier.jpg"
+        surtitle="Saison 2025-2026 · Calendrier officiel"
+        title="CALENDRIER"
+      />
 
       {next && (
         <section className="container-fc pb-12 md:pb-16 bg-blanc">
