@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import PageHero from '@/components/PageHero';
+import SectionLight from '@/components/SectionLight';
 
 export const metadata = {
   title: 'Carte Cashless · Billetterie',
@@ -9,21 +11,18 @@ export const metadata = {
 export default function CashlessPage() {
   return (
     <article>
-      {/* Hero */}
-      <section className="container-fc pt-16 pb-12 md:pt-24 md:pb-20">
-        <p className="badge-mono">Billetterie · Cashless</p>
-        <h1 className="mt-6 text-[14vw] md:text-[10vw] lg:text-[140px]">
-          100% <span className="text-jaune">CASHLESS</span>
-        </h1>
-        <p className="mt-6 max-w-3xl font-sans text-lg leading-relaxed text-blanc/70 md:text-xl">
-          Le Nouste Camp est entièrement cashless. Paye tes consommations avec
-          ta carte sans contact ou ton smartphone. Rapide, sécurisé, moderne.
-        </p>
-      </section>
+      <PageHero
+        image="/images/hero-cashless.jpg"
+        surtitle="Billetterie · Cashless"
+        title="100% CASHLESS"
+        subtitle="Le Nouste Camp est entièrement cashless. Paye tes consommations avec ta carte sans contact ou ton smartphone. Rapide, sécurisé, moderne."
+      />
+
+      <SectionLight>
 
       {/* Comment ça marche */}
-      <section className="container-fc border-t border-blanc/10 py-12 md:py-20">
-        <h2 className="mb-12 font-display text-5xl uppercase leading-crush tracking-tightest text-blanc md:text-6xl">
+      <section className="py-12 md:py-20">
+        <h2 className="mb-12 font-display text-5xl uppercase leading-crush tracking-tightest md:text-6xl">
           Comment ça marche
         </h2>
 
@@ -52,8 +51,8 @@ export default function CashlessPage() {
       </section>
 
       {/* Avantages */}
-      <section className="container-fc border-t border-blanc/10 py-12 md:py-20">
-        <h2 className="mb-12 font-display text-5xl uppercase leading-crush tracking-tightest text-blanc md:text-6xl">
+      <section className="border-t border-pau-primary/10 py-12 md:py-20">
+        <h2 className="mb-12 font-display text-5xl uppercase leading-crush tracking-tightest md:text-6xl">
           Avantages
         </h2>
 
@@ -86,24 +85,24 @@ export default function CashlessPage() {
       </section>
 
       {/* Offres */}
-      <section className="container-fc border-t border-blanc/10 py-12 md:py-20">
+      <section className="border-t border-pau-primary/10 py-12 md:py-20">
         <div className="grid gap-10 md:grid-cols-[1fr_2fr] md:gap-16">
-          <h2 className="font-display text-5xl uppercase leading-crush tracking-tightest text-blanc md:text-6xl">
+          <h2 className="font-display text-5xl uppercase leading-crush tracking-tightest md:text-6xl">
             Offres cashless
           </h2>
-          <div className="space-y-5 font-sans text-base leading-relaxed text-blanc/75 md:text-lg">
+          <div className="space-y-5 font-sans text-base leading-relaxed text-pau-primary/75 md:text-lg">
             <p>
               Profite d'offres exclusives en rechargeant ta carte cashless avant
               le match. Bonus de rechargement, promos buvette, menus spéciaux.
             </p>
             <p>
-              <strong className="text-blanc">Offre du moment</strong> — Recharge
+              <strong className="text-pau-primary">Offre du moment</strong> — Recharge
               30€, reçois 5€ de bonus offerts. Valable jusqu'au 31 mai 2026.
             </p>
             <div className="mt-6">
               <Link
                 href="/billetterie/cashless/offres"
-                className="inline-block border border-blanc/20 px-6 py-3 font-mono text-sm uppercase tracking-wider text-blanc transition-colors hover:border-jaune hover:text-jaune"
+                className="inline-block border border-pau-primary/20 px-6 py-3 font-mono text-sm uppercase tracking-wider text-pau-primary transition-colors hover:border-pau-yellow hover:text-pau-yellow"
               >
                 Voir toutes les offres
               </Link>
@@ -113,26 +112,26 @@ export default function CashlessPage() {
       </section>
 
       {/* FAQ */}
-      <section className="container-fc border-t border-blanc/10 py-12 md:py-20">
+      <section className="border-t border-pau-primary/10 py-12 md:py-20">
         <div className="grid gap-10 md:grid-cols-2 md:gap-16">
           <div>
-            <h2 className="font-display text-5xl uppercase leading-crush tracking-tightest text-blanc md:text-6xl">
+            <h2 className="font-display text-5xl uppercase leading-crush tracking-tightest md:text-6xl">
               Questions fréquentes
             </h2>
-            <p className="mt-6 font-sans text-base leading-relaxed text-blanc/75 md:text-lg">
+            <p className="mt-6 font-sans text-base leading-relaxed text-pau-primary/75 md:text-lg">
               Tu as des questions sur le système cashless ? Consulte notre FAQ
               complète ou contacte le service billetterie.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <Link
                 href="/billetterie/cashless/faq"
-                className="inline-block bg-jaune px-6 py-3 font-mono text-sm uppercase tracking-wider text-nuit transition-transform hover:scale-105"
+                className="inline-block bg-pau-yellow px-6 py-3 font-mono text-sm uppercase tracking-wider text-pau-night transition-transform hover:scale-105"
               >
                 Voir la FAQ
               </Link>
               <a
                 href="mailto:billetterie@paufc.fr"
-                className="inline-block border border-blanc/20 px-6 py-3 font-mono text-sm uppercase tracking-wider text-blanc transition-colors hover:border-jaune hover:text-jaune"
+                className="inline-block border border-pau-primary/20 px-6 py-3 font-mono text-sm uppercase tracking-wider text-pau-primary transition-colors hover:border-pau-yellow hover:text-pau-yellow"
               >
                 Nous contacter
               </a>
@@ -140,17 +139,17 @@ export default function CashlessPage() {
           </div>
 
           <div>
-            <h2 className="font-display text-5xl uppercase leading-crush tracking-tightest text-blanc md:text-6xl">
+            <h2 className="font-display text-5xl uppercase leading-crush tracking-tightest md:text-6xl">
               Commander ma carte
             </h2>
-            <p className="mt-6 font-sans text-base leading-relaxed text-blanc/75 md:text-lg">
+            <p className="mt-6 font-sans text-base leading-relaxed text-pau-primary/75 md:text-lg">
               Commande ta carte cashless gratuitement. Réception sous 7 jours
               par courrier, ou retrait au stade le jour du match.
             </p>
             <div className="mt-8">
               <button
                 type="button"
-                className="inline-block border border-blanc/20 px-6 py-3 font-mono text-sm uppercase tracking-wider text-blanc transition-colors hover:border-jaune hover:text-jaune"
+                className="inline-block border border-pau-primary/20 px-6 py-3 font-mono text-sm uppercase tracking-wider text-pau-primary transition-colors hover:border-pau-yellow hover:text-pau-yellow"
               >
                 Commander (bientôt disponible)
               </button>
@@ -160,29 +159,29 @@ export default function CashlessPage() {
       </section>
 
       {/* Contact */}
-      <section className="container-fc border-t border-blanc/10 py-12 md:py-20">
+      <section className="border-t border-pau-primary/10 py-12 md:py-20">
         <div className="max-w-2xl">
-          <h2 className="font-display text-5xl uppercase leading-crush tracking-tightest text-blanc md:text-6xl">
+          <h2 className="font-display text-5xl uppercase leading-crush tracking-tightest md:text-6xl">
             Besoin d&apos;aide ?
           </h2>
-          <p className="mt-6 font-sans text-base leading-relaxed text-blanc/75 md:text-lg">
+          <p className="mt-6 font-sans text-base leading-relaxed text-pau-primary/75 md:text-lg">
             Pour toute question sur le système cashless, les rechargements ou
             les remboursements :
           </p>
 
-          <div className="mt-6 space-y-3 font-sans text-base text-blanc/75">
+          <div className="mt-6 space-y-3 font-sans text-base text-pau-primary/75">
             <p>
               Email :{' '}
               <a
                 href="mailto:cashless@paufc.fr"
-                className="text-jaune hover:underline"
+                className="text-pau-yellow hover:underline"
               >
                 cashless@paufc.fr
               </a>
             </p>
             <p>
               Téléphone :{' '}
-              <a href="tel:+33559000000" className="text-jaune hover:underline">
+              <a href="tel:+33559000000" className="text-pau-yellow hover:underline">
                 +33 5 59 00 00 00
               </a>
             </p>
@@ -190,6 +189,7 @@ export default function CashlessPage() {
           </div>
         </div>
       </section>
+      </SectionLight>
     </article>
   );
 }
@@ -200,17 +200,17 @@ function Step({ number, title, description }) {
     <div className="grid gap-6 md:grid-cols-[100px_1fr] md:gap-12">
       {/* Numéro */}
       <div className="relative">
-        <div className="font-display text-6xl uppercase leading-none tracking-tightest text-jaune md:text-7xl">
+        <div className="font-display text-6xl uppercase leading-none tracking-tightest text-pau-yellow md:text-7xl">
           {number}
         </div>
       </div>
 
       {/* Contenu */}
-      <div className="border-l-2 border-blanc/10 pl-6 md:pl-10">
-        <h3 className="font-display text-3xl uppercase leading-tight tracking-tight text-blanc md:text-4xl">
+      <div className="border-l-2 border-pau-primary/10 pl-6 md:pl-10">
+        <h3 className="font-display text-3xl uppercase leading-tight tracking-tight md:text-4xl">
           {title}
         </h3>
-        <p className="mt-4 font-sans text-base leading-relaxed text-blanc/75 md:text-lg">
+        <p className="mt-4 font-sans text-base leading-relaxed text-pau-primary/75 md:text-lg">
           {description}
         </p>
       </div>
@@ -222,11 +222,11 @@ function Step({ number, title, description }) {
 function AvantageCard({ icon, title, description }) {
   return (
     <div>
-      
-      <h3 className="mt-4 font-display text-2xl uppercase leading-tight tracking-tight text-blanc md:text-3xl">
+
+      <h3 className="mt-4 font-display text-2xl uppercase leading-tight tracking-tight md:text-3xl">
         {title}
       </h3>
-      <p className="mt-3 font-sans text-base text-blanc/75">{description}</p>
+      <p className="mt-3 font-sans text-base text-pau-primary/75">{description}</p>
     </div>
   );
 }

@@ -1,5 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import PageHero from '@/components/PageHero';
+import SectionLight from '@/components/SectionLight';
 
 export const metadata = {
   title: 'Academy · Formation',
@@ -10,26 +12,22 @@ export const metadata = {
 export default function AcademyPage() {
   return (
     <article>
-      {/* Hero */}
-      <section className="container-fc pt-16 pb-12 md:pt-24 md:pb-20">
-        <p className="badge-mono">Academy · Formation · Excellence</p>
-        <h1 className="mt-6 text-[14vw] md:text-[10vw] lg:text-[140px]">
-          PAU FC <span className="text-jaune">ACADEMY</span>
-        </h1>
-        <p className="mt-6 max-w-3xl font-sans text-lg leading-relaxed text-blanc/70 md:text-xl">
-          Former, faire grandir, valoriser. L'Academy du Pau FC accompagne les
-          jeunes talents béarnais vers le haut niveau, dans un cadre exigeant
-          et bienveillant.
-        </p>
-      </section>
+      <PageHero
+        image="/images/hero-academy.jpg"
+        surtitle="Academy · Formation · Excellence"
+        title="PAU FC ACADEMY"
+        subtitle="Former, faire grandir, valoriser. L'Academy du Pau FC accompagne les jeunes talents béarnais vers le haut niveau, dans un cadre exigeant et bienveillant."
+      />
+
+      <SectionLight>
 
       {/* Mission */}
-      <section className="container-fc border-t border-blanc/10 py-12 md:py-20">
+      <section className="py-12 md:py-20">
         <div className="grid gap-10 md:grid-cols-[1fr_2fr] md:gap-16">
-          <h2 className="font-display text-5xl uppercase leading-crush tracking-tightest text-blanc md:text-6xl">
+          <h2 className="font-display text-5xl uppercase leading-crush tracking-tightest md:text-6xl">
             Notre mission
           </h2>
-          <div className="space-y-5 font-sans text-base leading-relaxed text-blanc/75 md:text-lg">
+          <div className="space-y-5 font-sans text-base leading-relaxed text-pau-primary/75 md:text-lg">
             <p>
               L'Academy du Pau FC s'inscrit dans le projet global du club :
               détecter, former et accompagner les jeunes joueurs et joueuses
@@ -52,8 +50,8 @@ export default function AcademyPage() {
       </section>
 
       {/* Pôles */}
-      <section className="container-fc border-t border-blanc/10 py-12 md:py-20">
-        <h2 className="mb-12 font-display text-5xl uppercase leading-crush tracking-tightest text-blanc md:text-6xl">
+      <section className="border-t border-pau-primary/10 py-12 md:py-20">
+        <h2 className="mb-12 font-display text-5xl uppercase leading-crush tracking-tightest md:text-6xl">
           Nos pôles
         </h2>
 
@@ -77,13 +75,13 @@ export default function AcademyPage() {
       </section>
 
       {/* Rejoindre l'Academy */}
-      <section className="container-fc border-t border-blanc/10 py-12 md:py-20">
+      <section className="border-t border-pau-primary/10 py-12 md:py-20">
         <div className="grid gap-10 md:grid-cols-2 md:gap-16">
           <div>
-            <h2 className="font-display text-5xl uppercase leading-crush tracking-tightest text-blanc md:text-6xl">
+            <h2 className="font-display text-5xl uppercase leading-crush tracking-tightest md:text-6xl">
               Intégrer l&apos;Academy
             </h2>
-            <p className="mt-6 font-sans text-base leading-relaxed text-blanc/75 md:text-lg">
+            <p className="mt-6 font-sans text-base leading-relaxed text-pau-primary/75 md:text-lg">
               Tu as entre 12 et 18 ans, tu es passionné(e) de football et tu
               veux progresser dans un environnement professionnel ? Découvre
               comment rejoindre l'Academy du Pau FC.
@@ -91,7 +89,7 @@ export default function AcademyPage() {
             <div className="mt-8">
               <Link
                 href="/academy/integrer"
-                className="inline-block bg-jaune px-6 py-3 font-mono text-sm uppercase tracking-wider text-nuit transition-transform hover:scale-105"
+                className="inline-block bg-pau-yellow px-6 py-3 font-mono text-sm uppercase tracking-wider text-pau-night transition-transform hover:scale-105"
               >
                 Candidater
               </Link>
@@ -99,10 +97,10 @@ export default function AcademyPage() {
           </div>
 
           <div>
-            <h2 className="font-display text-5xl uppercase leading-crush tracking-tightest text-blanc md:text-6xl">
+            <h2 className="font-display text-5xl uppercase leading-crush tracking-tightest md:text-6xl">
               Stages Academy
             </h2>
-            <p className="mt-6 font-sans text-base leading-relaxed text-blanc/75 md:text-lg">
+            <p className="mt-6 font-sans text-base leading-relaxed text-pau-primary/75 md:text-lg">
               Des stages intensifs pendant les vacances scolaires pour les
               jeunes de 8 à 16 ans : technique, tactique, physique et mental,
               encadrés par le staff de l'Academy.
@@ -110,7 +108,7 @@ export default function AcademyPage() {
             <div className="mt-8">
               <Link
                 href="/academy/stages"
-                className="inline-block border border-blanc/20 px-6 py-3 font-mono text-sm uppercase tracking-wider text-blanc transition-colors hover:border-jaune hover:text-jaune"
+                className="inline-block border border-pau-primary/20 px-6 py-3 font-mono text-sm uppercase tracking-wider text-pau-primary transition-colors hover:border-pau-yellow hover:text-pau-yellow"
               >
                 Voir les stages
               </Link>
@@ -120,8 +118,8 @@ export default function AcademyPage() {
       </section>
 
       {/* Valeurs */}
-      <section className="container-fc border-t border-blanc/10 py-12 md:py-20">
-        <h2 className="mb-12 font-display text-5xl uppercase leading-crush tracking-tightest text-blanc md:text-6xl">
+      <section className="border-t border-pau-primary/10 py-12 md:py-20">
+        <h2 className="mb-12 font-display text-5xl uppercase leading-crush tracking-tightest md:text-6xl">
           Nos valeurs
         </h2>
 
@@ -142,28 +140,28 @@ export default function AcademyPage() {
       </section>
 
       {/* Contact */}
-      <section className="container-fc border-t border-blanc/10 py-12 md:py-20">
+      <section className="border-t border-pau-primary/10 py-12 md:py-20">
         <div className="max-w-2xl">
-          <h2 className="font-display text-5xl uppercase leading-crush tracking-tightest text-blanc md:text-6xl">
+          <h2 className="font-display text-5xl uppercase leading-crush tracking-tightest md:text-6xl">
             Contact Academy
           </h2>
-          <p className="mt-6 font-sans text-base leading-relaxed text-blanc/75 md:text-lg">
+          <p className="mt-6 font-sans text-base leading-relaxed text-pau-primary/75 md:text-lg">
             Pour toute question sur l'Academy, les pôles, les stages ou les
             candidatures :
           </p>
-          <div className="mt-6 space-y-3 font-sans text-base text-blanc/75">
+          <div className="mt-6 space-y-3 font-sans text-base text-pau-primary/75">
             <p>
               Email :{' '}
               <a
                 href="mailto:academy@paufc.fr"
-                className="text-jaune hover:underline"
+                className="text-pau-yellow hover:underline"
               >
                 academy@paufc.fr
               </a>
             </p>
             <p>
               Téléphone :{' '}
-              <a href="tel:+33559000000" className="text-jaune hover:underline">
+              <a href="tel:+33559000000" className="text-pau-yellow hover:underline">
                 +33 5 59 00 00 00
               </a>
             </p>
@@ -174,6 +172,7 @@ export default function AcademyPage() {
           </div>
         </div>
       </section>
+      </SectionLight>
     </article>
   );
 }
@@ -183,18 +182,18 @@ function PoleTile({ title, description, href, badge }) {
   return (
     <Link
       href={href}
-      className="group relative overflow-hidden border border-blanc/10 bg-primaire p-8 transition-all hover:border-jaune md:p-10"
+      className="group relative overflow-hidden border border-pau-primary/10 bg-pau-primary/5 p-8 transition-all hover:border-pau-yellow md:p-10"
     >
-      <span className="mb-4 inline-block font-mono text-xs uppercase tracking-wider text-jaune">
+      <span className="mb-4 inline-block font-mono text-xs uppercase tracking-wider text-pau-yellow">
         {badge}
       </span>
-      <h3 className="font-display text-4xl uppercase leading-tight tracking-tight text-blanc transition-colors group-hover:text-jaune md:text-5xl">
+      <h3 className="font-display text-4xl uppercase leading-tight tracking-tight transition-colors group-hover:text-pau-yellow md:text-5xl">
         {title}
       </h3>
-      <p className="mt-4 font-sans text-base leading-relaxed text-blanc/75">
+      <p className="mt-4 font-sans text-base leading-relaxed text-pau-primary/75">
         {description}
       </p>
-      <div className="mt-6 font-mono text-sm uppercase tracking-wider text-blanc transition-colors group-hover:text-jaune">
+      <div className="mt-6 font-mono text-sm uppercase tracking-wider transition-colors group-hover:text-pau-yellow">
         En savoir plus →
       </div>
     </Link>
@@ -204,11 +203,11 @@ function PoleTile({ title, description, href, badge }) {
 // Composant Valeur Card
 function ValeurCard({ title, description }) {
   return (
-    <div className="border-l-2 border-jaune pl-6">
-      <h3 className="font-display text-3xl uppercase leading-tight tracking-tight text-blanc">
+    <div className="border-l-2 border-pau-yellow pl-6">
+      <h3 className="font-display text-3xl uppercase leading-tight tracking-tight">
         {title}
       </h3>
-      <p className="mt-4 font-sans text-base leading-relaxed text-blanc/75">
+      <p className="mt-4 font-sans text-base leading-relaxed text-pau-primary/75">
         {description}
       </p>
     </div>
