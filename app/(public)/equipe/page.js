@@ -28,7 +28,8 @@ export default async function EquipePage() {
 
   return (
     <>
-      <section className="container-fc py-[clamp(80px,12vh,160px)]">
+      {/* Titre - Garde fond sombre */}
+      <section className="container-fc py-[clamp(80px,12vh,160px)] bg-nuit">
         <p className="badge-mono">Effectif professionnel · Saison 2025-2026</p>
         <h1 className="mt-8 font-display text-[clamp(52px,12vw,160px)] uppercase leading-crush tracking-display-tight">
           L&apos;<span className="text-jaune">ÉQUIPE</span>
@@ -46,13 +47,13 @@ export default async function EquipePage() {
         return (
           <section
             key={pos}
-            className="container-fc border-t border-blanc/10 py-12 md:py-16"
+            className="container-fc border-t border-nuit/10 py-12 md:py-16 bg-blanc"
           >
             <header className="mb-8 flex items-end justify-between">
-              <h2 className="font-display text-4xl uppercase leading-crush tracking-tightest text-blanc md:text-5xl">
+              <h2 className="font-display text-4xl uppercase leading-crush tracking-tightest text-nuit md:text-5xl">
                 {POSITION_LABELS[pos]}
               </h2>
-              <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-blanc/40">
+              <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-nuit/40">
                 {list.length}
               </span>
             </header>
@@ -66,12 +67,12 @@ export default async function EquipePage() {
       })}
 
       {staffAndCoach.length > 0 && (
-        <section className="container-fc border-t border-blanc/10 py-12 md:py-16">
+        <section className="container-fc border-t border-nuit/10 py-12 md:py-16 bg-blanc">
           <header className="mb-8 flex items-end justify-between">
-            <h2 className="font-display text-4xl uppercase leading-crush tracking-tightest text-blanc md:text-5xl">
+            <h2 className="font-display text-4xl uppercase leading-crush tracking-tightest text-nuit md:text-5xl">
               Staff
             </h2>
-            <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-blanc/40">
+            <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-nuit/40">
               {staffAndCoach.length}
             </span>
           </header>

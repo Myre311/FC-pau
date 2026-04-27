@@ -43,9 +43,21 @@ export function MatchCard({ match }) {
         {formatMatchDate(match.kickoffAt)}
       </p>
 
-      {/* Score ou VS */}
-      <div className="my-6 text-center">
-        <VsLabel isPlayed={isPlayed} result={result} palois={palois} adverse={adverse} />
+      {/* Logos + Score/VS */}
+      <div className="my-6 flex items-center justify-center gap-6">
+        {match.isHome ? (
+          <>
+            <TeamLogo name="Pau FC" isHome />
+            <VsLabel isPlayed={isPlayed} result={result} palois={palois} adverse={adverse} />
+            <TeamLogo name={match.opponent} />
+          </>
+        ) : (
+          <>
+            <TeamLogo name={match.opponent} />
+            <VsLabel isPlayed={isPlayed} result={result} palois={palois} adverse={adverse} />
+            <TeamLogo name="Pau FC" isHome />
+          </>
+        )}
       </div>
 
       {/* Noms équipes en dessous */}

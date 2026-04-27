@@ -32,16 +32,18 @@ export default async function CalendrierPage() {
 
   return (
     <>
-      <section className="container-fc py-[clamp(80px,12vh,160px)]">
+      {/* Titre - Garde fond sombre */}
+      <section className="container-fc py-[clamp(80px,12vh,160px)] bg-nuit">
         <p className="badge-mono">Saison 2025-2026 · Calendrier officiel</p>
         <h1 className="mt-8 font-display text-[clamp(48px,11vw,150px)] uppercase leading-crush tracking-display-tight">
           CALEN<span className="text-jaune">DRIER</span>
         </h1>
       </section>
 
+      {/* Contenu - Fond blanc */}
       {next && (
-        <section className="container-fc pb-12 md:pb-16">
-          <h2 className="mb-6 font-mono text-[11px] uppercase tracking-[0.2em] text-jaune">
+        <section className="container-fc pb-12 md:pb-16 bg-blanc">
+          <h2 className="mb-6 font-mono text-[11px] uppercase tracking-[0.2em] text-nuit">
             Prochain match
           </h2>
           <div className="border border-jaune/40 bg-primaire/30 p-2">
@@ -51,12 +53,12 @@ export default async function CalendrierPage() {
       )}
 
       {upcoming.length > 1 && (
-        <section className="container-fc border-t border-blanc/10 py-12 md:py-16">
+        <section className="container-fc border-t border-nuit/10 py-12 md:py-16 bg-blanc">
           <header className="mb-8 flex items-end justify-between">
-            <h2 className="font-display text-4xl uppercase leading-crush tracking-tightest text-blanc md:text-5xl">
+            <h2 className="font-display text-4xl uppercase leading-crush tracking-tightest text-nuit md:text-5xl">
               À venir
             </h2>
-            <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-blanc/40">
+            <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-nuit/40">
               {upcoming.length - 1}
             </span>
           </header>
@@ -69,12 +71,12 @@ export default async function CalendrierPage() {
       )}
 
       {recent.length > 0 && (
-        <section className="container-fc border-t border-blanc/10 py-12 md:py-16">
+        <section className="container-fc border-t border-nuit/10 py-12 md:py-16 bg-blanc">
           <header className="mb-8 flex items-end justify-between">
-            <h2 className="font-display text-4xl uppercase leading-crush tracking-tightest text-blanc md:text-5xl">
+            <h2 className="font-display text-4xl uppercase leading-crush tracking-tightest text-nuit md:text-5xl">
               Résultats récents
             </h2>
-            <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-blanc/40">
+            <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-nuit/40">
               {recent.length}
             </span>
           </header>
@@ -87,12 +89,12 @@ export default async function CalendrierPage() {
       )}
 
       {upcoming.length === 0 && recent.length === 0 && (
-        <section className="container-fc py-24">
-          <div className="border border-dashed border-blanc/15 p-10 text-center">
-            <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-jaune">
+        <section className="container-fc py-24 bg-blanc">
+          <div className="border border-dashed border-nuit/15 p-10 text-center">
+            <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-nuit">
               Calendrier vide
             </p>
-            <p className="mt-4 font-sans text-blanc/60">
+            <p className="mt-4 font-sans text-nuit/60">
               Aucun match programmé pour le moment.
             </p>
           </div>

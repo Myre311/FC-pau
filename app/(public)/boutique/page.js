@@ -34,7 +34,8 @@ export default async function BoutiquePage() {
         <Topbar />
       </div>
 
-      <section className="container-fc py-[clamp(80px,12vh,160px)]">
+      {/* Titre - Garde fond sombre */}
+      <section className="container-fc py-[clamp(80px,12vh,160px)] bg-nuit">
         <p className="badge-mono">Catalogue officiel · Saison 2025-2026</p>
         <h1 className="mt-8 font-display text-[clamp(52px,12vw,160px)] uppercase leading-crush tracking-display-tight">
           LA<br />
@@ -49,13 +50,14 @@ export default async function BoutiquePage() {
       {/* Navigation catégories */}
       <CategoryNav />
 
-      <section className="container-fc pb-32">
-        <div className="mb-12 flex items-end justify-between border-b border-blanc/10 pb-6">
-          <h2 className="font-mono text-[11px] uppercase tracking-[0.2em] text-jaune">
+      {/* Contenu - Fond blanc */}
+      <section className="container-fc pb-32 bg-blanc">
+        <div className="mb-12 flex items-end justify-between border-b border-nuit/10 pb-6">
+          <h2 className="font-mono text-[11px] uppercase tracking-[0.2em] text-nuit">
             {products.length} produit{products.length > 1 ? 's' : ''}
           </h2>
           {featured.length > 0 && (
-            <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-blanc/60">
+            <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-nuit/60">
               {featured.length} mis{featured.length > 1 ? 'es' : 'e'} en avant
             </span>
           )}
