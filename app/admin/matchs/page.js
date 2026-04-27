@@ -1,7 +1,5 @@
 import Link from 'next/link';
 import { prisma } from '@/lib/prisma';
-import { AdminTable } from '@/components/admin/AdminTable';
-import { formatMatchDate } from '@/lib/labels';
 
 export const dynamic = 'force-dynamic';
 
@@ -14,64 +12,13 @@ export default async function MatchsAdminPage() {
     orderBy: [{ kickoffAt: 'desc' }],
   }).catch(() => []);
 
-  const columns = [
-    {
-      key: 'kickoffAt',
-      label: 'Date',
-      render: (match) => formatMatchDate(match.kickoffAt),
-    },
-    {
-      key: 'competition',
-      label: 'Compétition',
-    },
-    {
-      key: 'opponent',
-      label: 'Adversaire',
-    },
-    {
-      key: 'isHome',
-      label: 'Lieu',
-      render: (match) => (
-        <span className={match.isHome ? 'text-green-600' : 'text-gray-600'}>
-          {match.isHome ? 'Domicile' : 'Extérieur'}
-        </span>
-      ),
-    },
-    {
-      key: 'status',
-      label: 'Statut',
-      render: (match) => {
-        const colors = {
-          scheduled: 'bg-blue-100 text-blue-800',
-          live: 'bg-green-100 text-green-800',
-          played: 'bg-gray-100 text-gray-800',
-          postponed: 'bg-orange-100 text-orange-800',
-          cancelled: 'bg-red-100 text-red-800',
-        };
-        return (
-          <span className={`px-2 py-1 rounded text-xs font-semibold ${colors[match.status] || 'bg-gray-100'}`}>
-            {match.status}
-          </span>
-        );
-      },
-    },
-    {
-      key: 'score',
-      label: 'Score',
-      render: (match) => {
-        if (match.status !== 'played' || match.homeScore == null) return '-';
-        return `${match.homeScore} - ${match.awayScore}`;
-      },
-    },
-  ];
-
   return (
-    <div>
+    <div className="p-8">
       <div className="mb-8 flex items-center justify-between">
         <div>
           <h1 className="text-3xl font-bold text-pau-primary">Matchs & Calendrier</h1>
           <p className="mt-2 text-pau-primary/60">
-            Gérer le calendrier des matchs du Pau FC
+            {matches.length} matchs dans la base de données
           </p>
         </div>
         <div className="flex gap-3">
@@ -92,12 +39,67 @@ export default async function MatchsAdminPage() {
         </div>
       </div>
 
-      <AdminTable
-        data={matches}
-        columns={columns}
-        emptyMessage="Aucun match programmé"
-        editUrlPattern="/admin/matchs/{id}"
-      />
+      {matches.length === 0 ? (
+        <div className="border border-dashed border-pau-primary/20 p-12 text-center">
+          <p className="text-pau-primary/60">Aucun match programmé</p>
+        </div>
+      ) : (
+        <div className="bg-white border border-pau-primary/10 rounded-lg overflow-hidden">
+          <table className="w-full">
+            <thead className="bg-pau-primary/5">
+              <tr>
+                <th className="px-6 py-3 text-left text-xs font-bold text-pau-primary uppercase tracking-wider">Date</th>
+                <th className="px-6 py-3 text-left text-xs font-bold text-pau-primary uppercase tracking-wider">Adversaire</th>
+                <th className="px-6 py-3 text-left text-xs font-bold text-pau-primary uppercase tracking-wider">Compétition</th>
+                <th className="px-6 py-3 text-left text-xs font-bold text-pau-primary uppercase tracking-wider">Lieu</th>
+                <th className="px-6 py-3 text-left text-xs font-bold text-pau-primary uppercase tracking-wider">Statut</th>
+                <th className="px-6 py-3 text-left text-xs font-bold text-pau-primary uppercase tracking-wider">Score</th>
+                <th className="px-6 py-3 text-left text-xs font-bold text-pau-primary uppercase tracking-wider">Action</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-pau-primary/10">
+              {matches.map((match) => (
+                <tr key={match.id} className="hover:bg-pau-primary/5">
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-pau-primary">
+                    {new Date(match.kickoffAt).toLocaleDateString('fr-FR')}
+                  </td>
+                  <td className="px-6 py-4 text-sm font-medium text-pau-primary">
+                    {match.opponent}
+                  </td>
+                  <td className="px-6 py-4 text-sm text-pau-primary/60">
+                    {match.competition}
+                  </td>
+                  <td className="px-6 py-4 text-sm text-pau-primary/60">
+                    {match.isHome ? '🏠 Domicile' : '✈️ Extérieur'}
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap">
+                    <span className={`px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full ${
+                      match.status === 'played' ? 'bg-gray-100 text-gray-800' :
+                      match.status === 'live' ? 'bg-green-100 text-green-800' :
+                      'bg-blue-100 text-blue-800'
+                    }`}>
+                      {match.status}
+                    </span>
+                  </td>
+                  <td className="px-6 py-4 text-sm text-pau-primary">
+                    {match.status === 'played' && match.homeScore != null
+                      ? `${match.homeScore} - ${match.awayScore}`
+                      : '-'}
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm">
+                    <Link
+                      href={`/admin/matchs/${match.id}`}
+                      className="text-pau-yellow hover:text-pau-yellow/80 font-medium"
+                    >
+                      Modifier →
+                    </Link>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
     </div>
   );
 }
