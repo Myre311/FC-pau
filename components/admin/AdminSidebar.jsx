@@ -26,7 +26,7 @@ const SECTIONS = [
     items: [
       { href: '/admin/produits', label: 'Produits' },
       { href: '/admin/stock', label: 'Stock' },
-      { href: '/admin/codes-promo', label: 'Codes promo' },
+      { href: '/admin/codes-promo', label: 'Promotion' },
     ],
   },
   {
