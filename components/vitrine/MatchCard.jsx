@@ -1,5 +1,4 @@
 import { formatMatchDate, MATCH_STATUS_LABELS } from '@/lib/labels';
-import { TeamLogo } from '@/components/vitrine/TeamLogo';
 
 export function MatchCard({ match }) {
   const isPlayed = match.status === 'played';
@@ -43,21 +42,15 @@ export function MatchCard({ match }) {
         {formatMatchDate(match.kickoffAt)}
       </p>
 
-      <div className="mt-5 flex items-center justify-between gap-2 md:gap-4">
-        {/* Logo Pau FC */}
-        <div className="flex flex-1 items-center gap-2">
-          <div className="h-12 w-12 flex-shrink-0">
-            <TeamLogo name="Pau FC" isHome={true} compact />
-          </div>
-          <Side
-            name="Pau FC"
-            isHome={match.isHome}
-            highlightWin={result === 'win'}
-          />
-        </div>
+      <div className="mt-5 flex items-center justify-between gap-4">
+        <Side
+          name="Pau FC"
+          isHome={match.isHome}
+          highlightWin={result === 'win'}
+        />
 
         {isPlayed ? (
-          <div className="flex items-center gap-2 font-display text-2xl leading-crush md:gap-3 md:text-3xl">
+          <div className="flex items-center gap-3 font-display text-3xl leading-crush md:text-4xl">
             <span className={result === 'win' ? 'text-jaune' : 'text-blanc'}>
               {palois}
             </span>
@@ -67,23 +60,17 @@ export function MatchCard({ match }) {
             </span>
           </div>
         ) : (
-          <span className="font-display text-xl leading-crush text-blanc/40 md:text-2xl">
+          <span className="font-display text-2xl leading-crush text-blanc/40 md:text-3xl">
             VS
           </span>
         )}
 
-        {/* Logo Adversaire */}
-        <div className="flex flex-1 flex-row-reverse items-center gap-2">
-          <div className="h-12 w-12 flex-shrink-0">
-            <TeamLogo name={match.opponent} isHome={false} compact />
-          </div>
-          <Side
-            name={match.opponent}
-            isHome={!match.isHome}
-            highlightWin={result === 'loss'}
-            align="right"
-          />
-        </div>
+        <Side
+          name={match.opponent}
+          isHome={!match.isHome}
+          highlightWin={result === 'loss'}
+          align="right"
+        />
       </div>
 
       <footer className="mt-5 flex flex-wrap items-center justify-between gap-3 border-t border-blanc/10 pt-4 font-mono text-[10px] uppercase tracking-[0.15em] text-blanc/50">
