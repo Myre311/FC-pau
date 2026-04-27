@@ -231,12 +231,12 @@ export default async function HomePage() {
             </div>
           </FadeIn>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-            <PartnerLogo name="Joma" logo="/logos/partners/joma.svg" href="https://www.joma-sport.com" />
-            <PartnerLogo name="Holy" logo="/logos/partners/holy.svg" href="https://holy-fr.com" />
-            <PartnerLogo name="Intersport" logo="/logos/partners/intersport.svg" href="https://www.intersport.fr" />
-            <PartnerLogo name="Groupama" logo="/logos/partners/groupama.svg" href="https://www.groupama.fr" />
-            <PartnerLogo name="Sarthou" logo="/logos/partners/sarthou.svg" />
-            <PartnerLogo name="Ville de Pau" logo="/logos/partners/ville-de-pau.svg" href="https://www.pau.fr" />
+            <PartnerLogo name="Joma" logo="/logos/partners/Joma_Blue.png" href="https://www.joma-sport.com" />
+            <PartnerLogo name="Holy" logo="/logos/partners/Holy_Outline_Mono.png" href="https://holy-fr.com" />
+            <PartnerLogo name="Intersport" logo="/logos/partners/Intersport.png" href="https://www.intersport.fr" />
+            <PartnerLogo name="Groupama" logo="/logos/partners/groupama-ws-2.png" href="https://www.groupama.fr" />
+            <PartnerLogo name="Sarthou" logo="/logos/partners/sarthou-site-1.png" />
+            <PartnerLogo name="Ville de Pau" logo="/logos/partners/Pau.png" href="https://www.pau.fr" />
           </div>
         </div>
       </section>
