@@ -154,20 +154,26 @@ const adminUser = {
 
 const players = [
   // Gardiens
-  { slug: 'g-lamarche', firstName: 'Tom', lastName: 'Lamarche', shirtNumber: 1, position: 'goalkeeper', nationality: 'FR', displayOrder: 1, photoUrl: 'https://images.unsplash.com/photo-1628779238919-684b30e0fd9c?w=600&h=800&fit=crop&crop=faces' },
-  { slug: 'g-balcon', firstName: 'Adrien', lastName: 'Balcon', shirtNumber: 30, position: 'goalkeeper', nationality: 'FR', displayOrder: 2, photoUrl: 'https://images.unsplash.com/photo-1632655203337-7a0b6b98001e?w=600&h=800&fit=crop&crop=faces' },
+  { slug: 'g-raveyre', firstName: 'Noah', lastName: 'Raveyre', shirtNumber: 22, position: 'goalkeeper', nationality: 'FR', displayOrder: 1, photoUrl: '/images/players/noah-raveyre-22.jpg' },
+  { slug: 'g-salles', firstName: 'Esteban', lastName: 'Salles', shirtNumber: 30, position: 'goalkeeper', nationality: 'FR', displayOrder: 2, photoUrl: '/images/players/esteban-salles-30.jpg' },
   // Défenseurs
-  { slug: 'd-touzghar', firstName: 'Steeve', lastName: 'Yago', shirtNumber: 4, position: 'defender', nationality: 'BF', displayOrder: 1, photoUrl: 'https://images.unsplash.com/photo-1594552072238-6d65f9a2f0b6?w=600&h=800&fit=crop&crop=faces' },
-  { slug: 'd-lobry', firstName: 'Quentin', lastName: 'Lobry', shirtNumber: 2, position: 'defender', nationality: 'FR', displayOrder: 2, photoUrl: 'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=600&h=800&fit=crop&crop=faces' },
-  { slug: 'd-batisse', firstName: 'Erwin', lastName: 'Batisse', shirtNumber: 5, position: 'defender', nationality: 'FR', displayOrder: 3, photoUrl: 'https://images.unsplash.com/photo-1606925797300-0b35e9d1794e?w=600&h=800&fit=crop&crop=faces' },
-  { slug: 'd-malsa', firstName: 'Mickael', lastName: 'Malsa', shirtNumber: 14, position: 'defender', nationality: 'FR', displayOrder: 4, photoUrl: 'https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=600&h=800&fit=crop&crop=faces' },
+  { slug: 'd-pouilly', firstName: 'Tom', lastName: 'Pouilly', shirtNumber: 2, position: 'defender', nationality: 'FR', displayOrder: 1, photoUrl: '/images/players/Tom-pouilly-2.jpg' },
+  { slug: 'd-kalulu', firstName: 'Joseph', lastName: 'Kalulu', shirtNumber: 3, position: 'defender', nationality: 'FR', displayOrder: 2, photoUrl: '/images/players/joseph-kalulu-3.jpg' },
+  { slug: 'd-karamoko', firstName: 'Setigui', lastName: 'Karamoko', shirtNumber: 4, position: 'defender', nationality: 'ML', displayOrder: 3, photoUrl: '/images/players/Setigui-karamoko-4.jpg' },
+  { slug: 'd-briancon', firstName: 'Anthony', lastName: 'Briançon', shirtNumber: 23, position: 'defender', nationality: 'FR', displayOrder: 4, photoUrl: '/images/players/anthony-briançon-23.jpg' },
   // Milieux
-  { slug: 'm-armougom', firstName: 'Hugo', lastName: 'Armougom', shirtNumber: 8, position: 'midfielder', nationality: 'FR', displayOrder: 1, photoUrl: 'https://images.unsplash.com/photo-1553778263-73a83bab9b0c?w=600&h=800&fit=crop&crop=faces' },
-  { slug: 'm-saivet', firstName: 'Henri', lastName: 'Saivet', shirtNumber: 10, position: 'midfielder', nationality: 'SN', displayOrder: 2, photoUrl: 'https://images.unsplash.com/photo-1577223625816-7546f74840e9?w=600&h=800&fit=crop&crop=faces' },
-  { slug: 'm-koffi', firstName: 'Romaric', lastName: 'Koffi', shirtNumber: 6, position: 'midfielder', nationality: 'CI', displayOrder: 3, photoUrl: 'https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?w=600&h=800&fit=crop&crop=faces' },
+  { slug: 'm-fall', firstName: 'Cheikh', lastName: 'Fall', shirtNumber: 6, position: 'midfielder', nationality: 'SN', displayOrder: 1, photoUrl: '/images/players/Cheikh-fall-6.jpg' },
+  { slug: 'm-basse', firstName: 'Souleymane', lastName: 'Basse', shirtNumber: 8, position: 'midfielder', nationality: 'ML', displayOrder: 2, photoUrl: '/images/players/souleymane-basse-8.jpg' },
+  { slug: 'm-gasnier', firstName: 'Kyllian', lastName: 'Gasnier', shirtNumber: 11, position: 'midfielder', nationality: 'FR', displayOrder: 3, photoUrl: '/images/players/Kyllian-Gasnier-11.jpg' },
+  { slug: 'm-bobichon', firstName: 'Antonin', lastName: 'Bobichon', shirtNumber: 14, position: 'midfielder', nationality: 'FR', displayOrder: 4, photoUrl: '/images/players/antonin-bobichon-14.jpg' },
+  { slug: 'm-kante', firstName: 'Ousmane', lastName: 'Kante', shirtNumber: 19, position: 'midfielder', nationality: 'ML', displayOrder: 5, photoUrl: '/images/players/Ousmane-Kante-19.jpg' },
+  { slug: 'm-anziani', firstName: 'Julien', lastName: 'Anziani', shirtNumber: 20, position: 'midfielder', nationality: 'FR', displayOrder: 6, photoUrl: '/images/players/Julien-Anziani-20.jpg' },
+  { slug: 'm-beusnard', firstName: 'Steeve', lastName: 'Beusnard', shirtNumber: 21, position: 'midfielder', nationality: 'FR', displayOrder: 7, photoUrl: '/images/players/steeve-beusnard-21.jpg' },
   // Attaquants
-  { slug: 'a-evans', firstName: 'Antoine', lastName: 'Evans', shirtNumber: 9, position: 'forward', nationality: 'FR', displayOrder: 1, photoUrl: 'https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=600&h=800&fit=crop&crop=faces' },
-  { slug: 'a-soumano', firstName: 'Fode', lastName: 'Soumano', shirtNumber: 11, position: 'forward', nationality: 'ML', displayOrder: 2, photoUrl: 'https://images.unsplash.com/photo-1551958219-acbc608c6377?w=600&h=800&fit=crop&crop=faces' },
+  { slug: 'a-ruiz', firstName: 'Jean', lastName: 'Ruiz', shirtNumber: 25, position: 'forward', nationality: 'FR', displayOrder: 1, photoUrl: '/images/players/jean-ruiz-25.jpg' },
+  { slug: 'a-glossoa', firstName: 'Neil', lastName: 'Glossoa', shirtNumber: 26, position: 'forward', nationality: 'FR', displayOrder: 2, photoUrl: '/images/players/Neil-glossoa-26.jpg' },
+  { slug: 'a-touzghar', firstName: 'Rayan', lastName: 'Touzghar', shirtNumber: 84, position: 'forward', nationality: 'FR', displayOrder: 3, photoUrl: '/images/players/Rayan-touzghar-84.jpg' },
+  { slug: 'a-meddah', firstName: 'Daylam', lastName: 'Meddah', shirtNumber: 97, position: 'forward', nationality: 'DZ', displayOrder: 4, photoUrl: '/images/players/daylam-meddah-97.jpg' },
 ];
 
 const staff = [
