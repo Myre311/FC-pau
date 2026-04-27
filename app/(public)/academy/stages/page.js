@@ -10,15 +10,17 @@ export default function StagesPage() {
   return (
     <article>
       {/* Hero */}
-      <section className="container-fc pt-16 pb-12 md:pt-24 md:pb-20">
-        <p className="badge-mono">Academy · Stages vacances</p>
-        <h1 className="mt-6 text-[14vw] md:text-[10vw] lg:text-[140px] text-pau-primary">
-          STAGES <span className="text-pau-yellow">ACADEMY</span>
-        </h1>
-        <p className="mt-6 max-w-3xl font-sans text-lg leading-relaxed text-pau-primary/70 md:text-xl">
-          Des stages intensifs de football pendant les vacances scolaires pour
-          les jeunes de 8 à 16 ans, encadrés par le staff de l'Academy Pau FC.
-        </p>
+      <section className="bg-pau-primary py-16 md:py-24">
+        <div className="container-fc">
+          <p className="badge-mono">Academy · Stages vacances</p>
+          <h1 className="mt-6 text-[14vw] md:text-[10vw] lg:text-[140px] text-white">
+            STAGES <span className="text-pau-yellow">ACADEMY</span>
+          </h1>
+          <p className="mt-6 max-w-3xl font-sans text-lg leading-relaxed text-white/70 md:text-xl">
+            Des stages intensifs de football pendant les vacances scolaires pour
+            les jeunes de 8 à 16 ans, encadrés par le staff de l'Academy Pau FC.
+          </p>
+        </div>
       </section>
 
       {/* Présentation */}

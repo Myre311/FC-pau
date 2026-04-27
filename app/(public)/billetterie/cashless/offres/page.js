@@ -10,15 +10,17 @@ export default function OffresCashlessPage() {
   return (
     <article>
       {/* Hero */}
-      <section className="container-fc pt-16 pb-12 md:pt-24 md:pb-20">
-        <p className="badge-mono">Billetterie · Cashless · Offres</p>
-        <h1 className="mt-6 text-[14vw] md:text-[10vw] lg:text-[140px] text-pau-primary">
-          OFFRES <span className="text-pau-yellow">CASHLESS</span>
-        </h1>
-        <p className="mt-6 max-w-3xl font-sans text-lg leading-relaxed text-pau-primary/70 md:text-xl">
-          Profite d'offres exclusives en rechargeant ta carte cashless. Bonus,
-          menus spéciaux, promotions buvette réservées aux détenteurs de carte.
-        </p>
+      <section className="bg-pau-primary py-16 md:py-24">
+        <div className="container-fc">
+          <p className="badge-mono">Billetterie · Cashless · Offres</p>
+          <h1 className="mt-6 text-[14vw] md:text-[10vw] lg:text-[140px] text-white">
+            OFFRES <span className="text-pau-yellow">CASHLESS</span>
+          </h1>
+          <p className="mt-6 max-w-3xl font-sans text-lg leading-relaxed text-white/70 md:text-xl">
+            Profite d'offres exclusives en rechargeant ta carte cashless. Bonus,
+            menus spéciaux, promotions buvette réservées aux détenteurs de carte.
+          </p>
+        </div>
       </section>
 
       {/* Offres en cours */}

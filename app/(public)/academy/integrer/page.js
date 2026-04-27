@@ -10,16 +10,18 @@ export default function IntegrerPage() {
   return (
     <article>
       {/* Hero */}
-      <section className="container-fc pt-16 pb-12 md:pt-24 md:pb-20">
-        <p className="badge-mono">Academy · Candidature</p>
-        <h1 className="mt-6 text-[14vw] md:text-[10vw] lg:text-[140px] text-pau-primary">
-          REJOINDRE <span className="text-pau-yellow">L&apos;ACADEMY</span>
-        </h1>
-        <p className="mt-6 max-w-3xl font-sans text-lg leading-relaxed text-pau-primary/70 md:text-xl">
-          Tu as entre 12 et 18 ans et tu veux intégrer un projet ambitieux ?
-          Découvre comment candidater au pôle masculin ou féminin de l'Academy
-          Pau FC.
-        </p>
+      <section className="bg-pau-primary py-16 md:py-24">
+        <div className="container-fc">
+          <p className="badge-mono">Academy · Candidature</p>
+          <h1 className="mt-6 text-[14vw] md:text-[10vw] lg:text-[140px] text-white">
+            REJOINDRE <span className="text-pau-yellow">L&apos;ACADEMY</span>
+          </h1>
+          <p className="mt-6 max-w-3xl font-sans text-lg leading-relaxed text-white/70 md:text-xl">
+            Tu as entre 12 et 18 ans et tu veux intégrer un projet ambitieux ?
+            Découvre comment candidater au pôle masculin ou féminin de l'Academy
+            Pau FC.
+          </p>
+        </div>
       </section>
 
       {/* Critères */}

@@ -10,16 +10,18 @@ export default function PoleFemininPage() {
   return (
     <article>
       {/* Hero */}
-      <section className="container-fc pt-16 pb-12 md:pt-24 md:pb-20">
-        <p className="badge-mono">Academy · Filles</p>
-        <h1 className="mt-6 text-[14vw] md:text-[10vw] lg:text-[140px] text-pau-primary">
-          PÔLE <span className="text-pau-yellow">FÉMININ</span>
-        </h1>
-        <p className="mt-6 max-w-3xl font-sans text-lg leading-relaxed text-pau-primary/70 md:text-xl">
-          Former les joueuses de demain. Le pôle féminin de l'Academy Pau FC
-          accompagne les jeunes filles passionnées de football vers le haut
-          niveau.
-        </p>
+      <section className="bg-pau-primary py-16 md:py-24">
+        <div className="container-fc">
+          <p className="badge-mono">Academy · Filles</p>
+          <h1 className="mt-6 text-[14vw] md:text-[10vw] lg:text-[140px] text-white">
+            PÔLE <span className="text-pau-yellow">FÉMININ</span>
+          </h1>
+          <p className="mt-6 max-w-3xl font-sans text-lg leading-relaxed text-white/70 md:text-xl">
+            Former les joueuses de demain. Le pôle féminin de l'Academy Pau FC
+            accompagne les jeunes filles passionnées de football vers le haut
+            niveau.
+          </p>
+        </div>
       </section>
 
       {/* Présentation */}
