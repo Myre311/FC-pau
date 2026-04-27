@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { prisma } from '@/lib/prisma';
 import PageHero from '@/components/PageHero';
 import SectionLight from '@/components/SectionLight';
@@ -242,19 +243,29 @@ function MatchCard({ match }) {
   });
 
   return (
-    <div className="group relative overflow-hidden border border-blanc/10 bg-primaire p-6 transition-all hover:border-jaune md:p-8">
+    <div className="group relative overflow-hidden border border-white/10 bg-pau-primary p-6 transition-all hover:border-pau-yellow md:p-8">
       <div className="grid gap-6 md:grid-cols-[2fr_1fr] md:items-center">
         <div>
-          <span className="inline-block font-mono text-xs uppercase tracking-wider text-jaune">
-            {match.competition}
-          </span>
-          <h3 className="mt-2 font-display text-3xl uppercase leading-tight tracking-tight text-blanc transition-colors group-hover:text-jaune md:text-4xl">
+          {match.competition?.includes('Ligue 2') ? (
+            <Image
+              src="/LFP_LOGOTYPE_L2_BKT_MASTER_WHITE_RVB-2048x581.png"
+              alt="Ligue 2 BKT"
+              width={100}
+              height={28}
+              className="h-auto w-24"
+            />
+          ) : (
+            <span className="inline-block font-mono text-xs uppercase tracking-wider text-pau-yellow">
+              {match.competition}
+            </span>
+          )}
+          <h3 className="mt-2 font-display text-3xl uppercase leading-tight tracking-tight text-white transition-colors group-hover:text-pau-yellow md:text-4xl">
             Pau FC vs {match.opponent}
           </h3>
-          <p className="mt-2 font-mono text-sm uppercase tracking-wider text-blanc/60">
+          <p className="mt-2 font-mono text-sm uppercase tracking-wider text-white/60">
             {dateFr} · {heure}
           </p>
-          <p className="mt-1 font-sans text-sm text-blanc/60">
+          <p className="mt-1 font-sans text-sm text-white/60">
             {match.venue}
             {match.broadcaster && ` · ${match.broadcaster}`}
           </p>
@@ -266,12 +277,12 @@ function MatchCard({ match }) {
               href={match.ticketUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block bg-jaune px-6 py-3 font-mono text-sm uppercase tracking-wider text-nuit transition-transform hover:scale-105"
+              className="inline-block bg-pau-yellow px-6 py-3 font-mono text-sm uppercase tracking-wider text-pau-night transition-transform hover:scale-105"
             >
               Réserver
             </a>
           ) : (
-            <span className="inline-block border border-blanc/20 px-6 py-3 font-mono text-sm uppercase tracking-wider text-blanc/40">
+            <span className="inline-block border border-white/20 px-6 py-3 font-mono text-sm uppercase tracking-wider text-white/40">
               Bientôt disponible
             </span>
           )}
