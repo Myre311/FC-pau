@@ -53,7 +53,7 @@ export default async function AdminDashboardPage() {
       include: { items: true },
     }).catch(() => []),
     prisma.product.count({ where: { status: 'active' } }).catch(() => 0),
-    prisma.article.count({ where: { status: 'published' } }).catch(() => 0),
+    prisma.article.count({ where: { publishedAt: { not: null } } }).catch(() => 0),
   ]);
 
   const lowStockCount = (lowStockItems || []).filter(

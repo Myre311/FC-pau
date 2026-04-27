@@ -101,8 +101,8 @@ export function ArticleForm({ article, action, deleteAction }) {
             Contenu *
           </label>
           <textarea
-            name="content"
-            defaultValue={article?.content || ''}
+            name="body"
+            defaultValue={article?.body || ''}
             required
             rows={15}
             className="w-full rounded border border-blanc/20 bg-nuit px-4 py-3 font-sans text-blanc placeholder-blanc/40 focus:border-jaune focus:outline-none"
@@ -119,16 +119,19 @@ export function ArticleForm({ article, action, deleteAction }) {
         <div className="grid gap-6 md:grid-cols-2">
           <div>
             <label className="mb-2 block font-mono text-xs uppercase tracking-wider text-blanc/60">
-              Statut *
+              Catégorie *
             </label>
             <select
-              name="status"
-              defaultValue={article?.status || 'draft'}
+              name="category"
+              defaultValue={article?.category || 'other'}
               required
               className="w-full rounded border border-blanc/20 bg-nuit px-4 py-3 font-sans text-blanc focus:border-jaune focus:outline-none"
             >
-              <option value="draft">Brouillon</option>
-              <option value="published">Publié</option>
+              <option value="matchday">Match</option>
+              <option value="club">Club</option>
+              <option value="transfer">Transfert</option>
+              <option value="foundation">Fondation</option>
+              <option value="other">Autre</option>
             </select>
           </div>
 
@@ -147,6 +150,19 @@ export function ArticleForm({ article, action, deleteAction }) {
               className="w-full rounded border border-blanc/20 bg-nuit px-4 py-3 font-sans text-blanc focus:border-jaune focus:outline-none"
             />
           </div>
+        </div>
+
+        <div className="flex items-center gap-3">
+          <input
+            type="checkbox"
+            name="featured"
+            id="featured"
+            defaultChecked={article?.featured}
+            className="h-4 w-4 rounded border-blanc/20 bg-nuit text-jaune focus:ring-jaune"
+          />
+          <label htmlFor="featured" className="font-mono text-xs uppercase tracking-wider text-blanc/60">
+            Mettre en avant (À la une)
+          </label>
         </div>
       </div>
 
