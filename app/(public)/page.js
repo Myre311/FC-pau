@@ -33,7 +33,7 @@ export default async function HomePage() {
   // Récupérer 3 derniers articles pour la newsletter
   const latestArticles = await prisma.article
     .findMany({
-      where: { status: 'published' },
+      where: { publishedAt: { not: null } },
       orderBy: { publishedAt: 'desc' },
       take: 3,
     })
@@ -85,10 +85,10 @@ export default async function HomePage() {
                 <StaggerItem key={article.id}>
                   <Link href={`/actualites/${article.slug}`}>
                     <HoverCard className="group overflow-hidden border border-pau-primary/10 bg-white transition-all hover:border-jaune hover:shadow-md">
-                      {article.coverImage && (
+                      {article.coverImageUrl && (
                         <div className="relative aspect-video w-full overflow-hidden bg-gradient-to-br from-pau-night to-pau-primary">
                           <Image
-                            src={article.coverImage}
+                            src={article.coverImageUrl}
                             alt={article.title}
                             fill
                             className="object-cover transition-transform duration-300 group-hover:scale-110"
