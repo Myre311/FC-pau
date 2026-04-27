@@ -25,7 +25,7 @@ export function MatchCountdown({ match }) {
     <div className="card-match-pau">
       {/* Header avec date/heure */}
       <div className="mb-6 text-center">
-        <p className="font-mono text-sm font-medium uppercase tracking-wider text-blanc/60">
+        <p className="font-mono text-sm font-medium uppercase tracking-wider text-white/60">
           {formatMatchDate(match.kickoffAt)} · {location} · {formatMatchTime(match.kickoffAt)}
         </p>
       </div>
@@ -86,7 +86,7 @@ export function MatchCountdown({ match }) {
 
 function VsLabel() {
   return (
-    <div className="flex items-center justify-center border-2 border-jaune bg-jaune px-4 py-2 text-nuit">
+    <div className="flex items-center justify-center border-2 border-pau-yellow bg-pau-yellow px-4 py-2 text-pau-night">
       <span className="font-display text-lg font-black leading-none md:text-xl">VS</span>
     </div>
   );
@@ -94,11 +94,11 @@ function VsLabel() {
 
 function CountdownUnit({ value, label }) {
   return (
-    <div className="flex flex-col items-center gap-0.5 border-2 border-jaune/40 bg-nuit/60 px-2 py-2 sm:gap-1 sm:px-3 sm:py-2.5 md:px-4 md:py-3">
-      <div className="font-display text-xl font-black leading-none text-jaune sm:text-2xl md:text-3xl lg:text-4xl">
+    <div className="flex flex-col items-center gap-0.5 border-2 border-pau-yellow/40 bg-pau-night/60 px-2 py-2 sm:gap-1 sm:px-3 sm:py-2.5 md:px-4 md:py-3">
+      <div className="font-display text-xl font-black leading-none text-pau-yellow sm:text-2xl md:text-3xl lg:text-4xl">
         {String(value).padStart(2, '0')}
       </div>
-      <div className="font-mono text-[9px] font-bold uppercase tracking-wider text-blanc/60 sm:text-[10px] md:text-xs">
+      <div className="font-mono text-[9px] font-bold uppercase tracking-wider text-white/60 sm:text-[10px] md:text-xs">
         {label}
       </div>
     </div>
