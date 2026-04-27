@@ -154,27 +154,27 @@ const adminUser = {
 
 const players = [
   // Gardiens
-  { slug: 'g-lamarche', firstName: 'Tom', lastName: 'Lamarche', shirtNumber: 1, position: 'goalkeeper', nationality: 'FR', displayOrder: 1 },
-  { slug: 'g-balcon', firstName: 'Adrien', lastName: 'Balcon', shirtNumber: 30, position: 'goalkeeper', nationality: 'FR', displayOrder: 2 },
+  { slug: 'g-lamarche', firstName: 'Tom', lastName: 'Lamarche', shirtNumber: 1, position: 'goalkeeper', nationality: 'FR', displayOrder: 1, photoUrl: 'https://images.unsplash.com/photo-1628779238919-684b30e0fd9c?w=600&h=800&fit=crop&crop=faces' },
+  { slug: 'g-balcon', firstName: 'Adrien', lastName: 'Balcon', shirtNumber: 30, position: 'goalkeeper', nationality: 'FR', displayOrder: 2, photoUrl: 'https://images.unsplash.com/photo-1632655203337-7a0b6b98001e?w=600&h=800&fit=crop&crop=faces' },
   // Défenseurs
-  { slug: 'd-touzghar', firstName: 'Steeve', lastName: 'Yago', shirtNumber: 4, position: 'defender', nationality: 'BF', displayOrder: 1 },
-  { slug: 'd-lobry', firstName: 'Quentin', lastName: 'Lobry', shirtNumber: 2, position: 'defender', nationality: 'FR', displayOrder: 2 },
-  { slug: 'd-batisse', firstName: 'Erwin', lastName: 'Batisse', shirtNumber: 5, position: 'defender', nationality: 'FR', displayOrder: 3 },
-  { slug: 'd-malsa', firstName: 'Mickael', lastName: 'Malsa', shirtNumber: 14, position: 'defender', nationality: 'FR', displayOrder: 4 },
+  { slug: 'd-touzghar', firstName: 'Steeve', lastName: 'Yago', shirtNumber: 4, position: 'defender', nationality: 'BF', displayOrder: 1, photoUrl: 'https://images.unsplash.com/photo-1594552072238-6d65f9a2f0b6?w=600&h=800&fit=crop&crop=faces' },
+  { slug: 'd-lobry', firstName: 'Quentin', lastName: 'Lobry', shirtNumber: 2, position: 'defender', nationality: 'FR', displayOrder: 2, photoUrl: 'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=600&h=800&fit=crop&crop=faces' },
+  { slug: 'd-batisse', firstName: 'Erwin', lastName: 'Batisse', shirtNumber: 5, position: 'defender', nationality: 'FR', displayOrder: 3, photoUrl: 'https://images.unsplash.com/photo-1606925797300-0b35e9d1794e?w=600&h=800&fit=crop&crop=faces' },
+  { slug: 'd-malsa', firstName: 'Mickael', lastName: 'Malsa', shirtNumber: 14, position: 'defender', nationality: 'FR', displayOrder: 4, photoUrl: 'https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=600&h=800&fit=crop&crop=faces' },
   // Milieux
-  { slug: 'm-armougom', firstName: 'Hugo', lastName: 'Armougom', shirtNumber: 8, position: 'midfielder', nationality: 'FR', displayOrder: 1 },
-  { slug: 'm-saivet', firstName: 'Henri', lastName: 'Saivet', shirtNumber: 10, position: 'midfielder', nationality: 'SN', displayOrder: 2 },
-  { slug: 'm-koffi', firstName: 'Romaric', lastName: 'Koffi', shirtNumber: 6, position: 'midfielder', nationality: 'CI', displayOrder: 3 },
+  { slug: 'm-armougom', firstName: 'Hugo', lastName: 'Armougom', shirtNumber: 8, position: 'midfielder', nationality: 'FR', displayOrder: 1, photoUrl: 'https://images.unsplash.com/photo-1553778263-73a83bab9b0c?w=600&h=800&fit=crop&crop=faces' },
+  { slug: 'm-saivet', firstName: 'Henri', lastName: 'Saivet', shirtNumber: 10, position: 'midfielder', nationality: 'SN', displayOrder: 2, photoUrl: 'https://images.unsplash.com/photo-1577223625816-7546f74840e9?w=600&h=800&fit=crop&crop=faces' },
+  { slug: 'm-koffi', firstName: 'Romaric', lastName: 'Koffi', shirtNumber: 6, position: 'midfielder', nationality: 'CI', displayOrder: 3, photoUrl: 'https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?w=600&h=800&fit=crop&crop=faces' },
   // Attaquants
-  { slug: 'a-evans', firstName: 'Antoine', lastName: 'Evans', shirtNumber: 9, position: 'forward', nationality: 'FR', displayOrder: 1 },
-  { slug: 'a-soumano', firstName: 'Fode', lastName: 'Soumano', shirtNumber: 11, position: 'forward', nationality: 'ML', displayOrder: 2 },
+  { slug: 'a-evans', firstName: 'Antoine', lastName: 'Evans', shirtNumber: 9, position: 'forward', nationality: 'FR', displayOrder: 1, photoUrl: 'https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=600&h=800&fit=crop&crop=faces' },
+  { slug: 'a-soumano', firstName: 'Fode', lastName: 'Soumano', shirtNumber: 11, position: 'forward', nationality: 'ML', displayOrder: 2, photoUrl: 'https://images.unsplash.com/photo-1551958219-acbc608c6377?w=600&h=800&fit=crop&crop=faces' },
 ];
 
 const staff = [
-  { slug: 's-batlles', firstName: 'Laurent', lastName: 'Batlles', role: 'coach', staffTitle: 'Entraîneur principal', nationality: 'FR', displayOrder: 1 },
-  { slug: 's-adjoint', firstName: 'Pierre', lastName: 'Marichal', role: 'staff', staffTitle: 'Entraîneur adjoint', nationality: 'FR', displayOrder: 2 },
-  { slug: 's-prep', firstName: 'Julien', lastName: 'Casanova', role: 'staff', staffTitle: 'Préparateur physique', nationality: 'FR', displayOrder: 3 },
-  { slug: 's-gardien', firstName: 'Cédric', lastName: 'Hengbart', role: 'staff', staffTitle: 'Entraîneur des gardiens', nationality: 'FR', displayOrder: 4 },
+  { slug: 's-batlles', firstName: 'Laurent', lastName: 'Batlles', role: 'coach', staffTitle: 'Entraîneur principal', nationality: 'FR', displayOrder: 1, photoUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=800&fit=crop&crop=faces' },
+  { slug: 's-adjoint', firstName: 'Pierre', lastName: 'Marichal', role: 'staff', staffTitle: 'Entraîneur adjoint', nationality: 'FR', displayOrder: 2, photoUrl: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600&h=800&fit=crop&crop=faces' },
+  { slug: 's-prep', firstName: 'Julien', lastName: 'Casanova', role: 'staff', staffTitle: 'Préparateur physique', nationality: 'FR', displayOrder: 3, photoUrl: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=600&h=800&fit=crop&crop=faces' },
+  { slug: 's-gardien', firstName: 'Cédric', lastName: 'Hengbart', role: 'staff', staffTitle: 'Entraîneur des gardiens', nationality: 'FR', displayOrder: 4, photoUrl: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=600&h=800&fit=crop&crop=faces' },
 ];
 
 // ---- Calendrier (mock matchs saison 2025-2026) ----------------------
