@@ -39,10 +39,15 @@ export default async function HomePage() {
     })
     .catch(() => []);
 
-  // Récupérer 4 produits mis en avant pour la boutique
+  // Récupérer 4 produits mis en avant AVEC IMAGES pour la boutique
   const featuredProducts = await prisma.product
     .findMany({
-      where: { status: 'active', featured: true },
+      where: {
+        status: 'active',
+        featured: true,
+        images: { isEmpty: false } // Seulement produits avec images
+      },
+      orderBy: { createdAt: 'desc' }, // Plus récents d'abord
       take: 4,
       include: {
         category: true,
