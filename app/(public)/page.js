@@ -130,7 +130,7 @@ export default async function HomePage() {
           ) : (
             <StaggerContainer staggerDelay={0.2} className="grid gap-8 md:grid-cols-2 max-w-6xl mx-auto justify-items-center">
               {upcomingMatches.map((match) => (
-                <StaggerItem key={match.id} className="w-full max-w-lg md:max-w-none">
+                <StaggerItem key={match.id} className="w-full max-w-md sm:max-w-none">
                   <HoverCard className="w-full">
                     <MatchCountdown match={match} />
                   </HoverCard>
