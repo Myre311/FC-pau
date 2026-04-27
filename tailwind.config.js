@@ -15,6 +15,15 @@ module.exports = {
         dore: '#CBA74D',       // EXCLUSIVEMENT espace partenaires
         blanc: '#FFFFFF',      // Fonds clairs
 
+        // Variantes avec préfixe "pau-" pour clarté
+        'pau-night': '#04091D',
+        'pau-primary': '#1A1D38',
+        'pau-primary-hover': '#252A4D',
+        'pau-yellow': '#FFCC00',
+        'pau-gold': '#CBA74D',
+        'pau-gold-hover': '#B89640',
+        'pau-white': '#FFFFFF',
+
         // BLEUS DOMINANTS (couleur principale)
         'blue-600': '#1E40AF',
         'blue-700': '#1E3A8A',

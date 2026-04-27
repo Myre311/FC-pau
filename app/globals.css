@@ -3,6 +3,36 @@
 @tailwind utilities;
 
 /* =====================================================================
+   VARIABLES CSS — CHARTE OFFICIELLE PAU FC
+   ===================================================================== */
+
+:root {
+  /* Charte officielle Pau FC */
+  --pau-night: #04091D;
+  --pau-primary: #1A1D38;
+  --pau-primary-hover: #252A4D;
+  --pau-yellow: #FFCC00;
+  --pau-gold: #CBA74D;
+  --pau-gold-hover: #B89640;
+  --pau-white: #FFFFFF;
+
+  /* Échelle typographique stricte */
+  --font-display: 'Inter', 'Helvetica Neue', sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --text-xs: 0.75rem;     /* 12px */
+  --text-sm: 0.875rem;    /* 14px */
+  --text-base: 1rem;      /* 16px */
+  --text-lg: 1.125rem;    /* 18px */
+  --text-xl: 1.25rem;     /* 20px */
+  --text-2xl: 1.5rem;     /* 24px */
+  --text-3xl: 1.875rem;   /* 30px */
+  --text-4xl: 2.25rem;    /* 36px */
+  --text-5xl: 3rem;       /* 48px */
+  --text-6xl: 3.75rem;    /* 60px */
+  --text-7xl: 4.5rem;     /* 72px */
+}
+
+/* =====================================================================
    FC PAU — CHARTE OFFICIELLE
    Identité visuelle club : nuit, primaire, jaune
    Design sobre, professionnel, pas générique IA
