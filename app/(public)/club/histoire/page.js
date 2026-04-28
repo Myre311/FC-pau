@@ -61,7 +61,6 @@ export default function HistoirePage() {
             year="1974"
             title="Premier titre national amateur"
             description="Le Pau FC remporte le championnat de France amateur et accède pour la première fois à un niveau semi-professionnel."
-            highlight="Champion de France"
           />
 
           <TimelineItemPremium
@@ -74,11 +73,6 @@ export default function HistoirePage() {
             year="2019"
             title="Montée en Ligue 2"
             description="Victoire en National et accession à la Ligue 2 BKT, deuxième division française. Le Pau FC retrouve le football professionnel de haut niveau après plusieurs décennies."
-            highlight={
-              <span className="inline-flex items-center gap-2">
-                <Image src="/logos/ligue-2-bkt.svg" alt="Ligue 2 BKT" width={80} height={24} className="h-5 w-auto" />
-              </span>
-            }
             stat="50+"
             statLabel="Années d'attente"
           />
@@ -157,8 +151,8 @@ export default function HistoirePage() {
   );
 }
 
-// Timeline item premium avec stats inline et highlights
-function TimelineItemPremium({ year, title, description, isCurrent = false, stat, statLabel, highlight }) {
+// Timeline item premium avec stats inline
+function TimelineItemPremium({ year, title, description, isCurrent = false, stat, statLabel }) {
   return (
     <div className="group grid gap-8 md:grid-cols-[200px_1fr] md:gap-16">
       {/* Année + dot */}
@@ -182,11 +176,6 @@ function TimelineItemPremium({ year, title, description, isCurrent = false, stat
 
       {/* Contenu */}
       <div className="border-l-2 border-[#0F1E45]/10 pl-8 transition-colors group-hover:border-[#FFD60A]/30 md:pl-12">
-        {highlight && (
-          <span className="mb-3 inline-block border border-[#FFD60A]/40 bg-[#FFD60A]/10 px-3 py-1 font-mono text-[9px] uppercase tracking-[0.2em] text-[#0F1E45]">
-            {highlight}
-          </span>
-        )}
         <h3 className="font-display text-[clamp(28px,4vw,44px)] uppercase leading-crush-soft tracking-display-base text-[#0F1E45]">
           {title}
         </h3>
