@@ -1,8 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { prisma } from '@/lib/prisma';
-import { HeaderMaquette } from '@/components/layout/HeaderMaquette';
-import { FooterMaquette } from '@/components/layout/FooterMaquette';
 import { MatchCardWithCountdown } from '@/components/vitrine/MatchCardWithCountdown';
 import { NewsletterPopup } from '@/components/ui/NewsletterPopup';
 import { ScrollingBanner } from '@/components/ui/ScrollingBanner';
@@ -43,9 +41,6 @@ export default async function HomePage() {
     <>
       {/* Newsletter popup */}
       <NewsletterPopup />
-
-      {/* Header */}
-      <HeaderMaquette />
 
       {/* Section Hero - Split Newsletter/Boutique comme refonte */}
       <section className="relative min-h-screen bg-pau-night">
@@ -238,9 +233,6 @@ export default async function HomePage() {
           </a>
         </div>
       </section>
-
-      {/* Footer */}
-      <FooterMaquette />
     </>
   );
 }
