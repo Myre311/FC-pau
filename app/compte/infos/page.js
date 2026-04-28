@@ -9,7 +9,7 @@ export default async function InfosPage() {
   return (
     <div className="space-y-8">
       <header>
-        <p className="text-xs text-gray-500 uppercase tracking-wider">Mon profil</p>
+        <p className="text-xs text-pau-yellow uppercase tracking-wider">Mon profil</p>
         <h1 className="mt-3 font-display text-5xl uppercase leading-crush tracking-tightest text-white md:text-6xl">
           Mes infos
         </h1>

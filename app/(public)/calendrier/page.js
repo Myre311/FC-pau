@@ -142,7 +142,7 @@ export default function CalendrierPage() {
                     </div>
                     <div className="text-center">
                       <div className="mb-1 font-sans text-xs text-white/60">N</div>
-                      <div className="font-display text-lg font-bold text-gray-400">6</div>
+                      <div className="font-display text-lg font-bold text-white/60">6</div>
                     </div>
                     <div className="text-center">
                       <div className="mb-1 font-sans text-xs text-white/60">D</div>

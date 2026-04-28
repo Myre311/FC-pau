@@ -96,7 +96,7 @@ export default function SelectionPlacesPage() {
               </h2>
 
               {selectedSeats.length === 0 ? (
-                <p className="py-8 text-center text-gray-500">
+                <p className="py-8 text-center text-pau-yellow">
                   Aucune place sélectionnée. Cliquez sur les sièges verts dans la vue 3D.
                 </p>
               ) : (

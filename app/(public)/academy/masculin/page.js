@@ -12,7 +12,7 @@ export default function PoleMasculinPage() {
       {/* Hero */}
       <section className="bg-pau-primary py-16 md:py-24">
         <div className="container-fc">
-          <p className="text-xs text-gray-500 uppercase tracking-wider">Academy · Garçons</p>
+          <p className="text-xs text-pau-yellow uppercase tracking-wider">Academy · Garçons</p>
           <h1 className="mt-6 text-[14vw] md:text-[10vw] lg:text-[140px] text-white">
             PÔLE <span className="text-pau-yellow">MASCULIN</span>
           </h1>

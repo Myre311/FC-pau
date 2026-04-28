@@ -98,7 +98,7 @@ export default function PressePage() {
                 className="flex flex-col gap-4 border-2 border-gray-300 p-6 transition-all hover:border-pau-night md:flex-row md:items-center md:justify-between"
               >
                 <div className="flex-1">
-                  <div className="mb-2 font-mono text-xs font-bold uppercase tracking-wider text-gray-500">
+                  <div className="mb-2 font-mono text-xs font-bold uppercase tracking-wider text-pau-yellow">
                     {new Date(release.date).toLocaleDateString('fr-FR', {
                       day: '2-digit',
                       month: 'long',
@@ -147,7 +147,7 @@ export default function PressePage() {
                   {item.title}
                 </h3>
                 <p className="mb-3 text-sm text-gray-700">{item.description}</p>
-                <div className="mb-4 font-mono text-xs text-gray-500">{item.fileSize}</div>
+                <div className="mb-4 font-mono text-xs text-pau-yellow">{item.fileSize}</div>
                 <a
                   href={item.downloadUrl}
                   download

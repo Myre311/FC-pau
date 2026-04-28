@@ -24,7 +24,7 @@ export default async function ComptePage() {
   return (
     <div className="space-y-10">
       <header>
-        <p className="text-xs text-gray-500 uppercase tracking-wider">Tableau de bord</p>
+        <p className="text-xs text-pau-yellow uppercase tracking-wider">Tableau de bord</p>
         <h1 className="mt-3 font-display text-5xl uppercase leading-crush tracking-tightest text-white md:text-6xl">
           Bonjour {dbUser.firstName ?? 'Supporter'}
         </h1>
