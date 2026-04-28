@@ -69,11 +69,11 @@ export default async function HomePage() {
       <NewsletterPopup />
 
       {/* SECTION 1 - HERO : Vidéo (gauche) + Photo Maillots (droite) */}
-      <section className="relative min-h-[400px] bg-pau-night md:h-screen md:min-h-[600px]">
+      <section className="relative bg-pau-night md:h-screen md:min-h-[600px]">
         <div className="grid h-full grid-cols-1 md:grid-cols-2">
 
           {/* GAUCHE - Vidéo */}
-          <div className="relative overflow-hidden">
+          <div className="relative min-h-[50vh] overflow-hidden md:min-h-0">
             <video
               autoPlay
               loop
@@ -88,11 +88,11 @@ export default async function HomePage() {
             <div className="absolute inset-0 bg-gradient-to-t from-pau-night via-pau-night/60 to-transparent" />
 
             {/* Texte superposé */}
-            <div className="absolute inset-0 flex flex-col justify-end p-4 md:p-8 lg:p-12">
+            <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-10 lg:p-16">
               <span className="font-mono text-xs font-semibold uppercase tracking-wider text-pau-yellow">
                 Saison 2025/2026
               </span>
-              <h2 className="mt-4 font-display text-4xl font-bold uppercase leading-tight text-white md:text-5xl lg:text-6xl">
+              <h2 className="mt-4 font-display text-3xl font-bold uppercase leading-tight text-white md:text-5xl lg:text-6xl">
                 Calendrier<br />& Matchs
               </h2>
               <Link
@@ -105,7 +105,7 @@ export default async function HomePage() {
           </div>
 
           {/* DROITE - Photo Maillots */}
-          <div className="relative overflow-hidden">
+          <div className="relative min-h-[50vh] overflow-hidden md:min-h-0">
             <Image
               src="/images/hero-boutique.jpg"
               alt="Maillots Pau FC"
@@ -118,11 +118,11 @@ export default async function HomePage() {
             <div className="absolute inset-0 bg-gradient-to-t from-pau-night via-pau-night/60 to-transparent" />
 
             {/* Texte superposé */}
-            <div className="absolute inset-0 flex flex-col justify-end p-4 md:p-8 lg:p-12">
+            <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-10 lg:p-16">
               <span className="font-mono text-xs font-semibold uppercase tracking-wider text-pau-yellow">
                 Nouvelle Collection
               </span>
-              <h2 className="mt-4 font-display text-4xl font-bold uppercase leading-tight text-white md:text-5xl lg:text-6xl">
+              <h2 className="mt-4 font-display text-3xl font-bold uppercase leading-tight text-white md:text-5xl lg:text-6xl">
                 Boutique<br />Officielle
               </h2>
               <Link
