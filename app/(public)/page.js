@@ -242,9 +242,9 @@ export default async function HomePage() {
             <PartnerLogo name="Groupama" logo="/logos/partners/groupama-ws-2.png" href="https://www.groupama.fr" />
             <PartnerLogo name="Sarthou" logo="/logos/partners/sarthou-site-1.png" />
             <PartnerLogo name="Ville de Pau" logo="/logos/partners/Pau.png" href="https://www.pau.fr" />
-            <PartnerLogo name="Arobase Emploi" logo="/logos/partners/arobase.png" />
-            <PartnerLogo name="PBM Concept" logo="/logos/partners/pbm-concept.png" />
-            <PartnerLogo name="Assurance de Navarre" logo="/logos/partners/assurance-navare.png" />
+            <PartnerLogo name="Arobase Emploi" logo="/logos/partners/arobase.png" href="https://arobase-emploi.fr/" />
+            <PartnerLogo name="PBM Concept" logo="/logos/partners/pbm-concept.png" href="https://pbmconcept.fr/" />
+            <PartnerLogo name="Assurance de Navarre" logo="/logos/partners/assurance-navare.png" href="https://www.assurances-de-navarre.fr/" />
             <PartnerLogo name="Bullux Services" logo="/logos/partners/bullux-services.png" />
           </div>
         </div>
