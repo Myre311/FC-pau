@@ -95,16 +95,56 @@ export default async function CalendrierPage() {
                   </p>
 
                   <div className="mb-4 flex items-center justify-between gap-2">
-                    <div className="flex flex-1 items-center gap-2">
+                    <div className="flex flex-1 items-center gap-3">
+                      {match.isHome && (
+                        <div className="relative h-10 w-10 flex-shrink-0">
+                          <Image
+                            src="/logos/pau-fc.svg"
+                            alt="Pau FC"
+                            fill
+                            className="object-contain"
+                          />
+                        </div>
+                      )}
+                      {!match.isHome && match.opponentLogo && (
+                        <div className="relative h-10 w-10 flex-shrink-0">
+                          <Image
+                            src={match.opponentLogo}
+                            alt={match.opponent}
+                            fill
+                            className="object-contain"
+                          />
+                        </div>
+                      )}
                       <span className="truncate font-display text-base text-pau-primary">
                         {match.isHome ? 'PAU FC' : match.opponent}
                       </span>
                     </div>
                     <span className="font-mono text-sm text-pau-primary/40">VS</span>
-                    <div className="flex flex-1 items-center justify-end gap-2">
+                    <div className="flex flex-1 items-center justify-end gap-3">
                       <span className="truncate font-display text-base text-pau-primary">
                         {match.isHome ? match.opponent : 'PAU FC'}
                       </span>
+                      {!match.isHome && (
+                        <div className="relative h-10 w-10 flex-shrink-0">
+                          <Image
+                            src="/logos/pau-fc.svg"
+                            alt="Pau FC"
+                            fill
+                            className="object-contain"
+                          />
+                        </div>
+                      )}
+                      {match.isHome && match.opponentLogo && (
+                        <div className="relative h-10 w-10 flex-shrink-0">
+                          <Image
+                            src={match.opponentLogo}
+                            alt={match.opponent}
+                            fill
+                            className="object-contain"
+                          />
+                        </div>
+                      )}
                     </div>
                   </div>
 
@@ -162,18 +202,62 @@ export default async function CalendrierPage() {
                   </div>
 
                   <div className="mb-2 flex items-center justify-between gap-2">
-                    <span className="truncate font-display text-base text-pau-primary">
-                      {match.isHome ? 'PAU FC' : match.opponent}
-                    </span>
+                    <div className="flex flex-1 items-center gap-3">
+                      {match.isHome && (
+                        <div className="relative h-8 w-8 flex-shrink-0">
+                          <Image
+                            src="/logos/pau-fc.svg"
+                            alt="Pau FC"
+                            fill
+                            className="object-contain"
+                          />
+                        </div>
+                      )}
+                      {!match.isHome && match.opponentLogo && (
+                        <div className="relative h-8 w-8 flex-shrink-0">
+                          <Image
+                            src={match.opponentLogo}
+                            alt={match.opponent}
+                            fill
+                            className="object-contain"
+                          />
+                        </div>
+                      )}
+                      <span className="truncate font-display text-base text-pau-primary">
+                        {match.isHome ? 'PAU FC' : match.opponent}
+                      </span>
+                    </div>
                     <span className="font-display text-2xl text-pau-yellow">
                       {match.isHome ? match.homeScore : match.awayScore}
                     </span>
                   </div>
 
                   <div className="flex items-center justify-between gap-2">
-                    <span className="truncate font-display text-base text-pau-primary">
-                      {match.isHome ? match.opponent : 'PAU FC'}
-                    </span>
+                    <div className="flex flex-1 items-center gap-3">
+                      {!match.isHome && (
+                        <div className="relative h-8 w-8 flex-shrink-0">
+                          <Image
+                            src="/logos/pau-fc.svg"
+                            alt="Pau FC"
+                            fill
+                            className="object-contain"
+                          />
+                        </div>
+                      )}
+                      {match.isHome && match.opponentLogo && (
+                        <div className="relative h-8 w-8 flex-shrink-0">
+                          <Image
+                            src={match.opponentLogo}
+                            alt={match.opponent}
+                            fill
+                            className="object-contain"
+                          />
+                        </div>
+                      )}
+                      <span className="truncate font-display text-base text-pau-primary">
+                        {match.isHome ? match.opponent : 'PAU FC'}
+                      </span>
+                    </div>
                     <span className="font-display text-2xl text-pau-primary/60">
                       {match.isHome ? match.awayScore : match.homeScore}
                     </span>

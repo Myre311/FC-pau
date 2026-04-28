@@ -215,17 +215,61 @@ function MatchCard({ match }) {
           })}
         </p>
       </div>
-      <p className="mb-4 font-mono text-xs text-pau-primary/70">
+      <p className="mb-6 font-mono text-xs text-pau-primary/70">
         {date.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' })}
       </p>
       <div className="flex items-center justify-between gap-4">
-        <p className="flex-1 text-right text-lg font-bold text-pau-primary">
-          {match.homeTeam || 'Pau FC'}
-        </p>
+        <div className="flex flex-1 items-center justify-end gap-3">
+          {match.isHome && (
+            <div className="relative h-10 w-10 flex-shrink-0">
+              <Image
+                src="/logos/pau-fc.svg"
+                alt="Pau FC"
+                fill
+                className="object-contain"
+              />
+            </div>
+          )}
+          {!match.isHome && match.opponentLogo && (
+            <div className="relative h-10 w-10 flex-shrink-0">
+              <Image
+                src={match.opponentLogo}
+                alt={match.opponent}
+                fill
+                className="object-contain"
+              />
+            </div>
+          )}
+          <p className="text-lg font-bold text-pau-primary">
+            {match.isHome ? 'Pau FC' : match.opponent}
+          </p>
+        </div>
         <p className="font-mono text-sm text-pau-primary/40">VS</p>
-        <p className="flex-1 text-lg font-bold text-pau-primary">
-          {match.awayTeam}
-        </p>
+        <div className="flex flex-1 items-center gap-3">
+          <p className="text-lg font-bold text-pau-primary">
+            {match.isHome ? match.opponent : 'Pau FC'}
+          </p>
+          {!match.isHome && (
+            <div className="relative h-10 w-10 flex-shrink-0">
+              <Image
+                src="/logos/pau-fc.svg"
+                alt="Pau FC"
+                fill
+                className="object-contain"
+              />
+            </div>
+          )}
+          {match.isHome && match.opponentLogo && (
+            <div className="relative h-10 w-10 flex-shrink-0">
+              <Image
+                src={match.opponentLogo}
+                alt={match.opponent}
+                fill
+                className="object-contain"
+              />
+            </div>
+          )}
+        </div>
       </div>
       <p className="mt-4 font-mono text-xs uppercase tracking-widest text-pau-yellow">
         Vos places
