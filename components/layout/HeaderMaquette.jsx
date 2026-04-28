@@ -20,14 +20,18 @@ export function HeaderMaquette() {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Afficher le header après avoir scrollé au-delà du hero
+      // Sur la homepage, attendre d'avoir scrollé au-delà du hero complet
+      // Sur les autres pages, apparaître plus tôt
       const heroHeight = window.innerHeight;
-      setIsScrolled(window.scrollY > heroHeight - 100);
+      const isHomepage = pathname === '/';
+      const threshold = isHomepage ? heroHeight + 50 : heroHeight - 100;
+      setIsScrolled(window.scrollY > threshold);
     };
 
+    handleScroll(); // Check initial state
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [pathname]);
 
   return (
     <header

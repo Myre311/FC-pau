@@ -109,7 +109,7 @@ export default async function HomePageMaquette() {
 
           {/* Carte match centrée */}
           {upcomingMatch && (
-            <div className="absolute left-1/2 top-1/2 z-10 w-full max-w-4xl -translate-x-1/2 -translate-y-1/2 px-6">
+            <div className="absolute left-1/2 top-1/2 z-30 w-full max-w-4xl -translate-x-1/2 -translate-y-1/2 px-6">
               <MatchCardWithCountdown match={upcomingMatch} />
             </div>
           )}
