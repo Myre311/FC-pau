@@ -26,7 +26,7 @@ export default async function BilletteriePage() {
       <section className="relative h-[60vh] min-h-[500px] overflow-hidden bg-pau-night md:h-[70vh]">
         {/* Image de fond */}
         <Image
-          src="/images/homepage/billetterie-enfant.jpg"
+          src="/images/hero-billetterie.jpg"
           alt="Billetterie Pau FC"
           fill
           className="object-cover"
