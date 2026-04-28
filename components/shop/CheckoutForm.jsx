@@ -83,11 +83,11 @@ export function CheckoutForm() {
 
   if (items.length === 0) {
     return (
-      <div className="border border-blanc/10 p-10 text-center">
-        <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-jaune">
+      <div className="border border-pau-primary/10 p-10 text-center">
+        <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-pau-yellow">
           Panier vide
         </p>
-        <p className="mt-3 font-sans text-blanc/60">
+        <p className="mt-3 font-sans text-pau-primary/60">
           Ajoutez des articles pour passer commande.
         </p>
       </div>
@@ -173,7 +173,7 @@ export function CheckoutForm() {
           </Section>
 
           {error && (
-            <p className="border border-jaune/40 bg-jaune/10 px-4 py-3 font-mono text-[11px] uppercase tracking-[0.15em] text-jaune">
+            <p className="border border-pau-yellow/40 bg-jaune/10 px-4 py-3 font-mono text-[11px] uppercase tracking-[0.15em] text-pau-yellow">
               {error}
             </p>
           )}
@@ -238,7 +238,7 @@ function PaymentStep({ amount, onBack }) {
       <PaymentElement options={{ layout: 'tabs' }} />
 
       {error && (
-        <p className="border border-jaune/40 bg-jaune/10 px-4 py-3 font-mono text-[11px] uppercase tracking-[0.15em] text-jaune">
+        <p className="border border-pau-yellow/40 bg-jaune/10 px-4 py-3 font-mono text-[11px] uppercase tracking-[0.15em] text-pau-yellow">
           {error}
         </p>
       )}
@@ -247,7 +247,7 @@ function PaymentStep({ amount, onBack }) {
         <button
           type="button"
           onClick={onBack}
-          className="font-mono text-[11px] uppercase tracking-[0.2em] text-blanc/60 transition-colors hover:text-jaune"
+          className="font-mono text-[11px] uppercase tracking-[0.2em] text-pau-primary/60 transition-colors hover:text-pau-yellow"
         >
           ← Modifier mes infos
         </button>
@@ -277,7 +277,7 @@ function Stepper({ step }) {
         <li
           key={s.id}
           className={
-            s.id === step ? 'text-jaune' : 'text-blanc/30'
+            s.id === step ? 'text-pau-yellow' : 'text-pau-primary/30'
           }
         >
           {s.label}
@@ -289,8 +289,8 @@ function Stepper({ step }) {
 
 function Section({ title, children }) {
   return (
-    <fieldset className="space-y-4 border-t border-blanc/10 pt-6">
-      <legend className="mb-2 font-mono text-[10px] uppercase tracking-[0.2em] text-jaune">
+    <fieldset className="space-y-4 border-t border-pau-primary/10 pt-6">
+      <legend className="mb-2 font-mono text-[10px] uppercase tracking-[0.2em] text-pau-yellow">
         {title}
       </legend>
       {children}
@@ -301,9 +301,9 @@ function Section({ title, children }) {
 function Field({ label, value, onChange, required, type = 'text', autoComplete }) {
   return (
     <label className="block">
-      <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-blanc/50">
+      <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-pau-primary/50">
         {label}
-        {required && <span className="ml-1 text-jaune">*</span>}
+        {required && <span className="ml-1 text-pau-yellow">*</span>}
       </span>
       <input
         type={type}
@@ -311,7 +311,7 @@ function Field({ label, value, onChange, required, type = 'text', autoComplete }
         autoComplete={autoComplete}
         value={value ?? ''}
         onChange={(e) => onChange(e.target.value)}
-        className="mt-2 block h-11 w-full border border-blanc/15 bg-transparent px-3 font-sans text-sm text-blanc outline-none transition-colors focus:border-jaune"
+        className="mt-2 block h-11 w-full border border-pau-primary/20 bg-transparent px-3 font-sans text-sm text-pau-primary outline-none transition-colors focus:border-pau-yellow"
       />
     </label>
   );
@@ -320,13 +320,13 @@ function Field({ label, value, onChange, required, type = 'text', autoComplete }
 function SelectField({ label, value, onChange, options }) {
   return (
     <label className="block">
-      <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-blanc/50">
+      <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-pau-primary/50">
         {label}
       </span>
       <select
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="mt-2 block h-11 w-full border border-blanc/15 bg-nuit px-3 font-sans text-sm text-blanc outline-none transition-colors focus:border-jaune"
+        className="mt-2 block h-11 w-full border border-pau-primary/20 bg-white px-3 font-sans text-sm text-pau-primary outline-none transition-colors focus:border-pau-yellow"
       >
         {options.map((o) => (
           <option key={o.code} value={o.code}>
@@ -350,12 +350,12 @@ function readOrCreateSessionId() {
 }
 
 const stripeAppearance = {
-  theme: 'night',
+  theme: 'flat',
   variables: {
     colorPrimary: '#FFCC00',
-    colorBackground: '#04091D',
-    colorText: '#FFFFFF',
-    colorDanger: '#FFCC00',
+    colorBackground: '#FFFFFF',
+    colorText: '#1A1D38',
+    colorDanger: '#EF4444',
     fontFamily: 'Instrument Sans, system-ui, sans-serif',
     fontSizeBase: '14px',
     borderRadius: '0px',
@@ -363,15 +363,16 @@ const stripeAppearance = {
   },
   rules: {
     '.Input': {
-      backgroundColor: 'transparent',
-      borderColor: 'rgba(255,255,255,0.15)',
+      backgroundColor: '#FFFFFF',
+      borderColor: 'rgba(26,29,56,0.2)',
       boxShadow: 'none',
+      color: '#1A1D38',
     },
     '.Input:focus': {
       borderColor: '#FFCC00',
     },
     '.Label': {
-      color: 'rgba(255,255,255,0.5)',
+      color: 'rgba(26,29,56,0.6)',
       fontFamily: 'DM Mono, ui-monospace, monospace',
       fontSize: '10px',
       letterSpacing: '0.2em',
