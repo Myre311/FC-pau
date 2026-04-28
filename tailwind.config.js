@@ -24,6 +24,11 @@ module.exports = {
         'pau-gold-hover': '#B89640',
         'pau-white': '#FFFFFF',
 
+        // COULEURS REFONTE HOMEPAGE (spec 28/04/2026)
+        'paufc-dark': '#0A1628',      // Bleu très sombre (backgrounds)
+        'paufc-yellow': '#F5C518',    // Jaune vif (accents)
+        'paufc-gold': '#D4A017',      // Doré (détails premium)
+
         // BLEUS DOMINANTS (couleur principale)
         'blue-600': '#1E40AF',
         'blue-700': '#1E3A8A',
@@ -55,6 +60,7 @@ module.exports = {
         display: ['var(--font-display)', 'system-ui', 'sans-serif'],
         sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],
         mono: ['var(--font-mono)', 'ui-monospace', 'monospace'],
+        serif: ['var(--font-serif)', 'Georgia', 'serif'],
       },
       letterSpacing: {
         tightest: '-0.03em',

@@ -1,4 +1,4 @@
-import { Oswald, Inter, DM_Mono } from 'next/font/google';
+import { Oswald, Inter, DM_Mono, Playfair_Display } from 'next/font/google';
 import { GoogleAnalytics } from '@next/third-parties/google';
 
 import { OrganizationJsonLd } from '@/components/seo/OrganizationJsonLd';
@@ -30,6 +30,16 @@ const dmMono = DM_Mono({
   variable: '--font-mono',
   display: 'swap',
   preload: false,
+});
+
+// Playfair Display - Noms équipes en serif italic (refonte homepage)
+const playfairDisplay = Playfair_Display({
+  subsets: ['latin'],
+  weight: ['400', '700', '900'],
+  style: ['normal', 'italic'],
+  variable: '--font-serif',
+  display: 'swap',
+  preload: true,
 });
 
 export const metadata = {
@@ -66,7 +76,7 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="fr"
-      className={`${oswald.variable} ${inter.variable} ${dmMono.variable}`}
+      className={`${oswald.variable} ${inter.variable} ${dmMono.variable} ${playfairDisplay.variable}`}
     >
       <body className="font-sans antialiased">
         {children}
