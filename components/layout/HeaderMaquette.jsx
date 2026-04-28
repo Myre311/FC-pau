@@ -51,42 +51,6 @@ export function HeaderMaquette() {
             />
           </Link>
 
-          {/* CENTRE - Menu complet (visible au scroll uniquement) */}
-          {isScrolled && (
-            <nav className="absolute left-1/2 top-full hidden -translate-x-1/2 md:flex md:gap-6 lg:gap-8">
-              <Link
-                href="/calendrier"
-                className="whitespace-nowrap font-sans text-sm font-medium text-white/90 transition-colors hover:text-pau-yellow"
-              >
-                Calendrier
-              </Link>
-              <Link
-                href="/equipe"
-                className="whitespace-nowrap font-sans text-sm font-medium text-white/90 transition-colors hover:text-pau-yellow"
-              >
-                Équipe
-              </Link>
-              <Link
-                href="/actualites"
-                className="whitespace-nowrap font-sans text-sm font-medium text-white/90 transition-colors hover:text-pau-yellow"
-              >
-                Actualités
-              </Link>
-              <Link
-                href="/club"
-                className="whitespace-nowrap font-sans text-sm font-medium text-white/90 transition-colors hover:text-pau-yellow"
-              >
-                Le Club
-              </Link>
-              <Link
-                href="/partenaires"
-                className="whitespace-nowrap font-sans text-sm font-medium text-pau-gold transition-colors hover:text-pau-gold-hover"
-              >
-                Partenaires
-              </Link>
-            </nav>
-          )}
-
           {/* DROITE - Boutique + Burger */}
           <div className="flex items-center gap-4">
             <Link
@@ -110,75 +74,212 @@ export function HeaderMaquette() {
         </div>
       </div>
 
-      {/* Menu mobile fullscreen */}
+      {/* Menu hamburger fullscreen avec catégories */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-40 bg-pau-night">
-          <nav className="flex h-full flex-col items-center justify-center space-y-6">
-            <Link
-              href="/"
-              onClick={() => setMobileMenuOpen(false)}
-              className="font-display text-3xl font-bold uppercase tracking-wide text-white transition-colors hover:text-pau-yellow"
-            >
-              Accueil
-            </Link>
-            <Link
-              href="/billetterie"
-              onClick={() => setMobileMenuOpen(false)}
-              className="font-display text-3xl font-bold uppercase tracking-wide text-white transition-colors hover:text-pau-yellow"
-            >
-              Billetterie
-            </Link>
-            <Link
-              href="/boutique"
-              onClick={() => setMobileMenuOpen(false)}
-              className="font-display text-3xl font-bold uppercase tracking-wide text-white transition-colors hover:text-pau-yellow"
-            >
-              Boutique
-            </Link>
-            <Link
-              href="/calendrier"
-              onClick={() => setMobileMenuOpen(false)}
-              className="font-display text-3xl font-bold uppercase tracking-wide text-white transition-colors hover:text-pau-yellow"
-            >
-              Calendrier
-            </Link>
-            <Link
-              href="/equipe"
-              onClick={() => setMobileMenuOpen(false)}
-              className="font-display text-3xl font-bold uppercase tracking-wide text-white transition-colors hover:text-pau-yellow"
-            >
-              Équipe
-            </Link>
-            <Link
-              href="/actualites"
-              onClick={() => setMobileMenuOpen(false)}
-              className="font-display text-3xl font-bold uppercase tracking-wide text-white transition-colors hover:text-pau-yellow"
-            >
-              Actualités
-            </Link>
-            <Link
-              href="/club"
-              onClick={() => setMobileMenuOpen(false)}
-              className="font-display text-3xl font-bold uppercase tracking-wide text-white transition-colors hover:text-pau-yellow"
-            >
-              Le Club
-            </Link>
-            <Link
-              href="/partenaires"
-              onClick={() => setMobileMenuOpen(false)}
-              className="font-display text-3xl font-bold uppercase tracking-wide text-pau-gold transition-colors hover:text-pau-gold-hover"
-            >
-              Partenaires
-            </Link>
-            <div className="w-16 border-t border-white/20" />
-            <Link
-              href="/contact"
-              onClick={() => setMobileMenuOpen(false)}
-              className="font-sans text-lg font-light tracking-wide text-white/70 transition-colors hover:text-white"
-            >
-              Contact
-            </Link>
-          </nav>
+        <div className="fixed inset-0 z-40 overflow-y-auto bg-pau-night">
+          <div className="container-pau py-24">
+            <nav className="grid gap-12 md:grid-cols-2 lg:grid-cols-3">
+
+              {/* CLUB */}
+              <div>
+                <h3 className="mb-4 font-display text-lg font-bold uppercase tracking-wide text-pau-yellow">
+                  Club
+                </h3>
+                <ul className="space-y-3">
+                  <li>
+                    <Link
+                      href="/equipe"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="font-sans text-base text-white/80 transition-colors hover:text-white"
+                    >
+                      L'équipe
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/club/histoire"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="font-sans text-base text-white/80 transition-colors hover:text-white"
+                    >
+                      Histoire
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/club/stade"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="font-sans text-base text-white/80 transition-colors hover:text-white"
+                    >
+                      Stade
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/academie"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="font-sans text-base text-white/80 transition-colors hover:text-white"
+                    >
+                      Académie
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+
+              {/* MATCHS */}
+              <div>
+                <h3 className="mb-4 font-display text-lg font-bold uppercase tracking-wide text-pau-yellow">
+                  Matchs
+                </h3>
+                <ul className="space-y-3">
+                  <li>
+                    <Link
+                      href="/calendrier"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="font-sans text-base text-white/80 transition-colors hover:text-white"
+                    >
+                      Calendrier
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/billetterie"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="font-sans text-base text-white/80 transition-colors hover:text-white"
+                    >
+                      Billetterie
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/resultats"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="font-sans text-base text-white/80 transition-colors hover:text-white"
+                    >
+                      Résultats
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+
+              {/* ACTUALITÉS */}
+              <div>
+                <h3 className="mb-4 font-display text-lg font-bold uppercase tracking-wide text-pau-yellow">
+                  Actualités
+                </h3>
+                <ul className="space-y-3">
+                  <li>
+                    <Link
+                      href="/actualites"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="font-sans text-base text-white/80 transition-colors hover:text-white"
+                    >
+                      News
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/actualites/communiques"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="font-sans text-base text-white/80 transition-colors hover:text-white"
+                    >
+                      Communiqués
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+
+              {/* BOUTIQUE */}
+              <div>
+                <h3 className="mb-4 font-display text-lg font-bold uppercase tracking-wide text-pau-yellow">
+                  Boutique
+                </h3>
+                <ul className="space-y-3">
+                  <li>
+                    <Link
+                      href="/boutique"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="font-sans text-base text-white/80 transition-colors hover:text-white"
+                    >
+                      Produits
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/boutique/collections"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="font-sans text-base text-white/80 transition-colors hover:text-white"
+                    >
+                      Collections
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/boutique/personnalisation"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="font-sans text-base text-white/80 transition-colors hover:text-white"
+                    >
+                      Configurateur maillot
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+
+              {/* PARTENAIRES */}
+              <div>
+                <h3 className="mb-4 font-display text-lg font-bold uppercase tracking-wide text-pau-gold">
+                  Partenaires
+                </h3>
+                <ul className="space-y-3">
+                  <li>
+                    <Link
+                      href="/partenaires"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="font-sans text-base text-white/80 transition-colors hover:text-white"
+                    >
+                      Nos partenaires
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+
+              {/* INFORMATIONS */}
+              <div>
+                <h3 className="mb-4 font-display text-lg font-bold uppercase tracking-wide text-pau-yellow">
+                  Informations
+                </h3>
+                <ul className="space-y-3">
+                  <li>
+                    <Link
+                      href="/contact"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="font-sans text-base text-white/80 transition-colors hover:text-white"
+                    >
+                      Contact
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/cgv"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="font-sans text-base text-white/80 transition-colors hover:text-white"
+                    >
+                      CGV
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/mentions-legales"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="font-sans text-base text-white/80 transition-colors hover:text-white"
+                    >
+                      Mentions légales
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+
+            </nav>
+          </div>
         </div>
       )}
     </header>
