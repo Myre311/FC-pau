@@ -83,6 +83,25 @@ export default async function HomePage() {
             >
               <source src="/videos/hero.mp4" type="video/mp4" />
             </video>
+
+            {/* Gradient overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-pau-night via-pau-night/60 to-transparent" />
+
+            {/* Texte superposé */}
+            <div className="absolute inset-0 flex flex-col justify-end p-8 md:p-12 lg:p-16">
+              <span className="font-mono text-xs font-semibold uppercase tracking-wider text-pau-yellow">
+                Saison 2025/2026
+              </span>
+              <h2 className="mt-4 font-display text-4xl font-bold uppercase leading-tight text-white md:text-5xl lg:text-6xl">
+                Calendrier<br />& Matchs
+              </h2>
+              <Link
+                href="/calendrier"
+                className="mt-6 inline-block w-fit border-2 border-pau-yellow bg-transparent px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-pau-yellow transition-all hover:bg-pau-yellow hover:text-pau-night"
+              >
+                Voir les matchs
+              </Link>
+            </div>
           </div>
 
           {/* DROITE - Photo Maillots */}
@@ -94,6 +113,25 @@ export default async function HomePage() {
               className="object-cover"
               priority
             />
+
+            {/* Gradient overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-pau-night via-pau-night/60 to-transparent" />
+
+            {/* Texte superposé */}
+            <div className="absolute inset-0 flex flex-col justify-end p-8 md:p-12 lg:p-16">
+              <span className="font-mono text-xs font-semibold uppercase tracking-wider text-pau-yellow">
+                Nouvelle Collection
+              </span>
+              <h2 className="mt-4 font-display text-4xl font-bold uppercase leading-tight text-white md:text-5xl lg:text-6xl">
+                Boutique<br />Officielle
+              </h2>
+              <Link
+                href="/boutique"
+                className="mt-6 inline-block w-fit border-2 border-pau-yellow bg-transparent px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-pau-yellow transition-all hover:bg-pau-yellow hover:text-pau-night"
+              >
+                Découvrir
+              </Link>
+            </div>
           </div>
         </div>
       </section>
