@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { prisma } from '@/lib/prisma';
 import { HeaderMaquette } from '@/components/layout/HeaderMaquette';
+import { FooterMaquette } from '@/components/layout/FooterMaquette';
 import { MatchCardWithCountdown } from '@/components/vitrine/MatchCardWithCountdown';
 import { NewsletterPopup } from '@/components/ui/NewsletterPopup';
 import { ScrollingBanner } from '@/components/ui/ScrollingBanner';
@@ -233,7 +234,8 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* Footer avec Newsletter intégrée - géré par FooterMaquette */}
+      {/* Footer */}
+      <FooterMaquette />
     </>
   );
 }
