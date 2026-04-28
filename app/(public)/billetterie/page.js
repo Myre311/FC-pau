@@ -35,14 +35,14 @@ export default async function BilletteriePage() {
 
       {/* Prochains matchs */}
       <SectionLight>
-        <h2 className="mb-12 font-display text-5xl uppercase leading-crush tracking-tightest text-[#0F1E45] md:text-6xl">
+        <h2 className="mb-12 font-display text-5xl uppercase leading-crush tracking-tightest text-pau-primary md:text-6xl">
           Prochains matchs à domicile
         </h2>
 
         {matchsAVenir.length === 0 ? (
-          <p className="font-sans text-base text-[#0F1E45]/60">
+          <p className="font-sans text-base text-pau-primary/60">
             Aucun match à domicile programmé pour le moment. Consulte le{' '}
-            <Link href="/calendrier" className="text-[#FFD60A] hover:underline">
+            <Link href="/calendrier" className="text-pau-yellow hover:underline">
               calendrier complet
             </Link>
             .
@@ -57,8 +57,8 @@ export default async function BilletteriePage() {
       </SectionLight>
 
       {/* Tarifs */}
-      <SectionLight className="border-t border-[#0F1E45]/10">
-        <h2 className="mb-12 font-display text-5xl uppercase leading-crush tracking-tightest text-[#0F1E45] md:text-6xl">
+      <SectionLight className="border-t border-pau-primary/10">
+        <h2 className="mb-12 font-display text-5xl uppercase leading-crush tracking-tightest text-pau-primary md:text-6xl">
           Tarifs
         </h2>
 
@@ -95,40 +95,40 @@ export default async function BilletteriePage() {
           />
         </div>
 
-        <p className="mt-8 font-sans text-sm text-[#0F1E45]/60">
+        <p className="mt-8 font-sans text-sm text-pau-primary/60">
           Tarifs indicatifs pour matchs de Ligue 2. Les tarifs peuvent varier
           selon la catégorie de match (Coupe de France, matchs de gala, etc.).
         </p>
       </SectionLight>
 
       {/* Cashless */}
-      <SectionLight className="border-t border-[#0F1E45]/10">
+      <SectionLight className="border-t border-pau-primary/10">
         <div className="grid gap-10 md:grid-cols-[1fr_2fr] md:gap-16">
-          <h2 className="font-display text-5xl uppercase leading-crush tracking-tightest text-[#0F1E45] md:text-6xl">
+          <h2 className="font-display text-5xl uppercase leading-crush tracking-tightest text-pau-primary md:text-6xl">
             Carte cashless
           </h2>
-          <div className="space-y-5 font-sans text-base leading-relaxed text-[#0F1E45]/75 md:text-lg">
+          <div className="space-y-5 font-sans text-base leading-relaxed text-pau-primary/75 md:text-lg">
             <p>
               Le Nouste Camp est 100% cashless. Paye tes consommations
               (buvette, boutique) directement avec ta carte cashless ou ton
               smartphone.
             </p>
             <p>
-              <strong className="text-[#0F1E45]">Rapide</strong> — Plus besoin
+              <strong className="text-pau-primary">Rapide</strong> — Plus besoin
               d'espèces, recharge ta carte en ligne avant le match.
             </p>
             <p>
-              <strong className="text-[#0F1E45]">Sécurisé</strong> — Paiement sans
+              <strong className="text-pau-primary">Sécurisé</strong> — Paiement sans
               contact, zéro risque de perte ou vol.
             </p>
             <p>
-              <strong className="text-[#0F1E45]">Remboursable</strong> — Solde non
+              <strong className="text-pau-primary">Remboursable</strong> — Solde non
               utilisé remboursé à tout moment.
             </p>
             <div className="mt-6">
               <Link
                 href="/billetterie/cashless"
-                className="inline-block border border-gray-200 px-6 py-3 font-mono text-sm uppercase tracking-wider text-[#0F1E45] transition-colors hover:bg-gray-50"
+                className="inline-block border border-gray-200 px-6 py-3 font-mono text-sm uppercase tracking-wider text-pau-primary transition-colors hover:bg-gray-50"
               >
                 En savoir plus
               </Link>
@@ -138,41 +138,41 @@ export default async function BilletteriePage() {
       </SectionLight>
 
       {/* Infos pratiques */}
-      <SectionLight className="border-t border-[#0F1E45]/10">
-        <h2 className="mb-12 font-display text-5xl uppercase leading-crush tracking-tightest text-[#0F1E45] md:text-6xl">
+      <SectionLight className="border-t border-pau-primary/10">
+        <h2 className="mb-12 font-display text-5xl uppercase leading-crush tracking-tightest text-pau-primary md:text-6xl">
           Infos pratiques
         </h2>
 
         <div className="grid gap-10 md:grid-cols-2 md:gap-16">
           <div>
-            <h3 className="font-display text-3xl uppercase leading-tight tracking-tight text-[#FFD60A]">
+            <h3 className="font-display text-3xl uppercase leading-tight tracking-tight text-pau-yellow">
               Accès au stade
             </h3>
-            <div className="mt-4 space-y-3 font-sans text-base text-[#0F1E45]/75">
+            <div className="mt-4 space-y-3 font-sans text-base text-pau-primary/75">
               <p>
-                <strong className="text-[#0F1E45]">Adresse</strong> — Nouste Camp, 8
+                <strong className="text-pau-primary">Adresse</strong> — Nouste Camp, 8
                 Boulevard de l'Aviation, 64320 Bizanos
               </p>
               <p>
-                <strong className="text-[#0F1E45]">Parking</strong> — Gratuit autour
+                <strong className="text-pau-primary">Parking</strong> — Gratuit autour
                 du stade (places limitées)
               </p>
               <p>
-                <strong className="text-[#0F1E45]">Bus</strong> — Ligne 4, arrêt
+                <strong className="text-pau-primary">Bus</strong> — Ligne 4, arrêt
                 "Nouste Camp"
               </p>
               <p>
-                <strong className="text-[#0F1E45]">Ouverture portes</strong> — 1h
+                <strong className="text-pau-primary">Ouverture portes</strong> — 1h
                 avant le coup d'envoi
               </p>
             </div>
           </div>
 
           <div>
-            <h3 className="font-display text-3xl uppercase leading-tight tracking-tight text-[#FFD60A]">
+            <h3 className="font-display text-3xl uppercase leading-tight tracking-tight text-pau-yellow">
               Règlement intérieur
             </h3>
-            <div className="mt-4 space-y-3 font-sans text-base text-[#0F1E45]/75">
+            <div className="mt-4 space-y-3 font-sans text-base text-pau-primary/75">
               <p>
                  Interdiction de fumigènes, pétards, objets dangereux
               </p>
@@ -186,29 +186,29 @@ export default async function BilletteriePage() {
       </SectionLight>
 
       {/* CTA */}
-      <SectionLight className="border-t border-[#0F1E45]/10">
+      <SectionLight className="border-t border-pau-primary/10">
         <div className="max-w-2xl">
-          <h2 className="font-display text-5xl uppercase leading-crush tracking-tightest text-[#0F1E45] md:text-6xl">
+          <h2 className="font-display text-5xl uppercase leading-crush tracking-tightest text-pau-primary md:text-6xl">
             Contact billetterie
           </h2>
-          <p className="mt-6 font-sans text-base leading-relaxed text-[#0F1E45]/75 md:text-lg">
+          <p className="mt-6 font-sans text-base leading-relaxed text-pau-primary/75 md:text-lg">
             Pour toute question sur la billetterie, les tarifs de groupe ou les
             abonnements :
           </p>
 
-          <div className="mt-6 space-y-3 font-sans text-base text-[#0F1E45]/75">
+          <div className="mt-6 space-y-3 font-sans text-base text-pau-primary/75">
             <p>
               Email :{' '}
               <a
                 href="mailto:billetterie@paufc.fr"
-                className="text-[#FFD60A] hover:underline"
+                className="text-pau-yellow hover:underline"
               >
                 billetterie@paufc.fr
               </a>
             </p>
             <p>
               Téléphone :{' '}
-              <a href="tel:+33559000000" className="text-[#FFD60A] hover:underline">
+              <a href="tel:+33559000000" className="text-pau-yellow hover:underline">
                 +33 5 59 00 00 00
               </a>
             </p>
@@ -218,7 +218,7 @@ export default async function BilletteriePage() {
           <div className="mt-8">
             <Link
               href="/cgv-billetterie"
-              className="font-mono text-sm uppercase tracking-wider text-[#0F1E45]/60 hover:text-[#FFD60A]"
+              className="font-mono text-sm uppercase tracking-wider text-pau-primary/60 hover:text-pau-yellow"
             >
               Conditions générales de vente →
             </Link>
@@ -247,25 +247,27 @@ function MatchCard({ match }) {
       <div className="grid gap-6 md:grid-cols-[2fr_1fr] md:items-center">
         <div>
           {match.competition?.includes('Ligue 2') ? (
-            <Image
-              src="/LFP_LOGOTYPE_L2_BKT_MASTER_WHITE_RVB-2048x581.png"
-              alt="Ligue 2 BKT"
-              width={100}
-              height={28}
-              className="h-auto w-24"
-            />
+            <div className="flex h-8 items-center bg-pau-primary px-3">
+              <Image
+                src="/LFP_LOGOTYPE_L2_BKT_MASTER_WHITE_RVB-2048x581.png"
+                alt="Ligue 2 BKT"
+                width={90}
+                height={26}
+                className="h-auto w-[90px]"
+              />
+            </div>
           ) : (
             <span className="inline-block font-mono text-xs uppercase tracking-wider text-pau-yellow">
               {match.competition}
             </span>
           )}
-          <h3 className="mt-2 font-display text-3xl uppercase leading-tight tracking-tight text-white transition-colors group-hover:text-pau-yellow md:text-4xl">
+          <h3 className="mt-2 font-display text-3xl uppercase leading-tight tracking-tight text-pau-primary md:text-4xl">
             Pau FC vs {match.opponent}
           </h3>
-          <p className="mt-2 font-mono text-sm uppercase tracking-wider text-white/60">
+          <p className="mt-2 font-mono text-sm uppercase tracking-wider text-pau-primary/60">
             {dateFr} · {heure}
           </p>
-          <p className="mt-1 font-sans text-sm text-white/60">
+          <p className="mt-1 font-sans text-sm text-pau-primary/60">
             {match.venue}
             {match.broadcaster && ` · ${match.broadcaster}`}
           </p>
@@ -282,7 +284,7 @@ function MatchCard({ match }) {
               Réserver
             </a>
           ) : (
-            <span className="inline-block border border-white/20 px-6 py-3 font-mono text-sm uppercase tracking-wider text-white/40">
+            <span className="inline-block border border-gray-200 px-6 py-3 font-mono text-sm uppercase tracking-wider text-pau-primary/40">
               Bientôt disponible
             </span>
           )}
@@ -295,14 +297,14 @@ function MatchCard({ match }) {
 // Composant Tarif Card
 function TarifCard({ title, price, description }) {
   return (
-    <div className="border-l-2 border-[#FFD60A] pl-6">
-      <h3 className="font-display text-3xl uppercase leading-tight tracking-tight text-[#0F1E45]">
+    <div className="border-l-2 border-pau-yellow pl-6">
+      <h3 className="font-display text-3xl uppercase leading-tight tracking-tight text-pau-primary">
         {title}
       </h3>
       <div className="mt-3 flex items-baseline gap-2">
-        <span className="font-display text-4xl text-[#FFD60A]">{price}</span>
+        <span className="font-display text-4xl text-pau-yellow">{price}</span>
       </div>
-      <p className="mt-3 font-sans text-sm text-[#0F1E45]/75">{description}</p>
+      <p className="mt-3 font-sans text-sm text-pau-primary/75">{description}</p>
     </div>
   );
 }

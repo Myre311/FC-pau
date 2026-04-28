@@ -26,9 +26,9 @@ export default function NousteCampPage() {
         </dl>
       </SectionLight>
 
-      <SectionLight className="border-t border-[#0F1E45]/10">
+      <SectionLight className="border-t border-pau-primary/10">
         <div className="grid gap-10 md:grid-cols-[1fr_2fr] md:gap-16">
-          <h2 className="font-display text-5xl uppercase leading-crush tracking-tightest text-[#0F1E45] md:text-6xl">
+          <h2 className="font-display text-5xl uppercase leading-crush tracking-tightest text-pau-primary md:text-6xl">
             Les tribunes
           </h2>
           <ul className="space-y-6">
@@ -56,13 +56,13 @@ export default function NousteCampPage() {
         </div>
       </SectionLight>
 
-      <SectionLight className="border-t border-[#0F1E45]/10">
+      <SectionLight className="border-t border-pau-primary/10">
         <div className="grid gap-10 md:grid-cols-2 md:gap-16">
           <div>
-            <h2 className="font-display text-4xl uppercase leading-crush tracking-tightest text-[#0F1E45] md:text-5xl">
+            <h2 className="font-display text-4xl uppercase leading-crush tracking-tightest text-pau-primary md:text-5xl">
               Acces
             </h2>
-            <ul className="mt-6 space-y-4 font-sans text-base text-[#0F1E45]/75">
+            <ul className="mt-6 space-y-4 font-sans text-base text-pau-primary/75">
               <Access label="Voiture" text="A64 sortie 11 · Parking gratuit derriere la tribune Pyrenees (700 places)" />
               <Access label="Bus" text="Lignes 4, 6 et 14 du reseau Idelis · Arret Nouste Camp" />
               <Access label="Train" text="Gare de Pau (centre) puis bus ou marche (15 min)" />
@@ -70,10 +70,10 @@ export default function NousteCampPage() {
             </ul>
           </div>
           <div>
-            <h2 className="font-display text-4xl uppercase leading-crush tracking-tightest text-[#0F1E45] md:text-5xl">
+            <h2 className="font-display text-4xl uppercase leading-crush tracking-tightest text-pau-primary md:text-5xl">
               Jour de match
             </h2>
-            <ul className="mt-6 space-y-4 font-sans text-base text-[#0F1E45]/75">
+            <ul className="mt-6 space-y-4 font-sans text-base text-pau-primary/75">
               <Access label="Ouverture" text="2h avant le coup d'envoi" />
               <Access label="Buvettes" text="Presentes dans chaque tribune · paiement sans contact" />
               <Access label="Boutique" text="Ouverte 1h30 avant et 30 min apres le match" />
@@ -89,10 +89,10 @@ export default function NousteCampPage() {
 function Stat({ label, value }) {
   return (
     <div>
-      <dt className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#0F1E45]/40">
+      <dt className="font-mono text-[10px] uppercase tracking-[0.2em] text-pau-primary/40">
         {label}
       </dt>
-      <dd className="mt-2 font-display text-4xl uppercase leading-crush tracking-tightest text-[#0F1E45] md:text-5xl">
+      <dd className="mt-2 font-display text-4xl uppercase leading-crush tracking-tightest text-pau-primary md:text-5xl">
         {value}
       </dd>
     </div>
@@ -101,16 +101,16 @@ function Stat({ label, value }) {
 
 function Tribune({ name, capacity, note }) {
   return (
-    <li className="flex flex-col justify-between gap-2 border-t border-[#0F1E45]/10 pt-5 md:flex-row md:items-center">
+    <li className="flex flex-col justify-between gap-2 border-t border-pau-primary/10 pt-5 md:flex-row md:items-center">
       <div>
-        <p className="font-display text-2xl uppercase leading-crush tracking-tightest text-[#0F1E45]">
+        <p className="font-display text-2xl uppercase leading-crush tracking-tightest text-pau-primary">
           {name}
         </p>
-        <p className="mt-1 font-mono text-[10px] uppercase tracking-[0.2em] text-[#FFD60A]">
+        <p className="mt-1 font-mono text-[10px] uppercase tracking-[0.2em] text-pau-yellow">
           {capacity}
         </p>
       </div>
-      <p className="font-sans text-sm text-[#0F1E45]/60 md:max-w-xs md:text-right">
+      <p className="font-sans text-sm text-pau-primary/60 md:max-w-xs md:text-right">
         {note}
       </p>
     </li>
@@ -120,7 +120,7 @@ function Tribune({ name, capacity, note }) {
 function Access({ label, text }) {
   return (
     <li>
-      <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#FFD60A]">
+      <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-pau-yellow">
         {label}
       </p>
       <p className="mt-1 leading-relaxed">{text}</p>
