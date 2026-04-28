@@ -44,6 +44,26 @@ export default async function HomePage() {
     })
     .catch(() => []);
 
+  // Récupérer les derniers articles publiés
+  const recentArticles = await prisma.article
+    .findMany({
+      where: {
+        publishedAt: { lte: new Date() },
+      },
+      orderBy: { publishedAt: 'desc' },
+      take: 6,
+      select: {
+        id: true,
+        slug: true,
+        title: true,
+        excerpt: true,
+        coverImageUrl: true,
+        publishedAt: true,
+        category: true,
+      },
+    })
+    .catch(() => []);
+
   return (
     <>
       <NewsletterPopup />
@@ -222,7 +242,77 @@ export default async function HomePage() {
       {/* SECTION 3 - BANDEAU PARTENAIRES */}
       <ScrollingBanner partners={partners} />
 
-      {/* SECTION 4 - INSTAGRAM GRID 4x2 */}
+      {/* SECTION 4 - ARTICLES RÉCENTS */}
+      <section className="bg-pau-night py-16 md:py-20">
+        <div className="container-pau">
+          <div className="mb-12">
+            <h2 className="font-display text-3xl font-bold uppercase text-white md:text-4xl">
+              Actualités
+            </h2>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {recentArticles.map((article) => (
+              <Link
+                key={article.id}
+                href={`/actualites/${article.slug}`}
+                className="group overflow-hidden rounded-lg bg-pau-primary transition-all hover:bg-pau-primary-hover"
+              >
+                {/* Image */}
+                <div className="relative aspect-[16/9] overflow-hidden">
+                  {article.coverImageUrl ? (
+                    <Image
+                      src={article.coverImageUrl}
+                      alt={article.title}
+                      fill
+                      className="object-cover transition-transform duration-300 group-hover:scale-105"
+                    />
+                  ) : (
+                    <div className="h-full w-full bg-pau-night" />
+                  )}
+                </div>
+
+                {/* Contenu */}
+                <div className="p-6">
+                  <div className="mb-2 flex items-center gap-2">
+                    <span className="font-mono text-xs uppercase tracking-wider text-pau-yellow">
+                      {article.category}
+                    </span>
+                    <span className="text-white/40">·</span>
+                    <time className="font-mono text-xs text-white/60">
+                      {new Date(article.publishedAt).toLocaleDateString('fr-FR', {
+                        day: 'numeric',
+                        month: 'long',
+                        year: 'numeric',
+                      })}
+                    </time>
+                  </div>
+
+                  <h3 className="mb-3 font-display text-xl font-bold uppercase leading-tight text-white line-clamp-2">
+                    {article.title}
+                  </h3>
+
+                  <p className="font-sans text-sm leading-relaxed text-white/70 line-clamp-3">
+                    {article.excerpt}
+                  </p>
+                </div>
+              </Link>
+            ))}
+          </div>
+
+          {/* Lien voir tous les articles */}
+          <div className="mt-12 text-center">
+            <Link
+              href="/actualites"
+              className="inline-block border-2 border-pau-yellow bg-transparent px-8 py-3 font-display text-sm font-bold uppercase tracking-wide text-pau-yellow transition-all hover:bg-pau-yellow hover:text-pau-night"
+            >
+              Voir toutes les actualités
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 5 - INSTAGRAM GRID 4x2 */}
       <section className="bg-pau-night py-16 md:py-20">
         <div className="container-pau">
           <div className="mb-12 text-center">
