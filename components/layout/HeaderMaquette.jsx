@@ -20,12 +20,16 @@ export function HeaderMaquette() {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Sur la homepage, attendre d'avoir scrollé au-delà du hero complet
-      // Sur les autres pages, apparaître plus tôt
-      const heroHeight = window.innerHeight;
       const isHomepage = pathname === '/';
-      const threshold = isHomepage ? heroHeight + 50 : heroHeight - 100;
-      setIsScrolled(window.scrollY > threshold);
+
+      if (isHomepage) {
+        // Homepage : apparaître après avoir scrollé au-delà du hero complet
+        const heroHeight = window.innerHeight;
+        setIsScrolled(window.scrollY > heroHeight + 50);
+      } else {
+        // Autres pages : apparaître après un petit scroll
+        setIsScrolled(window.scrollY > 100);
+      }
     };
 
     handleScroll(); // Check initial state
