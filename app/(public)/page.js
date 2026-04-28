@@ -46,32 +46,67 @@ export default async function HomePage() {
       {/* Header */}
       <HeaderMaquette />
 
-      {/* Section Hero - Image principale */}
-      <section className="relative h-[60vh] min-h-[500px] overflow-hidden bg-pau-night md:h-[70vh]">
-        <Image
-          src="/images/homepage/hero-match.jpg"
-          alt="Pau FC vs Amiens"
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-pau-night/80 via-pau-night/40 to-transparent" />
+      {/* Section Hero - Split Vidéo/Contenu */}
+      <section className="relative min-h-screen bg-pau-night">
+        <div className="grid h-screen md:grid-cols-2">
+          {/* GAUCHE - Vidéo */}
+          <div className="relative overflow-hidden">
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="h-full w-full object-cover"
+            >
+              <source src="/videos/hero.mp4" type="video/mp4" />
+            </video>
+            {/* Overlay subtil */}
+            <div className="absolute inset-0 bg-pau-night/20" />
+          </div>
 
-        {/* CTA sur le hero */}
-        <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12">
-          <div className="container-pau flex flex-wrap gap-4">
-            <Link
-              href="/billetterie"
-              className="border-2 border-pau-yellow bg-pau-yellow px-8 py-4 font-display text-sm font-bold uppercase tracking-wide text-pau-night transition-all hover:bg-transparent hover:text-pau-yellow"
-            >
-              Billetterie
-            </Link>
-            <Link
-              href="/boutique"
-              className="border-2 border-white bg-transparent px-8 py-4 font-display text-sm font-bold uppercase tracking-wide text-white transition-all hover:bg-white hover:text-pau-night"
-            >
-              Boutique
-            </Link>
+          {/* DROITE - Contenu */}
+          <div className="relative flex flex-col items-center justify-center p-8 md:p-12 lg:p-16">
+            <div className="w-full max-w-xl space-y-8">
+              {/* Badge */}
+              <span className="inline-block font-mono text-xs font-semibold uppercase tracking-wider text-pau-yellow">
+                Prochain match
+              </span>
+
+              {/* Titre principal */}
+              <div>
+                <h1 className="font-display text-5xl font-bold uppercase text-white md:text-6xl lg:text-7xl">
+                  Pau FC
+                  <br />
+                  <span className="text-pau-yellow">vs Amiens</span>
+                </h1>
+              </div>
+
+              {/* Infos match */}
+              <div className="space-y-2">
+                <p className="font-mono text-sm uppercase tracking-wider text-white/70">
+                  Vendredi 26 Avril 2026 · 20h00
+                </p>
+                <p className="font-sans text-base text-white/60">
+                  Nouste Camp · Pau
+                </p>
+              </div>
+
+              {/* CTA */}
+              <div className="flex flex-wrap gap-4 pt-4">
+                <Link
+                  href="/billetterie"
+                  className="border-2 border-pau-yellow bg-pau-yellow px-8 py-4 font-display text-sm font-bold uppercase tracking-wide text-pau-night transition-all hover:bg-transparent hover:text-pau-yellow"
+                >
+                  Billetterie
+                </Link>
+                <Link
+                  href="/boutique"
+                  className="border-2 border-white bg-transparent px-8 py-4 font-display text-sm font-bold uppercase tracking-wide text-white transition-all hover:bg-white hover:text-pau-night"
+                >
+                  Boutique
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>
