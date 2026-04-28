@@ -40,7 +40,7 @@ export default async function JoueursAdminPage() {
             <Link
               key={player.id}
               href={`/admin/joueurs/${player.id}`}
-              className="group border border-gray-200/10 bg-pau-primary/20 p-6 transition-all hover:border-pau-yellow/30"
+              className="group border border-gray-200/10 bg-pau-primary/20 p-6 transition-all hover:bg-gray-50"
             >
               <div className="flex items-start gap-4">
                 {player.photoUrl ? (

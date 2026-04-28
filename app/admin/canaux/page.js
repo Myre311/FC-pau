@@ -161,7 +161,7 @@ export default function CanauxPage() {
           {availableChannels.map((channel) => (
             <div
               key={channel.id}
-              className="group relative overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm transition-all hover:border-pau-yellow hover:shadow-md"
+              className="group relative overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm transition-all  hover:shadow-md"
             >
               {/* Header avec gradient */}
               <div className={`h-24 bg-gradient-to-r ${channel.color} opacity-80 p-6`}>

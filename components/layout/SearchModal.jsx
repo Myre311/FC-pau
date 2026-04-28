@@ -100,7 +100,7 @@ export function SearchModal({ isOpen, onClose }) {
                         key={article.id}
                         href={`/actualites/${article.slug}`}
                         onClick={onClose}
-                        className="block border-l-4 border-transparent px-3 py-2 transition-colors hover:border-pau-yellow hover:bg-gray-50"
+                        className="block border-l-4 border-transparent px-3 py-2 transition-colors  hover:bg-gray-50"
                       >
                         <p className="font-display text-sm font-bold uppercase text-pau-night">{article.title}</p>
                         <p className="mt-1 line-clamp-1 text-xs text-gray-600">{article.excerpt}</p>
@@ -122,7 +122,7 @@ export function SearchModal({ isOpen, onClose }) {
                         key={product.id}
                         href={`/boutique/${product.slug}`}
                         onClick={onClose}
-                        className="flex gap-3 border-l-4 border-transparent px-3 py-2 transition-colors hover:border-pau-yellow hover:bg-gray-50"
+                        className="flex gap-3 border-l-4 border-transparent px-3 py-2 transition-colors  hover:bg-gray-50"
                       >
                         {product.images[0] && (
                           <div className="relative h-12 w-12 flex-shrink-0 border border-gray-200">
@@ -153,7 +153,7 @@ export function SearchModal({ isOpen, onClose }) {
                         key={player.id}
                         href={`/equipe#${player.slug}`}
                         onClick={onClose}
-                        className="flex items-center gap-3 border-l-4 border-transparent px-3 py-2 transition-colors hover:border-pau-yellow hover:bg-gray-50"
+                        className="flex items-center gap-3 border-l-4 border-transparent px-3 py-2 transition-colors  hover:bg-gray-50"
                       >
                         {player.photoUrl && (
                           <div className="relative h-12 w-12 flex-shrink-0 border border-gray-200">

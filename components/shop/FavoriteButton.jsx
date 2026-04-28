@@ -41,7 +41,7 @@ export function FavoriteButton({ productId, isFavorite, signedIn, returnTo }) {
       className={`flex h-9 w-9 items-center justify-center border transition-colors ${
         optimistic
           ? 'border-pau-yellow bg-pau-yellow text-pau-night'
-          : 'border-white/20 text-white hover:border-pau-yellow hover:text-pau-yellow'
+          : 'border-white/20 text-white hover:bg-gray-50'
       }`}
     >
       <svg

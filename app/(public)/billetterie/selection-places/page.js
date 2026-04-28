@@ -150,7 +150,7 @@ export default function SelectionPlacesPage() {
                   </div>
 
                   <button
-                    className="w-full border-2 border-pau-night bg-pau-night py-4 font-display text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-pau-yellow hover:border-pau-yellow hover:text-pau-night"
+                    className="w-full border-2 border-pau-night bg-pau-night py-4 font-display text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-pau-yellow  hover:text-pau-night"
                   >
                     Continuer vers le paiement
                   </button>

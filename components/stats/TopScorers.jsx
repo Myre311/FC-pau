@@ -12,7 +12,7 @@ export function TopScorers({ title, players, statKey }) {
           {players.map((player, index) => (
             <div
               key={player.id}
-              className="flex items-center gap-4 border-l-4 border-transparent p-3 transition-colors hover:border-pau-yellow hover:bg-gray-50"
+              className="flex items-center gap-4 border-l-4 border-transparent p-3 transition-colors  hover:bg-gray-50"
             >
               {/* Rang */}
               <div

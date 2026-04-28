@@ -121,7 +121,7 @@ export default async function ProductPage({ params }) {
           {product.customizable && (
             <Link
               href={`/boutique/${product.slug}/personnaliser`}
-              className="mt-6 inline-flex items-center gap-3 self-start border-b border-pau-yellow/40 py-1 font-mono text-[11px] uppercase tracking-[0.2em] text-pau-yellow transition-colors hover:border-pau-yellow"
+              className="mt-6 inline-flex items-center gap-3 self-start border-b border-pau-yellow/40 py-1 font-mono text-[11px] uppercase tracking-[0.2em] text-pau-yellow transition-colors "
             >
               <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
                 <path d="M3 17l6-6 4 4 8-8M21 7v6h-6" strokeLinecap="square" />

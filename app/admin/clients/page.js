@@ -46,7 +46,7 @@ export default async function AdminClientsPage({ searchParams }) {
         />
         <button
           type="submit"
-          className="border border-gray-200/20 px-4 font-mono text-[10px] uppercase tracking-[0.2em] text-gray-900 transition-colors hover:border-pau-yellow hover:text-pau-yellow"
+          className="border border-gray-200/20 px-4 font-mono text-[10px] uppercase tracking-[0.2em] text-gray-900 transition-colors hover:bg-gray-50"
         >
           Rechercher
         </button>

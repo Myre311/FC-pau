@@ -102,7 +102,7 @@ export function CommentsList({ articleId, initialComments = [] }) {
             <button
               type="submit"
               disabled={submitting}
-              className="inline-flex items-center gap-3 border-2 border-pau-night bg-pau-night px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-pau-yellow hover:border-pau-yellow hover:text-pau-night disabled:opacity-50"
+              className="inline-flex items-center gap-3 border-2 border-pau-night bg-pau-night px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-pau-yellow  hover:text-pau-night disabled:opacity-50"
             >
               {submitting ? 'Envoi...' : 'Publier'}
             </button>

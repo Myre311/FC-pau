@@ -99,7 +99,7 @@ export function MatchCard({ match }) {
               href={match.ticketUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="border-b border-pau-yellow/40 pb-0.5 text-pau-yellow transition-colors hover:border-pau-yellow"
+              className="border-b border-pau-yellow/40 pb-0.5 text-pau-yellow transition-colors "
             >
               Billetterie →
             </a>

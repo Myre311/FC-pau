@@ -67,8 +67,8 @@ export function AddToCartForm({ product, variants }) {
                   className={`min-w-12 px-3 py-2 font-mono text-xs uppercase tracking-[0.2em] transition-colors ${
                     active
                       ? 'border border-pau-yellow bg-pau-yellow text-pau-night'
-                      : 'border border-pau-primary/20 text-pau-primary hover:border-pau-yellow'
-                  } ${disabled ? 'cursor-not-allowed opacity-30 line-through hover:border-pau-primary/20' : ''}`}
+                      : 'border border-gray-200 text-pau-primary hover:bg-gray-50'
+                  } ${disabled ? 'cursor-not-allowed opacity-30 line-through hover:bg-transparent' : ''}`}
                   aria-pressed={active}
                   aria-label={`Taille ${v.size}${disabled ? ' — épuisée' : ''}`}
                 >

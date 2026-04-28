@@ -98,7 +98,7 @@ export function ImageUpload({
         </div>
       ) : (
         <div>
-          <label className="flex flex-col items-center justify-center w-full max-w-md h-64 border-2 border-dashed border-gray-200/20 cursor-pointer hover:border-pau-yellow/50 transition-colors bg-pau-night/50">
+          <label className="flex flex-col items-center justify-center w-full max-w-md h-64 border-2 border-dashed border-gray-200/20 cursor-pointer hover:bg-gray-50 transition-colors bg-pau-night/50">
             <div className="flex flex-col items-center justify-center pt-5 pb-6">
               <svg
                 className="w-10 h-10 mb-3 text-gray-900/40"

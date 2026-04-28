@@ -154,7 +154,7 @@ export function POSInterface() {
                         className={`rounded border p-2 text-left transition-colors ${
                           isOutOfStock
                             ? 'cursor-not-allowed border-pau-primary/10 bg-pau-primary/5 opacity-50'
-                            : 'border-pau-primary/20 bg-white hover:border-pau-yellow hover:bg-pau-yellow/5'
+                            : 'border-pau-primary/20 bg-white hover:bg-gray-50'
                         }`}
                       >
                         <div className="flex items-start justify-between gap-2">
@@ -230,7 +230,7 @@ export function POSInterface() {
                     <div className="flex items-center gap-2">
                       <button
                         onClick={() => updateQuantity(item.variantId, -1)}
-                        className="flex h-6 w-6 items-center justify-center rounded border border-pau-primary/20 text-pau-primary hover:border-pau-yellow hover:bg-pau-yellow hover:text-pau-night"
+                        className="flex h-6 w-6 items-center justify-center rounded border border-pau-primary/20 text-pau-primary  hover:bg-pau-yellow hover:text-pau-night"
                       >
                         −
                       </button>
@@ -240,7 +240,7 @@ export function POSInterface() {
                       <button
                         onClick={() => updateQuantity(item.variantId, 1)}
                         disabled={item.quantity >= item.available}
-                        className="flex h-6 w-6 items-center justify-center rounded border border-pau-primary/20 text-pau-primary hover:border-pau-yellow hover:bg-pau-yellow hover:text-pau-night disabled:cursor-not-allowed disabled:opacity-30"
+                        className="flex h-6 w-6 items-center justify-center rounded border border-pau-primary/20 text-pau-primary  hover:bg-pau-yellow hover:text-pau-night disabled:cursor-not-allowed disabled:opacity-30"
                       >
                         +
                       </button>
@@ -280,7 +280,7 @@ export function POSInterface() {
                     className={`rounded border py-2 font-mono text-xs uppercase transition-colors ${
                       paymentMethod === method.value
                         ? 'border-pau-yellow bg-pau-yellow text-pau-night'
-                        : 'border-pau-primary/20 text-pau-primary hover:border-pau-yellow'
+                        : 'border-pau-primary/20 text-pau-primary '
                     }`}
                   >
                     {method.label}

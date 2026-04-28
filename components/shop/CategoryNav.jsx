@@ -36,7 +36,7 @@ export function CategoryNav() {
                 className={`group relative flex items-center gap-2 whitespace-nowrap rounded-full border-2 px-4 py-2 font-display text-xs font-bold uppercase tracking-wide transition-all md:px-6 md:py-2.5 md:text-sm ${
                   isActive
                     ? 'border-pau-yellow bg-pau-yellow text-pau-night'
-                    : 'border-white/20 bg-transparent text-white/80 hover:border-pau-yellow hover:bg-pau-yellow/10 hover:text-pau-yellow'
+                    : 'border-white/20 bg-transparent text-white/80 hover:bg-gray-50 hover:text-pau-yellow'
                 }`}
               >
                 {/* Label */}

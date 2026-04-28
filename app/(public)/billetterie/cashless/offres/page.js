@@ -197,7 +197,7 @@ function OffreCard({
         {active ? (
           <Link
             href={ctaHref}
-            className="inline-block border border-gray-200/20 px-6 py-3 font-mono text-sm uppercase tracking-wider text-pau-primary transition-colors hover:border-pau-yellow hover:text-pau-yellow"
+            className="inline-block border border-gray-200 px-6 py-3 font-mono text-sm uppercase tracking-wider text-pau-primary transition-colors hover:bg-gray-50"
           >
             {ctaText}
           </Link>

@@ -29,7 +29,7 @@ export function QuickAction({ href, icon = 'plus', label, description, badge }) 
   return (
     <Link
       href={href}
-      className="group relative flex items-center gap-4 rounded-lg border border-gray-200/10 bg-pau-primary/20 p-4 transition-all hover:border-pau-yellow/30 hover:bg-pau-primary/40"
+      className="group relative flex items-center gap-4 rounded-lg border border-gray-200 bg-white p-4 transition-all hover:bg-gray-50"
     >
       <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-pau-yellow/10 text-pau-yellow transition-transform group-hover:scale-110">
         {ICONS[icon]}

@@ -36,7 +36,7 @@ export default async function AdminProduitPage({ params }) {
               href={`/boutique/${product.slug}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="border border-gray-200/20 px-3 py-2 font-mono text-[10px] uppercase tracking-[0.2em] text-gray-900/70 transition-colors hover:border-pau-yellow hover:text-pau-yellow"
+              className="border border-gray-200/20 px-3 py-2 font-mono text-[10px] uppercase tracking-[0.2em] text-gray-900/70 transition-colors hover:bg-gray-50"
             >
               Voir sur le site ↗
             </Link>

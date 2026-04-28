@@ -153,7 +153,7 @@ export function JerseyConfigurator({ product, variants }) {
                   className={`min-w-12 px-3 py-2 font-mono text-xs uppercase tracking-[0.2em] transition-colors ${
                     active
                       ? 'border border-pau-yellow bg-pau-yellow text-pau-night'
-                      : 'border border-white/15 text-white hover:border-pau-yellow'
+                      : 'border border-white/15 text-white hover:border-white/30'
                   } ${disabled ? 'cursor-not-allowed opacity-30 line-through hover:border-white/15' : ''}`}
                 >
                   {v.size}

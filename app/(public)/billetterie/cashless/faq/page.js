@@ -194,7 +194,7 @@ export default function FAQCashlessPage() {
           <div className="mt-8 flex flex-wrap gap-4">
             <Link
               href="/billetterie/cashless"
-              className="inline-block border border-white/20 px-6 py-3 font-mono text-sm uppercase tracking-wider text-pau-primary transition-colors hover:border-pau-yellow hover:text-pau-yellow"
+              className="inline-block border border-gray-200 px-6 py-3 font-mono text-sm uppercase tracking-wider text-pau-primary transition-colors hover:bg-gray-50"
             >
               Retour Cashless
             </Link>
