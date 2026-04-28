@@ -16,8 +16,8 @@ export function Logo({ className, size = 'md', showText = true }) {
   return (
     <span className={cn('flex items-center gap-[10px]', className)} aria-label="Pau FC">
       <Image
-        src="/logos/pau-fc.svg"
-        alt=""
+        src="/logo-pau-fc.svg"
+        alt="Pau FC"
         width={s.img}
         height={s.img}
         priority
