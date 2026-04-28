@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 
 export const metadata = {
@@ -10,149 +11,189 @@ export default function PoleFemininPage() {
   return (
     <article>
       {/* Hero */}
-      <section className="bg-pau-primary py-16 md:py-24">
-        <div className="container-fc">
-          <p className="text-xs text-pau-yellow uppercase tracking-wider">Academy · Filles</p>
-          <h1 className="mt-6 text-[14vw] md:text-[10vw] lg:text-[140px] text-white">
-            PÔLE <span className="text-pau-yellow">FÉMININ</span>
-          </h1>
-          <p className="mt-6 max-w-3xl font-sans text-lg leading-relaxed text-white/70 md:text-xl">
-            Former les joueuses de demain. Le pôle féminin de l'Academy Pau FC
-            accompagne les jeunes filles passionnées de football vers le haut
-            niveau.
-          </p>
+      <section className="relative min-h-[400px] overflow-hidden bg-pau-night md:h-[60vh] md:min-h-[500px]">
+        <Image
+          src="/images/hero-academy-feminin.jpg"
+          alt="Pôle Féminin Academy Pau FC"
+          fill
+          className="object-cover brightness-50"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-pau-night via-pau-night/60 to-transparent" />
+
+        <div className="container-pau relative flex h-full items-end pb-16 md:pb-20">
+          <div className="max-w-3xl">
+            <span className="font-mono text-xs font-semibold uppercase tracking-wider text-pau-yellow">
+              Academy · Filles
+            </span>
+            <h1 className="mt-4 font-display text-5xl font-bold uppercase leading-tight text-white md:text-6xl lg:text-7xl">
+              Pôle Féminin
+            </h1>
+            <p className="mt-4 font-sans text-lg leading-relaxed text-white/80 md:text-xl">
+              Former les joueuses de demain. Le pôle féminin de l'Academy Pau FC
+              accompagne les jeunes filles passionnées de football vers le haut
+              niveau.
+            </p>
+          </div>
         </div>
       </section>
 
       {/* Présentation */}
-      <section className="container-fc border-t border-gray-200/10 py-12 md:py-20">
-        <div className="grid gap-10 md:grid-cols-[1fr_2fr] md:gap-16">
-          <h2 className="font-display text-5xl uppercase leading-crush tracking-tightest text-pau-primary md:text-6xl">
-            Le projet
-          </h2>
-          <div className="space-y-5 font-sans text-base leading-relaxed text-pau-primary/75 md:text-lg">
-            <p>
-              Le pôle féminin du Pau FC s'inscrit dans le développement du
-              football féminin en Béarn et en Nouvelle-Aquitaine. Lancé il y a
-              quelques années, il accueille aujourd'hui des joueuses de U13 à
-              U19 dans un environnement professionnel et structuré.
-            </p>
-            <p>
-              Nos joueuses évoluent en championnats régionaux et nationaux selon
-              leur catégorie d'âge. L'objectif est double : progresser
-              techniquement et tactiquement, tout en maintenant un parcours
-              scolaire de qualité.
-            </p>
-            <p>
-              Le staff technique est composé d'entraîneurs diplômés, spécialisés
-              dans la formation féminine. Un suivi individualisé est proposé à
-              chaque joueuse pour l'aider à atteindre ses objectifs sportifs et
-              personnels.
-            </p>
+      <section className="bg-white py-14 md:py-20">
+        <div className="container-pau">
+          <div className="grid gap-10 md:grid-cols-[1fr_2fr] md:gap-16">
+            <div>
+              <span className="font-mono text-xs font-semibold uppercase tracking-wider text-pau-yellow">
+                Le projet
+              </span>
+              <h2 className="mt-4 font-display text-4xl font-bold uppercase text-pau-night md:text-5xl">
+                Former les joueuses
+              </h2>
+            </div>
+            <div className="space-y-5 font-sans text-base leading-relaxed text-pau-night/70 md:text-lg">
+              <p>
+                Le pôle féminin du Pau FC s'inscrit dans le développement du
+                football féminin en Béarn et en Nouvelle-Aquitaine. Lancé il y a
+                quelques années, il accueille aujourd'hui des joueuses de U13 à
+                U19 dans un environnement professionnel et structuré.
+              </p>
+              <p>
+                Nos joueuses évoluent en championnats régionaux et nationaux selon
+                leur catégorie d'âge. L'objectif est double : progresser
+                techniquement et tactiquement, tout en maintenant un parcours
+                scolaire de qualité.
+              </p>
+              <p>
+                Le staff technique est composé d'entraîneurs diplômés, spécialisés
+                dans la formation féminine. Un suivi individualisé est proposé à
+                chaque joueuse pour l'aider à atteindre ses objectifs sportifs et
+                personnels.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Catégories */}
-      <section className="container-fc border-t border-gray-200/10 py-12 md:py-20">
-        <h2 className="mb-12 font-display text-5xl uppercase leading-crush tracking-tightest text-pau-primary md:text-6xl">
-          Catégories
-        </h2>
+      <section className="border-y border-white/10 bg-pau-primary py-14 md:py-20">
+        <div className="container-pau">
+          <div className="mb-12">
+            <span className="font-mono text-xs font-semibold uppercase tracking-wider text-pau-yellow">
+              Nos catégories
+            </span>
+            <h2 className="mt-4 font-display text-4xl font-bold uppercase text-white md:text-5xl">
+              De U13 à U19
+            </h2>
+          </div>
 
-        <div className="space-y-8">
-          <CategoryItem
-            title="U13 · U14 · U15"
-            description="Initiation au haut niveau · Apprentissage des fondamentaux techniques et tactiques · Encadrement bienveillant · Championnat régional."
-          />
-          <CategoryItem
-            title="U16 · U17"
-            description="Perfectionnement · Intensification du volume d'entraînement · Compétitions régionales et nationales · Suivi renforcé (physique, mental, nutrition)."
-          />
-          <CategoryItem
-            title="U18 · U19"
-            description="Préparation au haut niveau amateur ou professionnel · Championnat national · Lien avec l'équipe senior féminine · Projet post-formation (université, club professionnel)."
-          />
+          <div className="space-y-8">
+            <CategoryItem
+              title="U13 · U14 · U15"
+              description="Initiation au haut niveau · Apprentissage des fondamentaux techniques et tactiques · Encadrement bienveillant · Championnat régional."
+            />
+            <CategoryItem
+              title="U16 · U17"
+              description="Perfectionnement · Intensification du volume d'entraînement · Compétitions régionales et nationales · Suivi renforcé (physique, mental, nutrition)."
+            />
+            <CategoryItem
+              title="U18 · U19"
+              description="Préparation au haut niveau amateur ou professionnel · Championnat national · Lien avec l'équipe senior féminine · Projet post-formation (université, club professionnel)."
+            />
+          </div>
         </div>
       </section>
 
       {/* Encadrement */}
-      <section className="container-fc border-t border-gray-200/10 py-12 md:py-20">
-        <div className="grid gap-10 md:grid-cols-2 md:gap-16">
-          <div>
-            <h2 className="font-display text-5xl uppercase leading-crush tracking-tightest text-pau-primary md:text-6xl">
-              Encadrement
-            </h2>
-            <div className="mt-6 space-y-4 font-sans text-base leading-relaxed text-pau-primary/75 md:text-lg">
-              <p>
-                <strong className="text-pau-primary">Staff technique</strong> —
-                Entraîneurs diplômés UEFA B/A, spécialisés football féminin.
-              </p>
-              <p>
-                <strong className="text-pau-primary">Préparation physique</strong> —
-                Programme adapté à chaque catégorie d'âge.
-              </p>
-              <p>
-                <strong className="text-pau-primary">Suivi médical</strong> — Médecin
-                du sport, kinésithérapeutes.
-              </p>
-              <p>
-                <strong className="text-pau-primary">Suivi scolaire</strong> —
-                Partenariats avec des établissements locaux pour aménagement
-                horaires.
-              </p>
+      <section className="bg-white py-14 md:py-20">
+        <div className="container-pau">
+          <div className="grid gap-10 md:grid-cols-2 md:gap-16">
+            <div className="border border-pau-primary/10 bg-pau-primary/5 p-8 md:p-10">
+              <span className="font-mono text-xs font-semibold uppercase tracking-wider text-pau-yellow">
+                Encadrement
+              </span>
+              <h2 className="mt-4 font-display text-3xl font-bold uppercase text-pau-night md:text-4xl">
+                Staff technique
+              </h2>
+              <div className="mt-6 space-y-4 font-sans text-base leading-relaxed text-pau-night/70 md:text-lg">
+                <p>
+                  <strong className="text-pau-night">Staff technique</strong> —
+                  Entraîneurs diplômés UEFA B/A, spécialisés football féminin.
+                </p>
+                <p>
+                  <strong className="text-pau-night">Préparation physique</strong> —
+                  Programme adapté à chaque catégorie d'âge.
+                </p>
+                <p>
+                  <strong className="text-pau-night">Suivi médical</strong> — Médecin
+                  du sport, kinésithérapeutes.
+                </p>
+                <p>
+                  <strong className="text-pau-night">Suivi scolaire</strong> —
+                  Partenariats avec des établissements locaux pour aménagement
+                  horaires.
+                </p>
+              </div>
             </div>
-          </div>
 
-          <div>
-            <h2 className="font-display text-5xl uppercase leading-crush tracking-tightest text-pau-primary md:text-6xl">
-              Infrastructures
-            </h2>
-            <div className="mt-6 space-y-4 font-sans text-base leading-relaxed text-pau-primary/75 md:text-lg">
-              <p>
-                <strong className="text-pau-primary">Terrains</strong> — Accès aux
-                terrains du Nouste Camp et installations annexes.
-              </p>
-              <p>
-                <strong className="text-pau-primary">Vestiaires</strong> — Espaces
-                dédiés au pôle féminin.
-              </p>
-              <p>
-                <strong className="text-pau-primary">Salle de musculation</strong> —
-                Équipements professionnels.
-              </p>
-              <p>
-                <strong className="text-pau-primary">Salle vidéo</strong> — Analyse
-                tactique et débriefing.
-              </p>
+            <div className="border border-pau-primary/10 bg-pau-primary/5 p-8 md:p-10">
+              <span className="font-mono text-xs font-semibold uppercase tracking-wider text-pau-yellow">
+                Infrastructures
+              </span>
+              <h2 className="mt-4 font-display text-3xl font-bold uppercase text-pau-night md:text-4xl">
+                Équipements
+              </h2>
+              <div className="mt-6 space-y-4 font-sans text-base leading-relaxed text-pau-night/70 md:text-lg">
+                <p>
+                  <strong className="text-pau-night">Terrains</strong> — Accès aux
+                  terrains du Nouste Camp et installations annexes.
+                </p>
+                <p>
+                  <strong className="text-pau-night">Vestiaires</strong> — Espaces
+                  dédiés au pôle féminin.
+                </p>
+                <p>
+                  <strong className="text-pau-night">Salle de musculation</strong> —
+                  Équipements professionnels.
+                </p>
+                <p>
+                  <strong className="text-pau-night">Salle vidéo</strong> — Analyse
+                  tactique et débriefing.
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="container-fc border-t border-gray-200/10 py-12 md:py-20">
-        <div className="max-w-2xl">
-          <h2 className="font-display text-5xl uppercase leading-crush tracking-tightest text-pau-primary md:text-6xl">
-            Rejoindre le pôle féminin
-          </h2>
-          <p className="mt-6 font-sans text-base leading-relaxed text-pau-primary/75 md:text-lg">
-            Vous avez entre 12 et 18 ans, vous êtes passionnée de football et vous souhaitez
-            intégrer un projet ambitieux ? Découvrez comment candidater au pôle
-            féminin de l'Academy Pau FC.
-          </p>
-          <div className="mt-8 flex flex-wrap gap-4">
-            <Link
-              href="/academy/integrer"
-              className="inline-block bg-pau-yellow px-6 py-3 font-mono text-sm uppercase tracking-wider text-pau-night transition-transform hover:scale-105"
-            >
-              Candidater
-            </Link>
-            <Link
-              href="/academy"
-              className="inline-block border border-gray-200 px-6 py-3 font-mono text-sm uppercase tracking-wider text-pau-primary transition-colors hover:bg-gray-50"
-            >
-              Retour Academy
-            </Link>
+      <section className="border-y border-white/10 bg-pau-primary py-14 md:py-20">
+        <div className="container-pau">
+          <div className="max-w-2xl">
+            <span className="font-mono text-xs font-semibold uppercase tracking-wider text-pau-yellow">
+              Rejoindre
+            </span>
+            <h2 className="mt-4 font-display text-4xl font-bold uppercase text-white md:text-5xl">
+              Intégrer le pôle féminin
+            </h2>
+            <p className="mt-6 font-sans text-base leading-relaxed text-white/70 md:text-lg">
+              Vous avez entre 12 et 18 ans, vous êtes passionnée de football et vous souhaitez
+              intégrer un projet ambitieux ? Découvrez comment candidater au pôle
+              féminin de l'Academy Pau FC.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <Link
+                href="/academy/integrer"
+                className="inline-block border-2 border-pau-yellow bg-pau-yellow px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-pau-night transition-all hover:bg-transparent hover:text-pau-yellow"
+              >
+                Candidater
+              </Link>
+              <Link
+                href="/academy"
+                className="inline-block border-2 border-white bg-transparent px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-white transition-all hover:bg-white hover:text-pau-primary"
+              >
+                Retour Academy
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -160,14 +201,13 @@ export default function PoleFemininPage() {
   );
 }
 
-// Composant réutilisable pour chaque catégorie
 function CategoryItem({ title, description }) {
   return (
-    <div className="border-l-2 border-pau-yellow pl-6 md:pl-10">
-      <h3 className="font-display text-3xl uppercase leading-tight tracking-tight text-pau-primary md:text-4xl">
+    <div className="border-l-4 border-pau-yellow pl-6 md:pl-10">
+      <h3 className="font-display text-2xl font-bold uppercase text-white md:text-3xl">
         {title}
       </h3>
-      <p className="mt-4 font-sans text-base leading-relaxed text-pau-primary/75 md:text-lg">
+      <p className="mt-4 font-sans text-base leading-relaxed text-white/70 md:text-lg">
         {description}
       </p>
     </div>
