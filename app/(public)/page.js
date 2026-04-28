@@ -23,6 +23,14 @@ export default async function HomePage() {
     })
     .catch(() => null);
 
+  // Récupérer tous les partenaires actifs pour le bandeau
+  const partners = await prisma.partner
+    .findMany({
+      where: { active: true },
+      orderBy: [{ tier: 'asc' }, { position: 'asc' }],
+    })
+    .catch(() => []);
+
   return (
     <>
       <NewsletterPopup />
@@ -46,7 +54,7 @@ export default async function HomePage() {
           {/* DROITE - Photo Maillots */}
           <div className="relative overflow-hidden">
             <Image
-              src="/images/homepage/Boutique.png"
+              src="/images/hero-boutique.jpg"
               alt="Maillots Pau FC"
               fill
               className="object-cover"
@@ -65,7 +73,7 @@ export default async function HomePage() {
             <div className="relative aspect-[4/3] overflow-hidden">
               {/* Photo stade en fond */}
               <Image
-                src="/images/homepage/Boutique.png"
+                src="/images/hero-stade.jpg"
                 alt="Stade Nouste Camp"
                 fill
                 className="object-cover brightness-50"
@@ -158,8 +166,8 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* SECTION 3 - BANDEAU HOLY JAUNE */}
-      <ScrollingBanner text="HOLY FC 5 — retire 5€ sur ta première commande" />
+      {/* SECTION 3 - BANDEAU PARTENAIRES */}
+      <ScrollingBanner partners={partners} />
 
       {/* SECTION 4 - INSTAGRAM GRID 4x2 */}
       <section className="bg-pau-night py-16 md:py-20">
@@ -174,7 +182,16 @@ export default async function HomePage() {
 
           {/* Grille 4x2 */}
           <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
-            {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
+            {[
+              '/images/hero-equipe.jpg',
+              '/images/hero-boutique.jpg',
+              '/images/hero-stade.jpg',
+              '/images/hero-calendrier.jpg',
+              '/images/hero-actualites.jpg',
+              '/images/hero-club.jpg',
+              '/images/hero-billetterie.jpg',
+              '/images/hero-accueil.jpg'
+            ].map((img, i) => (
               <a
                 key={i}
                 href="https://www.instagram.com/paufootballclub/"
@@ -183,8 +200,8 @@ export default async function HomePage() {
                 className="group relative aspect-square overflow-hidden bg-pau-primary"
               >
                 <Image
-                  src="/images/homepage/Boutique.png"
-                  alt={`Instagram post ${i}`}
+                  src={img}
+                  alt={`Instagram post ${i + 1}`}
                   fill
                   className="object-cover transition-transform duration-300 group-hover:scale-105"
                 />
