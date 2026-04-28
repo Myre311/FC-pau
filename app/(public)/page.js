@@ -237,36 +237,59 @@ export default async function HomePage() {
               </div>
 
               {/* SECTION MATCH avec logos clubs */}
-              <div className="flex flex-col items-center gap-6 rounded-lg bg-pau-primary p-6 md:flex-row md:justify-between">
-                <div className="flex items-center gap-4">
-                  {/* Logo Pau FC */}
-                  <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white p-3 md:h-20 md:w-20">
-                    <Image
-                      src="/images/homepage/Logo-Pau-FC-2023.png"
-                      alt="Pau FC"
-                      width={60}
-                      height={60}
-                      className="h-full w-full object-contain"
-                    />
+              <div className="flex flex-col gap-4 rounded-lg bg-pau-primary p-6">
+                {/* Logo Ligue 2 BKT */}
+                <div className="flex justify-center">
+                  <Image
+                    src="/LFP_LOGOTYPE_L2_BKT_MASTER_WHITE_RVB-2048x581.png"
+                    alt="Ligue 2 BKT"
+                    width={120}
+                    height={34}
+                    className="h-auto w-24 object-contain md:w-28"
+                  />
+                </div>
+
+                {/* Équipes */}
+                <div className="flex items-center justify-center gap-4 md:gap-6">
+                  {/* Pau FC */}
+                  <div className="flex flex-col items-center gap-2">
+                    <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white p-3 md:h-20 md:w-20">
+                      <Image
+                        src="/images/homepage/Logo-Pau-FC-2023.png"
+                        alt="Pau FC"
+                        width={60}
+                        height={60}
+                        className="h-full w-full object-contain"
+                      />
+                    </div>
+                    <span className="font-display text-sm font-bold uppercase text-white md:text-base">
+                      Pau FC
+                    </span>
                   </div>
 
                   <span className="font-display text-xl font-bold text-white md:text-2xl">vs</span>
 
-                  {/* Logo équipe adverse - placeholder */}
-                  <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white p-3 md:h-20 md:w-20">
-                    <Image
-                      src="/images/homepage/Logo-MHSC.png"
-                      alt="Adversaire"
-                      width={60}
-                      height={60}
-                      className="h-full w-full object-contain"
-                    />
+                  {/* Équipe adverse */}
+                  <div className="flex flex-col items-center gap-2">
+                    <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white p-3 md:h-20 md:w-20">
+                      <Image
+                        src="/images/homepage/Logo-MHSC.png"
+                        alt="Montpellier"
+                        width={60}
+                        height={60}
+                        className="h-full w-full object-contain"
+                      />
+                    </div>
+                    <span className="font-display text-sm font-bold uppercase text-white md:text-base">
+                      Montpellier
+                    </span>
                   </div>
                 </div>
 
+                {/* Bouton Billetterie */}
                 <Link
                   href="/billetterie"
-                  className="w-full border-2 border-pau-yellow bg-pau-yellow px-6 py-3 text-center font-display text-xs font-bold uppercase tracking-wide text-pau-night transition-all hover:bg-transparent hover:text-pau-yellow md:w-auto md:text-sm"
+                  className="w-full border-2 border-pau-yellow bg-pau-yellow px-6 py-3 text-center font-display text-xs font-bold uppercase tracking-wide text-pau-night transition-all hover:bg-transparent hover:text-pau-yellow md:text-sm"
                 >
                   Billetterie
                 </Link>
