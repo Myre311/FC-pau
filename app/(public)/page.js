@@ -89,19 +89,19 @@ export default async function HomePage() {
 
             {/* Texte superposé */}
             <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-10 lg:p-16">
-              <span className="font-mono text-xs font-semibold uppercase tracking-wider text-pau-yellow">
-                Saison 2025/2026
-              </span>
-              <div className="mt-4">
+              <div className="mb-4">
                 <Image
                   src="/images/calendrier-icon.png"
                   alt="Calendrier"
-                  width={80}
-                  height={80}
-                  className="mb-4 h-16 w-auto md:h-20"
+                  width={120}
+                  height={120}
+                  className="h-24 w-auto md:h-32 lg:h-40"
                 />
               </div>
-              <h2 className="font-display text-3xl font-bold uppercase leading-tight text-white md:text-5xl lg:text-6xl">
+              <span className="font-mono text-xs font-semibold uppercase tracking-wider text-pau-yellow">
+                Saison 2025/2026
+              </span>
+              <h2 className="mt-4 font-display text-3xl font-bold uppercase leading-tight text-white md:text-5xl lg:text-6xl">
                 Calendrier<br />& Matchs
               </h2>
               <Link
