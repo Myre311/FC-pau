@@ -29,12 +29,10 @@ export function HeaderMaquette() {
 
   return (
     <header
-      className={`fixed top-0 left-0 z-50 w-full transition-transform duration-300 ${
-        isScrolled ? 'translate-y-0' : '-translate-y-full'
+      className={`fixed top-0 left-0 z-50 w-full transition-all duration-300 ${
+        isScrolled ? 'bg-pau-night/95 backdrop-blur-md' : 'bg-transparent'
       }`}
     >
-      {/* Fond avec backdrop blur */}
-      <div className="absolute inset-0 bg-pau-night/95 backdrop-blur-md" />
 
       <div className="relative flex items-center justify-between px-6 py-6 md:px-12 md:py-10">
         {/* Spacer gauche (responsive) */}
