@@ -17,6 +17,7 @@ const SECTIONS = [
     title: 'Ventes',
     items: [
       { href: '/admin/commandes', label: 'Commandes' },
+      { href: '/admin/pos', label: 'Caisse (POS)' },
       { href: '/admin/clients', label: 'Clients' },
       { href: '/admin/personnalisations', label: 'Flocage' },
     ],
