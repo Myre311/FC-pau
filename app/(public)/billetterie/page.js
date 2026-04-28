@@ -292,11 +292,11 @@ function MatchCardMaquette({ match }) {
       {match.competition && (
         <div className="mb-6 flex justify-center">
           <Image
-            src="/images/public/logos/ligue-2-bkt.svg"
+            src="/LFP_LOGOTYPE_L2_BKT_MASTER_WHITE_RVB-2048x581.png"
             alt={match.competition}
-            width={120}
-            height={40}
-            className="h-auto w-28 object-contain md:w-32"
+            width={160}
+            height={45}
+            className="h-auto w-32 object-contain md:w-40"
           />
         </div>
       )}
