@@ -42,46 +42,22 @@ export default async function HomePage() {
       {/* Newsletter popup */}
       <NewsletterPopup />
 
-      {/* Section Hero - Split Newsletter/Boutique comme refonte */}
+      {/* Section Hero - Split Vidéo/Boutique */}
       <section className="relative min-h-screen bg-pau-night">
         <div className="grid min-h-screen md:grid-cols-2">
-          {/* GAUCHE - Newsletter "REJOINS LE CLUB" */}
-          <div className="relative flex flex-col items-center justify-center bg-pau-night p-8 md:p-12 lg:p-16">
-            <div className="w-full max-w-xl space-y-8">
-              {/* Titre */}
-              <div>
-                <h1 className="font-display text-5xl font-bold uppercase text-white md:text-6xl lg:text-7xl">
-                  Rejoins
-                  <br />
-                  <span className="text-pau-yellow">le Club.</span>
-                </h1>
-              </div>
-
-              {/* Description */}
-              <div className="space-y-4">
-                <p className="font-sans text-lg text-white/80">
-                  Inscris-toi à la newsletter et profite de{' '}
-                  <span className="font-bold text-pau-yellow">10% de réduction</span> sur ta première commande
-                </p>
-              </div>
-
-              {/* Formulaire Newsletter */}
-              <div className="space-y-4">
-                <input
-                  type="email"
-                  placeholder="Ton adresse email"
-                  className="w-full border-2 border-white/20 bg-white/10 px-6 py-4 font-sans text-white placeholder:text-white/40 focus:border-pau-yellow focus:outline-none"
-                />
-                <button className="w-full border-2 border-pau-yellow bg-pau-yellow px-8 py-4 font-display text-sm font-bold uppercase tracking-wide text-pau-night transition-all hover:bg-transparent hover:text-pau-yellow">
-                  Obtenir mon code
-                </button>
-
-                {/* Note */}
-                <p className="text-center font-sans text-xs text-white/50">
-                  Pas de spam, seulement l'essentiel du Pau FC.
-                </p>
-              </div>
-            </div>
+          {/* GAUCHE - Vidéo */}
+          <div className="relative overflow-hidden bg-pau-night">
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="h-full w-full object-cover"
+            >
+              <source src="/videos/hero.mp4" type="video/mp4" />
+            </video>
+            {/* Overlay subtil pour contraste */}
+            <div className="absolute inset-0 bg-pau-night/10" />
           </div>
 
           {/* DROITE - Maillots/Boutique */}
