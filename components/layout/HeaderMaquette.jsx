@@ -12,6 +12,7 @@ export function HeaderMaquette() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
+    <>
     <header className="fixed top-0 left-0 z-50 w-full bg-pau-night/90 backdrop-blur-sm">
       <div className="container-pau">
         <div className="flex items-center justify-between py-4">
@@ -58,6 +59,7 @@ export function HeaderMaquette() {
           </div>
         </div>
       </div>
+    </header>
 
       {/* Menu hamburger fullscreen avec catégories + images */}
       {mobileMenuOpen && (
@@ -200,6 +202,6 @@ export function HeaderMaquette() {
           </div>
         </div>
       )}
-    </header>
+    </>
   );
 }
