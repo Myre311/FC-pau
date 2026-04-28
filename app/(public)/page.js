@@ -6,7 +6,9 @@ import { NewsletterPopup } from '@/components/ui/NewsletterPopup';
 import { ScrollingBanner } from '@/components/ui/ScrollingBanner';
 import { UpcomingMatchesSection } from '@/components/vitrine/UpcomingMatchesSection';
 import { SocialSection } from '@/components/vitrine/SocialSection';
-import { NewsSection } from '@/components/vitrine/NewsSection';
+import { FeaturedArticleSection } from '@/components/vitrine/FeaturedArticleSection';
+import { CTASection } from '@/components/vitrine/CTASection';
+import { NewsletterSection } from '@/components/vitrine/NewsletterSection';
 
 export const dynamic = 'force-dynamic';
 
@@ -41,15 +43,27 @@ export default async function HomePageMaquette() {
     })
     .catch(() => []);
 
-  // Récupérer les 3 dernières actualités
-  const recentNews = await prisma.article
-    .findMany({
+  // Récupérer l'article principal (le plus récent)
+  const featuredArticle = await prisma.article
+    .findFirst({
       where: {
         publishedAt: { lte: new Date() },
         status: 'published',
       },
       orderBy: { publishedAt: 'desc' },
-      take: 3,
+    })
+    .catch(() => null);
+
+  // Récupérer 2 articles secondaires (en excluant le principal)
+  const sideArticles = await prisma.article
+    .findMany({
+      where: {
+        publishedAt: { lte: new Date() },
+        status: 'published',
+        id: { not: featuredArticle?.id },
+      },
+      orderBy: { publishedAt: 'desc' },
+      take: 2,
     })
     .catch(() => []);
 
@@ -106,8 +120,10 @@ export default async function HomePageMaquette() {
 
         {/* Sections scrollables */}
         <UpcomingMatchesSection matches={upcomingMatches} />
-        <NewsSection articles={recentNews} />
+        <FeaturedArticleSection featuredArticle={featuredArticle} sideArticles={sideArticles} />
+        <CTASection />
         <SocialSection />
+        <NewsletterSection />
       </div>
 
       {/* Mobile : Hero vidéo + sections */}
@@ -140,8 +156,10 @@ export default async function HomePageMaquette() {
 
         {/* Sections mobiles */}
         <UpcomingMatchesSection matches={upcomingMatches} />
-        <NewsSection articles={recentNews} />
+        <FeaturedArticleSection featuredArticle={featuredArticle} sideArticles={sideArticles} />
+        <CTASection />
         <SocialSection />
+        <NewsletterSection />
       </div>
     </>
   );

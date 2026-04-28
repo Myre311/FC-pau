@@ -20,8 +20,9 @@ export function HeaderMaquette() {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Afficher le header après 100px de scroll
-      setIsScrolled(window.scrollY > 100);
+      // Afficher le header après avoir scrollé au-delà du hero
+      const heroHeight = window.innerHeight;
+      setIsScrolled(window.scrollY > heroHeight - 100);
     };
 
     window.addEventListener('scroll', handleScroll);
