@@ -22,22 +22,33 @@ export default function PartenairesPage() {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-pau-night">
       {/* Hero */}
-      <section className="bg-pau-night py-16 md:py-24">
-        <div className="container-pau text-center">
-          <h1 className="font-display text-4xl font-bold uppercase text-pau-gold md:text-5xl lg:text-6xl">
-            Et si on faisait de Pau<br />une ville de foot
-          </h1>
-          <p className="mx-auto mt-6 max-w-3xl font-sans text-lg leading-relaxed text-white/80 md:text-xl">
-            Rejoignez le réseau partenaire du Pau FC et bénéficiez d'une visibilité exceptionnelle,
-            d'expériences uniques et d'un réseau d'affaires privilégié.
-          </p>
+      <section className="relative h-[60vh] min-h-[500px] bg-pau-night">
+        <Image
+          src="/images/hero-partenaires.jpg"
+          alt="Partenaires Pau FC"
+          fill
+          className="object-cover brightness-50"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-pau-night via-pau-night/60 to-transparent" />
+        <div className="container-pau relative flex h-full items-center justify-center">
+          <div className="max-w-4xl text-center">
+            <span className="font-mono text-xs uppercase text-pau-gold">Partenariats</span>
+            <h1 className="mt-4 font-display text-4xl font-bold uppercase text-pau-gold md:text-5xl lg:text-6xl">
+              Et si on faisait de Pau<br />une ville de foot
+            </h1>
+            <p className="mx-auto mt-6 max-w-3xl font-sans text-lg leading-relaxed text-white/80 md:text-xl">
+              Rejoignez le réseau partenaire du Pau FC et bénéficiez d'une visibilité exceptionnelle,
+              d'expériences uniques et d'un réseau d'affaires privilégié.
+            </p>
+          </div>
         </div>
       </section>
 
       {/* Statistiques */}
-      <section className="border-y border-pau-gold/20 bg-white py-12">
+      <section className="border-y border-pau-gold/20 bg-pau-primary py-16 md:py-20">
         <div className="container-pau">
           <div className="grid gap-8 md:grid-cols-5">
             <StatBox number="11,800" label="Sièges/match" />
@@ -50,7 +61,7 @@ export default function PartenairesPage() {
       </section>
 
       {/* Nos Partenaires */}
-      <section className="bg-white py-16 md:py-24">
+      <section className="bg-pau-night py-16 md:py-24">
         <div className="container-pau">
           <h2 className="mb-12 text-center font-display text-3xl font-bold uppercase text-pau-gold md:text-4xl">
             Nos Partenaires
@@ -58,7 +69,7 @@ export default function PartenairesPage() {
 
           {/* Partenaires Majeurs */}
           <div className="mb-16">
-            <h3 className="mb-8 font-display text-2xl font-bold uppercase text-pau-night">
+            <h3 className="mb-8 font-display text-2xl font-bold uppercase text-pau-gold">
               Partenaires Majeurs
             </h3>
             <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
@@ -76,7 +87,7 @@ export default function PartenairesPage() {
 
           {/* Partenaires Premiums */}
           <div className="mb-16">
-            <h3 className="mb-8 font-display text-2xl font-bold uppercase text-pau-night">
+            <h3 className="mb-8 font-display text-2xl font-bold uppercase text-pau-gold">
               Partenaires Premiums
             </h3>
             <div className="grid gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
@@ -97,10 +108,10 @@ export default function PartenairesPage() {
 
           {/* Partenaires Officiels */}
           <div>
-            <h3 className="mb-8 font-display text-2xl font-bold uppercase text-pau-night">
+            <h3 className="mb-8 font-display text-2xl font-bold uppercase text-pau-gold">
               Partenaires Officiels
             </h3>
-            <p className="font-sans text-base text-pau-night/70">
+            <p className="font-sans text-base text-white/70">
               90+ entreprises locales soutiennent le Pau FC au quotidien.
             </p>
           </div>
@@ -108,7 +119,7 @@ export default function PartenairesPage() {
       </section>
 
       {/* Formulaire Devenir Partenaire */}
-      <section className="border-t border-pau-gold/20 bg-pau-night py-16 md:py-24">
+      <section className="border-t border-pau-gold/20 bg-pau-primary py-16 md:py-24">
         <div className="container-pau">
           <div className="mx-auto max-w-3xl">
             <h2 className="mb-4 text-center font-display text-3xl font-bold uppercase text-pau-gold md:text-4xl">
@@ -220,9 +231,9 @@ export default function PartenairesPage() {
       </section>
 
       {/* Contact */}
-      <section className="bg-white py-16">
+      <section className="bg-pau-night py-16">
         <div className="container-pau text-center">
-          <p className="mb-4 font-sans text-base text-pau-night/70">
+          <p className="mb-4 font-sans text-base text-white/70">
             Pour toute question sur les partenariats
           </p>
           <div className="space-y-2">
@@ -233,7 +244,7 @@ export default function PartenairesPage() {
               <a href="mailto:partenariats@paufc.fr" className="hover:underline">partenariats@paufc.fr</a>
             </p>
           </div>
-          <p className="mt-4 font-sans text-sm text-pau-night/60">
+          <p className="mt-4 font-sans text-sm text-white/60">
             Nouste Camp, 8 Boulevard de l'Aviation, 64320 Bizanos
           </p>
         </div>
@@ -246,23 +257,23 @@ function StatBox({ number, label }) {
   return (
     <div className="text-center">
       <div className="mb-2 font-display text-3xl font-bold text-pau-gold md:text-4xl">{number}</div>
-      <div className="font-sans text-sm text-pau-night/70">{label}</div>
+      <div className="font-sans text-sm text-white/70">{label}</div>
     </div>
   );
 }
 
 function PartnerLogo({ name }) {
   return (
-    <div className="flex aspect-[3/2] items-center justify-center border-2 border-pau-gold/20 bg-white p-6 transition-all hover:border-pau-gold">
-      <span className="font-display text-sm font-bold uppercase text-pau-night/40">{name}</span>
+    <div className="flex aspect-[3/2] items-center justify-center border-2 border-pau-gold/20 bg-pau-primary p-6 transition-all hover:border-pau-gold">
+      <span className="font-display text-sm font-bold uppercase text-white/40">{name}</span>
     </div>
   );
 }
 
 function PartnerLogoSmall({ name }) {
   return (
-    <div className="flex aspect-square items-center justify-center border border-pau-gold/10 bg-white p-4 transition-all hover:border-pau-gold">
-      <span className="text-center font-sans text-xs font-medium text-pau-night/40">{name}</span>
+    <div className="flex aspect-square items-center justify-center border border-pau-gold/10 bg-pau-primary p-4 transition-all hover:border-pau-gold">
+      <span className="text-center font-sans text-xs font-medium text-white/40">{name}</span>
     </div>
   );
 }

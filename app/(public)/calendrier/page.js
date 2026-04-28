@@ -29,19 +29,31 @@ export default function CalendrierPage() {
   });
 
   return (
-    <div className="min-h-screen bg-white">
-      {/* Header simple */}
-      <div className="border-b border-pau-night/10 bg-white py-12 md:py-16">
-        <div className="container-pau">
-          <h1 className="font-display text-4xl font-bold uppercase text-pau-night md:text-5xl lg:text-6xl">
-            Calendrier Saison 2025/2026
-          </h1>
+    <div className="min-h-screen bg-pau-night">
+      {/* Hero */}
+      <section className="relative h-[60vh] min-h-[500px] overflow-hidden bg-pau-night">
+        <Image
+          src="/images/hero-calendrier.jpg"
+          alt="Calendrier Pau FC"
+          fill
+          className="object-cover brightness-50"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-pau-night via-pau-night/60 to-transparent" />
+
+        <div className="container-pau relative flex h-full items-end pb-16 md:pb-20">
+          <div className="max-w-3xl">
+            <span className="font-mono text-xs font-semibold uppercase tracking-wider text-pau-yellow">Saison 2025/2026</span>
+            <h1 className="mt-4 font-display text-5xl font-bold uppercase leading-tight text-white md:text-6xl lg:text-7xl">
+              Calendrier
+            </h1>
+          </div>
         </div>
-      </div>
+      </section>
 
       {/* Contenu principal */}
       <div className="container-pau py-12 md:py-16">
-        <div className="grid gap-12 lg:grid-cols-[2fr_1fr]">
+        <div className="grid gap-8 lg:grid-cols-[2fr_1fr]">
           {/* Colonne gauche : Liste des matchs */}
           <div>
             {/* Filtres */}
@@ -51,7 +63,7 @@ export default function CalendrierPage() {
                 className={`border-2 px-6 py-3 font-display text-sm font-bold uppercase tracking-wide transition-all ${
                   filter === 'tous'
                     ? 'border-pau-yellow bg-pau-yellow text-pau-night'
-                    : 'border-pau-night/20 bg-white text-pau-night hover:border-pau-night'
+                    : 'border-white/20 bg-transparent text-white hover:border-pau-yellow'
                 }`}
               >
                 Tous les matchs
@@ -61,7 +73,7 @@ export default function CalendrierPage() {
                 className={`border-2 px-6 py-3 font-display text-sm font-bold uppercase tracking-wide transition-all ${
                   filter === 'domicile'
                     ? 'border-pau-yellow bg-pau-yellow text-pau-night'
-                    : 'border-pau-night/20 bg-white text-pau-night hover:border-pau-night'
+                    : 'border-white/20 bg-transparent text-white hover:border-pau-yellow'
                 }`}
               >
                 Domicile
@@ -71,7 +83,7 @@ export default function CalendrierPage() {
                 className={`border-2 px-6 py-3 font-display text-sm font-bold uppercase tracking-wide transition-all ${
                   filter === 'exterieur'
                     ? 'border-pau-yellow bg-pau-yellow text-pau-night'
-                    : 'border-pau-night/20 bg-white text-pau-night hover:border-pau-night'
+                    : 'border-white/20 bg-transparent text-white hover:border-pau-yellow'
                 }`}
               >
                 Extérieur
@@ -80,11 +92,11 @@ export default function CalendrierPage() {
 
             {/* Liste des matchs */}
             {loading ? (
-              <p className="py-12 text-center font-sans text-lg text-pau-night/60">
+              <p className="py-12 text-center font-sans text-lg text-white/60">
                 Chargement du calendrier...
               </p>
             ) : filteredMatches.length === 0 ? (
-              <p className="py-12 text-center font-sans text-lg text-pau-night/60">
+              <p className="py-12 text-center font-sans text-lg text-white/60">
                 Aucun match pour ce filtre.
               </p>
             ) : (
@@ -99,11 +111,11 @@ export default function CalendrierPage() {
           {/* Colonne droite : Classement */}
           <div>
             <div className="sticky top-24">
-              <h2 className="mb-6 font-display text-2xl font-bold uppercase text-pau-night">
+              <h2 className="mb-6 font-display text-2xl font-bold uppercase text-pau-yellow">
                 Classement Actuel 2025/2026
               </h2>
 
-              <div className="border-2 border-pau-night/10 bg-white p-6">
+              <div className="border-2 border-white/10 bg-pau-primary p-6">
                 <div className="mb-6 flex items-center justify-center">
                   <Image
                     src="/images/homepage/Logo-Pau-FC-2023.png"
@@ -115,31 +127,31 @@ export default function CalendrierPage() {
                 </div>
 
                 <div className="space-y-4">
-                  <div className="flex items-center justify-between border-b border-pau-night/10 pb-3">
-                    <span className="font-sans text-sm text-pau-night/70">Position</span>
+                  <div className="flex items-center justify-between border-b border-white/10 pb-3">
+                    <span className="font-sans text-sm text-white/70">Position</span>
                     <span className="font-display text-2xl font-bold text-pau-yellow">8e</span>
                   </div>
-                  <div className="flex items-center justify-between border-b border-pau-night/10 pb-3">
-                    <span className="font-sans text-sm text-pau-night/70">Points</span>
-                    <span className="font-display text-xl font-bold text-pau-night">42</span>
+                  <div className="flex items-center justify-between border-b border-white/10 pb-3">
+                    <span className="font-sans text-sm text-white/70">Points</span>
+                    <span className="font-display text-xl font-bold text-white">42</span>
                   </div>
-                  <div className="grid grid-cols-3 gap-4 border-b border-pau-night/10 pb-3">
+                  <div className="grid grid-cols-3 gap-4 border-b border-white/10 pb-3">
                     <div className="text-center">
-                      <div className="mb-1 font-sans text-xs text-pau-night/60">V</div>
-                      <div className="font-display text-lg font-bold text-green-600">12</div>
+                      <div className="mb-1 font-sans text-xs text-white/60">V</div>
+                      <div className="font-display text-lg font-bold text-green-400">12</div>
                     </div>
                     <div className="text-center">
-                      <div className="mb-1 font-sans text-xs text-pau-night/60">N</div>
-                      <div className="font-display text-lg font-bold text-gray-600">6</div>
+                      <div className="mb-1 font-sans text-xs text-white/60">N</div>
+                      <div className="font-display text-lg font-bold text-gray-400">6</div>
                     </div>
                     <div className="text-center">
-                      <div className="mb-1 font-sans text-xs text-pau-night/60">D</div>
-                      <div className="font-display text-lg font-bold text-red-600">8</div>
+                      <div className="mb-1 font-sans text-xs text-white/60">D</div>
+                      <div className="font-display text-lg font-bold text-red-400">8</div>
                     </div>
                   </div>
                   <Link
                     href="/classement"
-                    className="mt-4 block border-2 border-pau-night bg-transparent py-2 text-center font-display text-xs font-bold uppercase tracking-wide text-pau-night transition-all hover:bg-pau-night hover:text-white"
+                    className="mt-4 block border-2 border-pau-yellow bg-transparent py-2 text-center font-display text-xs font-bold uppercase tracking-wide text-pau-yellow transition-all hover:bg-pau-yellow hover:text-pau-night"
                   >
                     Voir le classement complet
                   </Link>
@@ -149,16 +161,16 @@ export default function CalendrierPage() {
               {/* Zones de classement */}
               <div className="mt-6 space-y-2 text-sm">
                 <div className="flex items-center gap-2">
-                  <div className="h-3 w-3 bg-green-500" />
-                  <span className="font-sans text-pau-night/70">Montée en Ligue 1</span>
+                  <div className="h-3 w-3 bg-green-400" />
+                  <span className="font-sans text-white/70">Montée en Ligue 1</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <div className="h-3 w-3 bg-orange-500" />
-                  <span className="font-sans text-pau-night/70">Barrages</span>
+                  <div className="h-3 w-3 bg-orange-400" />
+                  <span className="font-sans text-white/70">Barrages</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <div className="h-3 w-3 bg-red-500" />
-                  <span className="font-sans text-pau-night/70">Relégation en National</span>
+                  <div className="h-3 w-3 bg-red-400" />
+                  <span className="font-sans text-white/70">Relégation en National</span>
                 </div>
               </div>
             </div>
@@ -185,7 +197,7 @@ function MatchCard({ match }) {
   const isPlayed = match.status === 'played';
 
   return (
-    <article className="border-2 border-pau-night/10 bg-white p-6 transition-all hover:border-pau-yellow">
+    <article className="border-2 border-white/10 bg-pau-primary p-6 transition-all hover:border-pau-yellow">
       {/* Badge compétition + date */}
       <div className="mb-4 flex items-center justify-between">
         {match.competition && (
@@ -193,7 +205,7 @@ function MatchCard({ match }) {
             {match.competition}
           </span>
         )}
-        <span className="font-sans text-sm text-pau-night/60">
+        <span className="font-sans text-sm text-white/60">
           {dateFr} · {heure}
         </span>
       </div>
@@ -209,7 +221,7 @@ function MatchCard({ match }) {
               className="object-contain"
             />
           </div>
-          <span className="font-display text-lg font-bold uppercase text-pau-night">
+          <span className="font-display text-lg font-bold uppercase text-white">
             {match.isHome ? 'PAU FC' : match.opponentName}
           </span>
         </div>
@@ -219,17 +231,17 @@ function MatchCard({ match }) {
             <span className="font-display text-2xl font-bold text-pau-yellow">
               {match.isHome ? match.homeScore : match.awayScore}
             </span>
-            <span className="font-display text-xl text-pau-night/40">-</span>
-            <span className="font-display text-2xl font-bold text-pau-night/60">
+            <span className="font-display text-xl text-white/40">-</span>
+            <span className="font-display text-2xl font-bold text-white/60">
               {match.isHome ? match.awayScore : match.homeScore}
             </span>
           </div>
         ) : (
-          <span className="font-display text-xl font-bold text-pau-night/30">VS</span>
+          <span className="font-display text-xl font-bold text-white/30">VS</span>
         )}
 
         <div className="flex flex-1 items-center justify-end gap-3">
-          <span className="font-display text-lg font-bold uppercase text-pau-night">
+          <span className="font-display text-lg font-bold uppercase text-white">
             {match.isHome ? match.opponentName : 'PAU FC'}
           </span>
           <div className="relative h-10 w-10 flex-shrink-0">
@@ -244,7 +256,7 @@ function MatchCard({ match }) {
       </div>
 
       {/* Infos lieu */}
-      <div className="flex items-center justify-between text-sm text-pau-night/60">
+      <div className="flex items-center justify-between text-sm text-white/60">
         <span>{match.venue || (match.isHome ? 'Nouste Camp' : 'Extérieur')}</span>
         <span className="font-mono text-xs uppercase">
           {match.isHome ? 'Domicile' : 'Extérieur'}
@@ -257,7 +269,7 @@ function MatchCard({ match }) {
           href={match.ticketUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-4 inline-block border-2 border-pau-yellow bg-pau-yellow px-4 py-2 font-display text-xs font-bold uppercase tracking-wide text-pau-night transition-all hover:bg-pau-night hover:border-pau-night hover:text-pau-yellow"
+          className="mt-4 inline-block border-2 border-pau-yellow bg-pau-yellow px-4 py-2 font-display text-xs font-bold uppercase tracking-wide text-pau-night transition-all hover:bg-transparent hover:text-pau-yellow"
         >
           Billetterie
         </a>

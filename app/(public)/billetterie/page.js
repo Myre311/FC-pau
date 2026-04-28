@@ -51,17 +51,17 @@ export default async function BilletteriePage() {
       </section>
 
       {/* Prochains matchs */}
-      <section className="bg-white py-16 md:py-24">
+      <section className="bg-pau-night py-16 md:py-24">
         <div className="container-pau">
           <div className="mb-12">
-            <span className="badge-mono text-pau-primary">Matchs à domicile</span>
-            <h2 className="mt-4 font-display text-4xl font-bold uppercase text-pau-night md:text-5xl">
+            <span className="badge-mono text-pau-yellow">Matchs à domicile</span>
+            <h2 className="mt-4 font-display text-4xl font-bold uppercase text-pau-yellow md:text-5xl">
               Prochains matchs
             </h2>
           </div>
 
           {upcomingMatches.length === 0 ? (
-            <p className="font-sans text-lg text-pau-night/60">
+            <p className="font-sans text-lg text-white/60">
               Aucun match à domicile programmé pour le moment.{' '}
               <Link href="/calendrier" className="text-pau-yellow hover:underline">
                 Voir le calendrier complet
@@ -78,7 +78,7 @@ export default async function BilletteriePage() {
       </section>
 
       {/* Tarifs */}
-      <section className="border-y border-pau-night/10 bg-pau-night py-16 md:py-24">
+      <section className="border-y border-white/10 bg-pau-primary py-16 md:py-24">
         <div className="container-pau">
           <div className="mb-12">
             <span className="badge-mono text-pau-yellow">Prix</span>
@@ -127,38 +127,38 @@ export default async function BilletteriePage() {
       </section>
 
       {/* Cashless */}
-      <section className="bg-white py-16 md:py-24">
+      <section className="bg-pau-night py-16 md:py-24">
         <div className="container-pau">
           <div className="grid gap-12 md:grid-cols-2 md:items-center">
             <div>
-              <span className="badge-mono text-pau-primary">Paiement</span>
-              <h2 className="mt-4 font-display text-4xl font-bold uppercase text-pau-night md:text-5xl">
+              <span className="badge-mono text-pau-yellow">Paiement</span>
+              <h2 className="mt-4 font-display text-4xl font-bold uppercase text-pau-yellow md:text-5xl">
                 Carte cashless
               </h2>
             </div>
 
-            <div className="space-y-4 font-sans text-base leading-relaxed text-pau-night/70 md:text-lg">
+            <div className="space-y-4 font-sans text-base leading-relaxed text-white/70 md:text-lg">
               <p>
                 Le Nouste Camp est 100% cashless. Payez vos consommations directement avec votre carte cashless ou smartphone.
               </p>
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
                   <span className="mt-1 inline-block h-1.5 w-1.5 flex-shrink-0 rounded-full bg-pau-yellow" />
-                  <span><strong className="text-pau-night">Rapide</strong> — Rechargez en ligne avant le match</span>
+                  <span><strong className="text-white">Rapide</strong> — Rechargez en ligne avant le match</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="mt-1 inline-block h-1.5 w-1.5 flex-shrink-0 rounded-full bg-pau-yellow" />
-                  <span><strong className="text-pau-night">Sécurisé</strong> — Paiement sans contact</span>
+                  <span><strong className="text-white">Sécurisé</strong> — Paiement sans contact</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="mt-1 inline-block h-1.5 w-1.5 flex-shrink-0 rounded-full bg-pau-yellow" />
-                  <span><strong className="text-pau-night">Remboursable</strong> — Solde non utilisé remboursé</span>
+                  <span><strong className="text-white">Remboursable</strong> — Solde non utilisé remboursé</span>
                 </li>
               </ul>
               <div className="pt-4">
                 <Link
                   href="/billetterie/cashless"
-                  className="inline-block border-2 border-pau-night bg-transparent px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-pau-night transition-all hover:bg-pau-night hover:text-white"
+                  className="inline-block border-2 border-pau-yellow bg-transparent px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-pau-yellow transition-all hover:bg-pau-yellow hover:text-pau-night"
                 >
                   En savoir plus
                 </Link>
@@ -169,7 +169,7 @@ export default async function BilletteriePage() {
       </section>
 
       {/* Infos pratiques */}
-      <section className="border-y border-pau-night/10 bg-pau-night py-16 md:py-24">
+      <section className="border-y border-white/10 bg-pau-primary py-16 md:py-24">
         <div className="container-pau">
           <div className="mb-12">
             <span className="badge-mono text-pau-yellow">Informations</span>
@@ -231,18 +231,18 @@ export default async function BilletteriePage() {
       </section>
 
       {/* Contact */}
-      <section className="bg-white py-16 md:py-24">
+      <section className="bg-pau-night py-16 md:py-24">
         <div className="container-pau">
           <div className="mx-auto max-w-3xl text-center">
-            <span className="badge-mono text-pau-primary">Besoin d'aide ?</span>
-            <h2 className="mt-4 font-display text-4xl font-bold uppercase text-pau-night md:text-5xl">
+            <span className="badge-mono text-pau-yellow">Besoin d'aide ?</span>
+            <h2 className="mt-4 font-display text-4xl font-bold uppercase text-pau-yellow md:text-5xl">
               Contact billetterie
             </h2>
-            <p className="mx-auto mt-6 max-w-xl font-sans text-lg text-pau-night/70">
+            <p className="mx-auto mt-6 max-w-xl font-sans text-lg text-white/70">
               Pour toute question sur la billetterie, les tarifs de groupe ou les abonnements
             </p>
 
-            <div className="mt-8 space-y-3 font-sans text-base text-pau-night/80">
+            <div className="mt-8 space-y-3 font-sans text-base text-white/80">
               <p>
                 Email :{' '}
                 <a href="mailto:billetterie@paufc.fr" className="font-medium text-pau-yellow hover:underline">
@@ -255,13 +255,13 @@ export default async function BilletteriePage() {
                   +33 5 59 00 00 00
                 </a>
               </p>
-              <p className="text-sm text-pau-night/60">Horaires : Lundi au vendredi, 9h-17h</p>
+              <p className="text-sm text-white/60">Horaires : Lundi au vendredi, 9h-17h</p>
             </div>
 
             <div className="mt-8">
               <Link
                 href="/cgv-billetterie"
-                className="font-sans text-sm text-pau-night/60 hover:text-pau-yellow"
+                className="font-sans text-sm text-white/60 hover:text-pau-yellow"
               >
                 Conditions générales de vente →
               </Link>
@@ -287,7 +287,7 @@ function MatchCardMaquette({ match }) {
   });
 
   return (
-    <article className="group border-2 border-pau-night/10 bg-white p-6 transition-all hover:border-pau-yellow hover:shadow-lg md:p-8">
+    <article className="group border-2 border-white/10 bg-pau-primary p-6 transition-all hover:border-pau-yellow md:p-8">
       {/* Badge compétition */}
       {match.competition && (
         <span className="mb-4 inline-block border border-pau-yellow bg-pau-yellow px-3 py-1 font-mono text-xs font-bold uppercase tracking-wider text-pau-night">
@@ -296,15 +296,15 @@ function MatchCardMaquette({ match }) {
       )}
 
       {/* Équipes */}
-      <h3 className="mb-3 font-display text-2xl font-bold uppercase text-pau-night md:text-3xl">
+      <h3 className="mb-3 font-display text-2xl font-bold uppercase text-white md:text-3xl">
         Pau FC vs {match.opponentName}
       </h3>
 
       {/* Date & heure */}
-      <p className="mb-2 font-sans text-base text-pau-night/70">
+      <p className="mb-2 font-sans text-base text-white/70">
         {dateFr} · {heure}
       </p>
-      <p className="mb-6 font-sans text-sm text-pau-night/60">
+      <p className="mb-6 font-sans text-sm text-white/60">
         {match.venue || 'Nouste Camp'}
         {match.broadcaster && ` · ${match.broadcaster}`}
       </p>
@@ -315,12 +315,12 @@ function MatchCardMaquette({ match }) {
           href={match.ticketUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block border-2 border-pau-yellow bg-pau-yellow px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-pau-night transition-all hover:bg-pau-night hover:border-pau-night hover:text-pau-yellow"
+          className="inline-block border-2 border-pau-yellow bg-pau-yellow px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-pau-night transition-all hover:bg-transparent hover:text-pau-yellow"
         >
           Réserver mes places
         </a>
       ) : (
-        <span className="inline-block border-2 border-pau-night/20 bg-pau-night/5 px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-pau-night/40">
+        <span className="inline-block border-2 border-white/20 bg-white/5 px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-white/40">
           Bientôt disponible
         </span>
       )}
@@ -331,7 +331,7 @@ function MatchCardMaquette({ match }) {
 // Composant Tarif Card style maquette
 function TarifCardMaquette({ title, price, description }) {
   return (
-    <div className="border-2 border-white/10 bg-white/5 p-6 transition-all hover:border-pau-yellow hover:bg-white/10">
+    <div className="border-2 border-white/10 bg-pau-night p-6 transition-all hover:border-pau-yellow">
       <h3 className="mb-3 font-display text-2xl font-bold uppercase text-white">
         {title}
       </h3>

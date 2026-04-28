@@ -21,33 +21,43 @@ export default async function ActualitesPage() {
     .catch(() => []);
 
   return (
-    <div className="min-h-screen bg-white">
-      {/* Header */}
-      <div className="border-b border-pau-night/10 bg-white py-12 md:py-16">
-        <div className="container-pau">
-          <h1 className="font-display text-4xl font-bold uppercase text-pau-night md:text-5xl lg:text-6xl">
-            Actualités
-          </h1>
-          <p className="mt-4 font-sans text-lg text-pau-night/70">
-            Dernières Actualités
-          </p>
+    <div className="min-h-screen bg-pau-night">
+      {/* Hero */}
+      <section className="relative h-[60vh] min-h-[500px] bg-pau-night">
+        <Image
+          src="/images/hero-actualites.jpg"
+          alt="Actualités Pau FC"
+          fill
+          className="object-cover brightness-50"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-pau-night via-pau-night/60 to-transparent" />
+        <div className="container-pau relative flex h-full items-end pb-16">
+          <div>
+            <span className="font-mono text-xs uppercase text-pau-yellow">Toute l'actualité</span>
+            <h1 className="mt-4 font-display text-5xl font-bold uppercase text-white md:text-6xl">
+              Actualités
+            </h1>
+          </div>
         </div>
-      </div>
+      </section>
 
       {/* Liste des articles */}
-      <div className="container-pau py-12 md:py-16">
-        {articles.length === 0 ? (
-          <p className="py-12 text-center font-sans text-lg text-pau-night/60">
-            Aucune actualité pour le moment.
-          </p>
-        ) : (
-          <div className="mx-auto max-w-4xl space-y-12">
-            {articles.map((article) => (
-              <ArticleCard key={article.id} article={article} />
-            ))}
-          </div>
-        )}
-      </div>
+      <section className="bg-pau-night py-16 md:py-20">
+        <div className="container-pau">
+          {articles.length === 0 ? (
+            <p className="py-12 text-center font-sans text-lg text-white/60">
+              Aucune actualité pour le moment.
+            </p>
+          ) : (
+            <div className="mx-auto max-w-4xl space-y-12">
+              {articles.map((article) => (
+                <ArticleCard key={article.id} article={article} />
+              ))}
+            </div>
+          )}
+        </div>
+      </section>
     </div>
   );
 }
@@ -56,9 +66,9 @@ export default async function ActualitesPage() {
 function ArticleCard({ article }) {
   return (
     <Link href={`/actualites/${article.slug}`}>
-      <article className="group border-2 border-pau-night/10 bg-white transition-all hover:border-pau-yellow hover:shadow-lg">
+      <article className="group border-2 border-white/10 bg-pau-primary transition-all hover:border-pau-yellow">
         {/* Image */}
-        <div className="relative aspect-[16/9] overflow-hidden bg-pau-night/5">
+        <div className="relative aspect-[16/9] overflow-hidden bg-pau-night/80">
           {article.coverImageUrl ? (
             <Image
               src={article.coverImageUrl}
@@ -79,7 +89,7 @@ function ArticleCard({ article }) {
         <div className="p-6 md:p-8">
           {/* Date + Catégorie */}
           <div className="mb-4 flex items-center gap-4">
-            <time className="font-sans text-sm text-pau-night/60">
+            <time className="font-sans text-sm text-white/60">
               {new Date(article.publishedAt).toLocaleDateString('fr-FR', {
                 day: 'numeric',
                 month: 'long',
@@ -94,12 +104,12 @@ function ArticleCard({ article }) {
           </div>
 
           {/* Titre */}
-          <h2 className="mb-3 font-display text-2xl font-bold uppercase leading-tight text-pau-night group-hover:text-pau-yellow md:text-3xl">
+          <h2 className="mb-3 font-display text-2xl font-bold uppercase leading-tight text-white group-hover:text-pau-yellow md:text-3xl">
             {article.title}
           </h2>
 
           {/* Extrait */}
-          <p className="mb-4 font-sans text-base leading-relaxed text-pau-night/70">
+          <p className="mb-4 font-sans text-base leading-relaxed text-white/70">
             {article.excerpt}
           </p>
 

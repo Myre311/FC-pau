@@ -8,16 +8,28 @@ export const metadata = {
 
 export default function ClubPage() {
   return (
-    <div className="min-h-screen bg-white">
-      <div className="border-b border-pau-night/10 bg-white py-12 md:py-16">
-        <div className="container-pau">
-          <h1 className="font-display text-4xl font-bold uppercase text-pau-night md:text-5xl lg:text-6xl">
-            Le Club — PAU FC
-          </h1>
+    <div className="min-h-screen bg-pau-night">
+      {/* Hero */}
+      <section className="relative h-[60vh] min-h-[500px] bg-pau-night">
+        <Image
+          src="/images/hero-club.jpg"
+          alt="Le Club Pau FC"
+          fill
+          className="object-cover brightness-50"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-pau-night via-pau-night/60 to-transparent" />
+        <div className="container-pau relative flex h-full items-end pb-16">
+          <div>
+            <span className="font-mono text-xs uppercase text-pau-yellow">Histoire & Valeurs</span>
+            <h1 className="mt-4 font-display text-5xl font-bold uppercase text-white md:text-6xl">
+              Le Club
+            </h1>
+          </div>
         </div>
-      </div>
+      </section>
 
-      <section className="bg-white py-16 md:py-24">
+      <section className="bg-pau-night py-16 md:py-24">
         <div className="container-pau">
           <div className="grid gap-12 md:grid-cols-[1fr_2fr] md:items-start">
             <div className="flex justify-center md:justify-start">
@@ -32,19 +44,19 @@ export default function ClubPage() {
             </div>
 
             <div>
-              <h2 className="mb-6 font-display text-3xl font-bold uppercase text-pau-night md:text-4xl">
+              <h2 className="mb-6 font-display text-3xl font-bold uppercase text-pau-yellow md:text-4xl">
                 Origines du Football Palois
               </h2>
-              <div className="space-y-4 font-sans text-base leading-relaxed text-pau-night/80 md:text-lg">
+              <div className="space-y-4 font-sans text-base leading-relaxed text-white/80 md:text-lg">
                 <p>Les premières sections football se créent dans les clubs omnisports au début du XXe siècle à Pau.</p>
                 <p>Trois clubs fondateurs marquent l'histoire du football palois :</p>
                 <ul className="ml-6 space-y-2 list-disc">
-                  <li><strong className="text-pau-night">Football Association Bourbaki</strong> (1904)</li>
-                  <li><strong className="text-pau-night">Jeanne d'Arc le Béarn</strong> (1909)</li>
-                  <li><strong className="text-pau-night">Union Jurançonnaise</strong> (1907)</li>
+                  <li><strong className="text-white">Football Association Bourbaki</strong> (1904)</li>
+                  <li><strong className="text-white">Jeanne d'Arc le Béarn</strong> (1909)</li>
+                  <li><strong className="text-white">Union Jurançonnaise</strong> (1907)</li>
                 </ul>
                 <div className="pt-4">
-                  <Link href="/club/histoire" className="inline-block border-2 border-pau-night bg-transparent px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-pau-night transition-all hover:bg-pau-night hover:text-white">
+                  <Link href="/club/histoire" className="inline-block border-2 border-pau-yellow bg-transparent px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-pau-yellow transition-all hover:bg-pau-yellow hover:text-pau-night">
                     Voir plus
                   </Link>
                 </div>
@@ -54,9 +66,9 @@ export default function ClubPage() {
         </div>
       </section>
 
-      <section className="border-t border-pau-night/10 bg-pau-night py-16 md:py-24">
+      <section className="border-t border-white/10 bg-pau-primary py-16 md:py-24">
         <div className="container-pau">
-          <h2 className="mb-12 font-display text-3xl font-bold uppercase text-white md:text-4xl">
+          <h2 className="mb-12 font-display text-3xl font-bold uppercase text-pau-yellow md:text-4xl">
             Les Joueurs Passés par le Club
           </h2>
 
@@ -68,9 +80,9 @@ export default function ClubPage() {
         </div>
       </section>
 
-      <section className="bg-white py-16 md:py-24">
+      <section className="bg-pau-night py-16 md:py-24">
         <div className="container-pau">
-          <h2 className="mb-12 font-display text-3xl font-bold uppercase text-pau-night md:text-4xl">
+          <h2 className="mb-12 font-display text-3xl font-bold uppercase text-pau-yellow md:text-4xl">
             PAU FC 2025/2026
           </h2>
 
@@ -82,9 +94,9 @@ export default function ClubPage() {
         </div>
       </section>
 
-      <section className="border-t border-pau-night/10 bg-pau-night py-16 md:py-24">
+      <section className="border-t border-white/10 bg-pau-primary py-16 md:py-24">
         <div className="container-pau">
-          <h2 className="mb-12 font-display text-3xl font-bold uppercase text-white md:text-4xl">
+          <h2 className="mb-12 font-display text-3xl font-bold uppercase text-pau-yellow md:text-4xl">
             Notre Stade
           </h2>
 
@@ -101,9 +113,9 @@ export default function ClubPage() {
         </div>
       </section>
 
-      <div className="border-t border-pau-night/10 bg-white py-8">
+      <div className="border-t border-white/10 bg-pau-night py-8">
         <div className="container-pau text-center">
-          <a href="#" className="inline-block font-display text-sm font-bold uppercase tracking-wide text-pau-night/60 transition-colors hover:text-pau-yellow">
+          <a href="#" className="inline-block font-display text-sm font-bold uppercase tracking-wide text-white/60 transition-colors hover:text-pau-yellow">
             Retour en haut
           </a>
         </div>
@@ -114,8 +126,8 @@ export default function ClubPage() {
 
 function PlayerProfile({ name, position, years, description }) {
   return (
-    <article className="border-2 border-white/10 bg-white/5 p-6">
-      <div className="relative mb-4 aspect-[3/4] overflow-hidden bg-white/10">
+    <article className="border-2 border-white/10 bg-pau-night p-6">
+      <div className="relative mb-4 aspect-[3/4] overflow-hidden bg-pau-primary">
         <div className="flex h-full items-center justify-center">
           <span className="font-display text-4xl font-bold text-white/20">
             {name.split(' ').map(n => n[0]).join('')}
@@ -132,24 +144,24 @@ function PlayerProfile({ name, position, years, description }) {
 
 function DirectorProfile({ name, role, description }) {
   return (
-    <article className="border-2 border-pau-night/10 bg-white p-6">
-      <div className="relative mb-4 aspect-square overflow-hidden bg-pau-night/5">
+    <article className="border-2 border-white/10 bg-pau-primary p-6">
+      <div className="relative mb-4 aspect-square overflow-hidden bg-pau-night">
         <div className="flex h-full items-center justify-center">
-          <span className="font-display text-4xl font-bold text-pau-night/20">
+          <span className="font-display text-4xl font-bold text-white/20">
             {name.split(' ').map(n => n[0]).join('')}
           </span>
         </div>
       </div>
-      <h3 className="mb-2 font-display text-xl font-bold uppercase text-pau-night">{name}</h3>
+      <h3 className="mb-2 font-display text-xl font-bold uppercase text-white">{name}</h3>
       <p className="mb-3 font-sans text-sm font-bold text-pau-yellow">{role}</p>
-      <p className="font-sans text-sm leading-relaxed text-pau-night/70">{description}</p>
+      <p className="font-sans text-sm leading-relaxed text-white/70">{description}</p>
     </article>
   );
 }
 
 function StatCard({ number, label }) {
   return (
-    <div className="border-2 border-white/10 bg-white/5 p-6 text-center">
+    <div className="border-2 border-white/10 bg-pau-night p-6 text-center">
       <div className="mb-2 font-display text-4xl font-bold text-pau-yellow">{number}</div>
       <div className="font-sans text-sm text-white/70">{label}</div>
     </div>

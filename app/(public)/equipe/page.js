@@ -21,23 +21,33 @@ export default async function EquipePage() {
   const attaquants = players.filter((p) => p.position === 'ATT');
 
   return (
-    <div className="min-h-screen bg-white">
-      {/* Header */}
-      <div className="border-b border-pau-night/10 bg-white py-12 md:py-16">
-        <div className="container-pau">
-          <span className="badge-mono text-pau-primary">Saison 2025/2026</span>
-          <h1 className="mt-4 font-display text-4xl font-bold uppercase text-pau-night md:text-5xl lg:text-6xl">
-            L'Équipe Pro 25/26
-          </h1>
+    <div className="min-h-screen bg-pau-night">
+      {/* Hero */}
+      <section className="relative h-[60vh] min-h-[500px] bg-pau-night">
+        <Image
+          src="/images/hero-equipe.jpg"
+          alt="Équipe Pau FC"
+          fill
+          className="object-cover brightness-50"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-pau-night via-pau-night/60 to-transparent" />
+        <div className="container-pau relative flex h-full items-end pb-16">
+          <div>
+            <span className="font-mono text-xs uppercase text-pau-yellow">Saison 2025/2026</span>
+            <h1 className="mt-4 font-display text-5xl font-bold uppercase text-white md:text-6xl">
+              L'Équipe Pro
+            </h1>
+          </div>
         </div>
-      </div>
+      </section>
 
       {/* Contenu */}
       <div className="container-pau py-12 md:py-16">
         {/* Gardiens */}
         {gardiens.length > 0 && (
           <section className="mb-16">
-            <h2 className="mb-8 font-display text-3xl font-bold uppercase text-pau-night">
+            <h2 className="mb-8 font-display text-3xl font-bold uppercase text-pau-yellow">
               Les Gardiens
             </h2>
             <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
@@ -51,7 +61,7 @@ export default async function EquipePage() {
         {/* Défenseurs */}
         {defenseurs.length > 0 && (
           <section className="mb-16">
-            <h2 className="mb-8 font-display text-3xl font-bold uppercase text-pau-night">
+            <h2 className="mb-8 font-display text-3xl font-bold uppercase text-pau-yellow">
               Les Défenseurs
             </h2>
             <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
@@ -65,7 +75,7 @@ export default async function EquipePage() {
         {/* Milieux */}
         {milieux.length > 0 && (
           <section className="mb-16">
-            <h2 className="mb-8 font-display text-3xl font-bold uppercase text-pau-night">
+            <h2 className="mb-8 font-display text-3xl font-bold uppercase text-pau-yellow">
               Les Milieux
             </h2>
             <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
@@ -79,7 +89,7 @@ export default async function EquipePage() {
         {/* Attaquants */}
         {attaquants.length > 0 && (
           <section className="mb-16">
-            <h2 className="mb-8 font-display text-3xl font-bold uppercase text-pau-night">
+            <h2 className="mb-8 font-display text-3xl font-bold uppercase text-pau-yellow">
               Les Attaquants
             </h2>
             <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
@@ -91,8 +101,8 @@ export default async function EquipePage() {
         )}
 
         {/* Staff */}
-        <div className="border-t border-pau-night/10 pt-16">
-          <h2 className="mb-12 font-display text-3xl font-bold uppercase text-pau-night">
+        <section className="border-t border-white/10 pt-16">
+          <h2 className="mb-12 font-display text-3xl font-bold uppercase text-pau-yellow">
             Le Staff
           </h2>
 
@@ -124,7 +134,7 @@ export default async function EquipePage() {
               </div>
             </div>
           </div>
-        </div>
+        </section>
       </div>
     </div>
   );
@@ -133,9 +143,9 @@ export default async function EquipePage() {
 // Composant Player Card
 function PlayerCard({ player }) {
   return (
-    <article className="group border-2 border-pau-night/10 bg-white transition-all hover:border-pau-yellow">
+    <article className="group border-2 border-white/10 bg-pau-primary transition-all hover:border-pau-yellow">
       {/* Photo */}
-      <div className="relative aspect-[3/4] overflow-hidden bg-pau-night/5">
+      <div className="relative aspect-[3/4] overflow-hidden bg-pau-night/80">
         {player.photoUrl ? (
           <Image
             src={player.photoUrl}
@@ -145,7 +155,7 @@ function PlayerCard({ player }) {
           />
         ) : (
           <div className="flex h-full items-center justify-center">
-            <span className="font-display text-6xl font-bold text-pau-night/20">
+            <span className="font-display text-6xl font-bold text-white/20">
               {player.jerseyNumber}
             </span>
           </div>
@@ -161,10 +171,10 @@ function PlayerCard({ player }) {
 
       {/* Infos */}
       <div className="p-4">
-        <h3 className="font-display text-lg font-bold uppercase text-pau-night">
+        <h3 className="font-display text-lg font-bold uppercase text-white">
           {player.firstName} {player.lastName}
         </h3>
-        <p className="mt-1 font-sans text-sm text-pau-night/60">
+        <p className="mt-1 font-sans text-sm text-white/70">
           {getPositionLabel(player.position)}
         </p>
       </div>
@@ -176,10 +186,10 @@ function PlayerCard({ player }) {
 function StaffMember({ name, role }) {
   return (
     <div className="border-l-2 border-pau-yellow pl-4">
-      <h4 className="font-display text-base font-bold uppercase text-pau-night">
+      <h4 className="font-display text-base font-bold uppercase text-white">
         {name}
       </h4>
-      <p className="mt-1 font-sans text-sm text-pau-night/70">{role}</p>
+      <p className="mt-1 font-sans text-sm text-white/70">{role}</p>
     </div>
   );
 }
