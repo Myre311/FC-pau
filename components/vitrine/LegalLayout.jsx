@@ -5,7 +5,7 @@ export function LegalLayout({ kicker, title, lastUpdated, children }) {
   return (
     <article className="container-fc py-12 md:py-20">
       <header className="mb-12 max-w-3xl">
-        {kicker && <p className="badge-mono">{kicker}</p>}
+        {kicker && <p className="text-xs text-gray-500 uppercase tracking-wider">{kicker}</p>}
         <h1 className="mt-4 font-display text-5xl uppercase leading-crush tracking-tightest text-pau-primary md:text-6xl">
           {title}
         </h1>

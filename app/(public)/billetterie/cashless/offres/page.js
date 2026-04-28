@@ -12,7 +12,7 @@ export default function OffresCashlessPage() {
       {/* Hero */}
       <section className="bg-pau-primary py-16 md:py-24">
         <div className="container-fc">
-          <p className="badge-mono">Billetterie · Cashless · Offres</p>
+          <p className="text-xs text-gray-500 uppercase tracking-wider">Billetterie · Cashless · Offres</p>
           <h1 className="mt-6 text-[14vw] md:text-[10vw] lg:text-[140px] text-white">
             OFFRES <span className="text-pau-yellow">CASHLESS</span>
           </h1>
@@ -31,7 +31,7 @@ export default function OffresCashlessPage() {
 
         <div className="space-y-8">
           <OffreCard
-            badge="Nouveau"
+            _unused_badge="Nouveau"
             title="Recharge 30€ = 5€ offerts"
             description="Recharge ta carte de 30€ ou plus et reçois 5€ de bonus immédiatement crédités sur ta carte. Valable jusqu'au 31 mai 2026."
             conditions="Offre valable une seule fois par carte. Non cumulable avec d'autres promotions."
@@ -41,7 +41,7 @@ export default function OffresCashlessPage() {
           />
 
           <OffreCard
-            badge="Premium"
+            _unused_badge="Premium"
             title="Abonnés : +10% sur chaque recharge"
             description="Tu es abonné du club ? Profite d'un bonus de 10% sur toutes tes recharges cashless, toute la saison."
             conditions="Réservé aux abonnés saison 2025-2026. Vérification automatique via ton compte client."
@@ -51,7 +51,7 @@ export default function OffresCashlessPage() {
           />
 
           <OffreCard
-            badge="Menu"
+            _unused_badge="Menu"
             title="Menu Match : Burger + Frites + Boisson = 12€"
             description="Profite du menu spécial cashless au stand buvette principale. Disponible 2h avant et pendant la mi-temps."
             conditions="Valable uniquement avec paiement carte cashless. Dans la limite des stocks disponibles."
@@ -70,7 +70,7 @@ export default function OffresCashlessPage() {
 
         <div className="space-y-8">
           <OffreCard
-            badge="Prochainement"
+            _unused_badge="Prochainement"
             title="Opération Fan Day : Double bonus"
             description="Lors du prochain Fan Day (samedi 24 mai), recharge ta carte et profite d'un bonus doublé : 30€ = 10€ offerts !"
             conditions="Date et conditions exactes communiquées ultérieurement."
@@ -80,7 +80,7 @@ export default function OffresCashlessPage() {
           />
 
           <OffreCard
-            badge="Été 2026"
+            _unused_badge="Été 2026"
             title="Carte famille : Offre spéciale vacances"
             description="Carte cashless famille à venir pour la saison prochaine. Recharges groupées, menus enfants offerts, avantages boutique."
             conditions="Disponible à partir de la saison 2026-2027."
@@ -163,7 +163,6 @@ export default function OffresCashlessPage() {
 
 // Composant Offre Card
 function OffreCard({
-  badge,
   title,
   description,
   conditions,
@@ -174,17 +173,10 @@ function OffreCard({
   return (
     <div
       className={`border bg-white p-8 md:p-10 ${
-        active ? 'border-pau-yellow' : 'border-gray-200/10'
+        active ? 'border-gray-200' : 'border-gray-200/10'
       }`}
     >
-      <span
-        className={`inline-block font-mono text-xs uppercase tracking-wider ${
-          active ? 'text-pau-yellow' : 'text-pau-primary/40'
-        }`}
-      >
-        {badge}
-      </span>
-      <h3 className="mt-4 font-display text-4xl uppercase leading-tight tracking-tight text-pau-primary md:text-5xl">
+      <h3 className="font-display text-4xl uppercase leading-tight tracking-tight text-pau-primary md:text-5xl">
         {title}
       </h3>
       <p className="mt-4 font-sans text-base leading-relaxed text-pau-primary/75 md:text-lg">

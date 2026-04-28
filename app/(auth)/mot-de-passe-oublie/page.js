@@ -25,7 +25,7 @@ export default function MotDePasseOubliePage() {
 
   return (
     <div>
-      <p className="badge-mono">Récupération</p>
+      <p className="text-xs text-gray-500 uppercase tracking-wider">Récupération</p>
       <h1 className="mt-4 font-display text-5xl uppercase leading-crush tracking-tightest md:text-6xl">
         Mot de passe<br />oublié
       </h1>

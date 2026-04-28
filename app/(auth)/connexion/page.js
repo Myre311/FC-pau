@@ -12,7 +12,7 @@ export default function ConnexionPage({ searchParams }) {
 
   return (
     <div>
-      <p className="badge-mono">Mon espace</p>
+      <p className="text-xs text-gray-500 uppercase tracking-wider">Mon espace</p>
       <h1 className="mt-4 font-display text-5xl uppercase leading-crush tracking-tightest md:text-6xl">
         Connexion
       </h1>

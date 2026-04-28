@@ -26,7 +26,7 @@ export function PageHero({ image, surtitle, title, subtitle }) {
       {/* Contenu par-dessus */}
       <div className="relative z-10 container-pau flex h-full flex-col justify-center">
         {surtitle && (
-          <p className="badge-mono mb-4">{surtitle}</p>
+          <p className="text-xs text-white/60 uppercase tracking-wider mb-4">{surtitle}</p>
         )}
         <h1 className="font-display text-[clamp(52px,12vw,160px)] uppercase leading-crush tracking-display-tight text-white">
           {title}

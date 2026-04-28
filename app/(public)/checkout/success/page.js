@@ -39,7 +39,7 @@ export default async function CheckoutSuccessPage({ searchParams }) {
   if (intent.status !== 'succeeded') {
     return (
       <div className="container-fc py-24 text-center">
-        <p className="badge-mono">Paiement en attente</p>
+        <p className="text-xs text-gray-500 uppercase tracking-wider">Paiement en attente</p>
         <h1 className="mt-4 font-display text-5xl uppercase leading-crush tracking-tightest md:text-6xl">
           {redirectStatus === 'processing'
             ? 'Traitement en cours'
@@ -63,7 +63,7 @@ export default async function CheckoutSuccessPage({ searchParams }) {
       <ClearCartOnMount />
 
       <div className="max-w-2xl">
-        <p className="badge-mono">Paiement confirmé</p>
+        <p className="text-xs text-gray-500 uppercase tracking-wider">Paiement confirmé</p>
         <h1 className="mt-4 font-display text-5xl uppercase leading-crush tracking-tightest md:text-7xl">
           MERCI
         </h1>
@@ -137,7 +137,7 @@ function Stat({ label, value }) {
 function FallbackMissing() {
   return (
     <div className="container-fc py-24 text-center">
-      <p className="badge-mono">Référence manquante</p>
+      <p className="text-xs text-gray-500 uppercase tracking-wider">Référence manquante</p>
       <h1 className="mt-4 font-display text-5xl uppercase leading-crush tracking-tightest md:text-6xl">
         Pas de paiement à afficher
       </h1>

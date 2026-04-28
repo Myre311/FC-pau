@@ -24,7 +24,7 @@ export default function PanierPage() {
     <div className="container-fc grid gap-12 py-12 md:grid-cols-[1.6fr_1fr] md:py-20">
       <section>
         <header className="border-b border-white/10 pb-6">
-          <p className="badge-mono">Votre panier</p>
+          <p className="text-xs text-gray-500 uppercase tracking-wider">Votre panier</p>
           <h1 className="mt-3 font-display text-5xl uppercase leading-crush tracking-tightest md:text-6xl">
             {count} article{count > 1 ? 's' : ''}
           </h1>
@@ -145,7 +145,7 @@ export default function PanierPage() {
 function EmptyState() {
   return (
     <div className="container-fc flex flex-col items-center py-24 text-center md:py-32">
-      <p className="badge-mono">Panier vide</p>
+      <p className="text-xs text-gray-500 uppercase tracking-wider">Panier vide</p>
       <h1 className="mt-4 font-display text-6xl uppercase leading-crush tracking-tightest md:text-7xl">
         RIEN ENCORE
       </h1>

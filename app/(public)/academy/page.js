@@ -61,7 +61,6 @@ export default function AcademyPage() {
             title="Pôle Masculin"
             description="U13 à U19 · Préformation et formation · Championnat National · Suivi scolaire renforcé · Internat."
             href="/academy/masculin"
-            badge="Garçons"
           />
 
           {/* Pôle Féminin */}
@@ -69,7 +68,6 @@ export default function AcademyPage() {
             title="Pôle Féminin"
             description="U13 à U19 · Formation féminine · Championnat régional et national · Projet sportif en développement."
             href="/academy/feminin"
-            badge="Filles"
           />
         </div>
       </section>
@@ -178,16 +176,13 @@ export default function AcademyPage() {
 }
 
 // Composant Pôle Tile
-function PoleTile({ title, description, href, badge }) {
+function PoleTile({ title, description, href }) {
   return (
     <Link
       href={href}
       className="group relative overflow-hidden border border-gray-200 bg-white p-8 transition-all hover:bg-gray-50 md:p-10"
     >
-      <span className="mb-4 inline-block font-mono text-xs uppercase tracking-wider text-pau-yellow">
-        {badge}
-      </span>
-      <h3 className="font-display text-4xl uppercase leading-tight tracking-tight transition-colors group-hover:text-pau-yellow md:text-5xl">
+      <h3 className="font-display text-4xl uppercase leading-tight tracking-tight text-pau-primary md:text-5xl">
         {title}
       </h3>
       <p className="mt-4 font-sans text-base leading-relaxed text-pau-primary/75">

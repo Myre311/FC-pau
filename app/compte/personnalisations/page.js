@@ -17,7 +17,7 @@ export default async function PersonnalisationsPage() {
   return (
     <div className="space-y-8">
       <header>
-        <p className="badge-mono">Mes maillots</p>
+        <p className="text-xs text-gray-500 uppercase tracking-wider">Mes maillots</p>
         <h1 className="mt-3 font-display text-5xl uppercase leading-crush tracking-tightest text-white md:text-6xl">
           Personnalisations
         </h1>

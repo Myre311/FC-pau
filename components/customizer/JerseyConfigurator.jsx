@@ -128,7 +128,7 @@ export function JerseyConfigurator({ product, variants }) {
       {/* Formulaire */}
       <div className="space-y-6">
         <div>
-          <p className="badge-mono">Configurateur flocage</p>
+          <p className="text-xs text-gray-500 uppercase tracking-wider">Configurateur flocage</p>
           <h2 className="mt-3 font-display text-4xl uppercase leading-crush tracking-tightest text-white md:text-5xl">
             Personnalisez
           </h2>

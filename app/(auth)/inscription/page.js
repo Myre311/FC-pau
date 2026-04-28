@@ -10,7 +10,7 @@ export const metadata = {
 export default function InscriptionPage() {
   return (
     <div>
-      <p className="badge-mono">Rejoignez les rangs</p>
+      <p className="text-xs text-gray-500 uppercase tracking-wider">Rejoignez les rangs</p>
       <h1 className="mt-4 font-display text-5xl uppercase leading-crush tracking-tightest md:text-6xl">
         Créer un<br />compte
       </h1>

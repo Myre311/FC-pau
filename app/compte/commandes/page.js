@@ -28,7 +28,7 @@ export default async function MesCommandesPage() {
   return (
     <div className="space-y-8">
       <header>
-        <p className="badge-mono">Historique</p>
+        <p className="text-xs text-gray-500 uppercase tracking-wider">Historique</p>
         <h1 className="mt-3 font-display text-5xl uppercase leading-crush tracking-tightest text-white md:text-6xl">
           Mes commandes
         </h1>
