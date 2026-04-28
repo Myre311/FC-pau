@@ -16,11 +16,25 @@ import { usePathname } from 'next/navigation';
 export function HeaderMaquette() {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 100);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <header className="fixed top-0 left-0 z-50 w-full">
-      {/* Fond transparent avec gradient */}
-      <div className="pointer-events-none absolute inset-0 h-48 bg-gradient-to-b from-black/50 to-transparent" />
+    <header
+      className={`fixed top-0 left-0 z-50 w-full transition-transform duration-300 ${
+        isScrolled ? 'translate-y-0' : '-translate-y-full'
+      }`}
+    >
+      {/* Fond avec backdrop blur */}
+      <div className="absolute inset-0 bg-pau-night/95 backdrop-blur-md" />
 
       <div className="relative flex items-center justify-between px-6 py-6 md:px-12 md:py-10">
         {/* Spacer gauche (responsive) */}

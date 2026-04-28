@@ -46,65 +46,90 @@ export default async function HomePage() {
       {/* Header */}
       <HeaderMaquette />
 
-      {/* Section Hero - Split Vidéo/Contenu */}
+      {/* Section Hero - Split Newsletter/Boutique comme refonte */}
       <section className="relative min-h-screen bg-pau-night">
-        <div className="grid h-screen md:grid-cols-2">
-          {/* GAUCHE - Vidéo */}
-          <div className="relative overflow-hidden">
-            <video
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="h-full w-full object-cover"
-            >
-              <source src="/videos/hero.mp4" type="video/mp4" />
-            </video>
-            {/* Overlay subtil */}
-            <div className="absolute inset-0 bg-pau-night/20" />
-          </div>
-
-          {/* DROITE - Contenu */}
-          <div className="relative flex flex-col items-center justify-center p-8 md:p-12 lg:p-16">
+        <div className="grid min-h-screen md:grid-cols-2">
+          {/* GAUCHE - Newsletter "REJOINS LE CLUB" */}
+          <div className="relative flex flex-col items-center justify-center bg-pau-night p-8 md:p-12 lg:p-16">
             <div className="w-full max-w-xl space-y-8">
-              {/* Badge */}
-              <span className="inline-block font-mono text-xs font-semibold uppercase tracking-wider text-pau-yellow">
-                Prochain match
-              </span>
-
-              {/* Titre principal */}
+              {/* Titre */}
               <div>
                 <h1 className="font-display text-5xl font-bold uppercase text-white md:text-6xl lg:text-7xl">
-                  Pau FC
+                  Rejoins
                   <br />
-                  <span className="text-pau-yellow">vs Amiens</span>
+                  <span className="text-pau-yellow">le Club</span>
                 </h1>
               </div>
 
-              {/* Infos match */}
-              <div className="space-y-2">
-                <p className="font-mono text-sm uppercase tracking-wider text-white/70">
-                  Vendredi 26 Avril 2026 · 20h00
-                </p>
-                <p className="font-sans text-base text-white/60">
-                  Nouste Camp · Pau
+              {/* Description */}
+              <div className="space-y-4">
+                <p className="font-sans text-lg text-white/80">
+                  Inscris-toi à la newsletter et profite de{' '}
+                  <span className="font-bold text-pau-yellow">10% de réduction</span> sur ta première commande
                 </p>
               </div>
 
-              {/* CTA */}
-              <div className="flex flex-wrap gap-4 pt-4">
-                <Link
-                  href="/billetterie"
-                  className="border-2 border-pau-yellow bg-pau-yellow px-8 py-4 font-display text-sm font-bold uppercase tracking-wide text-pau-night transition-all hover:bg-transparent hover:text-pau-yellow"
-                >
-                  Billetterie
-                </Link>
-                <Link
-                  href="/boutique"
-                  className="border-2 border-white bg-transparent px-8 py-4 font-display text-sm font-bold uppercase tracking-wide text-white transition-all hover:bg-white hover:text-pau-night"
-                >
-                  Boutique
-                </Link>
+              {/* Formulaire Newsletter */}
+              <div className="space-y-4">
+                <input
+                  type="email"
+                  placeholder="Ton adresse email"
+                  className="w-full border-2 border-white/20 bg-white/10 px-6 py-4 font-sans text-white placeholder:text-white/40 focus:border-pau-yellow focus:outline-none"
+                />
+                <button className="w-full border-2 border-pau-yellow bg-pau-yellow px-8 py-4 font-display text-sm font-bold uppercase tracking-wide text-pau-night transition-all hover:bg-transparent hover:text-pau-yellow">
+                  Obtenir mon code
+                </button>
+              </div>
+            </div>
+          </div>
+
+          {/* DROITE - Maillots/Boutique */}
+          <div className="relative overflow-hidden">
+            {/* Image de fond */}
+            <Image
+              src="/images/homepage/Boutique.png"
+              alt="Maillots officiels Pau FC"
+              fill
+              className="object-cover"
+              priority
+            />
+
+            {/* Overlay gradient */}
+            <div className="absolute inset-0 bg-gradient-to-t from-pau-night/80 via-pau-night/20 to-transparent" />
+
+            {/* Contenu superposé */}
+            <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12">
+              <div className="space-y-6">
+                {/* Badge */}
+                <span className="inline-block font-mono text-xs font-semibold uppercase tracking-wider text-pau-yellow">
+                  Prochain match
+                </span>
+
+                {/* Infos match */}
+                <div>
+                  <h2 className="font-display text-3xl font-bold uppercase text-white md:text-4xl lg:text-5xl">
+                    Pau FC vs Amiens
+                  </h2>
+                  <p className="mt-2 font-mono text-sm uppercase tracking-wider text-white/70">
+                    Vendredi 26/04 · 20h00 · Nouste Camp
+                  </p>
+                </div>
+
+                {/* CTA */}
+                <div className="flex flex-wrap gap-4">
+                  <Link
+                    href="/billetterie"
+                    className="border-2 border-pau-yellow bg-pau-yellow px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-pau-night transition-all hover:bg-transparent hover:text-pau-yellow"
+                  >
+                    Billetterie
+                  </Link>
+                  <Link
+                    href="/boutique"
+                    className="border-2 border-white bg-transparent px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-white transition-all hover:bg-white hover:text-pau-night"
+                  >
+                    Boutique
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
