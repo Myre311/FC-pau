@@ -12,7 +12,7 @@ export default function ContactPage() {
   return (
     <article>
       <PageHero
-        image="/images/hero-contact.jpg"
+        image="/images/hero-stade.jpg"
         surtitle="Une question, une idée ?"
         title="CONTACT"
         subtitle="Le service du club vous répond. Choisissez le bon sujet pour gagner du temps, on s'occupe du reste."

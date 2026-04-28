@@ -40,14 +40,14 @@ export function ContactForm() {
 
   if (status === 'success') {
     return (
-      <div className="border border-jaune/40 bg-jaune/5 p-8">
-        <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-jaune">
+      <div className="border border-pau-yellow/40 bg-pau-yellow/5 p-8">
+        <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-pau-yellow">
           Message envoyé
         </p>
-        <h2 className="mt-3 font-display text-4xl uppercase leading-crush tracking-tightest text-blanc">
+        <h2 className="mt-3 font-display text-4xl uppercase leading-crush tracking-tightest text-pau-primary">
           Merci !
         </h2>
-        <p className="mt-4 font-sans text-blanc/70">
+        <p className="mt-4 font-sans text-pau-primary/70">
           Nous avons bien reçu votre message. Notre équipe vous répond
           habituellement sous 48 h ouvrées.
         </p>
@@ -64,14 +64,14 @@ export function ContactForm() {
       <Field label="Email" required type="email" value={form.email} onChange={update('email')} autoComplete="email" />
 
       <label className="block">
-        <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-blanc/50">
-          Sujet <span className="text-jaune">*</span>
+        <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-pau-primary/50">
+          Sujet <span className="text-pau-yellow">*</span>
         </span>
         <select
           required
           value={form.topic}
           onChange={update('topic')}
-          className="mt-2 block h-11 w-full border border-blanc/15 bg-nuit px-3 font-sans text-sm text-blanc outline-none transition-colors focus:border-jaune"
+          className="mt-2 block h-11 w-full border border-pau-primary/20 bg-white px-3 font-sans text-sm text-pau-primary outline-none transition-colors focus:border-pau-yellow"
         >
           {CONTACT_TOPICS.map((t) => (
             <option key={t.value} value={t.value}>
@@ -82,8 +82,8 @@ export function ContactForm() {
       </label>
 
       <label className="block">
-        <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-blanc/50">
-          Message <span className="text-jaune">*</span>
+        <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-pau-primary/50">
+          Message <span className="text-pau-yellow">*</span>
         </span>
         <textarea
           required
@@ -92,9 +92,9 @@ export function ContactForm() {
           minLength={20}
           maxLength={4000}
           rows={8}
-          className="mt-2 block w-full resize-y border border-blanc/15 bg-transparent p-3 font-sans text-sm text-blanc outline-none transition-colors focus:border-jaune"
+          className="mt-2 block w-full resize-y border border-pau-primary/20 bg-transparent p-3 font-sans text-sm text-pau-primary outline-none transition-colors focus:border-pau-yellow"
         />
-        <span className="mt-1 block text-right font-mono text-[10px] tracking-[0.15em] text-blanc/40">
+        <span className="mt-1 block text-right font-mono text-[10px] tracking-[0.15em] text-pau-primary/40">
           {form.message.length} / 4000
         </span>
       </label>
@@ -111,7 +111,7 @@ export function ContactForm() {
       </label>
 
       {error && (
-        <p className="border border-jaune/40 bg-jaune/10 px-4 py-3 font-mono text-[11px] uppercase tracking-[0.15em] text-jaune">
+        <p className="border border-pau-yellow/40 bg-pau-yellow/10 px-4 py-3 font-mono text-[11px] uppercase tracking-[0.15em] text-pau-yellow">
           {error}
         </p>
       )}
@@ -133,9 +133,9 @@ export function ContactForm() {
 function Field({ label, required, value, onChange, type = 'text', autoComplete }) {
   return (
     <label className="block">
-      <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-blanc/50">
+      <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-pau-primary/50">
         {label}
-        {required && <span className="ml-1 text-jaune">*</span>}
+        {required && <span className="ml-1 text-pau-yellow">*</span>}
       </span>
       <input
         type={type}
@@ -143,7 +143,7 @@ function Field({ label, required, value, onChange, type = 'text', autoComplete }
         autoComplete={autoComplete}
         value={value}
         onChange={onChange}
-        className="mt-2 block h-11 w-full border border-blanc/15 bg-transparent px-3 font-sans text-sm text-blanc outline-none transition-colors focus:border-jaune"
+        className="mt-2 block h-11 w-full border border-pau-primary/20 bg-transparent px-3 font-sans text-sm text-pau-primary outline-none transition-colors focus:border-pau-yellow"
       />
     </label>
   );
