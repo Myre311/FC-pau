@@ -91,7 +91,7 @@ export default async function HomePage() {
             <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-10 lg:p-16">
               <div className="mb-4">
                 <Image
-                  src="/images/calendrier-icon.png"
+                  src="/images/hero-calendrier-icon.png"
                   alt="Calendrier"
                   width={120}
                   height={120}
