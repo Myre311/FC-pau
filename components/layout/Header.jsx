@@ -22,7 +22,7 @@ export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-gray-100 bg-white">
+    <header className="sticky top-0 z-50 border-b border-pau-yellow bg-pau-night">
       <div className="mx-auto max-w-7xl">
         <div className="flex h-20 items-center justify-between px-6 md:px-12">
           {/* Logo */}
@@ -39,7 +39,7 @@ export function Header() {
                   key={item.href}
                   href={item.href}
                   className={`font-display text-sm font-bold uppercase tracking-wide transition-colors ${
-                    active ? 'text-pau-yellow' : 'text-pau-primary hover:text-pau-yellow'
+                    active ? 'text-pau-yellow' : 'text-white hover:text-pau-yellow'
                   }`}
                 >
                   {item.label}
@@ -59,7 +59,7 @@ export function Header() {
               className="lg:hidden"
               aria-label="Menu"
             >
-              <svg className="h-6 w-6 text-pau-primary" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+              <svg className="h-6 w-6 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                 {mobileMenuOpen ? (
                   <path d="M6 18L18 6M6 6l12 12" strokeLinecap="round" />
                 ) : (
@@ -72,7 +72,7 @@ export function Header() {
 
         {/* Mobile menu */}
         {mobileMenuOpen && (
-          <nav className="border-t border-gray-100 bg-white px-6 py-6 lg:hidden">
+          <nav className="border-t border-pau-yellow bg-pau-night px-6 py-6 lg:hidden">
             {NAV.map((item) => {
               const active = pathname.startsWith(item.href);
               return (
@@ -81,7 +81,7 @@ export function Header() {
                   href={item.href}
                   onClick={() => setMobileMenuOpen(false)}
                   className={`block py-3 font-display text-lg font-bold uppercase ${
-                    active ? 'text-pau-yellow' : 'text-pau-primary'
+                    active ? 'text-pau-yellow' : 'text-white'
                   }`}
                 >
                   {item.label}

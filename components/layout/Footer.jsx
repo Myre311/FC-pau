@@ -21,7 +21,7 @@ const SOCIAL_LINKS = [
 
 export function Footer() {
   return (
-    <footer className="border-t border-gray-100 bg-white">
+    <footer className="border-t border-pau-yellow bg-pau-night">
       <div className="mx-auto max-w-7xl px-6 py-16 md:px-12">
         {/* Logo + Réseaux */}
         <div className="mb-12 flex flex-col items-center justify-between gap-8 md:flex-row">
@@ -33,7 +33,7 @@ export function Footer() {
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-pau-primary transition-colors hover:text-pau-yellow"
+                className="text-white transition-colors hover:text-pau-yellow"
                 aria-label={social.name}
               >
                 <span className="font-mono text-sm uppercase tracking-wider">
@@ -50,7 +50,7 @@ export function Footer() {
             <Link
               key={link.href}
               href={link.href}
-              className="font-mono text-sm uppercase tracking-wider text-pau-primary transition-colors hover:text-pau-yellow"
+              className="font-mono text-sm uppercase tracking-wider text-white transition-colors hover:text-pau-yellow"
             >
               {link.label}
             </Link>
@@ -58,8 +58,8 @@ export function Footer() {
         </nav>
 
         {/* Copyright */}
-        <div className="border-t border-gray-100 pt-8 text-center">
-          <p className="font-mono text-xs uppercase tracking-wider text-pau-primary/60">
+        <div className="border-t border-white/10 pt-8 text-center">
+          <p className="font-mono text-xs uppercase tracking-wider text-white/60">
             © {new Date().getFullYear()} Pau Football Club · Tous droits réservés
           </p>
         </div>
