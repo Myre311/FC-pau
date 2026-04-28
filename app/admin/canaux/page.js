@@ -16,7 +16,7 @@ export default function CanauxPage() {
     {
       id: 'facebook',
       name: 'Facebook Shop',
-      icon: '📘',
+      icon: 'FB',
       color: 'from-blue-600 to-blue-700',
       connected: true,
       stats: { products: 45, sales: '1,890€', orders: 28 },
@@ -25,7 +25,7 @@ export default function CanauxPage() {
     {
       id: 'messenger',
       name: 'Messenger',
-      icon: '💬',
+      icon: 'MS',
       color: 'from-blue-500 to-indigo-600',
       connected: false,
       stats: null,
@@ -34,7 +34,7 @@ export default function CanauxPage() {
     {
       id: 'google',
       name: 'Google Shopping',
-      icon: '🔍',
+      icon: 'GO',
       color: 'from-red-500 to-yellow-500',
       connected: true,
       stats: { products: 38, sales: '4,120€', orders: 52 },
@@ -43,7 +43,7 @@ export default function CanauxPage() {
     {
       id: 'tiktok',
       name: 'TikTok Shop',
-      icon: '🎵',
+      icon: 'TT',
       color: 'from-black to-red-600',
       connected: false,
       stats: null,
@@ -52,7 +52,7 @@ export default function CanauxPage() {
     {
       id: 'whatsapp',
       name: 'WhatsApp Business',
-      icon: '📱',
+      icon: 'WA',
       color: 'from-green-500 to-green-600',
       connected: false,
       stats: null,
@@ -193,7 +193,7 @@ export default function CanauxPage() {
       {/* Guide de configuration */}
       <div className="rounded-lg border border-gray-200 bg-gradient-to-r from-indigo-50 to-purple-50 p-6 shadow-sm">
         <h2 className="mb-4 text-lg font-semibold text-gray-900">
-          🚀 Comment connecter un canal de vente ?
+          Comment connecter un canal de vente ?
         </h2>
         <div className="grid gap-4 md:grid-cols-3">
           <div className="rounded-lg bg-white p-4">
