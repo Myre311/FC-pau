@@ -137,7 +137,7 @@ export default async function HomePage() {
       </section>
 
       {/* SECTION 2 - NEWSLETTER (gauche) + CARDS (droite) */}
-      <section className="bg-pau-night py-14 md:py-20">
+      <section className="bg-white py-14 md:py-20">
         <div className="container-pau">
           <div className="grid gap-6 md:grid-cols-2 md:gap-10">
 
@@ -281,10 +281,10 @@ export default async function HomePage() {
       <ScrollingBanner partners={partners} />
 
       {/* SECTION 4 - ARTICLES RÉCENTS */}
-      <section className="bg-pau-night pb-18 pt-16 md:pb-24 md:pt-20">
+      <section className="bg-white pb-18 pt-16 md:pb-24 md:pt-20">
         <div className="container-pau">
           <div className="mb-14">
-            <h2 className="font-display text-3xl font-bold uppercase text-white md:text-4xl">
+            <h2 className="font-display text-3xl font-bold uppercase text-pau-night md:text-4xl">
               Actualités
             </h2>
           </div>
@@ -351,10 +351,10 @@ export default async function HomePage() {
       </section>
 
       {/* SECTION 5 - INSTAGRAM GRID 4x2 */}
-      <section className="bg-pau-night py-18 md:py-24">
+      <section className="bg-white py-18 md:py-24">
         <div className="container-pau">
           <div className="mb-10 text-center">
-            <h2 className="font-display text-3xl font-bold uppercase text-white md:text-4xl">
+            <h2 className="font-display text-3xl font-bold uppercase text-pau-night md:text-4xl">
               Suivez-nous sur Instagram
             </h2>
             <p className="mt-2 font-mono text-sm text-pau-yellow">@paufootballclub</p>
