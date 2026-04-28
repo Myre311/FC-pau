@@ -9,10 +9,14 @@ import { AccountLinkClient } from '@/components/layout/AccountLinkClient';
 import { Logo } from '@/components/ui/Logo';
 
 const NAV = [
-  { href: '/equipe', label: 'Équipe' },
-  { href: '/calendrier', label: 'Calendrier' },
-  { href: '/actualites', label: 'Actualités' },
-  { href: '/billetterie', label: 'Billetterie' },
+  {
+    href: '/billetterie',
+    label: 'Billetterie',
+    subMenu: [
+      { href: '/billetterie', label: 'Acheter des places' },
+      { href: '/billetterie/abonnements', label: 'Abonnements' },
+    ]
+  },
   {
     href: '/boutique',
     label: 'Boutique',
@@ -25,16 +29,29 @@ const NAV = [
       { href: '/boutique?categorie=accessoires', label: 'Accessoires' },
     ]
   },
+  { href: '/calendrier', label: 'Calendrier' },
+  {
+    href: '/academy',
+    label: 'Academy',
+    subMenu: [
+      { href: '/academy', label: 'Présentation' },
+      { href: '/academy/masculin', label: 'Masculin' },
+      { href: '/academy/feminin', label: 'Féminin' },
+      { href: '/academy/stages', label: 'Stages' },
+    ]
+  },
   {
     href: '/club',
     label: 'Club',
     subMenu: [
       { href: '/club', label: 'Présentation' },
+      { href: '/equipe', label: 'Équipe' },
       { href: '/club/histoire', label: 'Histoire' },
+      { href: '/actualites', label: 'Actualités' },
+      { href: '/partenaires', label: 'Partenaires' },
+      { href: '/contact', label: 'Contact' },
     ]
   },
-  { href: '/partenaires', label: 'Partenaires' },
-  { href: '/contact', label: 'Contact' },
 ];
 
 export function Header() {
