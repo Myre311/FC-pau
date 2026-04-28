@@ -137,6 +137,22 @@
   to { opacity: 1; transform: scale(1); }
 }
 
+/* ─── ANIMATIONS MINIMALISTES PROFESSIONNELLES ──────────────── */
+@keyframes smoothScale {
+  from { transform: scale(1); }
+  to { transform: scale(1.02); }
+}
+
+@keyframes shimmerSubtle {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 @layer components {
   /* ─── LAYOUT OFFICIEL PAU FC ──────────────────────────────────── */
   .container-pau,
@@ -235,6 +251,39 @@
     inset: 0;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
     pointer-events: none;
+  }
+
+  /* ─── ANIMATIONS UTILITAIRES ─────────────────────────────────────── */
+  .animate-slide-up {
+    animation: slideUp 0.5s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  /* Transitions professionnelles */
+  .transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .transition-smooth-slow {
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Hover effects minimalistes */
+  .hover-lift {
+    @apply transition-transform duration-300 ease-out;
+  }
+  .hover-lift:hover {
+    transform: translateY(-2px);
+  }
+
+  .hover-scale-subtle {
+    @apply transition-transform duration-300 ease-out;
+  }
+  .hover-scale-subtle:hover {
+    transform: scale(1.01);
   }
 
   /* ─── PERFORMANCE ────────────────────────────────────────────────── */

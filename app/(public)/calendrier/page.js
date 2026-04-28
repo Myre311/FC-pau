@@ -1,6 +1,7 @@
 import { prisma } from '@/lib/prisma';
 import Link from 'next/link';
 import Image from 'next/image';
+import { ScrollReveal } from '@/components/animations/ScrollReveal';
 
 export const dynamic = 'force-dynamic';
 
@@ -57,12 +58,15 @@ export default async function CalendrierPage() {
         {/* Matchs à venir */}
         {upcoming.length > 0 && (
           <section className="mb-12">
-            <h2 className="mb-8 font-display text-2xl font-bold uppercase text-pau-primary">
-              Prochains matchs
-            </h2>
+            <ScrollReveal>
+              <h2 className="mb-8 font-display text-2xl font-bold uppercase text-pau-primary">
+                Prochains matchs
+              </h2>
+            </ScrollReveal>
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {upcoming.map((match) => (
-                <div key={match.id} className="border border-gray-200 p-6 hover:bg-gray-50">
+              {upcoming.map((match, idx) => (
+                <ScrollReveal key={match.id} delay={idx * 50}>
+                  <div className="border border-gray-200 p-6 hover:bg-gray-50">
                   <div className="mb-4 flex items-center justify-between">
                     {match.competition?.includes('Ligue 2') ? (
                       <div className="flex h-8 items-center bg-pau-primary px-3">
@@ -155,17 +159,18 @@ export default async function CalendrierPage() {
                     </p>
                   </div>
 
-                  {match.ticketUrl && (
-                    <a
-                      href={match.ticketUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="mt-4 inline-block bg-pau-yellow px-4 py-2 font-mono text-xs font-bold uppercase text-pau-night hover:bg-pau-yellow/90"
-                    >
-                      Billetterie
-                    </a>
-                  )}
-                </div>
+                    {match.ticketUrl && (
+                      <a
+                        href={match.ticketUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-4 inline-block bg-pau-yellow px-4 py-2 font-mono text-xs font-bold uppercase text-pau-night hover:bg-pau-yellow/90"
+                      >
+                        Billetterie
+                      </a>
+                    )}
+                  </div>
+                </ScrollReveal>
               ))}
             </div>
           </section>
@@ -174,12 +179,15 @@ export default async function CalendrierPage() {
         {/* Résultats récents */}
         {recent.length > 0 && (
           <section className="border-t border-gray-200 pt-12">
-            <h2 className="mb-8 font-display text-2xl font-bold uppercase text-pau-primary">
-              Résultats récents
-            </h2>
+            <ScrollReveal>
+              <h2 className="mb-8 font-display text-2xl font-bold uppercase text-pau-primary">
+                Résultats récents
+              </h2>
+            </ScrollReveal>
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {recent.map((match) => (
-                <div key={match.id} className="border border-gray-200 p-6">
+              {recent.map((match, idx) => (
+                <ScrollReveal key={match.id} delay={idx * 50}>
+                  <div className="border border-gray-200 p-6">
                   <div className="mb-4 flex items-center justify-between">
                     {match.competition?.includes('Ligue 2') ? (
                       <div className="flex h-8 items-center bg-pau-primary px-3">
@@ -258,11 +266,12 @@ export default async function CalendrierPage() {
                         {match.isHome ? match.opponent : 'PAU FC'}
                       </span>
                     </div>
-                    <span className="font-display text-2xl text-pau-primary/60">
-                      {match.isHome ? match.awayScore : match.homeScore}
-                    </span>
+                      <span className="font-display text-2xl text-pau-primary/60">
+                        {match.isHome ? match.awayScore : match.homeScore}
+                      </span>
+                    </div>
                   </div>
-                </div>
+                </ScrollReveal>
               ))}
             </div>
           </section>

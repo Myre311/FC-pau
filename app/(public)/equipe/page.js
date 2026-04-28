@@ -2,6 +2,7 @@ import Image from 'next/image';
 import { prisma } from '@/lib/prisma';
 import { PlayerCard } from '@/components/vitrine/PlayerCard';
 import { POSITION_LABELS } from '@/lib/labels';
+import { ScrollReveal } from '@/components/animations/ScrollReveal';
 
 export const dynamic = 'force-dynamic';
 
@@ -63,17 +64,21 @@ export default async function EquipePage() {
               key={pos}
               className={idx > 0 ? 'mt-12 border-t border-gray-200 pt-12' : ''}
             >
-              <div className="mb-8 flex items-end justify-between">
-                <h2 className="font-display text-2xl font-bold uppercase text-pau-primary md:text-3xl">
-                  {POSITION_LABELS[pos]}
-                </h2>
-                <span className="font-mono text-xs uppercase tracking-wider text-pau-primary/40">
-                  {list.length}
-                </span>
-              </div>
+              <ScrollReveal>
+                <div className="mb-8 flex items-end justify-between">
+                  <h2 className="font-display text-2xl font-bold uppercase text-pau-primary md:text-3xl">
+                    {POSITION_LABELS[pos]}
+                  </h2>
+                  <span className="font-mono text-xs uppercase tracking-wider text-pau-primary/40">
+                    {list.length}
+                  </span>
+                </div>
+              </ScrollReveal>
               <div className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-                {list.map((p) => (
-                  <PlayerCard key={p.id} player={p} />
+                {list.map((p, playerIdx) => (
+                  <ScrollReveal key={p.id} delay={playerIdx * 50}>
+                    <PlayerCard player={p} />
+                  </ScrollReveal>
                 ))}
               </div>
             </div>

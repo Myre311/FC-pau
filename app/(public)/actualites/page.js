@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { prisma } from '@/lib/prisma';
 import { ArticleCard } from '@/components/vitrine/ArticleCard';
+import { ScrollReveal } from '@/components/animations/ScrollReveal';
 
 export const dynamic = 'force-dynamic';
 
@@ -58,19 +59,25 @@ export default async function ActualitesPage() {
         ) : (
           <>
             {featured && (
-              <div className="mb-12">
-                <ArticleCard article={featured} featured />
-              </div>
+              <ScrollReveal>
+                <div className="mb-12">
+                  <ArticleCard article={featured} featured />
+                </div>
+              </ScrollReveal>
             )}
 
             {rest.length > 0 && (
               <div className="border-t border-gray-200 pt-12">
-                <h2 className="mb-8 font-mono text-xs uppercase tracking-wider text-pau-yellow">
-                  Toutes les actualités · {rest.length}
-                </h2>
+                <ScrollReveal>
+                  <h2 className="mb-8 font-mono text-xs uppercase tracking-wider text-pau-yellow">
+                    Toutes les actualités · {rest.length}
+                  </h2>
+                </ScrollReveal>
                 <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-                  {rest.map((a) => (
-                    <ArticleCard key={a.id} article={a} />
+                  {rest.map((a, idx) => (
+                    <ScrollReveal key={a.id} delay={idx * 50}>
+                      <ArticleCard article={a} />
+                    </ScrollReveal>
                   ))}
                 </div>
               </div>

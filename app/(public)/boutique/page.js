@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { prisma } from '@/lib/prisma';
 import { ProductCard } from '@/components/shop/ProductCard';
+import { ScrollReveal } from '@/components/animations/ScrollReveal';
 
 export const metadata = {
   title: 'Boutique',
@@ -51,23 +52,27 @@ export default async function BoutiquePage() {
 
       {/* CONTENU */}
       <div className="mx-auto max-w-7xl px-6 py-12 md:px-12">
-        <div className="mb-8 flex items-end justify-between border-b border-gray-200 pb-4">
-          <h2 className="font-mono text-xs uppercase tracking-wider text-pau-primary">
-            {products.length} produit{products.length > 1 ? 's' : ''}
-          </h2>
-          {featured.length > 0 && (
-            <span className="font-mono text-xs uppercase tracking-wider text-pau-primary/60">
-              {featured.length} mis{featured.length > 1 ? 'es' : 'e'} en avant
-            </span>
-          )}
-        </div>
+        <ScrollReveal>
+          <div className="mb-8 flex items-end justify-between border-b border-gray-200 pb-4">
+            <h2 className="font-mono text-xs uppercase tracking-wider text-pau-primary">
+              {products.length} produit{products.length > 1 ? 's' : ''}
+            </h2>
+            {featured.length > 0 && (
+              <span className="font-mono text-xs uppercase tracking-wider text-pau-primary/60">
+                {featured.length} mis{featured.length > 1 ? 'es' : 'e'} en avant
+              </span>
+            )}
+          </div>
+        </ScrollReveal>
 
         {products.length === 0 ? (
           <EmptyCatalog />
         ) : (
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {products.map((p) => (
-              <ProductCard key={p.id} product={p} />
+            {products.map((p, idx) => (
+              <ScrollReveal key={p.id} delay={idx * 50}>
+                <ProductCard product={p} />
+              </ScrollReveal>
             ))}
           </div>
         )}

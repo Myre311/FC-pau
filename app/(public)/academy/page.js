@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import PageHero from '@/components/PageHero';
 import SectionLight from '@/components/SectionLight';
+import { ScrollReveal } from '@/components/animations/ScrollReveal';
 
 export const metadata = {
   title: 'Academy · Formation',
@@ -23,11 +24,12 @@ export default function AcademyPage() {
 
       {/* Mission */}
       <section className="py-12 md:py-20">
-        <div className="grid gap-10 md:grid-cols-[1fr_2fr] md:gap-16">
-          <h2 className="font-display text-5xl uppercase leading-crush tracking-tightest md:text-6xl">
-            Notre mission
-          </h2>
-          <div className="space-y-5 font-sans text-base leading-relaxed text-pau-primary/75 md:text-lg">
+        <ScrollReveal>
+          <div className="grid gap-10 md:grid-cols-[1fr_2fr] md:gap-16">
+            <h2 className="font-display text-5xl uppercase leading-crush tracking-tightest md:text-6xl">
+              Notre mission
+            </h2>
+            <div className="space-y-5 font-sans text-base leading-relaxed text-pau-primary/75 md:text-lg">
             <p>
               L'Academy du Pau FC s'inscrit dans le projet global du club :
               détecter, former et accompagner les jeunes joueurs et joueuses
@@ -45,95 +47,114 @@ export default function AcademyPage() {
               adultes responsables et autonomes, capables de construire un
               projet de vie équilibré.
             </p>
+            </div>
           </div>
-        </div>
+        </ScrollReveal>
       </section>
 
       {/* Pôles */}
       <section className="border-t border-pau-primary/10 py-12 md:py-20">
-        <h2 className="mb-12 font-display text-5xl uppercase leading-crush tracking-tightest md:text-6xl">
-          Nos pôles
-        </h2>
+        <ScrollReveal>
+          <h2 className="mb-12 font-display text-5xl uppercase leading-crush tracking-tightest md:text-6xl">
+            Nos pôles
+          </h2>
+        </ScrollReveal>
 
         <div className="grid gap-8 md:grid-cols-2 lg:gap-12">
           {/* Pôle Masculin */}
-          <PoleTile
-            title="Pôle Masculin"
-            description="U13 à U19 · Préformation et formation · Championnat National · Suivi scolaire renforcé · Internat."
-            href="/academy/masculin"
-          />
+          <ScrollReveal delay={0}>
+            <PoleTile
+              title="Pôle Masculin"
+              description="U13 à U19 · Préformation et formation · Championnat National · Suivi scolaire renforcé · Internat."
+              href="/academy/masculin"
+            />
+          </ScrollReveal>
 
           {/* Pôle Féminin */}
-          <PoleTile
-            title="Pôle Féminin"
-            description="U13 à U19 · Formation féminine · Championnat régional et national · Projet sportif en développement."
-            href="/academy/feminin"
-          />
+          <ScrollReveal delay={100}>
+            <PoleTile
+              title="Pôle Féminin"
+              description="U13 à U19 · Formation féminine · Championnat régional et national · Projet sportif en développement."
+              href="/academy/feminin"
+            />
+          </ScrollReveal>
         </div>
       </section>
 
       {/* Rejoindre l'Academy */}
       <section className="border-t border-pau-primary/10 py-12 md:py-20">
         <div className="grid gap-10 md:grid-cols-2 md:gap-16">
-          <div>
-            <h2 className="font-display text-5xl uppercase leading-crush tracking-tightest md:text-6xl">
-              Intégrer l&apos;Academy
-            </h2>
-            <p className="mt-6 font-sans text-base leading-relaxed text-pau-primary/75 md:text-lg">
-              Tu as entre 12 et 18 ans, tu es passionné(e) de football et tu
-              veux progresser dans un environnement professionnel ? Découvre
-              comment rejoindre l'Academy du Pau FC.
-            </p>
-            <div className="mt-8">
-              <Link
-                href="/academy/integrer"
-                className="inline-block bg-pau-yellow px-6 py-3 font-mono text-sm uppercase tracking-wider text-pau-night transition-transform hover:scale-105"
-              >
-                Candidater
-              </Link>
+          <ScrollReveal delay={0}>
+            <div>
+              <h2 className="font-display text-5xl uppercase leading-crush tracking-tightest md:text-6xl">
+                Intégrer l&apos;Academy
+              </h2>
+              <p className="mt-6 font-sans text-base leading-relaxed text-pau-primary/75 md:text-lg">
+                Tu as entre 12 et 18 ans, tu es passionné(e) de football et tu
+                veux progresser dans un environnement professionnel ? Découvre
+                comment rejoindre l'Academy du Pau FC.
+              </p>
+              <div className="mt-8">
+                <Link
+                  href="/academy/integrer"
+                  className="inline-block bg-pau-yellow px-6 py-3 font-mono text-sm uppercase tracking-wider text-pau-night transition-transform hover:scale-105"
+                >
+                  Candidater
+                </Link>
+              </div>
             </div>
-          </div>
+          </ScrollReveal>
 
-          <div>
-            <h2 className="font-display text-5xl uppercase leading-crush tracking-tightest md:text-6xl">
-              Stages Academy
-            </h2>
-            <p className="mt-6 font-sans text-base leading-relaxed text-pau-primary/75 md:text-lg">
-              Des stages intensifs pendant les vacances scolaires pour les
-              jeunes de 8 à 16 ans : technique, tactique, physique et mental,
-              encadrés par le staff de l'Academy.
-            </p>
-            <div className="mt-8">
-              <Link
-                href="/academy/stages"
-                className="inline-block border border-gray-200 px-6 py-3 font-mono text-sm uppercase tracking-wider text-pau-primary transition-colors hover:bg-gray-50"
-              >
-                Voir les stages
-              </Link>
+          <ScrollReveal delay={100}>
+            <div>
+              <h2 className="font-display text-5xl uppercase leading-crush tracking-tightest md:text-6xl">
+                Stages Academy
+              </h2>
+              <p className="mt-6 font-sans text-base leading-relaxed text-pau-primary/75 md:text-lg">
+                Des stages intensifs pendant les vacances scolaires pour les
+                jeunes de 8 à 16 ans : technique, tactique, physique et mental,
+                encadrés par le staff de l'Academy.
+              </p>
+              <div className="mt-8">
+                <Link
+                  href="/academy/stages"
+                  className="inline-block border border-gray-200 px-6 py-3 font-mono text-sm uppercase tracking-wider text-pau-primary transition-colors hover:bg-gray-50"
+                >
+                  Voir les stages
+                </Link>
+              </div>
             </div>
-          </div>
+          </ScrollReveal>
         </div>
       </section>
 
       {/* Valeurs */}
       <section className="border-t border-pau-primary/10 py-12 md:py-20">
-        <h2 className="mb-12 font-display text-5xl uppercase leading-crush tracking-tightest md:text-6xl">
-          Nos valeurs
-        </h2>
+        <ScrollReveal>
+          <h2 className="mb-12 font-display text-5xl uppercase leading-crush tracking-tightest md:text-6xl">
+            Nos valeurs
+          </h2>
+        </ScrollReveal>
 
         <div className="grid gap-8 md:grid-cols-3 lg:gap-12">
-          <ValeurCard
-            title="Excellence"
-            description="Nous visons le plus haut niveau sportif tout en maintenant un équilibre scolaire et personnel."
-          />
-          <ValeurCard
-            title="Respect"
-            description="Respect des éducateurs, des coéquipiers, des adversaires et des règles du jeu."
-          />
-          <ValeurCard
-            title="Engagement"
-            description="Travail, rigueur, dépassement de soi et esprit d'équipe sont au cœur de notre projet."
-          />
+          <ScrollReveal delay={0}>
+            <ValeurCard
+              title="Excellence"
+              description="Nous visons le plus haut niveau sportif tout en maintenant un équilibre scolaire et personnel."
+            />
+          </ScrollReveal>
+          <ScrollReveal delay={100}>
+            <ValeurCard
+              title="Respect"
+              description="Respect des éducateurs, des coéquipiers, des adversaires et des règles du jeu."
+            />
+          </ScrollReveal>
+          <ScrollReveal delay={200}>
+            <ValeurCard
+              title="Engagement"
+              description="Travail, rigueur, dépassement de soi et esprit d'équipe sont au cœur de notre projet."
+            />
+          </ScrollReveal>
         </div>
       </section>
 

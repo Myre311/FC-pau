@@ -3,6 +3,7 @@ import Image from 'next/image';
 
 import { prisma } from '@/lib/prisma';
 import { formatPrice } from '@/lib/format';
+import { ScrollReveal } from '@/components/animations/ScrollReveal';
 
 export const dynamic = 'force-dynamic';
 
@@ -104,18 +105,16 @@ export default async function HomePage() {
       {upcomingMatches.length > 0 && (
         <section className="border-b border-gray-200 py-12">
           <div className="mx-auto max-w-7xl px-6 md:px-12">
-            <h2 className="mb-8 font-display text-2xl font-bold uppercase text-pau-primary">
-              Prochains matchs
-            </h2>
+            <ScrollReveal>
+              <h2 className="mb-8 font-display text-2xl font-bold uppercase text-pau-primary">
+                Prochains matchs
+              </h2>
+            </ScrollReveal>
             <div className="grid gap-4 md:grid-cols-2">
               {upcomingMatches.map((match, idx) => (
-                <div
-                  key={match.id}
-                  className="animate-fade-in-up"
-                  style={{ animationDelay: `${idx * 100}ms` }}
-                >
+                <ScrollReveal key={match.id} delay={idx * 100}>
                   <MatchCard match={match} />
-                </div>
+                </ScrollReveal>
               ))}
             </div>
           </div>
@@ -126,26 +125,24 @@ export default async function HomePage() {
       {latestArticles.length > 0 && (
         <section className="border-b border-gray-200 py-12">
           <div className="mx-auto max-w-7xl px-6 md:px-12">
-            <div className="mb-8 flex items-center justify-between">
-              <h2 className="font-display text-2xl font-bold uppercase text-pau-primary">
-                Actualités
-              </h2>
-              <Link
-                href="/actualites"
-                className="font-mono text-xs uppercase tracking-wider text-pau-primary transition-colors hover:text-pau-yellow"
-              >
-                Voir tout
-              </Link>
-            </div>
+            <ScrollReveal>
+              <div className="mb-8 flex items-center justify-between">
+                <h2 className="font-display text-2xl font-bold uppercase text-pau-primary">
+                  Actualités
+                </h2>
+                <Link
+                  href="/actualites"
+                  className="font-mono text-xs uppercase tracking-wider text-pau-primary transition-colors hover:text-pau-yellow"
+                >
+                  Voir tout
+                </Link>
+              </div>
+            </ScrollReveal>
             <div className="grid gap-6 md:grid-cols-3">
               {latestArticles.map((article, idx) => (
-                <div
-                  key={article.id}
-                  className="animate-fade-in-up"
-                  style={{ animationDelay: `${idx * 100}ms` }}
-                >
+                <ScrollReveal key={article.id} delay={idx * 100}>
                   <ArticleCard article={article} />
-                </div>
+                </ScrollReveal>
               ))}
             </div>
           </div>
@@ -156,29 +153,27 @@ export default async function HomePage() {
       {featuredProducts.length > 0 && (
         <section className="py-12">
           <div className="mx-auto max-w-7xl px-6 md:px-12">
-            <div className="mb-8 flex items-center justify-between">
-              <h2 className="font-display text-2xl font-bold uppercase text-pau-primary">
-                Boutique officielle
-              </h2>
-              <Link
-                href="/boutique"
-                className="font-mono text-xs uppercase tracking-wider text-pau-primary transition-colors hover:text-pau-yellow"
-              >
-                Tout voir
-              </Link>
-            </div>
+            <ScrollReveal>
+              <div className="mb-8 flex items-center justify-between">
+                <h2 className="font-display text-2xl font-bold uppercase text-pau-primary">
+                  Boutique officielle
+                </h2>
+                <Link
+                  href="/boutique"
+                  className="font-mono text-xs uppercase tracking-wider text-pau-primary transition-colors hover:text-pau-yellow"
+                >
+                  Tout voir
+                </Link>
+              </div>
+            </ScrollReveal>
             <div className="grid gap-6 md:grid-cols-3">
               {featuredProducts.map((product, idx) => {
                 const firstVariant = product.variants[0];
                 const price = firstVariant?.priceOverride || product.basePrice || 0;
                 return (
-                  <div
-                    key={product.id}
-                    className="animate-fade-in-up"
-                    style={{ animationDelay: `${idx * 100}ms` }}
-                  >
+                  <ScrollReveal key={product.id} delay={idx * 100}>
                     <ProductCard product={product} price={price} />
-                  </div>
+                  </ScrollReveal>
                 );
               })}
             </div>
