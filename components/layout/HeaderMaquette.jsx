@@ -2,72 +2,58 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 
 /**
- * Header refonte - Sticky 80px
- * - Logo à gauche
- * - Menu burger à droite (mobile)
- * - Fond transparent avec gradient
+ * Header style maquette client
+ * - Caché au chargement initial
+ * - Apparaît au scroll avec fond
+ * - Logo centré absolu
+ * - Billetterie 25% | Boutique 75%
+ * - Menu burger mobile
  */
 export function HeaderMaquette() {
+  const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <header className="fixed top-0 left-0 z-50 w-full">
       {/* Fond transparent avec gradient */}
-      <div className="pointer-events-none absolute inset-0 h-48 bg-gradient-to-b from-black/60 to-transparent" />
+      <div className="pointer-events-none absolute inset-0 h-48 bg-gradient-to-b from-black/50 to-transparent" />
 
-      <div className="relative flex h-20 items-center justify-between px-6 md:px-12">
-        {/* Logo à gauche */}
-        <Link href="/" className="relative z-10">
+      <div className="relative flex items-center justify-between px-6 py-6 md:px-12 md:py-10">
+        {/* Spacer gauche (responsive) */}
+        <div className="w-8 md:hidden" />
+
+        {/* Logo centré (absolu) */}
+        <Link
+          href="/"
+          className="absolute left-1/2 top-6 -translate-x-1/2 md:top-3"
+        >
           <Image
             src="/images/homepage/Logo-Pau-FC-2023.png"
             alt="Pau FC"
-            width={50}
-            height={50}
-            className="h-12 w-auto drop-shadow-[0_2px_8px_rgba(255,204,0,0.2)] md:h-14"
+            width={80}
+            height={80}
+            className="h-16 w-auto drop-shadow-[0_2px_8px_rgba(255,204,0,0.2)] md:h-20"
             priority
           />
         </Link>
 
-        {/* Navigation Desktop */}
-        <nav className="hidden md:flex md:items-center md:gap-8">
+        {/* Navigation Desktop - Simple comme la refonte */}
+        <nav className="hidden w-full md:flex">
           <Link
             href="/billetterie"
-            className="font-sans text-base font-medium tracking-wide text-white transition-colors hover:text-paufc-yellow"
+            className="absolute left-1/4 -translate-x-1/2 font-sans text-lg font-light tracking-wide text-white transition-colors hover:text-white/80"
           >
             Billetterie
           </Link>
           <Link
             href="/boutique"
-            className="font-sans text-base font-medium tracking-wide text-white transition-colors hover:text-paufc-yellow"
+            className="absolute left-3/4 -translate-x-1/2 font-sans text-lg font-light tracking-wide text-white transition-colors hover:text-white/80"
           >
             Boutique
-          </Link>
-          <Link
-            href="/calendrier"
-            className="font-sans text-base font-medium tracking-wide text-white transition-colors hover:text-paufc-yellow"
-          >
-            Calendrier
-          </Link>
-          <Link
-            href="/equipe"
-            className="font-sans text-base font-medium tracking-wide text-white transition-colors hover:text-paufc-yellow"
-          >
-            Équipe
-          </Link>
-          <Link
-            href="/actualites"
-            className="font-sans text-base font-medium tracking-wide text-white transition-colors hover:text-paufc-yellow"
-          >
-            Actualités
-          </Link>
-          <Link
-            href="/club"
-            className="font-sans text-base font-medium tracking-wide text-white transition-colors hover:text-paufc-yellow"
-          >
-            Le Club
           </Link>
         </nav>
 
