@@ -98,6 +98,26 @@ export function HeaderMaquette() {
                 </div>
               </Link>
 
+              {/* ACADEMY */}
+              <Link
+                href="/academy"
+                onClick={() => setMobileMenuOpen(false)}
+                className="group relative overflow-hidden rounded-lg"
+              >
+                <div className="relative aspect-[16/9] overflow-hidden">
+                  <Image
+                    src="/images/hero-academy.jpg"
+                    alt="Academy"
+                    fill
+                    className="object-cover brightness-75 transition-all group-hover:scale-105 group-hover:brightness-90"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-pau-night via-pau-night/50 to-transparent" />
+                  <h3 className="absolute bottom-4 left-4 font-display text-xl font-bold uppercase tracking-wide text-white md:text-2xl">
+                    Academy
+                  </h3>
+                </div>
+              </Link>
+
               {/* LE CLUB */}
               <Link
                 href="/club"
