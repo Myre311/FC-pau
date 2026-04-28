@@ -8,7 +8,7 @@ export const dynamic = 'force-dynamic';
 export const metadata = {
   title: 'Effectif',
   description:
-    'Joueurs et staff du Pau FC, saison 2025-2026. Découvrez l'effectif professionnel qui défend les couleurs du Béarn.',
+    "Joueurs et staff du Pau FC, saison 2025-2026. Découvrez l'effectif professionnel qui défend les couleurs du Béarn.",
 };
 
 const POSITION_ORDER = ['goalkeeper', 'defender', 'midfielder', 'forward'];
