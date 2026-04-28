@@ -278,6 +278,15 @@ export default async function HomePage() {
       </section>
 
       {/* SECTION 3 - BANDEAU PARTENAIRES */}
+      <section className="bg-white pb-0 pt-12 md:pt-16">
+        <div className="container-pau">
+          <div className="mb-8">
+            <h2 className="font-display text-3xl font-bold uppercase text-pau-night md:text-4xl">
+              Les partenaires
+            </h2>
+          </div>
+        </div>
+      </section>
       <ScrollingBanner partners={partners} />
 
       {/* SECTION 4 - ARTICLES RÉCENTS */}
