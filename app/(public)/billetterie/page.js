@@ -292,7 +292,7 @@ function MatchCardMaquette({ match }) {
       {match.competition && (
         <div className="mb-6 flex justify-center">
           <Image
-            src="/images/competitions/ligue2-bkt.png"
+            src="/images/public/logos/ligue-2-bkt.svg"
             alt={match.competition}
             width={120}
             height={40}
