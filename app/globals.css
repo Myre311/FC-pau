@@ -17,8 +17,6 @@
   --pau-white: #FFFFFF;
 
   /* Échelle typographique stricte */
-  --font-display: 'Inter', 'Helvetica Neue', sans-serif;
-  --font-body: 'Inter', system-ui, sans-serif;
   --text-xs: 0.75rem;     /* 12px */
   --text-sm: 0.875rem;    /* 14px */
   --text-base: 1rem;      /* 16px */
