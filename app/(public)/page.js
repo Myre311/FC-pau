@@ -48,41 +48,21 @@ export default async function HomePage() {
     <>
       <NewsletterPopup />
 
-      {/* SECTION 1 - HERO : Badge animé (gauche) + Photo Maillots (droite) */}
+      {/* SECTION 1 - HERO : Vidéo (gauche) + Photo Maillots (droite) */}
       <section className="relative h-screen min-h-[600px] bg-pau-night">
         <div className="grid h-full md:grid-cols-2">
 
-          {/* GAUCHE - Badge avec texte match */}
-          <div className="relative flex items-center justify-center overflow-hidden bg-gradient-to-br from-pau-night via-pau-primary to-pau-night p-8">
-            {/* Badge Pau FC */}
-            <div className="relative z-10 text-center">
-              <Image
-                src="/images/homepage/Logo-Pau-FC-2023.png"
-                alt="Pau FC"
-                width={300}
-                height={300}
-                className="mx-auto mb-8 h-64 w-64 object-contain md:h-80 md:w-80"
-                priority
-              />
-
-              {/* Texte match */}
-              <div className="space-y-2">
-                <h1 className="font-display text-4xl font-bold uppercase leading-none text-white md:text-5xl lg:text-6xl">
-                  Pau FC
-                </h1>
-                <p className="font-display text-2xl font-bold uppercase text-white/60 md:text-3xl">
-                  vs
-                </p>
-                <h2 className="font-display text-4xl font-bold uppercase leading-none text-white md:text-5xl lg:text-6xl">
-                  Amiens
-                </h2>
-              </div>
-            </div>
-
-            {/* Pattern de fond */}
-            <div className="absolute inset-0 opacity-5">
-              <div className="absolute inset-0 bg-[url('/images/homepage/Logo-Pau-FC-2023.png')] bg-cover bg-center" />
-            </div>
+          {/* GAUCHE - Vidéo */}
+          <div className="relative overflow-hidden">
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="h-full w-full object-cover"
+            >
+              <source src="/videos/hero.mp4" type="video/mp4" />
+            </video>
           </div>
 
           {/* DROITE - Photo Maillots */}
@@ -199,28 +179,40 @@ export default async function HomePage() {
               </div>
 
               {/* SECTION MATCH avec logos clubs */}
-              {nextHomeMatch && (
-                <div className="flex items-center justify-between bg-pau-primary p-6">
-                  <div className="flex items-center gap-6">
+              <div className="flex items-center justify-between rounded-lg bg-pau-primary p-6">
+                <div className="flex items-center gap-4">
+                  {/* Logo Pau FC */}
+                  <div className="flex h-20 w-20 items-center justify-center rounded-full bg-white p-3">
                     <Image
                       src="/images/homepage/Logo-Pau-FC-2023.png"
                       alt="Pau FC"
                       width={60}
                       height={60}
-                      className="h-16 w-16 object-contain"
+                      className="h-full w-full object-contain"
                     />
-                    <span className="font-display text-2xl font-bold text-white">vs</span>
-                    <div className="h-16 w-16 rounded-full bg-white" />
                   </div>
 
-                  <Link
-                    href="/billetterie"
-                    className="border-2 border-pau-yellow bg-pau-yellow px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-pau-night transition-all hover:bg-transparent hover:text-pau-yellow"
-                  >
-                    Billetterie
-                  </Link>
+                  <span className="font-display text-2xl font-bold text-white">vs</span>
+
+                  {/* Logo équipe adverse - placeholder */}
+                  <div className="flex h-20 w-20 items-center justify-center rounded-full bg-white p-3">
+                    <Image
+                      src="/images/homepage/Logo-MHSC.png"
+                      alt="Adversaire"
+                      width={60}
+                      height={60}
+                      className="h-full w-full object-contain"
+                    />
+                  </div>
                 </div>
-              )}
+
+                <Link
+                  href="/billetterie"
+                  className="border-2 border-pau-yellow bg-pau-yellow px-6 py-3 font-display text-xs font-bold uppercase tracking-wide text-pau-night transition-all hover:bg-transparent hover:text-pau-yellow md:text-sm"
+                >
+                  Billetterie
+                </Link>
+              </div>
 
             </div>
           </div>
