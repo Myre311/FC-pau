@@ -195,7 +195,7 @@ function MatchCard({ match }) {
   return (
     <Link
       href={`/calendrier/${match.id}`}
-      className="block border border-gray-200 p-6 transition-all hover:scale-[1.02] hover:border-pau-yellow hover:shadow-lg"
+      className="block border border-gray-200 p-6 transition-all hover:scale-[1.02] hover:bg-gray-50"
     >
       <div className="mb-4 flex items-center justify-between">
         <div className="flex h-8 items-center bg-pau-primary px-3">
@@ -281,7 +281,7 @@ function MatchCard({ match }) {
 // Composant Article simple avec animation hover
 function ArticleCard({ article }) {
   return (
-    <Link href={`/actualites/${article.slug}`} className="block border border-gray-200 transition-all hover:scale-[1.02] hover:border-pau-yellow hover:shadow-lg">
+    <Link href={`/actualites/${article.slug}`} className="block border border-gray-200 transition-all hover:scale-[1.02] hover:bg-gray-50">
       {article.coverImageUrl && (
         <div className="relative aspect-[4/3] overflow-hidden bg-gray-100">
           <Image
@@ -310,7 +310,7 @@ function ArticleCard({ article }) {
 // Composant Produit simple avec animation hover
 function ProductCard({ product, price }) {
   return (
-    <Link href={`/boutique/${product.slug}`} className="block border border-gray-200 transition-all hover:scale-[1.02] hover:border-pau-yellow hover:shadow-lg">
+    <Link href={`/boutique/${product.slug}`} className="block border border-gray-200 transition-all hover:scale-[1.02] hover:bg-gray-50">
       <div className="relative aspect-square overflow-hidden bg-gray-100">
         {product.images?.[0] && (
           <Image

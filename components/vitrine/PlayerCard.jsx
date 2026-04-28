@@ -6,7 +6,7 @@ export function PlayerCard({ player }) {
   const isStaff = player.role !== 'player';
   return (
     <article className="group relative flex flex-col transition-transform hover:scale-[1.02]">
-      <div className="relative aspect-[3/4] w-full overflow-hidden border border-gray-200 bg-gray-50 transition-all group-hover:border-pau-yellow group-hover:shadow-lg">
+      <div className="relative aspect-[3/4] w-full overflow-hidden border border-gray-200 bg-gray-50 transition-all group-hover:bg-white">
         {player.photoUrl && (
           <Image
             src={player.photoUrl}

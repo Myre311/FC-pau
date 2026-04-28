@@ -7,7 +7,7 @@ export function ArticleCard({ article, featured = false }) {
   return (
     <Link
       href={`/actualites/${article.slug}`}
-      className={`group block border border-gray-200 transition-all hover:scale-[1.02] hover:border-pau-yellow hover:shadow-lg ${
+      className={`group block border border-gray-200 transition-all hover:scale-[1.02] hover:bg-gray-50 ${
         featured ? 'md:col-span-2' : ''
       }`}
     >

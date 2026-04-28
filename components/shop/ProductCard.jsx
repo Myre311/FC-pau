@@ -13,7 +13,7 @@ export function ProductCard({ product }) {
   return (
     <Link
       href={`/boutique/${product.slug}`}
-      className="group block border border-gray-200 transition-all hover:scale-[1.02] hover:border-pau-yellow hover:shadow-lg"
+      className="group block border border-gray-200 transition-all hover:scale-[1.02] hover:bg-gray-50"
       aria-label={`${product.name} — ${formatPrice(product.basePrice)}`}
     >
       <article>

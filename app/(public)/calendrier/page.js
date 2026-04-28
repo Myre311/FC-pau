@@ -62,7 +62,7 @@ export default async function CalendrierPage() {
             </h2>
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {upcoming.map((match) => (
-                <div key={match.id} className="border border-gray-200 p-6 hover:border-pau-yellow">
+                <div key={match.id} className="border border-gray-200 p-6 hover:bg-gray-50">
                   <div className="mb-4 flex items-center justify-between">
                     {match.competition?.includes('Ligue 2') ? (
                       <div className="flex h-8 items-center bg-pau-primary px-3">

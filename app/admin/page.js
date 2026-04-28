@@ -181,28 +181,28 @@ export default async function AdminDashboardPage() {
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <Link
           href="/admin/produits/nouveau"
-          className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm transition-all hover:border-pau-yellow hover:shadow-md"
+          className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm transition-all hover:bg-gray-50"
         >
           <p className="font-medium text-gray-900">Nouveau produit</p>
           <p className="text-sm text-gray-500">Ajouter au catalogue</p>
         </Link>
         <Link
           href="/admin/matchs/nouveau"
-          className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm transition-all hover:border-pau-yellow hover:shadow-md"
+          className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm transition-all hover:bg-gray-50"
         >
           <p className="font-medium text-gray-900">Nouveau match</p>
           <p className="text-sm text-gray-500">Programmer un match</p>
         </Link>
         <Link
           href="/admin/actualites/nouveau"
-          className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm transition-all hover:border-pau-yellow hover:shadow-md"
+          className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm transition-all hover:bg-gray-50"
         >
           <p className="font-medium text-gray-900">Nouvelle actualité</p>
           <p className="text-sm text-gray-500">Publier une actu</p>
         </Link>
         <Link
           href="/admin/marketing"
-          className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm transition-all hover:border-pau-yellow hover:shadow-md"
+          className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm transition-all hover:bg-gray-50"
         >
           <p className="font-medium text-gray-900">Marketing</p>
           <p className="text-sm text-gray-500">Gérer les campagnes</p>
