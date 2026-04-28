@@ -1,92 +1,132 @@
-import Image from 'next/image';
 import { prisma } from '@/lib/prisma';
-import { ProductCard } from '@/components/shop/ProductCard';
-import { ScrollReveal } from '@/components/animations/ScrollReveal';
+import { HeroCarousel } from '@/components/shop/HeroCarousel';
+import { AsymmetricSection } from '@/components/shop/AsymmetricSection';
+import { ProductCardMaquette } from '@/components/shop/ProductCardMaquette';
+
+export const dynamic = 'force-dynamic';
 
 export const metadata = {
   title: 'Boutique',
   description:
-    'Maillots, lifestyle, accessoires — la boutique officielle du Pau FC. Configurez votre flocage et soutenez le club.',
+    'Boutique officielle du Pau FC. Maillots, training, lifestyle et accessoires.',
 };
 
-export const dynamic = 'force-dynamic';
+export default async function BoutiqueMaquettePage() {
+  // Récupérer les produits par catégorie
+  const [tenues, training, lifestyle] = await Promise.all([
+    prisma.product.findMany({
+      where: {
+        status: 'active',
+        category: { slug: 'tenues-officielles' },
+      },
+      include: { category: true, variants: true },
+      take: 4,
+    }).catch(() => []),
+    prisma.product.findMany({
+      where: {
+        status: 'active',
+        category: { slug: 'training' },
+      },
+      include: { category: true, variants: true },
+      take: 4,
+    }).catch(() => []),
+    prisma.product.findMany({
+      where: {
+        status: 'active',
+        category: { slug: 'lifestyle' },
+      },
+      include: { category: true, variants: true },
+      take: 4,
+    }).catch(() => []),
+  ]);
 
-export default async function BoutiquePage() {
-  const products = await prisma.product.findMany({
-    where: { status: 'active' },
-    orderBy: [{ featured: 'desc' }, { createdAt: 'desc' }],
-    include: {
-      category: true,
-      variants: { include: { stockItem: true } },
+  // Slides du carousel
+  const heroSlides = [
+    {
+      image: '/images/boutique/Boutique-1.jpg',
+      tag: 'TENUE 25/26',
+      title: 'MAILLOT DOMICILE',
+      description: 'Du jaune, du bleu et ce côté rétro qui évoque les tuniques des années...',
+      cta: 'ACHETER MAINTENANT',
+      href: '#tenues',
     },
-  });
-
-  const featured = products.filter((p) => p.featured);
+    {
+      image: '/images/boutique/Boutique-2.jpg',
+      tag: 'TENUE 25/26',
+      title: 'MAILLOT EXTÉRIEUR',
+      description: 'L\'élégance du blanc pour briller hors de nos bases...',
+      cta: 'DÉCOUVRIR',
+      href: '#tenues',
+    },
+    {
+      image: '/images/boutique/Holy-maillot.jpg',
+      tag: 'TENUE 25/26',
+      title: 'MAILLOT GARDIEN',
+      description: 'L\'Alliance de deux univers différents',
+      cta: 'DÉCOUVRIR',
+      href: '#tenues',
+    },
+  ];
 
   return (
-    <div className="bg-white">
-      {/* HERO SIMPLE */}
-      <section className="relative h-[300px] overflow-hidden border-b border-gray-200">
-        <Image
-          src="/images/hero-boutique.jpg"
-          alt="Boutique Pau FC"
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-pau-night/40" />
-        <div className="relative z-10 flex h-full items-center">
-          <div className="mx-auto w-full max-w-7xl px-6 md:px-12">
-            <p className="mb-3 font-mono text-xs uppercase tracking-widest text-white/90">
-              Catalogue officiel · Saison 2025-2026
-            </p>
-            <h1 className="font-display text-4xl font-black uppercase text-white md:text-5xl">
-              La Boutique
-            </h1>
-            <p className="mt-3 text-sm text-white/90">
-              Maillots, lifestyle, accessoires. Flocage personnalisable.
-            </p>
-          </div>
+    <div className="bg-pau-night">
+      {/* Hero Carousel */}
+      <HeroCarousel slides={heroSlides} />
+
+      {/* Section Tenues 25/26 */}
+      <AsymmetricSection
+        id="tenues"
+        tag="TENUE 25/26"
+        title="Tenues 25/26"
+        ctaText="Acheter maintenant"
+        ctaHref="/boutique?categorie=tenues-officielles"
+        sidebarImage="/images/boutique/Tenues2526.jpg"
+        reverse={false}
+      >
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {tenues.map((product) => (
+            <ProductCardMaquette key={product.id} product={product} />
+          ))}
         </div>
-      </section>
+      </AsymmetricSection>
 
-      {/* CONTENU */}
-      <div className="mx-auto max-w-7xl px-6 py-12 md:px-12">
-        <ScrollReveal>
-          <div className="mb-8 flex items-end justify-between border-b border-gray-200 pb-4">
-            <h2 className="font-mono text-xs uppercase tracking-wider text-pau-primary">
-              {products.length} produit{products.length > 1 ? 's' : ''}
-            </h2>
-            {featured.length > 0 && (
-              <span className="font-mono text-xs uppercase tracking-wider text-pau-primary/60">
-                {featured.length} mis{featured.length > 1 ? 'es' : 'e'} en avant
-              </span>
-            )}
-          </div>
-        </ScrollReveal>
-
-        {products.length === 0 ? (
-          <EmptyCatalog />
-        ) : (
+      {/* Section Training */}
+      {training.length > 0 && (
+        <AsymmetricSection
+          id="training"
+          tag="TRAINING 25/26"
+          title="Training 25/26"
+          ctaText="Découvrir la gamme"
+          ctaHref="/boutique?categorie=training"
+          sidebarImage="/images/hero-equipe.jpg"
+          reverse={true}
+        >
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {products.map((p, idx) => (
-              <ScrollReveal key={p.id} delay={idx * 50}>
-                <ProductCard product={p} />
-              </ScrollReveal>
+            {training.map((product) => (
+              <ProductCardMaquette key={product.id} product={product} />
             ))}
           </div>
-        )}
-      </div>
-    </div>
-  );
-}
+        </AsymmetricSection>
+      )}
 
-function EmptyCatalog() {
-  return (
-    <div className="py-20 text-center">
-      <p className="text-sm text-pau-primary/40">
-        Aucun produit disponible pour le moment.
-      </p>
+      {/* Section Lifestyle */}
+      {lifestyle.length > 0 && (
+        <AsymmetricSection
+          id="lifestyle"
+          tag="LIFESTYLE"
+          title="Lifestyle"
+          ctaText="Tout voir"
+          ctaHref="/boutique?categorie=lifestyle"
+          sidebarImage="/images/hero-club.jpg"
+          reverse={false}
+        >
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {lifestyle.map((product) => (
+              <ProductCardMaquette key={product.id} product={product} />
+            ))}
+          </div>
+        </AsymmetricSection>
+      )}
     </div>
   );
 }
