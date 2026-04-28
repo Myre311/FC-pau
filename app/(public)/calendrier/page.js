@@ -197,66 +197,79 @@ function MatchCard({ match }) {
   const isPlayed = match.status === 'played';
 
   return (
-    <article className="border border-white/10 bg-pau-primary p-7 transition-all hover:border-2 hover:border-pau-yellow">
-      {/* Badge compétition + date */}
-      <div className="mb-4 flex items-center justify-between">
-        {match.competition && (
-          <span className="inline-block border border-pau-yellow bg-pau-yellow px-3 py-1 font-mono text-xs font-bold uppercase tracking-wider text-pau-night">
-            {match.competition}
-          </span>
-        )}
+    <article className="border border-white/10 bg-pau-primary p-6 transition-all hover:border-2 hover:border-pau-yellow md:p-7">
+      {/* Logo Ligue 2 BKT */}
+      {match.competition && (
+        <div className="mb-6 flex justify-center">
+          <Image
+            src="/LFP_LOGOTYPE_L2_BKT_MASTER_WHITE_RVB-2048x581.png"
+            alt={match.competition}
+            width={120}
+            height={34}
+            className="h-auto w-24 object-contain md:w-28"
+          />
+        </div>
+      )}
+
+      {/* Date */}
+      <div className="mb-4 text-center">
         <span className="font-sans text-sm text-white/60">
           {dateFr} · {heure}
         </span>
       </div>
 
-      {/* Équipes */}
-      <div className="mb-4 flex items-center justify-between gap-4">
-        <div className="flex flex-1 items-center gap-3">
-          <div className="relative h-10 w-10 flex-shrink-0">
+      {/* Équipes avec logos */}
+      <div className="mb-6 flex items-center justify-center gap-4 md:gap-6">
+        {/* Équipe à gauche */}
+        <div className="flex flex-col items-center gap-2">
+          <div className="flex h-14 w-14 items-center justify-center rounded-full bg-white p-2.5 md:h-16 md:w-16 md:p-3">
             <Image
-              src={match.isHome ? '/images/homepage/Logo-Pau-FC-2023.png' : match.opponentLogoUrl || '/images/placeholder.png'}
-              alt={match.isHome ? 'Pau FC' : match.opponentName}
-              fill
-              className="object-contain"
+              src={match.isHome ? '/images/homepage/Logo-Pau-FC-2023.png' : match.opponentLogo || '/images/placeholder.png'}
+              alt={match.isHome ? 'Pau FC' : match.opponent}
+              width={60}
+              height={60}
+              className="h-full w-full object-contain"
             />
           </div>
-          <span className="font-display text-lg font-bold uppercase text-white">
-            {match.isHome ? 'PAU FC' : match.opponentName}
+          <span className="font-display text-xs font-bold uppercase text-white md:text-sm">
+            {match.isHome ? 'Pau FC' : match.opponent}
           </span>
         </div>
 
+        {/* Score ou VS */}
         {isPlayed ? (
-          <div className="flex items-center gap-4">
-            <span className="font-display text-2xl font-bold text-pau-yellow">
+          <div className="flex items-center gap-3">
+            <span className="font-display text-2xl font-bold text-pau-yellow md:text-3xl">
               {match.isHome ? match.homeScore : match.awayScore}
             </span>
             <span className="font-display text-xl text-white/40">-</span>
-            <span className="font-display text-2xl font-bold text-white/60">
+            <span className="font-display text-2xl font-bold text-white/60 md:text-3xl">
               {match.isHome ? match.awayScore : match.homeScore}
             </span>
           </div>
         ) : (
-          <span className="font-display text-xl font-bold text-white/30">VS</span>
+          <span className="font-display text-lg font-bold text-white/40 md:text-xl">vs</span>
         )}
 
-        <div className="flex flex-1 items-center justify-end gap-3">
-          <span className="font-display text-lg font-bold uppercase text-white">
-            {match.isHome ? match.opponentName : 'PAU FC'}
-          </span>
-          <div className="relative h-10 w-10 flex-shrink-0">
+        {/* Équipe à droite */}
+        <div className="flex flex-col items-center gap-2">
+          <div className="flex h-14 w-14 items-center justify-center rounded-full bg-white p-2.5 md:h-16 md:w-16 md:p-3">
             <Image
-              src={!match.isHome ? '/images/homepage/Logo-Pau-FC-2023.png' : match.opponentLogoUrl || '/images/placeholder.png'}
-              alt={!match.isHome ? 'Pau FC' : match.opponentName}
-              fill
-              className="object-contain"
+              src={!match.isHome ? '/images/homepage/Logo-Pau-FC-2023.png' : match.opponentLogo || '/images/placeholder.png'}
+              alt={!match.isHome ? 'Pau FC' : match.opponent}
+              width={60}
+              height={60}
+              className="h-full w-full object-contain"
             />
           </div>
+          <span className="font-display text-xs font-bold uppercase text-white md:text-sm">
+            {match.isHome ? match.opponent : 'Pau FC'}
+          </span>
         </div>
       </div>
 
       {/* Infos lieu */}
-      <div className="flex items-center justify-between text-sm text-white/60">
+      <div className="flex items-center justify-between border-t border-white/10 pt-4 text-sm text-white/60">
         <span>{match.venue || (match.isHome ? 'Nouste Camp' : 'Extérieur')}</span>
         <span className="font-mono text-xs uppercase">
           {match.isHome ? 'Domicile' : 'Extérieur'}
