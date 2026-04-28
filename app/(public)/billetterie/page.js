@@ -5,7 +5,7 @@ import { prisma } from '@/lib/prisma';
 export const metadata = {
   title: 'Billetterie — Pau FC',
   description:
-    'Réservez vos places pour les matchs du Pau FC au Nouste Camp. Billetterie en ligne, tarifs, abonnements.',
+    'Prends ta place au Nouste Camp. Billetterie en ligne pour tous les matchs du Pau FC, tarifs réduits et packs famille.',
 };
 
 export default async function BilletteriePage() {
@@ -44,31 +44,31 @@ export default async function BilletteriePage() {
               Billetterie
             </h1>
             <p className="mt-4 font-sans text-lg leading-relaxed text-white/80 md:text-xl">
-              Vivez chaque match à domicile. Réservez vos places en ligne et soutenez le Pau FC au cœur du Béarn.
+              Ta place t'attend au Nouste Camp. Ambiance garantie, réservation simple, le stade c'est chez nous.
             </p>
           </div>
         </div>
       </section>
 
       {/* Prochains matchs */}
-      <section className="bg-pau-night py-16 md:py-24">
+      <section className="bg-pau-night pb-20 pt-14 md:pb-28 md:pt-22">
         <div className="container-pau">
-          <div className="mb-12">
-            <span className="badge-mono text-pau-yellow">Matchs à domicile</span>
+          <div className="mb-14">
+            <span className="badge-mono text-pau-yellow">Au Nouste Camp</span>
             <h2 className="mt-4 font-display text-4xl font-bold uppercase text-pau-yellow md:text-5xl">
-              Prochains matchs
+              Les prochains rendez-vous
             </h2>
           </div>
 
           {upcomingMatches.length === 0 ? (
             <p className="font-sans text-lg text-white/60">
-              Aucun match à domicile programmé pour le moment.{' '}
+              Pas de match à domicile de prévu pour le moment.{' '}
               <Link href="/calendrier" className="text-pau-yellow hover:underline">
-                Voir le calendrier complet
+                Regarde le calendrier complet
               </Link>
             </p>
           ) : (
-            <div className="grid gap-6 md:grid-cols-2">
+            <div className="grid gap-8 md:grid-cols-2">
               {upcomingMatches.map((match) => (
                 <MatchCardMaquette key={match.id} match={match} />
               ))}
@@ -78,16 +78,16 @@ export default async function BilletteriePage() {
       </section>
 
       {/* Tarifs */}
-      <section className="border-y border-white/10 bg-pau-primary py-16 md:py-24">
+      <section className="border-y border-white/10 bg-pau-primary pb-22 pt-18 md:pb-28 md:pt-24">
         <div className="container-pau">
-          <div className="mb-12">
-            <span className="badge-mono text-pau-yellow">Prix</span>
+          <div className="mb-14">
+            <span className="badge-mono text-pau-yellow">Les tarifs</span>
             <h2 className="mt-4 font-display text-4xl font-bold uppercase text-white md:text-5xl">
-              Tarifs
+              Combien ça coûte ?
             </h2>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-7 md:grid-cols-2 lg:grid-cols-3">
             <TarifCardMaquette
               title="Plein tarif"
               price="25€"
@@ -127,19 +127,19 @@ export default async function BilletteriePage() {
       </section>
 
       {/* Cashless */}
-      <section className="bg-pau-night py-16 md:py-24">
+      <section className="bg-pau-night pb-18 pt-16 md:pb-24 md:pt-22">
         <div className="container-pau">
-          <div className="grid gap-12 md:grid-cols-2 md:items-center">
+          <div className="grid gap-14 md:grid-cols-2 md:items-center">
             <div>
-              <span className="badge-mono text-pau-yellow">Paiement</span>
+              <span className="badge-mono text-pau-yellow">Paiement sans contact</span>
               <h2 className="mt-4 font-display text-4xl font-bold uppercase text-pau-yellow md:text-5xl">
-                Carte cashless
+                Cashless au stade
               </h2>
             </div>
 
-            <div className="space-y-4 font-sans text-base leading-relaxed text-white/70 md:text-lg">
+            <div className="space-y-5 font-sans text-base leading-relaxed text-white/70 md:text-lg">
               <p>
-                Le Nouste Camp est 100% cashless. Payez vos consommations directement avec votre carte cashless ou smartphone.
+                Au Nouste Camp, on paye sans cash. Carte cashless ou smartphone, c'est toi qui choisis.
               </p>
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
@@ -169,16 +169,16 @@ export default async function BilletteriePage() {
       </section>
 
       {/* Infos pratiques */}
-      <section className="border-y border-white/10 bg-pau-primary py-16 md:py-24">
+      <section className="border-y border-white/10 bg-pau-primary pb-20 pt-18 md:pb-26 md:pt-24">
         <div className="container-pau">
-          <div className="mb-12">
-            <span className="badge-mono text-pau-yellow">Informations</span>
+          <div className="mb-14">
+            <span className="badge-mono text-pau-yellow">Bon à savoir</span>
             <h2 className="mt-4 font-display text-4xl font-bold uppercase text-white md:text-5xl">
-              Infos pratiques
+              Comment ça se passe
             </h2>
           </div>
 
-          <div className="grid gap-12 md:grid-cols-2">
+          <div className="grid gap-14 md:grid-cols-2">
             <div className="border-2 border-white/10 bg-white/5 p-8">
               <h3 className="mb-6 font-display text-2xl font-bold uppercase text-pau-yellow">
                 Accès au stade
@@ -231,15 +231,15 @@ export default async function BilletteriePage() {
       </section>
 
       {/* Contact */}
-      <section className="bg-pau-night py-16 md:py-24">
+      <section className="bg-pau-night pb-20 pt-16 md:pb-26 md:pt-22">
         <div className="container-pau">
           <div className="mx-auto max-w-3xl text-center">
-            <span className="badge-mono text-pau-yellow">Besoin d'aide ?</span>
+            <span className="badge-mono text-pau-yellow">Un souci ?</span>
             <h2 className="mt-4 font-display text-4xl font-bold uppercase text-pau-yellow md:text-5xl">
-              Contact billetterie
+              On est là pour toi
             </h2>
-            <p className="mx-auto mt-6 max-w-xl font-sans text-lg text-white/70">
-              Pour toute question sur la billetterie, les tarifs de groupe ou les abonnements
+            <p className="mx-auto mt-7 max-w-xl font-sans text-lg text-white/70">
+              Questions sur les billets, tarifs de groupe, abonnements ? L'équipe billetterie répond.
             </p>
 
             <div className="mt-8 space-y-3 font-sans text-base text-white/80">
@@ -287,7 +287,7 @@ function MatchCardMaquette({ match }) {
   });
 
   return (
-    <article className="group border-2 border-white/10 bg-pau-primary p-6 transition-all hover:border-pau-yellow md:p-8">
+    <article className="group border border-white/10 bg-pau-primary p-7 transition-all hover:border-2 hover:border-pau-yellow md:p-9">
       {/* Badge compétition */}
       {match.competition && (
         <span className="mb-4 inline-block border border-pau-yellow bg-pau-yellow px-3 py-1 font-mono text-xs font-bold uppercase tracking-wider text-pau-night">
@@ -331,7 +331,7 @@ function MatchCardMaquette({ match }) {
 // Composant Tarif Card style maquette
 function TarifCardMaquette({ title, price, description }) {
   return (
-    <div className="border-2 border-white/10 bg-pau-night p-6 transition-all hover:border-pau-yellow">
+    <div className="border border-white/10 bg-pau-night p-7 transition-all hover:border-2 hover:border-pau-yellow">
       <h3 className="mb-3 font-display text-2xl font-bold uppercase text-white">
         {title}
       </h3>

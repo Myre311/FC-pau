@@ -99,9 +99,9 @@ export default async function HomePage() {
       </section>
 
       {/* SECTION 2 - NEWSLETTER (gauche) + CARDS (droite) */}
-      <section className="bg-pau-night py-16 md:py-20">
+      <section className="bg-pau-night py-14 md:py-20">
         <div className="container-pau">
-          <div className="grid gap-8 lg:grid-cols-2">
+          <div className="grid gap-10 lg:grid-cols-2">
 
             {/* GAUCHE - NEWSLETTER avec photo stade */}
             <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
@@ -120,7 +120,7 @@ export default async function HomePage() {
                 </h2>
 
                 <p className="mb-6 font-sans text-sm text-white/90">
-                  Restez informé des dernières actualités du club
+                  Toute l'actu du club direct dans ta boîte mail
                 </p>
 
                 <div className="flex gap-2">
@@ -140,7 +140,7 @@ export default async function HomePage() {
             <div className="space-y-4">
 
               {/* 3 CARDS en grille */}
-              <div className="grid gap-4 md:grid-cols-2">
+              <div className="grid gap-5 md:grid-cols-2">
 
                 {/* Card BILLETTERIE avec countdown */}
                 <Link
@@ -243,15 +243,15 @@ export default async function HomePage() {
       <ScrollingBanner partners={partners} />
 
       {/* SECTION 4 - ARTICLES RÉCENTS */}
-      <section className="bg-pau-night py-16 md:py-20">
+      <section className="bg-pau-night pb-18 pt-16 md:pb-24 md:pt-20">
         <div className="container-pau">
-          <div className="mb-12">
+          <div className="mb-14">
             <h2 className="font-display text-3xl font-bold uppercase text-white md:text-4xl">
-              Actualités
+              Les dernières du club
             </h2>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {recentArticles.map((article) => (
               <Link
                 key={article.id}
@@ -313,15 +313,16 @@ export default async function HomePage() {
       </section>
 
       {/* SECTION 5 - INSTAGRAM GRID 4x2 */}
-      <section className="bg-pau-night py-16 md:py-20">
+      <section className="bg-pau-night py-18 md:py-24">
         <div className="container-pau">
-          <div className="mb-12 text-center">
+          <div className="mb-10 text-center">
             <h2 className="font-display text-3xl font-bold uppercase text-white md:text-4xl">
-              @paufootballclub
+              Suis-nous sur Insta
             </h2>
+            <p className="mt-2 font-mono text-sm text-pau-yellow">@paufootballclub</p>
           </div>
 
-          <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
+          <div className="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-4">
             {[
               '/images/hero-equipe.jpg',
               '/images/hero-boutique.jpg',

@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export const metadata = {
   title: 'Le Club — Pau FC',
-  description: "Histoire, stade, dirigeants et joueurs emblématiques du Pau FC.",
+  description: "Notre histoire, le Nouste Camp, les légendes qui ont porté le maillot jaune et bleu.",
 };
 
 export default function ClubPage() {
@@ -29,9 +29,9 @@ export default function ClubPage() {
         </div>
       </section>
 
-      <section className="bg-pau-night py-16 md:py-24">
+      <section className="bg-pau-night pb-20 pt-14 md:pb-28 md:pt-22">
         <div className="container-pau">
-          <div className="grid gap-12 md:grid-cols-[1fr_2fr] md:items-start">
+          <div className="grid gap-14 md:grid-cols-[1fr_2fr] md:items-start">
             <div className="flex justify-center md:justify-start">
               <div className="relative h-48 w-48 md:h-64 md:w-64">
                 <Image
@@ -44,12 +44,12 @@ export default function ClubPage() {
             </div>
 
             <div>
-              <h2 className="mb-6 font-display text-3xl font-bold uppercase text-pau-yellow md:text-4xl">
-                Origines du Football Palois
+              <h2 className="mb-7 font-display text-3xl font-bold uppercase text-pau-yellow md:text-4xl">
+                Le foot à Pau, c'est de famille
               </h2>
-              <div className="space-y-4 font-sans text-base leading-relaxed text-white/80 md:text-lg">
-                <p>Les premières sections football se créent dans les clubs omnisports au début du XXe siècle à Pau.</p>
-                <p>Trois clubs fondateurs marquent l'histoire du football palois :</p>
+              <div className="space-y-5 font-sans text-base leading-relaxed text-white/80 md:text-lg">
+                <p>Tout démarre au début du XXe siècle, quand le ballon rond commence à rouler dans les clubs omnisports palois.</p>
+                <p>Trois noms gravés dans la mémoire du Béarn :</p>
                 <ul className="ml-6 space-y-2 list-disc">
                   <li><strong className="text-white">Football Association Bourbaki</strong> (1904)</li>
                   <li><strong className="text-white">Jeanne d'Arc le Béarn</strong> (1909)</li>
@@ -66,13 +66,13 @@ export default function ClubPage() {
         </div>
       </section>
 
-      <section className="border-t border-white/10 bg-pau-primary py-16 md:py-24">
+      <section className="border-t border-white/10 bg-pau-primary pb-22 pt-18 md:pb-28 md:pt-24">
         <div className="container-pau">
-          <h2 className="mb-12 font-display text-3xl font-bold uppercase text-pau-yellow md:text-4xl">
-            Les Joueurs Passés par le Club
+          <h2 className="mb-14 font-display text-3xl font-bold uppercase text-pau-yellow md:text-4xl">
+            Ils ont porté nos couleurs
           </h2>
 
-          <div className="grid gap-8 md:grid-cols-3">
+          <div className="grid gap-10 md:grid-cols-3">
             <PlayerProfile name="André-Pierre Gignac" position="Attaquant" years="2005-2006" description="Formé au PAU FC, Gignac a brillé en Ligue 1 avec l'OM et Toulouse avant de devenir une légende au Mexique avec les Tigres UANL." />
             <PlayerProfile name="Adrien Rabiot" position="Milieu" years="2008-2009" description="Passé par le centre de formation du PAU FC, Rabiot a ensuite rejoint le PSG avant de s'imposer comme un cadre de la Juventus et de l'équipe de France." />
             <PlayerProfile name="Anthony Briançon" position="Défenseur" years="2025-2027" description="Capitaine emblématique du PAU FC, Briançon incarne l'esprit de combativité et le leadership sur le terrain." />
@@ -80,13 +80,13 @@ export default function ClubPage() {
         </div>
       </section>
 
-      <section className="bg-pau-night py-16 md:py-24">
+      <section className="bg-pau-night pb-20 pt-16 md:pb-26 md:pt-22">
         <div className="container-pau">
-          <h2 className="mb-12 font-display text-3xl font-bold uppercase text-pau-yellow md:text-4xl">
-            PAU FC 2025/2026
+          <h2 className="mb-14 font-display text-3xl font-bold uppercase text-pau-yellow md:text-4xl">
+            Ceux qui font le club aujourd'hui
           </h2>
 
-          <div className="grid gap-8 md:grid-cols-3">
+          <div className="grid gap-9 md:grid-cols-3">
             <DirectorProfile name="Bernard Laporte-Fray" role="Président" description="À la tête du club depuis plusieurs années, il œuvre au quotidien pour le développement et le rayonnement du PAU FC." />
             <DirectorProfile name="Luis de Sousa" role="Directeur Sportif" description="Responsable de la stratégie sportive du club, du recrutement et de la gestion de l'effectif professionnel." />
             <DirectorProfile name="Nicolas Usaï" role="Entraîneur Principal" description="À la tête de l'équipe professionnelle, il dirige les entraînements et la stratégie tactique sur le terrain." />
@@ -94,13 +94,13 @@ export default function ClubPage() {
         </div>
       </section>
 
-      <section className="border-t border-white/10 bg-pau-primary py-16 md:py-24">
+      <section className="border-t border-white/10 bg-pau-primary pb-24 pt-18 md:pb-30 md:pt-24">
         <div className="container-pau">
-          <h2 className="mb-12 font-display text-3xl font-bold uppercase text-pau-yellow md:text-4xl">
-            Notre Stade
+          <h2 className="mb-14 font-display text-3xl font-bold uppercase text-pau-yellow md:text-4xl">
+            Nouste Camp — notre forteresse
           </h2>
 
-          <div className="mb-12 grid gap-6 md:grid-cols-4">
+          <div className="mb-16 grid gap-8 md:grid-cols-4">
             <StatCard number="11,800" label="Places assises" />
             <StatCard number="2022" label="Année de rénovation" />
             <StatCard number="500" label="Hospitalités" />
@@ -126,7 +126,7 @@ export default function ClubPage() {
 
 function PlayerProfile({ name, position, years, description }) {
   return (
-    <article className="border-2 border-white/10 bg-pau-night p-6">
+    <article className="border border-white/10 bg-pau-night p-7 transition-all hover:border-2 hover:border-pau-yellow">
       <div className="relative mb-4 aspect-[3/4] overflow-hidden bg-pau-primary">
         <div className="flex h-full items-center justify-center">
           <span className="font-display text-4xl font-bold text-white/20">
@@ -144,7 +144,7 @@ function PlayerProfile({ name, position, years, description }) {
 
 function DirectorProfile({ name, role, description }) {
   return (
-    <article className="border-2 border-white/10 bg-pau-primary p-6">
+    <article className="border border-white/10 bg-pau-primary p-7 transition-all hover:border-2 hover:border-pau-yellow">
       <div className="relative mb-4 aspect-square overflow-hidden bg-pau-night">
         <div className="flex h-full items-center justify-center">
           <span className="font-display text-4xl font-bold text-white/20">

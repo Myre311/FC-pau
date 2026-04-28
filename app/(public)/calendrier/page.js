@@ -93,11 +93,11 @@ export default function CalendrierPage() {
             {/* Liste des matchs */}
             {loading ? (
               <p className="py-12 text-center font-sans text-lg text-white/60">
-                Chargement du calendrier...
+                Chargement en cours...
               </p>
             ) : filteredMatches.length === 0 ? (
               <p className="py-12 text-center font-sans text-lg text-white/60">
-                Aucun match pour ce filtre.
+                Pas de match avec ce filtre.
               </p>
             ) : (
               <div className="space-y-4">
@@ -111,11 +111,11 @@ export default function CalendrierPage() {
           {/* Colonne droite : Classement */}
           <div>
             <div className="sticky top-24">
-              <h2 className="mb-6 font-display text-2xl font-bold uppercase text-pau-yellow">
-                Classement Actuel 2025/2026
+              <h2 className="mb-8 font-display text-2xl font-bold uppercase text-pau-yellow">
+                Où on en est
               </h2>
 
-              <div className="border-2 border-white/10 bg-pau-primary p-6">
+              <div className="border border-white/10 bg-pau-primary p-7">
                 <div className="mb-6 flex items-center justify-center">
                   <Image
                     src="/images/homepage/Logo-Pau-FC-2023.png"
@@ -197,7 +197,7 @@ function MatchCard({ match }) {
   const isPlayed = match.status === 'played';
 
   return (
-    <article className="border-2 border-white/10 bg-pau-primary p-6 transition-all hover:border-pau-yellow">
+    <article className="border border-white/10 bg-pau-primary p-7 transition-all hover:border-2 hover:border-pau-yellow">
       {/* Badge compétition + date */}
       <div className="mb-4 flex items-center justify-between">
         {match.competition && (

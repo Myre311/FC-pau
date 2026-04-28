@@ -16,8 +16,8 @@ export function FooterMaquette() {
               className="h-16 w-auto"
             />
             <p className="mt-4 max-w-md font-sans text-sm leading-relaxed text-white/60">
-              Club de football professionnel français évoluant en Ligue 2 BKT.
-              Nouste Camp, Pau, Béarn.
+              Club de foot professionnel en Ligue 2 BKT, basé au Nouste Camp à Pau.
+              Fier du Béarn, fier de nos couleurs.
             </p>
           </div>
 

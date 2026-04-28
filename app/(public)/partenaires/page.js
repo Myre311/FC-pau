@@ -37,20 +37,20 @@ export default function PartenairesPage() {
           <div className="max-w-4xl text-center">
             <span className="font-mono text-xs uppercase text-pau-gold">Partenariats</span>
             <h1 className="mt-4 font-display text-4xl font-bold uppercase text-pau-gold md:text-5xl lg:text-6xl">
-              Et si on faisait de Pau<br />une ville de foot
+              Si on transformait Pau<br />en capitale du foot
             </h1>
             <p className="mx-auto mt-6 max-w-3xl font-sans text-lg leading-relaxed text-white/80 md:text-xl">
-              Rejoignez le réseau partenaire du Pau FC et bénéficiez d'une visibilité exceptionnelle,
-              d'expériences uniques et d'un réseau d'affaires privilégié.
+              Associez votre entreprise au Pau FC. Visibilité terrain et tribunes, hospitalités VIP,
+              et un réseau business actif dans tout le Béarn.
             </p>
           </div>
         </div>
       </section>
 
       {/* Statistiques */}
-      <section className="border-y border-pau-gold/20 bg-pau-primary py-16 md:py-20">
+      <section className="border-y border-pau-gold/20 bg-pau-primary py-18 md:py-24">
         <div className="container-pau">
-          <div className="grid gap-8 md:grid-cols-5">
+          <div className="grid gap-10 md:grid-cols-5">
             <StatBox number="11,800" label="Sièges/match" />
             <StatBox number="50+" label="Entreprises partenaires" />
             <StatBox number="300" label="Convives VIP/match" />
@@ -61,10 +61,10 @@ export default function PartenairesPage() {
       </section>
 
       {/* Nos Partenaires */}
-      <section className="bg-pau-night py-16 md:py-24">
+      <section className="bg-pau-night pb-20 pt-16 md:pb-28 md:pt-24">
         <div className="container-pau">
-          <h2 className="mb-12 text-center font-display text-3xl font-bold uppercase text-pau-gold md:text-4xl">
-            Nos Partenaires
+          <h2 className="mb-14 text-center font-display text-3xl font-bold uppercase text-pau-gold md:text-4xl">
+            Ils nous font confiance
           </h2>
 
           {/* Partenaires Majeurs */}
@@ -119,14 +119,14 @@ export default function PartenairesPage() {
       </section>
 
       {/* Formulaire Devenir Partenaire */}
-      <section className="border-t border-pau-gold/20 bg-pau-primary py-16 md:py-24">
+      <section className="border-t border-pau-gold/20 bg-pau-primary pb-22 pt-18 md:pb-28 md:pt-24">
         <div className="container-pau">
           <div className="mx-auto max-w-3xl">
-            <h2 className="mb-4 text-center font-display text-3xl font-bold uppercase text-pau-gold md:text-4xl">
-              Devenir Partenaire
+            <h2 className="mb-5 text-center font-display text-3xl font-bold uppercase text-pau-gold md:text-4xl">
+              Envie de rejoindre l'aventure ?
             </h2>
-            <p className="mb-12 text-center font-sans text-lg text-white/80">
-              Remplissez le formulaire ci-dessous et notre équipe vous contactera rapidement.
+            <p className="mb-14 text-center font-sans text-lg text-white/80">
+              Parlez-nous de votre projet, on vous recontacte sous 48h.
             </p>
 
             <form onSubmit={handleSubmit} className="space-y-6">

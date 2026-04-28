@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 export const metadata = {
   title: "L'Équipe Pro — Pau FC",
-  description: "Découvrez l'effectif complet du Pau FC saison 2025/2026 : joueurs et staff.",
+  description: "L'effectif 2025/2026 du Pau FC : joueurs, staff technique et médical au Nouste Camp.",
 };
 
 export default async function EquipePage() {
@@ -43,14 +43,14 @@ export default async function EquipePage() {
       </section>
 
       {/* Contenu */}
-      <div className="container-pau py-12 md:py-16">
+      <div className="container-pau pb-14 pt-12 md:pb-20 md:pt-16">
         {/* Gardiens */}
         {gardiens.length > 0 && (
-          <section className="mb-16">
-            <h2 className="mb-8 font-display text-3xl font-bold uppercase text-pau-yellow">
-              Les Gardiens
+          <section className="mb-20">
+            <h2 className="mb-10 font-display text-3xl font-bold uppercase text-pau-yellow">
+              Dans les cages
             </h2>
-            <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+            <div className="grid gap-7 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
               {gardiens.map((player) => (
                 <PlayerCard key={player.id} player={player} />
               ))}
@@ -60,9 +60,9 @@ export default async function EquipePage() {
 
         {/* Défenseurs */}
         {defenseurs.length > 0 && (
-          <section className="mb-16">
-            <h2 className="mb-8 font-display text-3xl font-bold uppercase text-pau-yellow">
-              Les Défenseurs
+          <section className="mb-18">
+            <h2 className="mb-10 font-display text-3xl font-bold uppercase text-pau-yellow">
+              La défense
             </h2>
             <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
               {defenseurs.map((player) => (
@@ -75,10 +75,10 @@ export default async function EquipePage() {
         {/* Milieux */}
         {milieux.length > 0 && (
           <section className="mb-16">
-            <h2 className="mb-8 font-display text-3xl font-bold uppercase text-pau-yellow">
-              Les Milieux
+            <h2 className="mb-9 font-display text-3xl font-bold uppercase text-pau-yellow">
+              L'entrejeu
             </h2>
-            <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+            <div className="grid gap-7 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
               {milieux.map((player) => (
                 <PlayerCard key={player.id} player={player} />
               ))}
@@ -88,11 +88,11 @@ export default async function EquipePage() {
 
         {/* Attaquants */}
         {attaquants.length > 0 && (
-          <section className="mb-16">
-            <h2 className="mb-8 font-display text-3xl font-bold uppercase text-pau-yellow">
-              Les Attaquants
+          <section className="mb-18">
+            <h2 className="mb-10 font-display text-3xl font-bold uppercase text-pau-yellow">
+              L'attaque
             </h2>
-            <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+            <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
               {attaquants.map((player) => (
                 <PlayerCard key={player.id} player={player} />
               ))}
@@ -143,7 +143,7 @@ export default async function EquipePage() {
 // Composant Player Card
 function PlayerCard({ player }) {
   return (
-    <article className="group border-2 border-white/10 bg-pau-primary transition-all hover:border-pau-yellow">
+    <article className="group border border-white/10 bg-pau-primary transition-all hover:border-2 hover:border-pau-yellow">
       {/* Photo */}
       <div className="relative aspect-[3/4] overflow-hidden bg-pau-night/80">
         {player.photoUrl ? (
