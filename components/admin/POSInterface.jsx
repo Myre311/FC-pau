@@ -302,7 +302,7 @@ export function POSInterface() {
             {success && (
               <div className="mt-3 rounded border border-green-500/30 bg-green-500/10 p-3 text-center">
                 <p className="font-mono text-xs uppercase tracking-wider text-green-600">
-                  ✓ Vente enregistrée !
+                  Vente enregistrée
                 </p>
               </div>
             )}
