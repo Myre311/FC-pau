@@ -112,7 +112,7 @@ export function AnimatedHero() {
           transition={{ duration: 0.8, delay: 0.8 }}
           className="mx-auto mb-6 max-w-2xl px-4 text-base text-blanc/90 sm:mb-8 sm:text-lg"
         >
-          Soutenez les Sang et Or au Nouste Camp
+          Soutenez-nous au Nouste Camp
         </motion.p>
 
         {/* Bouton avec effet magnetic + scale */}
