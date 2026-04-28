@@ -58,7 +58,7 @@ export default async function HomePage() {
                 <h1 className="font-display text-5xl font-bold uppercase text-white md:text-6xl lg:text-7xl">
                   Rejoins
                   <br />
-                  <span className="text-pau-yellow">le Club</span>
+                  <span className="text-pau-yellow">le Club.</span>
                 </h1>
               </div>
 
@@ -80,6 +80,11 @@ export default async function HomePage() {
                 <button className="w-full border-2 border-pau-yellow bg-pau-yellow px-8 py-4 font-display text-sm font-bold uppercase tracking-wide text-pau-night transition-all hover:bg-transparent hover:text-pau-yellow">
                   Obtenir mon code
                 </button>
+
+                {/* Note */}
+                <p className="text-center font-sans text-xs text-white/50">
+                  Pas de spam, seulement l'essentiel du Pau FC.
+                </p>
               </div>
             </div>
           </div>
