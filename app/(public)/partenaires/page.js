@@ -37,11 +37,11 @@ export default function PartenairesPage() {
           <div className="max-w-4xl text-center">
             <span className="font-mono text-xs uppercase text-pau-gold">Partenariats</span>
             <h1 className="mt-4 font-display text-4xl font-bold uppercase text-pau-gold md:text-5xl lg:text-6xl">
-              Si on transformait Pau<br />en capitale du foot
+              Devenez partenaire<br />du Pau FC
             </h1>
             <p className="mx-auto mt-6 max-w-3xl font-sans text-lg leading-relaxed text-white/80 md:text-xl">
-              Associez votre entreprise au Pau FC. Visibilité terrain et tribunes, hospitalités VIP,
-              et un réseau business actif dans tout le Béarn.
+              Associez votre entreprise au club. Visibilité terrain et tribunes, hospitalités VIP,
+              et un réseau d'affaires actif dans tout le Béarn.
             </p>
           </div>
         </div>
@@ -123,10 +123,10 @@ export default function PartenairesPage() {
         <div className="container-pau">
           <div className="mx-auto max-w-3xl">
             <h2 className="mb-5 text-center font-display text-3xl font-bold uppercase text-pau-gold md:text-4xl">
-              Envie de rejoindre l'aventure ?
+              Rejoignez nos partenaires
             </h2>
             <p className="mb-14 text-center font-sans text-lg text-white/80">
-              Parlez-nous de votre projet, on vous recontacte sous 48h.
+              Présentez-nous votre projet, nous vous recontactons sous 48 heures.
             </p>
 
             <form onSubmit={handleSubmit} className="space-y-6">

@@ -45,11 +45,11 @@ export default function ClubPage() {
 
             <div>
               <h2 className="mb-7 font-display text-3xl font-bold uppercase text-pau-yellow md:text-4xl">
-                Le foot à Pau, c'est de famille
+                Notre Histoire
               </h2>
               <div className="space-y-5 font-sans text-base leading-relaxed text-white/80 md:text-lg">
-                <p>Tout démarre au début du XXe siècle, quand le ballon rond commence à rouler dans les clubs omnisports palois.</p>
-                <p>Trois noms gravés dans la mémoire du Béarn :</p>
+                <p>Le football à Pau naît au début du XXe siècle, lorsque le ballon rond fait son apparition dans les clubs omnisports béarnais.</p>
+                <p>Trois clubs historiques ont posé les fondations du football palois :</p>
                 <ul className="ml-6 space-y-2 list-disc">
                   <li><strong className="text-white">Football Association Bourbaki</strong> (1904)</li>
                   <li><strong className="text-white">Jeanne d'Arc le Béarn</strong> (1909)</li>

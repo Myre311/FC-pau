@@ -97,7 +97,7 @@ export default function CalendrierPage() {
               </p>
             ) : filteredMatches.length === 0 ? (
               <p className="py-12 text-center font-sans text-lg text-white/60">
-                Pas de match avec ce filtre.
+                Aucun match ne correspond à ce filtre.
               </p>
             ) : (
               <div className="space-y-4">
@@ -112,7 +112,7 @@ export default function CalendrierPage() {
           <div>
             <div className="sticky top-24">
               <h2 className="mb-8 font-display text-2xl font-bold uppercase text-pau-yellow">
-                Où on en est
+                Classement
               </h2>
 
               <div className="border border-white/10 bg-pau-primary p-7">

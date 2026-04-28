@@ -47,7 +47,7 @@ export default async function ActualitesPage() {
         <div className="container-pau">
           {articles.length === 0 ? (
             <p className="py-12 text-center font-sans text-lg text-white/60">
-              Rien de neuf en ce moment. On revient vite.
+              Aucune actualité publiée pour le moment.
             </p>
           ) : (
             <div className="mx-auto max-w-4xl space-y-12">

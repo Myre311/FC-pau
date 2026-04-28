@@ -120,17 +120,17 @@ export default async function HomePage() {
                 </h2>
 
                 <p className="mb-6 font-sans text-sm text-white/90">
-                  Toute l'actu du club direct dans ta boîte mail
+                  Recevez toutes les actualités du club directement dans votre boîte mail
                 </p>
 
                 <div className="flex gap-2">
                   <input
                     type="email"
-                    placeholder="Ton adresse email"
+                    placeholder="Votre adresse email"
                     className="flex-1 bg-white px-4 py-3 font-sans text-sm text-pau-night placeholder:text-pau-night/50 focus:outline-none"
                   />
                   <button className="bg-pau-yellow px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-pau-night transition-all hover:bg-pau-yellow/90">
-                    OK
+                    S'abonner
                   </button>
                 </div>
               </div>
@@ -247,7 +247,7 @@ export default async function HomePage() {
         <div className="container-pau">
           <div className="mb-14">
             <h2 className="font-display text-3xl font-bold uppercase text-white md:text-4xl">
-              Les dernières du club
+              Actualités
             </h2>
           </div>
 
@@ -317,7 +317,7 @@ export default async function HomePage() {
         <div className="container-pau">
           <div className="mb-10 text-center">
             <h2 className="font-display text-3xl font-bold uppercase text-white md:text-4xl">
-              Suis-nous sur Insta
+              Suivez-nous sur Instagram
             </h2>
             <p className="mt-2 font-mono text-sm text-pau-yellow">@paufootballclub</p>
           </div>

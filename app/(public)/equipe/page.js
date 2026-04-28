@@ -48,7 +48,7 @@ export default async function EquipePage() {
         {gardiens.length > 0 && (
           <section className="mb-20">
             <h2 className="mb-10 font-display text-3xl font-bold uppercase text-pau-yellow">
-              Dans les cages
+              Gardiens de but
             </h2>
             <div className="grid gap-7 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
               {gardiens.map((player) => (
@@ -76,7 +76,7 @@ export default async function EquipePage() {
         {milieux.length > 0 && (
           <section className="mb-16">
             <h2 className="mb-9 font-display text-3xl font-bold uppercase text-pau-yellow">
-              L'entrejeu
+              Milieux de terrain
             </h2>
             <div className="grid gap-7 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
               {milieux.map((player) => (

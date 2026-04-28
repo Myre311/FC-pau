@@ -5,7 +5,7 @@ import { prisma } from '@/lib/prisma';
 export const metadata = {
   title: 'Billetterie — Pau FC',
   description:
-    'Prends ta place au Nouste Camp. Billetterie en ligne pour tous les matchs du Pau FC, tarifs réduits et packs famille.',
+    'Réservez vos places au Nouste Camp. Billetterie en ligne pour tous les matchs du Pau FC, tarifs réduits et packs famille.',
 };
 
 export default async function BilletteriePage() {
@@ -44,7 +44,7 @@ export default async function BilletteriePage() {
               Billetterie
             </h1>
             <p className="mt-4 font-sans text-lg leading-relaxed text-white/80 md:text-xl">
-              Ta place t'attend au Nouste Camp. Ambiance garantie, réservation simple, le stade c'est chez nous.
+              Réservez vos places pour les matchs à domicile. Vivez l'ambiance du Nouste Camp, notre forteresse béarnaise.
             </p>
           </div>
         </div>
@@ -62,9 +62,9 @@ export default async function BilletteriePage() {
 
           {upcomingMatches.length === 0 ? (
             <p className="font-sans text-lg text-white/60">
-              Pas de match à domicile de prévu pour le moment.{' '}
+              Aucun match à domicile programmé pour le moment.{' '}
               <Link href="/calendrier" className="text-pau-yellow hover:underline">
-                Regarde le calendrier complet
+                Consultez le calendrier complet
               </Link>
             </p>
           ) : (
@@ -139,7 +139,7 @@ export default async function BilletteriePage() {
 
             <div className="space-y-5 font-sans text-base leading-relaxed text-white/70 md:text-lg">
               <p>
-                Au Nouste Camp, on paye sans cash. Carte cashless ou smartphone, c'est toi qui choisis.
+                Au Nouste Camp, le paiement est 100% cashless. Carte sans contact ou smartphone, vous choisissez.
               </p>
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
@@ -234,12 +234,12 @@ export default async function BilletteriePage() {
       <section className="bg-pau-night pb-20 pt-16 md:pb-26 md:pt-22">
         <div className="container-pau">
           <div className="mx-auto max-w-3xl text-center">
-            <span className="badge-mono text-pau-yellow">Un souci ?</span>
+            <span className="badge-mono text-pau-yellow">Besoin d'aide ?</span>
             <h2 className="mt-4 font-display text-4xl font-bold uppercase text-pau-yellow md:text-5xl">
-              On est là pour toi
+              Nous sommes à votre écoute
             </h2>
             <p className="mx-auto mt-7 max-w-xl font-sans text-lg text-white/70">
-              Questions sur les billets, tarifs de groupe, abonnements ? L'équipe billetterie répond.
+              Questions sur les billets, tarifs de groupe ou abonnements ? Notre équipe billetterie vous répond.
             </p>
 
             <div className="mt-8 space-y-3 font-sans text-base text-white/80">
