@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import { prisma } from '@/lib/prisma';
 import { ProductCard } from '@/components/shop/ProductCard';
-import { Topbar } from '@/components/layout/Topbar';
 
 export const metadata = {
   title: 'Boutique',
@@ -25,11 +24,6 @@ export default async function BoutiquePage() {
 
   return (
     <div className="bg-white">
-      {/* Bandeau livraison */}
-      <div className="sticky top-[80px] z-40">
-        <Topbar />
-      </div>
-
       {/* HERO SIMPLE */}
       <section className="relative h-[300px] overflow-hidden border-b border-gray-200">
         <Image
