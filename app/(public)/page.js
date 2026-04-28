@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { prisma } from '@/lib/prisma';
-import { MatchCardWithCountdown } from '@/components/vitrine/MatchCardWithCountdown';
 import { NewsletterPopup } from '@/components/ui/NewsletterPopup';
 import { ScrollingBanner } from '@/components/ui/ScrollingBanner';
 
@@ -13,19 +12,6 @@ export const metadata = {
 };
 
 export default async function HomePage() {
-  // Récupérer le prochain match à domicile
-  const upcomingMatch = await prisma.match
-    .findFirst({
-      where: {
-        kickoffAt: { gte: new Date() },
-        status: 'scheduled',
-        isHome: true,
-      },
-      orderBy: { kickoffAt: 'asc' },
-    })
-    .catch(() => null);
-
-  // Récupérer le prochain match extérieur
   const nextAwayMatch = await prisma.match
     .findFirst({
       where: {
@@ -39,14 +25,13 @@ export default async function HomePage() {
 
   return (
     <>
-      {/* Newsletter popup */}
       <NewsletterPopup />
 
-      {/* Section 1 - Hero Split Vidéo/Photo Maillots */}
-      <section className="relative min-h-screen bg-pau-night">
-        <div className="grid min-h-screen md:grid-cols-2">
-          {/* GAUCHE - Vidéo Badge Pau FC */}
-          <div className="relative flex items-center justify-center overflow-hidden bg-pau-night">
+      {/* SECTION 1 - HERO : Vidéo Badge (gauche) + Photo Maillots (droite) */}
+      <section className="relative h-screen min-h-[600px] bg-pau-night">
+        <div className="grid h-full md:grid-cols-2">
+          {/* GAUCHE - Vidéo */}
+          <div className="relative overflow-hidden">
             <video
               autoPlay
               loop
@@ -71,102 +56,118 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* Section 2 - Newsletter (gauche) + Cards Match (droite) */}
-      <section className="relative bg-pau-night py-16 md:py-20">
+      {/* SECTION 2 - NEWSLETTER (gauche) + CARDS MATCH (droite) */}
+      <section className="bg-pau-night py-16 md:py-20">
         <div className="container-pau">
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-5">
-            {/* GAUCHE - Newsletter (2/5) */}
-            <div className="lg:col-span-2">
-              <div className="relative aspect-[4/3] overflow-hidden">
-                <Image
-                  src="/images/homepage/Boutique.png"
-                  alt="Stade Pau FC"
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-pau-night via-pau-night/60 to-transparent" />
+          <div className="grid gap-8 lg:grid-cols-2">
 
-                {/* Contenu Newsletter */}
-                <div className="absolute inset-0 flex flex-col justify-end p-8">
-                  <h2 className="mb-4 font-display text-3xl font-bold uppercase text-pau-yellow md:text-4xl">
-                    Newsletter
-                  </h2>
-                  <p className="mb-4 font-sans text-sm text-white/80">
-                    Restez informé des dernières actualités du club
-                  </p>
+            {/* GAUCHE - NEWSLETTER avec photo stade */}
+            <div className="relative aspect-[4/3] overflow-hidden">
+              {/* Photo stade en fond */}
+              <Image
+                src="/images/homepage/Boutique.png"
+                alt="Stade Nouste Camp"
+                fill
+                className="object-cover brightness-50"
+              />
+
+              {/* Overlay gradient */}
+              <div className="absolute inset-0 bg-gradient-to-t from-pau-night via-pau-night/80 to-transparent" />
+
+              {/* Contenu */}
+              <div className="absolute inset-0 flex flex-col justify-center p-8 md:p-12">
+                {/* NEWSLETTER en gros jaune */}
+                <h2 className="mb-6 font-display text-5xl font-bold uppercase text-pau-yellow md:text-6xl lg:text-7xl">
+                  Newsletter
+                </h2>
+
+                <p className="mb-6 font-sans text-sm text-white/90">
+                  Restez informé des dernières actualités du club
+                </p>
+
+                {/* Formulaire */}
+                <div className="space-y-3">
                   <input
                     type="email"
                     placeholder="Ton adresse email"
-                    className="mb-3 w-full border-2 border-white/20 bg-white/10 px-4 py-3 font-sans text-sm text-white placeholder:text-white/40 focus:border-pau-yellow focus:outline-none"
+                    className="w-full bg-white px-4 py-3 font-sans text-sm text-pau-night placeholder:text-pau-night/50 focus:outline-none"
                   />
-                  <button className="w-full border-2 border-pau-yellow bg-pau-yellow px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-pau-night transition-all hover:bg-transparent hover:text-pau-yellow">
+                  <button className="w-full bg-pau-yellow px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-pau-night transition-all hover:bg-pau-yellow/90">
                     S'inscrire
                   </button>
                 </div>
               </div>
             </div>
 
-            {/* DROITE - Cards Match (3/5) */}
-            <div className="space-y-4 lg:col-span-3">
-              {/* Card Billetterie */}
+            {/* DROITE - 3 CARDS */}
+            <div className="grid gap-4 md:grid-cols-2">
+
+              {/* Card BILLETTERIE */}
               <Link
                 href="/billetterie"
-                className="block border-2 border-white/10 bg-pau-primary p-6 transition-all hover:border-pau-yellow"
+                className="flex flex-col justify-between border-2 border-white/10 bg-pau-primary p-6 transition-all hover:border-pau-yellow md:col-span-2"
               >
-                <span className="mb-2 inline-block font-mono text-xs uppercase tracking-wider text-pau-yellow">
-                  Billetterie
-                </span>
-                <h3 className="mb-2 font-display text-xl font-bold uppercase text-white md:text-2xl">
-                  Vendredi 16 Mars
-                </h3>
-                <p className="font-mono text-sm text-white/70">20h00 • Domicile</p>
+                <div>
+                  <span className="mb-3 inline-block font-mono text-xs font-semibold uppercase tracking-wider text-pau-yellow">
+                    Billetterie
+                  </span>
+                  <h3 className="mb-2 font-display text-2xl font-bold uppercase text-white md:text-3xl">
+                    Vendredi 16 Mars
+                  </h3>
+                  <p className="font-mono text-sm text-white/70">20h00 · Domicile</p>
+                </div>
               </Link>
 
-              {/* Card Boutique */}
+              {/* Card BOUTIQUE */}
               <Link
                 href="/boutique"
-                className="block border-2 border-white/10 bg-pau-primary p-6 transition-all hover:border-pau-yellow"
+                className="flex flex-col justify-between border-2 border-white/10 bg-pau-primary p-6 transition-all hover:border-pau-yellow"
               >
-                <span className="mb-2 inline-block font-mono text-xs uppercase tracking-wider text-pau-yellow">
-                  Boutique
-                </span>
-                <h3 className="mb-2 font-display text-xl font-bold uppercase text-white md:text-2xl">
-                  Vendredi 23 Avril
-                </h3>
-                <p className="font-mono text-sm text-white/70">Nouvelle collection</p>
+                <div>
+                  <span className="mb-3 inline-block font-mono text-xs font-semibold uppercase tracking-wider text-pau-yellow">
+                    Boutique
+                  </span>
+                  <h3 className="mb-2 font-display text-xl font-bold uppercase text-white md:text-2xl">
+                    Vendredi 23 Avril
+                  </h3>
+                </div>
               </Link>
 
-              {/* Card Match Extérieur */}
-              {nextAwayMatch && (
-                <Link
-                  href="/calendrier"
-                  className="block border-2 border-white/10 bg-pau-primary p-6 transition-all hover:border-pau-yellow"
-                >
-                  <span className="mb-2 inline-block font-mono text-xs uppercase tracking-wider text-pau-yellow">
+              {/* Card MATCH EXTÉRIEUR */}
+              <Link
+                href="/calendrier"
+                className="flex flex-col justify-between border-2 border-white/10 bg-pau-primary p-6 transition-all hover:border-pau-yellow"
+              >
+                <div>
+                  <span className="mb-3 inline-block font-mono text-xs font-semibold uppercase tracking-wider text-pau-yellow">
                     Extérieur
                   </span>
                   <h3 className="mb-2 font-display text-xl font-bold uppercase text-white md:text-2xl">
                     Le Mans vs Pau FC
                   </h3>
-                  <p className="font-mono text-sm text-white/70">
-                    {new Date(nextAwayMatch.kickoffAt).toLocaleDateString('fr-FR')}
-                  </p>
-                </Link>
-              )}
+                  {nextAwayMatch && (
+                    <p className="font-mono text-sm text-white/70">
+                      {new Date(nextAwayMatch.kickoffAt).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long' })}
+                    </p>
+                  )}
+                </div>
+              </Link>
+
             </div>
           </div>
         </div>
       </section>
 
-      {/* Section 3 - Bandeau HOLY */}
+      {/* SECTION 3 - BANDEAU HOLY JAUNE */}
       <ScrollingBanner text="HOLY FC 5 — retire 5€ sur ta première commande" />
 
-      {/* Section 4 - Instagram Grid */}
+      {/* SECTION 4 - INSTAGRAM GRID 4x2 */}
       <section className="bg-pau-night py-16 md:py-20">
         <div className="container-pau">
+
           {/* Titre */}
           <div className="mb-12 text-center">
-            <h2 className="mb-4 font-display text-3xl font-bold uppercase text-white md:text-4xl">
+            <h2 className="font-display text-3xl font-bold uppercase text-white md:text-4xl">
               @paufootballclub
             </h2>
           </div>
@@ -183,28 +184,17 @@ export default async function HomePage() {
               >
                 <Image
                   src="/images/homepage/Boutique.png"
-                  alt={`Instagram ${i}`}
+                  alt={`Instagram post ${i}`}
                   fill
                   className="object-cover transition-transform duration-300 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-pau-night/0 transition-all group-hover:bg-pau-night/20" />
               </a>
             ))}
           </div>
 
-          {/* Bouton Suivre */}
-          <div className="mt-12 text-center">
-            <a
-              href="https://www.instagram.com/paufootballclub/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block border-2 border-pau-yellow bg-transparent px-8 py-4 font-display text-sm font-bold uppercase tracking-wide text-pau-yellow transition-all hover:bg-pau-yellow hover:text-pau-night"
-            >
-              Suivre @paufootballclub
-            </a>
-          </div>
         </div>
       </section>
+
     </>
   );
 }
