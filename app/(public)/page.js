@@ -237,7 +237,7 @@ export default async function HomePage() {
           </FadeIn>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
             <PartnerLogo name="Joma" logo="/logos/partners/Joma_Blue.png" href="https://www.joma-sport.com" />
-            <PartnerLogo name="Holy" logo="/logos/partners/Holy_Outline_Mono.png" href="https://holy-fr.com" />
+            <PartnerLogo name="Holy" logo="/logos/partners/Holy_Outline_Mono.png" href="https://fr.holy.com/" />
             <PartnerLogo name="Intersport" logo="/logos/partners/Intersport.png" href="https://www.intersport.fr" />
             <PartnerLogo name="Groupama" logo="/logos/partners/groupama-ws-2.png" href="https://www.groupama.fr" />
             <PartnerLogo name="Sarthou" logo="/logos/partners/sarthou-site-1.png" />
