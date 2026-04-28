@@ -69,8 +69,8 @@ export default async function HomePage() {
       <NewsletterPopup />
 
       {/* SECTION 1 - HERO : Vidéo (gauche) + Photo Maillots (droite) */}
-      <section className="relative h-screen min-h-[600px] bg-pau-night">
-        <div className="grid h-full md:grid-cols-2">
+      <section className="relative min-h-[400px] bg-pau-night md:h-screen md:min-h-[600px]">
+        <div className="grid h-full grid-cols-1 md:grid-cols-2">
 
           {/* GAUCHE - Vidéo */}
           <div className="relative overflow-hidden">
@@ -88,7 +88,7 @@ export default async function HomePage() {
             <div className="absolute inset-0 bg-gradient-to-t from-pau-night via-pau-night/60 to-transparent" />
 
             {/* Texte superposé */}
-            <div className="absolute inset-0 flex flex-col justify-end p-8 md:p-12 lg:p-16">
+            <div className="absolute inset-0 flex flex-col justify-end p-4 md:p-8 lg:p-12">
               <span className="font-mono text-xs font-semibold uppercase tracking-wider text-pau-yellow">
                 Saison 2025/2026
               </span>
@@ -118,7 +118,7 @@ export default async function HomePage() {
             <div className="absolute inset-0 bg-gradient-to-t from-pau-night via-pau-night/60 to-transparent" />
 
             {/* Texte superposé */}
-            <div className="absolute inset-0 flex flex-col justify-end p-8 md:p-12 lg:p-16">
+            <div className="absolute inset-0 flex flex-col justify-end p-4 md:p-8 lg:p-12">
               <span className="font-mono text-xs font-semibold uppercase tracking-wider text-pau-yellow">
                 Nouvelle Collection
               </span>
@@ -139,7 +139,7 @@ export default async function HomePage() {
       {/* SECTION 2 - NEWSLETTER (gauche) + CARDS (droite) */}
       <section className="bg-pau-night py-14 md:py-20">
         <div className="container-pau">
-          <div className="grid gap-10 lg:grid-cols-2">
+          <div className="grid gap-6 md:grid-cols-2 md:gap-10">
 
             {/* GAUCHE - NEWSLETTER avec photo stade */}
             <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
@@ -152,7 +152,7 @@ export default async function HomePage() {
 
               <div className="absolute inset-0 bg-gradient-to-t from-pau-night via-pau-night/70 to-transparent" />
 
-              <div className="absolute inset-0 flex flex-col justify-center p-8 md:p-12">
+              <div className="absolute inset-0 flex flex-col justify-center p-6 md:p-10">
                 <h2 className="mb-4 font-display text-5xl font-bold uppercase leading-none text-pau-yellow md:text-6xl lg:text-7xl">
                   Newsletter
                 </h2>
@@ -237,10 +237,10 @@ export default async function HomePage() {
               </div>
 
               {/* SECTION MATCH avec logos clubs */}
-              <div className="flex items-center justify-between rounded-lg bg-pau-primary p-6">
+              <div className="flex flex-col items-center gap-6 rounded-lg bg-pau-primary p-6 md:flex-row md:justify-between">
                 <div className="flex items-center gap-4">
                   {/* Logo Pau FC */}
-                  <div className="flex h-20 w-20 items-center justify-center rounded-full bg-white p-3">
+                  <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white p-3 md:h-20 md:w-20">
                     <Image
                       src="/images/homepage/Logo-Pau-FC-2023.png"
                       alt="Pau FC"
@@ -250,10 +250,10 @@ export default async function HomePage() {
                     />
                   </div>
 
-                  <span className="font-display text-2xl font-bold text-white">vs</span>
+                  <span className="font-display text-xl font-bold text-white md:text-2xl">vs</span>
 
                   {/* Logo équipe adverse - placeholder */}
-                  <div className="flex h-20 w-20 items-center justify-center rounded-full bg-white p-3">
+                  <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white p-3 md:h-20 md:w-20">
                     <Image
                       src="/images/homepage/Logo-MHSC.png"
                       alt="Adversaire"
@@ -266,7 +266,7 @@ export default async function HomePage() {
 
                 <Link
                   href="/billetterie"
-                  className="border-2 border-pau-yellow bg-pau-yellow px-6 py-3 font-display text-xs font-bold uppercase tracking-wide text-pau-night transition-all hover:bg-transparent hover:text-pau-yellow md:text-sm"
+                  className="w-full border-2 border-pau-yellow bg-pau-yellow px-6 py-3 text-center font-display text-xs font-bold uppercase tracking-wide text-pau-night transition-all hover:bg-transparent hover:text-pau-yellow md:w-auto md:text-sm"
                 >
                   Billetterie
                 </Link>

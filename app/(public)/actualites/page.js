@@ -23,7 +23,7 @@ export default async function ActualitesPage() {
   return (
     <div className="min-h-screen bg-pau-night">
       {/* Hero */}
-      <section className="relative h-[60vh] min-h-[500px] bg-pau-night">
+      <section className="relative min-h-[400px] md:h-[60vh] md:min-h-[500px] bg-pau-night">
         <Image
           src="/images/hero-actualites.jpg"
           alt="Actualités Pau FC"

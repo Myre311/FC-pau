@@ -23,7 +23,7 @@ export default async function BilletteriePage() {
   return (
     <article>
       {/* Hero fullscreen */}
-      <section className="relative h-[60vh] min-h-[500px] overflow-hidden bg-pau-night md:h-[70vh]">
+      <section className="relative min-h-[400px] overflow-hidden bg-pau-night md:h-[60vh] md:min-h-[500px]">
         {/* Image de fond */}
         <Image
           src="/images/hero-billetterie.jpg"
@@ -87,7 +87,7 @@ export default async function BilletteriePage() {
             </h2>
           </div>
 
-          <div className="grid gap-7 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-5 sm:grid-cols-2 md:gap-6 lg:grid-cols-3">
             <TarifCardMaquette
               title="Plein tarif"
               price="25€"
@@ -129,7 +129,7 @@ export default async function BilletteriePage() {
       {/* Cashless */}
       <section className="bg-pau-night pb-18 pt-16 md:pb-24 md:pt-22">
         <div className="container-pau">
-          <div className="grid gap-14 md:grid-cols-2 md:items-center">
+          <div className="grid gap-8 md:grid-cols-2 md:items-center md:gap-14">
             <div>
               <span className="badge-mono text-pau-yellow">Paiement sans contact</span>
               <h2 className="mt-4 font-display text-4xl font-bold uppercase text-pau-yellow md:text-5xl">

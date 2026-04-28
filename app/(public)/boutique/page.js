@@ -23,7 +23,7 @@ export default async function BoutiquePage() {
   return (
     <div className="bg-pau-night">
       {/* Hero */}
-      <section className="relative h-[70vh] min-h-[600px] overflow-hidden bg-pau-night">
+      <section className="relative min-h-[400px] overflow-hidden bg-pau-night md:h-[70vh] md:min-h-[600px]">
         <Image
           src="/images/boutique/Boutique-1.jpg"
           alt="Boutique Pau FC"

@@ -31,7 +31,7 @@ export default function CalendrierPage() {
   return (
     <div className="min-h-screen bg-pau-night">
       {/* Hero */}
-      <section className="relative h-[60vh] min-h-[500px] overflow-hidden bg-pau-night">
+      <section className="relative min-h-[400px] md:h-[60vh] md:min-h-[500px] overflow-hidden bg-pau-night">
         <Image
           src="/images/hero-calendrier.jpg"
           alt="Calendrier Pau FC"
@@ -53,14 +53,14 @@ export default function CalendrierPage() {
 
       {/* Contenu principal */}
       <div className="container-pau py-12 md:py-16">
-        <div className="grid gap-8 lg:grid-cols-[2fr_1fr]">
+        <div className="grid gap-8 md:grid-cols-[1fr_1fr] lg:grid-cols-[2fr_1fr]">
           {/* Colonne gauche : Liste des matchs */}
           <div>
             {/* Filtres */}
-            <div className="mb-8 flex gap-4">
+            <div className="mb-8 flex flex-wrap gap-3 md:gap-4">
               <button
                 onClick={() => setFilter('tous')}
-                className={`border-2 px-6 py-3 font-display text-sm font-bold uppercase tracking-wide transition-all ${
+                className={`border-2 px-4 py-2 font-display text-xs font-bold uppercase tracking-wide transition-all md:px-6 md:py-3 md:text-sm ${
                   filter === 'tous'
                     ? 'border-pau-yellow bg-pau-yellow text-pau-night'
                     : 'border-white/20 bg-transparent text-white hover:border-pau-yellow'
@@ -70,7 +70,7 @@ export default function CalendrierPage() {
               </button>
               <button
                 onClick={() => setFilter('domicile')}
-                className={`border-2 px-6 py-3 font-display text-sm font-bold uppercase tracking-wide transition-all ${
+                className={`border-2 px-4 py-2 font-display text-xs font-bold uppercase tracking-wide transition-all md:px-6 md:py-3 md:text-sm ${
                   filter === 'domicile'
                     ? 'border-pau-yellow bg-pau-yellow text-pau-night'
                     : 'border-white/20 bg-transparent text-white hover:border-pau-yellow'
@@ -80,7 +80,7 @@ export default function CalendrierPage() {
               </button>
               <button
                 onClick={() => setFilter('exterieur')}
-                className={`border-2 px-6 py-3 font-display text-sm font-bold uppercase tracking-wide transition-all ${
+                className={`border-2 px-4 py-2 font-display text-xs font-bold uppercase tracking-wide transition-all md:px-6 md:py-3 md:text-sm ${
                   filter === 'exterieur'
                     ? 'border-pau-yellow bg-pau-yellow text-pau-night'
                     : 'border-white/20 bg-transparent text-white hover:border-pau-yellow'
