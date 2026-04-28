@@ -128,7 +128,7 @@ export default async function BilletteriePage() {
             <div className="mt-6">
               <Link
                 href="/billetterie/cashless"
-                className="inline-block border border-[#0F1E45]/20 px-6 py-3 font-mono text-sm uppercase tracking-wider text-[#0F1E45] transition-colors hover:border-[#FFD60A] hover:text-[#FFD60A]"
+                className="inline-block border border-gray-200 px-6 py-3 font-mono text-sm uppercase tracking-wider text-[#0F1E45] transition-colors hover:bg-gray-50"
               >
                 En savoir plus
               </Link>
@@ -243,7 +243,7 @@ function MatchCard({ match }) {
   });
 
   return (
-    <div className="group relative overflow-hidden border border-white/10 bg-pau-primary p-6 transition-all hover:border-pau-yellow md:p-8">
+    <div className="group relative overflow-hidden border border-gray-200 bg-white p-6 transition-all hover:bg-gray-50 md:p-8">
       <div className="grid gap-6 md:grid-cols-[2fr_1fr] md:items-center">
         <div>
           {match.competition?.includes('Ligue 2') ? (

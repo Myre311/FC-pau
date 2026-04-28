@@ -108,7 +108,7 @@ export default function AcademyPage() {
             <div className="mt-8">
               <Link
                 href="/academy/stages"
-                className="inline-block border border-pau-primary/20 px-6 py-3 font-mono text-sm uppercase tracking-wider text-pau-primary transition-colors hover:border-pau-yellow hover:text-pau-yellow"
+                className="inline-block border border-gray-200 px-6 py-3 font-mono text-sm uppercase tracking-wider text-pau-primary transition-colors hover:bg-gray-50"
               >
                 Voir les stages
               </Link>
@@ -182,7 +182,7 @@ function PoleTile({ title, description, href, badge }) {
   return (
     <Link
       href={href}
-      className="group relative overflow-hidden border border-pau-primary/10 bg-pau-primary/5 p-8 transition-all hover:border-pau-yellow md:p-10"
+      className="group relative overflow-hidden border border-gray-200 bg-white p-8 transition-all hover:bg-gray-50 md:p-10"
     >
       <span className="mb-4 inline-block font-mono text-xs uppercase tracking-wider text-pau-yellow">
         {badge}

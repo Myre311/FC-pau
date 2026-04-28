@@ -107,7 +107,7 @@ export default function CashlessPage() {
             <div className="mt-6">
               <Link
                 href="/billetterie/cashless/offres"
-                className="inline-block border border-pau-primary/20 px-6 py-3 font-mono text-sm uppercase tracking-wider text-pau-primary transition-colors hover:border-pau-yellow hover:text-pau-yellow"
+                className="inline-block border border-gray-200 px-6 py-3 font-mono text-sm uppercase tracking-wider text-pau-primary transition-colors hover:bg-gray-50"
               >
                 Voir toutes les offres
               </Link>
@@ -136,7 +136,7 @@ export default function CashlessPage() {
               </Link>
               <a
                 href="mailto:billetterie@paufc.fr"
-                className="inline-block border border-pau-primary/20 px-6 py-3 font-mono text-sm uppercase tracking-wider text-pau-primary transition-colors hover:border-pau-yellow hover:text-pau-yellow"
+                className="inline-block border border-gray-200 px-6 py-3 font-mono text-sm uppercase tracking-wider text-pau-primary transition-colors hover:bg-gray-50"
               >
                 Nous contacter
               </a>
@@ -154,7 +154,7 @@ export default function CashlessPage() {
             <div className="mt-8">
               <button
                 type="button"
-                className="inline-block border border-pau-primary/20 px-6 py-3 font-mono text-sm uppercase tracking-wider text-pau-primary transition-colors hover:border-pau-yellow hover:text-pau-yellow"
+                className="inline-block border border-gray-200 px-6 py-3 font-mono text-sm uppercase tracking-wider text-pau-primary transition-colors hover:bg-gray-50"
               >
                 Commander (bientôt disponible)
               </button>

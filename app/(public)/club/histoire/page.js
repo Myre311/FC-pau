@@ -117,7 +117,7 @@ export default function HistoirePage() {
               </Link>
               <Link
                 href="/equipe"
-                className="inline-block border border-pau-primary px-4 py-2 font-mono text-xs font-bold uppercase text-pau-primary hover:bg-pau-primary hover:text-white"
+                className="inline-block border border-gray-200 px-4 py-2 font-mono text-xs font-bold uppercase text-pau-primary hover:bg-gray-50"
               >
                 Effectif
               </Link>
@@ -134,7 +134,7 @@ export default function HistoirePage() {
             <div className="mt-6">
               <Link
                 href="/nouste-camp"
-                className="inline-block border border-pau-primary px-4 py-2 font-mono text-xs font-bold uppercase text-pau-primary hover:bg-pau-primary hover:text-white"
+                className="inline-block border border-gray-200 px-4 py-2 font-mono text-xs font-bold uppercase text-pau-primary hover:bg-gray-50"
               >
                 Le stade
               </Link>
