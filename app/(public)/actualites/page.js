@@ -50,12 +50,9 @@ export default async function ActualitesPage() {
       {/* CONTENU */}
       <div className="mx-auto max-w-7xl px-6 py-12 md:px-12">
         {articles.length === 0 ? (
-          <div className="border border-dashed border-gray-300 p-10 text-center">
-            <p className="font-mono text-xs uppercase tracking-wider text-pau-primary">
-              Aucune actualité publiée
-            </p>
-            <p className="mt-4 text-sm text-pau-primary/60">
-              Les premières publications arriveront bientôt.
+          <div className="py-20 text-center">
+            <p className="text-sm text-pau-primary/40">
+              Aucune actualité pour le moment.
             </p>
           </div>
         ) : (

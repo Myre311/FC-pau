@@ -88,15 +88,10 @@ export default async function EquipePage() {
 
 function EmptyEquipe() {
   return (
-    <section className="mx-auto max-w-7xl px-6 py-12 md:px-12">
-      <div className="border border-dashed border-gray-300 p-10 text-center">
-        <p className="font-mono text-xs uppercase tracking-wider text-pau-yellow">
-          Effectif vide
-        </p>
-        <p className="mt-4 text-sm text-pau-primary/60">
-          Aucun joueur publié. Lance le seed (
-          <code className="font-mono text-pau-primary">npm run db:seed</code>) pour
-          peupler l'effectif.
+    <section className="mx-auto max-w-7xl px-6 py-20 md:px-12">
+      <div className="text-center">
+        <p className="text-sm text-pau-primary/40">
+          Aucun joueur disponible pour le moment.
         </p>
       </div>
     </section>

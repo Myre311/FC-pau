@@ -84,14 +84,9 @@ export default async function BoutiquePage() {
 
 function EmptyCatalog() {
   return (
-    <div className="border border-dashed border-gray-300 px-6 py-20 text-center">
-      <p className="font-mono text-xs uppercase tracking-wider text-pau-yellow">
-        Catalogue vide
-      </p>
-      <p className="mt-4 text-sm text-pau-primary/60">
-        Aucun produit publié pour le moment. Lance le seed (
-        <code className="font-mono text-pau-primary">npm run db:seed</code>) pour
-        peupler la boutique.
+    <div className="py-20 text-center">
+      <p className="text-sm text-pau-primary/40">
+        Aucun produit disponible pour le moment.
       </p>
     </div>
   );

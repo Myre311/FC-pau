@@ -65,13 +65,15 @@ export default async function CalendrierPage() {
                 <div key={match.id} className="border border-gray-200 p-6 hover:border-pau-yellow">
                   <div className="mb-4 flex items-center justify-between">
                     {match.competition?.includes('Ligue 2') ? (
-                      <Image
-                        src="/LFP_LOGOTYPE_L2_BKT_MASTER_WHITE_RVB-2048x581.png"
-                        alt="Ligue 2 BKT"
-                        width={80}
-                        height={23}
-                        className="h-auto w-20 brightness-0"
-                      />
+                      <div className="flex h-8 items-center bg-pau-primary px-3">
+                        <Image
+                          src="/LFP_LOGOTYPE_L2_BKT_MASTER_WHITE_RVB-2048x581.png"
+                          alt="Ligue 2 BKT"
+                          width={90}
+                          height={26}
+                          className="h-auto w-[90px]"
+                        />
+                      </div>
                     ) : (
                       <span className="font-mono text-xs uppercase text-pau-yellow">
                         {match.competition}
@@ -140,13 +142,15 @@ export default async function CalendrierPage() {
                 <div key={match.id} className="border border-gray-200 p-6">
                   <div className="mb-4 flex items-center justify-between">
                     {match.competition?.includes('Ligue 2') ? (
-                      <Image
-                        src="/LFP_LOGOTYPE_L2_BKT_MASTER_WHITE_RVB-2048x581.png"
-                        alt="Ligue 2 BKT"
-                        width={80}
-                        height={23}
-                        className="h-auto w-20 brightness-0"
-                      />
+                      <div className="flex h-8 items-center bg-pau-primary px-3">
+                        <Image
+                          src="/LFP_LOGOTYPE_L2_BKT_MASTER_WHITE_RVB-2048x581.png"
+                          alt="Ligue 2 BKT"
+                          width={90}
+                          height={26}
+                          className="h-auto w-[90px]"
+                        />
+                      </div>
                     ) : (
                       <span className="font-mono text-xs uppercase text-pau-primary/60">
                         {match.competition}
