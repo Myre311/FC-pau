@@ -290,40 +290,75 @@ function MatchCardMaquette({ match }) {
     <article className="group border border-white/10 bg-pau-primary p-7 transition-all hover:border-2 hover:border-pau-yellow md:p-9">
       {/* Badge compétition */}
       {match.competition && (
-        <span className="mb-4 inline-block border border-pau-yellow bg-pau-yellow px-3 py-1 font-mono text-xs font-bold uppercase tracking-wider text-pau-night">
+        <span className="mb-6 inline-block border border-pau-yellow bg-pau-yellow px-3 py-1 font-mono text-xs font-bold uppercase tracking-wider text-pau-night">
           {match.competition}
         </span>
       )}
 
+      {/* Logos des équipes */}
+      <div className="mb-6 flex items-center justify-center gap-6 md:gap-8">
+        {/* Logo Pau FC */}
+        <div className="flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-full bg-white p-3 md:h-20 md:w-20">
+          <Image
+            src="/images/homepage/Logo-Pau-FC-2023.png"
+            alt="Pau FC"
+            width={80}
+            height={80}
+            className="h-full w-full object-contain"
+          />
+        </div>
+
+        <span className="font-display text-2xl font-bold text-white md:text-3xl">vs</span>
+
+        {/* Logo équipe adverse */}
+        <div className="flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-full bg-white p-3 md:h-20 md:w-20">
+          {match.opponentLogo ? (
+            <Image
+              src={match.opponentLogo}
+              alt={match.opponent}
+              width={80}
+              height={80}
+              className="h-full w-full object-contain"
+            />
+          ) : (
+            <div className="flex h-full w-full items-center justify-center font-display text-xl font-bold text-pau-night">
+              ?
+            </div>
+          )}
+        </div>
+      </div>
+
       {/* Équipes */}
-      <h3 className="mb-3 font-display text-2xl font-bold uppercase text-white md:text-3xl">
-        Pau FC vs {match.opponentName}
+      <h3 className="mb-3 text-center font-display text-2xl font-bold uppercase text-white md:text-3xl">
+        Pau FC vs {match.opponent}
       </h3>
 
       {/* Date & heure */}
-      <p className="mb-2 font-sans text-base text-white/70">
+      <p className="mb-2 text-center font-sans text-base text-white/70">
         {dateFr} · {heure}
       </p>
-      <p className="mb-6 font-sans text-sm text-white/60">
+      <p className="mb-6 text-center font-sans text-sm text-white/60">
         {match.venue || 'Nouste Camp'}
         {match.broadcaster && ` · ${match.broadcaster}`}
       </p>
 
       {/* CTA */}
-      {match.ticketUrl ? (
-        <a
-          href={match.ticketUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block border-2 border-pau-yellow bg-pau-yellow px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-pau-night transition-all hover:bg-transparent hover:text-pau-yellow"
-        >
-          Réserver mes places
-        </a>
-      ) : (
-        <span className="inline-block border-2 border-white/20 bg-white/5 px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-white/40">
-          Bientôt disponible
-        </span>
-      )}
+      <div className="text-center">
+        {match.ticketUrl ? (
+          <a
+            href={match.ticketUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block border-2 border-pau-yellow bg-pau-yellow px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-pau-night transition-all hover:bg-transparent hover:text-pau-yellow"
+          >
+            Réserver mes places
+          </a>
+        ) : (
+          <span className="inline-block border-2 border-white/20 bg-white/5 px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-white/40">
+            Bientôt disponible
+          </span>
+        )}
+      </div>
     </article>
   );
 }
