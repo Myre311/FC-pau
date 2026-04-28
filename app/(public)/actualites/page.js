@@ -1,90 +1,114 @@
-import Image from 'next/image';
 import { prisma } from '@/lib/prisma';
-import { ArticleCard } from '@/components/vitrine/ArticleCard';
-import { ScrollReveal } from '@/components/animations/ScrollReveal';
-
-export const dynamic = 'force-dynamic';
+import Image from 'next/image';
+import Link from 'next/link';
 
 export const metadata = {
-  title: 'Actualités',
-  description:
-    'Toute l\'actualité du Pau FC — résumés de matchs, mercato, fondation et vie du club.',
+  title: 'Actualités — Pau FC',
+  description: 'Toutes les actualités du Pau FC : équipe pro, academy, club.',
 };
 
 export default async function ActualitesPage() {
-  const articles = await prisma.article.findMany({
-    where: { publishedAt: { not: null, lte: new Date() } },
-    orderBy: [{ featured: 'desc' }, { publishedAt: 'desc' }],
-    take: 24,
-  }).catch(() => []);
-
-  const featured = articles.find((a) => a.featured) ?? articles[0];
-  const rest = articles.filter((a) => a.id !== featured?.id);
+  // Récupérer toutes les actualités publiées
+  const articles = await prisma.article
+    .findMany({
+      where: {
+        publishedAt: { lte: new Date() },
+        status: 'published',
+      },
+      orderBy: { publishedAt: 'desc' },
+      take: 20,
+    })
+    .catch(() => []);
 
   return (
-    <div className="bg-white">
-      {/* HERO SIMPLE */}
-      <section className="relative h-[300px] overflow-hidden border-b border-gray-200">
-        <Image
-          src="/images/hero-actualites.jpg"
-          alt="Actualités Pau FC"
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-pau-night/40" />
-        <div className="relative z-10 flex h-full items-center">
-          <div className="mx-auto w-full max-w-7xl px-6 md:px-12">
-            <p className="mb-3 font-mono text-xs uppercase tracking-widest text-white/90">
-              Vie du club · Mercato · Matchday
-            </p>
-            <h1 className="font-display text-4xl font-black uppercase text-white md:text-5xl">
-              Actualités
-            </h1>
-            <p className="mt-3 text-sm text-white/90">
-              Toute l'actualité du Pau FC — résumés de matchs, mercato, fondation et vie du club.
-            </p>
-          </div>
+    <div className="min-h-screen bg-white">
+      {/* Header */}
+      <div className="border-b border-pau-night/10 bg-white py-12 md:py-16">
+        <div className="container-pau">
+          <h1 className="font-display text-4xl font-bold uppercase text-pau-night md:text-5xl lg:text-6xl">
+            Actualités
+          </h1>
+          <p className="mt-4 font-sans text-lg text-pau-night/70">
+            Dernières Actualités
+          </p>
         </div>
-      </section>
+      </div>
 
-      {/* CONTENU */}
-      <div className="mx-auto max-w-7xl px-6 py-12 md:px-12">
+      {/* Liste des articles */}
+      <div className="container-pau py-12 md:py-16">
         {articles.length === 0 ? (
-          <div className="py-20 text-center">
-            <p className="text-sm text-pau-primary/40">
-              Aucune actualité pour le moment.
-            </p>
-          </div>
+          <p className="py-12 text-center font-sans text-lg text-pau-night/60">
+            Aucune actualité pour le moment.
+          </p>
         ) : (
-          <>
-            {featured && (
-              <ScrollReveal>
-                <div className="mb-12">
-                  <ArticleCard article={featured} featured />
-                </div>
-              </ScrollReveal>
-            )}
-
-            {rest.length > 0 && (
-              <div className="border-t border-gray-200 pt-12">
-                <ScrollReveal>
-                  <h2 className="mb-8 font-mono text-xs uppercase tracking-wider text-pau-yellow">
-                    Toutes les actualités · {rest.length}
-                  </h2>
-                </ScrollReveal>
-                <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-                  {rest.map((a, idx) => (
-                    <ScrollReveal key={a.id} delay={idx * 50}>
-                      <ArticleCard article={a} />
-                    </ScrollReveal>
-                  ))}
-                </div>
-              </div>
-            )}
-          </>
+          <div className="mx-auto max-w-4xl space-y-12">
+            {articles.map((article) => (
+              <ArticleCard key={article.id} article={article} />
+            ))}
+          </div>
         )}
       </div>
     </div>
+  );
+}
+
+// Composant Article Card (liste verticale)
+function ArticleCard({ article }) {
+  return (
+    <Link href={`/actualites/${article.slug}`}>
+      <article className="group border-2 border-pau-night/10 bg-white transition-all hover:border-pau-yellow hover:shadow-lg">
+        {/* Image */}
+        <div className="relative aspect-[16/9] overflow-hidden bg-pau-night/5">
+          {article.coverImageUrl ? (
+            <Image
+              src={article.coverImageUrl}
+              alt={article.title}
+              fill
+              className="object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+          ) : (
+            <div className="flex h-full items-center justify-center bg-gradient-to-br from-pau-primary to-pau-night">
+              <span className="font-display text-4xl font-bold text-white/20">
+                PAU FC
+              </span>
+            </div>
+          )}
+        </div>
+
+        {/* Contenu */}
+        <div className="p-6 md:p-8">
+          {/* Date + Catégorie */}
+          <div className="mb-4 flex items-center gap-4">
+            <time className="font-sans text-sm text-pau-night/60">
+              {new Date(article.publishedAt).toLocaleDateString('fr-FR', {
+                day: 'numeric',
+                month: 'long',
+                year: 'numeric',
+              })}
+            </time>
+            {article.category && (
+              <span className="inline-block border border-pau-yellow bg-pau-yellow px-2 py-0.5 font-mono text-xs font-bold uppercase tracking-wider text-pau-night">
+                {article.category}
+              </span>
+            )}
+          </div>
+
+          {/* Titre */}
+          <h2 className="mb-3 font-display text-2xl font-bold uppercase leading-tight text-pau-night group-hover:text-pau-yellow md:text-3xl">
+            {article.title}
+          </h2>
+
+          {/* Extrait */}
+          <p className="mb-4 font-sans text-base leading-relaxed text-pau-night/70">
+            {article.excerpt}
+          </p>
+
+          {/* Lien */}
+          <span className="inline-block font-display text-sm font-bold uppercase tracking-wide text-pau-yellow transition-transform group-hover:translate-x-2">
+            Lire la suite →
+          </span>
+        </div>
+      </article>
+    </Link>
   );
 }

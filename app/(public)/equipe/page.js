@@ -1,104 +1,196 @@
-import Image from 'next/image';
 import { prisma } from '@/lib/prisma';
-import { PlayerCard } from '@/components/vitrine/PlayerCard';
-import { POSITION_LABELS } from '@/lib/labels';
-import { ScrollReveal } from '@/components/animations/ScrollReveal';
-
-export const dynamic = 'force-dynamic';
+import Image from 'next/image';
 
 export const metadata = {
-  title: 'Effectif',
-  description:
-    "Joueurs et staff du Pau FC, saison 2025-2026. Découvrez l'effectif professionnel qui défend les couleurs du Béarn.",
+  title: "L'Équipe Pro — Pau FC",
+  description: "Découvrez l'effectif complet du Pau FC saison 2025/2026 : joueurs et staff.",
 };
 
-const POSITION_ORDER = ['goalkeeper', 'defender', 'midfielder', 'forward'];
-
 export default async function EquipePage() {
-  const all = await prisma.player.findMany({
-    where: { active: true },
-    orderBy: [{ role: 'asc' }, { displayOrder: 'asc' }, { lastName: 'asc' }],
-  });
+  // Récupérer tous les joueurs par poste
+  const players = await prisma.player
+    .findMany({
+      where: { status: 'active' },
+      orderBy: [{ position: 'asc' }, { jerseyNumber: 'asc' }],
+    })
+    .catch(() => []);
 
-  const players = all.filter((p) => p.role === 'player');
-
-  const grouped = POSITION_ORDER.reduce((acc, pos) => {
-    acc[pos] = players.filter((p) => p.position === pos);
-    return acc;
-  }, {});
+  const gardiens = players.filter((p) => p.position === 'GK');
+  const defenseurs = players.filter((p) => p.position === 'DEF');
+  const milieux = players.filter((p) => p.position === 'MID');
+  const attaquants = players.filter((p) => p.position === 'ATT');
 
   return (
-    <div className="bg-white">
-      {/* HERO SIMPLE */}
-      <section className="relative h-[300px] overflow-hidden border-b border-gray-200">
-        <Image
-          src="/images/hero-equipe.jpg"
-          alt="Effectif Pau FC"
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-pau-night/40" />
-        <div className="relative z-10 flex h-full items-center">
-          <div className="mx-auto w-full max-w-7xl px-6 md:px-12">
-            <p className="mb-3 font-mono text-xs uppercase tracking-widest text-white/90">
-              Effectif professionnel · Saison 2025-2026
-            </p>
-            <h1 className="font-display text-4xl font-black uppercase text-white md:text-5xl">
-              L'Équipe
-            </h1>
-            <p className="mt-3 text-sm text-white/90">
-              {players.length} joueurs au service d'un seul objectif : porter haut les couleurs du Béarn.
-            </p>
-          </div>
+    <div className="min-h-screen bg-white">
+      {/* Header */}
+      <div className="border-b border-pau-night/10 bg-white py-12 md:py-16">
+        <div className="container-pau">
+          <span className="badge-mono text-pau-primary">Saison 2025/2026</span>
+          <h1 className="mt-4 font-display text-4xl font-bold uppercase text-pau-night md:text-5xl lg:text-6xl">
+            L'Équipe Pro 25/26
+          </h1>
         </div>
-      </section>
-
-      {/* JOUEURS PAR POSTE */}
-      <div className="mx-auto max-w-7xl px-6 py-12 md:px-12">
-        {POSITION_ORDER.map((pos, idx) => {
-          const list = grouped[pos];
-          if (!list || list.length === 0) return null;
-          return (
-            <div
-              key={pos}
-              className={idx > 0 ? 'mt-12 border-t border-gray-200 pt-12' : ''}
-            >
-              <ScrollReveal>
-                <div className="mb-8 flex items-end justify-between">
-                  <h2 className="font-display text-2xl font-bold uppercase text-pau-primary md:text-3xl">
-                    {POSITION_LABELS[pos]}
-                  </h2>
-                  <span className="font-mono text-xs uppercase tracking-wider text-pau-primary/40">
-                    {list.length}
-                  </span>
-                </div>
-              </ScrollReveal>
-              <div className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-                {list.map((p, playerIdx) => (
-                  <ScrollReveal key={p.id} delay={playerIdx * 50}>
-                    <PlayerCard player={p} />
-                  </ScrollReveal>
-                ))}
-              </div>
-            </div>
-          );
-        })}
       </div>
 
-      {all.length === 0 && <EmptyEquipe />}
+      {/* Contenu */}
+      <div className="container-pau py-12 md:py-16">
+        {/* Gardiens */}
+        {gardiens.length > 0 && (
+          <section className="mb-16">
+            <h2 className="mb-8 font-display text-3xl font-bold uppercase text-pau-night">
+              Les Gardiens
+            </h2>
+            <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+              {gardiens.map((player) => (
+                <PlayerCard key={player.id} player={player} />
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* Défenseurs */}
+        {defenseurs.length > 0 && (
+          <section className="mb-16">
+            <h2 className="mb-8 font-display text-3xl font-bold uppercase text-pau-night">
+              Les Défenseurs
+            </h2>
+            <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+              {defenseurs.map((player) => (
+                <PlayerCard key={player.id} player={player} />
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* Milieux */}
+        {milieux.length > 0 && (
+          <section className="mb-16">
+            <h2 className="mb-8 font-display text-3xl font-bold uppercase text-pau-night">
+              Les Milieux
+            </h2>
+            <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+              {milieux.map((player) => (
+                <PlayerCard key={player.id} player={player} />
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* Attaquants */}
+        {attaquants.length > 0 && (
+          <section className="mb-16">
+            <h2 className="mb-8 font-display text-3xl font-bold uppercase text-pau-night">
+              Les Attaquants
+            </h2>
+            <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+              {attaquants.map((player) => (
+                <PlayerCard key={player.id} player={player} />
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* Staff */}
+        <div className="border-t border-pau-night/10 pt-16">
+          <h2 className="mb-12 font-display text-3xl font-bold uppercase text-pau-night">
+            Le Staff
+          </h2>
+
+          <div className="grid gap-12 md:grid-cols-2">
+            {/* Staff technique */}
+            <div>
+              <h3 className="mb-6 font-display text-xl font-bold uppercase text-pau-yellow">
+                Staff Technique
+              </h3>
+              <div className="space-y-4">
+                <StaffMember name="Didier Tholot" role="Entraîneur principal" />
+                <StaffMember name="Vincent Bracigliano" role="Entraîneur adjoint" />
+                <StaffMember name="Julien Cardy" role="Préparateur physique" />
+                <StaffMember name="Thomas Ayassamy" role="Analyste vidéo" />
+              </div>
+            </div>
+
+            {/* Staff médical */}
+            <div>
+              <h3 className="mb-6 font-display text-xl font-bold uppercase text-pau-yellow">
+                Staff Médical
+              </h3>
+              <div className="space-y-4">
+                <StaffMember name="Dr. Marc Laporte" role="Médecin du club" />
+                <StaffMember name="Pierre Durand" role="Kinésithérapeute" />
+                <StaffMember name="Sophie Martin" role="Kinésithérapeute" />
+                <StaffMember name="Alexandre Petit" role="Ostéopathe" />
+                <StaffMember name="Julie Bernard" role="Podologue" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
 
-function EmptyEquipe() {
+// Composant Player Card
+function PlayerCard({ player }) {
   return (
-    <section className="mx-auto max-w-7xl px-6 py-20 md:px-12">
-      <div className="text-center">
-        <p className="text-sm text-pau-primary/40">
-          Aucun joueur disponible pour le moment.
+    <article className="group border-2 border-pau-night/10 bg-white transition-all hover:border-pau-yellow">
+      {/* Photo */}
+      <div className="relative aspect-[3/4] overflow-hidden bg-pau-night/5">
+        {player.photoUrl ? (
+          <Image
+            src={player.photoUrl}
+            alt={`${player.firstName} ${player.lastName}`}
+            fill
+            className="object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+        ) : (
+          <div className="flex h-full items-center justify-center">
+            <span className="font-display text-6xl font-bold text-pau-night/20">
+              {player.jerseyNumber}
+            </span>
+          </div>
+        )}
+
+        {/* Numéro overlay */}
+        <div className="absolute left-0 top-0 bg-pau-yellow px-3 py-1">
+          <span className="font-display text-xl font-bold text-pau-night">
+            {player.jerseyNumber}
+          </span>
+        </div>
+      </div>
+
+      {/* Infos */}
+      <div className="p-4">
+        <h3 className="font-display text-lg font-bold uppercase text-pau-night">
+          {player.firstName} {player.lastName}
+        </h3>
+        <p className="mt-1 font-sans text-sm text-pau-night/60">
+          {getPositionLabel(player.position)}
         </p>
       </div>
-    </section>
+    </article>
   );
+}
+
+// Composant Staff Member
+function StaffMember({ name, role }) {
+  return (
+    <div className="border-l-2 border-pau-yellow pl-4">
+      <h4 className="font-display text-base font-bold uppercase text-pau-night">
+        {name}
+      </h4>
+      <p className="mt-1 font-sans text-sm text-pau-night/70">{role}</p>
+    </div>
+  );
+}
+
+// Helper position label
+function getPositionLabel(position) {
+  const labels = {
+    GK: 'Gardien',
+    DEF: 'Défenseur',
+    MID: 'Milieu',
+    ATT: 'Attaquant',
+  };
+  return labels[position] || position;
 }
