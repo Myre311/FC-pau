@@ -51,6 +51,7 @@ const SECTIONS = [
   {
     title: 'Système',
     items: [
+      { href: '/admin/tools', label: 'Outils' },
       { href: '/admin/parametres', label: 'Paramètres' },
     ],
   },
