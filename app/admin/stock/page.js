@@ -40,7 +40,7 @@ export default async function AdminStockPage() {
       <AdminPageHeader kicker="Catalogue" title="Stock unifié" />
 
       {lowStock.length > 0 && (
-        <section className="border border-pau-yellow/40 bg-jaune/5 p-5">
+        <section className="border border-pau-yellow/40 bg-pau-yellow/5 p-5">
           <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-pau-yellow">
             Alertes rupture · {lowStock.length}
           </p>

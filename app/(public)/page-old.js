@@ -89,7 +89,7 @@ export default async function HomePage() {
               {latestArticles.map((article) => (
                 <StaggerItem key={article.id}>
                   <Link href={`/actualites/${article.slug}`}>
-                    <HoverCard className="group overflow-hidden border border-pau-primary/10 bg-white transition-all hover:border-jaune hover:shadow-md">
+                    <HoverCard className="group overflow-hidden border border-pau-primary/10 bg-white transition-all hover:border-pau-yellow hover:shadow-md">
                       {article.coverImageUrl && (
                         <div className="relative aspect-video w-full overflow-hidden bg-gradient-to-br from-pau-night to-pau-primary">
                           <Image
@@ -251,7 +251,7 @@ export default async function HomePage() {
       </section>
 
       {/* ─── NEWSLETTER ANIMÉE ──────────────────────────────────────────────── */}
-      <section className="section-pau border-t border-jaune/40 bg-white">
+      <section className="section-pau border-t border-pau-yellow/40 bg-white">
         <div className="container-pau">
           <FadeIn delay={0.2} className="mx-auto max-w-3xl text-center">
             <div className="mx-auto mb-6 inline-block">
@@ -267,7 +267,7 @@ export default async function HomePage() {
               <input
                 type="email"
                 placeholder="votre@email.fr"
-                className="flex-1 rounded-lg border-2 border-white/20 bg-white/10 px-6 py-4 font-sans text-pau-primary placeholder-blanc/50 transition-all focus:border-jaune focus:bg-white/20 focus:outline-none"
+                className="flex-1 rounded-lg border-2 border-white/20 bg-white/10 px-6 py-4 font-sans text-pau-primary placeholder-blanc/50 transition-all focus:border-pau-yellow focus:bg-white/20 focus:outline-none"
               />
               <button type="submit" className="btn-pau-accent whitespace-nowrap">
                 S'inscrire

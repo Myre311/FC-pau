@@ -73,14 +73,14 @@ export default function RgpdPage() {
           Vous disposez des droits d&apos;accès, de rectification,
           d&apos;effacement, d&apos;opposition, de limitation du traitement et
           de portabilité de vos données. Pour exercer ces droits :{' '}
-          <a className="text-jaune hover:underline" href="mailto:dpo@paufc.fr">
+          <a className="text-pau-yellow hover:underline" href="mailto:dpo@paufc.fr">
             dpo@paufc.fr
           </a>
           .
         </p>
         <p>
           En cas de litige, vous pouvez saisir la CNIL (
-          <a className="text-jaune hover:underline" href="https://www.cnil.fr">
+          <a className="text-pau-yellow hover:underline" href="https://www.cnil.fr">
             cnil.fr
           </a>
           ).
@@ -90,7 +90,7 @@ export default function RgpdPage() {
       <LegalSection title="Cookies">
         <p>
           Voir notre{' '}
-          <a className="text-jaune hover:underline" href="/cookies">
+          <a className="text-pau-yellow hover:underline" href="/cookies">
             politique cookies
           </a>{' '}
           dédiée.

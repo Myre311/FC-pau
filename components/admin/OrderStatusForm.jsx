@@ -50,7 +50,7 @@ export function OrderStatusForm({ order }) {
       </label>
 
       {error && (
-        <p className="border border-pau-yellow/40 bg-jaune/10 px-4 py-2 font-mono text-[10px] uppercase tracking-[0.15em] text-pau-yellow">
+        <p className="border border-pau-yellow/40 bg-pau-yellow/10 px-4 py-2 font-mono text-[10px] uppercase tracking-[0.15em] text-pau-yellow">
           {error}
         </p>
       )}

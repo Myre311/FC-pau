@@ -31,7 +31,7 @@ export function QuickAction({ href, icon = 'plus', label, description, badge }) 
       href={href}
       className="group relative flex items-center gap-4 rounded-lg border border-gray-200/10 bg-pau-primary/20 p-4 transition-all hover:border-pau-yellow/30 hover:bg-pau-primary/40"
     >
-      <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-jaune/10 text-pau-yellow transition-transform group-hover:scale-110">
+      <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-pau-yellow/10 text-pau-yellow transition-transform group-hover:scale-110">
         {ICONS[icon]}
       </div>
       <div className="flex-1 min-w-0">
@@ -39,7 +39,7 @@ export function QuickAction({ href, icon = 'plus', label, description, badge }) 
         <p className="mt-0.5 font-mono text-xs text-gray-900/50">{description}</p>
       </div>
       {badge && (
-        <div className="flex h-6 w-6 items-center justify-center rounded-full bg-jaune text-xs font-bold text-nuit">
+        <div className="flex h-6 w-6 items-center justify-center rounded-full bg-pau-yellow text-xs font-bold text-pau-night">
           {badge}
         </div>
       )}

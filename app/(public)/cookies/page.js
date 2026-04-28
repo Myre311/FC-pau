@@ -20,7 +20,7 @@ export default function CookiesPage() {
       </LegalSection>
 
       <LegalSection title="Cookies utilisés">
-        <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-jaune">
+        <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-pau-yellow">
           Strictement nécessaires (sans consentement)
         </p>
         <ul className="ml-5 list-disc space-y-2">
@@ -35,7 +35,7 @@ export default function CookiesPage() {
           <li>Stripe — sécurité paiement et anti-fraude</li>
         </ul>
 
-        <p className="mt-6 font-mono text-[11px] uppercase tracking-[0.2em] text-jaune">
+        <p className="mt-6 font-mono text-[11px] uppercase tracking-[0.2em] text-pau-yellow">
           Mesure d&apos;audience (consentement requis)
         </p>
         <p>

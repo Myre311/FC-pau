@@ -36,24 +36,24 @@ const ITEMS = [
 
 export function TrustBar() {
   return (
-    <section className="relative z-10 border-t border-blanc/10 bg-blanc/[0.022]">
+    <section className="relative z-10 border-t border-white/10 bg-white/[0.022]">
       <div className="wrap">
         <div className="flex items-center gap-0 overflow-x-auto py-[14px]">
           {ITEMS.map((item, i) => (
             <div
               key={item.title}
               className={`relative flex flex-shrink-0 items-center gap-[10px] px-[28px] ${
-                i > 0 ? 'border-l border-blanc/[0.07]' : ''
+                i > 0 ? 'border-l border-white/[0.07]' : ''
               }`}
             >
-              <span className="clip-cta flex h-7 w-7 items-center justify-center border border-jaune/15 bg-jaune/[0.07]">
+              <span className="clip-cta flex h-7 w-7 items-center justify-center border border-pau-yellow/15 bg-pau-yellow/[0.07]">
                 <svg viewBox="0 0 24 24" className="h-3 w-3 stroke-jaune" fill="none" strokeWidth="1.8" aria-hidden="true">
                   {item.icon}
                 </svg>
               </span>
               <div>
-                <p className="font-sans text-[12px] font-bold text-blanc">{item.title}</p>
-                <p className="mt-[1px] font-mono text-[8.5px] uppercase tracking-[0.1em] text-blanc/20">
+                <p className="font-sans text-[12px] font-bold text-white">{item.title}</p>
+                <p className="mt-[1px] font-mono text-[8.5px] uppercase tracking-[0.1em] text-white/20">
                   {item.sub}
                 </p>
               </div>

@@ -13,8 +13,8 @@ export function AddressList({ addresses }) {
   return (
     <div className="space-y-6">
       {addresses.length === 0 && !adding && (
-        <div className="border border-dashed border-blanc/15 p-8 text-center">
-          <p className="font-sans text-blanc/60">
+        <div className="border border-dashed border-white/15 p-8 text-center">
+          <p className="font-sans text-white/60">
             Vous n&apos;avez pas encore d&apos;adresse enregistrée.
           </p>
           <Button
@@ -31,7 +31,7 @@ export function AddressList({ addresses }) {
       <ul className="space-y-4">
         {addresses.map((a) =>
           editingId === a.id ? (
-            <li key={a.id} className="border border-blanc/15 p-5">
+            <li key={a.id} className="border border-white/15 p-5">
               <AddressForm
                 address={a}
                 onCancel={() => setEditingId(null)}
@@ -39,15 +39,15 @@ export function AddressList({ addresses }) {
               />
             </li>
           ) : (
-            <li key={a.id} className="border border-blanc/10 p-5">
+            <li key={a.id} className="border border-white/10 p-5">
               <header className="flex items-start justify-between gap-4">
                 <div>
-                  <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-jaune">
+                  <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-pau-yellow">
                     {a.type === 'shipping' ? 'Livraison' : 'Facturation'}
-                    {a.isDefault && <span className="ml-2 text-blanc/60">· Par défaut</span>}
+                    {a.isDefault && <span className="ml-2 text-white/60">· Par défaut</span>}
                   </p>
                   {a.label && (
-                    <p className="mt-1 font-mono text-[10px] uppercase tracking-[0.15em] text-blanc/50">
+                    <p className="mt-1 font-mono text-[10px] uppercase tracking-[0.15em] text-white/50">
                       {a.label}
                     </p>
                   )}
@@ -56,7 +56,7 @@ export function AddressList({ addresses }) {
                   <button
                     type="button"
                     onClick={() => setEditingId(a.id)}
-                    className="font-mono text-[10px] uppercase tracking-[0.2em] text-blanc/60 transition-colors hover:text-jaune"
+                    className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/60 transition-colors hover:text-pau-yellow"
                   >
                     Modifier
                   </button>
@@ -64,7 +64,7 @@ export function AddressList({ addresses }) {
                     <input type="hidden" name="id" value={a.id} />
                     <button
                       type="submit"
-                      className="font-mono text-[10px] uppercase tracking-[0.2em] text-blanc/40 transition-colors hover:text-blanc"
+                      className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/40 transition-colors hover:text-white"
                     >
                       Supprimer
                     </button>
@@ -72,8 +72,8 @@ export function AddressList({ addresses }) {
                 </div>
               </header>
 
-              <address className="mt-4 not-italic font-sans text-sm text-blanc/80">
-                <p className="text-blanc">
+              <address className="mt-4 not-italic font-sans text-sm text-white/80">
+                <p className="text-white">
                   {a.firstName} {a.lastName}
                 </p>
                 <p>{a.line1}</p>
@@ -83,7 +83,7 @@ export function AddressList({ addresses }) {
                 </p>
                 <p>{a.country}</p>
                 {a.phone && (
-                  <p className="mt-2 font-mono text-xs text-blanc/60">{a.phone}</p>
+                  <p className="mt-2 font-mono text-xs text-white/60">{a.phone}</p>
                 )}
               </address>
             </li>
@@ -92,7 +92,7 @@ export function AddressList({ addresses }) {
       </ul>
 
       {adding ? (
-        <div className="border border-blanc/15 p-5">
+        <div className="border border-white/15 p-5">
           <AddressForm
             onCancel={() => setAdding(false)}
             onSuccess={() => setAdding(false)}

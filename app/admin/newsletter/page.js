@@ -41,7 +41,7 @@ export default async function AdminNewsletterPage({ searchParams }) {
         actions={
           <a
             href={exportHref}
-            className="border border-pau-yellow/40 bg-jaune/10 px-4 py-2 font-mono text-[10px] uppercase tracking-[0.2em] text-pau-yellow transition-colors hover:bg-jaune hover:text-nuit"
+            className="border border-pau-yellow/40 bg-pau-yellow/10 px-4 py-2 font-mono text-[10px] uppercase tracking-[0.2em] text-pau-yellow transition-colors hover:bg-pau-yellow hover:text-pau-night"
           >
             Exporter CSV ↓
           </a>
@@ -71,7 +71,7 @@ export default async function AdminNewsletterPage({ searchParams }) {
               key={s.label}
               href={href}
               className={`px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.2em] transition-colors ${
-                active ? 'bg-jaune text-nuit' : 'border border-gray-200/15 text-gray-900/70 hover:border-gray-200/40'
+                active ? 'bg-pau-yellow text-pau-night' : 'border border-gray-200/15 text-gray-900/70 hover:border-gray-200/40'
               }`}
             >
               {s.label}

@@ -172,13 +172,13 @@ export function PlayerForm({ player, action, deleteAction }) {
           <div className="flex gap-3">
             <a
               href="/admin/joueurs"
-              className="px-6 py-3 border-2 border-gray-200/20 text-gray-900 font-bold uppercase hover:bg-blanc/10 transition-colors"
+              className="px-6 py-3 border-2 border-gray-200/20 text-gray-900 font-bold uppercase hover:bg-white/10 transition-colors"
             >
               Annuler
             </a>
             <button
               type="submit"
-              className="bg-jaune text-nuit px-8 py-3 font-bold uppercase hover:bg-pau-yellow/90 transition-colors"
+              className="bg-pau-yellow text-pau-night px-8 py-3 font-bold uppercase hover:bg-pau-yellow/90 transition-colors"
             >
               {player ? 'Mettre à jour' : 'Créer'}
             </button>

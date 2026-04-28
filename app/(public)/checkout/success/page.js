@@ -45,7 +45,7 @@ export default async function CheckoutSuccessPage({ searchParams }) {
             ? 'Traitement en cours'
             : 'Paiement à confirmer'}
         </h1>
-        <p className="mt-6 max-w-md mx-auto font-sans text-blanc/60">
+        <p className="mt-6 max-w-md mx-auto font-sans text-white/60">
           Votre banque finalise le paiement. Vous recevrez un email dès que
           la commande sera validée.
         </p>
@@ -67,17 +67,17 @@ export default async function CheckoutSuccessPage({ searchParams }) {
         <h1 className="mt-4 font-display text-5xl uppercase leading-crush tracking-tightest md:text-7xl">
           MERCI
         </h1>
-        <p className="mt-6 font-sans text-lg text-blanc/70">
+        <p className="mt-6 font-sans text-lg text-white/70">
           Votre commande {order ? `${order.number}` : `(en cours d'enregistrement)`} est
           confirmée. Un email récapitulatif part vers{' '}
-          <span className="text-blanc">
+          <span className="text-white">
             {intent.receipt_email ?? order?.guestEmail ?? 'votre adresse'}
           </span>
           .
         </p>
 
         {order && (
-          <div className="mt-12 border border-blanc/10 p-6">
+          <div className="mt-12 border border-white/10 p-6">
             <dl className="grid grid-cols-2 gap-4 font-mono text-[11px] uppercase tracking-[0.2em] md:grid-cols-4">
               <Stat label="N° commande" value={order.number} />
               <Stat label="Date" value={formatDate(order.createdAt)} />
@@ -85,21 +85,21 @@ export default async function CheckoutSuccessPage({ searchParams }) {
               <Stat label="Total" value={formatPrice(order.total)} />
             </dl>
 
-            <ul className="mt-6 divide-y divide-blanc/10 border-t border-blanc/10">
+            <ul className="mt-6 divide-y divide-blanc/10 border-t border-white/10">
               {order.items.map((it) => (
                 <li
                   key={it.id}
                   className="flex items-center justify-between gap-4 py-3 font-sans text-sm"
                 >
-                  <span className="text-blanc">
+                  <span className="text-white">
                     {it.productName}
                     {it.variantLabel && (
-                      <span className="ml-2 font-mono text-[10px] uppercase tracking-[0.2em] text-blanc/40">
+                      <span className="ml-2 font-mono text-[10px] uppercase tracking-[0.2em] text-white/40">
                         {it.variantLabel} · ×{it.quantity}
                       </span>
                     )}
                   </span>
-                  <span className="font-mono text-blanc">
+                  <span className="font-mono text-white">
                     {formatPrice(it.unitPrice * it.quantity)}
                   </span>
                 </li>
@@ -128,8 +128,8 @@ export default async function CheckoutSuccessPage({ searchParams }) {
 function Stat({ label, value }) {
   return (
     <div>
-      <dt className="text-blanc/40">{label}</dt>
-      <dd className="mt-1 text-blanc">{value}</dd>
+      <dt className="text-white/40">{label}</dt>
+      <dd className="mt-1 text-white">{value}</dd>
     </div>
   );
 }
@@ -141,7 +141,7 @@ function FallbackMissing() {
       <h1 className="mt-4 font-display text-5xl uppercase leading-crush tracking-tightest md:text-6xl">
         Pas de paiement à afficher
       </h1>
-      <p className="mt-6 font-sans text-blanc/60">
+      <p className="mt-6 font-sans text-white/60">
         Aucun identifiant de paiement n&apos;a été fourni. Si vous venez de payer,
         vérifiez votre boîte mail.
       </p>

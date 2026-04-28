@@ -25,7 +25,7 @@ export default async function ComptePage() {
     <div className="space-y-10">
       <header>
         <p className="badge-mono">Tableau de bord</p>
-        <h1 className="mt-3 font-display text-5xl uppercase leading-crush tracking-tightest text-blanc md:text-6xl">
+        <h1 className="mt-3 font-display text-5xl uppercase leading-crush tracking-tightest text-white md:text-6xl">
           Bonjour {dbUser.firstName ?? 'Supporter'}
         </h1>
       </header>
@@ -52,21 +52,21 @@ export default async function ComptePage() {
       </section>
 
       <section>
-        <header className="mb-5 flex items-end justify-between border-b border-blanc/10 pb-3">
-          <h2 className="font-mono text-[11px] uppercase tracking-[0.2em] text-jaune">
+        <header className="mb-5 flex items-end justify-between border-b border-white/10 pb-3">
+          <h2 className="font-mono text-[11px] uppercase tracking-[0.2em] text-pau-yellow">
             Dernières commandes
           </h2>
           <Link
             href="/compte/commandes"
-            className="font-mono text-[10px] uppercase tracking-[0.2em] text-blanc/60 hover:text-jaune"
+            className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/60 hover:text-pau-yellow"
           >
             Voir tout
           </Link>
         </header>
 
         {recentOrders.length === 0 ? (
-          <div className="border border-dashed border-blanc/15 p-8 text-center">
-            <p className="font-sans text-sm text-blanc/60">
+          <div className="border border-dashed border-white/15 p-8 text-center">
+            <p className="font-sans text-sm text-white/60">
               Aucune commande pour le moment.
             </p>
             <Link href="/boutique" className="mt-4 inline-block">
@@ -76,26 +76,26 @@ export default async function ComptePage() {
             </Link>
           </div>
         ) : (
-          <ul className="divide-y divide-blanc/10 border border-blanc/10">
+          <ul className="divide-y divide-blanc/10 border border-white/10">
             {recentOrders.map((o) => (
               <li key={o.id} className="flex items-center justify-between gap-4 px-4 py-4">
                 <div className="min-w-0">
                   <Link
                     href={`/compte/commandes/${o.number}`}
-                    className="font-mono text-sm text-blanc transition-colors hover:text-jaune"
+                    className="font-mono text-sm text-white transition-colors hover:text-pau-yellow"
                   >
                     {o.number}
                   </Link>
-                  <p className="mt-1 font-mono text-[10px] uppercase tracking-[0.2em] text-blanc/40">
+                  <p className="mt-1 font-mono text-[10px] uppercase tracking-[0.2em] text-white/40">
                     {formatDate(o.createdAt)} · {o.items.length} article
                     {o.items.length > 1 ? 's' : ''}
                   </p>
                 </div>
                 <div className="text-right">
-                  <p className="font-mono text-sm text-blanc">
+                  <p className="font-mono text-sm text-white">
                     {formatPrice(o.total)}
                   </p>
-                  <p className="mt-1 font-mono text-[10px] uppercase tracking-[0.2em] text-jaune">
+                  <p className="mt-1 font-mono text-[10px] uppercase tracking-[0.2em] text-pau-yellow">
                     {o.status}
                   </p>
                 </div>
@@ -112,15 +112,15 @@ function KpiCard({ label, value, href, cta }) {
   return (
     <Link
       href={href}
-      className="block border border-blanc/10 bg-primaire/20 p-5 transition-colors hover:border-blanc/25"
+      className="block border border-white/10 bg-pau-primary/20 p-5 transition-colors hover:border-white/25"
     >
-      <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-jaune">
+      <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-pau-yellow">
         {label}
       </p>
-      <p className="mt-3 font-display text-5xl uppercase leading-crush tracking-tightest text-blanc">
+      <p className="mt-3 font-display text-5xl uppercase leading-crush tracking-tightest text-white">
         {value}
       </p>
-      <p className="mt-3 font-mono text-[10px] uppercase tracking-[0.2em] text-blanc/40">
+      <p className="mt-3 font-mono text-[10px] uppercase tracking-[0.2em] text-white/40">
         {cta} →
       </p>
     </Link>

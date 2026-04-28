@@ -54,18 +54,18 @@ export default async function StatsPage() {
   return (
     <>
       {/* Hero */}
-      <section className="border-b-4 border-jaune bg-nuit py-16 md:py-20">
+      <section className="border-b-4 border-pau-yellow bg-pau-night py-16 md:py-20">
         <div className="container-pau">
-          <div className="mb-4 h-1 w-16 bg-jaune" />
-          <h1 className="title-hero text-blanc">Statistiques</h1>
-          <p className="mt-4 max-w-2xl text-lg text-blanc/80">
+          <div className="mb-4 h-1 w-16 bg-pau-yellow" />
+          <h1 className="title-hero text-white">Statistiques</h1>
+          <p className="mt-4 max-w-2xl text-lg text-white/80">
             Performances détaillées de l'équipe et des joueurs - Saison 2025-2026
           </p>
         </div>
       </section>
 
       {/* Overview équipe */}
-      <section className="section-pau bg-blanc">
+      <section className="section-pau bg-white">
         <div className="container-pau">
           <TeamOverview stats={teamStats} />
         </div>
@@ -82,10 +82,10 @@ export default async function StatsPage() {
       </section>
 
       {/* Grid complète des stats */}
-      <section className="section-pau bg-blanc">
+      <section className="section-pau bg-white">
         <div className="container-pau">
           <div className="mb-8">
-            <div className="mb-4 h-1 w-16 bg-jaune" />
+            <div className="mb-4 h-1 w-16 bg-pau-yellow" />
             <h2 className="title-section">Statistiques détaillées</h2>
           </div>
           <StatsGrid players={players} />

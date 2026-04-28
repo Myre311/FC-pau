@@ -49,30 +49,30 @@ export default async function ArticlePage({ params }) {
   return (
     <article>
       <header className="container-fc pt-12 pb-8 md:pt-20 md:pb-12">
-        <nav className="font-mono text-[10px] uppercase tracking-[0.2em] text-blanc/50">
-          <Link href="/actualites" className="hover:text-jaune">
+        <nav className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/50">
+          <Link href="/actualites" className="hover:text-pau-yellow">
             Actualités
           </Link>
           {' / '}
-          <span className="text-blanc">
+          <span className="text-white">
             {ARTICLE_CATEGORY_LABELS[article.category]}
           </span>
         </nav>
 
-        <h1 className="mt-6 max-w-4xl font-display text-5xl uppercase leading-crush tracking-tightest text-blanc md:text-7xl">
+        <h1 className="mt-6 max-w-4xl font-display text-5xl uppercase leading-crush tracking-tightest text-white md:text-7xl">
           {article.title}
         </h1>
 
-        <p className="mt-6 max-w-3xl font-sans text-lg leading-relaxed text-blanc/70">
+        <p className="mt-6 max-w-3xl font-sans text-lg leading-relaxed text-white/70">
           {article.excerpt}
         </p>
 
-        <div className="mt-8 flex flex-wrap items-center gap-4 border-t border-blanc/10 pt-5 font-mono text-[10px] uppercase tracking-[0.2em] text-blanc/50">
+        <div className="mt-8 flex flex-wrap items-center gap-4 border-t border-white/10 pt-5 font-mono text-[10px] uppercase tracking-[0.2em] text-white/50">
           <span>{formatArticleDate(article.publishedAt)}</span>
-          <span className="text-blanc/30">·</span>
+          <span className="text-white/30">·</span>
           <span>{article.author}</span>
-          <span className="text-blanc/30">·</span>
-          <span className="text-jaune">
+          <span className="text-white/30">·</span>
+          <span className="text-pau-yellow">
             {ARTICLE_CATEGORY_LABELS[article.category]}
           </span>
         </div>
@@ -80,7 +80,7 @@ export default async function ArticlePage({ params }) {
 
       {article.coverImageUrl && (
         <div className="container-fc">
-          <div className="aspect-[16/9] w-full overflow-hidden border border-blanc/10 bg-primaire">
+          <div className="aspect-[16/9] w-full overflow-hidden border border-white/10 bg-pau-primary">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={article.coverImageUrl}
@@ -92,7 +92,7 @@ export default async function ArticlePage({ params }) {
       )}
 
       <div className="container-fc pb-16 pt-10 md:pb-24">
-        <div className="prose-fc max-w-3xl space-y-5 font-sans text-base leading-relaxed text-blanc/80 md:text-lg">
+        <div className="prose-fc max-w-3xl space-y-5 font-sans text-base leading-relaxed text-white/80 md:text-lg">
           {paragraphs.map((p, i) => (
             <p key={i}>{p}</p>
           ))}
@@ -100,8 +100,8 @@ export default async function ArticlePage({ params }) {
       </div>
 
       {related.length > 0 && (
-        <section className="container-fc border-t border-blanc/10 py-12 md:py-16">
-          <h2 className="mb-8 font-mono text-[11px] uppercase tracking-[0.2em] text-jaune">
+        <section className="container-fc border-t border-white/10 py-12 md:py-16">
+          <h2 className="mb-8 font-mono text-[11px] uppercase tracking-[0.2em] text-pau-yellow">
             À lire aussi
           </h2>
           <div className="grid grid-cols-1 gap-x-4 gap-y-10 md:grid-cols-3">

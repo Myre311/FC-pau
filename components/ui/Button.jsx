@@ -6,13 +6,13 @@ import { cn } from '@/lib/utils';
 
 const VARIANTS = {
   primary:
-    'border-2 border-nuit bg-nuit text-blanc hover:bg-primaire hover:border-primaire',
+    'border-2 border-pau-night bg-pau-night text-white hover:bg-pau-primary hover:border-pau-primary',
   secondary:
-    'border-2 border-nuit bg-blanc text-nuit hover:bg-nuit hover:text-blanc',
+    'border-2 border-pau-night bg-white text-pau-night hover:bg-pau-night hover:text-white',
   outline:
-    'border-2 border-nuit bg-transparent text-nuit hover:bg-nuit/5',
+    'border-2 border-pau-night bg-transparent text-pau-night hover:bg-pau-night/5',
   accent:
-    'border-2 border-jaune bg-jaune text-nuit hover:bg-nuit hover:border-nuit hover:text-jaune',
+    'border-2 border-pau-yellow bg-pau-yellow text-pau-night hover:bg-pau-night hover:border-pau-night hover:text-pau-yellow',
   ghost:
     'border border-gray-300 bg-transparent text-gray-700 hover:bg-gray-50',
   danger:

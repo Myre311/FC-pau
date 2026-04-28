@@ -10,7 +10,7 @@ export default async function InfosPage() {
     <div className="space-y-8">
       <header>
         <p className="badge-mono">Mon profil</p>
-        <h1 className="mt-3 font-display text-5xl uppercase leading-crush tracking-tightest text-blanc md:text-6xl">
+        <h1 className="mt-3 font-display text-5xl uppercase leading-crush tracking-tightest text-white md:text-6xl">
           Mes infos
         </h1>
       </header>

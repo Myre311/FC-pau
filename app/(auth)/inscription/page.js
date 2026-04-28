@@ -14,7 +14,7 @@ export default function InscriptionPage() {
       <h1 className="mt-4 font-display text-5xl uppercase leading-crush tracking-tightest md:text-6xl">
         Créer un<br />compte
       </h1>
-      <p className="mt-4 font-sans text-sm text-blanc/60">
+      <p className="mt-4 font-sans text-sm text-white/60">
         Suivi des commandes, paiement express, sauvegarde des
         personnalisations maillot — un seul compte pour tout.
       </p>
@@ -23,9 +23,9 @@ export default function InscriptionPage() {
         <SignupForm />
       </div>
 
-      <div className="mt-8 border-t border-blanc/10 pt-6 font-mono text-[11px] uppercase tracking-[0.2em] text-blanc/60">
+      <div className="mt-8 border-t border-white/10 pt-6 font-mono text-[11px] uppercase tracking-[0.2em] text-white/60">
         Déjà inscrit ?{' '}
-        <Link href="/connexion" className="text-jaune hover:underline">
+        <Link href="/connexion" className="text-pau-yellow hover:underline">
           Se connecter
         </Link>
       </div>

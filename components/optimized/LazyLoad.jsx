@@ -25,9 +25,9 @@ export function LazyLoad({
  */
 function LazyLoadSkeleton() {
   return (
-    <div className="flex items-center justify-center bg-nuit/5 p-12">
+    <div className="flex items-center justify-center bg-pau-night/5 p-12">
       <div className="space-y-4 text-center">
-        <div className="mx-auto h-12 w-12 animate-spin border-4 border-jaune border-t-transparent" />
+        <div className="mx-auto h-12 w-12 animate-spin border-4 border-pau-yellow border-t-transparent" />
         <p className="font-mono text-xs uppercase tracking-wider text-gray-500">
           Chargement...
         </p>

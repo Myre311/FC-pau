@@ -58,7 +58,7 @@ export function VideoModal({ isOpen, onClose, videoId }) {
             {/* Bouton fermer */}
             <button
               onClick={onClose}
-              className="absolute -right-4 -top-4 flex h-10 w-10 items-center justify-center border-2 border-jaune bg-nuit text-jaune transition-all hover:bg-jaune hover:text-nuit"
+              className="absolute -right-4 -top-4 flex h-10 w-10 items-center justify-center border-2 border-pau-yellow bg-pau-night text-pau-yellow transition-all hover:bg-pau-yellow hover:text-pau-night"
               aria-label="Fermer la vidéo"
             >
               <svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
@@ -67,7 +67,7 @@ export function VideoModal({ isOpen, onClose, videoId }) {
             </button>
 
             {/* Player YouTube responsive */}
-            <div className="relative overflow-hidden border-4 border-jaune bg-nuit" style={{ paddingBottom: '56.25%' }}>
+            <div className="relative overflow-hidden border-4 border-pau-yellow bg-pau-night" style={{ paddingBottom: '56.25%' }}>
               <iframe
                 src={`https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`}
                 title="Vidéo FC Pau"

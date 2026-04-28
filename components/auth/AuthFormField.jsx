@@ -13,9 +13,9 @@ export function AuthFormField({
 }) {
   return (
     <label className="block">
-      <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-blanc/50">
+      <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/50">
         {label}
-        {required && <span className="ml-1 text-jaune">*</span>}
+        {required && <span className="ml-1 text-pau-yellow">*</span>}
       </span>
       <input
         type={type}
@@ -25,10 +25,10 @@ export function AuthFormField({
         defaultValue={defaultValue}
         pattern={pattern}
         minLength={minLength}
-        className="mt-2 block h-11 w-full border border-blanc/15 bg-transparent px-3 font-sans text-sm text-blanc outline-none transition-colors focus:border-jaune"
+        className="mt-2 block h-11 w-full border border-white/15 bg-transparent px-3 font-sans text-sm text-white outline-none transition-colors focus:border-pau-yellow"
       />
       {hint && (
-        <span className="mt-1.5 block font-mono text-[10px] tracking-[0.15em] text-blanc/40">
+        <span className="mt-1.5 block font-mono text-[10px] tracking-[0.15em] text-white/40">
           {hint}
         </span>
       )}

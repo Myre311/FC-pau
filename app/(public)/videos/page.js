@@ -36,18 +36,18 @@ export default async function VideosPage({ searchParams }) {
   return (
     <>
       {/* Hero */}
-      <section className="border-b-4 border-jaune bg-nuit py-16 md:py-20">
+      <section className="border-b-4 border-pau-yellow bg-pau-night py-16 md:py-20">
         <div className="container-pau">
-          <div className="mb-4 h-1 w-16 bg-jaune" />
-          <h1 className="title-hero text-blanc">Vidéos</h1>
-          <p className="mt-4 max-w-2xl text-lg text-blanc/80">
+          <div className="mb-4 h-1 w-16 bg-pau-yellow" />
+          <h1 className="title-hero text-white">Vidéos</h1>
+          <p className="mt-4 max-w-2xl text-lg text-white/80">
             Revivez les meilleurs moments : résumés de matchs, interviews exclusives, coulisses de l'entraînement.
           </p>
         </div>
       </section>
 
       {/* Filtres */}
-      <section className="border-b-2 border-gray-300 bg-blanc py-6">
+      <section className="border-b-2 border-gray-300 bg-white py-6">
         <div className="container-pau">
           <div className="flex flex-wrap gap-3">
             {CATEGORIES.map((cat) => (
@@ -56,8 +56,8 @@ export default async function VideosPage({ searchParams }) {
                 href={cat.value === 'all' ? '/videos' : `/videos?category=${cat.value}`}
                 className={`border-2 px-6 py-2 font-display text-sm font-bold uppercase tracking-wide transition-colors ${
                   category === cat.value
-                    ? 'border-nuit bg-nuit text-jaune'
-                    : 'border-gray-300 bg-blanc text-nuit hover:border-nuit'
+                    ? 'border-pau-night bg-pau-night text-pau-yellow'
+                    : 'border-gray-300 bg-white text-pau-night hover:border-pau-night'
                 }`}
               >
                 {cat.label}
@@ -68,7 +68,7 @@ export default async function VideosPage({ searchParams }) {
       </section>
 
       {/* Grid vidéos */}
-      <section className="section-pau bg-blanc">
+      <section className="section-pau bg-white">
         <div className="container-pau">
           {videos.length === 0 ? (
             <div className="card-pau mx-auto max-w-2xl p-10 text-center">

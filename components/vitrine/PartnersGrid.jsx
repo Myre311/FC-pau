@@ -16,7 +16,7 @@ function PartnerCard({ name, logo }) {
   const [imageError, setImageError] = useState(false);
 
   return (
-    <div className="flex h-24 items-center justify-center border border-nuit/20 bg-nuit p-6 transition-colors hover:border-jaune">
+    <div className="flex h-24 items-center justify-center border border-pau-night/20 bg-pau-night p-6 transition-colors hover:border-pau-yellow">
       {!imageError ? (
         <Image
           src={logo}
@@ -27,7 +27,7 @@ function PartnerCard({ name, logo }) {
           onError={() => setImageError(true)}
         />
       ) : (
-        <span className="font-display text-base font-bold uppercase text-blanc/70">
+        <span className="font-display text-base font-bold uppercase text-white/70">
           {name}
         </span>
       )}

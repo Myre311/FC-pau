@@ -28,7 +28,7 @@ export function AccountSidebar({ user }) {
       <button
         type="button"
         onClick={() => setOpen(true)}
-        className="flex h-10 w-full items-center justify-between border border-blanc/15 px-4 font-mono text-[11px] uppercase tracking-[0.2em] text-blanc/80 lg:hidden"
+        className="flex h-10 w-full items-center justify-between border border-white/15 px-4 font-mono text-[11px] uppercase tracking-[0.2em] text-white/80 lg:hidden"
         aria-label="Ouvrir le menu compte"
       >
         <span>Mon espace</span>
@@ -41,14 +41,14 @@ export function AccountSidebar({ user }) {
       {open && (
         <>
           <div
-            className="fixed inset-0 z-50 bg-nuit/85 lg:hidden"
+            className="fixed inset-0 z-50 bg-pau-night/85 lg:hidden"
             onClick={() => setOpen(false)}
             aria-hidden="true"
           />
           <aside
             role="dialog"
             aria-modal="true"
-            className="fixed left-0 top-0 z-50 flex h-full w-72 flex-col border-r border-blanc/15 bg-nuit lg:hidden"
+            className="fixed left-0 top-0 z-50 flex h-full w-72 flex-col border-r border-white/15 bg-pau-night lg:hidden"
           >
             <SidebarContent user={user} navItems={NAV} isActive={isActive} onLink={() => setOpen(false)} />
           </aside>
@@ -66,14 +66,14 @@ export function AccountSidebar({ user }) {
 function SidebarContent({ user, navItems, isActive, onLink }) {
   return (
     <div className="flex h-full flex-col">
-      <header className="border-b border-blanc/10 p-6">
-        <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-jaune">
+      <header className="border-b border-white/10 p-6">
+        <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-pau-yellow">
           Mon espace
         </p>
-        <p className="mt-2 truncate font-display text-2xl uppercase leading-crush tracking-tightest text-blanc">
+        <p className="mt-2 truncate font-display text-2xl uppercase leading-crush tracking-tightest text-white">
           {user.firstName ?? 'Supporter'}
         </p>
-        <p className="mt-1 truncate font-mono text-[10px] tracking-[0.15em] text-blanc/40">
+        <p className="mt-1 truncate font-mono text-[10px] tracking-[0.15em] text-white/40">
           {user.email}
         </p>
       </header>
@@ -87,8 +87,8 @@ function SidebarContent({ user, navItems, isActive, onLink }) {
                 onClick={onLink}
                 className={`block px-3 py-2 font-mono text-[11px] uppercase tracking-[0.2em] transition-colors ${
                   isActive(item)
-                    ? 'bg-jaune text-nuit'
-                    : 'text-blanc/70 hover:bg-blanc/5 hover:text-blanc'
+                    ? 'bg-pau-yellow text-pau-night'
+                    : 'text-white/70 hover:bg-white/5 hover:text-white'
                 }`}
               >
                 {item.label}
@@ -98,10 +98,10 @@ function SidebarContent({ user, navItems, isActive, onLink }) {
         </ul>
       </nav>
 
-      <form action={logoutAction} className="border-t border-blanc/10 p-3">
+      <form action={logoutAction} className="border-t border-white/10 p-3">
         <button
           type="submit"
-          className="block w-full px-3 py-2 text-left font-mono text-[11px] uppercase tracking-[0.2em] text-blanc/50 transition-colors hover:text-jaune"
+          className="block w-full px-3 py-2 text-left font-mono text-[11px] uppercase tracking-[0.2em] text-white/50 transition-colors hover:text-pau-yellow"
         >
           ← Déconnexion
         </button>

@@ -31,18 +31,18 @@ export default function MotDePasseOubliePage() {
       </h1>
 
       {status === 'sent' ? (
-        <div className="mt-8 border border-jaune/40 bg-jaune/5 p-6">
-          <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-jaune">
+        <div className="mt-8 border border-pau-yellow/40 bg-pau-yellow/5 p-6">
+          <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-pau-yellow">
             Email envoyé
           </p>
-          <p className="mt-3 font-sans text-sm text-blanc/70">
+          <p className="mt-3 font-sans text-sm text-white/70">
             Si un compte existe pour cet email, un lien de réinitialisation
             vient de partir. Vérifiez vos emails (et vos spams).
           </p>
         </div>
       ) : (
         <>
-          <p className="mt-4 font-sans text-sm text-blanc/60">
+          <p className="mt-4 font-sans text-sm text-white/60">
             Renseignez votre email, nous vous enverrons un lien de
             réinitialisation.
           </p>
@@ -51,7 +51,7 @@ export default function MotDePasseOubliePage() {
             <AuthFormField label="Email" name="email" type="email" autoComplete="email" />
 
             {error && (
-              <p className="border border-jaune/40 bg-jaune/10 px-4 py-3 font-mono text-[11px] uppercase tracking-[0.15em] text-jaune">
+              <p className="border border-pau-yellow/40 bg-pau-yellow/10 px-4 py-3 font-mono text-[11px] uppercase tracking-[0.15em] text-pau-yellow">
                 {error}
               </p>
             )}
@@ -70,8 +70,8 @@ export default function MotDePasseOubliePage() {
         </>
       )}
 
-      <div className="mt-8 border-t border-blanc/10 pt-6 font-mono text-[11px] uppercase tracking-[0.2em] text-blanc/60">
-        <Link href="/connexion" className="text-blanc/60 hover:text-jaune">
+      <div className="mt-8 border-t border-white/10 pt-6 font-mono text-[11px] uppercase tracking-[0.2em] text-white/60">
+        <Link href="/connexion" className="text-white/60 hover:text-pau-yellow">
           ← Retour connexion
         </Link>
       </div>

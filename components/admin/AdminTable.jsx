@@ -42,7 +42,7 @@ export function AdminTable({ columns, rows, renderRow, empty, mobileCardLabel })
               return (
                 <tr
                   key={row.id ?? i}
-                  className="border-b border-gray-200/5 last:border-0 hover:bg-blanc/[0.02]"
+                  className="border-b border-gray-200/5 last:border-0 hover:bg-white/[0.02]"
                 >
                   {columns.map((col) => (
                     <td

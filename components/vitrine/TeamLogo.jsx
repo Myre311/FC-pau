@@ -28,7 +28,7 @@ export function TeamLogo({ name = '???', isHome = false, compact = false }) {
 
   // Couleurs par équipe (pour les placeholders)
   const teamColors = {
-    'Pau FC': { bg: 'bg-[#04091D]', text: 'text-jaune', border: 'border-jaune' },
+    'Pau FC': { bg: 'bg-[#04091D]', text: 'text-pau-yellow', border: 'border-pau-yellow' },
     'Paris FC': { bg: 'bg-[#003087]', text: 'text-white', border: 'border-white' },
     'EA Guingamp': { bg: 'bg-red-600', text: 'text-white', border: 'border-white' },
     'AC Ajaccio': { bg: 'bg-red-700', text: 'text-white', border: 'border-white' },
@@ -37,9 +37,9 @@ export function TeamLogo({ name = '???', isHome = false, compact = false }) {
   };
 
   const colors = teamColors[name] || {
-    bg: isHome ? 'bg-nuit' : 'bg-blanc/10',
-    text: isHome ? 'text-jaune' : 'text-blanc',
-    border: isHome ? 'border-jaune' : 'border-blanc/30'
+    bg: isHome ? 'bg-pau-night' : 'bg-white/10',
+    text: isHome ? 'text-pau-yellow' : 'text-white',
+    border: isHome ? 'border-pau-yellow' : 'border-white/30'
   };
 
   if (compact) {
@@ -99,7 +99,7 @@ export function TeamLogo({ name = '???', isHome = false, compact = false }) {
       </div>
 
       <p className={`max-w-[100px] text-center font-display text-xs font-bold uppercase leading-tight md:text-sm ${
-        isHome ? 'text-jaune' : 'text-blanc/70'
+        isHome ? 'text-pau-yellow' : 'text-white/70'
       }`}>
         {name}
       </p>

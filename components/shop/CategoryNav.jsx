@@ -22,7 +22,7 @@ export function CategoryNav() {
   const currentCategory = searchParams.get('categorie') || 'all';
 
   return (
-    <nav className="border-b-2 border-blanc/10 bg-[#1a1d38]/80 backdrop-blur-sm">
+    <nav className="border-b-2 border-white/10 bg-[#1a1d38]/80 backdrop-blur-sm">
       <div className="container-pau">
         <div className="no-scrollbar flex items-center gap-2 overflow-x-auto py-3 md:justify-center md:gap-4">
           {CATEGORIES.map((cat) => {
@@ -35,8 +35,8 @@ export function CategoryNav() {
                 href={href}
                 className={`group relative flex items-center gap-2 whitespace-nowrap rounded-full border-2 px-4 py-2 font-display text-xs font-bold uppercase tracking-wide transition-all md:px-6 md:py-2.5 md:text-sm ${
                   isActive
-                    ? 'border-jaune bg-jaune text-nuit'
-                    : 'border-blanc/20 bg-transparent text-blanc/80 hover:border-jaune hover:bg-jaune/10 hover:text-jaune'
+                    ? 'border-pau-yellow bg-pau-yellow text-pau-night'
+                    : 'border-white/20 bg-transparent text-white/80 hover:border-pau-yellow hover:bg-pau-yellow/10 hover:text-pau-yellow'
                 }`}
               >
                 {/* Label */}
@@ -46,7 +46,7 @@ export function CategoryNav() {
                 {isActive && (
                   <motion.div
                     layoutId="categoryIndicator"
-                    className="absolute -bottom-2 left-1/2 h-1 w-8 -translate-x-1/2 bg-jaune"
+                    className="absolute -bottom-2 left-1/2 h-1 w-8 -translate-x-1/2 bg-pau-yellow"
                     transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                   />
                 )}

@@ -12,7 +12,7 @@ export async function AccountLink() {
   return (
     <Link
       href={connected ? '/compte' : '/connexion'}
-      className="hidden h-10 items-center gap-2 px-3 font-mono text-[11px] uppercase tracking-[0.2em] text-blanc transition-colors hover:text-jaune md:inline-flex"
+      className="hidden h-10 items-center gap-2 px-3 font-mono text-[11px] uppercase tracking-[0.2em] text-white transition-colors hover:text-pau-yellow md:inline-flex"
     >
       <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
         <circle cx="12" cy="8" r="4" />

@@ -74,20 +74,20 @@ export function AddressForm({ address, onCancel, onSuccess }) {
           type="checkbox"
           name="isDefault"
           defaultChecked={address?.isDefault ?? false}
-          className="h-4 w-4 flex-none border-blanc/30 bg-transparent accent-jaune"
+          className="h-4 w-4 flex-none border-white/30 bg-transparent accent-jaune"
         />
-        <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-blanc/70">
+        <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-white/70">
           Adresse par défaut pour ce type
         </span>
       </label>
 
       {error && (
-        <p className="border border-jaune/40 bg-jaune/10 px-4 py-3 font-mono text-[11px] uppercase tracking-[0.15em] text-jaune">
+        <p className="border border-pau-yellow/40 bg-pau-yellow/10 px-4 py-3 font-mono text-[11px] uppercase tracking-[0.15em] text-pau-yellow">
           {error}
         </p>
       )}
 
-      <div className="flex flex-col gap-3 border-t border-blanc/10 pt-5 md:flex-row">
+      <div className="flex flex-col gap-3 border-t border-white/10 pt-5 md:flex-row">
         <Button type="submit" variant="primary" size="md" cornerCut disabled={pending}>
           {pending ? 'Enregistrement…' : address ? 'Mettre à jour' : 'Ajouter l’adresse'}
         </Button>
@@ -95,7 +95,7 @@ export function AddressForm({ address, onCancel, onSuccess }) {
           <button
             type="button"
             onClick={onCancel}
-            className="font-mono text-[11px] uppercase tracking-[0.2em] text-blanc/50 transition-colors hover:text-blanc"
+            className="font-mono text-[11px] uppercase tracking-[0.2em] text-white/50 transition-colors hover:text-white"
           >
             Annuler
           </button>
@@ -108,9 +108,9 @@ export function AddressForm({ address, onCancel, onSuccess }) {
 function Field({ label, name, type = 'text', defaultValue, autoComplete, required = true, placeholder }) {
   return (
     <label className="block">
-      <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-blanc/50">
+      <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/50">
         {label}
-        {required && <span className="ml-1 text-jaune">*</span>}
+        {required && <span className="ml-1 text-pau-yellow">*</span>}
       </span>
       <input
         type={type}
@@ -119,7 +119,7 @@ function Field({ label, name, type = 'text', defaultValue, autoComplete, require
         autoComplete={autoComplete}
         required={required}
         placeholder={placeholder}
-        className="mt-2 block h-11 w-full border border-blanc/15 bg-transparent px-3 font-sans text-sm text-blanc outline-none transition-colors focus:border-jaune"
+        className="mt-2 block h-11 w-full border border-white/15 bg-transparent px-3 font-sans text-sm text-white outline-none transition-colors focus:border-pau-yellow"
       />
     </label>
   );
@@ -128,13 +128,13 @@ function Field({ label, name, type = 'text', defaultValue, autoComplete, require
 function Select({ label, name, defaultValue, children }) {
   return (
     <label className="block">
-      <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-blanc/50">
+      <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/50">
         {label}
       </span>
       <select
         name={name}
         defaultValue={defaultValue}
-        className="mt-2 block h-11 w-full border border-blanc/15 bg-nuit px-3 font-sans text-sm text-blanc outline-none transition-colors focus:border-jaune"
+        className="mt-2 block h-11 w-full border border-white/15 bg-pau-night px-3 font-sans text-sm text-white outline-none transition-colors focus:border-pau-yellow"
       >
         {children}
       </select>

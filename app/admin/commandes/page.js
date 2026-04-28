@@ -41,7 +41,7 @@ export default async function AdminCommandesPage({ searchParams }) {
               key={f.value}
               href={f.value === 'all' ? '/admin/commandes' : `/admin/commandes?statut=${f.value}`}
               className={`px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.2em] transition-colors ${
-                active ? 'bg-jaune text-nuit' : 'border border-gray-200/15 text-gray-900/70 hover:border-gray-200/40'
+                active ? 'bg-pau-yellow text-pau-night' : 'border border-gray-200/15 text-gray-900/70 hover:border-gray-200/40'
               }`}
             >
               {f.label}

@@ -25,7 +25,7 @@ export function StatsGrid({ players }) {
     <button
       onClick={() => handleSort(column)}
       className={`w-full text-left font-mono text-xs font-bold uppercase tracking-wider transition-colors ${
-        sortBy === column ? 'text-jaune' : 'text-gray-600 hover:text-nuit'
+        sortBy === column ? 'text-pau-yellow' : 'text-gray-600 hover:text-pau-night'
       }`}
     >
       {label}
@@ -70,18 +70,18 @@ export function StatsGrid({ players }) {
             <tr
               key={player.id}
               className={`border-b border-gray-200 transition-colors hover:bg-gray-50 ${
-                index % 2 === 0 ? 'bg-blanc' : 'bg-gray-50/50'
+                index % 2 === 0 ? 'bg-white' : 'bg-gray-50/50'
               }`}
             >
               <td className="p-3">
                 <div className="flex items-center gap-3">
                   {player.shirtNumber && (
-                    <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center border border-gray-300 bg-nuit font-display text-sm font-bold text-jaune">
+                    <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center border border-gray-300 bg-pau-night font-display text-sm font-bold text-pau-yellow">
                       {player.shirtNumber}
                     </div>
                   )}
                   <div>
-                    <p className="font-display text-sm font-bold uppercase text-nuit">
+                    <p className="font-display text-sm font-bold uppercase text-pau-night">
                       {player.firstName} {player.lastName}
                     </p>
                     {player.position && (
@@ -92,16 +92,16 @@ export function StatsGrid({ players }) {
                   </div>
                 </div>
               </td>
-              <td className="p-3 text-center font-display text-sm font-bold text-nuit">
+              <td className="p-3 text-center font-display text-sm font-bold text-pau-night">
                 {player.stats?.matchesPlayed || 0}
               </td>
               <td className="p-3 text-center font-display text-sm text-gray-600">
                 {player.stats?.minutesPlayed || 0}
               </td>
-              <td className="p-3 text-center font-display text-lg font-black text-nuit">
+              <td className="p-3 text-center font-display text-lg font-black text-pau-night">
                 {player.stats?.goals || 0}
               </td>
-              <td className="p-3 text-center font-display text-lg font-black text-nuit">
+              <td className="p-3 text-center font-display text-lg font-black text-pau-night">
                 {player.stats?.assists || 0}
               </td>
               <td className="p-3 text-center font-display text-sm text-gray-600">

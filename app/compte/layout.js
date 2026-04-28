@@ -17,7 +17,7 @@ export default async function AccountLayout({ children }) {
   return (
     <>
       <Header />
-      <main className="bg-nuit text-blanc">
+      <main className="bg-pau-night text-white">
         <div className="container-fc grid gap-6 py-8 lg:grid-cols-[260px_1fr] lg:gap-10 lg:py-12">
           <AccountSidebar user={dbUser} />
           <div className="min-w-0">{children}</div>

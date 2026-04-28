@@ -51,16 +51,16 @@ export function LiveMatch({ match, events = [] }) {
   };
 
   return (
-    <div className="overflow-hidden border-4 border-jaune bg-nuit">
+    <div className="overflow-hidden border-4 border-pau-yellow bg-pau-night">
       {/* Header live */}
-      <div className="flex items-center justify-between border-b-2 border-jaune/30 bg-jaune/10 px-6 py-3">
+      <div className="flex items-center justify-between border-b-2 border-pau-yellow/30 bg-pau-yellow/10 px-6 py-3">
         <div className="flex items-center gap-3">
           <div className="flex h-2 w-2 animate-pulse rounded-full bg-red-500" />
-          <span className="font-mono text-xs font-bold uppercase tracking-wider text-jaune">
+          <span className="font-mono text-xs font-bold uppercase tracking-wider text-pau-yellow">
             EN DIRECT
           </span>
         </div>
-        <div className="font-mono text-xs font-bold uppercase tracking-wider text-blanc">
+        <div className="font-mono text-xs font-bold uppercase tracking-wider text-white">
           {match.competition}
         </div>
       </div>
@@ -70,28 +70,28 @@ export function LiveMatch({ match, events = [] }) {
         <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-6">
           {/* Home */}
           <div className="text-center">
-            <div className="mb-3 font-display text-lg font-bold uppercase text-blanc">
+            <div className="mb-3 font-display text-lg font-bold uppercase text-white">
               {match.isHome ? 'Pau FC' : match.opponent}
             </div>
-            <div className="font-display text-6xl font-black text-jaune md:text-8xl">
+            <div className="font-display text-6xl font-black text-pau-yellow md:text-8xl">
               {match.isHome ? (match.homeScore ?? homeGoals) : (match.awayScore ?? awayGoals)}
             </div>
           </div>
 
           {/* Séparateur */}
           <div className="flex flex-col items-center gap-2">
-            <div className="font-display text-3xl font-black text-blanc/40">-</div>
-            <div className="min-w-[60px] border-2 border-jaune bg-jaune px-3 py-1 text-center font-mono text-sm font-bold text-nuit">
+            <div className="font-display text-3xl font-black text-white/40">-</div>
+            <div className="min-w-[60px] border-2 border-pau-yellow bg-pau-yellow px-3 py-1 text-center font-mono text-sm font-bold text-pau-night">
               {getMatchTime(match, currentTime)}
             </div>
           </div>
 
           {/* Away */}
           <div className="text-center">
-            <div className="mb-3 font-display text-lg font-bold uppercase text-blanc">
+            <div className="mb-3 font-display text-lg font-bold uppercase text-white">
               {match.isHome ? match.opponent : 'Pau FC'}
             </div>
-            <div className="font-display text-6xl font-black text-jaune md:text-8xl">
+            <div className="font-display text-6xl font-black text-pau-yellow md:text-8xl">
               {match.isHome ? (match.awayScore ?? awayGoals) : (match.homeScore ?? homeGoals)}
             </div>
           </div>
@@ -100,26 +100,26 @@ export function LiveMatch({ match, events = [] }) {
 
       {/* Timeline événements */}
       {liveEvents.length > 0 && (
-        <div className="border-t-2 border-blanc/10 bg-nuit/50 p-6">
-          <h3 className="mb-4 font-mono text-xs font-bold uppercase tracking-wider text-blanc/60">
+        <div className="border-t-2 border-white/10 bg-pau-night/50 p-6">
+          <h3 className="mb-4 font-mono text-xs font-bold uppercase tracking-wider text-white/60">
             Événements du match
           </h3>
           <div className="space-y-3">
             {liveEvents.map((event) => (
               <div
                 key={event.id}
-                className="flex items-center gap-4 border-l-4 border-jaune/30 bg-blanc/5 p-3"
+                className="flex items-center gap-4 border-l-4 border-pau-yellow/30 bg-white/5 p-3"
               >
-                <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center border border-blanc/20 bg-nuit font-mono text-sm font-bold text-jaune">
+                <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center border border-white/20 bg-pau-night font-mono text-sm font-bold text-pau-yellow">
                   {event.minute}'
                 </div>
                 <div className="text-2xl">{EVENT_ICONS[event.type]}</div>
                 <div className="flex-1">
-                  <p className="font-display text-sm font-bold uppercase text-blanc">
+                  <p className="font-display text-sm font-bold uppercase text-white">
                     {event.playerName}
                   </p>
                   {event.description && (
-                    <p className="mt-1 text-xs text-blanc/60">{event.description}</p>
+                    <p className="mt-1 text-xs text-white/60">{event.description}</p>
                   )}
                 </div>
               </div>

@@ -49,7 +49,7 @@ function VideoCard({ video, onClick }) {
   return (
     <button
       onClick={onClick}
-      className="group overflow-hidden border-2 border-gray-300 bg-blanc text-left transition-all hover:border-nuit"
+      className="group overflow-hidden border-2 border-gray-300 bg-white text-left transition-all hover:border-pau-night"
     >
       {/* Thumbnail */}
       <div className="relative aspect-video overflow-hidden bg-gray-900">
@@ -60,20 +60,20 @@ function VideoCard({ video, onClick }) {
           className="object-cover transition-transform duration-300 group-hover:scale-105"
         />
         {/* Play overlay */}
-        <div className="absolute inset-0 flex items-center justify-center bg-nuit/40 opacity-0 transition-opacity group-hover:opacity-100">
-          <div className="flex h-16 w-16 items-center justify-center border-4 border-jaune bg-jaune/20">
-            <svg className="h-8 w-8 text-jaune" fill="currentColor" viewBox="0 0 24 24">
+        <div className="absolute inset-0 flex items-center justify-center bg-pau-night/40 opacity-0 transition-opacity group-hover:opacity-100">
+          <div className="flex h-16 w-16 items-center justify-center border-4 border-pau-yellow bg-pau-yellow/20">
+            <svg className="h-8 w-8 text-pau-yellow" fill="currentColor" viewBox="0 0 24 24">
               <path d="M8 5v14l11-7z" />
             </svg>
           </div>
         </div>
         {video.duration && (
-          <div className="absolute bottom-2 right-2 bg-nuit/90 px-2 py-1 font-mono text-xs font-bold text-blanc">
+          <div className="absolute bottom-2 right-2 bg-pau-night/90 px-2 py-1 font-mono text-xs font-bold text-white">
             {formatDuration(video.duration)}
           </div>
         )}
         {video.featured && (
-          <div className="absolute left-2 top-2 bg-jaune px-2 py-1 font-mono text-xs font-bold uppercase text-nuit">
+          <div className="absolute left-2 top-2 bg-pau-yellow px-2 py-1 font-mono text-xs font-bold uppercase text-pau-night">
             ⭐ À la une
           </div>
         )}
@@ -86,7 +86,7 @@ function VideoCard({ video, onClick }) {
             {CATEGORY_LABELS[video.category]}
           </span>
         </div>
-        <h3 className="mb-2 font-display text-lg font-bold uppercase leading-tight text-nuit group-hover:text-jaune">
+        <h3 className="mb-2 font-display text-lg font-bold uppercase leading-tight text-pau-night group-hover:text-pau-yellow">
           {video.title}
         </h3>
         {video.description && (
@@ -116,14 +116,14 @@ function VideoModal({ video, onClose }) {
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-nuit/95 p-4"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-pau-night/95 p-4"
       onClick={onClose}
     >
       <div className="w-full max-w-5xl" onClick={(e) => e.stopPropagation()}>
         {/* Close button */}
         <button
           onClick={onClose}
-          className="mb-4 ml-auto flex h-12 w-12 items-center justify-center border-2 border-blanc text-blanc transition-colors hover:bg-blanc hover:text-nuit"
+          className="mb-4 ml-auto flex h-12 w-12 items-center justify-center border-2 border-white text-white transition-colors hover:bg-white hover:text-pau-night"
           aria-label="Fermer"
         >
           <svg className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
@@ -132,7 +132,7 @@ function VideoModal({ video, onClose }) {
         </button>
 
         {/* Player */}
-        <div className="aspect-video border-4 border-jaune bg-black">
+        <div className="aspect-video border-4 border-pau-yellow bg-black">
           <iframe
             src={getEmbedUrl()}
             title={video.title}
@@ -143,12 +143,12 @@ function VideoModal({ video, onClose }) {
         </div>
 
         {/* Infos */}
-        <div className="mt-4 border-t-2 border-blanc/20 pt-4">
-          <h2 className="font-display text-2xl font-bold uppercase text-blanc">
+        <div className="mt-4 border-t-2 border-white/20 pt-4">
+          <h2 className="font-display text-2xl font-bold uppercase text-white">
             {video.title}
           </h2>
           {video.description && (
-            <p className="mt-2 text-blanc/80">{video.description}</p>
+            <p className="mt-2 text-white/80">{video.description}</p>
           )}
         </div>
       </div>

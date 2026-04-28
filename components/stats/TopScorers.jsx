@@ -1,7 +1,7 @@
 export function TopScorers({ title, players, statKey }) {
   return (
     <div className="card-pau p-6">
-      <h3 className="mb-6 font-display text-2xl font-bold uppercase text-nuit">
+      <h3 className="mb-6 font-display text-2xl font-bold uppercase text-pau-night">
         {title}
       </h3>
 
@@ -12,17 +12,17 @@ export function TopScorers({ title, players, statKey }) {
           {players.map((player, index) => (
             <div
               key={player.id}
-              className="flex items-center gap-4 border-l-4 border-transparent p-3 transition-colors hover:border-jaune hover:bg-gray-50"
+              className="flex items-center gap-4 border-l-4 border-transparent p-3 transition-colors hover:border-pau-yellow hover:bg-gray-50"
             >
               {/* Rang */}
               <div
                 className={`flex h-10 w-10 flex-shrink-0 items-center justify-center font-display text-lg font-black ${
                   index === 0
-                    ? 'bg-jaune text-nuit'
+                    ? 'bg-pau-yellow text-pau-night'
                     : index === 1
-                      ? 'bg-gray-300 text-nuit'
+                      ? 'bg-gray-300 text-pau-night'
                       : index === 2
-                        ? 'bg-gray-200 text-nuit'
+                        ? 'bg-gray-200 text-pau-night'
                         : 'bg-gray-100 text-gray-600'
                 }`}
               >
@@ -42,7 +42,7 @@ export function TopScorers({ title, players, statKey }) {
 
               {/* Nom + poste */}
               <div className="flex-1 min-w-0">
-                <p className="font-display text-sm font-bold uppercase text-nuit truncate">
+                <p className="font-display text-sm font-bold uppercase text-pau-night truncate">
                   {player.firstName} {player.lastName}
                 </p>
                 {player.position && (
@@ -54,7 +54,7 @@ export function TopScorers({ title, players, statKey }) {
 
               {/* Stat */}
               <div className="flex-shrink-0 text-right">
-                <div className="font-display text-2xl font-black text-nuit">
+                <div className="font-display text-2xl font-black text-pau-night">
                   {player.stats[statKey]}
                 </div>
               </div>

@@ -107,7 +107,7 @@ export function ProductForm({ product, categories }) {
       </div>
 
       {error && (
-        <p className="border border-pau-yellow/40 bg-jaune/10 px-4 py-3 font-mono text-[11px] uppercase tracking-[0.15em] text-pau-yellow">
+        <p className="border border-pau-yellow/40 bg-pau-yellow/10 px-4 py-3 font-mono text-[11px] uppercase tracking-[0.15em] text-pau-yellow">
           {error}
         </p>
       )}

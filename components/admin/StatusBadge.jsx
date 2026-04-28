@@ -3,21 +3,21 @@
 
 const STYLES = {
   // Order
-  pending: 'bg-blanc/10 text-gray-900',
-  paid: 'bg-jaune text-nuit',
-  preparing: 'bg-blanc text-nuit',
-  shipped: 'bg-blanc/15 text-gray-900',
-  delivered: 'bg-blanc/5 text-gray-900/70',
+  pending: 'bg-white/10 text-gray-900',
+  paid: 'bg-pau-yellow text-pau-night',
+  preparing: 'bg-white text-pau-night',
+  shipped: 'bg-white/15 text-gray-900',
+  delivered: 'bg-white/5 text-gray-900/70',
   cancelled: 'bg-white border border-gray-200/30 text-gray-900/50',
   refunded: 'bg-pau-night border border-pau-yellow/40 text-pau-yellow',
   // Product
-  draft: 'bg-blanc/5 text-gray-900/60',
-  active: 'bg-jaune text-nuit',
+  draft: 'bg-white/5 text-gray-900/60',
+  active: 'bg-pau-yellow text-pau-night',
   archived: 'bg-white border border-gray-200/20 text-gray-900/40',
   // Match
-  scheduled: 'bg-blanc/10 text-gray-900',
-  live: 'bg-jaune text-nuit',
-  played: 'bg-blanc/5 text-gray-900/60',
+  scheduled: 'bg-white/10 text-gray-900',
+  live: 'bg-pau-yellow text-pau-night',
+  played: 'bg-white/5 text-gray-900/60',
   postponed: 'bg-white border border-gray-200/30 text-gray-900/60',
 };
 
@@ -39,7 +39,7 @@ const LABELS = {
 };
 
 export function StatusBadge({ status, label }) {
-  const cls = STYLES[status] ?? 'bg-blanc/10 text-gray-900';
+  const cls = STYLES[status] ?? 'bg-white/10 text-gray-900';
   const text = label ?? LABELS[status] ?? status;
   return (
     <span className={`inline-flex items-center px-2 py-1 font-mono text-[9px] uppercase tracking-[0.2em] ${cls}`}>

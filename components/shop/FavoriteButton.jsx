@@ -40,8 +40,8 @@ export function FavoriteButton({ productId, isFavorite, signedIn, returnTo }) {
       aria-pressed={optimistic}
       className={`flex h-9 w-9 items-center justify-center border transition-colors ${
         optimistic
-          ? 'border-jaune bg-jaune text-nuit'
-          : 'border-blanc/20 text-blanc hover:border-jaune hover:text-jaune'
+          ? 'border-pau-yellow bg-pau-yellow text-pau-night'
+          : 'border-white/20 text-white hover:border-pau-yellow hover:text-pau-yellow'
       }`}
     >
       <svg

@@ -16,7 +16,7 @@ export function AnimatedHero() {
   const letters = title.split("");
 
   return (
-    <section className="relative overflow-hidden border-b-4 border-jaune">
+    <section className="relative overflow-hidden border-b-4 border-pau-yellow">
       {/* Vidéo background avec fallback */}
       <motion.div
         className="absolute inset-0"
@@ -54,10 +54,10 @@ export function AnimatedHero() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="mb-3 flex items-center justify-center gap-2 sm:mb-4 sm:gap-3"
         >
-          <span className="font-mono text-xs font-semibold uppercase tracking-wide text-jaune sm:text-sm">
+          <span className="font-mono text-xs font-semibold uppercase tracking-wide text-pau-yellow sm:text-sm">
             Saison 2025-2026
           </span>
-          <span className="text-jaune/50">·</span>
+          <span className="text-pau-yellow/50">·</span>
           <Image
             src="/LFP_LOGOTYPE_L2_BKT_MASTER_WHITE_RVB-2048x581.png"
             alt="Ligue 2 BKT"
@@ -69,7 +69,7 @@ export function AnimatedHero() {
         </motion.div>
 
         {/* Titre avec effet stagger lettre par lettre */}
-        <h1 className="mb-4 font-display text-4xl font-black uppercase leading-tight text-blanc sm:mb-6 sm:text-5xl md:text-6xl lg:text-7xl">
+        <h1 className="mb-4 font-display text-4xl font-black uppercase leading-tight text-white sm:mb-6 sm:text-5xl md:text-6xl lg:text-7xl">
           <motion.span
             initial="hidden"
             animate="visible"
@@ -110,7 +110,7 @@ export function AnimatedHero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="mx-auto mb-6 max-w-2xl px-4 text-base text-blanc/90 sm:mb-8 sm:text-lg"
+          className="mx-auto mb-6 max-w-2xl px-4 text-base text-white/90 sm:mb-8 sm:text-lg"
         >
           Soutenez-nous au Nouste Camp
         </motion.p>
@@ -135,7 +135,7 @@ export function AnimatedHero() {
                 stiffness: 400,
                 damping: 17
               }}
-              className="inline-flex items-center gap-2 border-2 border-jaune bg-jaune px-6 py-3 font-display text-xs font-bold uppercase tracking-wide text-nuit transition-colors hover:bg-nuit hover:border-nuit hover:text-jaune sm:gap-3 sm:px-8 sm:py-4 sm:text-sm"
+              className="inline-flex items-center gap-2 border-2 border-pau-yellow bg-pau-yellow px-6 py-3 font-display text-xs font-bold uppercase tracking-wide text-pau-night transition-colors hover:bg-pau-night hover:border-pau-night hover:text-pau-yellow sm:gap-3 sm:px-8 sm:py-4 sm:text-sm"
             >
               <motion.svg
                 className="h-4 w-4 sm:h-5 sm:w-5"

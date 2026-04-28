@@ -13,7 +13,7 @@ export function GalleryGrid({ photos }) {
           <button
             key={photo.id}
             onClick={() => setLightbox({ photo, index: idx })}
-            className="group relative aspect-square overflow-hidden border-2 border-gray-300 bg-gray-100 transition-all hover:border-nuit"
+            className="group relative aspect-square overflow-hidden border-2 border-gray-300 bg-gray-100 transition-all hover:border-pau-night"
           >
             <Image
               src={photo.thumbnailUrl || photo.imageUrl}
@@ -22,7 +22,7 @@ export function GalleryGrid({ photos }) {
               className="object-cover transition-transform duration-300 group-hover:scale-105"
             />
             {photo.featured && (
-              <div className="absolute right-2 top-2 bg-jaune px-2 py-1 font-mono text-xs font-bold uppercase text-nuit">
+              <div className="absolute right-2 top-2 bg-pau-yellow px-2 py-1 font-mono text-xs font-bold uppercase text-pau-night">
                 
               </div>
             )}
@@ -33,12 +33,12 @@ export function GalleryGrid({ photos }) {
       {/* Lightbox */}
       {lightbox && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-nuit/95 p-4"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-pau-night/95 p-4"
           onClick={() => setLightbox(null)}
         >
           <button
             onClick={() => setLightbox(null)}
-            className="absolute right-4 top-4 flex h-12 w-12 items-center justify-center border-2 border-blanc text-blanc transition-colors hover:bg-blanc hover:text-nuit"
+            className="absolute right-4 top-4 flex h-12 w-12 items-center justify-center border-2 border-white text-white transition-colors hover:bg-white hover:text-pau-night"
             aria-label="Fermer"
           >
             <svg className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
@@ -52,7 +52,7 @@ export function GalleryGrid({ photos }) {
                 e.stopPropagation();
                 setLightbox({ photo: photos[lightbox.index - 1], index: lightbox.index - 1 });
               }}
-              className="absolute left-4 top-1/2 flex h-12 w-12 -translate-y-1/2 items-center justify-center border-2 border-blanc text-blanc transition-colors hover:bg-blanc hover:text-nuit"
+              className="absolute left-4 top-1/2 flex h-12 w-12 -translate-y-1/2 items-center justify-center border-2 border-white text-white transition-colors hover:bg-white hover:text-pau-night"
               aria-label="Photo précédente"
             >
               <svg className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
@@ -67,7 +67,7 @@ export function GalleryGrid({ photos }) {
                 e.stopPropagation();
                 setLightbox({ photo: photos[lightbox.index + 1], index: lightbox.index + 1 });
               }}
-              className="absolute right-4 top-1/2 flex h-12 w-12 -translate-y-1/2 items-center justify-center border-2 border-blanc text-blanc transition-colors hover:bg-blanc hover:text-nuit"
+              className="absolute right-4 top-1/2 flex h-12 w-12 -translate-y-1/2 items-center justify-center border-2 border-white text-white transition-colors hover:bg-white hover:text-pau-night"
               aria-label="Photo suivante"
             >
               <svg className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
@@ -84,15 +84,15 @@ export function GalleryGrid({ photos }) {
               height={800}
               className="max-h-[90vh] w-auto object-contain"
             />
-            <div className="mt-4 border-t-2 border-blanc/20 pt-4">
-              <h3 className="font-display text-lg font-bold uppercase text-blanc">
+            <div className="mt-4 border-t-2 border-white/20 pt-4">
+              <h3 className="font-display text-lg font-bold uppercase text-white">
                 {lightbox.photo.title}
               </h3>
               {lightbox.photo.description && (
-                <p className="mt-2 text-sm text-blanc/80">{lightbox.photo.description}</p>
+                <p className="mt-2 text-sm text-white/80">{lightbox.photo.description}</p>
               )}
               {lightbox.photo.photographer && (
-                <p className="mt-2 font-mono text-xs uppercase tracking-wider text-jaune">
+                <p className="mt-2 font-mono text-xs uppercase tracking-wider text-pau-yellow">
                   © {lightbox.photo.photographer}
                 </p>
               )}

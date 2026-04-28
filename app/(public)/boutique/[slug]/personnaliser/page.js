@@ -36,16 +36,16 @@ export default async function PersonnaliserPage({ params }) {
   return (
     <div className="container-fc py-8 md:py-12">
       <header className="mb-8">
-        <nav className="font-mono text-[10px] uppercase tracking-[0.2em] text-blanc/50">
-          <Link href="/boutique" className="hover:text-jaune">
+        <nav className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/50">
+          <Link href="/boutique" className="hover:text-pau-yellow">
             Boutique
           </Link>
           {' / '}
-          <Link href={`/boutique/${product.slug}`} className="hover:text-jaune">
+          <Link href={`/boutique/${product.slug}`} className="hover:text-pau-yellow">
             {product.name}
           </Link>
           {' / '}
-          <span className="text-blanc">Personnaliser</span>
+          <span className="text-white">Personnaliser</span>
         </nav>
       </header>
 

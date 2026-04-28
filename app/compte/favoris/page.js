@@ -31,17 +31,17 @@ export default async function FavorisPage() {
     <div className="space-y-8">
       <header>
         <p className="badge-mono">Mes coups de cœur</p>
-        <h1 className="mt-3 font-display text-5xl uppercase leading-crush tracking-tightest text-blanc md:text-6xl">
+        <h1 className="mt-3 font-display text-5xl uppercase leading-crush tracking-tightest text-white md:text-6xl">
           Favoris
         </h1>
-        <p className="mt-3 max-w-xl font-sans text-sm text-blanc/60">
+        <p className="mt-3 max-w-xl font-sans text-sm text-white/60">
           Vos pièces préférées, retrouvées ici dès que vous vous connectez.
         </p>
       </header>
 
       {products.length === 0 ? (
-        <div className="border border-dashed border-blanc/15 p-10 text-center">
-          <p className="font-sans text-blanc/60">
+        <div className="border border-dashed border-white/15 p-10 text-center">
+          <p className="font-sans text-white/60">
             Vous n&apos;avez encore mis aucun produit en favori.
           </p>
           <Link href="/boutique" className="mt-5 inline-block">

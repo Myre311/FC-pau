@@ -34,7 +34,7 @@ export function LoginForm({ next }) {
       />
 
       {error && (
-        <p className="border border-jaune/40 bg-jaune/10 px-4 py-3 font-mono text-[11px] uppercase tracking-[0.15em] text-jaune">
+        <p className="border border-pau-yellow/40 bg-pau-yellow/10 px-4 py-3 font-mono text-[11px] uppercase tracking-[0.15em] text-pau-yellow">
           {error}
         </p>
       )}

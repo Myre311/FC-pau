@@ -16,7 +16,7 @@ export default function ConnexionPage({ searchParams }) {
       <h1 className="mt-4 font-display text-5xl uppercase leading-crush tracking-tightest md:text-6xl">
         Connexion
       </h1>
-      <p className="mt-4 font-sans text-sm text-blanc/60">
+      <p className="mt-4 font-sans text-sm text-white/60">
         Retrouvez vos commandes, adresses et personnalisations.
       </p>
 
@@ -24,17 +24,17 @@ export default function ConnexionPage({ searchParams }) {
         <LoginForm next={next} />
       </div>
 
-      <div className="mt-8 space-y-3 border-t border-blanc/10 pt-6 font-mono text-[11px] uppercase tracking-[0.2em]">
-        <p className="text-blanc/60">
+      <div className="mt-8 space-y-3 border-t border-white/10 pt-6 font-mono text-[11px] uppercase tracking-[0.2em]">
+        <p className="text-white/60">
           Pas encore de compte ?{' '}
-          <Link href="/inscription" className="text-jaune hover:underline">
+          <Link href="/inscription" className="text-pau-yellow hover:underline">
             Créer un compte
           </Link>
         </p>
-        <p className="text-blanc/60">
+        <p className="text-white/60">
           <Link
             href="/mot-de-passe-oublie"
-            className="text-blanc/60 transition-colors hover:text-jaune"
+            className="text-white/60 transition-colors hover:text-pau-yellow"
           >
             Mot de passe oublié ?
           </Link>

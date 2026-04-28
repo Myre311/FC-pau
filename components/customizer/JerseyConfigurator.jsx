@@ -117,10 +117,10 @@ export function JerseyConfigurator({ product, variants }) {
     <div className="grid gap-6 lg:grid-cols-[1.4fr_1fr] lg:gap-10">
       {/* Preview 3D */}
       <div className="flex flex-col">
-        <div className="aspect-[4/5] w-full border border-blanc/10 bg-nuit lg:aspect-auto lg:flex-1 lg:min-h-[600px]">
+        <div className="aspect-[4/5] w-full border border-white/10 bg-pau-night lg:aspect-auto lg:flex-1 lg:min-h-[600px]">
           <SceneComponent name={sanitizedName} number={sanitizedNumber} font={font} />
         </div>
-        <p className="mt-3 font-mono text-[10px] uppercase tracking-[0.2em] text-blanc/40">
+        <p className="mt-3 font-mono text-[10px] uppercase tracking-[0.2em] text-white/40">
           {webglOk ? 'Aperçu 3D · Glissez pour faire pivoter' : 'Aperçu 2D (WebGL indisponible)'}
         </p>
       </div>
@@ -129,14 +129,14 @@ export function JerseyConfigurator({ product, variants }) {
       <div className="space-y-6">
         <div>
           <p className="badge-mono">Configurateur flocage</p>
-          <h2 className="mt-3 font-display text-4xl uppercase leading-crush tracking-tightest text-blanc md:text-5xl">
+          <h2 className="mt-3 font-display text-4xl uppercase leading-crush tracking-tightest text-white md:text-5xl">
             Personnalisez
           </h2>
         </div>
 
         {/* Taille */}
         <div>
-          <p className="mb-3 font-mono text-[10px] uppercase tracking-[0.2em] text-blanc/60">
+          <p className="mb-3 font-mono text-[10px] uppercase tracking-[0.2em] text-white/60">
             Taille
           </p>
           <div className="flex flex-wrap gap-2">
@@ -152,9 +152,9 @@ export function JerseyConfigurator({ product, variants }) {
                   disabled={disabled}
                   className={`min-w-12 px-3 py-2 font-mono text-xs uppercase tracking-[0.2em] transition-colors ${
                     active
-                      ? 'border border-jaune bg-jaune text-nuit'
-                      : 'border border-blanc/15 text-blanc hover:border-jaune'
-                  } ${disabled ? 'cursor-not-allowed opacity-30 line-through hover:border-blanc/15' : ''}`}
+                      ? 'border border-pau-yellow bg-pau-yellow text-pau-night'
+                      : 'border border-white/15 text-white hover:border-pau-yellow'
+                  } ${disabled ? 'cursor-not-allowed opacity-30 line-through hover:border-white/15' : ''}`}
                 >
                   {v.size}
                 </button>
@@ -165,7 +165,7 @@ export function JerseyConfigurator({ product, variants }) {
 
         {/* Nom */}
         <label className="block">
-          <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-blanc/60">
+          <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/60">
             Nom (max {MAX_NAME_LENGTH} caractères)
           </span>
           <input
@@ -174,16 +174,16 @@ export function JerseyConfigurator({ product, variants }) {
             onChange={(e) => setName(e.target.value)}
             maxLength={MAX_NAME_LENGTH}
             placeholder="BERNARD"
-            className="mt-2 block h-11 w-full border border-blanc/15 bg-transparent px-3 font-display text-xl uppercase tracking-tightest text-blanc outline-none transition-colors focus:border-jaune"
+            className="mt-2 block h-11 w-full border border-white/15 bg-transparent px-3 font-display text-xl uppercase tracking-tightest text-white outline-none transition-colors focus:border-pau-yellow"
           />
-          <span className="mt-1 block font-mono text-[10px] tracking-[0.15em] text-blanc/40">
+          <span className="mt-1 block font-mono text-[10px] tracking-[0.15em] text-white/40">
             {sanitizedName.length} / {MAX_NAME_LENGTH} · majuscules sans accents
           </span>
         </label>
 
         {/* Numéro */}
         <label className="block">
-          <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-blanc/60">
+          <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/60">
             Numéro ({MIN_NUMBER}–{MAX_NUMBER})
           </span>
           <input
@@ -193,13 +193,13 @@ export function JerseyConfigurator({ product, variants }) {
             value={number}
             onChange={(e) => setNumber(e.target.value)}
             placeholder="10"
-            className="mt-2 block h-11 w-full border border-blanc/15 bg-transparent px-3 font-display text-xl text-blanc outline-none transition-colors focus:border-jaune"
+            className="mt-2 block h-11 w-full border border-white/15 bg-transparent px-3 font-display text-xl text-white outline-none transition-colors focus:border-pau-yellow"
           />
         </label>
 
         {/* Police */}
         <div>
-          <p className="mb-3 font-mono text-[10px] uppercase tracking-[0.2em] text-blanc/60">
+          <p className="mb-3 font-mono text-[10px] uppercase tracking-[0.2em] text-white/60">
             Police
           </p>
           <div className="space-y-2">
@@ -211,14 +211,14 @@ export function JerseyConfigurator({ product, variants }) {
                   type="button"
                   onClick={() => setFont(f.value)}
                   className={`block w-full border p-3 text-left transition-colors ${
-                    active ? 'border-jaune bg-jaune/10' : 'border-blanc/15 hover:border-blanc/30'
+                    active ? 'border-pau-yellow bg-pau-yellow/10' : 'border-white/15 hover:border-white/30'
                   }`}
                 >
-                  <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-blanc">
+                  <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-white">
                     {f.label}
-                    {active && <span className="ml-2 text-jaune">●</span>}
+                    {active && <span className="ml-2 text-pau-yellow">●</span>}
                   </p>
-                  <p className="mt-1 font-sans text-xs text-blanc/60">{f.description}</p>
+                  <p className="mt-1 font-sans text-xs text-white/60">{f.description}</p>
                 </button>
               );
             })}
@@ -226,14 +226,14 @@ export function JerseyConfigurator({ product, variants }) {
         </div>
 
         {/* Récap prix + actions */}
-        <div className="space-y-4 border-t border-blanc/10 pt-6">
+        <div className="space-y-4 border-t border-white/10 pt-6">
           <dl className="space-y-1 font-mono text-xs">
             <Line label="Maillot" value={formatPrice(selectedVariant?.priceOverride ?? product.basePrice)} />
             <Line label="Flocage personnalisé" value={`+ ${formatPrice(FLOCKING_PRICE)}`} />
             <Line label="Total" value={formatPrice(unitPrice)} bold />
           </dl>
 
-          <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-blanc/40">
+          <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/40">
             {available <= 0
               ? 'Taille épuisée'
               : available <= 5
@@ -242,7 +242,7 @@ export function JerseyConfigurator({ product, variants }) {
           </p>
 
           {error && (
-            <p className="border border-jaune/40 bg-jaune/10 px-4 py-2 font-mono text-[10px] uppercase tracking-[0.15em] text-jaune">
+            <p className="border border-pau-yellow/40 bg-pau-yellow/10 px-4 py-2 font-mono text-[10px] uppercase tracking-[0.15em] text-pau-yellow">
               {error}
             </p>
           )}
@@ -258,14 +258,14 @@ export function JerseyConfigurator({ product, variants }) {
             {saving ? 'Enregistrement…' : `Ajouter au panier · ${formatPrice(unitPrice)}`}
           </Button>
 
-          <p className="font-mono text-[9px] uppercase tracking-[0.2em] text-blanc/40">
+          <p className="font-mono text-[9px] uppercase tracking-[0.2em] text-white/40">
             Le flocage personnalisé est non-remboursable (CGV art. 6 — exception
             droit de rétractation pour produits sur-mesure).
           </p>
 
           <Link
             href={`/boutique/${product.slug}`}
-            className="block text-center font-mono text-[10px] uppercase tracking-[0.2em] text-blanc/50 transition-colors hover:text-jaune"
+            className="block text-center font-mono text-[10px] uppercase tracking-[0.2em] text-white/50 transition-colors hover:text-pau-yellow"
           >
             ← Retour à la fiche produit
           </Link>
@@ -277,9 +277,9 @@ export function JerseyConfigurator({ product, variants }) {
 
 function Line({ label, value, bold }) {
   return (
-    <div className="flex items-center justify-between border-b border-blanc/5 py-1">
-      <dt className="text-blanc/60">{label}</dt>
-      <dd className={bold ? 'text-blanc' : 'text-blanc/85'}>{value}</dd>
+    <div className="flex items-center justify-between border-b border-white/5 py-1">
+      <dt className="text-white/60">{label}</dt>
+      <dd className={bold ? 'text-white' : 'text-white/85'}>{value}</dd>
     </div>
   );
 }
@@ -287,7 +287,7 @@ function Line({ label, value, bold }) {
 function SceneSkeleton() {
   return (
     <div className="flex h-full w-full items-center justify-center">
-      <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-blanc/40">
+      <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-white/40">
         Chargement de la scène 3D…
       </p>
     </div>

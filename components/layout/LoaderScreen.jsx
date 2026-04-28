@@ -32,7 +32,7 @@ export function LoaderScreen() {
 
   return (
     <div
-      className={`fixed inset-0 z-[9999] flex flex-col items-center justify-center gap-6 bg-nuit transition-[opacity,visibility] duration-500 ${
+      className={`fixed inset-0 z-[9999] flex flex-col items-center justify-center gap-6 bg-pau-night transition-[opacity,visibility] duration-500 ${
         done ? 'pointer-events-none invisible opacity-0' : 'opacity-100'
       }`}
       aria-hidden={done}
@@ -45,10 +45,10 @@ export function LoaderScreen() {
         priority
         className="h-[120px] w-[120px] animate-logo-glow object-contain"
       />
-      <div className="relative h-px w-[180px] overflow-hidden bg-blanc/10">
-        <span className="absolute inset-0 -translate-x-full bg-jaune animate-loader-fill" />
+      <div className="relative h-px w-[180px] overflow-hidden bg-white/10">
+        <span className="absolute inset-0 -translate-x-full bg-pau-yellow animate-loader-fill" />
       </div>
-      <p className="font-mono text-[9px] uppercase tracking-[0.28em] text-blanc/30">
+      <p className="font-mono text-[9px] uppercase tracking-[0.28em] text-white/30">
         Pau FC · Chargement
       </p>
     </div>

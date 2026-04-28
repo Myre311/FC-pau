@@ -49,13 +49,13 @@ export function CommentsList({ articleId, initialComments = [] }) {
     <div className="border-t-4 border-gray-300 bg-gray-50 py-12">
       <div className="container-pau">
         <div className="mx-auto max-w-3xl">
-          <h2 className="mb-8 font-display text-2xl font-bold uppercase text-nuit">
+          <h2 className="mb-8 font-display text-2xl font-bold uppercase text-pau-night">
             Commentaires ({approvedComments.length})
           </h2>
 
           {/* Formulaire nouveau commentaire */}
-          <form onSubmit={handleSubmit} className="mb-12 border-2 border-gray-300 bg-blanc p-6">
-            <h3 className="mb-4 font-display text-lg font-bold uppercase text-nuit">
+          <form onSubmit={handleSubmit} className="mb-12 border-2 border-gray-300 bg-white p-6">
+            <h3 className="mb-4 font-display text-lg font-bold uppercase text-pau-night">
               Ajouter un commentaire
             </h3>
 
@@ -79,7 +79,7 @@ export function CommentsList({ articleId, initialComments = [] }) {
                 type="text"
                 value={guestName}
                 onChange={(e) => setGuestName(e.target.value)}
-                className="w-full border-2 border-gray-300 px-4 py-3 font-sans text-nuit focus:border-nuit focus:outline-none"
+                className="w-full border-2 border-gray-300 px-4 py-3 font-sans text-pau-night focus:border-pau-night focus:outline-none"
                 required
                 disabled={submitting}
               />
@@ -93,7 +93,7 @@ export function CommentsList({ articleId, initialComments = [] }) {
                 value={content}
                 onChange={(e) => setContent(e.target.value)}
                 rows={4}
-                className="w-full border-2 border-gray-300 px-4 py-3 font-sans text-nuit focus:border-nuit focus:outline-none"
+                className="w-full border-2 border-gray-300 px-4 py-3 font-sans text-pau-night focus:border-pau-night focus:outline-none"
                 required
                 disabled={submitting}
               />
@@ -102,7 +102,7 @@ export function CommentsList({ articleId, initialComments = [] }) {
             <button
               type="submit"
               disabled={submitting}
-              className="inline-flex items-center gap-3 border-2 border-nuit bg-nuit px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-blanc transition-colors hover:bg-jaune hover:border-jaune hover:text-nuit disabled:opacity-50"
+              className="inline-flex items-center gap-3 border-2 border-pau-night bg-pau-night px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-pau-yellow hover:border-pau-yellow hover:text-pau-night disabled:opacity-50"
             >
               {submitting ? 'Envoi...' : 'Publier'}
             </button>
@@ -128,13 +128,13 @@ export function CommentsList({ articleId, initialComments = [] }) {
 
 function CommentItem({ comment }) {
   return (
-    <div className="border-l-4 border-jaune/30 bg-blanc p-6">
+    <div className="border-l-4 border-pau-yellow/30 bg-white p-6">
       <div className="mb-3 flex items-center gap-3">
-        <div className="flex h-10 w-10 items-center justify-center border-2 border-nuit bg-nuit font-display text-sm font-bold uppercase text-jaune">
+        <div className="flex h-10 w-10 items-center justify-center border-2 border-pau-night bg-pau-night font-display text-sm font-bold uppercase text-pau-yellow">
           {(comment.guestName || comment.user?.firstName || 'U')[0]}
         </div>
         <div>
-          <p className="font-display text-sm font-bold uppercase text-nuit">
+          <p className="font-display text-sm font-bold uppercase text-pau-night">
             {comment.guestName || `${comment.user?.firstName} ${comment.user?.lastName}`}
           </p>
           <p className="font-mono text-xs text-gray-500">

@@ -83,7 +83,7 @@ export function NewsletterModal() {
   return (
     <>
       <div
-        className={`fixed inset-0 z-50 bg-nuit/85 transition-opacity duration-200 ${
+        className={`fixed inset-0 z-50 bg-pau-night/85 transition-opacity duration-200 ${
           open ? 'opacity-100' : 'pointer-events-none opacity-0'
         }`}
         onClick={close}
@@ -93,13 +93,13 @@ export function NewsletterModal() {
         role="dialog"
         aria-modal="true"
         aria-label="Newsletter"
-        className={`fixed right-0 top-0 z-50 flex h-full w-full max-w-md flex-col border-l border-blanc/15 bg-nuit transition-transform duration-300 ${
+        className={`fixed right-0 top-0 z-50 flex h-full w-full max-w-md flex-col border-l border-white/15 bg-pau-night transition-transform duration-300 ${
           open ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
-        <header className="flex items-center justify-between border-b border-blanc/10 px-6 py-5">
+        <header className="flex items-center justify-between border-b border-white/10 px-6 py-5">
           <div>
-            <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-jaune">
+            <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-pau-yellow">
               Newsletter Pau FC
             </p>
             <h2 className="mt-2 font-display text-3xl uppercase leading-crush tracking-tightest">
@@ -110,7 +110,7 @@ export function NewsletterModal() {
             type="button"
             onClick={close}
             aria-label="Fermer"
-            className="flex h-9 w-9 items-center justify-center text-blanc/60 transition-colors hover:text-jaune"
+            className="flex h-9 w-9 items-center justify-center text-white/60 transition-colors hover:text-pau-yellow"
           >
             <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
               <path d="M6 6l12 12M18 6L6 18" strokeLinecap="square" />
@@ -121,13 +121,13 @@ export function NewsletterModal() {
         <div className="flex-1 overflow-y-auto px-6 py-6">
           {step === 'email' && (
             <div className="space-y-5">
-              <p className="font-sans text-sm text-blanc/70">
+              <p className="font-sans text-sm text-white/70">
                 Matchday, drops boutique, programmes partenaires.
                 Désinscription en un clic depuis chaque email.
               </p>
               <label className="block">
-                <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-blanc/50">
-                  Votre email <span className="text-jaune">*</span>
+                <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/50">
+                  Votre email <span className="text-pau-yellow">*</span>
                 </span>
                 <input
                   type="email"
@@ -135,7 +135,7 @@ export function NewsletterModal() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   autoComplete="email"
-                  className="mt-2 block h-11 w-full border border-blanc/15 bg-transparent px-3 font-sans text-sm text-blanc outline-none transition-colors focus:border-jaune"
+                  className="mt-2 block h-11 w-full border border-white/15 bg-transparent px-3 font-sans text-sm text-white outline-none transition-colors focus:border-pau-yellow"
                 />
               </label>
               <Button
@@ -154,7 +154,7 @@ export function NewsletterModal() {
                 Continuer
               </Button>
               {error && (
-                <p className="border border-jaune/40 bg-jaune/10 px-4 py-3 font-mono text-[11px] uppercase tracking-[0.15em] text-jaune">
+                <p className="border border-pau-yellow/40 bg-pau-yellow/10 px-4 py-3 font-mono text-[11px] uppercase tracking-[0.15em] text-pau-yellow">
                   {error}
                 </p>
               )}
@@ -163,7 +163,7 @@ export function NewsletterModal() {
 
           {step === 'segments' && (
             <div className="space-y-5">
-              <p className="font-sans text-sm text-blanc/70">
+              <p className="font-sans text-sm text-white/70">
                 Quelles thématiques souhaitez-vous recevoir ?
               </p>
               <div className="space-y-3">
@@ -176,15 +176,15 @@ export function NewsletterModal() {
                       onClick={() => toggleSegment(s.value)}
                       className={`block w-full border p-4 text-left transition-colors ${
                         active
-                          ? 'border-jaune bg-jaune/10'
-                          : 'border-blanc/15 hover:border-blanc/30'
+                          ? 'border-pau-yellow bg-pau-yellow/10'
+                          : 'border-white/15 hover:border-white/30'
                       }`}
                     >
-                      <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-blanc">
+                      <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-white">
                         {s.label}
-                        {active && <span className="ml-2 text-jaune">●</span>}
+                        {active && <span className="ml-2 text-pau-yellow">●</span>}
                       </p>
-                      <p className="mt-1 font-sans text-xs text-blanc/60">
+                      <p className="mt-1 font-sans text-xs text-white/60">
                         {s.desc}
                       </p>
                     </button>
@@ -193,7 +193,7 @@ export function NewsletterModal() {
               </div>
 
               {error && (
-                <p className="border border-jaune/40 bg-jaune/10 px-4 py-3 font-mono text-[11px] uppercase tracking-[0.15em] text-jaune">
+                <p className="border border-pau-yellow/40 bg-pau-yellow/10 px-4 py-3 font-mono text-[11px] uppercase tracking-[0.15em] text-pau-yellow">
                   {error}
                 </p>
               )}
@@ -211,7 +211,7 @@ export function NewsletterModal() {
                 <button
                   type="button"
                   onClick={() => setStep('email')}
-                  className="font-mono text-[11px] uppercase tracking-[0.2em] text-blanc/50 transition-colors hover:text-blanc"
+                  className="font-mono text-[11px] uppercase tracking-[0.2em] text-white/50 transition-colors hover:text-white"
                 >
                   ← Modifier l&apos;email
                 </button>
@@ -221,16 +221,16 @@ export function NewsletterModal() {
 
           {step === 'done' && (
             <div className="space-y-4">
-              <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-jaune">
+              <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-pau-yellow">
                 Confirmez votre email
               </p>
-              <p className="font-sans text-sm text-blanc/80">
-                Un email vient de partir vers <strong className="text-blanc">{email}</strong>.
+              <p className="font-sans text-sm text-white/80">
+                Un email vient de partir vers <strong className="text-white">{email}</strong>.
                 Cliquez sur le lien pour valider votre inscription (RGPD - double opt-in).
               </p>
-              <p className="font-sans text-xs text-blanc/50">
+              <p className="font-sans text-xs text-white/50">
                 Vous gérerez vos préférences à tout moment depuis votre{' '}
-                <Link href="/compte/infos" className="text-jaune hover:underline" onClick={close}>
+                <Link href="/compte/infos" className="text-pau-yellow hover:underline" onClick={close}>
                   espace compte
                 </Link>{' '}
                 ou via le lien en pied de chaque email.

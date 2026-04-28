@@ -28,11 +28,11 @@ export function PageHero({ image, surtitle, title, subtitle }) {
         {surtitle && (
           <p className="badge-mono mb-4">{surtitle}</p>
         )}
-        <h1 className="font-display text-[clamp(52px,12vw,160px)] uppercase leading-crush tracking-display-tight text-blanc">
+        <h1 className="font-display text-[clamp(52px,12vw,160px)] uppercase leading-crush tracking-display-tight text-white">
           {title}
         </h1>
         {subtitle && (
-          <p className="mt-6 max-w-2xl font-sans text-[17px] leading-relaxed text-blanc/85">
+          <p className="mt-6 max-w-2xl font-sans text-[17px] leading-relaxed text-white/85">
             {subtitle}
           </p>
         )}

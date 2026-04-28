@@ -17,7 +17,7 @@ export default function MentionsPage() {
         </p>
         <p>
           Directeur de la publication : Président du club. Contact :{' '}
-          <a className="text-jaune hover:underline" href="mailto:contact@paufc.fr">
+          <a className="text-pau-yellow hover:underline" href="mailto:contact@paufc.fr">
             contact@paufc.fr
           </a>
           .
@@ -46,7 +46,7 @@ export default function MentionsPage() {
           Le Pau FC collecte et traite des données personnelles dans le cadre
           de la gestion de la relation client (boutique, billetterie,
           newsletter). Voir notre{' '}
-          <a className="text-jaune hover:underline" href="/rgpd">
+          <a className="text-pau-yellow hover:underline" href="/rgpd">
             politique de confidentialité (RGPD)
           </a>{' '}
           pour le détail des traitements et l&apos;exercice de vos droits.

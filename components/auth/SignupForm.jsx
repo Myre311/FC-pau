@@ -29,14 +29,14 @@ export function SignupForm() {
 
   if (success) {
     return (
-      <div className="border border-jaune/40 bg-jaune/5 p-6">
-        <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-jaune">
+      <div className="border border-pau-yellow/40 bg-pau-yellow/5 p-6">
+        <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-pau-yellow">
           Inscription en attente
         </p>
         <h2 className="mt-3 font-display text-3xl uppercase leading-crush tracking-tightest">
           Vérifiez vos emails
         </h2>
-        <p className="mt-4 font-sans text-sm text-blanc/70">
+        <p className="mt-4 font-sans text-sm text-white/70">
           Un email de confirmation vient de partir. Cliquez sur le lien pour
           activer votre compte et accéder à votre espace.
         </p>
@@ -65,15 +65,15 @@ export function SignupForm() {
           type="checkbox"
           name="acceptTerms"
           required
-          className="mt-1 h-4 w-4 flex-none border-blanc/30 bg-transparent text-jaune accent-jaune"
+          className="mt-1 h-4 w-4 flex-none border-white/30 bg-transparent text-pau-yellow accent-jaune"
         />
-        <span className="font-sans text-blanc/70">
+        <span className="font-sans text-white/70">
           J&apos;accepte les{' '}
-          <Link href="/cgv" className="text-jaune hover:underline">
+          <Link href="/cgv" className="text-pau-yellow hover:underline">
             CGV
           </Link>{' '}
           et la{' '}
-          <Link href="/rgpd" className="text-jaune hover:underline">
+          <Link href="/rgpd" className="text-pau-yellow hover:underline">
             politique de confidentialité
           </Link>
           .
@@ -81,7 +81,7 @@ export function SignupForm() {
       </label>
 
       {error && (
-        <p className="border border-jaune/40 bg-jaune/10 px-4 py-3 font-mono text-[11px] uppercase tracking-[0.15em] text-jaune">
+        <p className="border border-pau-yellow/40 bg-pau-yellow/10 px-4 py-3 font-mono text-[11px] uppercase tracking-[0.15em] text-pau-yellow">
           {error}
         </p>
       )}

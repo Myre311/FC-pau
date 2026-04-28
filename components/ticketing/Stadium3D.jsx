@@ -52,18 +52,18 @@ export function Stadium3D({ onSeatSelect, selectedSeats = [], availableSeats = [
       </Canvas>
 
       {/* Légende */}
-      <div className="absolute bottom-4 left-4 space-y-2 border-2 border-jaune bg-nuit/90 p-4">
+      <div className="absolute bottom-4 left-4 space-y-2 border-2 border-pau-yellow bg-pau-night/90 p-4">
         <div className="flex items-center gap-3">
-          <div className="h-4 w-4 border-2 border-blanc bg-green-500" />
-          <span className="font-mono text-xs text-blanc">Disponible</span>
+          <div className="h-4 w-4 border-2 border-white bg-green-500" />
+          <span className="font-mono text-xs text-white">Disponible</span>
         </div>
         <div className="flex items-center gap-3">
-          <div className="h-4 w-4 border-2 border-blanc bg-jaune" />
-          <span className="font-mono text-xs text-blanc">Sélectionné</span>
+          <div className="h-4 w-4 border-2 border-white bg-pau-yellow" />
+          <span className="font-mono text-xs text-white">Sélectionné</span>
         </div>
         <div className="flex items-center gap-3">
-          <div className="h-4 w-4 border-2 border-blanc bg-red-500" />
-          <span className="font-mono text-xs text-blanc">Réservé</span>
+          <div className="h-4 w-4 border-2 border-white bg-red-500" />
+          <span className="font-mono text-xs text-white">Réservé</span>
         </div>
       </div>
     </div>

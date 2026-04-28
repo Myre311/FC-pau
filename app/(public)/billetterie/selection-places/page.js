@@ -76,7 +76,7 @@ export default function SelectionPlacesPage() {
             </p>
           </div>
 
-          <div className="overflow-hidden border-4 border-nuit">
+          <div className="overflow-hidden border-4 border-pau-night">
             <Stadium3D
               onSeatSelect={handleSeatSelect}
               selectedSeats={selectedSeats}
@@ -90,7 +90,7 @@ export default function SelectionPlacesPage() {
       <section className="border-t-4 border-gray-300 bg-gray-50 py-12">
         <div className="container-pau">
           <div className="mx-auto max-w-2xl">
-            <div className="border-2 border-nuit bg-white p-8">
+            <div className="border-2 border-pau-night bg-white p-8">
               <h2 className="mb-6 font-display text-2xl font-bold uppercase text-pau-night">
                 Votre sélection
               </h2>
@@ -138,7 +138,7 @@ export default function SelectionPlacesPage() {
                     })}
                   </div>
 
-                  <div className="mb-6 border-t-2 border-nuit pt-4">
+                  <div className="mb-6 border-t-2 border-pau-night pt-4">
                     <div className="flex items-center justify-between">
                       <p className="font-display text-lg font-bold uppercase text-pau-night">
                         Total
@@ -150,7 +150,7 @@ export default function SelectionPlacesPage() {
                   </div>
 
                   <button
-                    className="w-full border-2 border-nuit bg-pau-night py-4 font-display text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-pau-yellow hover:border-pau-yellow hover:text-pau-night"
+                    className="w-full border-2 border-pau-night bg-pau-night py-4 font-display text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-pau-yellow hover:border-pau-yellow hover:text-pau-night"
                   >
                     Continuer vers le paiement
                   </button>

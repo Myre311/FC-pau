@@ -36,24 +36,24 @@ export default async function OrderDetailPage({ params }) {
       <header>
         <Link
           href="/compte/commandes"
-          className="font-mono text-[10px] uppercase tracking-[0.2em] text-blanc/60 hover:text-jaune"
+          className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/60 hover:text-pau-yellow"
         >
           ← Retour aux commandes
         </Link>
-        <h1 className="mt-4 font-display text-4xl uppercase leading-crush tracking-tightest text-blanc md:text-5xl">
+        <h1 className="mt-4 font-display text-4xl uppercase leading-crush tracking-tightest text-white md:text-5xl">
           {order.number}
         </h1>
-        <p className="mt-3 font-mono text-[11px] uppercase tracking-[0.2em] text-jaune">
+        <p className="mt-3 font-mono text-[11px] uppercase tracking-[0.2em] text-pau-yellow">
           {STATUS_LABELS[order.status]} · {formatDate(order.createdAt)}
         </p>
       </header>
 
-      <section className="border border-blanc/10">
-        <header className="flex items-center justify-between border-b border-blanc/10 px-4 py-3">
-          <h2 className="font-mono text-[11px] uppercase tracking-[0.2em] text-jaune">
+      <section className="border border-white/10">
+        <header className="flex items-center justify-between border-b border-white/10 px-4 py-3">
+          <h2 className="font-mono text-[11px] uppercase tracking-[0.2em] text-pau-yellow">
             Articles
           </h2>
-          <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-blanc/40">
+          <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/40">
             {order.items.length}
           </span>
         </header>
@@ -61,14 +61,14 @@ export default async function OrderDetailPage({ params }) {
           {order.items.map((it) => (
             <li key={it.id} className="flex items-center justify-between gap-4 px-4 py-4">
               <div className="min-w-0">
-                <p className="font-sans text-sm text-blanc">{it.productName}</p>
+                <p className="font-sans text-sm text-white">{it.productName}</p>
                 {it.variantLabel && (
-                  <p className="mt-1 font-mono text-[10px] uppercase tracking-[0.2em] text-blanc/40">
+                  <p className="mt-1 font-mono text-[10px] uppercase tracking-[0.2em] text-white/40">
                     {it.variantLabel} · ×{it.quantity}
                   </p>
                 )}
               </div>
-              <span className="font-mono text-sm text-blanc">
+              <span className="font-mono text-sm text-white">
                 {formatPrice(it.unitPrice * it.quantity)}
               </span>
             </li>
@@ -76,8 +76,8 @@ export default async function OrderDetailPage({ params }) {
         </ul>
       </section>
 
-      <section className="border border-blanc/10 p-4">
-        <h2 className="font-mono text-[11px] uppercase tracking-[0.2em] text-jaune">
+      <section className="border border-white/10 p-4">
+        <h2 className="font-mono text-[11px] uppercase tracking-[0.2em] text-pau-yellow">
           Récapitulatif
         </h2>
         <dl className="mt-4 space-y-2 font-mono text-sm">
@@ -108,21 +108,21 @@ export default async function OrderDetailPage({ params }) {
 
 function Line({ label, value, bold }) {
   return (
-    <div className="flex items-center justify-between border-b border-blanc/5 py-1">
-      <dt className="text-blanc/60">{label}</dt>
-      <dd className={bold ? 'text-blanc' : 'text-blanc/80'}>{value}</dd>
+    <div className="flex items-center justify-between border-b border-white/5 py-1">
+      <dt className="text-white/60">{label}</dt>
+      <dd className={bold ? 'text-white' : 'text-white/80'}>{value}</dd>
     </div>
   );
 }
 
 function AddressBlock({ title, address }) {
   return (
-    <div className="border border-blanc/10 p-4">
-      <h3 className="font-mono text-[11px] uppercase tracking-[0.2em] text-jaune">
+    <div className="border border-white/10 p-4">
+      <h3 className="font-mono text-[11px] uppercase tracking-[0.2em] text-pau-yellow">
         {title}
       </h3>
-      <address className="mt-3 not-italic font-sans text-sm text-blanc/80">
-        <p className="text-blanc">
+      <address className="mt-3 not-italic font-sans text-sm text-white/80">
+        <p className="text-white">
           {address.firstName} {address.lastName}
         </p>
         <p>{address.line1}</p>

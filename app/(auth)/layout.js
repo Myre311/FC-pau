@@ -8,8 +8,8 @@ import { Logo } from '@/components/ui/Logo';
 
 export default function AuthLayout({ children }) {
   return (
-    <div className="min-h-screen bg-nuit text-blanc">
-      <header className="border-b border-blanc/10">
+    <div className="min-h-screen bg-pau-night text-white">
+      <header className="border-b border-white/10">
         <div className="container-fc flex h-16 items-center justify-between md:h-20">
           <Link
             href="/"
@@ -20,7 +20,7 @@ export default function AuthLayout({ children }) {
           </Link>
           <Link
             href="/"
-            className="font-mono text-[11px] uppercase tracking-[0.2em] text-blanc/60 transition-colors hover:text-jaune"
+            className="font-mono text-[11px] uppercase tracking-[0.2em] text-white/60 transition-colors hover:text-pau-yellow"
           >
             ← Accueil
           </Link>

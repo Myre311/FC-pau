@@ -59,9 +59,9 @@ export function MatchCountdown({ match }) {
 
       {/* Compétition */}
       <div className="mb-6 flex items-center justify-center gap-3">
-        <div className="h-px flex-1 bg-blanc/20" />
+        <div className="h-px flex-1 bg-white/20" />
         <CompetitionBadge competition={match.competition || 'Ligue 2 BKT'} />
-        <div className="h-px flex-1 bg-blanc/20" />
+        <div className="h-px flex-1 bg-white/20" />
       </div>
 
       {/* CTA Billetterie */}

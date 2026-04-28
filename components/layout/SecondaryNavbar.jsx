@@ -55,7 +55,7 @@ export function SecondaryNavbar() {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3, delay: 0.1 }}
-      className="border-b-2 border-blanc/10 bg-[#1a1d38]"
+      className="border-b-2 border-white/10 bg-[#1a1d38]"
       aria-label="Navigation secondaire"
     >
       <div className="container-pau">
@@ -68,12 +68,12 @@ export function SecondaryNavbar() {
                 href={item.href}
                 className={`group relative flex flex-col items-center gap-1 px-2 py-2.5 font-display text-[11px] font-bold uppercase tracking-tight transition-all sm:gap-1.5 sm:px-4 sm:py-3 sm:text-xs md:px-8 md:py-4 md:text-sm ${
                   isActive
-                    ? 'text-jaune'
-                    : 'text-blanc/80 hover:text-jaune'
+                    ? 'text-pau-yellow'
+                    : 'text-white/80 hover:text-pau-yellow'
                 }`}
               >
                 {/* Icône */}
-                <span className={`h-4 w-4 transition-transform group-hover:scale-110 sm:h-5 sm:w-5 md:h-6 md:w-6 ${isActive ? 'text-jaune' : ''}`}>
+                <span className={`h-4 w-4 transition-transform group-hover:scale-110 sm:h-5 sm:w-5 md:h-6 md:w-6 ${isActive ? 'text-pau-yellow' : ''}`}>
                   {item.icon}
                 </span>
 
@@ -84,7 +84,7 @@ export function SecondaryNavbar() {
                 {isActive && (
                   <motion.div
                     layoutId="secondaryNavIndicator"
-                    className="absolute bottom-0 left-0 right-0 h-1 bg-jaune"
+                    className="absolute bottom-0 left-0 right-0 h-1 bg-pau-yellow"
                     transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                   />
                 )}

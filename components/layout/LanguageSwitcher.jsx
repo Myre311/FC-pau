@@ -42,8 +42,8 @@ export function LanguageSwitcher({ className = '' }) {
             border-2 px-3 py-1.5 font-mono text-xs font-bold uppercase tracking-wider transition-colors
             ${
               locale === currentLocale
-                ? 'border-jaune bg-jaune text-nuit'
-                : 'border-gray-300 bg-blanc text-gray-700 hover:border-nuit hover:text-nuit'
+                ? 'border-pau-yellow bg-pau-yellow text-pau-night'
+                : 'border-gray-300 bg-white text-gray-700 hover:border-pau-night hover:text-pau-night'
             }
           `}
           aria-label={`Switch to ${localeNames[locale]}`}

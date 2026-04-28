@@ -24,7 +24,7 @@ export default async function JoueursAdminPage() {
         </div>
         <Link
           href="/admin/joueurs/nouveau"
-          className="bg-jaune text-nuit px-6 py-3 font-bold uppercase hover:bg-jaune/90 transition-colors"
+          className="bg-pau-yellow text-pau-night px-6 py-3 font-bold uppercase hover:bg-pau-yellow/90 transition-colors"
         >
           + Nouveau joueur
         </Link>

@@ -52,7 +52,7 @@
   }
 
   body {
-    @apply bg-blanc text-gray-900 font-sans;
+    @apply bg-white text-gray-900 font-sans;
     line-height: 1.6;
   }
 
@@ -154,14 +154,14 @@
 
   /* ─── TYPOGRAPHIE CLUB ─────────────────────────────────────────── */
   .title-hero {
-    @apply font-display font-black uppercase text-nuit;
+    @apply font-display font-black uppercase text-pau-night;
     font-size: clamp(2.5rem, 6vw, 4rem);
     line-height: 1.1;
     letter-spacing: -0.01em;
   }
 
   .title-section {
-    @apply font-display font-bold uppercase text-nuit;
+    @apply font-display font-bold uppercase text-pau-night;
     font-size: clamp(2rem, 4vw, 3rem);
     line-height: 1.2;
   }
@@ -174,37 +174,37 @@
 
   /* ─── ÉLÉMENTS GRAPHIQUES ─────────────────────────────────────── */
   .line-accent {
-    @apply bg-jaune;
+    @apply bg-pau-yellow;
     width: clamp(3rem, 5vw, 4rem);
     height: 3px;
   }
 
   .badge-pau {
-    @apply inline-flex items-center gap-2 border-2 border-jaune bg-jaune
-           px-3 py-1 font-mono text-xs font-bold uppercase tracking-wider text-nuit;
+    @apply inline-flex items-center gap-2 border-2 border-pau-yellow bg-pau-yellow
+           px-3 py-1 font-mono text-xs font-bold uppercase tracking-wider text-pau-night;
   }
 
   .badge-mono {
-    @apply inline-block font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-jaune;
+    @apply inline-block font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-pau-yellow;
   }
 
   /* ─── BOUTONS SIMPLES ──────────────────────────────────────────── */
   .btn-pau-primary {
-    @apply inline-flex items-center justify-center gap-3 border-2 border-nuit bg-nuit
-           px-8 py-4 font-display text-sm font-bold uppercase tracking-wide text-blanc
-           transition-colors duration-200 hover:bg-jaune hover:border-jaune hover:text-nuit;
+    @apply inline-flex items-center justify-center gap-3 border-2 border-pau-night bg-pau-night
+           px-8 py-4 font-display text-sm font-bold uppercase tracking-wide text-white
+           transition-colors duration-200 hover:bg-pau-yellow hover:border-pau-yellow hover:text-pau-night;
   }
 
   .btn-pau-secondary {
-    @apply inline-flex items-center justify-center gap-3 border-2 border-nuit bg-blanc
-           px-8 py-4 font-display text-sm font-bold uppercase tracking-wide text-nuit
-           transition-colors duration-200 hover:bg-nuit hover:text-blanc;
+    @apply inline-flex items-center justify-center gap-3 border-2 border-pau-night bg-white
+           px-8 py-4 font-display text-sm font-bold uppercase tracking-wide text-pau-night
+           transition-colors duration-200 hover:bg-pau-night hover:text-white;
   }
 
   .btn-pau-accent {
-    @apply inline-flex items-center justify-center gap-3 border-2 border-jaune bg-jaune
-           px-8 py-4 font-display text-sm font-bold uppercase tracking-wide text-nuit
-           transition-colors duration-200 hover:bg-nuit hover:border-nuit hover:text-jaune;
+    @apply inline-flex items-center justify-center gap-3 border-2 border-pau-yellow bg-pau-yellow
+           px-8 py-4 font-display text-sm font-bold uppercase tracking-wide text-pau-night
+           transition-colors duration-200 hover:bg-pau-night hover:border-pau-night hover:text-pau-yellow;
   }
 
   /* ─── CARDS SIMPLES ───────────────────────────────────────────── */
