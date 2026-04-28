@@ -33,7 +33,7 @@ export function AccountLinkClient() {
   return (
     <Link
       href={signedIn ? '/compte' : '/connexion'}
-      className="hidden h-9 items-center gap-2 border border-blanc/10 bg-blanc/[0.04] px-3 font-mono text-[10px] uppercase tracking-[0.2em] text-blanc/70 transition-colors hover:border-jaune/40 hover:text-jaune md:inline-flex"
+      className="hidden h-9 items-center gap-2 border border-white/10 bg-white/[0.04] px-3 font-mono text-[10px] uppercase tracking-[0.2em] text-white/70 transition-colors hover:border-pau-yellow/40 hover:text-pau-yellow md:inline-flex"
       aria-label={signedIn ? 'Mon compte' : 'Connexion'}
     >
       <svg viewBox="0 0 24 24" className="h-[14px] w-[14px]" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">

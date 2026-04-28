@@ -16,7 +16,7 @@ export function CartButton() {
     <button
       type="button"
       onClick={open}
-      className="group relative flex h-10 items-center gap-2 px-3 font-mono text-[11px] uppercase tracking-[0.2em] text-blanc transition-colors hover:text-jaune"
+      className="group relative flex h-10 items-center gap-2 px-3 font-mono text-[11px] uppercase tracking-[0.2em] text-white transition-colors hover:text-pau-yellow"
       aria-label={`Ouvrir le panier (${hydrated ? count : 0} article${count > 1 ? 's' : ''})`}
     >
       <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
@@ -26,7 +26,7 @@ export function CartButton() {
       </svg>
       <span className="hidden sm:inline">Panier</span>
       {hydrated && count > 0 && (
-        <span className="absolute -right-1 -top-1 flex h-5 min-w-5 items-center justify-center bg-jaune px-1 font-mono text-[10px] text-nuit">
+        <span className="absolute -right-1 -top-1 flex h-5 min-w-5 items-center justify-center bg-pau-yellow px-1 font-mono text-[10px] text-pau-night">
           {count}
         </span>
       )}
