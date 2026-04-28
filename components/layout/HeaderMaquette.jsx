@@ -61,11 +61,11 @@ export function HeaderMaquette() {
 
       {/* Menu hamburger fullscreen avec catégories + images */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-40 overflow-y-auto bg-pau-night">
+        <div className="fixed inset-0 z-[60] overflow-y-auto bg-pau-night">
           {/* Bouton close en haut à droite */}
           <button
             onClick={() => setMobileMenuOpen(false)}
-            className="fixed right-6 top-6 z-50 text-white hover:text-pau-yellow"
+            className="fixed right-6 top-6 z-[70] text-white hover:text-pau-yellow"
             aria-label="Fermer"
           >
             <svg className="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
