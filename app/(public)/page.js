@@ -2,11 +2,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 import { prisma } from '@/lib/prisma';
-import { MatchCountdown } from '@/components/vitrine/MatchCountdown';
-import { AnimatedHero } from '@/components/animations/AnimatedHero';
-import { FadeIn, StaggerContainer, StaggerItem } from '@/components/animations/FadeIn';
-import { HoverCard } from '@/components/animations/HoverCard';
-import PartnerLogo from '@/components/PartnerLogo';
 import { formatPrice } from '@/lib/format';
 
 export const dynamic = 'force-dynamic';
@@ -18,7 +13,7 @@ export const metadata = {
 };
 
 export default async function HomePage() {
-  // Récupérer les 2 prochains matchs à domicile
+  // Récupérer les 2 prochains matchs
   const upcomingMatches = await prisma.match
     .findMany({
       where: {
@@ -30,7 +25,7 @@ export default async function HomePage() {
     })
     .catch(() => []);
 
-  // Récupérer 3 derniers articles pour la newsletter
+  // Récupérer 3 derniers articles
   const latestArticles = await prisma.article
     .findMany({
       where: { publishedAt: { not: null } },
@@ -39,16 +34,16 @@ export default async function HomePage() {
     })
     .catch(() => []);
 
-  // Récupérer 4 produits mis en avant AVEC IMAGES pour la boutique
+  // Récupérer 3 produits mis en avant
   const featuredProducts = await prisma.product
     .findMany({
       where: {
         status: 'active',
         featured: true,
-        images: { isEmpty: false } // Seulement produits avec images
+        images: { isEmpty: false },
       },
-      orderBy: { createdAt: 'desc' }, // Plus récents d'abord
-      take: 4,
+      orderBy: { createdAt: 'desc' },
+      take: 3,
       include: {
         category: true,
         variants: {
@@ -60,223 +55,217 @@ export default async function HomePage() {
     .catch(() => []);
 
   return (
-    <>
-      {/* ─── HERO ANIMÉ NIVEAU BARÇA ──────────────────────────── */}
-      <AnimatedHero />
+    <div className="bg-white">
+      {/* HERO SIMPLE */}
+      <section className="relative h-[70vh] min-h-[500px] overflow-hidden">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 h-full w-full object-cover"
+        >
+          <source src="/videos/hero.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-gradient-to-t from-pau-night via-pau-night/40 to-transparent" />
 
-      {/* ─── ACTUALITÉS ──────────────────────────── */}
-      {latestArticles.length > 0 && (
-        <section className="border-b border-pau-primary/10 py-8 md:py-12 bg-white">
-          <div className="container-pau">
-            <FadeIn>
-              <div className="mb-6 flex items-center justify-between">
-                <h2 className="font-display text-2xl font-bold uppercase text-pau-primary md:text-3xl">
-                  Actualités
-                </h2>
+        <div className="relative z-10 flex h-full items-end">
+          <div className="w-full px-6 pb-16 md:px-12 md:pb-24">
+            <div className="mx-auto max-w-7xl">
+              <p className="mb-4 font-mono text-xs uppercase tracking-widest text-pau-yellow">
+                Saison 2025-2026
+              </p>
+              <h1 className="font-display text-5xl font-black uppercase leading-none text-white md:text-7xl lg:text-8xl">
+                PAU FOOTBALL<br />CLUB
+              </h1>
+              <p className="mt-6 max-w-2xl text-lg text-white/90">
+                Ligue 2 BKT · Nouste Camp
+              </p>
+              <div className="mt-8 flex gap-4">
                 <Link
-                  href="/actualites"
-                  className="group flex items-center gap-2 font-display text-xs font-bold uppercase tracking-wide text-pau-primary transition-all hover:gap-3 hover:text-pau-yellow md:text-sm"
+                  href="/billetterie"
+                  className="bg-pau-yellow px-8 py-4 font-display text-sm font-bold uppercase text-pau-night transition-colors hover:bg-pau-yellow/90"
                 >
-                  Voir tout
-                  <svg className="h-3 w-3 transition-transform group-hover:translate-x-1 md:h-4 md:w-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                    <path d="M9 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
+                  Billetterie
+                </Link>
+                <Link
+                  href="/boutique"
+                  className="border-2 border-white px-8 py-4 font-display text-sm font-bold uppercase text-white transition-colors hover:bg-white hover:text-pau-night"
+                >
+                  Boutique
                 </Link>
               </div>
-            </FadeIn>
+            </div>
+          </div>
+        </div>
+      </section>
 
-            <StaggerContainer staggerDelay={0.1} className="grid gap-4 md:grid-cols-3">
-              {latestArticles.map((article) => (
-                <StaggerItem key={article.id}>
-                  <Link href={`/actualites/${article.slug}`}>
-                    <HoverCard className="group overflow-hidden border border-pau-primary/10 bg-white transition-all hover:border-jaune hover:shadow-md">
-                      {article.coverImageUrl && (
-                        <div className="relative aspect-video w-full overflow-hidden bg-gradient-to-br from-pau-night to-pau-primary">
-                          <Image
-                            src={article.coverImageUrl}
-                            alt={article.title}
-                            fill
-                            className="object-cover transition-transform duration-300 group-hover:scale-110"
-                          />
-                        </div>
-                      )}
-                      <div className="p-4">
-                        <p className="mb-2 font-mono text-[9px] font-bold uppercase tracking-wider text-pau-yellow">
-                          {new Date(article.publishedAt).toLocaleDateString('fr-FR', {
-                            day: 'numeric',
-                            month: 'long',
-                            year: 'numeric'
-                          })}
-                        </p>
-                        <h3 className="line-clamp-2 font-display text-base font-bold uppercase leading-tight text-pau-primary group-hover:text-pau-yellow">
-                          {article.title}
-                        </h3>
-                      </div>
-                    </HoverCard>
-                  </Link>
-                </StaggerItem>
+      {/* PROCHAINS MATCHS */}
+      {upcomingMatches.length > 0 && (
+        <section className="border-b border-gray-100 py-20">
+          <div className="mx-auto max-w-7xl px-6 md:px-12">
+            <h2 className="mb-12 font-display text-3xl font-bold uppercase text-pau-primary md:text-4xl">
+              Prochains matchs
+            </h2>
+            <div className="grid gap-6 md:grid-cols-2">
+              {upcomingMatches.map((match) => (
+                <MatchCard key={match.id} match={match} />
               ))}
-            </StaggerContainer>
+            </div>
           </div>
         </section>
       )}
 
-      {/* ─── PROCHAINS MATCHS ANIMÉS ──────────────────────────── */}
-      <section className="section-pau border-t border-pau-primary/10 bg-white">
-        <div className="container-pau">
-          {upcomingMatches.length === 0 ? (
-            <FadeIn>
-              <div className="card-pau mx-auto max-w-2xl p-10 text-center">
-                <p className="text-lead text-pau-primary/70">
-                  Aucun match programmé pour le moment. Le calendrier sera mis à jour prochainement.
-                </p>
-              </div>
-            </FadeIn>
-          ) : (
-            <StaggerContainer staggerDelay={0.2} className="grid gap-4 sm:gap-8 md:grid-cols-2 max-w-6xl mx-auto">
-              {upcomingMatches.map((match) => (
-                <StaggerItem key={match.id} className="flex justify-center">
-                  <HoverCard className="w-11/12 sm:w-full">
-                    <MatchCountdown match={match} />
-                  </HoverCard>
-                </StaggerItem>
+      {/* ACTUALITÉS */}
+      {latestArticles.length > 0 && (
+        <section className="border-b border-gray-100 py-20">
+          <div className="mx-auto max-w-7xl px-6 md:px-12">
+            <div className="mb-12 flex items-end justify-between">
+              <h2 className="font-display text-3xl font-bold uppercase text-pau-primary md:text-4xl">
+                Actualités
+              </h2>
+              <Link
+                href="/actualites"
+                className="font-mono text-sm uppercase tracking-wider text-pau-primary transition-colors hover:text-pau-yellow"
+              >
+                Voir tout →
+              </Link>
+            </div>
+            <div className="grid gap-8 md:grid-cols-3">
+              {latestArticles.map((article) => (
+                <ArticleCard key={article.id} article={article} />
               ))}
-            </StaggerContainer>
-          )}
-        </div>
-      </section>
+            </div>
+          </div>
+        </section>
+      )}
 
-      {/* ─── BOUTIQUE OFFICIELLE ──────────────────────────────────────────────── */}
+      {/* BOUTIQUE */}
       {featuredProducts.length > 0 && (
-        <section className="section-pau border-t border-white/10 bg-white">
-          <div className="container-pau">
-            <FadeIn>
-              <div className="mb-12 flex items-end justify-between">
-                <div>
-                  <div className="mb-4 h-1 w-16 bg-pau-yellow" />
-                  <h2 className="font-display text-3xl font-bold uppercase text-pau-primary md:text-4xl">
-                    Boutique officielle
-                  </h2>
-                </div>
-                <Link
-                  href="/boutique"
-                  className="group flex items-center gap-2 font-display text-sm font-bold uppercase tracking-wide text-pau-yellow transition-all hover:gap-3"
-                >
-                  Tout voir
-                  <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                    <path d="M9 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                </Link>
-              </div>
-            </FadeIn>
-
-            <StaggerContainer staggerDelay={0.1} className="grid grid-cols-2 gap-4 md:grid-cols-4 items-stretch">
+        <section className="py-20">
+          <div className="mx-auto max-w-7xl px-6 md:px-12">
+            <div className="mb-12 flex items-end justify-between">
+              <h2 className="font-display text-3xl font-bold uppercase text-pau-primary md:text-4xl">
+                Boutique officielle
+              </h2>
+              <Link
+                href="/boutique"
+                className="font-mono text-sm uppercase tracking-wider text-pau-primary transition-colors hover:text-pau-yellow"
+              >
+                Tout voir →
+              </Link>
+            </div>
+            <div className="grid gap-8 md:grid-cols-3">
               {featuredProducts.map((product) => {
                 const firstVariant = product.variants[0];
                 const price = firstVariant?.priceOverride || product.basePrice || 0;
-
                 return (
-                  <StaggerItem key={product.id}>
-                    <Link href={`/boutique/${product.slug}`} className="flex h-full">
-                      <HoverCard className="group relative flex h-full w-full flex-col overflow-hidden border border-pau-primary/20 bg-white transition-all hover:border-pau-yellow hover:shadow-md">
-                        {/* Image placeholder - aspect 3/4 */}
-                        <div className="relative aspect-[3/4] w-full overflow-hidden bg-gradient-to-br from-pau-night to-pau-primary">
-                          {product.images?.[0] ? (
-                            <Image
-                              src={product.images[0]}
-                              alt={product.name}
-                              fill
-                              className="object-cover transition-transform duration-300 group-hover:scale-110"
-                            />
-                          ) : (
-                            <div className="flex h-full items-center justify-center">
-                              <span className="font-display text-4xl font-black text-pau-yellow/20 md:text-5xl">
-                                {product.name.substring(0, 2).toUpperCase()}
-                              </span>
-                            </div>
-                          )}
-                          {product.featured && (
-                            <div className="absolute right-2 top-2 bg-pau-yellow px-2 py-1 font-mono text-[9px] font-bold uppercase tracking-wider text-pau-night">
-                              ★ Top
-                            </div>
-                          )}
-                        </div>
-
-                        {/* Info - hauteur fixe pour alignement */}
-                        <div className="mt-auto flex min-h-[120px] flex-col p-4">
-                          <p className="mb-1 font-mono text-[10px] uppercase tracking-wider text-pau-yellow">
-                            {product.category?.name || 'Produit'}
-                          </p>
-                          <h3 className="mb-2 line-clamp-2 font-display text-sm font-bold uppercase leading-tight text-pau-primary md:text-base">
-                            {product.name}
-                          </h3>
-                          <p className="mt-auto font-display text-lg font-black text-pau-yellow md:text-xl">
-                            {formatPrice(price)}
-                          </p>
-                        </div>
-                      </HoverCard>
-                    </Link>
-                  </StaggerItem>
+                  <ProductCard key={product.id} product={product} price={price} />
                 );
               })}
-            </StaggerContainer>
+            </div>
           </div>
         </section>
       )}
-
-      {/* ─── PARTENAIRES ──────────────────────────────────────────────── */}
-      <section className="section-pau border-y border-white/10 bg-white">
-        <div className="container-pau">
-          <FadeIn>
-            <div className="mb-12">
-              <div className="mb-4 h-1 w-16 bg-pau-gold" />
-              <h2 className="font-display text-3xl font-bold uppercase text-pau-primary md:text-4xl">
-                Nos partenaires
-              </h2>
-            </div>
-          </FadeIn>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-            <PartnerLogo name="Joma" logo="/logos/partners/Joma_Blue.png" href="https://www.joma-sport.com" />
-            <PartnerLogo name="Holy" logo="/logos/partners/Holy_Outline_Mono.png" href="https://fr.holy.com/" />
-            <PartnerLogo name="Intersport" logo="/logos/partners/Intersport.png" href="https://www.intersport.fr" />
-            <PartnerLogo name="Groupama" logo="/logos/partners/groupama-ws-2.png" href="https://www.groupama.fr" />
-            <PartnerLogo name="Sarthou" logo="/logos/partners/sarthou-site-1.png" />
-            <PartnerLogo name="Ville de Pau" logo="/logos/partners/Pau.png" href="https://www.pau.fr" />
-            <PartnerLogo name="Arobase Emploi" logo="/logos/partners/arobase.png" href="https://arobase-emploi.fr/" />
-            <PartnerLogo name="PBM Concept" logo="/logos/partners/pbm-concept.png" href="https://pbmconcept.fr/" />
-            <PartnerLogo name="Assurance de Navarre" logo="/logos/partners/assurance-navare.png" href="https://www.assurances-de-navarre.fr/" />
-            <PartnerLogo name="Bullux Services" logo="/logos/partners/bullux-services.png" />
-          </div>
-        </div>
-      </section>
-
-      {/* ─── NEWSLETTER ANIMÉE ──────────────────────────────────────────────── */}
-      <section className="section-pau border-t border-jaune/40 bg-white">
-        <div className="container-pau">
-          <FadeIn delay={0.2} className="mx-auto max-w-3xl text-center">
-            <div className="mx-auto mb-6 inline-block">
-              <div className="h-1 w-20 bg-pau-yellow" />
-            </div>
-            <h2 className="title-section mb-6 text-pau-primary">
-              Restez informé
-            </h2>
-            <p className="text-lead mb-8 text-pau-primary/80">
-              Recevez les actualités, offres exclusives et informations billetterie directement dans votre boîte mail.
-            </p>
-            <form className="flex flex-col gap-4 sm:flex-row sm:gap-3">
-              <input
-                type="email"
-                placeholder="votre@email.fr"
-                className="flex-1 rounded-lg border-2 border-white/20 bg-white/10 px-6 py-4 font-sans text-pau-primary placeholder-blanc/50 transition-all focus:border-jaune focus:bg-white/20 focus:outline-none"
-              />
-              <button type="submit" className="btn-pau-accent whitespace-nowrap">
-                S'inscrire
-              </button>
-            </form>
-          </FadeIn>
-        </div>
-      </section>
-    </>
+    </div>
   );
 }
 
+// Composant Match minimaliste
+function MatchCard({ match }) {
+  const date = new Date(match.kickoffAt);
+  return (
+    <Link
+      href={`/calendrier/${match.id}`}
+      className="group block bg-gray-50 p-8 transition-colors hover:bg-pau-primary"
+    >
+      <p className="mb-6 font-mono text-xs uppercase tracking-widest text-pau-primary/60 group-hover:text-pau-yellow">
+        {date.toLocaleDateString('fr-FR', {
+          weekday: 'long',
+          day: 'numeric',
+          month: 'long',
+        })}
+      </p>
+      <div className="flex items-center justify-between">
+        <div className="flex-1 text-right">
+          <p className="text-2xl font-bold text-pau-primary group-hover:text-white">
+            {match.homeTeam || 'Pau FC'}
+          </p>
+        </div>
+        <div className="mx-8">
+          <p className="font-mono text-sm text-pau-primary/40 group-hover:text-white/60">
+            {date.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' })}
+          </p>
+        </div>
+        <div className="flex-1">
+          <p className="text-2xl font-bold text-pau-primary group-hover:text-white">
+            {match.awayTeam}
+          </p>
+        </div>
+      </div>
+      <p className="mt-6 font-mono text-xs uppercase tracking-widest text-pau-primary/60 group-hover:text-pau-yellow">
+        {match.competition || 'Ligue 2 BKT'}
+      </p>
+    </Link>
+  );
+}
+
+// Composant Article minimaliste
+function ArticleCard({ article }) {
+  return (
+    <Link href={`/actualites/${article.slug}`} className="group block">
+      {article.coverImageUrl && (
+        <div className="relative mb-4 aspect-[4/3] overflow-hidden bg-gray-100">
+          <Image
+            src={article.coverImageUrl}
+            alt={article.title}
+            fill
+            className="object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+        </div>
+      )}
+      <p className="mb-2 font-mono text-xs uppercase tracking-widest text-pau-yellow">
+        {new Date(article.publishedAt).toLocaleDateString('fr-FR', {
+          day: 'numeric',
+          month: 'long',
+        })}
+      </p>
+      <h3 className="font-display text-xl font-bold uppercase leading-tight text-pau-primary transition-colors group-hover:text-pau-yellow">
+        {article.title}
+      </h3>
+    </Link>
+  );
+}
+
+// Composant Produit minimaliste
+function ProductCard({ product, price }) {
+  return (
+    <Link href={`/boutique/${product.slug}`} className="group block">
+      <div className="relative mb-4 aspect-square overflow-hidden bg-gray-100">
+        {product.images?.[0] ? (
+          <Image
+            src={product.images[0]}
+            alt={product.name}
+            fill
+            className="object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+        ) : (
+          <div className="flex h-full items-center justify-center">
+            <span className="font-display text-6xl font-black text-gray-200">
+              {product.name.substring(0, 2).toUpperCase()}
+            </span>
+          </div>
+        )}
+      </div>
+      <p className="mb-2 font-mono text-xs uppercase tracking-widest text-pau-yellow">
+        {product.category?.name || 'Produit'}
+      </p>
+      <h3 className="mb-2 font-display text-lg font-bold uppercase leading-tight text-pau-primary">
+        {product.name}
+      </h3>
+      <p className="font-display text-xl font-black text-pau-primary">
+        {formatPrice(price)}
+      </p>
+    </Link>
+  );
+}
