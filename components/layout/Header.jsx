@@ -18,14 +18,23 @@ const NAV = [
     label: 'Boutique',
     subMenu: [
       { href: '/boutique', label: 'Tous les produits' },
-      { href: '/boutique?categorie=tenues-officielles', label: 'Tenues Officielles 25/26' },
+      { href: '/boutique?categorie=tenues-officielles', label: 'Tenues Officielles' },
       { href: '/boutique?categorie=training', label: 'Training' },
       { href: '/boutique?categorie=lifestyle', label: 'Lifestyle' },
       { href: '/boutique?categorie=enfant', label: 'Enfant' },
       { href: '/boutique?categorie=accessoires', label: 'Accessoires' },
     ]
   },
-  { href: '/club', label: 'Club' },
+  {
+    href: '/club',
+    label: 'Club',
+    subMenu: [
+      { href: '/club', label: 'Présentation' },
+      { href: '/club/histoire', label: 'Histoire' },
+    ]
+  },
+  { href: '/partenaires', label: 'Partenaires' },
+  { href: '/contact', label: 'Contact' },
 ];
 
 export function Header() {
