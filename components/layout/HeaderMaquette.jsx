@@ -16,33 +16,11 @@ import { usePathname } from 'next/navigation';
 export function HeaderMaquette() {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const isHomepage = pathname === '/';
-
-      if (isHomepage) {
-        // Homepage : apparaître après avoir scrollé au-delà du hero complet
-        const heroHeight = window.innerHeight;
-        setIsScrolled(window.scrollY > heroHeight + 50);
-      } else {
-        // Autres pages : apparaître après un petit scroll
-        setIsScrolled(window.scrollY > 100);
-      }
-    };
-
-    handleScroll(); // Check initial state
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [pathname]);
 
   return (
     <header className="fixed top-0 left-0 z-50 w-full">
-      {/* Fond - transparent au début, sombre après scroll */}
-      <div className={`absolute inset-0 transition-all duration-300 ${
-        isScrolled ? 'bg-pau-night/95 backdrop-blur-md' : 'bg-gradient-to-b from-black/30 to-transparent'
-      }`} />
+      {/* Fond transparent avec gradient */}
+      <div className="pointer-events-none absolute inset-0 h-48 bg-gradient-to-b from-black/50 to-transparent" />
 
       <div className="relative flex items-center justify-between px-6 py-6 md:px-12 md:py-10">
         {/* Spacer gauche (responsive) */}
@@ -63,49 +41,21 @@ export function HeaderMaquette() {
           />
         </Link>
 
-        {/* Navigation Desktop */}
-        {!isScrolled ? (
-          // Au début : simple Billetterie + Boutique
-          <nav className="hidden w-full md:flex">
-            <Link
-              href="/billetterie"
-              className="absolute left-1/4 -translate-x-1/2 font-sans text-lg font-light tracking-wide text-white transition-colors hover:text-white/80"
-            >
-              Billetterie
-            </Link>
-            <Link
-              href="/boutique"
-              className="absolute left-3/4 -translate-x-1/2 font-sans text-lg font-light tracking-wide text-white transition-colors hover:text-white/80"
-            >
-              Boutique
-            </Link>
-          </nav>
-        ) : (
-          // Après scroll : menu complet
-          <nav className="hidden w-full md:flex md:items-center md:justify-end md:gap-8 md:pr-4">
-            <Link href="/billetterie" className="font-sans text-sm font-medium tracking-wide text-white transition-colors hover:text-pau-yellow">
-              Billetterie
-            </Link>
-            <Link href="/boutique" className="font-sans text-sm font-medium tracking-wide text-white transition-colors hover:text-pau-yellow">
-              Boutique
-            </Link>
-            <Link href="/calendrier" className="font-sans text-sm font-medium tracking-wide text-white transition-colors hover:text-pau-yellow">
-              Calendrier
-            </Link>
-            <Link href="/equipe" className="font-sans text-sm font-medium tracking-wide text-white transition-colors hover:text-pau-yellow">
-              Équipe
-            </Link>
-            <Link href="/actualites" className="font-sans text-sm font-medium tracking-wide text-white transition-colors hover:text-pau-yellow">
-              Actualités
-            </Link>
-            <Link href="/club" className="font-sans text-sm font-medium tracking-wide text-white transition-colors hover:text-pau-yellow">
-              Le Club
-            </Link>
-            <Link href="/partenaires" className="font-sans text-sm font-medium tracking-wide text-pau-gold transition-colors hover:text-pau-gold-hover">
-              Partenaires
-            </Link>
-          </nav>
-        )}
+        {/* Navigation Desktop - Simple comme la refonte */}
+        <nav className="hidden w-full md:flex">
+          <Link
+            href="/billetterie"
+            className="absolute left-1/4 -translate-x-1/2 font-sans text-lg font-light tracking-wide text-white transition-colors hover:text-white/80"
+          >
+            Billetterie
+          </Link>
+          <Link
+            href="/boutique"
+            className="absolute left-3/4 -translate-x-1/2 font-sans text-lg font-light tracking-wide text-white transition-colors hover:text-white/80"
+          >
+            Boutique
+          </Link>
+        </nav>
 
         {/* Menu burger mobile */}
         <button
