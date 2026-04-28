@@ -76,6 +76,7 @@ module.exports = {
       animation: {
         'fade-up': 'fadeUp 0.75s cubic-bezier(0.16,1,0.3,1) both',
         'fade-in': 'fadeIn 0.6s ease-out both',
+        'fade-in-up': 'fadeInUp 0.6s ease-out both',
         'count-up': 'countUp 0.6s cubic-bezier(0.16,1,0.3,1) both',
         'slide-in-right': 'slideInRight 0.7s cubic-bezier(0.16,1,0.3,1) both',
         'slide-in-left': 'slideInLeft 0.7s cubic-bezier(0.16,1,0.3,1) both',

@@ -1,11 +1,10 @@
+import Image from 'next/image';
 import { prisma } from '@/lib/prisma';
 import { PartnerCard } from '@/components/vitrine/PartnerCard';
 import {
   PARTNER_TIER_LABELS,
   PARTNER_TIER_ORDER,
 } from '@/lib/labels';
-import PageHero from '@/components/PageHero';
-import SectionLight from '@/components/SectionLight';
 
 export const dynamic = 'force-dynamic';
 
@@ -34,16 +33,34 @@ export default async function PartenairesPage() {
   }, {});
 
   return (
-    <>
-      <PageHero
-        image="/images/hero-partenaires.jpg"
-        surtitle="Soutiens & Engagements"
-        title="PARTENAIRES"
-        subtitle="Le Pau FC avance avec ses partenaires. Entreprises pionnières, institutions béarnaises, marques nationales."
-      />
+    <div className="bg-white">
+      {/* HERO SIMPLE */}
+      <section className="relative h-[300px] overflow-hidden border-b border-gray-200">
+        <Image
+          src="/images/hero-partenaires.jpg"
+          alt="Partenaires Pau FC"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-pau-night/40" />
+        <div className="relative z-10 flex h-full items-center">
+          <div className="mx-auto w-full max-w-7xl px-6 md:px-12">
+            <p className="mb-3 font-mono text-xs uppercase tracking-widest text-white/90">
+              Soutiens & Engagements
+            </p>
+            <h1 className="font-display text-4xl font-black uppercase text-white md:text-5xl">
+              Partenaires
+            </h1>
+            <p className="mt-3 text-sm text-white/90">
+              Le Pau FC avance avec ses partenaires.
+            </p>
+          </div>
+        </div>
+      </section>
 
-      <SectionLight>
-
+      {/* CONTENU */}
+      <div className="mx-auto max-w-7xl px-6 py-12 md:px-12">
         {PARTNER_TIER_ORDER.map((tier) => {
           const list = grouped[tier];
           if (!list || list.length === 0) return null;
@@ -52,14 +69,14 @@ export default async function PartenairesPage() {
           return (
             <div
               key={tier}
-              className="border-t border-pau-gold/15 py-12 md:py-20"
+              className="border-t border-gray-200 py-12"
             >
-              <header className="mb-10 flex items-end justify-between">
+              <header className="mb-8 flex items-end justify-between">
                 <div>
-                  <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-pau-gold">
+                  <p className="font-mono text-xs uppercase tracking-wider text-pau-gold">
                     {PARTNER_TIER_LABELS[tier]}
                   </p>
-                  <h2 className="mt-3 font-display text-4xl uppercase leading-crush tracking-tightest text-pau-primary md:text-6xl">
+                  <h2 className="mt-2 font-display text-2xl font-bold uppercase text-pau-primary md:text-3xl">
                     {tier === 'premium'
                       ? 'À nos côtés'
                       : tier === 'officiel'
@@ -67,7 +84,7 @@ export default async function PartenairesPage() {
                         : 'Le Béarn'}
                   </h2>
                 </div>
-                <span className="hidden font-mono text-[10px] uppercase tracking-[0.2em] text-pau-gold/60 md:inline">
+                <span className="hidden font-mono text-xs uppercase tracking-wider text-pau-gold/60 md:inline">
                   {list.length} {list.length > 1 ? 'partenaires' : 'partenaire'}
                 </span>
               </header>
@@ -88,50 +105,50 @@ export default async function PartenairesPage() {
         })}
 
         {partners.length === 0 && (
-          <div className="py-24">
+          <div className="py-12">
             <div className="border border-dashed border-pau-gold/30 p-10 text-center">
-              <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-pau-gold">
+              <p className="font-mono text-xs uppercase tracking-wider text-pau-gold">
                 Programme partenaires
               </p>
-              <p className="mt-4 font-sans text-pau-primary/70">
+              <p className="mt-4 text-sm text-pau-primary/70">
                 Devenez partenaire du Pau FC. Pour échanger sur nos offres et
-                programmes d&apos;hospitalité, contactez le service partenariats.
+                programmes d'hospitalité, contactez le service partenariats.
               </p>
             </div>
           </div>
         )}
 
-        <div className="border-t border-pau-gold/15 py-16 md:py-24">
-          <div className="grid gap-10 md:grid-cols-[1.5fr_1fr]">
+        <div className="border-t border-gray-200 py-12">
+          <div className="grid gap-10 md:grid-cols-2">
             <div>
-              <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-pau-gold">
+              <p className="font-mono text-xs uppercase tracking-wider text-pau-gold">
                 Devenir partenaire
               </p>
-              <h2 className="mt-4 font-display text-5xl uppercase leading-crush tracking-tightest text-pau-primary md:text-6xl">
+              <h2 className="mt-3 font-display text-2xl font-bold uppercase text-pau-primary md:text-3xl">
                 Rejoignez le club
               </h2>
-              <p className="mt-6 max-w-xl font-sans text-base leading-relaxed text-pau-primary/70">
+              <p className="mt-4 max-w-xl text-sm text-pau-primary/70">
                 Visibilité au Nouste Camp, hospitalités sur-mesure, opérations
-                co-brandées avec nos joueurs, soutien d&apos;un projet sportif et
+                co-brandées avec nos joueurs, soutien d'un projet sportif et
                 territorial. Nos équipes construisent chaque programme à votre
                 mesure.
               </p>
             </div>
-            <aside className="border border-pau-gold/30 p-6 md:p-8">
-              <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-pau-gold">
+            <aside className="border border-gray-200 bg-gray-50 p-6">
+              <p className="font-mono text-xs uppercase tracking-wider text-pau-gold">
                 Contact
               </p>
-              <dl className="mt-5 space-y-3 font-sans text-sm">
+              <dl className="mt-4 space-y-3 text-sm">
                 <div>
-                  <dt className="text-pau-primary/40">Service partenariats</dt>
+                  <dt className="text-pau-primary/50">Service partenariats</dt>
                   <dd className="mt-1 text-pau-primary">partenariats@paufc.fr</dd>
                 </div>
                 <div>
-                  <dt className="text-pau-primary/40">Téléphone</dt>
+                  <dt className="text-pau-primary/50">Téléphone</dt>
                   <dd className="mt-1 text-pau-primary">+33 5 59 00 00 00</dd>
                 </div>
                 <div>
-                  <dt className="text-pau-primary/40">Adresse</dt>
+                  <dt className="text-pau-primary/50">Adresse</dt>
                   <dd className="mt-1 text-pau-primary">
                     Nouste Camp · Boulevard de la Paix · 64000 Pau
                   </dd>
@@ -140,7 +157,7 @@ export default async function PartenairesPage() {
             </aside>
           </div>
         </div>
-      </SectionLight>
-    </>
+      </div>
+    </div>
   );
 }

@@ -1,15 +1,14 @@
+import Image from 'next/image';
 import { prisma } from '@/lib/prisma';
 import { PlayerCard } from '@/components/vitrine/PlayerCard';
 import { POSITION_LABELS } from '@/lib/labels';
-import PageHero from '@/components/PageHero';
-import SectionLight from '@/components/SectionLight';
 
 export const dynamic = 'force-dynamic';
 
 export const metadata = {
   title: 'Effectif',
   description:
-    'Joueurs et staff du Pau FC, saison 2025-2026. Découvrez l’effectif professionnel qui défend les couleurs du Béarn.',
+    'Joueurs et staff du Pau FC, saison 2025-2026. Découvrez l'effectif professionnel qui défend les couleurs du Béarn.',
 };
 
 const POSITION_ORDER = ['goalkeeper', 'defender', 'midfielder', 'forward'];
@@ -28,32 +27,51 @@ export default async function EquipePage() {
   }, {});
 
   return (
-    <>
-      <PageHero
-        image="/images/hero-equipe.jpg"
-        surtitle="Effectif professionnel · Saison 2025-2026"
-        title="L'ÉQUIPE"
-        subtitle={`${players.length} joueurs au service d'un seul objectif : porter haut les couleurs du Béarn.`}
-      />
+    <div className="bg-white">
+      {/* HERO SIMPLE */}
+      <section className="relative h-[300px] overflow-hidden border-b border-gray-200">
+        <Image
+          src="/images/hero-equipe.jpg"
+          alt="Effectif Pau FC"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-pau-night/40" />
+        <div className="relative z-10 flex h-full items-center">
+          <div className="mx-auto w-full max-w-7xl px-6 md:px-12">
+            <p className="mb-3 font-mono text-xs uppercase tracking-widest text-white/90">
+              Effectif professionnel · Saison 2025-2026
+            </p>
+            <h1 className="font-display text-4xl font-black uppercase text-white md:text-5xl">
+              L'Équipe
+            </h1>
+            <p className="mt-3 text-sm text-white/90">
+              {players.length} joueurs au service d'un seul objectif : porter haut les couleurs du Béarn.
+            </p>
+          </div>
+        </div>
+      </section>
 
-      <SectionLight>
+      {/* JOUEURS PAR POSTE */}
+      <div className="mx-auto max-w-7xl px-6 py-12 md:px-12">
         {POSITION_ORDER.map((pos, idx) => {
           const list = grouped[pos];
           if (!list || list.length === 0) return null;
           return (
             <div
               key={pos}
-              className={idx > 0 ? "border-t border-[#0F1E45]/10 pt-12 mt-12" : ""}
+              className={idx > 0 ? 'mt-12 border-t border-gray-200 pt-12' : ''}
             >
-              <header className="mb-8 flex items-end justify-between">
-                <h2 className="font-display text-4xl uppercase leading-crush tracking-tightest text-[#0F1E45] md:text-5xl">
+              <div className="mb-8 flex items-end justify-between">
+                <h2 className="font-display text-2xl font-bold uppercase text-pau-primary md:text-3xl">
                   {POSITION_LABELS[pos]}
                 </h2>
-                <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#0F1E45]/40">
+                <span className="font-mono text-xs uppercase tracking-wider text-pau-primary/40">
                   {list.length}
                 </span>
-              </header>
-              <div className="grid grid-cols-2 gap-x-4 gap-y-10 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+              </div>
+              <div className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
                 {list.map((p) => (
                   <PlayerCard key={p.id} player={p} />
                 ))}
@@ -61,24 +79,24 @@ export default async function EquipePage() {
             </div>
           );
         })}
-      </SectionLight>
+      </div>
 
       {all.length === 0 && <EmptyEquipe />}
-    </>
+    </div>
   );
 }
 
 function EmptyEquipe() {
   return (
-    <section className="container-fc py-24">
-      <div className="border border-dashed border-blanc/15 p-10 text-center">
-        <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-jaune">
+    <section className="mx-auto max-w-7xl px-6 py-12 md:px-12">
+      <div className="border border-dashed border-gray-300 p-10 text-center">
+        <p className="font-mono text-xs uppercase tracking-wider text-pau-yellow">
           Effectif vide
         </p>
-        <p className="mt-4 font-sans text-blanc/60">
+        <p className="mt-4 text-sm text-pau-primary/60">
           Aucun joueur publié. Lance le seed (
-          <code className="font-mono text-blanc">npm run db:seed</code>) pour
-          peupler l&apos;effectif.
+          <code className="font-mono text-pau-primary">npm run db:seed</code>) pour
+          peupler l'effectif.
         </p>
       </div>
     </section>

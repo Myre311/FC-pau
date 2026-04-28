@@ -37,52 +37,52 @@ export default async function CalendrierPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Header */}
-      <div className="bg-pau-primary text-white py-20">
-        <div className="container-pau text-center">
-          <p className="font-mono text-sm uppercase tracking-wider text-pau-yellow mb-4">
+      {/* Header simple */}
+      <div className="border-b border-gray-200 py-12">
+        <div className="mx-auto max-w-7xl px-6 md:px-12">
+          <p className="mb-3 font-mono text-xs uppercase tracking-widest text-pau-yellow">
             Saison 2025-2026
           </p>
-          <h1 className="font-display text-5xl md:text-7xl uppercase font-black text-white">
-            CALENDRIER
+          <h1 className="font-display text-4xl font-black uppercase text-pau-primary md:text-5xl">
+            Calendrier
           </h1>
-          <p className="mt-4 text-white/80 text-lg">
+          <p className="mt-3 text-sm text-pau-primary/60">
             {upcoming.length} matchs à venir • {recent.length} matchs joués
           </p>
         </div>
       </div>
 
       {/* Contenu */}
-      <div className="container-pau py-16">
+      <div className="mx-auto max-w-7xl px-6 py-12 md:px-12">
         {/* Matchs à venir */}
         {upcoming.length > 0 && (
-          <section className="mb-16">
-            <h2 className="text-3xl font-display font-bold text-pau-primary mb-8 uppercase">
+          <section className="mb-12">
+            <h2 className="mb-8 font-display text-2xl font-bold uppercase text-pau-primary">
               Prochains matchs
             </h2>
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {upcoming.map((match) => (
-                <div key={match.id} className="bg-pau-primary border-2 border-pau-yellow/50 p-6 hover:border-pau-yellow transition-colors">
-                  <div className="flex items-center justify-between mb-4">
+                <div key={match.id} className="border border-gray-200 p-6 hover:border-pau-yellow">
+                  <div className="mb-4 flex items-center justify-between">
                     {match.competition?.includes('Ligue 2') ? (
                       <Image
                         src="/LFP_LOGOTYPE_L2_BKT_MASTER_WHITE_RVB-2048x581.png"
                         alt="Ligue 2 BKT"
                         width={80}
                         height={23}
-                        className="h-auto w-20"
+                        className="h-auto w-20 brightness-0"
                       />
                     ) : (
-                      <span className="text-xs font-mono uppercase text-pau-yellow">
+                      <span className="font-mono text-xs uppercase text-pau-yellow">
                         {match.competition}
                       </span>
                     )}
-                    <span className="text-xs text-white/60">
+                    <span className="text-xs text-pau-primary/50">
                       {match.status}
                     </span>
                   </div>
 
-                  <p className="text-sm text-white/80 mb-4">
+                  <p className="mb-4 text-sm text-pau-primary/70">
                     {new Date(match.kickoffAt).toLocaleDateString('fr-FR', {
                       weekday: 'long',
                       day: 'numeric',
@@ -92,63 +92,23 @@ export default async function CalendrierPage() {
                     })}
                   </p>
 
-                  <div className="flex items-center justify-between mb-4 gap-2">
-                    <div className="flex items-center gap-2 flex-1 min-w-0">
-                      {match.isHome && (
-                        <div className="relative w-8 h-8 flex-shrink-0">
-                          <Image
-                            src="/logos/pau-fc.svg"
-                            alt="PAU FC"
-                            fill
-                            className="object-contain"
-                          />
-                        </div>
-                      )}
-                      {!match.isHome && match.opponentLogo && (
-                        <div className="relative w-8 h-8 flex-shrink-0">
-                          <Image
-                            src={match.opponentLogo}
-                            alt={match.opponent}
-                            fill
-                            className="object-contain"
-                          />
-                        </div>
-                      )}
-                      <span className="font-display text-lg text-white truncate">
+                  <div className="mb-4 flex items-center justify-between gap-2">
+                    <div className="flex flex-1 items-center gap-2">
+                      <span className="truncate font-display text-base text-pau-primary">
                         {match.isHome ? 'PAU FC' : match.opponent}
                       </span>
                     </div>
-                    <span className="font-display text-2xl text-pau-yellow flex-shrink-0">VS</span>
-                    <div className="flex items-center gap-2 flex-1 min-w-0 justify-end">
-                      <span className="font-display text-lg text-white truncate">
+                    <span className="font-mono text-sm text-pau-primary/40">VS</span>
+                    <div className="flex flex-1 items-center justify-end gap-2">
+                      <span className="truncate font-display text-base text-pau-primary">
                         {match.isHome ? match.opponent : 'PAU FC'}
                       </span>
-                      {!match.isHome && (
-                        <div className="relative w-8 h-8 flex-shrink-0">
-                          <Image
-                            src="/logos/pau-fc.svg"
-                            alt="PAU FC"
-                            fill
-                            className="object-contain"
-                          />
-                        </div>
-                      )}
-                      {match.isHome && match.opponentLogo && (
-                        <div className="relative w-8 h-8 flex-shrink-0">
-                          <Image
-                            src={match.opponentLogo}
-                            alt={match.opponent}
-                            fill
-                            className="object-contain"
-                          />
-                        </div>
-                      )}
                     </div>
                   </div>
 
-                  <div className="text-sm text-white/70">
+                  <div className="text-sm text-pau-primary/60">
                     <p className="mb-1">{match.venue}</p>
-                    <p className="font-mono text-xs uppercase text-white/50">
+                    <p className="font-mono text-xs uppercase text-pau-primary/50">
                       {match.isHome ? 'Domicile' : 'Extérieur'}
                     </p>
                   </div>
@@ -158,7 +118,7 @@ export default async function CalendrierPage() {
                       href={match.ticketUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="mt-4 inline-block bg-pau-yellow text-pau-night px-4 py-2 font-bold uppercase text-sm hover:bg-pau-yellow/90 transition-colors"
+                      className="mt-4 inline-block bg-pau-yellow px-4 py-2 font-mono text-xs font-bold uppercase text-pau-night hover:bg-pau-yellow/90"
                     >
                       Billetterie
                     </a>
@@ -171,90 +131,46 @@ export default async function CalendrierPage() {
 
         {/* Résultats récents */}
         {recent.length > 0 && (
-          <section>
-            <h2 className="text-3xl font-display font-bold text-pau-primary mb-8 uppercase">
+          <section className="border-t border-gray-200 pt-12">
+            <h2 className="mb-8 font-display text-2xl font-bold uppercase text-pau-primary">
               Résultats récents
             </h2>
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {recent.map((match) => (
-                <div key={match.id} className="border border-pau-yellow/30 bg-pau-primary p-6">
-                  <div className="flex items-center justify-between mb-4">
+                <div key={match.id} className="border border-gray-200 p-6">
+                  <div className="mb-4 flex items-center justify-between">
                     {match.competition?.includes('Ligue 2') ? (
                       <Image
                         src="/LFP_LOGOTYPE_L2_BKT_MASTER_WHITE_RVB-2048x581.png"
                         alt="Ligue 2 BKT"
                         width={80}
                         height={23}
-                        className="h-auto w-20"
+                        className="h-auto w-20 brightness-0"
                       />
                     ) : (
-                      <span className="text-xs font-mono uppercase text-white/60">
+                      <span className="font-mono text-xs uppercase text-pau-primary/60">
                         {match.competition}
                       </span>
                     )}
-                    <span className="text-xs text-white/50">
+                    <span className="text-xs text-pau-primary/50">
                       {new Date(match.kickoffAt).toLocaleDateString('fr-FR')}
                     </span>
                   </div>
 
-                  <div className="flex items-center justify-between mb-2 gap-2">
-                    <div className="flex items-center gap-2 flex-1 min-w-0">
-                      {match.isHome && (
-                        <div className="relative w-8 h-8 flex-shrink-0">
-                          <Image
-                            src="/logos/pau-fc.svg"
-                            alt="PAU FC"
-                            fill
-                            className="object-contain"
-                          />
-                        </div>
-                      )}
-                      {!match.isHome && match.opponentLogo && (
-                        <div className="relative w-8 h-8 flex-shrink-0">
-                          <Image
-                            src={match.opponentLogo}
-                            alt={match.opponent}
-                            fill
-                            className="object-contain"
-                          />
-                        </div>
-                      )}
-                      <span className="font-display text-lg text-white truncate">
-                        {match.isHome ? 'PAU FC' : match.opponent}
-                      </span>
-                    </div>
-                    <span className="font-display text-3xl text-pau-yellow flex-shrink-0">
+                  <div className="mb-2 flex items-center justify-between gap-2">
+                    <span className="truncate font-display text-base text-pau-primary">
+                      {match.isHome ? 'PAU FC' : match.opponent}
+                    </span>
+                    <span className="font-display text-2xl text-pau-yellow">
                       {match.isHome ? match.homeScore : match.awayScore}
                     </span>
                   </div>
 
                   <div className="flex items-center justify-between gap-2">
-                    <div className="flex items-center gap-2 flex-1 min-w-0">
-                      {!match.isHome && (
-                        <div className="relative w-8 h-8 flex-shrink-0">
-                          <Image
-                            src="/logos/pau-fc.svg"
-                            alt="PAU FC"
-                            fill
-                            className="object-contain"
-                          />
-                        </div>
-                      )}
-                      {match.isHome && match.opponentLogo && (
-                        <div className="relative w-8 h-8 flex-shrink-0">
-                          <Image
-                            src={match.opponentLogo}
-                            alt={match.opponent}
-                            fill
-                            className="object-contain"
-                          />
-                        </div>
-                      )}
-                      <span className="font-display text-lg text-white truncate">
-                        {match.isHome ? match.opponent : 'PAU FC'}
-                      </span>
-                    </div>
-                    <span className="font-display text-3xl text-white/60 flex-shrink-0">
+                    <span className="truncate font-display text-base text-pau-primary">
+                      {match.isHome ? match.opponent : 'PAU FC'}
+                    </span>
+                    <span className="font-display text-2xl text-pau-primary/60">
                       {match.isHome ? match.awayScore : match.homeScore}
                     </span>
                   </div>
@@ -265,21 +181,12 @@ export default async function CalendrierPage() {
         )}
 
         {upcoming.length === 0 && recent.length === 0 && (
-          <div className="text-center py-20">
-            <p className="text-pau-primary/60 text-lg">
+          <div className="py-20 text-center">
+            <p className="text-pau-primary/60">
               Aucun match programmé pour le moment.
             </p>
           </div>
         )}
-
-        <div className="mt-12 text-center">
-          <Link
-            href="/"
-            className="inline-block border-2 border-pau-primary text-pau-primary px-8 py-3 font-bold uppercase hover:bg-pau-primary hover:text-white transition-colors"
-          >
-            ← Retour à l'accueil
-          </Link>
-        </div>
       </div>
     </div>
   );

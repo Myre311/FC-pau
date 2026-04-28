@@ -56,7 +56,7 @@ export default async function HomePage() {
 
   return (
     <div className="bg-white">
-      {/* HERO SIMPLE */}
+      {/* HERO ANIMÉ AVEC VIDÉO */}
       <section className="relative h-[70vh] min-h-[500px] overflow-hidden">
         <video
           autoPlay
@@ -72,25 +72,25 @@ export default async function HomePage() {
         <div className="relative z-10 flex h-full items-end">
           <div className="w-full px-6 pb-16 md:px-12 md:pb-24">
             <div className="mx-auto max-w-7xl">
-              <p className="mb-4 font-mono text-xs uppercase tracking-widest text-pau-yellow">
+              <p className="mb-4 animate-fade-in font-mono text-xs uppercase tracking-widest text-pau-yellow">
                 Saison 2025-2026
               </p>
-              <h1 className="font-display text-5xl font-black uppercase leading-none text-white md:text-7xl lg:text-8xl">
+              <h1 className="animate-fade-in-up font-display text-5xl font-black uppercase leading-none text-white md:text-7xl lg:text-8xl">
                 PAU FOOTBALL<br />CLUB
               </h1>
-              <p className="mt-6 max-w-2xl text-lg text-white/90">
+              <p className="mt-6 max-w-2xl animate-fade-in text-lg text-white/90 delay-100">
                 Ligue 2 BKT · Nouste Camp
               </p>
-              <div className="mt-8 flex gap-4">
+              <div className="mt-8 flex animate-fade-in gap-4 delay-200">
                 <Link
                   href="/billetterie"
-                  className="bg-pau-yellow px-8 py-4 font-display text-sm font-bold uppercase text-pau-night transition-colors hover:bg-pau-yellow/90"
+                  className="bg-pau-yellow px-8 py-4 font-display text-sm font-bold uppercase text-pau-night transition-all hover:scale-105 hover:bg-pau-yellow/90"
                 >
                   Billetterie
                 </Link>
                 <Link
                   href="/boutique"
-                  className="border-2 border-white px-8 py-4 font-display text-sm font-bold uppercase text-white transition-colors hover:bg-white hover:text-pau-night"
+                  className="border-2 border-white px-8 py-4 font-display text-sm font-bold uppercase text-white transition-all hover:scale-105 hover:bg-white hover:text-pau-night"
                 >
                   Boutique
                 </Link>
@@ -102,14 +102,20 @@ export default async function HomePage() {
 
       {/* PROCHAINS MATCHS */}
       {upcomingMatches.length > 0 && (
-        <section className="border-b border-gray-100 py-20">
+        <section className="border-b border-gray-200 py-12">
           <div className="mx-auto max-w-7xl px-6 md:px-12">
-            <h2 className="mb-12 font-display text-3xl font-bold uppercase text-pau-primary md:text-4xl">
+            <h2 className="mb-8 font-display text-2xl font-bold uppercase text-pau-primary">
               Prochains matchs
             </h2>
-            <div className="grid gap-6 md:grid-cols-2">
-              {upcomingMatches.map((match) => (
-                <MatchCard key={match.id} match={match} />
+            <div className="grid gap-4 md:grid-cols-2">
+              {upcomingMatches.map((match, idx) => (
+                <div
+                  key={match.id}
+                  className="animate-fade-in-up"
+                  style={{ animationDelay: `${idx * 100}ms` }}
+                >
+                  <MatchCard match={match} />
+                </div>
               ))}
             </div>
           </div>
@@ -118,22 +124,28 @@ export default async function HomePage() {
 
       {/* ACTUALITÉS */}
       {latestArticles.length > 0 && (
-        <section className="border-b border-gray-100 py-20">
+        <section className="border-b border-gray-200 py-12">
           <div className="mx-auto max-w-7xl px-6 md:px-12">
-            <div className="mb-12 flex items-end justify-between">
-              <h2 className="font-display text-3xl font-bold uppercase text-pau-primary md:text-4xl">
+            <div className="mb-8 flex items-center justify-between">
+              <h2 className="font-display text-2xl font-bold uppercase text-pau-primary">
                 Actualités
               </h2>
               <Link
                 href="/actualites"
-                className="font-mono text-sm uppercase tracking-wider text-pau-primary transition-colors hover:text-pau-yellow"
+                className="font-mono text-xs uppercase tracking-wider text-pau-primary transition-colors hover:text-pau-yellow"
               >
-                Voir tout →
+                Voir tout
               </Link>
             </div>
-            <div className="grid gap-8 md:grid-cols-3">
-              {latestArticles.map((article) => (
-                <ArticleCard key={article.id} article={article} />
+            <div className="grid gap-6 md:grid-cols-3">
+              {latestArticles.map((article, idx) => (
+                <div
+                  key={article.id}
+                  className="animate-fade-in-up"
+                  style={{ animationDelay: `${idx * 100}ms` }}
+                >
+                  <ArticleCard article={article} />
+                </div>
               ))}
             </div>
           </div>
@@ -142,25 +154,31 @@ export default async function HomePage() {
 
       {/* BOUTIQUE */}
       {featuredProducts.length > 0 && (
-        <section className="py-20">
+        <section className="py-12">
           <div className="mx-auto max-w-7xl px-6 md:px-12">
-            <div className="mb-12 flex items-end justify-between">
-              <h2 className="font-display text-3xl font-bold uppercase text-pau-primary md:text-4xl">
+            <div className="mb-8 flex items-center justify-between">
+              <h2 className="font-display text-2xl font-bold uppercase text-pau-primary">
                 Boutique officielle
               </h2>
               <Link
                 href="/boutique"
-                className="font-mono text-sm uppercase tracking-wider text-pau-primary transition-colors hover:text-pau-yellow"
+                className="font-mono text-xs uppercase tracking-wider text-pau-primary transition-colors hover:text-pau-yellow"
               >
-                Tout voir →
+                Tout voir
               </Link>
             </div>
-            <div className="grid gap-8 md:grid-cols-3">
-              {featuredProducts.map((product) => {
+            <div className="grid gap-6 md:grid-cols-3">
+              {featuredProducts.map((product, idx) => {
                 const firstVariant = product.variants[0];
                 const price = firstVariant?.priceOverride || product.basePrice || 0;
                 return (
-                  <ProductCard key={product.id} product={product} price={price} />
+                  <div
+                    key={product.id}
+                    className="animate-fade-in-up"
+                    style={{ animationDelay: `${idx * 100}ms` }}
+                  >
+                    <ProductCard product={product} price={price} />
+                  </div>
                 );
               })}
             </div>
@@ -171,101 +189,103 @@ export default async function HomePage() {
   );
 }
 
-// Composant Match minimaliste
+// Composant Match simple avec animation hover
 function MatchCard({ match }) {
   const date = new Date(match.kickoffAt);
   return (
     <Link
       href={`/calendrier/${match.id}`}
-      className="group block bg-gray-50 p-8 transition-colors hover:bg-pau-primary"
+      className="block border border-gray-200 p-6 transition-all hover:scale-[1.02] hover:border-pau-yellow hover:shadow-lg"
     >
-      <p className="mb-6 font-mono text-xs uppercase tracking-widest text-pau-primary/60 group-hover:text-pau-yellow">
-        {date.toLocaleDateString('fr-FR', {
-          weekday: 'long',
-          day: 'numeric',
-          month: 'long',
-        })}
-      </p>
-      <div className="flex items-center justify-between">
-        <div className="flex-1 text-right">
-          <p className="text-2xl font-bold text-pau-primary group-hover:text-white">
-            {match.homeTeam || 'Pau FC'}
-          </p>
-        </div>
-        <div className="mx-8">
-          <p className="font-mono text-sm text-pau-primary/40 group-hover:text-white/60">
-            {date.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' })}
-          </p>
-        </div>
-        <div className="flex-1">
-          <p className="text-2xl font-bold text-pau-primary group-hover:text-white">
-            {match.awayTeam}
-          </p>
-        </div>
+      <div className="mb-4 flex items-center justify-between">
+        <Image
+          src="/LFP_LOGOTYPE_L2_BKT_MASTER_WHITE_RVB-2048x581.png"
+          alt="Ligue 2 BKT"
+          width={80}
+          height={23}
+          className="h-auto w-20 brightness-0"
+        />
+        <p className="font-mono text-xs uppercase tracking-widest text-pau-primary/60">
+          {date.toLocaleDateString('fr-FR', {
+            weekday: 'long',
+            day: 'numeric',
+            month: 'long',
+          })}
+        </p>
       </div>
-      <p className="mt-6 font-mono text-xs uppercase tracking-widest text-pau-primary/60 group-hover:text-pau-yellow">
-        {match.competition || 'Ligue 2 BKT'}
+      <p className="mb-4 font-mono text-xs text-pau-primary/70">
+        {date.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' })}
+      </p>
+      <div className="flex items-center justify-between gap-4">
+        <p className="flex-1 text-right text-lg font-bold text-pau-primary">
+          {match.homeTeam || 'Pau FC'}
+        </p>
+        <p className="font-mono text-sm text-pau-primary/40">VS</p>
+        <p className="flex-1 text-lg font-bold text-pau-primary">
+          {match.awayTeam}
+        </p>
+      </div>
+      <p className="mt-4 font-mono text-xs uppercase tracking-widest text-pau-yellow">
+        Vos places
       </p>
     </Link>
   );
 }
 
-// Composant Article minimaliste
+// Composant Article simple avec animation hover
 function ArticleCard({ article }) {
   return (
-    <Link href={`/actualites/${article.slug}`} className="group block">
+    <Link href={`/actualites/${article.slug}`} className="block border border-gray-200 transition-all hover:scale-[1.02] hover:border-pau-yellow hover:shadow-lg">
       {article.coverImageUrl && (
-        <div className="relative mb-4 aspect-[4/3] overflow-hidden bg-gray-100">
+        <div className="relative aspect-[4/3] overflow-hidden bg-gray-100">
           <Image
             src={article.coverImageUrl}
             alt={article.title}
             fill
-            className="object-cover transition-transform duration-500 group-hover:scale-105"
+            className="object-cover transition-transform duration-500 hover:scale-105"
           />
         </div>
       )}
-      <p className="mb-2 font-mono text-xs uppercase tracking-widest text-pau-yellow">
-        {new Date(article.publishedAt).toLocaleDateString('fr-FR', {
-          day: 'numeric',
-          month: 'long',
-        })}
-      </p>
-      <h3 className="font-display text-xl font-bold uppercase leading-tight text-pau-primary transition-colors group-hover:text-pau-yellow">
-        {article.title}
-      </h3>
+      <div className="p-4">
+        <p className="mb-2 font-mono text-xs uppercase tracking-widest text-pau-yellow">
+          {new Date(article.publishedAt).toLocaleDateString('fr-FR', {
+            day: 'numeric',
+            month: 'long',
+          })}
+        </p>
+        <h3 className="font-display text-base font-bold uppercase leading-tight text-pau-primary">
+          {article.title}
+        </h3>
+      </div>
     </Link>
   );
 }
 
-// Composant Produit minimaliste
+// Composant Produit simple avec animation hover
 function ProductCard({ product, price }) {
   return (
-    <Link href={`/boutique/${product.slug}`} className="group block">
-      <div className="relative mb-4 aspect-square overflow-hidden bg-gray-100">
-        {product.images?.[0] ? (
+    <Link href={`/boutique/${product.slug}`} className="block border border-gray-200 transition-all hover:scale-[1.02] hover:border-pau-yellow hover:shadow-lg">
+      <div className="relative aspect-square overflow-hidden bg-gray-100">
+        {product.images?.[0] && (
           <Image
             src={product.images[0]}
             alt={product.name}
             fill
-            className="object-cover transition-transform duration-500 group-hover:scale-105"
+            className="object-cover transition-transform duration-500 hover:scale-105"
           />
-        ) : (
-          <div className="flex h-full items-center justify-center">
-            <span className="font-display text-6xl font-black text-gray-200">
-              {product.name.substring(0, 2).toUpperCase()}
-            </span>
-          </div>
         )}
       </div>
-      <p className="mb-2 font-mono text-xs uppercase tracking-widest text-pau-yellow">
-        {product.category?.name || 'Produit'}
-      </p>
-      <h3 className="mb-2 font-display text-lg font-bold uppercase leading-tight text-pau-primary">
-        {product.name}
-      </h3>
-      <p className="font-display text-xl font-black text-pau-primary">
-        {formatPrice(price)}
-      </p>
+      <div className="p-4">
+        <p className="mb-1 font-mono text-xs uppercase tracking-widest text-pau-yellow">
+          {product.category?.name || 'Produit'}
+        </p>
+        <h3 className="mb-2 font-display text-sm font-bold uppercase leading-tight text-pau-primary">
+          {product.name}
+        </h3>
+        <p className="font-display text-lg font-black text-pau-primary">
+          {formatPrice(price)}
+        </p>
+      </div>
     </Link>
   );
 }

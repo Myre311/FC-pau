@@ -1,6 +1,4 @@
 import Image from 'next/image';
-import PageHero from '@/components/PageHero';
-import SectionLight from '@/components/SectionLight';
 
 export const metadata = {
   title: 'Le Club',
@@ -10,48 +8,67 @@ export const metadata = {
 
 export default function ClubPage() {
   return (
-    <article>
-      <PageHero
-        image="/images/hero-club.jpg"
-        surtitle="Le Club · Béarn · Depuis 1920"
-        title="LE CLUB"
-        subtitle="Le Pau FC est un club de football professionnel français basé à Pau, en Béarn. Plus d'un siècle d'histoire, une identité forte, un ancrage territorial revendiqué."
-      />
+    <div className="bg-white">
+      {/* HERO SIMPLE */}
+      <section className="relative h-[300px] overflow-hidden border-b border-gray-200">
+        <Image
+          src="/images/hero-club.jpg"
+          alt="Le Club Pau FC"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-pau-night/40" />
+        <div className="relative z-10 flex h-full items-center">
+          <div className="mx-auto w-full max-w-7xl px-6 md:px-12">
+            <p className="mb-3 font-mono text-xs uppercase tracking-widest text-white/90">
+              Le Club · Béarn · Depuis 1920
+            </p>
+            <h1 className="font-display text-4xl font-black uppercase text-white md:text-5xl">
+              Le Club
+            </h1>
+            <p className="mt-3 text-sm text-white/90">
+              Plus d'un siècle d'histoire, une identité forte, un ancrage territorial revendiqué.
+            </p>
+          </div>
+        </div>
+      </section>
 
-      <SectionLight>
-        <div className="grid gap-10 md:grid-cols-[1fr_2fr] md:gap-16">
-          <h2 className="font-display text-5xl uppercase leading-crush tracking-tightest text-[#0F1E45] md:text-6xl">
+      {/* CONTENU */}
+      <div className="mx-auto max-w-7xl px-6 py-12 md:px-12">
+        {/* Notre histoire */}
+        <div className="grid gap-10 md:grid-cols-2">
+          <h2 className="font-display text-2xl font-bold uppercase text-pau-primary md:text-3xl">
             Notre histoire
           </h2>
-          <div className="space-y-5 font-sans text-base leading-relaxed text-[#0F1E45]/75 md:text-lg">
+          <div className="space-y-4 text-sm text-pau-primary/75">
             <p>
               Fondé en 1920, le Pau FC plonge ses racines dans le sport
               amateur béarnais avant de se professionnaliser dans les années
-              2000. Le club évolue aujourd&apos;hui en Ligue 2 BKT et porte
+              2000. Le club évolue aujourd'hui en Ligue 2 BKT et porte
               fièrement les couleurs du Béarn.
             </p>
             <p>
-              Au fil des décennies, le Pau FC s&apos;est construit autour
-              d&apos;une philosophie claire : former, faire grandir, puis
+              Au fil des décennies, le Pau FC s'est construit autour
+              d'une philosophie claire : former, faire grandir, puis
               valoriser. Beaucoup de joueurs sont passés par le centre
-              d&apos;entraînement avant de rejoindre l&apos;élite.
+              d'entraînement avant de rejoindre l'élite.
             </p>
             <p>
-              La saison 2025-2026 s&apos;inscrit dans le plan stratégique
+              La saison 2025-2026 s'inscrit dans le plan stratégique
               2024-2028 piloté par la direction du club : montée en puissance
               sportive, modernisation des installations, ouverture sur le
               territoire.
             </p>
           </div>
         </div>
-      </SectionLight>
 
-      <SectionLight className="border-t border-[#0F1E45]/10">
-        <div className="grid gap-10 md:grid-cols-[1fr_2fr] md:gap-16">
-          <h2 className="font-display text-5xl uppercase leading-crush tracking-tightest text-[#0F1E45] md:text-6xl">
+        {/* Nos valeurs */}
+        <div className="mt-12 grid gap-10 border-t border-gray-200 pt-12 md:grid-cols-2">
+          <h2 className="font-display text-2xl font-bold uppercase text-pau-primary md:text-3xl">
             Nos valeurs
           </h2>
-          <ul className="space-y-8">
+          <ul className="space-y-6">
             <ValueItem
               num="01"
               title="Engagement"
@@ -74,36 +91,34 @@ export default function ClubPage() {
             />
           </ul>
         </div>
-      </SectionLight>
 
-      <SectionLight className="border-t border-[#0F1E45]/10">
-        <div className="grid gap-10 md:grid-cols-2 md:gap-16">
+        {/* Le projet */}
+        <div className="mt-12 grid gap-10 border-t border-gray-200 pt-12 md:grid-cols-2">
           <div>
-            <h2 className="font-display text-5xl uppercase leading-crush tracking-tightest text-[#0F1E45] md:text-6xl">
+            <h2 className="font-display text-2xl font-bold uppercase text-pau-primary md:text-3xl">
               Le projet
             </h2>
-            <p className="mt-6 font-sans text-base leading-relaxed text-[#0F1E45]/75 md:text-lg">
+            <p className="mt-4 text-sm text-pau-primary/75">
               Le plan stratégique 2024-2028 articule trois axes : performance
               sportive, modernisation des installations (dont la nouvelle
               tribune Béarn livrée en août 2026), et politique RSE renforcée
               via la Fondation Pau FC.
             </p>
           </div>
-          <dl className="grid grid-cols-2 gap-x-4 gap-y-8">
+          <dl className="grid grid-cols-2 gap-6">
             <Stat label="Année de fondation" value="1920" />
             <Stat label="Niveau" value="Ligue 2" />
             <Stat label="Nouste Camp" value="9 800 places" />
             <Stat label="Saison en cours" value="2025-2026" />
           </dl>
         </div>
-      </SectionLight>
 
-      <SectionLight className="border-t border-[#0F1E45]/10">
-        <div className="space-y-10">
-          <h2 className="font-display text-5xl uppercase leading-crush tracking-tightest text-[#0F1E45] md:text-6xl">
+        {/* Direction */}
+        <div className="mt-12 border-t border-gray-200 pt-12">
+          <h2 className="mb-8 font-display text-2xl font-bold uppercase text-pau-primary md:text-3xl">
             Direction
           </h2>
-          <div className="grid gap-8 md:grid-cols-3">
+          <div className="grid gap-6 md:grid-cols-3">
             <FounderCard
               name="Bernard Laporte-Fray"
               role="Président"
@@ -121,22 +136,22 @@ export default function ClubPage() {
             />
           </div>
         </div>
-      </SectionLight>
-    </article>
+      </div>
+    </div>
   );
 }
 
 function ValueItem({ num, title, text }) {
   return (
-    <li className="flex gap-6 border-t border-[#0F1E45]/10 pt-6">
-      <span className="flex-none font-display text-3xl leading-none text-[#FFD60A]">
+    <li className="flex gap-4 border-t border-gray-200 pt-4">
+      <span className="flex-none font-display text-xl text-pau-yellow">
         {num}
       </span>
       <div>
-        <h3 className="font-display text-2xl uppercase leading-crush tracking-tightest text-[#0F1E45]">
+        <h3 className="font-display text-base font-bold uppercase text-pau-primary">
           {title}
         </h3>
-        <p className="mt-2 font-sans text-base leading-relaxed text-[#0F1E45]/70">
+        <p className="mt-1 text-sm text-pau-primary/70">
           {text}
         </p>
       </div>
@@ -146,11 +161,11 @@ function ValueItem({ num, title, text }) {
 
 function Stat({ label, value }) {
   return (
-    <div className="border-t border-[#0F1E45]/10 pt-4">
-      <dt className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#0F1E45]/40">
+    <div className="border-t border-gray-200 pt-4">
+      <dt className="font-mono text-xs uppercase tracking-wider text-pau-primary/50">
         {label}
       </dt>
-      <dd className="mt-2 font-display text-3xl uppercase leading-crush tracking-tightest text-[#0F1E45] md:text-4xl">
+      <dd className="mt-2 font-display text-2xl font-bold uppercase text-pau-primary">
         {value}
       </dd>
     </div>
@@ -159,20 +174,20 @@ function Stat({ label, value }) {
 
 function FounderCard({ name, role, image }) {
   return (
-    <div className="group relative overflow-hidden bg-pau-primary">
-      <div className="relative aspect-[3/4] overflow-hidden">
+    <div className="border border-gray-200">
+      <div className="relative aspect-[3/4] overflow-hidden bg-gray-50">
         <Image
           src={image}
           alt={name}
           fill
-          className="object-cover transition-transform duration-500 group-hover:scale-105"
+          className="object-cover"
         />
       </div>
-      <div className="border-t-4 border-pau-yellow p-6">
-        <h3 className="font-display text-2xl uppercase leading-tight tracking-tight text-white">
+      <div className="border-t-2 border-pau-yellow p-4">
+        <h3 className="font-display text-base font-bold uppercase text-pau-primary">
           {name}
         </h3>
-        <p className="mt-2 font-mono text-xs uppercase tracking-wider text-pau-yellow">
+        <p className="mt-1 font-mono text-xs uppercase tracking-wider text-pau-yellow">
           {role}
         </p>
       </div>

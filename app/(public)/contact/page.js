@@ -1,6 +1,5 @@
+import Image from 'next/image';
 import { ContactForm } from '@/components/vitrine/ContactForm';
-import PageHero from '@/components/PageHero';
-import SectionLight from '@/components/SectionLight';
 
 export const metadata = {
   title: 'Contact',
@@ -10,23 +9,40 @@ export const metadata = {
 
 export default function ContactPage() {
   return (
-    <article>
-      <PageHero
-        image="/images/hero-stade.jpg"
-        surtitle="Une question, une idée ?"
-        title="CONTACT"
-        subtitle="Le service du club vous répond. Choisissez le bon sujet pour gagner du temps, on s'occupe du reste."
-      />
+    <div className="bg-white">
+      {/* HERO SIMPLE */}
+      <section className="relative h-[300px] overflow-hidden border-b border-gray-200">
+        <Image
+          src="/images/hero-stade.jpg"
+          alt="Contact Pau FC"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-pau-night/40" />
+        <div className="relative z-10 flex h-full items-center">
+          <div className="mx-auto w-full max-w-7xl px-6 md:px-12">
+            <p className="mb-3 font-mono text-xs uppercase tracking-widest text-white/90">
+              Une question, une idée ?
+            </p>
+            <h1 className="font-display text-4xl font-black uppercase text-white md:text-5xl">
+              Contact
+            </h1>
+            <p className="mt-3 text-sm text-white/90">
+              Le service du club vous répond.
+            </p>
+          </div>
+        </div>
+      </section>
 
-      <SectionLight>
-        <div className="grid gap-12 md:grid-cols-[1.4fr_1fr] md:gap-16">
+      {/* CONTENU */}
+      <div className="mx-auto max-w-7xl px-6 py-12 md:px-12">
+        <div className="grid gap-12 md:grid-cols-2">
           <section>
-            <div className="mt-12">
-              <ContactForm />
-            </div>
+            <ContactForm />
           </section>
 
-          <aside className="self-start space-y-6 md:sticky md:top-24">
+          <aside className="space-y-6">
             <Block title="Boutique & Commandes">
               <Line label="Email" value="boutique@paufc.fr" />
               <Line label="Téléphone" value="+33 5 59 00 00 00" />
@@ -58,18 +74,18 @@ export default function ContactPage() {
             </Block>
           </aside>
         </div>
-      </SectionLight>
-    </article>
+      </div>
+    </div>
   );
 }
 
 function Block({ title, children }) {
   return (
-    <div className="border border-pau-primary/10 bg-pau-primary/5 p-6">
-      <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-pau-yellow">
+    <div className="border border-gray-200 bg-gray-50 p-6">
+      <p className="font-mono text-xs uppercase tracking-wider text-pau-yellow">
         {title}
       </p>
-      <dl className="mt-4 space-y-3 font-sans text-sm">{children}</dl>
+      <dl className="mt-4 space-y-3 text-sm">{children}</dl>
     </div>
   );
 }
@@ -77,7 +93,7 @@ function Block({ title, children }) {
 function Line({ label, value }) {
   return (
     <div>
-      <dt className="font-mono text-[10px] uppercase tracking-[0.2em] text-pau-primary/40">
+      <dt className="font-mono text-xs uppercase tracking-wider text-pau-primary/50">
         {label}
       </dt>
       <dd className="mt-1 text-pau-primary">{value}</dd>

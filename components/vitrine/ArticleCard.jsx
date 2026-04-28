@@ -7,47 +7,45 @@ export function ArticleCard({ article, featured = false }) {
   return (
     <Link
       href={`/actualites/${article.slug}`}
-      className={`group flex flex-col outline-none focus-visible:ring-2 focus-visible:ring-pau-yellow ${
+      className={`group block border border-gray-200 transition-all hover:scale-[1.02] hover:border-pau-yellow hover:shadow-lg ${
         featured ? 'md:col-span-2' : ''
       }`}
     >
       <div
-        className={`relative w-full overflow-hidden border border-white/10 bg-pau-primary ${
+        className={`relative w-full overflow-hidden bg-gray-50 ${
           featured ? 'aspect-[16/9]' : 'aspect-[4/3]'
         }`}
       >
-        {article.coverImageUrl ? (
+        {article.coverImageUrl && (
           <Image
             src={article.coverImageUrl}
             alt={article.title}
             fill
             sizes={featured ? '(max-width: 768px) 100vw, 66vw' : '(max-width: 768px) 100vw, 33vw'}
-            className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+            className="object-cover transition-transform duration-500 group-hover:scale-105"
           />
-        ) : (
-          <div className="flex h-full w-full items-center justify-center font-display text-6xl uppercase text-white/10">
-            {ARTICLE_CATEGORY_LABELS[article.category]?.[0] ?? '·'}
-          </div>
         )}
-        <span className="absolute left-3 top-3 bg-pau-yellow px-2 py-1 font-mono text-[9px] uppercase tracking-[0.2em] text-pau-night">
+        <span className="absolute left-3 top-3 bg-pau-yellow px-2 py-1 font-mono text-xs uppercase tracking-wider text-pau-night">
           {ARTICLE_CATEGORY_LABELS[article.category]}
         </span>
       </div>
 
-      <div className="mt-4 flex-1">
-        <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-pau-primary/40">
+      <div className="p-4">
+        <p className="font-mono text-xs uppercase tracking-wider text-pau-primary/50">
           {formatArticleDate(article.publishedAt ?? article.createdAt)}
         </p>
         <h3
-          className={`mt-2 font-display uppercase leading-crush tracking-tightest text-pau-primary transition-colors group-hover:text-pau-yellow ${
-            featured ? 'text-4xl md:text-5xl' : 'text-2xl md:text-3xl'
+          className={`mt-2 font-display font-bold uppercase text-pau-primary ${
+            featured ? 'text-2xl md:text-3xl' : 'text-lg'
           }`}
         >
           {article.title}
         </h3>
-        <p className="mt-3 line-clamp-3 font-sans text-sm leading-relaxed text-pau-primary/60">
-          {article.excerpt}
-        </p>
+        {article.excerpt && (
+          <p className="mt-2 line-clamp-3 text-sm text-pau-primary/60">
+            {article.excerpt}
+          </p>
+        )}
       </div>
     </Link>
   );
