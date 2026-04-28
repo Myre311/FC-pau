@@ -17,7 +17,7 @@ export default function FAQCashlessPage() {
             QUESTIONS <span className="text-pau-yellow">FRÉQUENTES</span>
           </h1>
           <p className="mt-6 max-w-3xl font-sans text-lg leading-relaxed text-white/70 md:text-xl">
-            Tout ce que tu dois savoir sur le système cashless du Nouste Camp.
+            Tout ce que vous devez savoir sur le système cashless du Nouste Camp.
             Rechargement, remboursement, carte perdue, application mobile.
           </p>
         </div>
@@ -32,15 +32,15 @@ export default function FAQCashlessPage() {
         <div className="space-y-8">
           <FAQItem
             question="C'est quoi le système cashless ?"
-            answer="Le système cashless permet de payer toutes tes consommations au stade (buvette, boutique, food-trucks) sans utiliser d'espèces. Tu recharges ta carte en ligne avant le match, puis tu payes en présentant ta carte aux bornes sans contact."
+            answer="Le système cashless permet de payer toutes vos consommations au stade (buvette, boutique, food-trucks) sans utiliser d'espèces. Vous rechargez votre carte en ligne avant le match, puis payez en présentant votre carte aux bornes sans contact."
           />
           <FAQItem
             question="Est-ce que c'est obligatoire ?"
-            answer="Oui, le Nouste Camp est 100% cashless. Les paiements en espèces ne sont plus acceptés dans l'enceinte du stade. Tu peux utiliser une carte cashless physique ou ton smartphone (si compatible NFC)."
+            answer="Oui, le Nouste Camp est 100% cashless. Les paiements en espèces ne sont plus acceptés dans l'enceinte du stade. Vous pouvez utiliser une carte cashless physique ou votre smartphone (si compatible NFC)."
           />
           <FAQItem
             question="Comment obtenir ma carte ?"
-            answer="Commande ta carte gratuitement en ligne depuis ton espace client. Réception sous 7 jours par courrier. Tu peux aussi la récupérer directement au stade le jour du match (guichets dédiés à l'entrée)."
+            answer="Commandez votre carte gratuitement en ligne depuis votre espace client. Réception sous 7 jours par courrier. Vous pouvez aussi la récupérer directement au stade le jour du match (guichets dédiés à l'entrée)."
           />
         </div>
       </section>
@@ -54,7 +54,7 @@ export default function FAQCashlessPage() {
         <div className="space-y-8">
           <FAQItem
             question="Comment recharger ma carte ?"
-            answer="Connecte-toi à ton espace client sur paufc.fr, section 'Cashless'. Choisis le montant à recharger (minimum 10€) et paye par carte bancaire, Apple Pay ou Google Pay. Le crédit est disponible immédiatement sur ta carte."
+            answer="Connectez-vous à votre espace client sur paufc.fr, section 'Cashless'. Choisissez le montant à recharger (minimum 10€) et payez par carte bancaire, Apple Pay ou Google Pay. Le crédit est disponible immédiatement sur votre carte."
           />
           <FAQItem
             question="Quel est le montant minimum de rechargement ?"
@@ -62,11 +62,11 @@ export default function FAQCashlessPage() {
           />
           <FAQItem
             question="Puis-je recharger ma carte directement au stade ?"
-            answer="Oui, des bornes de rechargement sont disponibles à l'entrée du stade. Tu peux recharger ta carte par carte bancaire (sans contact uniquement). Les rechargements en espèces ne sont plus acceptés."
+            answer="Oui, des bornes de rechargement sont disponibles à l'entrée du stade. Vous pouvez recharger votre carte par carte bancaire (sans contact uniquement). Les rechargements en espèces ne sont plus acceptés."
           />
           <FAQItem
             question="Est-ce que je peux annuler un rechargement ?"
-            answer="Non, une fois le rechargement effectué, il ne peut pas être annulé. En revanche, tu peux demander le remboursement de ton solde non utilisé à tout moment (voir section Remboursement ci-dessous)."
+            answer="Non, une fois le rechargement effectué, il ne peut pas être annulé. En revanche, vous pouvez demander le remboursement de votre solde non utilisé à tout moment (voir section Remboursement ci-dessous)."
           />
         </div>
       </section>
@@ -80,15 +80,15 @@ export default function FAQCashlessPage() {
         <div className="space-y-8">
           <FAQItem
             question="Où puis-je utiliser ma carte cashless ?"
-            answer="Ta carte fonctionne à tous les points de vente du Nouste Camp : buvette principale, food-trucks, boutique officielle. Présente ta carte devant la borne sans contact, le montant est débité automatiquement."
+            answer="Votre carte fonctionne à tous les points de vente du Nouste Camp : buvette principale, food-trucks, boutique officielle. Présentez votre carte devant la borne sans contact, le montant est débité automatiquement."
           />
           <FAQItem
             question="Comment vérifier mon solde ?"
-            answer="Connecte-toi à ton espace client sur paufc.fr ou utilise l'application mobile Pau FC. Ton solde est mis à jour en temps réel après chaque transaction. Tu peux aussi demander ton solde aux bornes du stade."
+            answer="Connectez-vous à votre espace client sur paufc.fr ou utilise l'application mobile Pau FC. Votre solde est mis à jour en temps réel après chaque transaction. Vous pouvez aussi demander votre solde aux bornes du stade."
           />
           <FAQItem
             question="Que se passe-t-il si je n'ai plus de crédit ?"
-            answer="Si ton solde est insuffisant, la transaction sera refusée. Tu devras recharger ta carte soit via les bornes du stade, soit depuis ton smartphone via l'application mobile (si tu as une connexion internet)."
+            answer="Si votre solde est insuffisant, la transaction sera refusée. Vous devrez recharger votre carte soit via les bornes du stade, soit depuis votre smartphone via l'application mobile (si vous avez une connexion internet)."
           />
         </div>
       </section>
@@ -102,7 +102,7 @@ export default function FAQCashlessPage() {
         <div className="space-y-8">
           <FAQItem
             question="Puis-je me faire rembourser mon solde non utilisé ?"
-            answer="Oui, tu peux demander le remboursement de ton solde à tout moment depuis ton espace client. Le remboursement est effectué sur le moyen de paiement utilisé lors du rechargement, sous 7 jours ouvrés."
+            answer="Oui, vous pouvez demander le remboursement de votre solde à tout moment depuis votre espace client. Le remboursement est effectué sur le moyen de paiement utilisé lors du rechargement, sous 7 jours ouvrés."
           />
           <FAQItem
             question="Y a-t-il des frais de remboursement ?"
@@ -110,7 +110,7 @@ export default function FAQCashlessPage() {
           />
           <FAQItem
             question="Que devient mon solde si je perds ma carte ?"
-            answer="Ton solde est lié à ton compte client, pas à la carte physique. Si tu perds ta carte, connecte-toi à ton espace client pour la bloquer. Commande ensuite une nouvelle carte (gratuite), ton solde sera automatiquement transféré sur la nouvelle carte."
+            answer="Votre solde est lié à votre compte client, pas à la carte physique. Si vous perdez votre carte, connectez-vous à votre espace client pour la bloquer. Commandez ensuite une nouvelle carte (gratuite), votre solde sera automatiquement transféré sur la nouvelle carte."
           />
         </div>
       </section>
@@ -124,15 +124,15 @@ export default function FAQCashlessPage() {
         <div className="space-y-8">
           <FAQItem
             question="Ma carte ne fonctionne pas, que faire ?"
-            answer="Vérifie d'abord que ta carte est bien activée (connexion à ton espace client). Si le problème persiste, rends-toi au guichet billetterie du stade. Le personnel pourra vérifier l'état de ta carte et la remplacer si nécessaire (gratuit)."
+            answer="Vérifiez d'abord que votre carte est bien activée (connexion à votre espace client). Si le problème persiste, rendez-vous au guichet billetterie du stade. Le personnel pourra vérifier l'état de votre carte et la remplacer si nécessaire (gratuit)."
           />
           <FAQItem
             question="J'ai perdu ma carte, comment la bloquer ?"
-            answer="Connecte-toi immédiatement à ton espace client, section 'Cashless' > 'Bloquer ma carte'. La carte sera désactivée en quelques secondes. Ton solde reste sécurisé sur ton compte."
+            answer="Connectez-vous immédiatement à votre espace client, section 'Cashless' > 'Bloquer ma carte'. La carte sera désactivée en quelques secondes. Votre solde reste sécurisé sur votre compte."
           />
           <FAQItem
             question="Puis-je utiliser mon smartphone au lieu de la carte ?"
-            answer="Oui, si ton smartphone est compatible NFC (paiement sans contact). Télécharge l'application mobile Pau FC, active la fonction cashless et ajoute ton compte. Présente ton smartphone aux bornes exactement comme une carte physique."
+            answer="Oui, si votre smartphone est compatible NFC (paiement sans contact). Téléchargez l'application mobile Pau FC, activez la fonction cashless et ajoutez votre compte. Présentez votre smartphone aux bornes exactement comme une carte physique."
           />
         </div>
       </section>
@@ -146,15 +146,15 @@ export default function FAQCashlessPage() {
         <div className="space-y-8">
           <FAQItem
             question="Mes données bancaires sont-elles sécurisées ?"
-            answer="Oui, tous les paiements sont traités via Stripe Inc., certifié PCI-DSS niveau 1 (plus haut niveau de sécurité bancaire). Le Pau FC ne stocke jamais tes coordonnées bancaires sur ses serveurs."
+            answer="Oui, tous les paiements sont traités via Stripe Inc., certifié PCI-DSS niveau 1 (plus haut niveau de sécurité bancaire). Le Pau FC ne stocke jamais vos coordonnées bancaires sur ses serveurs."
           />
           <FAQItem
             question="Qui a accès à mes données de consommation ?"
-            answer="Tes données de consommation (montant dépensé, type de produit) sont utilisées uniquement à des fins statistiques internes et pour améliorer nos services. Elles ne sont jamais partagées avec des tiers sans ton consentement. Voir notre politique RGPD pour plus de détails."
+            answer="Vos données de consommation (montant dépensé, type de produit) sont utilisées uniquement à des fins statistiques internes et pour améliorer nos services. Elles ne sont jamais partagées avec des tiers sans votre consentement. Voir notre politique RGPD pour plus de détails."
           />
           <FAQItem
             question="Puis-je supprimer mon compte cashless ?"
-            answer="Oui, tu peux demander la suppression de ton compte cashless à tout moment. Avant suppression, assure-toi d'avoir demandé le remboursement de ton solde. Contact : cashless@paufc.fr"
+            answer="Oui, vous pouvez demander la suppression de votre compte cashless à tout moment. Avant suppression, assurez-vous d'avoir demandé le remboursement de votre solde. Contact : cashless@paufc.fr"
           />
         </div>
       </section>
@@ -166,7 +166,7 @@ export default function FAQCashlessPage() {
             Toujours une question ?
           </h2>
           <p className="mt-6 font-sans text-base leading-relaxed text-pau-primary/75 md:text-lg">
-            Si tu ne trouves pas la réponse à ta question, contacte notre
+            Si vous ne trouvez pas la réponse à votre question, contactez notre
             service billetterie. Nous te répondrons dans les plus brefs délais.
           </p>
 

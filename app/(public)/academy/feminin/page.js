@@ -136,8 +136,8 @@ export default function PoleFemininPage() {
             Rejoindre le pôle féminin
           </h2>
           <p className="mt-6 font-sans text-base leading-relaxed text-pau-primary/75 md:text-lg">
-            Tu as entre 12 et 18 ans, tu es passionnée de football et tu veux
-            intégrer un projet ambitieux ? Découvre comment candidater au pôle
+            Vous avez entre 12 et 18 ans, vous êtes passionnée de football et vous souhaitez
+            intégrer un projet ambitieux ? Découvrez comment candidater au pôle
             féminin de l'Academy Pau FC.
           </p>
           <div className="mt-8 flex flex-wrap gap-4">

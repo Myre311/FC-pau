@@ -22,7 +22,7 @@ export default function ContenusPage() {
       icon: "TICKET",
       fields: [
         { key: "billetterie_title", label: "Titre principal", value: "Vivez chaque match à domicile", type: "text" },
-        { key: "billetterie_subtitle", label: "Sous-titre", value: "Viens soutenir le Pau FC au Nouste Camp ! Achète tes billets en ligne et profite d'une ambiance unique au cœur du Béarn.", type: "textarea" },
+        { key: "billetterie_subtitle", label: "Sous-titre", value: "Venez soutenir le Pau FC au Nouste Camp ! Achetez vos billets en ligne et profitez d'une ambiance unique au cœur du Béarn.", type: "textarea" },
         { key: "tarif_plein", label: "Tarif plein (description)", value: "Tribune Principale - Catégorie A", type: "text" },
         { key: "cashless_title", label: "Titre cashless", value: "Carte cashless", type: "text" },
       ],
@@ -63,7 +63,6 @@ export default function ContenusPage() {
 
   return (
     <div className="space-y-8">
-      {/* En-tête */}
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-bold text-gray-900">Textes du site</h1>
@@ -76,7 +75,6 @@ export default function ContenusPage() {
         </button>
       </div>
 
-      {/* Info box */}
       <div className="rounded-lg border border-blue-200 bg-blue-50 p-4">
         <div className="flex gap-3">
           <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-blue-100">
@@ -94,14 +92,12 @@ export default function ContenusPage() {
         </div>
       </div>
 
-      {/* Sections de contenu */}
       <div className="space-y-6">
         {sections.map((section) => (
           <div
             key={section.id}
             className="rounded-lg border border-gray-200 bg-white shadow-sm"
           >
-            {/* Header section */}
             <div className="border-b border-gray-200 p-6">
               <div className="flex items-center gap-3">
                 <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-pau-yellow/10 text-xs font-bold text-pau-yellow">
@@ -116,7 +112,6 @@ export default function ContenusPage() {
               </div>
             </div>
 
-            {/* Champs */}
             <div className="divide-y divide-gray-100 p-6">
               {section.fields.map((field) => (
                 <div key={field.key} className="grid gap-4 py-4 md:grid-cols-[200px_1fr] md:items-start">
@@ -148,7 +143,6 @@ export default function ContenusPage() {
         ))}
       </div>
 
-      {/* Historique des modifications */}
       <div className="rounded-lg border border-gray-200 bg-white shadow-sm">
         <div className="border-b border-gray-200 p-6">
           <h2 className="text-lg font-semibold text-gray-900">Historique des modifications</h2>
@@ -186,7 +180,6 @@ export default function ContenusPage() {
         </div>
       </div>
 
-      {/* Actions finales */}
       <div className="flex items-center justify-between rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
         <div>
           <p className="font-medium text-gray-900">Modifications non enregistrées</p>

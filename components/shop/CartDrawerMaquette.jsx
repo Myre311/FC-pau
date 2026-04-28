@@ -1,11 +1,14 @@
 'use client';
 
-import { useCartStore } from '@/stores/cart';
+import { useCart, selectCartSubtotal } from '@/stores/cart';
 import Image from 'next/image';
 import Link from 'next/link';
 
 export function CartDrawerMaquette({ isOpen, onClose }) {
-  const { items, removeItem, updateQuantity, total } = useCartStore();
+  const items = useCart((state) => state.items);
+  const removeItem = useCart((state) => state.removeItem);
+  const setQuantity = useCart((state) => state.setQuantity);
+  const total = useCart(selectCartSubtotal);
 
   if (!isOpen) return null;
 
@@ -63,7 +66,7 @@ export function CartDrawerMaquette({ isOpen, onClose }) {
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-2">
                         <button
-                          onClick={() => updateQuantity(item.id, Math.max(1, item.quantity - 1))}
+                          onClick={() => setQuantity(item.variantId, Math.max(1, item.quantity - 1))}
                           className="flex h-6 w-6 items-center justify-center border border-white/20 text-white/80"
                         >
                           −
@@ -72,7 +75,7 @@ export function CartDrawerMaquette({ isOpen, onClose }) {
                           {item.quantity}
                         </span>
                         <button
-                          onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                          onClick={() => setQuantity(item.variantId, item.quantity + 1)}
                           className="flex h-6 w-6 items-center justify-center border border-white/20 text-white/80"
                         >
                           +
@@ -84,7 +87,7 @@ export function CartDrawerMaquette({ isOpen, onClose }) {
                     </div>
                   </div>
                   <button
-                    onClick={() => removeItem(item.id)}
+                    onClick={() => removeItem(item.variantId)}
                     className="self-start text-white/40 transition-colors hover:text-white"
                   >
                     ×

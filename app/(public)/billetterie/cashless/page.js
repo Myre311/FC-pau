@@ -4,7 +4,7 @@ import SectionLight from '@/components/SectionLight';
 export const metadata = {
   title: 'Carte Cashless · Billetterie',
   description:
-    'Le Nouste Camp est 100% cashless. Recharge ta carte en ligne, paye sans contact, profite d\'avantages exclusifs.',
+    'Le Nouste Camp est 100% cashless. Rechargez votre carte en ligne, paye sans contact, profite d\'avantages exclusifs.',
 };
 
 export default function CashlessPage() {
@@ -18,7 +18,7 @@ export default function CashlessPage() {
             100% <span className="text-pau-yellow">CASHLESS</span>
           </h1>
           <p className="mt-6 max-w-3xl font-sans text-lg leading-relaxed text-white/70 md:text-xl">
-            Le Nouste Camp est entièrement cashless. Paye tes consommations avec ta carte sans contact ou ton smartphone. Rapide, sécurisé, moderne.
+            Le Nouste Camp est entièrement cashless. Payez vos consommations avec votre carte sans contact ou votre smartphone. Rapide, sécurisé, moderne.
           </p>
         </div>
       </section>
@@ -34,23 +34,23 @@ export default function CashlessPage() {
         <div className="space-y-8">
           <Step
             number="1"
-            title="Obtiens ta carte"
-            description="Commande ta carte cashless en ligne (gratuite) ou récupère-la directement au stade le jour du match (guichets dédiés)."
+            title="Obtenez votre carte"
+            description="Commande votre carte cashless en ligne (gratuite) ou récupère-la directement au stade le jour du match (guichets dédiés)."
           />
           <Step
             number="2"
             title="Recharge en ligne"
-            description="Recharge ta carte depuis ton espace client avant le match. Paiement par carte bancaire, Apple Pay ou Google Pay. Montant minimum : 10€."
+            description="Rechargez votre carte depuis votre espace client avant le match. Paiement par carte bancaire, Apple Pay ou Google Pay. Montant minimum : 10€."
           />
           <Step
             number="3"
             title="Paye au stade"
-            description="Présente ta carte cashless aux bornes de la buvette, boutique ou food-trucks. Le montant est débité automatiquement."
+            description="Présente votre carte cashless aux bornes de la buvette, boutique ou food-trucks. Le montant est débité automatiquement."
           />
           <Step
             number="4"
-            title="Récupère ton solde"
-            description="Solde non utilisé remboursé à tout moment depuis ton espace client. Traitement sous 7 jours."
+            title="Récupère votre solde"
+            description="Solde non utilisé remboursé à tout moment depuis votre espace client. Traitement sous 7 jours."
           />
         </div>
       </section>
@@ -68,7 +68,7 @@ export default function CashlessPage() {
           />
           <AvantageCard
             title="Sécurité"
-            description="Zéro risque de perte ou vol d'espèces. Carte bloquable depuis ton compte en cas de perte."
+            description="Zéro risque de perte ou vol d'espèces. Carte bloquable depuis votre compte en cas de perte."
           />
           <AvantageCard
             title="Remboursable"
@@ -80,7 +80,7 @@ export default function CashlessPage() {
           />
           <AvantageCard
             title="Application mobile"
-            description="Consulte ton solde, recharge ta carte et gère tes dépenses depuis l'app."
+            description="Consultez votre solde, rechargez votre carte et gérez vos dépenses depuis l'app."
           />
           <AvantageCard
             title="Écologique"
@@ -97,7 +97,7 @@ export default function CashlessPage() {
           </h2>
           <div className="space-y-5 font-sans text-base leading-relaxed text-pau-primary/75 md:text-lg">
             <p>
-              Profite d'offres exclusives en rechargeant ta carte cashless avant
+              Profitez d'offres exclusives en rechargeant votre carte cashless avant
               le match. Bonus de rechargement, promos buvette, menus spéciaux.
             </p>
             <p>
@@ -124,7 +124,7 @@ export default function CashlessPage() {
               Questions fréquentes
             </h2>
             <p className="mt-6 font-sans text-base leading-relaxed text-pau-primary/75 md:text-lg">
-              Tu as des questions sur le système cashless ? Consulte notre FAQ
+              Vous avez des questions sur le système cashless ? Consultez notre FAQ
               complète ou contacte le service billetterie.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
@@ -148,7 +148,7 @@ export default function CashlessPage() {
               Commander ma carte
             </h2>
             <p className="mt-6 font-sans text-base leading-relaxed text-pau-primary/75 md:text-lg">
-              Commande ta carte cashless gratuitement. Réception sous 7 jours
+              Commande votre carte cashless gratuitement. Réception sous 7 jours
               par courrier, ou retrait au stade le jour du match.
             </p>
             <div className="mt-8">

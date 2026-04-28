@@ -173,8 +173,8 @@ export default function PoleMasculinPage() {
             Rejoindre le pôle masculin
           </h2>
           <p className="mt-6 font-sans text-base leading-relaxed text-pau-primary/75 md:text-lg">
-            Tu as entre 12 et 18 ans, tu es passionné de football et tu veux
-            intégrer un centre de formation reconnu ? Découvre comment
+            Vous avez entre 12 et 18 ans, vous êtes passionné de football et vous souhaitez
+            intégrer un centre de formation reconnu ? Découvrez comment
             candidater au pôle masculin de l'Academy Pau FC.
           </p>
           <div className="mt-8 flex flex-wrap gap-4">

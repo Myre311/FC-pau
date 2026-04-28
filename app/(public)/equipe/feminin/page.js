@@ -73,8 +73,8 @@ export default function EquipeFemininPage() {
             </h2>
             <p className="mt-6 font-sans text-base leading-relaxed text-pau-primary/75 md:text-lg">
               Le pôle féminin du Pau FC recrute des joueuses motivées et
-              talentueuses. Si tu as entre 16 et 25 ans et que tu souhaites
-              t&apos;investir dans un projet ambitieux, contacte-nous.
+              talentueuses. Si vous avez entre 16 et 25 ans et que vous souhaitez
+              t&apos;investir dans un projet ambitieux, contactez-nous.
             </p>
 
             <div className="mt-8 space-y-4">

@@ -90,8 +90,8 @@ export default function AcademyPage() {
                 Intégrer l&apos;Academy
               </h2>
               <p className="mt-6 font-sans text-base leading-relaxed text-pau-primary/75 md:text-lg">
-                Tu as entre 12 et 18 ans, tu es passionné(e) de football et tu
-                veux progresser dans un environnement professionnel ? Découvre
+                Vous avez entre 12 et 18 ans, vous êtes passionné(e) de football et vous
+                souhaitez progresser dans un environnement professionnel ? Découvrez
                 comment rejoindre l'Academy du Pau FC.
               </p>
               <div className="mt-8">

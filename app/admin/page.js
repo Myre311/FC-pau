@@ -83,11 +83,10 @@ export default async function AdminDashboardPage() {
 
   return (
     <div className="space-y-8">
-      {/* En-tête moderne */}
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-bold text-gray-900">Tableau de bord</h1>
-          <p className="mt-1 text-sm text-gray-500">Vue d'ensemble de votre boutique Pau FC</p>
+          <p className="mt-1 text-sm text-gray-500">Boutique Pau FC</p>
         </div>
         <div className="flex gap-3">
           <button className="rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50">
@@ -99,7 +98,6 @@ export default async function AdminDashboardPage() {
         </div>
       </div>
 
-      {/* Métriques Shopify-style */}
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
         <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
           <p className="text-sm font-medium text-gray-600">Visites du site</p>
@@ -146,7 +144,6 @@ export default async function AdminDashboardPage() {
         </div>
       </div>
 
-      {/* Graphique ventes - Mockup visuel */}
       <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
         <div className="mb-6 flex items-center justify-between">
           <h2 className="text-lg font-semibold text-gray-900">Ventes sur 7 jours</h2>
@@ -177,7 +174,6 @@ export default async function AdminDashboardPage() {
         </div>
       </div>
 
-      {/* Actions rapides */}
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <Link
           href="/admin/produits/nouveau"
@@ -209,7 +205,6 @@ export default async function AdminDashboardPage() {
         </Link>
       </div>
 
-      {/* Vue d'ensemble */}
       <div className="grid gap-4 md:grid-cols-4">
         <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
           <div className="flex items-center justify-between">
@@ -260,9 +255,7 @@ export default async function AdminDashboardPage() {
         </div>
       </div>
 
-      {/* Activité récente */}
       <div className="grid gap-6 lg:grid-cols-2">
-        {/* Dernières commandes */}
         <div className="rounded-lg border border-gray-200 bg-white shadow-sm">
           <div className="flex items-center justify-between border-b border-gray-200 p-6">
             <h2 className="text-lg font-semibold text-gray-900">Dernières commandes</h2>
@@ -273,7 +266,7 @@ export default async function AdminDashboardPage() {
           <div className="divide-y divide-gray-100">
             {recentOrders.length === 0 ? (
               <div className="p-8 text-center">
-                <p className="text-sm text-gray-500">Aucune commande pour le moment.</p>
+                <p className="text-sm text-gray-500">Aucune commande</p>
               </div>
             ) : (
               recentOrders.map((o) => (
@@ -298,7 +291,6 @@ export default async function AdminDashboardPage() {
           </div>
         </div>
 
-        {/* Top produits */}
         <div className="rounded-lg border border-gray-200 bg-white shadow-sm">
           <div className="flex items-center justify-between border-b border-gray-200 p-6">
             <h2 className="text-lg font-semibold text-gray-900">Top produits 30j</h2>
@@ -306,7 +298,7 @@ export default async function AdminDashboardPage() {
           <div className="divide-y divide-gray-100">
             {topProducts.length === 0 ? (
               <div className="p-8 text-center">
-                <p className="text-sm text-gray-500">Pas encore de ventes.</p>
+                <p className="text-sm text-gray-500">Aucune vente</p>
               </div>
             ) : (
               topProducts.map((row, i) => {

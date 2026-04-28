@@ -17,8 +17,8 @@ export default function IntegrerPage() {
             REJOINDRE <span className="text-pau-yellow">L&apos;ACADEMY</span>
           </h1>
           <p className="mt-6 max-w-3xl font-sans text-lg leading-relaxed text-white/70 md:text-xl">
-            Tu as entre 12 et 18 ans et tu veux intégrer un projet ambitieux ?
-            Découvre comment candidater au pôle masculin ou féminin de l'Academy
+            Vous avez entre 12 et 18 ans et vous souhaitez intégrer un projet ambitieux ?
+            Découvrez comment candidater au pôle masculin ou féminin de l'Academy
             Pau FC.
           </p>
         </div>
@@ -160,7 +160,7 @@ export default function IntegrerPage() {
             Candidater maintenant
           </h2>
           <p className="mt-6 font-sans text-base leading-relaxed text-pau-primary/75 md:text-lg">
-            Prêt(e) à rejoindre l'Academy du Pau FC ? Envoie ton dossier de
+            Prêt(e) à rejoindre l'Academy du Pau FC ? Envoyez votre dossier de
             candidature par email avec les documents suivants :
           </p>
           <ul className="mt-4 ml-5 list-disc space-y-2 font-sans text-base text-pau-primary/75">

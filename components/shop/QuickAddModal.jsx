@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import { useCartStore } from '@/stores/cart';
+import { useCart } from '@/stores/cart';
 
 /**
  * Modal Quick Add - Style maquette client
@@ -11,7 +11,7 @@ import { useCartStore } from '@/stores/cart';
 export function QuickAddModal({ product, isOpen, onClose }) {
   const [selectedSize, setSelectedSize] = useState('L');
   const [quantity, setQuantity] = useState(1);
-  const addItem = useCartStore((state) => state.addItem);
+  const addItem = useCart((state) => state.addItem);
 
   if (!isOpen || !product) return null;
 

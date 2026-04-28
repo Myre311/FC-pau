@@ -45,7 +45,6 @@ export default function MarketingPage() {
 
   return (
     <div className="space-y-8">
-      {/* En-tête */}
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-bold text-gray-900">Marketing</h1>
@@ -58,7 +57,6 @@ export default function MarketingPage() {
         </button>
       </div>
 
-      {/* Statistiques globales */}
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
           <p className="text-sm font-medium text-gray-600">Budget total</p>
@@ -82,7 +80,6 @@ export default function MarketingPage() {
         </div>
       </div>
 
-      {/* Connecter Google Ads */}
       <div className="rounded-lg border border-gray-200 bg-gradient-to-r from-blue-50 to-indigo-50 p-6 shadow-sm">
         <div className="flex items-start gap-4">
           <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white shadow-sm">
@@ -112,7 +109,6 @@ export default function MarketingPage() {
         </div>
       </div>
 
-      {/* Liste des campagnes */}
       <div className="rounded-lg border border-gray-200 bg-white shadow-sm">
         <div className="border-b border-gray-200 p-6">
           <h2 className="text-lg font-semibold text-gray-900">Campagnes actives</h2>

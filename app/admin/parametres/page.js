@@ -2,7 +2,7 @@ import { AdminPageHeader } from '@/components/admin/AdminPageHeader';
 
 export const metadata = { title: 'Paramètres' };
 
-// Page paramètres — pour l'instant, lecture seule des configurations
+// Page paramètres — actuellement, lecture seule des configurations
 // statiques. Phase ultérieure : table Settings éditable + Server Actions.
 
 export default function AdminParametresPage() {

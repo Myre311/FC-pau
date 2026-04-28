@@ -3,7 +3,7 @@ import Link from 'next/link';
 export const metadata = {
   title: 'Offres Cashless · Billetterie',
   description:
-    'Profite d\'offres exclusives avec ta carte cashless : bonus de rechargement, menus spéciaux, promos buvette.',
+    'Profitez d\'offres exclusives avec votre carte cashless : bonus de rechargement, menus spéciaux, promos buvette.',
 };
 
 export default function OffresCashlessPage() {
@@ -17,7 +17,7 @@ export default function OffresCashlessPage() {
             OFFRES <span className="text-pau-yellow">CASHLESS</span>
           </h1>
           <p className="mt-6 max-w-3xl font-sans text-lg leading-relaxed text-white/70 md:text-xl">
-            Profite d'offres exclusives en rechargeant ta carte cashless. Bonus,
+            Profitez d'offres exclusives en rechargeant votre carte cashless. Bonus,
             menus spéciaux, promotions buvette réservées aux détenteurs de carte.
           </p>
         </div>
@@ -33,7 +33,7 @@ export default function OffresCashlessPage() {
           <OffreCard
             _unused_badge="Nouveau"
             title="Recharge 30€ = 5€ offerts"
-            description="Recharge ta carte de 30€ ou plus et reçois 5€ de bonus immédiatement crédités sur ta carte. Valable jusqu'au 31 mai 2026."
+            description="Rechargez votre carte de 30€ ou plus et reçois 5€ de bonus immédiatement crédités sur votre carte. Valable jusqu'au 31 mai 2026."
             conditions="Offre valable une seule fois par carte. Non cumulable avec d'autres promotions."
             ctaText="Recharger maintenant"
             ctaHref="#"
@@ -43,8 +43,8 @@ export default function OffresCashlessPage() {
           <OffreCard
             _unused_badge="Premium"
             title="Abonnés : +10% sur chaque recharge"
-            description="Tu es abonné du club ? Profite d'un bonus de 10% sur toutes tes recharges cashless, toute la saison."
-            conditions="Réservé aux abonnés saison 2025-2026. Vérification automatique via ton compte client."
+            description="Vous êtes abonné du club ? Profitez d'un bonus de 10% sur toutes vos recharges cashless, toute la saison."
+            conditions="Réservé aux abonnés saison 2025-2026. Vérification automatique via votre compte client."
             ctaText="Voir mon espace abonné"
             ctaHref="/compte"
             active
@@ -53,7 +53,7 @@ export default function OffresCashlessPage() {
           <OffreCard
             _unused_badge="Menu"
             title="Menu Match : Burger + Frites + Boisson = 12€"
-            description="Profite du menu spécial cashless au stand buvette principale. Disponible 2h avant et pendant la mi-temps."
+            description="Profitez du menu spécial cashless au stand buvette principale. Disponible 2h avant et pendant la mi-temps."
             conditions="Valable uniquement avec paiement carte cashless. Dans la limite des stocks disponibles."
             ctaText="Voir les menus"
             ctaHref="#"
@@ -72,7 +72,7 @@ export default function OffresCashlessPage() {
           <OffreCard
             _unused_badge="Prochainement"
             title="Opération Fan Day : Double bonus"
-            description="Lors du prochain Fan Day (samedi 24 mai), recharge ta carte et profite d'un bonus doublé : 30€ = 10€ offerts !"
+            description="Lors du prochain Fan Day (samedi 24 mai), recharge votre carte et profite d'un bonus doublé : 30€ = 10€ offerts !"
             conditions="Date et conditions exactes communiquées ultérieurement."
             ctaText="S'inscrire aux alertes"
             ctaHref="#"
@@ -99,17 +99,17 @@ export default function OffresCashlessPage() {
           </h2>
           <div className="space-y-5 font-sans text-base leading-relaxed text-pau-primary/75 md:text-lg">
             <p>
-              <strong className="text-pau-primary">1. Obtiens ta carte</strong> —
-              Commande ta carte cashless gratuitement en ligne ou récupère-la au
+              <strong className="text-pau-primary">1. Obtenez votre carte</strong> —
+              Commande votre carte cashless gratuitement en ligne ou récupère-la au
               stade.
             </p>
             <p>
-              <strong className="text-pau-primary">2. Recharge</strong> — Recharge ta
-              carte depuis ton espace client avant le match. Les bonus sont
+              <strong className="text-pau-primary">2. Recharge</strong> — Rechargez votre
+              carte depuis votre espace client avant le match. Les bonus sont
               automatiquement crédités.
             </p>
             <p>
-              <strong className="text-pau-primary">3. Profite</strong> — Utilise ta
+              <strong className="text-pau-primary">3. Profitez</strong> — Utilisez votre
               carte aux bornes cashless du stade pour bénéficier des offres
               exclusives.
             </p>

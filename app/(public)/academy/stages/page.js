@@ -205,7 +205,7 @@ export default function StagesPage() {
             Inscrire mon enfant
           </h2>
           <p className="mt-6 font-sans text-base leading-relaxed text-pau-primary/75 md:text-lg">
-            Pour inscrire ton enfant à l'un de nos stages, contacte-nous par
+            Pour inscrire votre enfant à l'un de nos stages, contactez-nous par
             email ou téléphone. Nous te transmettrons le formulaire
             d'inscription et les modalités de paiement.
           </p>

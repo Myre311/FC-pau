@@ -65,7 +65,6 @@ export default function CanauxPage() {
 
   return (
     <div className="space-y-8">
-      {/* En-tête */}
       <div>
         <h1 className="text-2xl font-bold text-gray-900">Canaux de vente</h1>
         <p className="mt-1 text-sm text-gray-500">
@@ -73,7 +72,6 @@ export default function CanauxPage() {
         </p>
       </div>
 
-      {/* Statistiques globales */}
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
           <p className="text-sm font-medium text-gray-600">Canaux actifs</p>
@@ -97,7 +95,6 @@ export default function CanauxPage() {
         </div>
       </div>
 
-      {/* Canaux connectés */}
       <div>
         <h2 className="mb-4 text-lg font-semibold text-gray-900">Canaux connectés</h2>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -106,7 +103,6 @@ export default function CanauxPage() {
               key={channel.id}
               className="group relative overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm transition-all hover:shadow-md"
             >
-              {/* Header avec gradient */}
               <div className={`h-24 bg-gradient-to-r ${channel.color} p-6`}>
                 <div className="flex items-center gap-3">
                   <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-white/20 text-sm font-bold text-white">
@@ -121,7 +117,6 @@ export default function CanauxPage() {
                 </div>
               </div>
 
-              {/* Stats */}
               <div className="p-6">
                 {channel.stats && (
                   <div className="mb-4 grid grid-cols-3 gap-3">
@@ -154,7 +149,6 @@ export default function CanauxPage() {
         </div>
       </div>
 
-      {/* Canaux disponibles */}
       <div>
         <h2 className="mb-4 text-lg font-semibold text-gray-900">Canaux disponibles</h2>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -163,7 +157,6 @@ export default function CanauxPage() {
               key={channel.id}
               className="group relative overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm transition-all  hover:shadow-md"
             >
-              {/* Header avec gradient */}
               <div className={`h-24 bg-gradient-to-r ${channel.color} opacity-80 p-6`}>
                 <div className="flex items-center gap-3">
                   <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-white/20 text-sm font-bold text-white">
@@ -178,7 +171,6 @@ export default function CanauxPage() {
                 </div>
               </div>
 
-              {/* Description */}
               <div className="p-6">
                 <p className="mb-4 text-sm text-gray-600">{channel.description}</p>
                 <button className="w-full rounded-lg bg-pau-yellow px-4 py-2 text-sm font-semibold text-pau-night shadow-sm hover:bg-pau-yellow/90">
@@ -190,7 +182,6 @@ export default function CanauxPage() {
         </div>
       </div>
 
-      {/* Guide de configuration */}
       <div className="rounded-lg border border-gray-200 bg-gradient-to-r from-indigo-50 to-purple-50 p-6 shadow-sm">
         <h2 className="mb-4 text-lg font-semibold text-gray-900">
           Comment connecter un canal de vente ?
