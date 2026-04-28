@@ -1,163 +1,268 @@
+'use client';
+
+import { useState } from 'react';
 import Image from 'next/image';
-import { prisma } from '@/lib/prisma';
-import { PartnerCard } from '@/components/vitrine/PartnerCard';
-import {
-  PARTNER_TIER_LABELS,
-  PARTNER_TIER_ORDER,
-} from '@/lib/labels';
 
-export const dynamic = 'force-dynamic';
-
-export const metadata = {
-  title: 'Partenaires',
-  description:
-    'Le Pau FC remercie ses partenaires Premium, Officiels et Locaux qui accompagnent le club dans son développement.',
-};
-
-// =====================================================================
-// IMPORTANT — Cette page est la SEULE qui utilise la charte dorée
-// #CBA74D (token pau-gold). Le jaune club est volontairement
-// retiré du chrome pour bien hiérarchiser : ici, on parle d'argent et
-// d'engagement long terme, pas d'identité supporter.
-// =====================================================================
-
-export default async function PartenairesPage() {
-  const partners = await prisma.partner.findMany({
-    where: { active: true },
-    orderBy: [{ tier: 'asc' }, { position: 'asc' }],
+export default function PartenairesPage() {
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    company: '',
+    email: '',
+    phone: '',
+    partnerType: '',
+    budget: '',
+    message: '',
+    consent: false,
   });
 
-  const grouped = PARTNER_TIER_ORDER.reduce((acc, tier) => {
-    acc[tier] = partners.filter((p) => p.tier === tier);
-    return acc;
-  }, {});
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log('Form submitted:', formData);
+  };
 
   return (
-    <div className="bg-white">
-      {/* HERO SIMPLE */}
-      <section className="relative h-[300px] overflow-hidden border-b border-gray-200">
-        <Image
-          src="/images/hero-partenaires.jpg"
-          alt="Partenaires Pau FC"
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-pau-night/40" />
-        <div className="relative z-10 flex h-full items-center">
-          <div className="mx-auto w-full max-w-7xl px-6 md:px-12">
-            <p className="mb-3 font-mono text-xs uppercase tracking-widest text-white/90">
-              Soutiens & Engagements
-            </p>
-            <h1 className="font-display text-4xl font-black uppercase text-white md:text-5xl">
-              Partenaires
-            </h1>
-            <p className="mt-3 text-sm text-white/90">
-              Le Pau FC avance avec ses partenaires.
+    <div className="min-h-screen bg-white">
+      {/* Hero */}
+      <section className="bg-pau-night py-16 md:py-24">
+        <div className="container-pau text-center">
+          <h1 className="font-display text-4xl font-bold uppercase text-pau-gold md:text-5xl lg:text-6xl">
+            Et si on faisait de Pau<br />une ville de foot
+          </h1>
+          <p className="mx-auto mt-6 max-w-3xl font-sans text-lg leading-relaxed text-white/80 md:text-xl">
+            Rejoignez le réseau partenaire du Pau FC et bénéficiez d'une visibilité exceptionnelle,
+            d'expériences uniques et d'un réseau d'affaires privilégié.
+          </p>
+        </div>
+      </section>
+
+      {/* Statistiques */}
+      <section className="border-y border-pau-gold/20 bg-white py-12">
+        <div className="container-pau">
+          <div className="grid gap-8 md:grid-cols-5">
+            <StatBox number="11,800" label="Sièges/match" />
+            <StatBox number="50+" label="Entreprises partenaires" />
+            <StatBox number="300" label="Convives VIP/match" />
+            <StatBox number="200k+" label="Spectateurs annuels" />
+            <StatBox number="1M+" label="Audience TV" />
+          </div>
+        </div>
+      </section>
+
+      {/* Nos Partenaires */}
+      <section className="bg-white py-16 md:py-24">
+        <div className="container-pau">
+          <h2 className="mb-12 text-center font-display text-3xl font-bold uppercase text-pau-gold md:text-4xl">
+            Nos Partenaires
+          </h2>
+
+          {/* Partenaires Majeurs */}
+          <div className="mb-16">
+            <h3 className="mb-8 font-display text-2xl font-bold uppercase text-pau-night">
+              Partenaires Majeurs
+            </h3>
+            <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+              <PartnerLogo name="Intersport / Joma" />
+              <PartnerLogo name="Groupama" />
+              <PartnerLogo name="Casino de Pau" />
+              <PartnerLogo name="Ville de Pau" />
+              <PartnerLogo name="Communauté d'Agglomération" />
+              <PartnerLogo name="Région Nouvelle-Aquitaine" />
+              <PartnerLogo name="Holy Energy" />
+              <PartnerLogo name="Nouste Energia" />
+              <PartnerLogo name="BKT" />
+            </div>
+          </div>
+
+          {/* Partenaires Premiums */}
+          <div className="mb-16">
+            <h3 className="mb-8 font-display text-2xl font-bold uppercase text-pau-night">
+              Partenaires Premiums
+            </h3>
+            <div className="grid gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
+              <PartnerLogoSmall name="Banque Populaire" />
+              <PartnerLogoSmall name="Crédit Agricole" />
+              <PartnerLogoSmall name="EDF" />
+              <PartnerLogoSmall name="Orange" />
+              <PartnerLogoSmall name="Total Energies" />
+              <PartnerLogoSmall name="Carrefour" />
+              <PartnerLogoSmall name="Décathlon" />
+              <PartnerLogoSmall name="Leclerc" />
+              <PartnerLogoSmall name="McDonald's" />
+              <PartnerLogoSmall name="Burger King" />
+              <PartnerLogoSmall name="Subway" />
+              <PartnerLogoSmall name="KFC" />
+            </div>
+          </div>
+
+          {/* Partenaires Officiels */}
+          <div>
+            <h3 className="mb-8 font-display text-2xl font-bold uppercase text-pau-night">
+              Partenaires Officiels
+            </h3>
+            <p className="font-sans text-base text-pau-night/70">
+              90+ entreprises locales soutiennent le Pau FC au quotidien.
             </p>
           </div>
         </div>
       </section>
 
-      {/* CONTENU */}
-      <div className="mx-auto max-w-7xl px-6 py-12 md:px-12">
-        {PARTNER_TIER_ORDER.map((tier) => {
-          const list = grouped[tier];
-          if (!list || list.length === 0) return null;
+      {/* Formulaire Devenir Partenaire */}
+      <section className="border-t border-pau-gold/20 bg-pau-night py-16 md:py-24">
+        <div className="container-pau">
+          <div className="mx-auto max-w-3xl">
+            <h2 className="mb-4 text-center font-display text-3xl font-bold uppercase text-pau-gold md:text-4xl">
+              Devenir Partenaire
+            </h2>
+            <p className="mb-12 text-center font-sans text-lg text-white/80">
+              Remplissez le formulaire ci-dessous et notre équipe vous contactera rapidement.
+            </p>
 
-          const isPremium = tier === 'premium';
-          return (
-            <div
-              key={tier}
-              className="border-t border-gray-200 py-12"
-            >
-              <header className="mb-8 flex items-end justify-between">
-                <div>
-                  <p className="font-mono text-xs uppercase tracking-wider text-pau-gold">
-                    {PARTNER_TIER_LABELS[tier]}
-                  </p>
-                  <h2 className="mt-2 font-display text-2xl font-bold uppercase text-pau-primary md:text-3xl">
-                    {tier === 'premium'
-                      ? 'À nos côtés'
-                      : tier === 'officiel'
-                        ? 'Avec nous'
-                        : 'Le Béarn'}
-                  </h2>
-                </div>
-                <span className="hidden font-mono text-xs uppercase tracking-wider text-pau-gold/60 md:inline">
-                  {list.length} {list.length > 1 ? 'partenaires' : 'partenaire'}
-                </span>
-              </header>
-
-              <div
-                className={`grid gap-4 ${
-                  isPremium
-                    ? 'grid-cols-1 md:grid-cols-2'
-                    : 'grid-cols-2 md:grid-cols-3 lg:grid-cols-4'
-                }`}
-              >
-                {list.map((p) => (
-                  <PartnerCard key={p.id} partner={p} tier={tier} />
-                ))}
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="grid gap-6 md:grid-cols-2">
+                <input
+                  type="text"
+                  placeholder="Prénom"
+                  value={formData.firstName}
+                  onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
+                  required
+                  className="border-2 border-pau-gold/30 bg-white/5 px-4 py-3 font-sans text-white placeholder:text-white/40 focus:border-pau-gold focus:outline-none"
+                />
+                <input
+                  type="text"
+                  placeholder="Nom"
+                  value={formData.lastName}
+                  onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
+                  required
+                  className="border-2 border-pau-gold/30 bg-white/5 px-4 py-3 font-sans text-white placeholder:text-white/40 focus:border-pau-gold focus:outline-none"
+                />
               </div>
-            </div>
-          );
-        })}
 
-        {partners.length === 0 && (
-          <div className="py-12">
-            <div className="border border-dashed border-pau-gold/30 p-10 text-center">
-              <p className="font-mono text-xs uppercase tracking-wider text-pau-gold">
-                Programme partenaires
-              </p>
-              <p className="mt-4 text-sm text-pau-primary/70">
-                Devenez partenaire du Pau FC. Pour échanger sur nos offres et
-                programmes d'hospitalité, contactez le service partenariats.
-              </p>
-            </div>
-          </div>
-        )}
+              <input
+                type="text"
+                placeholder="Entreprise"
+                value={formData.company}
+                onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                required
+                className="w-full border-2 border-pau-gold/30 bg-white/5 px-4 py-3 font-sans text-white placeholder:text-white/40 focus:border-pau-gold focus:outline-none"
+              />
 
-        <div className="border-t border-gray-200 py-12">
-          <div className="grid gap-10 md:grid-cols-2">
-            <div>
-              <p className="font-mono text-xs uppercase tracking-wider text-pau-gold">
-                Devenir partenaire
-              </p>
-              <h2 className="mt-3 font-display text-2xl font-bold uppercase text-pau-primary md:text-3xl">
-                Rejoignez le club
-              </h2>
-              <p className="mt-4 max-w-xl text-sm text-pau-primary/70">
-                Visibilité au Nouste Camp, hospitalités sur-mesure, opérations
-                co-brandées avec nos joueurs, soutien d'un projet sportif et
-                territorial. Nos équipes construisent chaque programme à votre
-                mesure.
-              </p>
-            </div>
-            <aside className="border border-gray-200 bg-gray-50 p-6">
-              <p className="font-mono text-xs uppercase tracking-wider text-pau-gold">
-                Contact
-              </p>
-              <dl className="mt-4 space-y-3 text-sm">
-                <div>
-                  <dt className="text-pau-primary/50">Service partenariats</dt>
-                  <dd className="mt-1 text-pau-primary">partenariats@paufc.fr</dd>
-                </div>
-                <div>
-                  <dt className="text-pau-primary/50">Téléphone</dt>
-                  <dd className="mt-1 text-pau-primary">+33 5 59 00 00 00</dd>
-                </div>
-                <div>
-                  <dt className="text-pau-primary/50">Adresse</dt>
-                  <dd className="mt-1 text-pau-primary">
-                    Nouste Camp · Boulevard de la Paix · 64000 Pau
-                  </dd>
-                </div>
-              </dl>
-            </aside>
+              <div className="grid gap-6 md:grid-cols-2">
+                <input
+                  type="email"
+                  placeholder="Email"
+                  value={formData.email}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  required
+                  className="border-2 border-pau-gold/30 bg-white/5 px-4 py-3 font-sans text-white placeholder:text-white/40 focus:border-pau-gold focus:outline-none"
+                />
+                <input
+                  type="tel"
+                  placeholder="Téléphone"
+                  value={formData.phone}
+                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                  required
+                  className="border-2 border-pau-gold/30 bg-white/5 px-4 py-3 font-sans text-white placeholder:text-white/40 focus:border-pau-gold focus:outline-none"
+                />
+              </div>
+
+              <select
+                value={formData.partnerType}
+                onChange={(e) => setFormData({ ...formData, partnerType: e.target.value })}
+                required
+                className="w-full border-2 border-pau-gold/30 bg-white/5 px-4 py-3 font-sans text-white focus:border-pau-gold focus:outline-none"
+              >
+                <option value="">Type de partenariat souhaité</option>
+                <option value="majeur">Partenaire Majeur</option>
+                <option value="premium">Partenaire Premium</option>
+                <option value="officiel">Partenaire Officiel</option>
+              </select>
+
+              <input
+                type="text"
+                placeholder="Budget envisagé"
+                value={formData.budget}
+                onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
+                className="w-full border-2 border-pau-gold/30 bg-white/5 px-4 py-3 font-sans text-white placeholder:text-white/40 focus:border-pau-gold focus:outline-none"
+              />
+
+              <textarea
+                placeholder="Message"
+                value={formData.message}
+                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                rows={4}
+                className="w-full border-2 border-pau-gold/30 bg-white/5 px-4 py-3 font-sans text-white placeholder:text-white/40 focus:border-pau-gold focus:outline-none"
+              />
+
+              <div className="flex items-start gap-3">
+                <input
+                  type="checkbox"
+                  id="consent"
+                  checked={formData.consent}
+                  onChange={(e) => setFormData({ ...formData, consent: e.target.checked })}
+                  required
+                  className="mt-1 h-4 w-4 border-2 border-pau-gold/30 bg-white/5"
+                />
+                <label htmlFor="consent" className="font-sans text-sm text-white/70">
+                  J'accepte que mes données soient utilisées dans le cadre de ma demande de partenariat et en accord avec la politique de confidentialité.
+                </label>
+              </div>
+
+              <button
+                type="submit"
+                className="w-full border-2 border-pau-gold bg-pau-gold py-4 font-display text-sm font-bold uppercase tracking-wide text-pau-night transition-all hover:bg-transparent hover:text-pau-gold"
+              >
+                Envoyer ma demande
+              </button>
+            </form>
           </div>
         </div>
-      </div>
+      </section>
+
+      {/* Contact */}
+      <section className="bg-white py-16">
+        <div className="container-pau text-center">
+          <p className="mb-4 font-sans text-base text-pau-night/70">
+            Pour toute question sur les partenariats
+          </p>
+          <div className="space-y-2">
+            <p className="font-sans text-lg text-pau-gold">
+              <a href="tel:+33559000000" className="hover:underline">+33 5 59 00 00 00</a>
+            </p>
+            <p className="font-sans text-lg text-pau-gold">
+              <a href="mailto:partenariats@paufc.fr" className="hover:underline">partenariats@paufc.fr</a>
+            </p>
+          </div>
+          <p className="mt-4 font-sans text-sm text-pau-night/60">
+            Nouste Camp, 8 Boulevard de l'Aviation, 64320 Bizanos
+          </p>
+        </div>
+      </section>
+    </div>
+  );
+}
+
+function StatBox({ number, label }) {
+  return (
+    <div className="text-center">
+      <div className="mb-2 font-display text-3xl font-bold text-pau-gold md:text-4xl">{number}</div>
+      <div className="font-sans text-sm text-pau-night/70">{label}</div>
+    </div>
+  );
+}
+
+function PartnerLogo({ name }) {
+  return (
+    <div className="flex aspect-[3/2] items-center justify-center border-2 border-pau-gold/20 bg-white p-6 transition-all hover:border-pau-gold">
+      <span className="font-display text-sm font-bold uppercase text-pau-night/40">{name}</span>
+    </div>
+  );
+}
+
+function PartnerLogoSmall({ name }) {
+  return (
+    <div className="flex aspect-square items-center justify-center border border-pau-gold/10 bg-white p-4 transition-all hover:border-pau-gold">
+      <span className="text-center font-sans text-xs font-medium text-pau-night/40">{name}</span>
     </div>
   );
 }
