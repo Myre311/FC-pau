@@ -288,11 +288,17 @@ function MatchCardMaquette({ match }) {
 
   return (
     <article className="group border border-white/10 bg-pau-primary p-7 transition-all hover:border-2 hover:border-pau-yellow md:p-9">
-      {/* Badge compétition */}
+      {/* Logo compétition */}
       {match.competition && (
-        <span className="mb-6 inline-block border border-pau-yellow bg-pau-yellow px-3 py-1 font-mono text-xs font-bold uppercase tracking-wider text-pau-night">
-          {match.competition}
-        </span>
+        <div className="mb-6 flex justify-center">
+          <Image
+            src="/images/competitions/ligue2-bkt.png"
+            alt={match.competition}
+            width={120}
+            height={40}
+            className="h-auto w-28 object-contain md:w-32"
+          />
+        </div>
       )}
 
       {/* Logos des équipes */}
