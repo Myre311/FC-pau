@@ -4,6 +4,9 @@ import { HeaderMaquette } from '@/components/layout/HeaderMaquette';
 import { MatchCardWithCountdown } from '@/components/vitrine/MatchCardWithCountdown';
 import { NewsletterPopup } from '@/components/ui/NewsletterPopup';
 import { ScrollingBanner } from '@/components/ui/ScrollingBanner';
+import { UpcomingMatchesSection } from '@/components/vitrine/UpcomingMatchesSection';
+import { SocialSection } from '@/components/vitrine/SocialSection';
+import { NewsSection } from '@/components/vitrine/NewsSection';
 
 export const dynamic = 'force-dynamic';
 
@@ -26,6 +29,30 @@ export default async function HomePageMaquette() {
     })
     .catch(() => null);
 
+  // Récupérer les 3 prochains matchs
+  const upcomingMatches = await prisma.match
+    .findMany({
+      where: {
+        kickoffAt: { gte: new Date() },
+        status: 'scheduled',
+      },
+      orderBy: { kickoffAt: 'asc' },
+      take: 3,
+    })
+    .catch(() => []);
+
+  // Récupérer les 3 dernières actualités
+  const recentNews = await prisma.article
+    .findMany({
+      where: {
+        publishedAt: { lte: new Date() },
+        status: 'published',
+      },
+      orderBy: { publishedAt: 'desc' },
+      take: 3,
+    })
+    .catch(() => []);
+
   return (
     <>
       {/* Newsletter popup */}
@@ -34,14 +61,14 @@ export default async function HomePageMaquette() {
       {/* Header maquette */}
       <HeaderMaquette />
 
-      {/* Bandeau promotionnel */}
+      {/* Bandeau promotionnel mobile fixe en bas */}
       <div className="fixed bottom-0 left-0 z-40 w-full md:hidden">
         <ScrollingBanner />
       </div>
 
-      {/* Desktop : Layout splitté 50/50 fixe */}
+      {/* Desktop : Layout splitté 50/50 hero */}
       <div className="hidden md:block">
-        <div className="fixed inset-0 h-screen w-full overflow-hidden bg-pau-night">
+        <section className="relative h-screen w-full overflow-hidden bg-pau-night">
           {/* Vidéo gauche 50% */}
           <div className="absolute left-0 top-0 h-full w-1/2">
             <video
@@ -72,10 +99,18 @@ export default async function HomePageMaquette() {
               <MatchCardWithCountdown match={upcomingMatch} />
             </div>
           )}
-        </div>
+        </section>
+
+        {/* Bandeau défilant desktop */}
+        <ScrollingBanner />
+
+        {/* Sections scrollables */}
+        <UpcomingMatchesSection matches={upcomingMatches} />
+        <NewsSection articles={recentNews} />
+        <SocialSection />
       </div>
 
-      {/* Mobile : Hero vidéo + match card */}
+      {/* Mobile : Hero vidéo + sections */}
       <div className="block md:hidden">
         <section className="relative min-h-screen overflow-hidden bg-pau-night">
           {/* Vidéo hero mobile */}
@@ -98,18 +133,15 @@ export default async function HomePageMaquette() {
               <MatchCardWithCountdown match={upcomingMatch} />
             )}
 
-            {/* Spacer pour éviter que le contenu touche le bas */}
+            {/* Spacer pour bandeau fixe en bas */}
             <div className="h-20" />
           </div>
         </section>
 
-        {/* Section suivante (peut contenir actualités, etc.) */}
-        <section className="bg-white px-6 py-12">
-          <h2 className="font-display text-3xl font-bold uppercase text-pau-primary">
-            Actualités
-          </h2>
-          {/* ... contenu actualités ... */}
-        </section>
+        {/* Sections mobiles */}
+        <UpcomingMatchesSection matches={upcomingMatches} />
+        <NewsSection articles={recentNews} />
+        <SocialSection />
       </div>
     </>
   );
