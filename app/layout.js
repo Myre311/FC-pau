@@ -1,23 +1,23 @@
-import { Big_Shoulders_Display, Instrument_Sans, DM_Mono } from 'next/font/google';
+import { Oswald, Inter, DM_Mono } from 'next/font/google';
 import { GoogleAnalytics } from '@next/third-parties/google';
 
 import { OrganizationJsonLd } from '@/components/seo/OrganizationJsonLd';
 
 import './globals.css';
 
-// Big Shoulders Display - Titres (sport, condensed, musclé)
-const bigShoulders = Big_Shoulders_Display({
+// Oswald - Titres (sport, condensed, uppercase) - remplace Gyst Variable
+const oswald = Oswald({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700', '800', '900'],
+  weight: ['300', '400', '500', '600', '700'],
   variable: '--font-display',
   display: 'swap',
   preload: true,
 });
 
-// Instrument Sans - Corps de texte
-const instrumentSans = Instrument_Sans({
+// Inter - Corps de texte (moderne, lisible) - remplace Bicyclette
+const inter = Inter({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
+  weight: ['300', '400', '500', '600', '700', '800'],
   variable: '--font-sans',
   display: 'swap',
   preload: true,
@@ -66,7 +66,7 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="fr"
-      className={`${bigShoulders.variable} ${instrumentSans.variable} ${dmMono.variable}`}
+      className={`${oswald.variable} ${inter.variable} ${dmMono.variable}`}
     >
       <body className="font-sans antialiased">
         {children}

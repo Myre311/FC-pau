@@ -16,6 +16,31 @@
   --pau-gold-hover: #B89640;
   --pau-white: #FFFFFF;
 
+  /* Variables maquette client */
+  --color-dark: #04091D;
+  --color-dark-2: #1A1D38;
+  --color-yellow: #FFCC00;
+  --color-gold: #CBA74D;
+  --color-white: #FFFFFF;
+
+  --bg-dark: #04091D;
+  --bg-darker: #0c1127;
+  --bg-surface: rgba(255,255,255,0.03);
+
+  --white-border: rgba(255,255,255,0.12);
+  --white-border-hover: rgba(255,255,255,0.25);
+
+  --text-white: #FFFFFF;
+  --text-muted: rgba(255,255,255,0.55);
+  --text-dimmed: rgba(255,255,255,0.25);
+
+  --ease-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-swift: cubic-bezier(0.4, 0, 0.2, 1);
+
+  --dur-fast: 0.2s;
+  --dur-normal: 0.35s;
+  --dur-slow: 0.6s;
+
   /* Échelle typographique stricte */
   --text-xs: 0.75rem;     /* 12px */
   --text-sm: 0.875rem;    /* 14px */
