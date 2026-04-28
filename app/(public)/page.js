@@ -92,7 +92,16 @@ export default async function HomePage() {
               <span className="font-mono text-xs font-semibold uppercase tracking-wider text-pau-yellow">
                 Saison 2025/2026
               </span>
-              <h2 className="mt-4 font-display text-3xl font-bold uppercase leading-tight text-white md:text-5xl lg:text-6xl">
+              <div className="mt-4">
+                <Image
+                  src="/images/calendrier-icon.png"
+                  alt="Calendrier"
+                  width={80}
+                  height={80}
+                  className="mb-4 h-16 w-auto md:h-20"
+                />
+              </div>
+              <h2 className="font-display text-3xl font-bold uppercase leading-tight text-white md:text-5xl lg:text-6xl">
                 Calendrier<br />& Matchs
               </h2>
               <Link
