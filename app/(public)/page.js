@@ -333,6 +333,7 @@ export default async function HomePage() {
       <ScrollingBanner partners={partners} />
 
       {/* SECTION 4 - ARTICLES RÉCENTS */}
+      {recentArticles.length > 0 && (
       <section className="bg-white pb-18 pt-16 md:pb-24 md:pt-20">
         <div className="container-pau">
           <div className="mb-14">
@@ -402,6 +403,7 @@ export default async function HomePage() {
           </div>
         </div>
       </section>
+      )}
 
       {/* SECTION 5 - INSTAGRAM GRID 4x2 */}
       <section className="bg-white py-18 md:py-24">
@@ -414,32 +416,36 @@ export default async function HomePage() {
           </div>
 
           <div className="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-4">
-            {[
-              '/images/hero-equipe.jpg',
-              '/images/hero-boutique.jpg',
-              '/images/hero-stade.jpg',
-              '/images/hero-calendrier.jpg',
-              '/images/hero-actualites.jpg',
-              '/images/hero-club.jpg',
-              '/images/hero-billetterie.jpg',
-              '/images/hero-accueil.jpg'
-            ].map((img, i) => (
+            {Array.from({ length: 8 }).map((_, i) => (
               <ScaleOnScroll key={i} delay={i * 0.05}>
               <a
                 href="https://www.instagram.com/paufootballclub/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative aspect-square overflow-hidden"
+                className="group relative aspect-square overflow-hidden bg-gradient-to-br from-pau-primary to-pau-night"
               >
-                <Image
-                  src={img}
-                  alt={`Instagram ${i + 1}`}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-110 group-hover:brightness-110"
-                />
+                <div className="flex h-full w-full items-center justify-center transition-transform duration-500 group-hover:scale-110">
+                  <svg className="h-12 w-12 text-pau-yellow/30" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                  </svg>
+                </div>
               </a>
               </ScaleOnScroll>
             ))}
+          </div>
+
+          <div className="mt-8 text-center">
+            <a
+              href="https://www.instagram.com/paufootballclub/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 border-2 border-pau-night bg-transparent px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-pau-night transition-all hover:bg-pau-night hover:text-white"
+            >
+              <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+              Suivez-nous sur Instagram
+            </a>
           </div>
         </div>
       </section>
