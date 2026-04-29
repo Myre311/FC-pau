@@ -346,7 +346,7 @@ export default async function HomePage() {
               <AnimateOnScroll key={article.id} delay={index * 0.1}>
               <Link
                 href={`/actualites/${article.slug}`}
-                className="group overflow-hidden rounded-lg bg-pau-primary transition-all hover:bg-pau-primary-hover hover:scale-[1.02]"
+                className="group block overflow-hidden rounded-lg bg-pau-primary transition-all hover:bg-pau-primary-hover hover:scale-[1.02]"
               >
                 {/* Image */}
                 <div className="relative aspect-[16/9] overflow-hidden">
