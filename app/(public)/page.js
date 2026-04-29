@@ -193,10 +193,10 @@ export default async function HomePage() {
               <div className="grid gap-5 md:grid-cols-2">
 
                 {/* Card BILLETTERIE avec countdown */}
-                <ScaleOnScroll delay={0.1}>
+                <ScaleOnScroll delay={0.1} className="md:col-span-2">
                 <Link
                   href="/billetterie"
-                  className="group flex flex-col justify-between bg-pau-primary p-6 transition-all hover:bg-pau-primary-hover hover:scale-[1.02] md:col-span-2"
+                  className="group flex flex-col justify-between bg-pau-primary p-6 transition-all hover:bg-pau-primary-hover hover:scale-[1.02]"
                 >
                   <div>
                     <span className="mb-2 inline-block font-mono text-xs font-semibold uppercase tracking-wider text-pau-yellow">
