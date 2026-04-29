@@ -16,7 +16,7 @@ export default function PoleFemininPage() {
           src="/images/hero-academy-feminin.jpg"
           alt="Pôle Féminin Academy Pau FC"
           fill
-          className="object-cover brightness-50"
+          className="object-cover object-center brightness-50"
           priority
         />
         <div className="absolute inset-0 bg-gradient-to-t from-pau-night via-pau-night/60 to-transparent" />

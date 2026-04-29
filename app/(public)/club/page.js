@@ -15,7 +15,7 @@ export default function ClubPage() {
           src="/images/hero-club.jpg"
           alt="Le Club Pau FC"
           fill
-          className="object-cover brightness-50"
+          className="object-cover object-center brightness-50"
           priority
         />
         <div className="absolute inset-0 bg-gradient-to-t from-pau-night via-pau-night/60 to-transparent" />
@@ -108,7 +108,7 @@ export default function ClubPage() {
           </div>
 
           <div className="relative aspect-[21/9] overflow-hidden border-2 border-white/10">
-            <Image src="/images/homepage/Boutique.png" alt="Nouste Camp" fill className="object-cover" />
+            <Image src="/images/homepage/Boutique.png" alt="Nouste Camp" fill className="object-cover object-center" />
           </div>
         </div>
       </section>

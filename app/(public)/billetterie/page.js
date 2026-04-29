@@ -29,7 +29,7 @@ export default async function BilletteriePage() {
           src="/images/hero-billetterie.jpg"
           alt="Billetterie Pau FC"
           fill
-          className="object-cover"
+          className="object-cover object-center"
           priority
         />
 

@@ -28,7 +28,7 @@ export default async function BoutiquePage() {
           src="/images/boutique/Boutique-1.jpg"
           alt="Boutique Pau FC"
           fill
-          className="object-cover brightness-50"
+          className="object-cover object-center brightness-50"
           priority
         />
 
