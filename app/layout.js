@@ -1,14 +1,14 @@
-import { Oswald, Inter, DM_Mono } from 'next/font/google';
+import { Playfair_Display, Inter, DM_Mono } from 'next/font/google';
 import { GoogleAnalytics } from '@next/third-parties/google';
 
 import { OrganizationJsonLd } from '@/components/seo/OrganizationJsonLd';
 
 import './globals.css';
 
-// Oswald - Titres (sport, condensed, uppercase) - remplace Gyst Variable
-const oswald = Oswald({
+// Playfair Display - Titres (serif élégant, style Didot)
+const playfair = Playfair_Display({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
+  weight: ['400', '500', '600', '700', '800', '900'],
   variable: '--font-display',
   display: 'swap',
   preload: true,
@@ -66,7 +66,7 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="fr"
-      className={`${oswald.variable} ${inter.variable} ${dmMono.variable}`}
+      className={`${playfair.variable} ${inter.variable} ${dmMono.variable}`}
     >
       <body className="font-sans antialiased">
         {children}
