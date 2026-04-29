@@ -83,11 +83,11 @@ export function CheckoutForm() {
 
   if (items.length === 0) {
     return (
-      <div className="border border-pau-primary/10 p-10 text-center">
+      <div className="border border-pau-night/10 p-10 text-center">
         <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-pau-yellow">
           Panier vide
         </p>
-        <p className="mt-3 font-sans text-pau-primary/60">
+        <p className="mt-3 font-sans text-pau-night/60">
           Ajoutez des articles pour passer commande.
         </p>
       </div>
@@ -247,7 +247,7 @@ function PaymentStep({ amount, onBack }) {
         <button
           type="button"
           onClick={onBack}
-          className="font-mono text-[11px] uppercase tracking-[0.2em] text-pau-primary/60 transition-colors hover:text-pau-yellow"
+          className="font-mono text-[11px] uppercase tracking-[0.2em] text-pau-night/60 transition-colors hover:text-pau-yellow"
         >
           ← Modifier mes infos
         </button>
@@ -277,7 +277,7 @@ function Stepper({ step }) {
         <li
           key={s.id}
           className={
-            s.id === step ? 'text-pau-yellow' : 'text-pau-primary/30'
+            s.id === step ? 'text-pau-yellow' : 'text-pau-night/30'
           }
         >
           {s.label}
@@ -289,7 +289,7 @@ function Stepper({ step }) {
 
 function Section({ title, children }) {
   return (
-    <fieldset className="space-y-4 border-t border-pau-primary/10 pt-6">
+    <fieldset className="space-y-4 border-t border-pau-night/10 pt-6">
       <legend className="mb-2 font-mono text-[10px] uppercase tracking-[0.2em] text-pau-yellow">
         {title}
       </legend>
@@ -301,7 +301,7 @@ function Section({ title, children }) {
 function Field({ label, value, onChange, required, type = 'text', autoComplete }) {
   return (
     <label className="block">
-      <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-pau-primary/50">
+      <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-pau-night/50">
         {label}
         {required && <span className="ml-1 text-pau-yellow">*</span>}
       </span>
@@ -311,7 +311,7 @@ function Field({ label, value, onChange, required, type = 'text', autoComplete }
         autoComplete={autoComplete}
         value={value ?? ''}
         onChange={(e) => onChange(e.target.value)}
-        className="mt-2 block h-11 w-full border border-pau-primary/20 bg-transparent px-3 font-sans text-sm text-pau-primary outline-none transition-colors focus:border-pau-yellow"
+        className="mt-2 block h-11 w-full border border-pau-night/20 bg-transparent px-3 font-sans text-sm text-pau-night outline-none transition-colors focus:border-pau-night"
       />
     </label>
   );
@@ -320,13 +320,13 @@ function Field({ label, value, onChange, required, type = 'text', autoComplete }
 function SelectField({ label, value, onChange, options }) {
   return (
     <label className="block">
-      <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-pau-primary/50">
+      <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-pau-night/50">
         {label}
       </span>
       <select
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="mt-2 block h-11 w-full border border-pau-primary/20 bg-white px-3 font-sans text-sm text-pau-primary outline-none transition-colors focus:border-pau-yellow"
+        className="mt-2 block h-11 w-full border border-pau-night/20 bg-white px-3 font-sans text-sm text-pau-night outline-none transition-colors focus:border-pau-night"
       >
         {options.map((o) => (
           <option key={o.code} value={o.code}>
