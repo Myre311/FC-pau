@@ -102,7 +102,7 @@ export default function StagesPage() {
             />
           </div>
 
-          <p className="mt-8 font-sans text-sm text-white/60">
+          <p className="mt-8 font-sans text-sm text-pau-night/60">
             Réduction de 10% à partir du 2ème enfant inscrit. Réduction de 15%
             pour les abonnés du club.
           </p>
@@ -287,13 +287,13 @@ export default function StagesPage() {
             <div className="mt-8 flex flex-wrap gap-4">
               <a
                 href="mailto:stages@paufc.fr?subject=Inscription stage Academy"
-                className="inline-block border-2 border-white bg-white px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-pau-night transition-all hover:bg-transparent hover:text-white"
+                className="inline-block border-2 border-pau-night bg-pau-night px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-white transition-all hover:bg-white hover:text-pau-night"
               >
                 Demander une inscription
               </a>
               <Link
                 href="/academy"
-                className="inline-block border-2 border-white bg-transparent px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-white transition-all hover:bg-white hover:text-pau-night"
+                className="inline-block border-2 border-pau-night bg-transparent px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-pau-night transition-all hover:bg-pau-night hover:text-white"
               >
                 Retour Academy
               </Link>
@@ -345,12 +345,12 @@ function ProgramItem({ title, description }) {
 
 function CalendarItem({ period, dates, status, available }) {
   return (
-    <div className="flex flex-wrap items-center justify-between gap-4 border-b border-white/10 pb-6">
+    <div className="flex flex-wrap items-center justify-between gap-4 border-b border-pau-night/10 pb-6">
       <div>
-        <h3 className="font-display text-2xl font-bold uppercase text-white md:text-3xl">
+        <h3 className="font-display text-2xl font-bold uppercase text-pau-night md:text-3xl">
           {period}
         </h3>
-        <p className="mt-1 font-mono text-sm uppercase tracking-wider text-white/60">
+        <p className="mt-1 font-mono text-sm uppercase tracking-wider text-pau-night/60">
           {dates}
         </p>
       </div>
@@ -359,7 +359,7 @@ function CalendarItem({ period, dates, status, available }) {
           className={`inline-block px-4 py-2 font-mono text-xs font-semibold uppercase tracking-wider ${
             available
               ? 'bg-pau-yellow/20 text-pau-yellow'
-              : 'bg-white/10 text-white/40'
+              : 'bg-pau-night/10 text-pau-night/40'
           }`}
         >
           {status}

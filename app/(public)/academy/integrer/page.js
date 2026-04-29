@@ -258,11 +258,11 @@ function Step({ number, title, description }) {
         </div>
       </div>
 
-      <div className="border-l-4 border-white/10 pl-6 md:pl-10">
-        <h3 className="font-display text-2xl font-bold uppercase text-white md:text-3xl">
+      <div className="border-l-4 border-pau-night/10 pl-6 md:pl-10">
+        <h3 className="font-display text-2xl font-bold uppercase text-pau-night md:text-3xl">
           {title}
         </h3>
-        <p className="mt-4 font-sans text-base leading-relaxed text-white/70 md:text-lg">
+        <p className="mt-4 font-sans text-base leading-relaxed text-pau-night/70 md:text-lg">
           {description}
         </p>
       </div>
