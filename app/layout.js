@@ -6,13 +6,23 @@ import { OrganizationJsonLd } from '@/components/seo/OrganizationJsonLd';
 
 import './globals.css';
 
-// Deglion - Titres (police custom élégante)
-const deglion = localFont({
-  src: '../public/fonts/Deglion-Regular.ttf',
+// Morhena - Titres (police custom calligraphique élégante)
+const morhena = localFont({
+  src: [
+    {
+      path: '../public/fonts/Morhena.otf',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../public/fonts/Morhena-Italic.otf',
+      weight: '400',
+      style: 'italic',
+    },
+  ],
   variable: '--font-display',
   display: 'swap',
   preload: true,
-  weight: '400',
 });
 
 // Inter - Corps de texte (moderne, lisible) - remplace Bicyclette
@@ -67,7 +77,7 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="fr"
-      className={`${deglion.variable} ${inter.variable} ${dmMono.variable}`}
+      className={`${morhena.variable} ${inter.variable} ${dmMono.variable}`}
     >
       <body className="font-sans antialiased">
         {children}
