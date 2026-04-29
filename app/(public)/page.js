@@ -235,12 +235,20 @@ export default async function HomePage() {
                     <span className="mb-2 inline-block font-mono text-xs font-semibold uppercase tracking-wider text-pau-yellow">
                       Boutique
                     </span>
-                    <h3 className="mb-3 font-display text-lg font-bold uppercase text-white">
-                      Vendredi 16 Avril
-                    </h3>
-                    <button className="border-2 border-white bg-transparent px-4 py-2 font-mono text-xs font-bold uppercase text-white transition-all hover:bg-white hover:text-pau-night">
-                      Voir
-                    </button>
+                    {nextHomeMatch ? (
+                      <>
+                        <h3 className="mb-1 font-display text-lg font-bold uppercase text-white">
+                          Nouvelle Collection
+                        </h3>
+                        <p className="font-mono text-sm font-bold text-white/70">
+                          {new Date(nextHomeMatch.kickoffAt).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long' })}
+                        </p>
+                      </>
+                    ) : (
+                      <h3 className="mb-3 font-display text-lg font-bold uppercase text-white">
+                        Boutique en ligne
+                      </h3>
+                    )}
                   </div>
                 </Link>
                 </ScaleOnScroll>
@@ -252,17 +260,22 @@ export default async function HomePage() {
                   className="group flex flex-col justify-between bg-pau-primary p-6 transition-all hover:bg-pau-primary-hover hover:scale-[1.02]"
                 >
                   <div>
-                    <h3 className="mb-3 font-display text-lg font-bold uppercase text-white">
-                      Le Mans<br />Pau FC
-                    </h3>
-                    <div className="space-y-2">
-                      <p className="font-mono text-xs text-white/70">
-                        Vendredi 23 Avril
-                      </p>
-                      <button className="border-2 border-white bg-transparent px-4 py-2 font-mono text-xs font-bold uppercase text-white transition-all hover:bg-white hover:text-pau-night">
-                        Voir
-                      </button>
-                    </div>
+                    <span className="mb-2 inline-block font-mono text-xs font-semibold uppercase tracking-wider text-pau-yellow">
+                      Match Extérieur
+                    </span>
+                    {nextAwayMatch ? (
+                      <BilletterieCountdown
+                        kickoffAt={nextAwayMatch.kickoffAt}
+                        matchDate={`${nextAwayMatch.opponent}`}
+                      />
+                    ) : (
+                      <>
+                        <h3 className="mb-1 font-display text-lg font-bold uppercase text-white">
+                          Calendrier
+                        </h3>
+                        <p className="font-mono text-sm font-bold text-white">--:--:--:--</p>
+                      </>
+                    )}
                   </div>
                 </Link>
                 </ScaleOnScroll>
