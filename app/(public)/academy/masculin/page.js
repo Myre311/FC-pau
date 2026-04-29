@@ -4,7 +4,7 @@ import Link from 'next/link';
 export const metadata = {
   title: 'Pôle Masculin "” Academy Pau FC',
   description:
-    'Le pôle masculin de l\'Academy Pau FC forme les jeunes joueurs de 12 Ã  19 ans. Préformation, formation, internat, suivi scolaire renforcé.',
+    'Le pôle masculin de l\'Academy Pau FC forme les jeunes joueurs de 12 à 19 ans. Préformation, formation, internat, suivi scolaire renforcé.',
 };
 
 export default function PoleMasculinPage() {
@@ -51,7 +51,7 @@ export default function PoleMasculinPage() {
             <div className="space-y-5 font-sans text-base leading-relaxed text-pau-night/70 md:text-lg">
               <p>
                 Le pôle masculin du Pau FC accueille chaque saison une
-                cinquantaine de joueurs, de la catégorie U13 Ã  U19. Le projet
+                cinquantaine de joueurs, de la catégorie U13 à U19. Le projet
                 s'articule autour de trois piliers : excellence sportive, réussite
                 scolaire, développement personnel.
               </p>
@@ -79,7 +79,7 @@ export default function PoleMasculinPage() {
               Catégories
             </span>
             <h2 className="mt-4 font-display text-4xl font-bold uppercase text-white md:text-5xl">
-              De U13 Ã  U19
+              De U13 à U19
             </h2>
           </div>
 
@@ -89,7 +89,7 @@ export default function PoleMasculinPage() {
                 U13 · U14 · U15 "” Préformation
               </h3>
               <p className="mt-4 font-sans text-base leading-relaxed text-white/70">
-                Détection et apprentissage des fondamentaux. Technique individuelle, culture tactique de base, initiation au jeu collectif. Championnat régional. Entraînements 3 Ã  4 fois par semaine.
+                Détection et apprentissage des fondamentaux. Technique individuelle, culture tactique de base, initiation au jeu collectif. Championnat régional. Entraînements 3 à 4 fois par semaine.
               </p>
             </div>
 
@@ -98,7 +98,7 @@ export default function PoleMasculinPage() {
                 U16 · U17 "” Formation
               </h3>
               <p className="mt-4 font-sans text-base leading-relaxed text-white/70">
-                Intensification du volume d'entraînement (5 Ã  6 séances/semaine). Championnats nationaux U17. Suivi renforcé : physique, mental, nutrition. Possibilité d'internat au Nouste Camp.
+                Intensification du volume d'entraînement (5 à 6 séances/semaine). Championnats nationaux U17. Suivi renforcé : physique, mental, nutrition. Possibilité d'internat au Nouste Camp.
               </p>
             </div>
 

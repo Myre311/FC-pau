@@ -4,7 +4,7 @@ import Link from 'next/link';
 export const metadata = {
   title: 'Pôle Féminin · Academy',
   description:
-    'Le pôle féminin de l\'Academy Pau FC forme les jeunes joueuses de 12 Ã  18 ans dans un cadre professionnel et bienveillant.',
+    'Le pôle féminin de l\'Academy Pau FC forme les jeunes joueuses de 12 à 18 ans dans un cadre professionnel et bienveillant.',
 };
 
 export default function PoleFemininPage() {
@@ -54,7 +54,7 @@ export default function PoleFemininPage() {
               <p>
                 Le pôle féminin du Pau FC s'inscrit dans le développement du
                 football féminin en Béarn et en Nouvelle-Aquitaine. Lancé il y a
-                quelques années, il accueille aujourd'hui des joueuses de U13 Ã 
+                quelques années, il accueille aujourd'hui des joueuses de U13 à
                 U19 dans un environnement professionnel et structuré.
               </p>
               <p>
@@ -65,8 +65,8 @@ export default function PoleFemininPage() {
               </p>
               <p>
                 Le staff technique est composé d'entraîneurs diplômés, spécialisés
-                dans la formation féminine. Un suivi individualisé est proposé Ã 
-                chaque joueuse pour l'aider Ã  atteindre ses objectifs sportifs et
+                dans la formation féminine. Un suivi individualisé est proposé à
+                chaque joueuse pour l'aider à atteindre ses objectifs sportifs et
                 personnels.
               </p>
             </div>
@@ -82,7 +82,7 @@ export default function PoleFemininPage() {
               Nos catégories
             </span>
             <h2 className="mt-4 font-display text-4xl font-bold uppercase text-white md:text-5xl">
-              De U13 Ã  U19
+              De U13 à U19
             </h2>
           </div>
 
@@ -121,7 +121,7 @@ export default function PoleFemininPage() {
                 </p>
                 <p>
                   <strong className="text-pau-night">Préparation physique</strong> "”
-                  Programme adapté Ã  chaque catégorie d'âge.
+                  Programme adapté à chaque catégorie d'âge.
                 </p>
                 <p>
                   <strong className="text-pau-night">Suivi médical</strong> "” Médecin

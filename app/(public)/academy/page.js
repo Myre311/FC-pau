@@ -62,7 +62,7 @@ export default function AcademyPage() {
                 sur le respect et le dépassement de soi.
               </p>
               <p>
-                Au-delÃ  du terrain, l'Academy prépare les jeunes Ã  devenir des
+                Au-delà du terrain, l'Academy prépare les jeunes à devenir des
                 adultes responsables et autonomes, capables de construire un
                 projet de vie équilibré.
               </p>
@@ -92,7 +92,7 @@ export default function AcademyPage() {
                 Pôle Masculin
               </h3>
               <p className="mt-4 font-sans text-base leading-relaxed text-white/70">
-                U13 Ã  U19 · Préformation et formation · Championnat National · Suivi scolaire renforcé · Internat
+                U13 à U19 · Préformation et formation · Championnat National · Suivi scolaire renforcé · Internat
               </p>
               <div className="mt-6 font-mono text-sm uppercase tracking-wider text-pau-yellow transition-colors">
                 En savoir plus →
@@ -107,7 +107,7 @@ export default function AcademyPage() {
                 Pôle Féminin
               </h3>
               <p className="mt-4 font-sans text-base leading-relaxed text-white/70">
-                U13 Ã  U19 · Formation féminine · Championnat régional et national · Projet sportif en développement
+                U13 à U19 · Formation féminine · Championnat régional et national · Projet sportif en développement
               </p>
               <div className="mt-6 font-mono text-sm uppercase tracking-wider text-pau-yellow transition-colors">
                 En savoir plus →
@@ -152,7 +152,7 @@ export default function AcademyPage() {
               </h2>
               <p className="mt-6 font-sans text-base leading-relaxed text-pau-night/70">
                 Des stages intensifs pendant les vacances scolaires pour les
-                jeunes de 8 Ã  16 ans : technique, tactique, physique et mental,
+                jeunes de 8 à 16 ans : technique, tactique, physique et mental,
                 encadrés par le staff de l'Academy.
               </p>
               <div className="mt-8">

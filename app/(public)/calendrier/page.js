@@ -97,7 +97,7 @@ export default function CalendrierPage() {
               </p>
             ) : filteredMatches.length === 0 ? (
               <p className="py-12 text-center font-sans text-lg text-white/60">
-                Aucun match ne correspond Ã  ce filtre.
+                Aucun match ne correspond à ce filtre.
               </p>
             ) : (
               <div className="space-y-4">
@@ -220,7 +220,7 @@ function MatchCard({ match }) {
 
       {/* Équipes avec logos */}
       <div className="mb-6 flex items-center justify-center gap-4 md:gap-6">
-        {/* Équipe Ã  gauche */}
+        {/* Équipe à gauche */}
         <div className="flex flex-col items-center gap-2">
           <div className="flex h-14 w-14 items-center justify-center rounded-full bg-white p-2.5 md:h-16 md:w-16 md:p-3">
             <Image
@@ -251,7 +251,7 @@ function MatchCard({ match }) {
           <span className="font-display text-lg font-bold text-white/40 md:text-xl">vs</span>
         )}
 
-        {/* Équipe Ã  droite */}
+        {/* Équipe à droite */}
         <div className="flex flex-col items-center gap-2">
           <div className="flex h-14 w-14 items-center justify-center rounded-full bg-white p-2.5 md:h-16 md:w-16 md:p-3">
             <Image

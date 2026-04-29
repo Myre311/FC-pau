@@ -9,7 +9,7 @@ export const metadata = {
 };
 
 export default async function BilletteriePage() {
-  // Récupérer les prochains matchs Ã  domicile
+  // Récupérer les prochains matchs à domicile
   const upcomingMatches = await prisma.match.findMany({
     where: {
       isHome: true,
@@ -44,7 +44,7 @@ export default async function BilletteriePage() {
               Billetterie
             </h1>
             <p className="mt-4 font-sans text-lg leading-relaxed text-white/80 md:text-xl">
-              Réservez vos places pour les matchs Ã  domicile. Vivez l'ambiance du Nouste Camp, notre forteresse béarnaise.
+              Réservez vos places pour les matchs à domicile. Vivez l'ambiance du Nouste Camp, notre forteresse béarnaise.
             </p>
           </div>
         </div>
@@ -62,7 +62,7 @@ export default async function BilletteriePage() {
 
           {upcomingMatches.length === 0 ? (
             <p className="font-sans text-lg text-white/60">
-              Aucun match Ã  domicile programmé pour le moment.{' '}
+              Aucun match à domicile programmé pour le moment.{' '}
               <Link href="/calendrier" className="text-pau-yellow hover:underline">
                 Consultez le calendrier complet
               </Link>
@@ -172,7 +172,7 @@ export default async function BilletteriePage() {
       <section className="border-y border-white/10 bg-pau-primary pb-20 pt-18 md:pb-26 md:pt-24">
         <div className="container-pau">
           <div className="mb-14">
-            <span className="badge-mono text-pau-yellow">Bon Ã  savoir</span>
+            <span className="badge-mono text-pau-yellow">Bon à savoir</span>
             <h2 className="mt-4 font-display text-4xl font-bold uppercase text-white md:text-5xl">
               Comment ça se passe
             </h2>
@@ -218,7 +218,7 @@ export default async function BilletteriePage() {
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="mt-1 text-pau-yellow">•</span>
-                  <span>Contrôle de sécurité Ã  l'entrée obligatoire</span>
+                  <span>Contrôle de sécurité à l'entrée obligatoire</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="mt-1 text-pau-yellow">•</span>
@@ -236,7 +236,7 @@ export default async function BilletteriePage() {
           <div className="mx-auto max-w-3xl text-center">
             <span className="badge-mono text-pau-yellow">Besoin d'aide ?</span>
             <h2 className="mt-4 font-display text-4xl font-bold uppercase text-pau-yellow md:text-5xl">
-              Nous sommes Ã  votre écoute
+              Nous sommes à votre écoute
             </h2>
             <p className="mx-auto mt-7 max-w-xl font-sans text-lg text-white/70">
               Questions sur les billets, tarifs de groupe ou abonnements ? Notre équipe billetterie vous répond.
