@@ -35,8 +35,8 @@ export default async function PartenairesPage() {
           priority
         />
         <div className="absolute inset-0 bg-gradient-to-t from-pau-night via-pau-night/60 to-transparent" />
-        <div className="container-pau relative flex h-full items-center justify-center">
-          <div className="max-w-4xl text-center">
+        <div className="container-pau relative flex h-full items-end pb-16 md:pb-20">
+          <div className="max-w-4xl">
             <span className="font-mono text-xs uppercase text-pau-gold">Partenariats</span>
             <h1 className="mt-4 font-display text-4xl font-bold uppercase text-pau-gold md:text-5xl lg:text-6xl">
               Devenez partenaire<br />du Pau FC
