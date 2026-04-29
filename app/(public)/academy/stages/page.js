@@ -21,7 +21,7 @@ export default function StagesPage() {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-pau-night via-pau-night/60 to-transparent" />
 
-        <div className="container-pau relative flex h-full items-end pb-16 md:pb-20">
+        <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-10 lg:p-16">
           <div className="max-w-3xl">
             <span className="font-mono text-xs font-semibold uppercase tracking-wider text-pau-yellow">
               Academy · Stages vacances

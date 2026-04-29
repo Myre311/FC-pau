@@ -32,8 +32,8 @@ export default async function EquipePage() {
           priority
         />
         <div className="absolute inset-0 bg-gradient-to-t from-pau-night via-pau-night/60 to-transparent" />
-        <div className="container-pau relative flex h-full items-end pb-16">
-          <div>
+        <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-10 lg:p-16">
+          <div className="max-w-7xl">
             <span className="font-mono text-xs uppercase text-pau-yellow">Saison 2025/2026</span>
             <h1 className="mt-4 font-display text-5xl font-bold uppercase text-white md:text-6xl">
               L'Équipe Pro
