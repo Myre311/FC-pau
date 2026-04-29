@@ -162,46 +162,64 @@ function StatBox({ number, label }) {
 }
 
 function PartnerLogo({ partner }) {
-  return (
-    <div className="group relative flex aspect-[3/2] items-center justify-center overflow-hidden bg-transparent p-8">
+  const content = (
+    <div className="group relative flex aspect-[3/2] items-center justify-center overflow-hidden bg-transparent p-6 transition-transform hover:scale-105">
       <Image
         src={partner.logoUrl}
         alt={partner.name}
-        width={200}
-        height={100}
-        className="h-auto w-full object-contain transition-all"
+        width={180}
+        height={90}
+        className="h-auto w-full max-h-20 object-contain transition-all"
         style={{ filter: 'brightness(0) saturate(100%) invert(72%) sepia(32%) saturate(427%) hue-rotate(356deg) brightness(91%) contrast(88%)' }}
       />
     </div>
   );
+
+  return partner.websiteUrl ? (
+    <a href={partner.websiteUrl} target="_blank" rel="noopener noreferrer" className="block">
+      {content}
+    </a>
+  ) : content;
 }
 
 function PartnerLogoMedium({ partner }) {
-  return (
-    <div className="group relative flex aspect-[3/2] items-center justify-center overflow-hidden bg-transparent p-6">
+  const content = (
+    <div className="group relative flex aspect-[3/2] items-center justify-center overflow-hidden bg-transparent p-4 transition-transform hover:scale-105">
       <Image
         src={partner.logoUrl}
         alt={partner.name}
         width={150}
         height={75}
-        className="h-auto w-full object-contain transition-all"
+        className="h-auto w-full max-h-16 object-contain transition-all"
         style={{ filter: 'brightness(0) saturate(100%) invert(72%) sepia(32%) saturate(427%) hue-rotate(356deg) brightness(91%) contrast(88%)' }}
       />
     </div>
   );
+
+  return partner.websiteUrl ? (
+    <a href={partner.websiteUrl} target="_blank" rel="noopener noreferrer" className="block">
+      {content}
+    </a>
+  ) : content;
 }
 
 function PartnerLogoSmall({ partner }) {
-  return (
-    <div className="group relative flex aspect-square items-center justify-center overflow-hidden bg-transparent p-4">
+  const content = (
+    <div className="group relative flex aspect-square items-center justify-center overflow-hidden bg-transparent p-3 transition-transform hover:scale-105">
       <Image
         src={partner.logoUrl}
         alt={partner.name}
-        width={100}
-        height={50}
-        className="h-auto w-full object-contain transition-all"
+        width={120}
+        height={60}
+        className="h-auto w-full max-h-12 object-contain transition-all"
         style={{ filter: 'brightness(0) saturate(100%) invert(72%) sepia(32%) saturate(427%) hue-rotate(356deg) brightness(91%) contrast(88%)' }}
       />
     </div>
   );
+
+  return partner.websiteUrl ? (
+    <a href={partner.websiteUrl} target="_blank" rel="noopener noreferrer" className="block">
+      {content}
+    </a>
+  ) : content;
 }
