@@ -16,7 +16,7 @@ export default function StagesPage() {
           src="/images/hero-academy-stages.jpg"
           alt="Stages Academy Pau FC"
           fill
-          className="object-cover brightness-50"
+          className="object-cover object-[50%_40%] brightness-50"
           priority
         />
         <div className="absolute inset-0 bg-gradient-to-t from-pau-night via-pau-night/60 to-transparent" />

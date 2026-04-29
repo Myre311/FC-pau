@@ -63,7 +63,7 @@ export default function CalendrierPage() {
                 className={`border-2 px-4 py-2 font-display text-xs font-bold uppercase tracking-wide transition-all md:px-6 md:py-3 md:text-sm ${
                   filter === 'tous'
                     ? 'border-pau-yellow bg-pau-yellow text-pau-night'
-                    : 'border-white/20 bg-transparent text-white hover:border-pau-yellow'
+                    : 'border-white/20 bg-transparent text-white hover:border-white/20'
                 }`}
               >
                 Tous les matchs
@@ -73,7 +73,7 @@ export default function CalendrierPage() {
                 className={`border-2 px-4 py-2 font-display text-xs font-bold uppercase tracking-wide transition-all md:px-6 md:py-3 md:text-sm ${
                   filter === 'domicile'
                     ? 'border-pau-yellow bg-pau-yellow text-pau-night'
-                    : 'border-white/20 bg-transparent text-white hover:border-pau-yellow'
+                    : 'border-white/20 bg-transparent text-white hover:border-white/20'
                 }`}
               >
                 Domicile
@@ -83,7 +83,7 @@ export default function CalendrierPage() {
                 className={`border-2 px-4 py-2 font-display text-xs font-bold uppercase tracking-wide transition-all md:px-6 md:py-3 md:text-sm ${
                   filter === 'exterieur'
                     ? 'border-pau-yellow bg-pau-yellow text-pau-night'
-                    : 'border-white/20 bg-transparent text-white hover:border-pau-yellow'
+                    : 'border-white/20 bg-transparent text-white hover:border-white/20'
                 }`}
               >
                 Extérieur
