@@ -429,22 +429,22 @@ export default async function HomePage() {
 
           <div className="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-4">
             {instagramData.map((post, i) => (
-              <ScaleOnScroll key={i} delay={i * 0.05}>
-                <a
-                  href={post.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group relative aspect-square overflow-hidden"
-                >
-                  <Image
-                    src={post.image}
-                    alt={`Instagram post ${i + 1}`}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-110 group-hover:brightness-110"
-                  />
-                  <div className="absolute inset-0 bg-pau-night/0 transition-colors group-hover:bg-pau-night/10" />
-                </a>
-              </ScaleOnScroll>
+              <a
+                key={i}
+                href={post.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative block aspect-square overflow-hidden bg-pau-night"
+              >
+                <Image
+                  src={post.image}
+                  alt={`Post Instagram Pau FC`}
+                  fill
+                  sizes="(max-width: 768px) 50vw, 25vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-110 group-hover:brightness-110"
+                />
+                <div className="absolute inset-0 bg-pau-night/0 transition-colors group-hover:bg-pau-night/10" />
+              </a>
             ))}
           </div>
 
