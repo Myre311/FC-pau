@@ -57,7 +57,7 @@ Jamais utilisé ailleurs. Jamais.
 
 ### Typographies
 
-- **Playfair Display** — titres (serif élégant, style Didot haute couture)
+- **Bodoni Moda** — titres (serif éditorial mode/luxe, fort contraste Vogue-style)
 - **Inter** — corps de texte (moderne, lisible)
 - **DM Mono** — détails techniques, badges, numéros, tags
 

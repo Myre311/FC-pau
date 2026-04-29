@@ -1,12 +1,12 @@
-import { Playfair_Display, Inter, DM_Mono } from 'next/font/google';
+import { Bodoni_Moda, Inter, DM_Mono } from 'next/font/google';
 import { GoogleAnalytics } from '@next/third-parties/google';
 
 import { OrganizationJsonLd } from '@/components/seo/OrganizationJsonLd';
 
 import './globals.css';
 
-// Playfair Display - Titres (serif élégant, style Didot)
-const playfair = Playfair_Display({
+// Bodoni Moda - Titres (serif éditorial mode/luxe, fort contraste Vogue-style)
+const bodoni = Bodoni_Moda({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700', '800', '900'],
   variable: '--font-display',
@@ -66,7 +66,7 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="fr"
-      className={`${playfair.variable} ${inter.variable} ${dmMono.variable}`}
+      className={`${bodoni.variable} ${inter.variable} ${dmMono.variable}`}
     >
       <body className="font-sans antialiased">
         {children}
