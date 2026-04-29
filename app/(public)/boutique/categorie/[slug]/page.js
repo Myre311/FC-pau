@@ -37,7 +37,7 @@ export default async function CategoryPage({ params }) {
   if (!category) notFound();
 
   return (
-    <div className="min-h-screen bg-pau-night">
+    <div className="min-h-screen bg-white">
       <section className="container-pau pt-12 pb-8 md:pt-20 md:pb-12">
         <nav className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/50">
           <Link href="/boutique" className="hover:text-pau-yellow">

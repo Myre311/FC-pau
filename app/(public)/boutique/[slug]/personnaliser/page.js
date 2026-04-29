@@ -34,7 +34,7 @@ export default async function PersonnaliserPage({ params }) {
   }
 
   return (
-    <div className="min-h-screen bg-pau-night">
+    <div className="min-h-screen bg-white">
       <div className="container-pau py-8 md:py-12">
       <header className="mb-8">
         <nav className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/50">

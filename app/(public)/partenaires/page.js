@@ -24,7 +24,7 @@ export default async function PartenairesPage() {
   const officielPartners = allPartners.filter(p => p.tier === 'officiel');
   const localPartners = allPartners.filter(p => p.tier === 'local');
   return (
-    <div className="min-h-screen bg-pau-night">
+    <div className="min-h-screen bg-white">
       {/* Hero */}
       <section className="relative min-h-[400px] md:h-[60vh] md:min-h-[500px] bg-pau-night">
         <Image

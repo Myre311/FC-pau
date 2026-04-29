@@ -41,7 +41,7 @@ export default async function ProductPage({ params }) {
   );
 
   return (
-    <article className="min-h-screen bg-pau-night">
+    <article className="min-h-screen bg-white">
       <div className="container-pau grid gap-10 py-12 md:grid-cols-2 md:gap-16 md:py-20">
         {/* Galerie */}
         <div className="space-y-3">

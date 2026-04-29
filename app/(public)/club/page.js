@@ -8,7 +8,7 @@ export const metadata = {
 
 export default function ClubPage() {
   return (
-    <div className="min-h-screen bg-pau-night">
+    <div className="min-h-screen bg-white">
       {/* Hero */}
       <section className="relative min-h-[400px] md:h-[60vh] md:min-h-[500px] bg-pau-night">
         <Image
