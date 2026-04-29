@@ -6,6 +6,7 @@ import { ScrollingBanner } from '@/components/ui/ScrollingBanner';
 import { AnimateOnScroll, ScaleOnScroll } from '@/components/ui/AnimateOnScroll';
 import { InstagramGrid } from '@/components/home/InstagramGrid';
 import { MatchCountdown } from '@/components/vitrine/MatchCountdown';
+import { BilletterieCountdown } from '@/components/home/BilletterieCountdown';
 
 export const dynamic = 'force-dynamic';
 
@@ -204,10 +205,23 @@ export default async function HomePage() {
                     <span className="mb-2 inline-block font-mono text-xs font-semibold uppercase tracking-wider text-pau-yellow">
                       Billetterie
                     </span>
-                    <h3 className="mb-1 font-display text-xl font-bold uppercase text-white">
-                      20/4/08
-                    </h3>
-                    <p className="font-mono text-2xl font-bold text-white">08:00:00:00</p>
+                    {nextHomeMatch ? (
+                      <BilletterieCountdown
+                        kickoffAt={nextHomeMatch.kickoffAt}
+                        matchDate={new Date(nextHomeMatch.kickoffAt).toLocaleDateString('fr-FR', {
+                          day: '2-digit',
+                          month: '2-digit',
+                          year: '2-digit'
+                        })}
+                      />
+                    ) : (
+                      <>
+                        <h3 className="mb-1 font-display text-xl font-bold uppercase text-white">
+                          Prochainement
+                        </h3>
+                        <p className="font-mono text-2xl font-bold text-white">--:--:--:--</p>
+                      </>
+                    )}
                   </div>
                 </Link>
                 </ScaleOnScroll>
