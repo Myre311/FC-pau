@@ -17,7 +17,7 @@ export function ScrollingBanner({ partners = [] }) {
 
     return (
       <div className="relative overflow-hidden border-y border-white/10 bg-pau-yellow py-3">
-        <div className="animate-marquee whitespace-nowrap font-display text-sm font-bold uppercase tracking-wider text-pau-night">
+        <div className="animate-marquee-mobile whitespace-nowrap font-display text-sm font-bold uppercase tracking-wider text-pau-night md:animate-marquee">
           {repeatedText}
         </div>
       </div>
@@ -29,7 +29,7 @@ export function ScrollingBanner({ partners = [] }) {
 
   return (
     <div className="relative overflow-hidden border-y border-white/10 bg-pau-yellow py-6">
-      <div className="animate-marquee flex items-center gap-12 whitespace-nowrap">
+      <div className="animate-marquee-mobile flex items-center gap-12 whitespace-nowrap md:animate-marquee">
         {repeatedPartners.map((partner, index) => (
           <div key={`${partner.id}-${index}`} className="flex items-center gap-3">
             <div className="relative h-8 w-32 flex-shrink-0">

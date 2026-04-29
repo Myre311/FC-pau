@@ -87,6 +87,7 @@ module.exports = {
         shimmer: 'shimmer 5s linear infinite',
         'shimmer-fast': 'shimmer 3.5s linear infinite',
         marquee: 'marquee 22s linear infinite',
+        'marquee-mobile': 'marquee 7s linear infinite',
         'marquee-slow': 'marquee 45s linear infinite',
         ripple: 'ripple 0.6s ease-out',
         countdown: 'countdown 1s steps(1) infinite',

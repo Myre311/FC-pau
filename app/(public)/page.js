@@ -151,7 +151,7 @@ export default async function HomePage() {
           <div className="grid gap-6 md:grid-cols-2 md:gap-10">
 
             {/* GAUCHE - NEWSLETTER avec photo stade */}
-            <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-lg animate-fade-in-up">
               <Image
                 src="/images/hero-stade.jpg"
                 alt="Stade Nouste Camp"
@@ -192,7 +192,7 @@ export default async function HomePage() {
                 {/* Card BILLETTERIE avec countdown */}
                 <Link
                   href="/billetterie"
-                  className="group flex flex-col justify-between bg-pau-primary p-6 transition-all hover:bg-pau-primary-hover md:col-span-2"
+                  className="group flex flex-col justify-between animate-cascade-1 bg-pau-primary p-6 transition-all hover:bg-pau-primary-hover hover:scale-[1.02] md:col-span-2"
                 >
                   <div>
                     <span className="mb-2 inline-block font-mono text-xs font-semibold uppercase tracking-wider text-pau-yellow">
@@ -208,7 +208,7 @@ export default async function HomePage() {
                 {/* Card BOUTIQUE */}
                 <Link
                   href="/boutique"
-                  className="group flex flex-col justify-between bg-pau-primary p-6 transition-all hover:bg-pau-primary-hover"
+                  className="group flex flex-col justify-between animate-cascade-2 bg-pau-primary p-6 transition-all hover:bg-pau-primary-hover hover:scale-[1.02]"
                 >
                   <div>
                     <span className="mb-2 inline-block font-mono text-xs font-semibold uppercase tracking-wider text-pau-yellow">
@@ -226,7 +226,7 @@ export default async function HomePage() {
                 {/* Card MATCH EXTÉRIEUR */}
                 <Link
                   href="/calendrier"
-                  className="group flex flex-col justify-between bg-pau-primary p-6 transition-all hover:bg-pau-primary-hover"
+                  className="group flex flex-col justify-between animate-cascade-3 bg-pau-primary p-6 transition-all hover:bg-pau-primary-hover hover:scale-[1.02]"
                 >
                   <div>
                     <h3 className="mb-3 font-display text-lg font-bold uppercase text-white">
@@ -246,7 +246,7 @@ export default async function HomePage() {
               </div>
 
               {/* SECTION MATCH avec logos clubs */}
-              <div className="flex flex-col gap-4 rounded-lg bg-pau-primary p-6">
+              <div className="flex flex-col gap-4 rounded-lg animate-cascade-4 bg-pau-primary p-6">
                 {/* Logo Ligue 2 BKT */}
                 <div className="flex justify-center">
                   <Image
@@ -331,11 +331,17 @@ export default async function HomePage() {
           </div>
 
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {recentArticles.map((article) => (
+            {recentArticles.map((article, index) => (
               <Link
                 key={article.id}
                 href={`/actualites/${article.slug}`}
-                className="group overflow-hidden rounded-lg bg-pau-primary transition-all hover:bg-pau-primary-hover"
+                className={`group overflow-hidden rounded-lg bg-pau-primary transition-all hover:bg-pau-primary-hover hover:scale-[1.02] ${
+                  index === 0 ? 'animate-cascade-1' :
+                  index === 1 ? 'animate-cascade-2' :
+                  index === 2 ? 'animate-cascade-3' :
+                  index === 3 ? 'animate-cascade-4' :
+                  index === 4 ? 'animate-cascade-5' : 'animate-fade-in-up'
+                }`}
               >
                 {/* Image */}
                 <div className="relative aspect-[16/9] overflow-hidden">
@@ -417,13 +423,19 @@ export default async function HomePage() {
                 href="https://www.instagram.com/paufootballclub/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative aspect-square overflow-hidden"
+                className={`group relative aspect-square overflow-hidden ${
+                  i === 0 ? 'animate-cascade-1' :
+                  i === 1 ? 'animate-cascade-2' :
+                  i === 2 ? 'animate-cascade-3' :
+                  i === 3 ? 'animate-cascade-4' :
+                  i === 4 ? 'animate-cascade-5' : 'animate-fade-in-up'
+                }`}
               >
                 <Image
                   src={img}
                   alt={`Instagram ${i + 1}`}
                   fill
-                  className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  className="object-cover transition-transform duration-500 group-hover:scale-110 group-hover:brightness-110"
                 />
               </a>
             ))}
