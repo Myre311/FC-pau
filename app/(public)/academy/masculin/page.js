@@ -72,13 +72,13 @@ export default function PoleMasculinPage() {
       </section>
 
       {/* Catégories */}
-      <section className="border-y border-white/10 bg-pau-primary py-14 md:py-20">
+      <section className="border-y border-pau-night/10 bg-white py-14 md:py-20">
         <div className="container-pau">
           <div className="mb-12">
             <span className="font-mono text-xs font-semibold uppercase tracking-wider text-pau-yellow">
               Catégories
             </span>
-            <h2 className="mt-4 font-display text-4xl font-bold uppercase text-white md:text-5xl">
+            <h2 className="mt-4 font-display text-4xl font-bold uppercase text-pau-yellow md:text-5xl">
               De U13 à U19
             </h2>
           </div>
@@ -178,13 +178,13 @@ export default function PoleMasculinPage() {
       </section>
 
       {/* Staff */}
-      <section className="border-y border-white/10 bg-pau-primary py-14 md:py-20">
+      <section className="border-y border-pau-night/10 bg-white py-14 md:py-20">
         <div className="container-pau">
           <div className="mb-12">
             <span className="font-mono text-xs font-semibold uppercase tracking-wider text-pau-yellow">
               Encadrement
             </span>
-            <h2 className="mt-4 font-display text-4xl font-bold uppercase text-white md:text-5xl">
+            <h2 className="mt-4 font-display text-4xl font-bold uppercase text-pau-yellow md:text-5xl">
               Un staff professionnel
             </h2>
           </div>

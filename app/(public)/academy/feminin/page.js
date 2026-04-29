@@ -75,13 +75,13 @@ export default function PoleFemininPage() {
       </section>
 
       {/* Catégories */}
-      <section className="border-y border-white/10 bg-pau-primary py-14 md:py-20">
+      <section className="border-y border-pau-night/10 bg-white py-14 md:py-20">
         <div className="container-pau">
           <div className="mb-12">
             <span className="font-mono text-xs font-semibold uppercase tracking-wider text-pau-yellow">
               Nos catégories
             </span>
-            <h2 className="mt-4 font-display text-4xl font-bold uppercase text-white md:text-5xl">
+            <h2 className="mt-4 font-display text-4xl font-bold uppercase text-pau-yellow md:text-5xl">
               De U13 à U19
             </h2>
           </div>
@@ -166,16 +166,16 @@ export default function PoleFemininPage() {
       </section>
 
       {/* CTA */}
-      <section className="border-y border-white/10 bg-pau-primary py-14 md:py-20">
+      <section className="border-y border-pau-night/10 bg-white py-14 md:py-20">
         <div className="container-pau">
           <div className="max-w-2xl">
             <span className="font-mono text-xs font-semibold uppercase tracking-wider text-pau-yellow">
               Rejoindre
             </span>
-            <h2 className="mt-4 font-display text-4xl font-bold uppercase text-white md:text-5xl">
+            <h2 className="mt-4 font-display text-4xl font-bold uppercase text-pau-yellow md:text-5xl">
               Intégrer le pôle féminin
             </h2>
-            <p className="mt-6 font-sans text-base leading-relaxed text-white/70 md:text-lg">
+            <p className="mt-6 font-sans text-base leading-relaxed text-pau-night/70 md:text-lg">
               Vous avez entre 12 et 18 ans, vous êtes passionnée de football et vous souhaitez
               intégrer un projet ambitieux ? Découvrez comment candidater au pôle
               féminin de l'Academy Pau FC.
@@ -183,13 +183,13 @@ export default function PoleFemininPage() {
             <div className="mt-8 flex flex-wrap gap-4">
               <Link
                 href="/academy/integrer"
-                className="inline-block border-2 border-white bg-white px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-pau-night transition-all hover:bg-transparent hover:text-white"
+                className="inline-block border-2 border-pau-night bg-pau-night px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-white transition-all hover:bg-white hover:text-pau-night"
               >
                 Candidater
               </Link>
               <Link
                 href="/academy"
-                className="inline-block border-2 border-white bg-transparent px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-white transition-all hover:bg-white hover:text-pau-night"
+                className="inline-block border-2 border-pau-night bg-transparent px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-pau-night transition-all hover:bg-pau-night hover:text-white"
               >
                 Retour Academy
               </Link>

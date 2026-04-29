@@ -84,13 +84,13 @@ export default function IntegrerPage() {
       </section>
 
       {/* Process */}
-      <section className="border-y border-white/10 bg-pau-primary py-14 md:py-20">
+      <section className="border-y border-pau-night/10 bg-white py-14 md:py-20">
         <div className="container-pau">
           <div className="mb-12">
             <span className="font-mono text-xs font-semibold uppercase tracking-wider text-pau-yellow">
               Processus
             </span>
-            <h2 className="mt-4 font-display text-4xl font-bold uppercase text-white md:text-5xl">
+            <h2 className="mt-4 font-display text-4xl font-bold uppercase text-pau-yellow md:text-5xl">
               Comment candidater
             </h2>
           </div>
@@ -190,27 +190,27 @@ export default function IntegrerPage() {
       </section>
 
       {/* CTA */}
-      <section className="border-y border-white/10 bg-pau-primary py-14 md:py-20">
+      <section className="border-y border-pau-night/10 bg-white py-14 md:py-20">
         <div className="container-pau">
           <div className="max-w-2xl">
             <span className="font-mono text-xs font-semibold uppercase tracking-wider text-pau-yellow">
               Action
             </span>
-            <h2 className="mt-4 font-display text-4xl font-bold uppercase text-white md:text-5xl">
+            <h2 className="mt-4 font-display text-4xl font-bold uppercase text-pau-yellow md:text-5xl">
               Candidater maintenant
             </h2>
-            <p className="mt-6 font-sans text-base leading-relaxed text-white/70 md:text-lg">
+            <p className="mt-6 font-sans text-base leading-relaxed text-pau-night/70 md:text-lg">
               Prêt(e) à rejoindre l'Academy du Pau FC ? Envoyez votre dossier de
               candidature par email avec les documents suivants :
             </p>
-            <ul className="mt-4 ml-5 list-disc space-y-2 font-sans text-base text-white/70">
+            <ul className="mt-4 ml-5 list-disc space-y-2 font-sans text-base text-pau-night/70">
               <li>CV sportif (parcours club, poste, niveau)</li>
               <li>Bulletin scolaire du dernier trimestre</li>
               <li>Lettre de motivation (optionnel mais apprécié)</li>
               <li>Coordonnées des parents/tuteurs</li>
             </ul>
 
-            <div className="mt-8 space-y-3 font-sans text-base text-white/70">
+            <div className="mt-8 space-y-3 font-sans text-base text-pau-night/70">
               <p>
                 Email :{' '}
                 <a

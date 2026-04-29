@@ -71,13 +71,13 @@ export default function StagesPage() {
       </section>
 
       {/* Formules */}
-      <section className="border-y border-white/10 bg-pau-primary py-14 md:py-20">
+      <section className="border-y border-pau-night/10 bg-white py-14 md:py-20">
         <div className="container-pau">
           <div className="mb-12">
             <span className="font-mono text-xs font-semibold uppercase tracking-wider text-pau-yellow">
               Nos formules
             </span>
-            <h2 className="mt-4 font-display text-4xl font-bold uppercase text-white md:text-5xl">
+            <h2 className="mt-4 font-display text-4xl font-bold uppercase text-pau-yellow md:text-5xl">
               Choisissez votre formule
             </h2>
           </div>
@@ -147,13 +147,13 @@ export default function StagesPage() {
       </section>
 
       {/* Calendrier */}
-      <section className="border-y border-white/10 bg-pau-primary py-14 md:py-20">
+      <section className="border-y border-pau-night/10 bg-white py-14 md:py-20">
         <div className="container-pau">
           <div className="mb-12">
             <span className="font-mono text-xs font-semibold uppercase tracking-wider text-pau-yellow">
               Calendrier
             </span>
-            <h2 className="mt-4 font-display text-4xl font-bold uppercase text-white md:text-5xl">
+            <h2 className="mt-4 font-display text-4xl font-bold uppercase text-pau-yellow md:text-5xl">
               Dates 2026
             </h2>
           </div>
@@ -251,22 +251,22 @@ export default function StagesPage() {
       </section>
 
       {/* CTA */}
-      <section className="border-y border-white/10 bg-pau-primary py-14 md:py-20">
+      <section className="border-y border-pau-night/10 bg-white py-14 md:py-20">
         <div className="container-pau">
           <div className="max-w-2xl">
             <span className="font-mono text-xs font-semibold uppercase tracking-wider text-pau-yellow">
               Inscription
             </span>
-            <h2 className="mt-4 font-display text-4xl font-bold uppercase text-white md:text-5xl">
+            <h2 className="mt-4 font-display text-4xl font-bold uppercase text-pau-yellow md:text-5xl">
               Inscrire mon enfant
             </h2>
-            <p className="mt-6 font-sans text-base leading-relaxed text-white/70 md:text-lg">
+            <p className="mt-6 font-sans text-base leading-relaxed text-pau-night/70 md:text-lg">
               Pour inscrire votre enfant à l'un de nos stages, contactez-nous par
               email ou téléphone. Nous vous transmettrons le formulaire
               d'inscription et les modalités de paiement.
             </p>
 
-            <div className="mt-8 space-y-3 font-sans text-base text-white/70">
+            <div className="mt-8 space-y-3 font-sans text-base text-pau-night/70">
               <p>
                 Email :{' '}
                 <a

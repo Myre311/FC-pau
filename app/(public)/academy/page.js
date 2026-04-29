@@ -72,13 +72,13 @@ export default function AcademyPage() {
       </section>
 
       {/* Pôles */}
-      <section className="border-y border-white/10 bg-pau-primary py-14 md:py-20">
+      <section className="border-y border-pau-night/10 bg-white py-14 md:py-20">
         <div className="container-pau">
           <div className="mb-12">
             <span className="font-mono text-xs font-semibold uppercase tracking-wider text-pau-yellow">
               Nos pôles
             </span>
-            <h2 className="mt-4 font-display text-4xl font-bold uppercase text-white md:text-5xl">
+            <h2 className="mt-4 font-display text-4xl font-bold uppercase text-pau-yellow md:text-5xl">
               Deux pôles d'excellence
             </h2>
           </div>
@@ -169,41 +169,41 @@ export default function AcademyPage() {
       </section>
 
       {/* Valeurs */}
-      <section className="border-y border-white/10 bg-pau-primary py-14 md:py-20">
+      <section className="border-y border-pau-night/10 bg-white py-14 md:py-20">
         <div className="container-pau">
           <div className="mb-12">
             <span className="font-mono text-xs font-semibold uppercase tracking-wider text-pau-yellow">
               Nos valeurs
             </span>
-            <h2 className="mt-4 font-display text-4xl font-bold uppercase text-white md:text-5xl">
+            <h2 className="mt-4 font-display text-4xl font-bold uppercase text-pau-yellow md:text-5xl">
               Ce qui nous guide
             </h2>
           </div>
 
           <div className="grid gap-8 md:grid-cols-3">
             <div className="border-l-4 border-pau-yellow pl-6">
-              <h3 className="font-display text-2xl font-bold uppercase text-white md:text-3xl">
+              <h3 className="font-display text-2xl font-bold uppercase text-pau-night md:text-3xl">
                 Excellence
               </h3>
-              <p className="mt-4 font-sans text-base leading-relaxed text-white/70">
+              <p className="mt-4 font-sans text-base leading-relaxed text-pau-night/70">
                 Nous visons le plus haut niveau sportif tout en maintenant un équilibre scolaire et personnel.
               </p>
             </div>
 
             <div className="border-l-4 border-pau-yellow pl-6">
-              <h3 className="font-display text-2xl font-bold uppercase text-white md:text-3xl">
+              <h3 className="font-display text-2xl font-bold uppercase text-pau-night md:text-3xl">
                 Respect
               </h3>
-              <p className="mt-4 font-sans text-base leading-relaxed text-white/70">
+              <p className="mt-4 font-sans text-base leading-relaxed text-pau-night/70">
                 Respect des éducateurs, des coéquipiers, des adversaires et des règles du jeu.
               </p>
             </div>
 
             <div className="border-l-4 border-pau-yellow pl-6">
-              <h3 className="font-display text-2xl font-bold uppercase text-white md:text-3xl">
+              <h3 className="font-display text-2xl font-bold uppercase text-pau-night md:text-3xl">
                 Engagement
               </h3>
-              <p className="mt-4 font-sans text-base leading-relaxed text-white/70">
+              <p className="mt-4 font-sans text-base leading-relaxed text-pau-night/70">
                 Travail, rigueur, dépassement de soi et esprit d'équipe sont au cœur de notre projet.
               </p>
             </div>
