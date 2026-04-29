@@ -73,9 +73,9 @@ export default function ClubPage() {
           </h2>
 
           <div className="grid gap-10 md:grid-cols-3">
-            <PlayerProfile name="André-Pierre Gignac" position="Attaquant" years="2005-2006" description="Formé au PAU FC, Gignac a brillé en Ligue 1 avec l'OM et Toulouse avant de devenir une légende au Mexique avec les Tigres UANL." />
-            <PlayerProfile name="Adrien Rabiot" position="Milieu" years="2008-2009" description="Passé par le centre de formation du PAU FC, Rabiot a ensuite rejoint le PSG avant de s'imposer comme un cadre de la Juventus et de l'équipe de France." />
-            <PlayerProfile name="Anthony Briançon" position="Défenseur" years="2025-2027" description="Capitaine emblématique du PAU FC, Briançon incarne l'esprit de combativité et le leadership sur le terrain." />
+            <PlayerProfile name="André-Pierre Gignac" position="Attaquant" years="2005-2006" description="Formé au PAU FC, Gignac a brillé en Ligue 1 avec l'OM et Toulouse avant de devenir une légende au Mexique avec les Tigres UANL." image={null} />
+            <PlayerProfile name="Adrien Rabiot" position="Milieu" years="2008-2009" description="Passé par le centre de formation du PAU FC, Rabiot a ensuite rejoint le PSG avant de s'imposer comme un cadre de la Juventus et de l'équipe de France." image={null} />
+            <PlayerProfile name="Anthony Briançon" position="Défenseur" years="2025-2027" description="Capitaine emblématique du PAU FC, Briançon incarne l'esprit de combativité et le leadership sur le terrain." image="/images/players/anthony-briançon-23.jpg" />
           </div>
         </div>
       </section>
@@ -87,9 +87,9 @@ export default function ClubPage() {
           </h2>
 
           <div className="grid gap-9 md:grid-cols-3">
-            <DirectorProfile name="Bernard Laporte-Fray" role="Président" description="À la tête du club depuis plusieurs années, il œuvre au quotidien pour le développement et le rayonnement du PAU FC." />
-            <DirectorProfile name="Luis de Sousa" role="Directeur Sportif" description="Responsable de la stratégie sportive du club, du recrutement et de la gestion de l'effectif professionnel." />
-            <DirectorProfile name="Nicolas Usaï" role="Entraîneur Principal" description="À la tête de l'équipe professionnelle, il dirige les entraînements et la stratégie tactique sur le terrain." />
+            <DirectorProfile name="Bernard Laporte-Fray" role="Président" description="À la tête du club depuis plusieurs années, il œuvre au quotidien pour le développement et le rayonnement du PAU FC." image="/images/club/BernardLaporte-Fray.png" />
+            <DirectorProfile name="Luis de Sousa" role="Directeur Sportif" description="Responsable de la stratégie sportive du club, du recrutement et de la gestion de l'effectif professionnel." image="/images/club/luis-de-sousa-1.png" />
+            <DirectorProfile name="Nicolas Usaï" role="Entraîneur Principal" description="À la tête de l'équipe professionnelle, il dirige les entraînements et la stratégie tactique sur le terrain." image="/images/club/DSC00082.png" />
           </div>
         </div>
       </section>
@@ -124,15 +124,24 @@ export default function ClubPage() {
   );
 }
 
-function PlayerProfile({ name, position, years, description }) {
+function PlayerProfile({ name, position, years, description, image }) {
   return (
     <article className="border border-white/10 bg-pau-night p-7 transition-all hover:border-2 hover:border-pau-yellow">
       <div className="relative mb-4 aspect-[3/4] overflow-hidden bg-pau-primary">
-        <div className="flex h-full items-center justify-center">
-          <span className="font-display text-4xl font-bold text-white/20">
-            {name.split(' ').map(n => n[0]).join('')}
-          </span>
-        </div>
+        {image ? (
+          <Image
+            src={image}
+            alt={name}
+            fill
+            className="object-cover object-center"
+          />
+        ) : (
+          <div className="flex h-full items-center justify-center">
+            <span className="font-display text-4xl font-bold text-white/20">
+              {name.split(' ').map(n => n[0]).join('')}
+            </span>
+          </div>
+        )}
       </div>
       <h3 className="mb-2 font-display text-xl font-bold uppercase text-white">{name}</h3>
       <p className="mb-1 font-sans text-sm text-pau-yellow">{position}</p>
@@ -142,15 +151,24 @@ function PlayerProfile({ name, position, years, description }) {
   );
 }
 
-function DirectorProfile({ name, role, description }) {
+function DirectorProfile({ name, role, description, image }) {
   return (
     <article className="border border-white/10 bg-pau-primary p-7 transition-all hover:border-2 hover:border-pau-yellow">
       <div className="relative mb-4 aspect-square overflow-hidden bg-pau-night">
-        <div className="flex h-full items-center justify-center">
-          <span className="font-display text-4xl font-bold text-white/20">
-            {name.split(' ').map(n => n[0]).join('')}
-          </span>
-        </div>
+        {image ? (
+          <Image
+            src={image}
+            alt={name}
+            fill
+            className="object-cover object-center"
+          />
+        ) : (
+          <div className="flex h-full items-center justify-center">
+            <span className="font-display text-4xl font-bold text-white/20">
+              {name.split(' ').map(n => n[0]).join('')}
+            </span>
+          </div>
+        )}
       </div>
       <h3 className="mb-2 font-display text-xl font-bold uppercase text-white">{name}</h3>
       <p className="mb-3 font-sans text-sm font-bold text-pau-yellow">{role}</p>

@@ -113,10 +113,10 @@ export default async function EquipePage() {
                 Staff Technique
               </h3>
               <div className="space-y-4">
-                <StaffMember name="Didier Tholot" role="Entraîneur principal" />
-                <StaffMember name="Vincent Bracigliano" role="Entraîneur adjoint" />
-                <StaffMember name="Julien Cardy" role="Préparateur physique" />
-                <StaffMember name="Thomas Ayassamy" role="Analyste vidéo" />
+                <StaffMember name="Didier Tholot" role="Entraîneur principal" image="/images/club/DSC00082.png" />
+                <StaffMember name="Vincent Bracigliano" role="Entraîneur adjoint" image={null} />
+                <StaffMember name="Julien Cardy" role="Préparateur physique" image={null} />
+                <StaffMember name="Thomas Ayassamy" role="Analyste vidéo" image={null} />
               </div>
             </div>
 
@@ -126,11 +126,11 @@ export default async function EquipePage() {
                 Staff Médical
               </h3>
               <div className="space-y-4">
-                <StaffMember name="Dr. Marc Laporte" role="Médecin du club" />
-                <StaffMember name="Pierre Durand" role="Kinésithérapeute" />
-                <StaffMember name="Sophie Martin" role="Kinésithérapeute" />
-                <StaffMember name="Alexandre Petit" role="Ostéopathe" />
-                <StaffMember name="Julie Bernard" role="Podologue" />
+                <StaffMember name="Dr. Marc Laporte" role="Médecin du club" image={null} />
+                <StaffMember name="Pierre Durand" role="Kinésithérapeute" image={null} />
+                <StaffMember name="Sophie Martin" role="Kinésithérapeute" image={null} />
+                <StaffMember name="Alexandre Petit" role="Ostéopathe" image={null} />
+                <StaffMember name="Julie Bernard" role="Podologue" image={null} />
               </div>
             </div>
           </div>
@@ -183,14 +183,34 @@ function PlayerCard({ player }) {
 }
 
 // Composant Staff Member
-function StaffMember({ name, role }) {
+function StaffMember({ name, role, image }) {
   return (
-    <div className="border-l-2 border-pau-yellow pl-4">
-      <h4 className="font-display text-base font-bold uppercase text-white">
-        {name}
-      </h4>
-      <p className="mt-1 font-sans text-sm text-white/70">{role}</p>
-    </div>
+    <article className="border border-white/10 bg-pau-night p-5 transition-all hover:border-2 hover:border-pau-yellow">
+      <div className="flex items-center gap-4">
+        <div className="relative h-16 w-16 flex-shrink-0 overflow-hidden rounded-full bg-pau-primary">
+          {image ? (
+            <Image
+              src={image}
+              alt={name}
+              fill
+              className="object-cover object-center"
+            />
+          ) : (
+            <div className="flex h-full items-center justify-center">
+              <span className="font-display text-lg font-bold text-white/20">
+                {name.split(' ').map(n => n[0]).join('')}
+              </span>
+            </div>
+          )}
+        </div>
+        <div>
+          <h4 className="font-display text-base font-bold uppercase text-white">
+            {name}
+          </h4>
+          <p className="mt-1 font-sans text-sm text-white/70">{role}</p>
+        </div>
+      </div>
+    </article>
   );
 }
 
