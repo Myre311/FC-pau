@@ -87,9 +87,9 @@ export default function ClubPage() {
           </h2>
 
           <div className="grid gap-9 md:grid-cols-3">
-            <DirectorProfile name="Bernard Laporte-Fray" role="Président" description="À la tête du club depuis plusieurs années, il Å"uvre au quotidien pour le développement et le rayonnement du PAU FC." image="/images/club/BernardLaporte-Fray.png" />
+            <DirectorProfile name="Bernard Laporte-Fray" role="Président" description="À la tête du club depuis plusieurs années, il œuvre au quotidien pour le développement et le rayonnement du PAU FC." image="/images/club/BernardLaporte-Fray.png" />
             <DirectorProfile name="Luis de Sousa" role="Directeur Sportif" description="Responsable de la stratégie sportive du club, du recrutement et de la gestion de l'effectif professionnel." image="/images/club/luis-de-sousa-1.png" />
-            <DirectorProfile name="Nicolas UsaÃ¯" role="Entraîneur Principal" description="À la tête de l'équipe professionnelle, il dirige les entraînements et la stratégie tactique sur le terrain." image="/images/club/DSC00082.png" />
+            <DirectorProfile name="Nicolas Usaï" role="Entraîneur Principal" description="À la tête de l'équipe professionnelle, il dirige les entraînements et la stratégie tactique sur le terrain." image="/images/club/DSC00082.png" />
           </div>
         </div>
       </section>

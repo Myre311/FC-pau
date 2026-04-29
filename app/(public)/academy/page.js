@@ -204,7 +204,7 @@ export default function AcademyPage() {
                 Engagement
               </h3>
               <p className="mt-4 font-sans text-base leading-relaxed text-white/70">
-                Travail, rigueur, dépassement de soi et esprit d'équipe sont au cÅ"ur de notre projet.
+                Travail, rigueur, dépassement de soi et esprit d'équipe sont au cœur de notre projet.
               </p>
             </div>
           </div>
