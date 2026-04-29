@@ -6,23 +6,13 @@ import { OrganizationJsonLd } from '@/components/seo/OrganizationJsonLd';
 
 import './globals.css';
 
-// Morhena - Police calligraphique élégante pour tous les titres
-const morhena = localFont({
-  src: [
-    {
-      path: '../public/fonts/Morhena.otf',
-      weight: '400',
-      style: 'normal',
-    },
-    {
-      path: '../public/fonts/Morhena-Italic.otf',
-      weight: '400',
-      style: 'italic',
-    },
-  ],
+// Frenchy - Police calligraphique élégante pour tous les titres
+const frenchy = localFont({
+  src: '../public/fonts/FrenchyDEMO-Regular.otf',
   variable: '--font-display',
   display: 'swap',
   preload: true,
+  weight: '400',
   fallback: ['Georgia', 'serif'],
 });
 
@@ -78,7 +68,7 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="fr"
-      className={`${morhena.variable} ${inter.variable} ${dmMono.variable}`}
+      className={`${frenchy.variable} ${inter.variable} ${dmMono.variable}`}
     >
       <body className="font-sans antialiased">
         {children}
