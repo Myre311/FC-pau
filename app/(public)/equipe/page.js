@@ -7,18 +7,18 @@ export const metadata = {
 };
 
 export default async function EquipePage() {
-  // RÃ©cupÃ©rer tous les joueurs par poste
+  // Récupérer tous les joueurs par poste
   const players = await prisma.player
     .findMany({
-      where: { status: 'active' },
-      orderBy: [{ position: 'asc' }, { jerseyNumber: 'asc' }],
+      where: { active: true, role: 'player' },
+      orderBy: [{ position: 'asc' }, { shirtNumber: 'asc' }],
     })
     .catch(() => []);
 
-  const gardiens = players.filter((p) => p.position === 'GK');
-  const defenseurs = players.filter((p) => p.position === 'DEF');
-  const milieux = players.filter((p) => p.position === 'MID');
-  const attaquants = players.filter((p) => p.position === 'ATT');
+  const gardiens = players.filter((p) => p.position === 'goalkeeper');
+  const defenseurs = players.filter((p) => p.position === 'defender');
+  const milieux = players.filter((p) => p.position === 'midfielder');
+  const attaquants = players.filter((p) => p.position === 'forward');
 
   return (
     <div className="min-h-screen bg-pau-night">
@@ -156,7 +156,7 @@ function PlayerCard({ player }) {
         ) : (
           <div className="flex h-full items-center justify-center">
             <span className="font-display text-6xl font-bold text-white/20">
-              {player.jerseyNumber}
+              {player.shirtNumber}
             </span>
           </div>
         )}
@@ -164,7 +164,7 @@ function PlayerCard({ player }) {
         {/* NumÃ©ro overlay */}
         <div className="absolute left-0 top-0 bg-pau-yellow px-3 py-1">
           <span className="font-display text-xl font-bold text-pau-night">
-            {player.jerseyNumber}
+            {player.shirtNumber}
           </span>
         </div>
       </div>
@@ -217,10 +217,10 @@ function StaffMember({ name, role, image }) {
 // Helper position label
 function getPositionLabel(position) {
   const labels = {
-    GK: 'Gardien',
-    DEF: 'DÃ©fenseur',
-    MID: 'Milieu',
-    ATT: 'Attaquant',
+    goalkeeper: 'Gardien',
+    defender: 'Défenseur',
+    midfielder: 'Milieu',
+    forward: 'Attaquant',
   };
   return labels[position] || position;
 }
