@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
@@ -86,7 +86,7 @@ export default function CalendrierPage() {
                     : 'border-white/20 bg-transparent text-white hover:border-pau-yellow'
                 }`}
               >
-                ExtÃ©rieur
+                Extérieur
               </button>
             </div>
 
@@ -162,7 +162,7 @@ export default function CalendrierPage() {
               <div className="mt-6 space-y-2 text-sm">
                 <div className="flex items-center gap-2">
                   <div className="h-3 w-3 bg-green-400" />
-                  <span className="font-sans text-white/70">MontÃ©e en Ligue 1</span>
+                  <span className="font-sans text-white/70">Montée en Ligue 1</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="h-3 w-3 bg-orange-400" />
@@ -170,7 +170,7 @@ export default function CalendrierPage() {
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="h-3 w-3 bg-red-400" />
-                  <span className="font-sans text-white/70">RelÃ©gation en National</span>
+                  <span className="font-sans text-white/70">Relégation en National</span>
                 </div>
               </div>
             </div>
@@ -218,9 +218,9 @@ function MatchCard({ match }) {
         </span>
       </div>
 
-      {/* Ã‰quipes avec logos */}
+      {/* Équipes avec logos */}
       <div className="mb-6 flex items-center justify-center gap-4 md:gap-6">
-        {/* Ã‰quipe Ã  gauche */}
+        {/* Équipe Ã  gauche */}
         <div className="flex flex-col items-center gap-2">
           <div className="flex h-14 w-14 items-center justify-center rounded-full bg-white p-2.5 md:h-16 md:w-16 md:p-3">
             <Image
@@ -251,7 +251,7 @@ function MatchCard({ match }) {
           <span className="font-display text-lg font-bold text-white/40 md:text-xl">vs</span>
         )}
 
-        {/* Ã‰quipe Ã  droite */}
+        {/* Équipe Ã  droite */}
         <div className="flex flex-col items-center gap-2">
           <div className="flex h-14 w-14 items-center justify-center rounded-full bg-white p-2.5 md:h-16 md:w-16 md:p-3">
             <Image
@@ -270,9 +270,9 @@ function MatchCard({ match }) {
 
       {/* Infos lieu */}
       <div className="flex items-center justify-between border-t border-white/10 pt-4 text-sm text-white/60">
-        <span>{match.venue || (match.isHome ? 'Nouste Camp' : 'ExtÃ©rieur')}</span>
+        <span>{match.venue || (match.isHome ? 'Nouste Camp' : 'Extérieur')}</span>
         <span className="font-mono text-xs uppercase">
-          {match.isHome ? 'Domicile' : 'ExtÃ©rieur'}
+          {match.isHome ? 'Domicile' : 'Extérieur'}
         </span>
       </div>
 

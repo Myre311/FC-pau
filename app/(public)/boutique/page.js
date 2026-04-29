@@ -1,16 +1,16 @@
-﻿import Image from 'next/image';
+import Image from 'next/image';
 import Link from 'next/link';
 import { prisma } from '@/lib/prisma';
 
 export const dynamic = 'force-dynamic';
 
 export const metadata = {
-  title: 'Boutique â€” Pau FC',
+  title: 'Boutique "” Pau FC',
   description: 'Boutique officielle du Pau FC. Maillots, training, lifestyle et accessoires.',
 };
 
 export default async function BoutiquePage() {
-  // RÃ©cupÃ©rer les produits (avec fallback si erreur DB)
+  // Récupérer les produits (avec fallback si erreur DB)
   const products = await prisma.product
     .findMany({
       where: { status: 'active' },
@@ -43,13 +43,13 @@ export default async function BoutiquePage() {
               Boutique Officielle
             </h1>
             <p className="mt-4 font-sans text-lg leading-relaxed text-white/80 md:text-xl">
-              Maillots, Ã©quipements et accessoires aux couleurs du Pau FC
+              Maillots, équipements et accessoires aux couleurs du Pau FC
             </p>
           </div>
         </div>
       </section>
 
-      {/* CatÃ©gories */}
+      {/* Catégories */}
       <section className="border-t border-white/10 bg-pau-night py-16 md:py-20">
         <div className="container-pau">
           <div className="mb-12 grid gap-6 md:grid-cols-3">
@@ -122,7 +122,7 @@ export default async function BoutiquePage() {
           {products.length === 0 ? (
             <div className="rounded-lg border-2 border-white/10 bg-pau-primary p-12 text-center">
               <p className="font-sans text-lg text-white/70">
-                La boutique sera bientÃ´t disponible. Revenez prochainement!
+                La boutique sera bientôt disponible. Revenez prochainement!
               </p>
             </div>
           ) : (

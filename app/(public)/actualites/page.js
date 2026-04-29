@@ -1,14 +1,14 @@
-﻿import { prisma } from '@/lib/prisma';
+import { prisma } from '@/lib/prisma';
 import Image from 'next/image';
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'ActualitÃ©s â€” Pau FC',
-  description: 'Toutes les actualitÃ©s du Pau FC : Ã©quipe pro, academy, club.',
+  title: 'Actualités "” Pau FC',
+  description: 'Toutes les actualités du Pau FC : équipe pro, academy, club.',
 };
 
 export default async function ActualitesPage() {
-  // RÃ©cupÃ©rer toutes les actualitÃ©s publiÃ©es
+  // Récupérer toutes les actualités publiées
   const articles = await prisma.article
     .findMany({
       where: {
@@ -26,7 +26,7 @@ export default async function ActualitesPage() {
       <section className="relative min-h-[400px] md:h-[60vh] md:min-h-[500px] bg-pau-night">
         <Image
           src="/images/hero-actualites.jpg"
-          alt="ActualitÃ©s Pau FC"
+          alt="Actualités Pau FC"
           fill
           className="object-cover object-[50%_40%] brightness-50"
           priority
@@ -34,9 +34,9 @@ export default async function ActualitesPage() {
         <div className="absolute inset-0 bg-gradient-to-t from-pau-night via-pau-night/60 to-transparent" />
         <div className="container-pau relative flex h-full items-end pb-16">
           <div>
-            <span className="font-mono text-xs uppercase text-pau-yellow">Toute l'actualitÃ©</span>
+            <span className="font-mono text-xs uppercase text-pau-yellow">Toute l'actualité</span>
             <h1 className="mt-4 font-display text-5xl font-bold uppercase text-white md:text-6xl">
-              ActualitÃ©s
+              Actualités
             </h1>
           </div>
         </div>
@@ -47,7 +47,7 @@ export default async function ActualitesPage() {
         <div className="container-pau">
           {articles.length === 0 ? (
             <p className="py-12 text-center font-sans text-lg text-white/60">
-              Aucune actualitÃ© publiÃ©e pour le moment.
+              Aucune actualité publiée pour le moment.
             </p>
           ) : (
             <div className="mx-auto max-w-4xl space-y-12">
@@ -87,7 +87,7 @@ function ArticleCard({ article }) {
 
         {/* Contenu */}
         <div className="p-6 md:p-8">
-          {/* Date + CatÃ©gorie */}
+          {/* Date + Catégorie */}
           <div className="mb-4 flex items-center gap-4">
             <time className="font-sans text-sm text-white/60">
               {new Date(article.publishedAt).toLocaleDateString('fr-FR', {

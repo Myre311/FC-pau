@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { useState } from 'react';
 import Image from 'next/image';
@@ -40,8 +40,8 @@ export default function PartenairesPage() {
               Devenez partenaire<br />du Pau FC
             </h1>
             <p className="mx-auto mt-6 max-w-3xl font-sans text-lg leading-relaxed text-white/80 md:text-xl">
-              Associez votre entreprise au club. VisibilitÃ© terrain et tribunes, hospitalitÃ©s VIP,
-              et un rÃ©seau d'affaires actif dans tout le BÃ©arn.
+              Associez votre entreprise au club. Visibilité terrain et tribunes, hospitalités VIP,
+              et un réseau d'affaires actif dans tout le Béarn.
             </p>
           </div>
         </div>
@@ -51,7 +51,7 @@ export default function PartenairesPage() {
       <section className="border-y border-pau-gold/20 bg-pau-primary py-18 md:py-24">
         <div className="container-pau">
           <div className="grid gap-10 md:grid-cols-5">
-            <StatBox number="11,800" label="SiÃ¨ges/match" />
+            <StatBox number="11,800" label="Sièges/match" />
             <StatBox number="50+" label="Entreprises partenaires" />
             <StatBox number="300" label="Convives VIP/match" />
             <StatBox number="200k+" label="Spectateurs annuels" />
@@ -77,8 +77,8 @@ export default function PartenairesPage() {
               <PartnerLogo name="Groupama" />
               <PartnerLogo name="Casino de Pau" />
               <PartnerLogo name="Ville de Pau" />
-              <PartnerLogo name="CommunautÃ© d'AgglomÃ©ration" />
-              <PartnerLogo name="RÃ©gion Nouvelle-Aquitaine" />
+              <PartnerLogo name="Communauté d'Agglomération" />
+              <PartnerLogo name="Région Nouvelle-Aquitaine" />
               <PartnerLogo name="Holy Energy" />
               <PartnerLogo name="Nouste Energia" />
               <PartnerLogo name="BKT" />
@@ -92,12 +92,12 @@ export default function PartenairesPage() {
             </h3>
             <div className="grid gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
               <PartnerLogoSmall name="Banque Populaire" />
-              <PartnerLogoSmall name="CrÃ©dit Agricole" />
+              <PartnerLogoSmall name="Crédit Agricole" />
               <PartnerLogoSmall name="EDF" />
               <PartnerLogoSmall name="Orange" />
               <PartnerLogoSmall name="Total Energies" />
               <PartnerLogoSmall name="Carrefour" />
-              <PartnerLogoSmall name="DÃ©cathlon" />
+              <PartnerLogoSmall name="Décathlon" />
               <PartnerLogoSmall name="Leclerc" />
               <PartnerLogoSmall name="McDonald's" />
               <PartnerLogoSmall name="Burger King" />
@@ -126,14 +126,14 @@ export default function PartenairesPage() {
               Rejoignez nos partenaires
             </h2>
             <p className="mb-14 text-center font-sans text-lg text-white/80">
-              PrÃ©sentez-nous votre projet, nous vous recontactons sous 48 heures.
+              Présentez-nous votre projet, nous vous recontactons sous 48 heures.
             </p>
 
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid gap-6 md:grid-cols-2">
                 <input
                   type="text"
-                  placeholder="PrÃ©nom"
+                  placeholder="Prénom"
                   value={formData.firstName}
                   onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
                   required
@@ -169,7 +169,7 @@ export default function PartenairesPage() {
                 />
                 <input
                   type="tel"
-                  placeholder="TÃ©lÃ©phone"
+                  placeholder="Téléphone"
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                   required
@@ -183,7 +183,7 @@ export default function PartenairesPage() {
                 required
                 className="w-full border-2 border-pau-gold/30 bg-white/5 px-4 py-3 font-sans text-white focus:border-pau-gold focus:outline-none"
               >
-                <option value="">Type de partenariat souhaitÃ©</option>
+                <option value="">Type de partenariat souhaité</option>
                 <option value="majeur">Partenaire Majeur</option>
                 <option value="premium">Partenaire Premium</option>
                 <option value="officiel">Partenaire Officiel</option>
@@ -191,7 +191,7 @@ export default function PartenairesPage() {
 
               <input
                 type="text"
-                placeholder="Budget envisagÃ©"
+                placeholder="Budget envisagé"
                 value={formData.budget}
                 onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
                 className="w-full border-2 border-pau-gold/30 bg-white/5 px-4 py-3 font-sans text-white placeholder:text-white/40 focus:border-pau-gold focus:outline-none"
@@ -215,7 +215,7 @@ export default function PartenairesPage() {
                   className="mt-1 h-4 w-4 border-2 border-pau-gold/30 bg-white/5"
                 />
                 <label htmlFor="consent" className="font-sans text-sm text-white/70">
-                  J'accepte que mes donnÃ©es soient utilisÃ©es dans le cadre de ma demande de partenariat et en accord avec la politique de confidentialitÃ©.
+                  J'accepte que mes données soient utilisées dans le cadre de ma demande de partenariat et en accord avec la politique de confidentialité.
                 </label>
               </div>
 

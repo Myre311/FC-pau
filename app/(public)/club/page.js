@@ -1,9 +1,9 @@
-﻿import Image from 'next/image';
+import Image from 'next/image';
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Le Club â€” Pau FC',
-  description: "Notre histoire, le Nouste Camp, les lÃ©gendes qui ont portÃ© le maillot jaune et bleu.",
+  title: 'Le Club "” Pau FC',
+  description: "Notre histoire, le Nouste Camp, les légendes qui ont porté le maillot jaune et bleu.",
 };
 
 export default function ClubPage() {
@@ -48,12 +48,12 @@ export default function ClubPage() {
                 Notre Histoire
               </h2>
               <div className="space-y-5 font-sans text-base leading-relaxed text-white/80 md:text-lg">
-                <p>Le football Ã  Pau naÃ®t au dÃ©but du XXe siÃ¨cle, lorsque le ballon rond fait son apparition dans les clubs omnisports bÃ©arnais.</p>
-                <p>Trois clubs historiques ont posÃ© les fondations du football palois :</p>
+                <p>Le football Ã  Pau naît au début du XXe siècle, lorsque le ballon rond fait son apparition dans les clubs omnisports béarnais.</p>
+                <p>Trois clubs historiques ont posé les fondations du football palois :</p>
                 <ul className="ml-6 space-y-2 list-disc">
                   <li><strong className="text-white">Football Association Bourbaki</strong> (1904)</li>
-                  <li><strong className="text-white">Jeanne d'Arc le BÃ©arn</strong> (1909)</li>
-                  <li><strong className="text-white">Union JuranÃ§onnaise</strong> (1907)</li>
+                  <li><strong className="text-white">Jeanne d'Arc le Béarn</strong> (1909)</li>
+                  <li><strong className="text-white">Union Jurançonnaise</strong> (1907)</li>
                 </ul>
                 <div className="pt-4">
                   <Link href="/club/histoire" className="inline-block border-2 border-pau-yellow bg-transparent px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-pau-yellow transition-all hover:bg-pau-yellow hover:text-pau-night">
@@ -69,13 +69,13 @@ export default function ClubPage() {
       <section className="border-t border-white/10 bg-pau-primary pb-22 pt-18 md:pb-28 md:pt-24">
         <div className="container-pau">
           <h2 className="mb-14 font-display text-3xl font-bold uppercase text-pau-yellow md:text-4xl">
-            Ils ont portÃ© nos couleurs
+            Ils ont porté nos couleurs
           </h2>
 
           <div className="grid gap-10 md:grid-cols-3">
-            <PlayerProfile name="AndrÃ©-Pierre Gignac" position="Attaquant" years="2005-2006" description="FormÃ© au PAU FC, Gignac a brillÃ© en Ligue 1 avec l'OM et Toulouse avant de devenir une lÃ©gende au Mexique avec les Tigres UANL." image={null} />
-            <PlayerProfile name="Adrien Rabiot" position="Milieu" years="2008-2009" description="PassÃ© par le centre de formation du PAU FC, Rabiot a ensuite rejoint le PSG avant de s'imposer comme un cadre de la Juventus et de l'Ã©quipe de France." image={null} />
-            <PlayerProfile name="Anthony BrianÃ§on" position="DÃ©fenseur" years="2025-2027" description="Capitaine emblÃ©matique du PAU FC, BrianÃ§on incarne l'esprit de combativitÃ© et le leadership sur le terrain." image="/images/players/anthony-brianÃ§on-23.jpg" />
+            <PlayerProfile name="André-Pierre Gignac" position="Attaquant" years="2005-2006" description="Formé au PAU FC, Gignac a brillé en Ligue 1 avec l'OM et Toulouse avant de devenir une légende au Mexique avec les Tigres UANL." image={null} />
+            <PlayerProfile name="Adrien Rabiot" position="Milieu" years="2008-2009" description="Passé par le centre de formation du PAU FC, Rabiot a ensuite rejoint le PSG avant de s'imposer comme un cadre de la Juventus et de l'équipe de France." image={null} />
+            <PlayerProfile name="Anthony Briançon" position="Défenseur" years="2025-2027" description="Capitaine emblématique du PAU FC, Briançon incarne l'esprit de combativité et le leadership sur le terrain." image="/images/players/anthony-briançon-23.jpg" />
           </div>
         </div>
       </section>
@@ -87,9 +87,9 @@ export default function ClubPage() {
           </h2>
 
           <div className="grid gap-9 md:grid-cols-3">
-            <DirectorProfile name="Bernard Laporte-Fray" role="PrÃ©sident" description="Ã€ la tÃªte du club depuis plusieurs annÃ©es, il Å“uvre au quotidien pour le dÃ©veloppement et le rayonnement du PAU FC." image="/images/club/BernardLaporte-Fray.png" />
-            <DirectorProfile name="Luis de Sousa" role="Directeur Sportif" description="Responsable de la stratÃ©gie sportive du club, du recrutement et de la gestion de l'effectif professionnel." image="/images/club/luis-de-sousa-1.png" />
-            <DirectorProfile name="Nicolas UsaÃ¯" role="EntraÃ®neur Principal" description="Ã€ la tÃªte de l'Ã©quipe professionnelle, il dirige les entraÃ®nements et la stratÃ©gie tactique sur le terrain." image="/images/club/DSC00082.png" />
+            <DirectorProfile name="Bernard Laporte-Fray" role="Président" description="À la tête du club depuis plusieurs années, il Å“uvre au quotidien pour le développement et le rayonnement du PAU FC." image="/images/club/BernardLaporte-Fray.png" />
+            <DirectorProfile name="Luis de Sousa" role="Directeur Sportif" description="Responsable de la stratégie sportive du club, du recrutement et de la gestion de l'effectif professionnel." image="/images/club/luis-de-sousa-1.png" />
+            <DirectorProfile name="Nicolas UsaÃ¯" role="Entraîneur Principal" description="À la tête de l'équipe professionnelle, il dirige les entraînements et la stratégie tactique sur le terrain." image="/images/club/DSC00082.png" />
           </div>
         </div>
       </section>
@@ -97,13 +97,13 @@ export default function ClubPage() {
       <section className="border-t border-white/10 bg-pau-primary pb-24 pt-18 md:pb-30 md:pt-24">
         <div className="container-pau">
           <h2 className="mb-14 font-display text-3xl font-bold uppercase text-pau-yellow md:text-4xl">
-            Nouste Camp â€” notre forteresse
+            Nouste Camp "” notre forteresse
           </h2>
 
           <div className="mb-16 grid gap-8 md:grid-cols-4">
             <StatCard number="11,800" label="Places assises" />
-            <StatCard number="2022" label="AnnÃ©e de rÃ©novation" />
-            <StatCard number="500" label="HospitalitÃ©s" />
+            <StatCard number="2022" label="Année de rénovation" />
+            <StatCard number="500" label="Hospitalités" />
             <StatCard number="85%" label="Taux de remplissage" />
           </div>
 

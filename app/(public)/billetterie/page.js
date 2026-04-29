@@ -1,15 +1,15 @@
-﻿import Link from 'next/link';
+import Link from 'next/link';
 import Image from 'next/image';
 import { prisma } from '@/lib/prisma';
 
 export const metadata = {
-  title: 'Billetterie â€” Pau FC',
+  title: 'Billetterie "” Pau FC',
   description:
-    'RÃ©servez vos places au Nouste Camp. Billetterie en ligne pour tous les matchs du Pau FC, tarifs rÃ©duits et packs famille.',
+    'Réservez vos places au Nouste Camp. Billetterie en ligne pour tous les matchs du Pau FC, tarifs réduits et packs famille.',
 };
 
 export default async function BilletteriePage() {
-  // RÃ©cupÃ©rer les prochains matchs Ã  domicile
+  // Récupérer les prochains matchs Ã  domicile
   const upcomingMatches = await prisma.match.findMany({
     where: {
       isHome: true,
@@ -44,7 +44,7 @@ export default async function BilletteriePage() {
               Billetterie
             </h1>
             <p className="mt-4 font-sans text-lg leading-relaxed text-white/80 md:text-xl">
-              RÃ©servez vos places pour les matchs Ã  domicile. Vivez l'ambiance du Nouste Camp, notre forteresse bÃ©arnaise.
+              Réservez vos places pour les matchs Ã  domicile. Vivez l'ambiance du Nouste Camp, notre forteresse béarnaise.
             </p>
           </div>
         </div>
@@ -62,7 +62,7 @@ export default async function BilletteriePage() {
 
           {upcomingMatches.length === 0 ? (
             <p className="font-sans text-lg text-white/60">
-              Aucun match Ã  domicile programmÃ© pour le moment.{' '}
+              Aucun match Ã  domicile programmé pour le moment.{' '}
               <Link href="/calendrier" className="text-pau-yellow hover:underline">
                 Consultez le calendrier complet
               </Link>
@@ -83,7 +83,7 @@ export default async function BilletteriePage() {
           <div className="mb-14">
             <span className="badge-mono text-pau-yellow">Les tarifs</span>
             <h2 className="mt-4 font-display text-4xl font-bold uppercase text-white md:text-5xl">
-              Combien Ã§a coÃ»te ?
+              Combien ça coûte ?
             </h2>
           </div>
 
@@ -91,27 +91,27 @@ export default async function BilletteriePage() {
             <TarifCardMaquette
               title="Plein tarif"
               price="25â‚¬"
-              description="Tribune Principale Â· CatÃ©gorie A"
+              description="Tribune Principale Â· Catégorie A"
             />
             <TarifCardMaquette
-              title="Tarif rÃ©duit"
+              title="Tarif réduit"
               price="15â‚¬"
-              description="-18 ans, Ã©tudiants, +65 ans, demandeurs d'emploi"
+              description="-18 ans, étudiants, +65 ans, demandeurs d'emploi"
             />
             <TarifCardMaquette
               title="Enfant"
               price="10â‚¬"
-              description="-12 ans Â· AccompagnÃ© d'un adulte"
+              description="-12 ans Â· Accompagné d'un adulte"
             />
             <TarifCardMaquette
-              title="AbonnÃ©"
+              title="Abonné"
               price="15â‚¬"
-              description="Tarif prÃ©fÃ©rentiel pour les abonnÃ©s saison"
+              description="Tarif préférentiel pour les abonnés saison"
             />
             <TarifCardMaquette
               title="Groupe 10+"
               price="20â‚¬"
-              description="Ã€ partir de 10 personnes Â· RÃ©servation anticipÃ©e"
+              description="À partir de 10 personnes Â· Réservation anticipée"
             />
             <TarifCardMaquette
               title="Pack Famille"
@@ -121,7 +121,7 @@ export default async function BilletteriePage() {
           </div>
 
           <p className="mt-8 font-sans text-sm text-white/60">
-            Tarifs indicatifs pour matchs de Ligue 2. Les tarifs peuvent varier selon la catÃ©gorie de match.
+            Tarifs indicatifs pour matchs de Ligue 2. Les tarifs peuvent varier selon la catégorie de match.
           </p>
         </div>
       </section>
@@ -144,15 +144,15 @@ export default async function BilletteriePage() {
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
                   <span className="mt-1 inline-block h-1.5 w-1.5 flex-shrink-0 rounded-full bg-pau-yellow" />
-                  <span><strong className="text-white">Rapide</strong> â€” Rechargez en ligne avant le match</span>
+                  <span><strong className="text-white">Rapide</strong> "” Rechargez en ligne avant le match</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="mt-1 inline-block h-1.5 w-1.5 flex-shrink-0 rounded-full bg-pau-yellow" />
-                  <span><strong className="text-white">SÃ©curisÃ©</strong> â€” Paiement sans contact</span>
+                  <span><strong className="text-white">Sécurisé</strong> "” Paiement sans contact</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="mt-1 inline-block h-1.5 w-1.5 flex-shrink-0 rounded-full bg-pau-yellow" />
-                  <span><strong className="text-white">Remboursable</strong> â€” Solde non utilisÃ© remboursÃ©</span>
+                  <span><strong className="text-white">Remboursable</strong> "” Solde non utilisé remboursé</span>
                 </li>
               </ul>
               <div className="pt-4">
@@ -174,14 +174,14 @@ export default async function BilletteriePage() {
           <div className="mb-14">
             <span className="badge-mono text-pau-yellow">Bon Ã  savoir</span>
             <h2 className="mt-4 font-display text-4xl font-bold uppercase text-white md:text-5xl">
-              Comment Ã§a se passe
+              Comment ça se passe
             </h2>
           </div>
 
           <div className="grid gap-14 md:grid-cols-2">
             <div className="border-2 border-white/10 bg-white/5 p-8">
               <h3 className="mb-6 font-display text-2xl font-bold uppercase text-pau-yellow">
-                AccÃ¨s au stade
+                Accès au stade
               </h3>
               <div className="space-y-4 font-sans text-base text-white/80">
                 <p>
@@ -190,11 +190,11 @@ export default async function BilletteriePage() {
                 </p>
                 <p>
                   <strong className="text-white">Parking</strong><br />
-                  Gratuit autour du stade (places limitÃ©es)
+                  Gratuit autour du stade (places limitées)
                 </p>
                 <p>
                   <strong className="text-white">Bus</strong><br />
-                  Ligne 4, arrÃªt "Nouste Camp"
+                  Ligne 4, arrêt "Nouste Camp"
                 </p>
                 <p>
                   <strong className="text-white">Ouverture portes</strong><br />
@@ -205,24 +205,24 @@ export default async function BilletteriePage() {
 
             <div className="border-2 border-white/10 bg-white/5 p-8">
               <h3 className="mb-6 font-display text-2xl font-bold uppercase text-pau-yellow">
-                RÃ¨glement intÃ©rieur
+                Règlement intérieur
               </h3>
               <ul className="space-y-3 font-sans text-base text-white/80">
                 <li className="flex items-start gap-3">
-                  <span className="mt-1 text-pau-yellow">â€¢</span>
-                  <span>Interdiction de fumigÃ¨nes, pÃ©tards, objets dangereux</span>
+                  <span className="mt-1 text-pau-yellow">"¢</span>
+                  <span>Interdiction de fumigènes, pétards, objets dangereux</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="mt-1 text-pau-yellow">â€¢</span>
+                  <span className="mt-1 text-pau-yellow">"¢</span>
                   <span>Pas de bouteilles en verre</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="mt-1 text-pau-yellow">â€¢</span>
-                  <span>ContrÃ´le de sÃ©curitÃ© Ã  l'entrÃ©e obligatoire</span>
+                  <span className="mt-1 text-pau-yellow">"¢</span>
+                  <span>Contrôle de sécurité Ã  l'entrée obligatoire</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="mt-1 text-pau-yellow">â€¢</span>
-                  <span>Billet dÃ©matÃ©rialisÃ© (QR code) requis</span>
+                  <span className="mt-1 text-pau-yellow">"¢</span>
+                  <span>Billet dématérialisé (QR code) requis</span>
                 </li>
               </ul>
             </div>
@@ -236,10 +236,10 @@ export default async function BilletteriePage() {
           <div className="mx-auto max-w-3xl text-center">
             <span className="badge-mono text-pau-yellow">Besoin d'aide ?</span>
             <h2 className="mt-4 font-display text-4xl font-bold uppercase text-pau-yellow md:text-5xl">
-              Nous sommes Ã  votre Ã©coute
+              Nous sommes Ã  votre écoute
             </h2>
             <p className="mx-auto mt-7 max-w-xl font-sans text-lg text-white/70">
-              Questions sur les billets, tarifs de groupe ou abonnements ? Notre Ã©quipe billetterie vous rÃ©pond.
+              Questions sur les billets, tarifs de groupe ou abonnements ? Notre équipe billetterie vous répond.
             </p>
 
             <div className="mt-8 space-y-3 font-sans text-base text-white/80">
@@ -250,7 +250,7 @@ export default async function BilletteriePage() {
                 </a>
               </p>
               <p>
-                TÃ©lÃ©phone :{' '}
+                Téléphone :{' '}
                 <a href="tel:+33559000000" className="font-medium text-pau-yellow hover:underline">
                   +33 5 59 00 00 00
                 </a>
@@ -263,7 +263,7 @@ export default async function BilletteriePage() {
                 href="/cgv-billetterie"
                 className="font-sans text-sm text-white/60 hover:text-pau-yellow"
               >
-                Conditions gÃ©nÃ©rales de vente â†’
+                Conditions générales de vente â†’
               </Link>
             </div>
           </div>
@@ -288,7 +288,7 @@ function MatchCardMaquette({ match }) {
 
   return (
     <article className="group border border-white/10 bg-pau-primary p-7 transition-all hover:border-2 hover:border-pau-yellow md:p-9">
-      {/* Logo compÃ©tition */}
+      {/* Logo compétition */}
       {match.competition && (
         <div className="mb-6 flex justify-center">
           <Image
@@ -301,7 +301,7 @@ function MatchCardMaquette({ match }) {
         </div>
       )}
 
-      {/* Logos des Ã©quipes */}
+      {/* Logos des équipes */}
       <div className="mb-6 flex items-center justify-center gap-6 md:gap-8">
         {/* Logo Pau FC */}
         <div className="flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-full bg-white p-3 md:h-20 md:w-20">
@@ -316,7 +316,7 @@ function MatchCardMaquette({ match }) {
 
         <span className="font-display text-2xl font-bold text-white md:text-3xl">vs</span>
 
-        {/* Logo Ã©quipe adverse */}
+        {/* Logo équipe adverse */}
         <div className="flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-full bg-white p-3 md:h-20 md:w-20">
           {match.opponentLogo ? (
             <Image
@@ -334,7 +334,7 @@ function MatchCardMaquette({ match }) {
         </div>
       </div>
 
-      {/* Ã‰quipes */}
+      {/* Équipes */}
       <h3 className="mb-3 text-center font-display text-2xl font-bold uppercase text-white md:text-3xl">
         Pau FC vs {match.opponent}
       </h3>
@@ -357,11 +357,11 @@ function MatchCardMaquette({ match }) {
             rel="noopener noreferrer"
             className="inline-block border-2 border-pau-yellow bg-pau-yellow px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-pau-night transition-all hover:bg-transparent hover:text-pau-yellow"
           >
-            RÃ©server mes places
+            Réserver mes places
           </a>
         ) : (
           <span className="inline-block border-2 border-white/20 bg-white/5 px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-white/40">
-            BientÃ´t disponible
+            Bientôt disponible
           </span>
         )}
       </div>
