@@ -7,8 +7,11 @@ import Image from 'next/image';
  * Animation infinie horizontale
  */
 export function ScrollingBanner({ partners = [] }) {
-  // Si pas de partenaires, afficher le texte par défaut
-  if (!partners || partners.length === 0) {
+  // Filtrer uniquement les partenaires avec un logo
+  const partnersWithLogo = partners.filter(p => p.logoUrl && p.logoUrl.trim() !== '');
+
+  // Si pas de partenaires avec logo, afficher le texte par défaut
+  if (!partnersWithLogo || partnersWithLogo.length === 0) {
     const defaultText = "HOLY — PAU FC 5 · retire 5€ sur ta première commande";
     const repeatedText = Array(20).fill(defaultText).join(' · ');
 
@@ -22,7 +25,7 @@ export function ScrollingBanner({ partners = [] }) {
   }
 
   // Répéter les partenaires pour créer l'illusion d'infini
-  const repeatedPartners = Array(10).fill(partners).flat();
+  const repeatedPartners = Array(10).fill(partnersWithLogo).flat();
 
   return (
     <div className="relative overflow-hidden border-y border-white/10 bg-pau-yellow py-6">
