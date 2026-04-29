@@ -107,7 +107,7 @@ export default async function HomePage() {
               </h2>
               <Link
                 href="/calendrier"
-                className="mt-6 inline-block w-fit border-2 border-pau-yellow bg-transparent px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-pau-yellow transition-all hover:bg-pau-yellow hover:text-pau-night"
+                className="mt-6 inline-block w-fit border-2 border-white bg-transparent px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-white transition-all hover:bg-white hover:text-pau-night"
               >
                 Voir les matchs
               </Link>
@@ -137,7 +137,7 @@ export default async function HomePage() {
               </h2>
               <Link
                 href="/boutique"
-                className="mt-6 inline-block w-fit border-2 border-pau-yellow bg-transparent px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-pau-yellow transition-all hover:bg-pau-yellow hover:text-pau-night"
+                className="mt-6 inline-block w-fit border-2 border-white bg-transparent px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-white transition-all hover:bg-white hover:text-pau-night"
               >
                 Découvrir
               </Link>
@@ -178,7 +178,7 @@ export default async function HomePage() {
                     placeholder="Votre adresse email"
                     className="flex-1 bg-white px-4 py-3 font-sans text-sm text-pau-night placeholder:text-pau-night/50 focus:outline-none"
                   />
-                  <button className="bg-pau-yellow px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-pau-night transition-all hover:bg-pau-yellow/90">
+                  <button className="bg-pau-night px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-white transition-all hover:bg-white hover:text-pau-night border-2 border-pau-night hover:border-pau-night">
                     S'abonner
                   </button>
                 </div>
@@ -223,7 +223,7 @@ export default async function HomePage() {
                     <h3 className="mb-3 font-display text-lg font-bold uppercase text-white">
                       Vendredi 16 Avril
                     </h3>
-                    <button className="border-2 border-pau-yellow bg-transparent px-4 py-2 font-mono text-xs font-bold uppercase text-pau-yellow transition-all hover:bg-pau-yellow hover:text-pau-night">
+                    <button className="border-2 border-white bg-transparent px-4 py-2 font-mono text-xs font-bold uppercase text-white transition-all hover:bg-white hover:text-pau-night">
                       Voir
                     </button>
                   </div>
@@ -244,7 +244,7 @@ export default async function HomePage() {
                       <p className="font-mono text-xs text-white/70">
                         Vendredi 23 Avril
                       </p>
-                      <button className="border-2 border-pau-yellow bg-transparent px-4 py-2 font-mono text-xs font-bold uppercase text-pau-yellow transition-all hover:bg-pau-yellow hover:text-pau-night">
+                      <button className="border-2 border-white bg-transparent px-4 py-2 font-mono text-xs font-bold uppercase text-white transition-all hover:bg-white hover:text-pau-night">
                         Voir
                       </button>
                     </div>
@@ -308,7 +308,7 @@ export default async function HomePage() {
                 {/* Bouton Billetterie */}
                 <Link
                   href="/billetterie"
-                  className="w-full border-2 border-pau-yellow bg-pau-yellow px-6 py-3 text-center font-display text-xs font-bold uppercase tracking-wide text-pau-night transition-all hover:bg-transparent hover:text-pau-yellow md:text-sm"
+                  className="w-full border-2 border-white bg-white px-6 py-3 text-center font-display text-xs font-bold uppercase tracking-wide text-pau-night transition-all hover:bg-transparent hover:text-white md:text-sm"
                 >
                   Billetterie
                 </Link>
@@ -395,7 +395,7 @@ export default async function HomePage() {
           <div className="mt-12 text-center">
             <Link
               href="/actualites"
-              className="inline-block border-2 border-pau-yellow bg-transparent px-8 py-3 font-display text-sm font-bold uppercase tracking-wide text-pau-yellow transition-all hover:bg-pau-yellow hover:text-pau-night"
+              className="inline-block border-2 border-pau-night bg-transparent px-8 py-3 font-display text-sm font-bold uppercase tracking-wide text-pau-night transition-all hover:bg-pau-night hover:text-white"
             >
               Voir toutes les actualités
             </Link>

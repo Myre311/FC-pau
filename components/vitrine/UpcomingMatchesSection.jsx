@@ -100,7 +100,7 @@ export function UpcomingMatchesSection({ matches = [] }) {
               {match.isHome && (
                 <Link
                   href={`/billetterie?match=${match.id}`}
-                  className="mt-4 block border-2 border-pau-night bg-pau-night py-2 text-center font-display text-xs font-bold uppercase tracking-wide text-white transition-colors hover:bg-pau-yellow hover:border-pau-yellow hover:text-pau-night"
+                  className="mt-4 block border-2 border-pau-night bg-pau-night py-2 text-center font-display text-xs font-bold uppercase tracking-wide text-white transition-colors hover:bg-white hover:border-white hover:text-pau-night"
                 >
                   Réserver
                 </Link>
@@ -113,7 +113,7 @@ export function UpcomingMatchesSection({ matches = [] }) {
         <div className="mt-8 text-center md:hidden">
           <Link
             href="/calendrier"
-            className="inline-block border-2 border-pau-night bg-white px-8 py-3 font-display text-sm font-bold uppercase tracking-wide text-pau-night transition-colors hover:bg-pau-night hover:text-white"
+            className="inline-block border-2 border-pau-night bg-transparent px-8 py-3 font-display text-sm font-bold uppercase tracking-wide text-pau-night transition-colors hover:bg-pau-night hover:text-white"
           >
             Voir tout le calendrier
           </Link>

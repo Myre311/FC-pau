@@ -231,13 +231,13 @@ export default function IntegrerPage() {
             <div className="mt-8 flex flex-wrap gap-4">
               <a
                 href="mailto:recrutement.academy@paufc.fr?subject=Candidature Academy Pau FC"
-                className="inline-block border-2 border-pau-yellow bg-pau-yellow px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-pau-night transition-all hover:bg-transparent hover:text-pau-yellow"
+                className="inline-block border-2 border-white bg-white px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-pau-night transition-all hover:bg-transparent hover:text-white"
               >
                 Envoyer ma candidature
               </a>
               <Link
                 href="/academy"
-                className="inline-block border-2 border-white bg-transparent px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-white transition-all hover:bg-white hover:text-pau-primary"
+                className="inline-block border-2 border-white bg-transparent px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-white transition-all hover:bg-white hover:text-pau-night"
               >
                 Retour Academy
               </Link>

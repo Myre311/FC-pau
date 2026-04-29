@@ -37,7 +37,7 @@ export default async function PersonnaliserPage({ params }) {
     <div className="min-h-screen bg-white">
       <div className="container-pau py-8 md:py-12">
       <header className="mb-8">
-        <nav className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/50">
+        <nav className="font-mono text-[10px] uppercase tracking-[0.2em] text-pau-night/50">
           <Link href="/boutique" className="hover:text-pau-yellow">
             Boutique
           </Link>
@@ -46,7 +46,7 @@ export default async function PersonnaliserPage({ params }) {
             {product.name}
           </Link>
           {' / '}
-          <span className="text-white">Personnaliser</span>
+          <span className="text-pau-night">Personnaliser</span>
         </nav>
       </header>
 

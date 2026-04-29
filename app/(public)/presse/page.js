@@ -113,7 +113,7 @@ export default function PressePage() {
                 <a
                   href={release.downloadUrl}
                   download
-                  className="inline-flex items-center gap-2 border-2 border-pau-night bg-white px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-pau-night transition-colors hover:bg-pau-night hover:text-white"
+                  className="inline-flex items-center gap-2 border-2 border-pau-night bg-transparent px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-pau-night transition-colors hover:bg-pau-night hover:text-white"
                 >
                   <svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                     <path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" strokeLinecap="round" strokeLinejoin="round" />
@@ -151,7 +151,7 @@ export default function PressePage() {
                 <a
                   href={item.downloadUrl}
                   download
-                  className="inline-flex items-center gap-2 border-2 border-pau-night bg-pau-night px-4 py-2 font-display text-xs font-bold uppercase tracking-wide text-white transition-colors hover:bg-pau-yellow  hover:text-pau-night"
+                  className="inline-flex items-center gap-2 border-2 border-pau-night bg-pau-night px-4 py-2 font-display text-xs font-bold uppercase tracking-wide text-white transition-colors hover:bg-white hover:border-white hover:text-pau-night"
                 >
                   <svg className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                     <path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" strokeLinecap="round" strokeLinejoin="round" />
@@ -216,7 +216,7 @@ export default function PressePage() {
             </p>
             <a
               href="mailto:presse@paufc.fr?subject=Demande d'accréditation"
-              className="inline-flex items-center gap-3 border-2 border-pau-night bg-pau-night px-8 py-4 font-display text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-pau-yellow  hover:text-pau-night"
+              className="inline-flex items-center gap-3 border-2 border-pau-night bg-pau-night px-8 py-4 font-display text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-white hover:border-white hover:text-pau-night"
             >
               Demander une accréditation
             </a>

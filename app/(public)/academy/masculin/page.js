@@ -281,13 +281,13 @@ export default function PoleMasculinPage() {
             <div className="mt-8 flex flex-wrap justify-center gap-4">
               <Link
                 href="/academy/integrer"
-                className="inline-block border-2 border-pau-yellow bg-pau-yellow px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-pau-night transition-all hover:bg-transparent hover:text-pau-yellow"
+                className="inline-block border-2 border-pau-night bg-pau-night px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-white transition-all hover:bg-white hover:text-pau-night"
               >
                 Candidater
               </Link>
               <Link
                 href="/academy"
-                className="inline-block border-2 border-pau-yellow bg-transparent px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-pau-yellow transition-all hover:bg-pau-yellow hover:text-pau-night"
+                className="inline-block border-2 border-pau-night bg-transparent px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-pau-night transition-all hover:bg-pau-night hover:text-white"
               >
                 Retour Academy
               </Link>

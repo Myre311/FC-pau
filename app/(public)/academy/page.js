@@ -44,7 +44,7 @@ export default function AcademyPage() {
               <span className="font-mono text-xs font-semibold uppercase tracking-wider text-pau-yellow">
                 Notre mission
               </span>
-              <h2 className="mt-4 font-display text-4xl font-bold uppercase text-pau-night md:text-5xl">
+              <h2 className="mt-4 font-display text-4xl font-bold uppercase text-pau-yellow md:text-5xl">
                 Former les talents de demain
               </h2>
             </div>
@@ -86,7 +86,7 @@ export default function AcademyPage() {
           <div className="grid gap-6 md:grid-cols-2">
             <Link
               href="/academy/masculin"
-              className="group border border-white/10 bg-pau-night p-8 transition-all hover:border-pau-yellow md:p-10"
+              className="group border border-white/10 bg-pau-night p-8 transition-all hover:border-white md:p-10"
             >
               <h3 className="font-display text-3xl font-bold uppercase text-white md:text-4xl">
                 Pôle Masculin
@@ -101,7 +101,7 @@ export default function AcademyPage() {
 
             <Link
               href="/academy/feminin"
-              className="group border border-white/10 bg-pau-night p-8 transition-all hover:border-pau-yellow md:p-10"
+              className="group border border-white/10 bg-pau-night p-8 transition-all hover:border-white md:p-10"
             >
               <h3 className="font-display text-3xl font-bold uppercase text-white md:text-4xl">
                 Pôle Féminin
@@ -125,7 +125,7 @@ export default function AcademyPage() {
               <span className="font-mono text-xs font-semibold uppercase tracking-wider text-pau-yellow">
                 Candidature
               </span>
-              <h2 className="mt-4 font-display text-3xl font-bold uppercase text-pau-night md:text-4xl">
+              <h2 className="mt-4 font-display text-3xl font-bold uppercase text-pau-yellow md:text-4xl">
                 Intégrer l'Academy
               </h2>
               <p className="mt-6 font-sans text-base leading-relaxed text-pau-night/70">
@@ -136,7 +136,7 @@ export default function AcademyPage() {
               <div className="mt-8">
                 <Link
                   href="/academy/integrer"
-                  className="inline-block border-2 border-pau-yellow bg-pau-yellow px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-pau-night transition-all hover:bg-transparent hover:text-pau-yellow"
+                  className="inline-block border-2 border-pau-night bg-pau-night px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-white transition-all hover:bg-white hover:text-pau-night"
                 >
                   Candidater
                 </Link>
@@ -147,7 +147,7 @@ export default function AcademyPage() {
               <span className="font-mono text-xs font-semibold uppercase tracking-wider text-pau-yellow">
                 Vacances scolaires
               </span>
-              <h2 className="mt-4 font-display text-3xl font-bold uppercase text-pau-night md:text-4xl">
+              <h2 className="mt-4 font-display text-3xl font-bold uppercase text-pau-yellow md:text-4xl">
                 Stages Academy
               </h2>
               <p className="mt-6 font-sans text-base leading-relaxed text-pau-night/70">
@@ -158,7 +158,7 @@ export default function AcademyPage() {
               <div className="mt-8">
                 <Link
                   href="/academy/stages"
-                  className="inline-block border-2 border-pau-yellow bg-transparent px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-pau-yellow transition-all hover:bg-pau-yellow hover:text-pau-night"
+                  className="inline-block border-2 border-pau-night bg-transparent px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-pau-night transition-all hover:bg-pau-night hover:text-white"
                 >
                   Voir les stages
                 </Link>
@@ -218,7 +218,7 @@ export default function AcademyPage() {
             <span className="font-mono text-xs font-semibold uppercase tracking-wider text-pau-yellow">
               Contact
             </span>
-            <h2 className="mt-4 font-display text-4xl font-bold uppercase text-pau-night md:text-5xl">
+            <h2 className="mt-4 font-display text-4xl font-bold uppercase text-pau-yellow md:text-5xl">
               Une question ?
             </h2>
             <p className="mx-auto mt-6 max-w-xl font-sans text-lg leading-relaxed text-pau-night/70">

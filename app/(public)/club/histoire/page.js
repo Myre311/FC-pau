@@ -11,7 +11,7 @@ export default function HistoirePage() {
   return (
     <div className="bg-white">
       {/* HERO SIMPLE */}
-      <section className="relative h-[300px] overflow-hidden border-b border-gray-200">
+      <section className="relative h-[300px] overflow-hidden border-b border-pau-night/10">
         <Image
           src="/images/hero-histoire.jpg"
           alt="Histoire du Pau FC"
@@ -39,17 +39,17 @@ export default function HistoirePage() {
       <div className="mx-auto max-w-7xl px-6 py-12 md:px-12">
         {/* Citation */}
         <blockquote className="border-l-2 border-pau-yellow bg-pau-yellow/5 px-8 py-8">
-          <p className="font-display text-xl font-bold uppercase text-pau-primary md:text-2xl">
+          <p className="font-display text-xl font-bold uppercase text-pau-night md:text-2xl">
             Un club ancré en Béarn, porté par ses supporters et ouvert sur l'avenir.
           </p>
-          <footer className="mt-4 font-mono text-xs uppercase tracking-wider text-pau-primary/60">
+          <footer className="mt-4 font-mono text-xs uppercase tracking-wider text-pau-night/60">
             — Devise officielle du Pau FC
           </footer>
         </blockquote>
 
         {/* Timeline */}
-        <div className="mt-12 border-t border-gray-200 pt-12">
-          <h2 className="mb-8 font-display text-2xl font-bold uppercase text-pau-primary md:text-3xl">
+        <div className="mt-12 border-t border-pau-night/10 pt-12">
+          <h2 className="mb-8 font-display text-2xl font-bold uppercase text-pau-night md:text-3xl">
             Dates clés
           </h2>
 
@@ -100,12 +100,12 @@ export default function HistoirePage() {
         </div>
 
         {/* Navigation */}
-        <div className="mt-12 grid gap-6 border-t border-gray-200 pt-12 md:grid-cols-2">
-          <div className="border border-gray-200 p-6">
-            <h2 className="font-display text-xl font-bold uppercase text-pau-primary">
+        <div className="mt-12 grid gap-6 border-t border-pau-night/10 pt-12 md:grid-cols-2">
+          <div className="border border-pau-night/10 p-6">
+            <h2 className="font-display text-xl font-bold uppercase text-pau-night">
               Découvrir le club
             </h2>
-            <p className="mt-3 text-sm text-pau-primary/70">
+            <p className="mt-3 text-sm text-pau-night/70">
               Plongez dans l'univers du Pau FC : effectif, calendrier, actualités, espace partenaires.
             </p>
             <div className="mt-6 flex gap-3">
@@ -117,24 +117,24 @@ export default function HistoirePage() {
               </Link>
               <Link
                 href="/equipe"
-                className="inline-block border border-gray-200 px-4 py-2 font-mono text-xs font-bold uppercase text-pau-primary hover:bg-gray-50"
+                className="inline-block border border-pau-night/10 px-4 py-2 font-mono text-xs font-bold uppercase text-pau-night hover:bg-gray-50"
               >
                 Effectif
               </Link>
             </div>
           </div>
 
-          <div className="border border-gray-200 p-6">
-            <h2 className="font-display text-xl font-bold uppercase text-pau-primary">
+          <div className="border border-pau-night/10 p-6">
+            <h2 className="font-display text-xl font-bold uppercase text-pau-night">
               Nouste Camp
             </h2>
-            <p className="mt-3 text-sm text-pau-primary/70">
+            <p className="mt-3 text-sm text-pau-night/70">
               Découvrez le stade du Pau FC, son histoire, ses travaux de modernisation et comment venir assister aux matchs.
             </p>
             <div className="mt-6">
               <Link
                 href="/nouste-camp"
-                className="inline-block border border-gray-200 px-4 py-2 font-mono text-xs font-bold uppercase text-pau-primary hover:bg-gray-50"
+                className="inline-block border border-pau-night/10 px-4 py-2 font-mono text-xs font-bold uppercase text-pau-night hover:bg-gray-50"
               >
                 Le stade
               </Link>
@@ -148,10 +148,10 @@ export default function HistoirePage() {
 
 function TimelineItem({ year, title, description, isCurrent = false }) {
   return (
-    <div className="border-l-2 border-gray-200 pl-6">
+    <div className="border-l-2 border-pau-night/10 pl-6">
       <p
         className={`font-display text-3xl font-bold uppercase ${
-          isCurrent ? 'text-pau-yellow' : 'text-pau-primary/50'
+          isCurrent ? 'text-pau-yellow' : 'text-pau-night/50'
         }`}
       >
         {year}
@@ -161,10 +161,10 @@ function TimelineItem({ year, title, description, isCurrent = false }) {
           </span>
         )}
       </p>
-      <h3 className="mt-3 font-display text-lg font-bold uppercase text-pau-primary">
+      <h3 className="mt-3 font-display text-lg font-bold uppercase text-pau-night">
         {title}
       </h3>
-      <p className="mt-2 text-sm text-pau-primary/70">
+      <p className="mt-2 text-sm text-pau-night/70">
         {description}
       </p>
     </div>

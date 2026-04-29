@@ -39,15 +39,15 @@ export default async function CategoryPage({ params }) {
   return (
     <div className="min-h-screen bg-white">
       <section className="container-pau pt-12 pb-8 md:pt-20 md:pb-12">
-        <nav className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/50">
+        <nav className="font-mono text-[10px] uppercase tracking-[0.2em] text-pau-night/50">
           <Link href="/boutique" className="hover:text-pau-yellow">
             Boutique
           </Link>
           {' / '}
-          <span className="text-white">{category.name}</span>
+          <span className="text-pau-night">{category.name}</span>
         </nav>
 
-        <h1 className="mt-6 font-display text-[16vw] uppercase leading-crush tracking-tightest text-white md:text-[10vw] lg:text-[140px]">
+        <h1 className="mt-6 font-display text-[16vw] uppercase leading-crush tracking-tightest text-pau-night md:text-[10vw] lg:text-[140px]">
           {category.name}
         </h1>
 
@@ -59,11 +59,11 @@ export default async function CategoryPage({ params }) {
 
       <section className="container-pau pb-24">
         {category.products.length === 0 ? (
-          <div className="border border-dashed border-white/15 px-6 py-20 text-center">
+          <div className="border border-dashed border-pau-night/15 px-6 py-20 text-center">
             <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-pau-yellow">
               Bientôt disponible
             </p>
-            <p className="mt-4 font-sans text-white/60">
+            <p className="mt-4 font-sans text-pau-night/60">
               Cette catégorie ne contient pas encore de produit publié.
             </p>
           </div>

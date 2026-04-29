@@ -65,7 +65,7 @@ export default async function BoutiquePage() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-pau-night via-pau-night/50 to-transparent" />
               <div className="absolute inset-0 flex flex-col justify-end p-6">
-                <h3 className="font-display text-2xl font-bold uppercase text-pau-night">
+                <h3 className="font-display text-2xl font-bold uppercase text-white">
                   Tenues 25/26
                 </h3>
               </div>
@@ -83,7 +83,7 @@ export default async function BoutiquePage() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-pau-night via-pau-night/50 to-transparent" />
               <div className="absolute inset-0 flex flex-col justify-end p-6">
-                <h3 className="font-display text-2xl font-bold uppercase text-pau-night">
+                <h3 className="font-display text-2xl font-bold uppercase text-white">
                   Training
                 </h3>
               </div>
@@ -101,7 +101,7 @@ export default async function BoutiquePage() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-pau-night via-pau-night/50 to-transparent" />
               <div className="absolute inset-0 flex flex-col justify-end p-6">
-                <h3 className="font-display text-2xl font-bold uppercase text-pau-night">
+                <h3 className="font-display text-2xl font-bold uppercase text-white">
                   Lifestyle
                 </h3>
               </div>

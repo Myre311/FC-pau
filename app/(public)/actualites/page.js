@@ -43,10 +43,10 @@ export default async function ActualitesPage() {
       </section>
 
       {/* Liste des articles */}
-      <section className="bg-pau-night pb-20 pt-14 md:pb-28 md:pt-18">
+      <section className="bg-white pb-20 pt-14 md:pb-28 md:pt-18">
         <div className="container-pau">
           {articles.length === 0 ? (
-            <p className="py-12 text-center font-sans text-lg text-white/60">
+            <p className="py-12 text-center font-sans text-lg text-pau-night/60">
               Aucune actualité publiée pour le moment.
             </p>
           ) : (
@@ -66,7 +66,7 @@ export default async function ActualitesPage() {
 function ArticleCard({ article }) {
   return (
     <Link href={`/actualites/${article.slug}`}>
-      <article className="group border border-pau-night/10 bg-pau-primary transition-all hover:border-pau-night/20">
+      <article className="group border border-white/10 bg-pau-primary transition-all hover:border-white/20">
         {/* Image */}
         <div className="relative aspect-[16/9] overflow-hidden bg-pau-night/80">
           {article.coverImageUrl ? (

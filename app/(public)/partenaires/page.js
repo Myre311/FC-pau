@@ -114,13 +114,13 @@ export default async function PartenairesPage() {
       </section>
 
       {/* Formulaire Devenir Partenaire */}
-      <section className="border-t border-pau-gold/20 bg-white pb-22 pt-18 md:pb-28 md:pt-24">
+      <section className="border-t border-pau-gold/20 bg-pau-night pb-22 pt-18 md:pb-28 md:pt-24">
         <div className="container-pau">
           <div className="mx-auto max-w-3xl">
             <h2 className="mb-5 text-center font-display text-3xl font-bold uppercase text-pau-gold md:text-4xl">
               Rejoignez nos partenaires
             </h2>
-            <p className="mb-14 text-center font-sans text-lg text-pau-night/80">
+            <p className="mb-14 text-center font-sans text-lg text-white/80">
               Présentez-nous votre projet, nous vous recontactons sous 48 heures.
             </p>
 
@@ -130,9 +130,9 @@ export default async function PartenairesPage() {
       </section>
 
       {/* Contact */}
-      <section className="bg-white py-16">
+      <section className="bg-pau-night py-16">
         <div className="container-pau text-center">
-          <p className="mb-4 font-sans text-base text-pau-night/70">
+          <p className="mb-4 font-sans text-base text-white/70">
             Pour toute question sur les partenariats
           </p>
           <div className="space-y-2">

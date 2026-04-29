@@ -29,7 +29,7 @@ export default function ClubPage() {
         </div>
       </section>
 
-      <section className="bg-pau-night pb-20 pt-14 md:pb-28 md:pt-22">
+      <section className="bg-white pb-20 pt-14 md:pb-28 md:pt-22">
         <div className="container-pau">
           <div className="grid gap-14 md:grid-cols-[1fr_2fr] md:items-start">
             <div className="flex justify-center md:justify-start">
@@ -47,16 +47,16 @@ export default function ClubPage() {
               <h2 className="mb-7 font-display text-3xl font-bold uppercase text-pau-yellow md:text-4xl">
                 Notre Histoire
               </h2>
-              <div className="space-y-5 font-sans text-base leading-relaxed text-white/80 md:text-lg">
+              <div className="space-y-5 font-sans text-base leading-relaxed text-pau-night/80 md:text-lg">
                 <p>Le football à Pau naît au début du XXe siècle, lorsque le ballon rond fait son apparition dans les clubs omnisports béarnais.</p>
                 <p>Trois clubs historiques ont posé les fondations du football palois :</p>
                 <ul className="ml-6 space-y-2 list-disc">
-                  <li><strong className="text-white">Football Association Bourbaki</strong> (1904)</li>
-                  <li><strong className="text-white">Jeanne d'Arc le Béarn</strong> (1909)</li>
-                  <li><strong className="text-white">Union Jurançonnaise</strong> (1907)</li>
+                  <li><strong className="text-pau-night">Football Association Bourbaki</strong> (1904)</li>
+                  <li><strong className="text-pau-night">Jeanne d'Arc le Béarn</strong> (1909)</li>
+                  <li><strong className="text-pau-night">Union Jurançonnaise</strong> (1907)</li>
                 </ul>
                 <div className="pt-4">
-                  <Link href="/club/histoire" className="inline-block border-2 border-pau-yellow bg-transparent px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-pau-yellow transition-all hover:bg-pau-yellow hover:text-pau-night">
+                  <Link href="/club/histoire" className="inline-block border-2 border-pau-night bg-transparent px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-pau-night transition-all hover:bg-pau-night hover:text-white">
                     Voir plus
                   </Link>
                 </div>
@@ -66,7 +66,7 @@ export default function ClubPage() {
         </div>
       </section>
 
-      <section className="border-t border-pau-night/10 bg-pau-primary pb-22 pt-18 md:pb-28 md:pt-24">
+      <section className="border-t border-pau-night/10 bg-white pb-22 pt-18 md:pb-28 md:pt-24">
         <div className="container-pau">
           <h2 className="mb-14 font-display text-3xl font-bold uppercase text-pau-yellow md:text-4xl">
             Ils ont porté nos couleurs
@@ -80,7 +80,7 @@ export default function ClubPage() {
         </div>
       </section>
 
-      <section className="bg-pau-night pb-20 pt-16 md:pb-26 md:pt-22">
+      <section className="bg-white pb-20 pt-16 md:pb-26 md:pt-22">
         <div className="container-pau">
           <h2 className="mb-14 font-display text-3xl font-bold uppercase text-pau-yellow md:text-4xl">
             Ceux qui font le club aujourd'hui
@@ -94,7 +94,7 @@ export default function ClubPage() {
         </div>
       </section>
 
-      <section className="border-t border-pau-night/10 bg-pau-primary pb-24 pt-18 md:pb-30 md:pt-24">
+      <section className="border-t border-pau-night/10 bg-white pb-24 pt-18 md:pb-30 md:pt-24">
         <div className="container-pau">
           <h2 className="mb-14 font-display text-3xl font-bold uppercase text-pau-yellow md:text-4xl">
             Nouste Camp · notre forteresse
@@ -113,9 +113,9 @@ export default function ClubPage() {
         </div>
       </section>
 
-      <div className="border-t border-pau-night/10 bg-pau-night py-8">
+      <div className="border-t border-pau-night/10 bg-white py-8">
         <div className="container-pau text-center">
-          <a href="#" className="inline-block font-display text-sm font-bold uppercase tracking-wide text-white/60 transition-colors hover:text-pau-yellow">
+          <a href="#" className="inline-block font-display text-sm font-bold uppercase tracking-wide text-pau-night/60 transition-colors hover:text-pau-yellow">
             Retour en haut
           </a>
         </div>

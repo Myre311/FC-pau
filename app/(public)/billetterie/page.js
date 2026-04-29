@@ -82,7 +82,7 @@ export default async function BilletteriePage() {
         <div className="container-pau">
           <div className="mb-14">
             <span className="badge-mono text-pau-yellow">Les tarifs</span>
-            <h2 className="mt-4 font-display text-4xl font-bold uppercase text-pau-night md:text-5xl">
+            <h2 className="mt-4 font-display text-4xl font-bold uppercase text-pau-yellow md:text-5xl">
               Combien ça coûte ?
             </h2>
           </div>
@@ -158,7 +158,7 @@ export default async function BilletteriePage() {
               <div className="pt-4">
                 <Link
                   href="/billetterie/cashless"
-                  className="inline-block border-2 border-pau-yellow bg-transparent px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-pau-yellow transition-all hover:bg-pau-yellow hover:text-pau-night"
+                  className="inline-block border-2 border-pau-night bg-transparent px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-pau-night transition-all hover:bg-pau-night hover:text-white"
                 >
                   En savoir plus
                 </Link>
@@ -173,7 +173,7 @@ export default async function BilletteriePage() {
         <div className="container-pau">
           <div className="mb-14">
             <span className="badge-mono text-pau-yellow">Bon à savoir</span>
-            <h2 className="mt-4 font-display text-4xl font-bold uppercase text-pau-night md:text-5xl">
+            <h2 className="mt-4 font-display text-4xl font-bold uppercase text-pau-yellow md:text-5xl">
               Comment ça se passe
             </h2>
           </div>
@@ -287,7 +287,7 @@ function MatchCardMaquette({ match }) {
   });
 
   return (
-    <article className="group border border-pau-night/10 bg-white p-7 transition-all hover:border-white/20 md:p-9">
+    <article className="group border border-white/10 bg-pau-primary p-7 transition-all hover:border-white/20 md:p-9">
       {/* Logo compétition */}
       {match.competition && (
         <div className="mb-6 flex justify-center">
@@ -314,7 +314,7 @@ function MatchCardMaquette({ match }) {
           />
         </div>
 
-        <span className="font-display text-2xl font-bold text-pau-night md:text-3xl">vs</span>
+        <span className="font-display text-2xl font-bold text-white md:text-3xl">vs</span>
 
         {/* Logo équipe adverse */}
         <div className="flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-full bg-white p-3 md:h-20 md:w-20">
@@ -335,15 +335,15 @@ function MatchCardMaquette({ match }) {
       </div>
 
       {/* Équipes */}
-      <h3 className="mb-3 text-center font-display text-2xl font-bold uppercase text-pau-night md:text-3xl">
+      <h3 className="mb-3 text-center font-display text-2xl font-bold uppercase text-white md:text-3xl">
         Pau FC vs {match.opponent}
       </h3>
 
       {/* Date & heure */}
-      <p className="mb-2 text-center font-sans text-base text-pau-night/70">
+      <p className="mb-2 text-center font-sans text-base text-white/70">
         {dateFr} · {heure}
       </p>
-      <p className="mb-6 text-center font-sans text-sm text-pau-night/60">
+      <p className="mb-6 text-center font-sans text-sm text-white/60">
         {match.venue || 'Nouste Camp'}
         {match.broadcaster && ` · ${match.broadcaster}`}
       </p>
@@ -355,12 +355,12 @@ function MatchCardMaquette({ match }) {
             href={match.ticketUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block border-2 border-pau-yellow bg-pau-yellow px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-pau-night transition-all hover:bg-transparent hover:text-pau-yellow"
+            className="inline-block border-2 border-white bg-white px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-pau-night transition-all hover:bg-transparent hover:text-white"
           >
             Réserver mes places
           </a>
         ) : (
-          <span className="inline-block border-2 border-white/20 bg-white/5 px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-pau-night/40">
+          <span className="inline-block border-2 border-white/20 bg-white/5 px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-white/40">
             Bientôt disponible
           </span>
         )}
@@ -372,14 +372,14 @@ function MatchCardMaquette({ match }) {
 // Composant Tarif Card style maquette
 function TarifCardMaquette({ title, price, description }) {
   return (
-    <div className="border border-pau-night/10 bg-white p-7 transition-all hover:border-white/20">
-      <h3 className="mb-3 font-display text-2xl font-bold uppercase text-pau-night">
+    <div className="border border-white/10 bg-pau-primary p-7 transition-all hover:border-white/20">
+      <h3 className="mb-3 font-display text-2xl font-bold uppercase text-white">
         {title}
       </h3>
       <div className="mb-4 font-display text-4xl font-bold text-pau-yellow">
         {price}
       </div>
-      <p className="font-sans text-sm leading-relaxed text-pau-night/70">
+      <p className="font-sans text-sm leading-relaxed text-white/70">
         {description}
       </p>
     </div>
