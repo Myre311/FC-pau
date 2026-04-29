@@ -11,7 +11,7 @@ export default function PageHero({
     <section className="relative w-full h-[320px] md:h-[420px] overflow-hidden">
       <Image
         src={image}
-        alt=·
+        alt=""
         fill
         priority
         className="object-cover"

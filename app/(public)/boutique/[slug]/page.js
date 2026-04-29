@@ -70,7 +70,7 @@ export default async function ProductPage({ params }) {
                 >
                   <Image
                     src={src}
-                    alt=·
+                    alt=""
                     fill
                     sizes="(max-width: 768px) 25vw, 12vw"
                     className="object-cover"

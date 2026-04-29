@@ -36,7 +36,7 @@ export default function PanierPage() {
               <div className="h-28 w-28 flex-none border border-white/10 bg-pau-primary">
                 {item.image ? (
                   // eslint-disable-next-line @next/next/no-img-element
-                  <img src={item.image} alt=· className="h-full w-full object-cover" />
+                  <img src={item.image} alt="" className="h-full w-full object-cover" />
                 ) : null}
               </div>
 
