@@ -1,26 +1,28 @@
-'use client';
-
-import { useState } from 'react';
 import Image from 'next/image';
+import { prisma } from '@/lib/prisma';
+import PartnersForm from './PartnersForm';
 
-export default function PartenairesPage() {
-  const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    company: '',
-    email: '',
-    phone: '',
-    partnerType: '',
-    budget: '',
-    message: '',
-    consent: false,
-  });
+export const metadata = {
+  title: 'Partenaires · Pau FC',
+  description: 'Devenez partenaire du Pau FC. Visibilité terrain et tribunes, hospitalités VIP, et un réseau d\'affaires actif dans tout le Béarn.',
+};
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Form submitted:', formData);
-  };
+export default async function PartenairesPage() {
+  // Récupérer tous les partenaires actifs avec logos
+  const allPartners = await prisma.partner
+    .findMany({
+      where: {
+        active: true,
+        logoUrl: { not: '' }
+      },
+      orderBy: [{ tier: 'asc' }, { position: 'asc' }],
+    })
+    .catch(() => []);
 
+  // Grouper par tier
+  const premiumPartners = allPartners.filter(p => p.tier === 'premium');
+  const officielPartners = allPartners.filter(p => p.tier === 'officiel');
+  const localPartners = allPartners.filter(p => p.tier === 'local');
   return (
     <div className="min-h-screen bg-pau-night">
       {/* Hero */}
@@ -67,54 +69,47 @@ export default function PartenairesPage() {
             Ils nous font confiance
           </h2>
 
-          {/* Partenaires Majeurs */}
-          <div className="mb-16">
-            <h3 className="mb-8 font-display text-2xl font-bold uppercase text-pau-gold">
-              Partenaires Majeurs
-            </h3>
-            <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-              <PartnerLogo name="Intersport / Joma" />
-              <PartnerLogo name="Groupama" />
-              <PartnerLogo name="Casino de Pau" />
-              <PartnerLogo name="Ville de Pau" />
-              <PartnerLogo name="Communauté d'Agglomération" />
-              <PartnerLogo name="Région Nouvelle-Aquitaine" />
-              <PartnerLogo name="Holy Energy" />
-              <PartnerLogo name="Nouste Energia" />
-              <PartnerLogo name="BKT" />
+          {/* Partenaires Premium */}
+          {premiumPartners.length > 0 && (
+            <div className="mb-16">
+              <h3 className="mb-8 font-display text-2xl font-bold uppercase text-pau-gold">
+                Partenaires Premium
+              </h3>
+              <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                {premiumPartners.map((partner) => (
+                  <PartnerLogo key={partner.id} partner={partner} />
+                ))}
+              </div>
             </div>
-          </div>
-
-          {/* Partenaires Premiums */}
-          <div className="mb-16">
-            <h3 className="mb-8 font-display text-2xl font-bold uppercase text-pau-gold">
-              Partenaires Premiums
-            </h3>
-            <div className="grid gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
-              <PartnerLogoSmall name="Banque Populaire" />
-              <PartnerLogoSmall name="Crédit Agricole" />
-              <PartnerLogoSmall name="EDF" />
-              <PartnerLogoSmall name="Orange" />
-              <PartnerLogoSmall name="Total Energies" />
-              <PartnerLogoSmall name="Carrefour" />
-              <PartnerLogoSmall name="Décathlon" />
-              <PartnerLogoSmall name="Leclerc" />
-              <PartnerLogoSmall name="McDonald's" />
-              <PartnerLogoSmall name="Burger King" />
-              <PartnerLogoSmall name="Subway" />
-              <PartnerLogoSmall name="KFC" />
-            </div>
-          </div>
+          )}
 
           {/* Partenaires Officiels */}
-          <div>
-            <h3 className="mb-8 font-display text-2xl font-bold uppercase text-pau-gold">
-              Partenaires Officiels
-            </h3>
-            <p className="font-sans text-base text-white/70">
-              90+ entreprises locales soutiennent le Pau FC au quotidien.
-            </p>
-          </div>
+          {officielPartners.length > 0 && (
+            <div className="mb-16">
+              <h3 className="mb-8 font-display text-2xl font-bold uppercase text-pau-gold">
+                Partenaires Officiels
+              </h3>
+              <div className="grid gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+                {officielPartners.map((partner) => (
+                  <PartnerLogoMedium key={partner.id} partner={partner} />
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Partenaires Locaux */}
+          {localPartners.length > 0 && (
+            <div>
+              <h3 className="mb-8 font-display text-2xl font-bold uppercase text-pau-gold">
+                Partenaires Locaux
+              </h3>
+              <div className="grid gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
+                {localPartners.map((partner) => (
+                  <PartnerLogoSmall key={partner.id} partner={partner} />
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </section>
 
@@ -129,103 +124,7 @@ export default function PartenairesPage() {
               Présentez-nous votre projet, nous vous recontactons sous 48 heures.
             </p>
 
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid gap-6 md:grid-cols-2">
-                <input
-                  type="text"
-                  placeholder="Prénom"
-                  value={formData.firstName}
-                  onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
-                  required
-                  className="border-2 border-pau-gold/30 bg-white/5 px-4 py-3 font-sans text-white placeholder:text-white/40 focus:border-pau-gold focus:outline-none"
-                />
-                <input
-                  type="text"
-                  placeholder="Nom"
-                  value={formData.lastName}
-                  onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
-                  required
-                  className="border-2 border-pau-gold/30 bg-white/5 px-4 py-3 font-sans text-white placeholder:text-white/40 focus:border-pau-gold focus:outline-none"
-                />
-              </div>
-
-              <input
-                type="text"
-                placeholder="Entreprise"
-                value={formData.company}
-                onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                required
-                className="w-full border-2 border-pau-gold/30 bg-white/5 px-4 py-3 font-sans text-white placeholder:text-white/40 focus:border-pau-gold focus:outline-none"
-              />
-
-              <div className="grid gap-6 md:grid-cols-2">
-                <input
-                  type="email"
-                  placeholder="Email"
-                  value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  required
-                  className="border-2 border-pau-gold/30 bg-white/5 px-4 py-3 font-sans text-white placeholder:text-white/40 focus:border-pau-gold focus:outline-none"
-                />
-                <input
-                  type="tel"
-                  placeholder="Téléphone"
-                  value={formData.phone}
-                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                  required
-                  className="border-2 border-pau-gold/30 bg-white/5 px-4 py-3 font-sans text-white placeholder:text-white/40 focus:border-pau-gold focus:outline-none"
-                />
-              </div>
-
-              <select
-                value={formData.partnerType}
-                onChange={(e) => setFormData({ ...formData, partnerType: e.target.value })}
-                required
-                className="w-full border-2 border-pau-gold/30 bg-white/5 px-4 py-3 font-sans text-white focus:border-pau-gold focus:outline-none"
-              >
-                <option value="">Type de partenariat souhaité</option>
-                <option value="majeur">Partenaire Majeur</option>
-                <option value="premium">Partenaire Premium</option>
-                <option value="officiel">Partenaire Officiel</option>
-              </select>
-
-              <input
-                type="text"
-                placeholder="Budget envisagé"
-                value={formData.budget}
-                onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
-                className="w-full border-2 border-pau-gold/30 bg-white/5 px-4 py-3 font-sans text-white placeholder:text-white/40 focus:border-pau-gold focus:outline-none"
-              />
-
-              <textarea
-                placeholder="Message"
-                value={formData.message}
-                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                rows={4}
-                className="w-full border-2 border-pau-gold/30 bg-white/5 px-4 py-3 font-sans text-white placeholder:text-white/40 focus:border-pau-gold focus:outline-none"
-              />
-
-              <div className="flex items-start gap-3">
-                <input
-                  type="checkbox"
-                  id="consent"
-                  checked={formData.consent}
-                  onChange={(e) => setFormData({ ...formData, consent: e.target.checked })}
-                  required
-                  className="mt-1 h-4 w-4 border-2 border-pau-gold/30 bg-white/5"
-                />
-                <label htmlFor="consent" className="font-sans text-sm text-white/70">
-                  J'accepte que mes données soient utilisées dans le cadre de ma demande de partenariat et en accord avec la politique de confidentialité.
-                </label>
-              </div>
-
-              <button
-                type="submit"
-                className="w-full border-2 border-pau-gold bg-pau-gold py-4 font-display text-sm font-bold uppercase tracking-wide text-pau-night transition-all hover:bg-transparent hover:text-pau-gold"
-              >
-                Envoyer ma demande
-              </button>
-            </form>
+            <PartnersForm />
           </div>
         </div>
       </section>
@@ -262,18 +161,44 @@ function StatBox({ number, label }) {
   );
 }
 
-function PartnerLogo({ name }) {
+function PartnerLogo({ partner }) {
   return (
-    <div className="flex aspect-[3/2] items-center justify-center border-2 border-pau-gold/20 bg-pau-primary p-6 transition-all hover:border-pau-gold">
-      <span className="font-display text-sm font-bold uppercase text-white/40">{name}</span>
+    <div className="group relative flex aspect-[3/2] items-center justify-center overflow-hidden border-2 border-pau-gold/20 bg-pau-primary p-8 transition-all hover:border-pau-gold">
+      <Image
+        src={partner.logoUrl}
+        alt={partner.name}
+        width={200}
+        height={100}
+        className="h-auto w-full object-contain brightness-0 invert transition-opacity group-hover:opacity-80"
+      />
     </div>
   );
 }
 
-function PartnerLogoSmall({ name }) {
+function PartnerLogoMedium({ partner }) {
   return (
-    <div className="flex aspect-square items-center justify-center border border-pau-gold/10 bg-pau-primary p-4 transition-all hover:border-pau-gold">
-      <span className="text-center font-sans text-xs font-medium text-white/40">{name}</span>
+    <div className="group relative flex aspect-[3/2] items-center justify-center overflow-hidden border border-pau-gold/15 bg-pau-primary p-6 transition-all hover:border-pau-gold">
+      <Image
+        src={partner.logoUrl}
+        alt={partner.name}
+        width={150}
+        height={75}
+        className="h-auto w-full object-contain brightness-0 invert transition-opacity group-hover:opacity-80"
+      />
+    </div>
+  );
+}
+
+function PartnerLogoSmall({ partner }) {
+  return (
+    <div className="group relative flex aspect-square items-center justify-center overflow-hidden border border-pau-gold/10 bg-pau-primary p-4 transition-all hover:border-pau-gold">
+      <Image
+        src={partner.logoUrl}
+        alt={partner.name}
+        width={100}
+        height={50}
+        className="h-auto w-full object-contain brightness-0 invert transition-opacity group-hover:opacity-80"
+      />
     </div>
   );
 }
