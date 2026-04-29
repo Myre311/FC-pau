@@ -57,11 +57,11 @@ Jamais utilisé ailleurs. Jamais.
 
 ### Typographies
 
-- **Bodoni Moda** — titres (serif éditorial mode/luxe, fort contraste Vogue-style)
+- **Deglion** — titres (police custom élégante)
 - **Inter** — corps de texte (moderne, lisible)
 - **DM Mono** — détails techniques, badges, numéros, tags
 
-Toutes via Google Fonts.
+Deglion via fichier local, Inter et DM Mono via Google Fonts.
 
 ### Direction artistique
 
