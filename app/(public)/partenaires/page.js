@@ -183,7 +183,7 @@ export default function PartenairesPage() {
                 required
                 className="w-full border-2 border-pau-gold/30 bg-white/5 px-4 py-3 font-sans text-white focus:border-pau-gold focus:outline-none"
               >
-                <option value="">Type de partenariat souhaité</option>
+                <option value=·>Type de partenariat souhaité</option>
                 <option value="majeur">Partenaire Majeur</option>
                 <option value="premium">Partenaire Premium</option>
                 <option value="officiel">Partenaire Officiel</option>

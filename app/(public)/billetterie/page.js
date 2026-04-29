@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { prisma } from '@/lib/prisma';
 
 export const metadata = {
-  title: 'Billetterie "" Pau FC',
+  title: 'Billetterie · Pau FC',
   description:
     'Réservez vos places au Nouste Camp. Billetterie en ligne pour tous les matchs du Pau FC, tarifs réduits et packs famille.',
 };
@@ -90,32 +90,32 @@ export default async function BilletteriePage() {
           <div className="grid gap-5 sm:grid-cols-2 md:gap-6 lg:grid-cols-3">
             <TarifCardMaquette
               title="Plein tarif"
-              price="25â‚¬"
-              description="Tribune Principale Â· Catégorie A"
+              price="25€"
+              description="Tribune Principale · Catégorie A"
             />
             <TarifCardMaquette
               title="Tarif réduit"
-              price="15â‚¬"
+              price="15€"
               description="-18 ans, étudiants, +65 ans, demandeurs d'emploi"
             />
             <TarifCardMaquette
               title="Enfant"
-              price="10â‚¬"
-              description="-12 ans Â· Accompagné d'un adulte"
+              price="10€"
+              description="-12 ans · Accompagné d'un adulte"
             />
             <TarifCardMaquette
               title="Abonné"
-              price="15â‚¬"
+              price="15€"
               description="Tarif préférentiel pour les abonnés saison"
             />
             <TarifCardMaquette
               title="Groupe 10+"
-              price="20â‚¬"
-              description="À partir de 10 personnes Â· Réservation anticipée"
+              price="20€"
+              description="À partir de 10 personnes · Réservation anticipée"
             />
             <TarifCardMaquette
               title="Pack Famille"
-              price="55â‚¬"
+              price="55€"
               description="2 adultes + 2 enfants"
             />
           </div>
@@ -144,15 +144,15 @@ export default async function BilletteriePage() {
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
                   <span className="mt-1 inline-block h-1.5 w-1.5 flex-shrink-0 rounded-full bg-pau-yellow" />
-                  <span><strong className="text-white">Rapide</strong> "" Rechargez en ligne avant le match</span>
+                  <span><strong className="text-white">Rapide</strong> · Rechargez en ligne avant le match</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="mt-1 inline-block h-1.5 w-1.5 flex-shrink-0 rounded-full bg-pau-yellow" />
-                  <span><strong className="text-white">Sécurisé</strong> "" Paiement sans contact</span>
+                  <span><strong className="text-white">Sécurisé</strong> · Paiement sans contact</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="mt-1 inline-block h-1.5 w-1.5 flex-shrink-0 rounded-full bg-pau-yellow" />
-                  <span><strong className="text-white">Remboursable</strong> "" Solde non utilisé remboursé</span>
+                  <span><strong className="text-white">Remboursable</strong> · Solde non utilisé remboursé</span>
                 </li>
               </ul>
               <div className="pt-4">
@@ -209,19 +209,19 @@ export default async function BilletteriePage() {
               </h3>
               <ul className="space-y-3 font-sans text-base text-white/80">
                 <li className="flex items-start gap-3">
-                  <span className="mt-1 text-pau-yellow">"¢</span>
+                  <span className="mt-1 text-pau-yellow">•</span>
                   <span>Interdiction de fumigènes, pétards, objets dangereux</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="mt-1 text-pau-yellow">"¢</span>
+                  <span className="mt-1 text-pau-yellow">•</span>
                   <span>Pas de bouteilles en verre</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="mt-1 text-pau-yellow">"¢</span>
+                  <span className="mt-1 text-pau-yellow">•</span>
                   <span>Contrôle de sécurité Ã  l'entrée obligatoire</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="mt-1 text-pau-yellow">"¢</span>
+                  <span className="mt-1 text-pau-yellow">•</span>
                   <span>Billet dématérialisé (QR code) requis</span>
                 </li>
               </ul>
@@ -263,7 +263,7 @@ export default async function BilletteriePage() {
                 href="/cgv-billetterie"
                 className="font-sans text-sm text-white/60 hover:text-pau-yellow"
               >
-                Conditions générales de vente â†'
+                Conditions générales de vente →
               </Link>
             </div>
           </div>
@@ -341,11 +341,11 @@ function MatchCardMaquette({ match }) {
 
       {/* Date & heure */}
       <p className="mb-2 text-center font-sans text-base text-white/70">
-        {dateFr} Â· {heure}
+        {dateFr} · {heure}
       </p>
       <p className="mb-6 text-center font-sans text-sm text-white/60">
         {match.venue || 'Nouste Camp'}
-        {match.broadcaster && ` Â· ${match.broadcaster}`}
+        {match.broadcaster && ` · ${match.broadcaster}`}
       </p>
 
       {/* CTA */}

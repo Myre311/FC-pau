@@ -26,7 +26,7 @@ export default async function EquipePage() {
       <section className="relative min-h-[400px] md:h-[60vh] md:min-h-[500px] bg-pau-night">
         <Image
           src="/images/hero-equipe.jpg"
-          alt="É‰quipe Pau FC"
+          alt="Équipe Pau FC"
           fill
           className="object-cover object-[50%_40%] brightness-50"
           priority
@@ -36,7 +36,7 @@ export default async function EquipePage() {
           <div>
             <span className="font-mono text-xs uppercase text-pau-yellow">Saison 2025/2026</span>
             <h1 className="mt-4 font-display text-5xl font-bold uppercase text-white md:text-6xl">
-              L'É‰quipe Pro
+              L'Équipe Pro
             </h1>
           </div>
         </div>
@@ -113,8 +113,8 @@ export default async function EquipePage() {
                 Staff Technique
               </h3>
               <div className="space-y-4">
-                <StaffMember name="Didier Tholot" role="EntraÉ®neur principal" image="/images/club/DSC00082.png" />
-                <StaffMember name="Vincent Bracigliano" role="EntraÉ®neur adjoint" image={null} />
+                <StaffMember name="Didier Tholot" role="EntraÎneur principal" image="/images/club/DSC00082.png" />
+                <StaffMember name="Vincent Bracigliano" role="EntraÎneur adjoint" image={null} />
                 <StaffMember name="Julien Cardy" role="Préparateur physique" image={null} />
                 <StaffMember name="Thomas Ayassamy" role="Analyste vidéo" image={null} />
               </div>

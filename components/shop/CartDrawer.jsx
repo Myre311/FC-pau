@@ -85,7 +85,7 @@ export function CartDrawer() {
                   <div className="h-20 w-20 flex-none border border-white/10 bg-pau-night" aria-hidden="true">
                     {item.image ? (
                       // eslint-disable-next-line @next/next/no-img-element
-                      <img src={item.image} alt="" className="h-full w-full object-cover" />
+                      <img src={item.image} alt=· className="h-full w-full object-cover" />
                     ) : null}
                   </div>
                   <div className="min-w-0 flex-1">

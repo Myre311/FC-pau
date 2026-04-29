@@ -24,7 +24,7 @@ export default function PoleMasculinPage() {
         <div className="container-pau relative flex h-full items-end pb-16 md:pb-20">
           <div className="max-w-3xl">
             <span className="font-mono text-xs font-semibold uppercase tracking-wider text-pau-yellow">
-              Academy Â· Garçons
+              Academy · Garçons
             </span>
             <h1 className="mt-4 font-display text-5xl font-bold uppercase leading-tight text-white md:text-6xl lg:text-7xl">
               Pôle Masculin
@@ -86,7 +86,7 @@ export default function PoleMasculinPage() {
           <div className="space-y-6">
             <div className="border-l-4 border-pau-yellow bg-pau-night p-6 md:p-8">
               <h3 className="font-display text-2xl font-bold uppercase text-white md:text-3xl">
-                U13 Â· U14 Â· U15 "” Préformation
+                U13 · U14 · U15 "” Préformation
               </h3>
               <p className="mt-4 font-sans text-base leading-relaxed text-white/70">
                 Détection et apprentissage des fondamentaux. Technique individuelle, culture tactique de base, initiation au jeu collectif. Championnat régional. Entraînements 3 Ã  4 fois par semaine.
@@ -95,7 +95,7 @@ export default function PoleMasculinPage() {
 
             <div className="border-l-4 border-pau-yellow bg-pau-night p-6 md:p-8">
               <h3 className="font-display text-2xl font-bold uppercase text-white md:text-3xl">
-                U16 Â· U17 "” Formation
+                U16 · U17 "” Formation
               </h3>
               <p className="mt-4 font-sans text-base leading-relaxed text-white/70">
                 Intensification du volume d'entraînement (5 Ã  6 séances/semaine). Championnats nationaux U17. Suivi renforcé : physique, mental, nutrition. Possibilité d'internat au Nouste Camp.
@@ -104,7 +104,7 @@ export default function PoleMasculinPage() {
 
             <div className="border-l-4 border-pau-yellow bg-pau-night p-6 md:p-8">
               <h3 className="font-display text-2xl font-bold uppercase text-white md:text-3xl">
-                U18 Â· U19 "” Accession pro
+                U18 · U19 "” Accession pro
               </h3>
               <p className="mt-4 font-sans text-base leading-relaxed text-white/70">
                 Préparation au football professionnel. Championnat National U19. Entraînements avec le groupe pro selon les profils. Projet post-formation (signature pro, université, club étranger).

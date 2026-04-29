@@ -88,7 +88,7 @@ export function ProductForm({ product, categories }) {
           name="categoryId"
           defaultValue={product?.categoryId ?? ''}
         >
-          <option value="">— Aucune —</option>
+          <option value=·>— Aucune —</option>
           {categories.map((c) => (
             <option key={c.id} value={c.id}>
               {c.name}

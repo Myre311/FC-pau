@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Le Club "" Pau FC',
+  title: 'Le Club · Pau FC',
   description: "Notre histoire, le Nouste Camp, les légendes qui ont porté le maillot jaune et bleu.",
 };
 
@@ -97,7 +97,7 @@ export default function ClubPage() {
       <section className="border-t border-white/10 bg-pau-primary pb-24 pt-18 md:pb-30 md:pt-24">
         <div className="container-pau">
           <h2 className="mb-14 font-display text-3xl font-bold uppercase text-pau-yellow md:text-4xl">
-            Nouste Camp "" notre forteresse
+            Nouste Camp · notre forteresse
           </h2>
 
           <div className="mb-16 grid gap-8 md:grid-cols-4">

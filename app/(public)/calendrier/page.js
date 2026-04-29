@@ -214,7 +214,7 @@ function MatchCard({ match }) {
       {/* Date */}
       <div className="mb-4 text-center">
         <span className="font-sans text-sm text-white/60">
-          {dateFr} Â· {heure}
+          {dateFr} · {heure}
         </span>
       </div>
 

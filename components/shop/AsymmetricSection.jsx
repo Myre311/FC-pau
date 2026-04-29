@@ -23,7 +23,7 @@ export function AsymmetricSection({
           {/* Image de fond */}
           <Image
             src={sidebarImage}
-            alt=""
+            alt=·
             fill
             className="object-cover"
           />

@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Academy "" Pau FC',
+  title: 'Academy · Pau FC',
   description:
     'L\'Academy du Pau FC forme les talents de demain. Pôle féminin, masculin, stages et intégration : découvrez notre centre de formation.',
 };
@@ -24,7 +24,7 @@ export default function AcademyPage() {
         <div className="container-pau relative flex h-full items-end pb-16 md:pb-20">
           <div className="max-w-3xl">
             <span className="font-mono text-xs font-semibold uppercase tracking-wider text-pau-yellow">
-              Formation Â· Excellence
+              Formation · Excellence
             </span>
             <h1 className="mt-4 font-display text-5xl font-bold uppercase leading-tight text-white md:text-6xl lg:text-7xl">
               Pau FC Academy
@@ -92,10 +92,10 @@ export default function AcademyPage() {
                 Pôle Masculin
               </h3>
               <p className="mt-4 font-sans text-base leading-relaxed text-white/70">
-                U13 Ã  U19 Â· Préformation et formation Â· Championnat National Â· Suivi scolaire renforcé Â· Internat
+                U13 Ã  U19 · Préformation et formation · Championnat National · Suivi scolaire renforcé · Internat
               </p>
               <div className="mt-6 font-mono text-sm uppercase tracking-wider text-pau-yellow transition-colors">
-                En savoir plus â†'
+                En savoir plus →
               </div>
             </Link>
 
@@ -107,10 +107,10 @@ export default function AcademyPage() {
                 Pôle Féminin
               </h3>
               <p className="mt-4 font-sans text-base leading-relaxed text-white/70">
-                U13 Ã  U19 Â· Formation féminine Â· Championnat régional et national Â· Projet sportif en développement
+                U13 Ã  U19 · Formation féminine · Championnat régional et national · Projet sportif en développement
               </p>
               <div className="mt-6 font-mono text-sm uppercase tracking-wider text-pau-yellow transition-colors">
-                En savoir plus â†'
+                En savoir plus →
               </div>
             </Link>
           </div>

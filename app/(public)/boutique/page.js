@@ -5,7 +5,7 @@ import { prisma } from '@/lib/prisma';
 export const dynamic = 'force-dynamic';
 
 export const metadata = {
-  title: 'Boutique "" Pau FC',
+  title: 'Boutique · Pau FC',
   description: 'Boutique officielle du Pau FC. Maillots, training, lifestyle et accessoires.',
 };
 
@@ -154,7 +154,7 @@ export default async function BoutiquePage() {
                       {product.name}
                     </h3>
                     <p className="font-mono text-sm font-bold text-white">
-                      {(product.basePrice / 100).toFixed(2)} â‚¬
+                      {(product.basePrice / 100).toFixed(2)} €
                     </p>
                   </div>
                 </Link>

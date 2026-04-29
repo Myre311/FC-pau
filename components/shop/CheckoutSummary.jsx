@@ -23,7 +23,7 @@ export function CheckoutSummary() {
             <div className="h-14 w-14 flex-none border border-pau-primary/10 bg-gradient-to-br from-pau-primary to-pau-night">
               {item.image ? (
                 // eslint-disable-next-line @next/next/no-img-element
-                <img src={item.image} alt="" className="h-full w-full object-cover" />
+                <img src={item.image} alt=· className="h-full w-full object-cover" />
               ) : null}
             </div>
             <div className="min-w-0 flex-1">

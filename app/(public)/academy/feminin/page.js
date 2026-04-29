@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Pôle Féminin Â· Academy',
+  title: 'Pôle Féminin · Academy',
   description:
     'Le pôle féminin de l\'Academy Pau FC forme les jeunes joueuses de 12 Ã  18 ans dans un cadre professionnel et bienveillant.',
 };
@@ -24,7 +24,7 @@ export default function PoleFemininPage() {
         <div className="container-pau relative flex h-full items-end pb-16 md:pb-20">
           <div className="max-w-3xl">
             <span className="font-mono text-xs font-semibold uppercase tracking-wider text-pau-yellow">
-              Academy Â· Filles
+              Academy · Filles
             </span>
             <h1 className="mt-4 font-display text-5xl font-bold uppercase leading-tight text-white md:text-6xl lg:text-7xl">
               Pôle Féminin
@@ -88,16 +88,16 @@ export default function PoleFemininPage() {
 
           <div className="space-y-8">
             <CategoryItem
-              title="U13 Â· U14 Â· U15"
-              description="Initiation au haut niveau Â· Apprentissage des fondamentaux techniques et tactiques Â· Encadrement bienveillant Â· Championnat régional."
+              title="U13 · U14 · U15"
+              description="Initiation au haut niveau · Apprentissage des fondamentaux techniques et tactiques · Encadrement bienveillant · Championnat régional."
             />
             <CategoryItem
-              title="U16 Â· U17"
-              description="Perfectionnement Â· Intensification du volume d'entraînement Â· Compétitions régionales et nationales Â· Suivi renforcé (physique, mental, nutrition)."
+              title="U16 · U17"
+              description="Perfectionnement · Intensification du volume d'entraînement · Compétitions régionales et nationales · Suivi renforcé (physique, mental, nutrition)."
             />
             <CategoryItem
-              title="U18 Â· U19"
-              description="Préparation au haut niveau amateur ou professionnel Â· Championnat national Â· Lien avec l'équipe senior féminine Â· Projet post-formation (université, club professionnel)."
+              title="U18 · U19"
+              description="Préparation au haut niveau amateur ou professionnel · Championnat national · Lien avec l'équipe senior féminine · Projet post-formation (université, club professionnel)."
             />
           </div>
         </div>
