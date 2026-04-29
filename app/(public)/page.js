@@ -332,6 +332,24 @@ export default async function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* SECTION COMPTE À REBOURS PROCHAIN MATCH */}
+      {nextHomeMatch && (
+        <section className="border-y border-white/10 bg-pau-primary py-14 md:py-20">
+          <div className="container-pau">
+            <div className="mb-10 text-center">
+              <span className="font-mono text-xs font-semibold uppercase tracking-wider text-pau-yellow">
+                Prochain Match à domicile
+              </span>
+              <h2 className="mt-4 font-display text-4xl font-bold uppercase text-white md:text-5xl">
+                Rendez-vous au Nouste Camp
+              </h2>
+            </div>
+            <MatchCountdown match={nextHomeMatch} />
+          </div>
+        </section>
+      )}
+
       <ScrollingBanner partners={partners} />
 
       {/* SECTION 4 - ARTICLES RÉCENTS */}
