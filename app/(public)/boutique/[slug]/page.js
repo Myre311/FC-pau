@@ -41,11 +41,11 @@ export default async function ProductPage({ params }) {
   );
 
   return (
-    <article className="min-h-screen bg-white">
-      <div className="container-fc grid gap-10 py-12 md:grid-cols-2 md:gap-16 md:py-20">
+    <article className="min-h-screen bg-pau-night">
+      <div className="container-pau grid gap-10 py-12 md:grid-cols-2 md:gap-16 md:py-20">
         {/* Galerie */}
         <div className="space-y-3">
-          <div className="relative aspect-square w-full overflow-hidden border border-pau-primary/10 bg-gradient-to-br from-pau-primary to-pau-night">
+          <div className="relative aspect-square w-full overflow-hidden border border-white/10 bg-gradient-to-br from-pau-primary to-pau-night">
             {product.images?.[0] ? (
               <Image
                 src={product.images[0]}
@@ -66,7 +66,7 @@ export default async function ProductPage({ params }) {
               {product.images.slice(1, 5).map((src, i) => (
                 <div
                   key={src + i}
-                  className="relative aspect-square overflow-hidden border border-pau-primary/10 bg-gradient-to-br from-pau-primary to-pau-night"
+                  className="relative aspect-square overflow-hidden border border-white/10 bg-gradient-to-br from-pau-primary to-pau-night"
                 >
                   <Image
                     src={src}
@@ -83,7 +83,7 @@ export default async function ProductPage({ params }) {
 
         {/* Infos */}
         <div className="flex flex-col">
-          <nav className="font-mono text-[10px] uppercase tracking-[0.2em] text-pau-primary/50">
+          <nav className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/50">
             <Link href="/boutique" className="hover:text-pau-yellow">
               Boutique
             </Link>
@@ -100,7 +100,7 @@ export default async function ProductPage({ params }) {
             )}
           </nav>
 
-          <h1 className="mt-4 font-display text-5xl uppercase leading-crush tracking-tightest text-pau-primary md:text-6xl">
+          <h1 className="mt-4 font-display text-5xl uppercase leading-crush tracking-tightest text-white md:text-6xl">
             {product.name}
           </h1>
 
@@ -109,7 +109,7 @@ export default async function ProductPage({ params }) {
           </p>
 
           {product.description && (
-            <p className="mt-6 max-w-prose font-sans text-base leading-relaxed text-pau-primary/70">
+            <p className="mt-6 max-w-prose font-sans text-base leading-relaxed text-white/80">
               {product.description}
             </p>
           )}
@@ -121,7 +121,7 @@ export default async function ProductPage({ params }) {
           {product.customizable && (
             <Link
               href={`/boutique/${product.slug}/personnaliser`}
-              className="mt-6 inline-flex items-center gap-3 self-start border-b border-pau-yellow/40 py-1 font-mono text-[11px] uppercase tracking-[0.2em] text-pau-yellow transition-colors "
+              className="mt-6 inline-flex items-center gap-3 self-start border-b border-pau-yellow/40 py-1 font-mono text-[11px] uppercase tracking-[0.2em] text-pau-yellow transition-colors hover:border-pau-yellow"
             >
               <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
                 <path d="M3 17l6-6 4 4 8-8M21 7v6h-6" strokeLinecap="square" />
@@ -130,18 +130,18 @@ export default async function ProductPage({ params }) {
             </Link>
           )}
 
-          <dl className="mt-10 grid grid-cols-3 gap-4 border-t border-pau-primary/10 pt-6 font-mono text-[10px] uppercase tracking-[0.2em]">
+          <dl className="mt-10 grid grid-cols-3 gap-4 border-t border-white/10 pt-6 font-mono text-[10px] uppercase tracking-[0.2em]">
             <div>
-              <dt className="text-pau-primary/40">Stock total</dt>
-              <dd className="mt-1 text-pau-primary">{totalStock}</dd>
+              <dt className="text-white/50">Stock total</dt>
+              <dd className="mt-1 text-white">{totalStock}</dd>
             </div>
             <div>
-              <dt className="text-pau-primary/40">Variantes</dt>
-              <dd className="mt-1 text-pau-primary">{product.variants.length}</dd>
+              <dt className="text-white/50">Variantes</dt>
+              <dd className="mt-1 text-white">{product.variants.length}</dd>
             </div>
             <div>
-              <dt className="text-pau-primary/40">Saison</dt>
-              <dd className="mt-1 text-pau-primary">25-26</dd>
+              <dt className="text-white/50">Saison</dt>
+              <dd className="mt-1 text-white">25-26</dd>
             </div>
           </dl>
         </div>

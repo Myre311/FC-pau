@@ -34,7 +34,8 @@ export default async function PersonnaliserPage({ params }) {
   }
 
   return (
-    <div className="container-fc py-8 md:py-12">
+    <div className="min-h-screen bg-pau-night">
+      <div className="container-pau py-8 md:py-12">
       <header className="mb-8">
         <nav className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/50">
           <Link href="/boutique" className="hover:text-pau-yellow">
@@ -50,6 +51,7 @@ export default async function PersonnaliserPage({ params }) {
       </header>
 
       <JerseyConfigurator product={product} variants={product.variants} />
+      </div>
     </div>
   );
 }

@@ -37,8 +37,8 @@ export default async function CategoryPage({ params }) {
   if (!category) notFound();
 
   return (
-    <>
-      <section className="container-fc pt-12 pb-8 md:pt-20 md:pb-12">
+    <div className="min-h-screen bg-pau-night">
+      <section className="container-pau pt-12 pb-8 md:pt-20 md:pb-12">
         <nav className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/50">
           <Link href="/boutique" className="hover:text-pau-yellow">
             Boutique
@@ -47,8 +47,8 @@ export default async function CategoryPage({ params }) {
           <span className="text-white">{category.name}</span>
         </nav>
 
-        <h1 className="mt-6 text-[16vw] md:text-[10vw] lg:text-[140px]">
-          {category.name.toUpperCase()}
+        <h1 className="mt-6 font-display text-[16vw] uppercase leading-crush tracking-tightest text-white md:text-[10vw] lg:text-[140px]">
+          {category.name}
         </h1>
 
         <p className="mt-4 font-mono text-[11px] uppercase tracking-[0.2em] text-pau-yellow">
@@ -57,7 +57,7 @@ export default async function CategoryPage({ params }) {
         </p>
       </section>
 
-      <section className="container-fc pb-24">
+      <section className="container-pau pb-24">
         {category.products.length === 0 ? (
           <div className="border border-dashed border-white/15 px-6 py-20 text-center">
             <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-pau-yellow">
@@ -75,6 +75,6 @@ export default async function CategoryPage({ params }) {
           </div>
         )}
       </section>
-    </>
+    </div>
   );
 }
