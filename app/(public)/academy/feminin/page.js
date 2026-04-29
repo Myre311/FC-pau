@@ -46,7 +46,7 @@ export default function PoleFemininPage() {
               <span className="font-mono text-xs font-semibold uppercase tracking-wider text-pau-yellow">
                 Le projet
               </span>
-              <h2 className="mt-4 font-display text-4xl font-bold uppercase text-pau-night md:text-5xl">
+              <h2 className="mt-4 font-display text-4xl font-bold uppercase text-pau-yellow md:text-5xl">
                 Former les joueuses
               </h2>
             </div>
@@ -107,11 +107,11 @@ export default function PoleFemininPage() {
       <section className="bg-white py-14 md:py-20">
         <div className="container-pau">
           <div className="grid gap-10 md:grid-cols-2 md:gap-16">
-            <div className="border border-pau-primary/10 bg-pau-primary/5 p-8 md:p-10">
+            <div className="border border-pau-night/10 p-8 md:p-10">
               <span className="font-mono text-xs font-semibold uppercase tracking-wider text-pau-yellow">
                 Encadrement
               </span>
-              <h2 className="mt-4 font-display text-3xl font-bold uppercase text-pau-night md:text-4xl">
+              <h2 className="mt-4 font-display text-3xl font-bold uppercase text-pau-yellow md:text-4xl">
                 Staff technique
               </h2>
               <div className="mt-6 space-y-4 font-sans text-base leading-relaxed text-pau-night/70 md:text-lg">
@@ -135,11 +135,11 @@ export default function PoleFemininPage() {
               </div>
             </div>
 
-            <div className="border border-pau-primary/10 bg-pau-primary/5 p-8 md:p-10">
+            <div className="border border-pau-night/10 p-8 md:p-10">
               <span className="font-mono text-xs font-semibold uppercase tracking-wider text-pau-yellow">
                 Infrastructures
               </span>
-              <h2 className="mt-4 font-display text-3xl font-bold uppercase text-pau-night md:text-4xl">
+              <h2 className="mt-4 font-display text-3xl font-bold uppercase text-pau-yellow md:text-4xl">
                 Équipements
               </h2>
               <div className="mt-6 space-y-4 font-sans text-base leading-relaxed text-pau-night/70 md:text-lg">

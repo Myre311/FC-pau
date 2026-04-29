@@ -121,7 +121,7 @@ export default function AcademyPage() {
       <section className="bg-white py-14 md:py-20">
         <div className="container-pau">
           <div className="grid gap-10 md:grid-cols-2 md:gap-16">
-            <div className="border border-pau-primary/10 bg-pau-primary/5 p-8 md:p-10">
+            <div className="border border-pau-night/10 p-8 md:p-10">
               <span className="font-mono text-xs font-semibold uppercase tracking-wider text-pau-yellow">
                 Candidature
               </span>
@@ -143,7 +143,7 @@ export default function AcademyPage() {
               </div>
             </div>
 
-            <div className="border border-pau-primary/10 bg-pau-primary/5 p-8 md:p-10">
+            <div className="border border-pau-night/10 p-8 md:p-10">
               <span className="font-mono text-xs font-semibold uppercase tracking-wider text-pau-yellow">
                 Vacances scolaires
               </span>
