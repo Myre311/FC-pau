@@ -5,6 +5,7 @@ import { NewsletterPopup } from '@/components/ui/NewsletterPopup';
 import { ScrollingBanner } from '@/components/ui/ScrollingBanner';
 import { AnimateOnScroll, ScaleOnScroll } from '@/components/ui/AnimateOnScroll';
 import { InstagramGrid } from '@/components/home/InstagramGrid';
+import { MatchCountdown } from '@/components/vitrine/MatchCountdown';
 
 export const dynamic = 'force-dynamic';
 
