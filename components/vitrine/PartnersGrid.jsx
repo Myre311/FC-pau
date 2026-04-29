@@ -4,12 +4,16 @@ import Image from 'next/image';
 import { useState } from 'react';
 
 const PARTNERS = [
-  { name: 'Joma', logo: '/logos/partners/joma.svg' },
-  { name: 'Holy', logo: '/logos/partners/holy.svg' },
-  { name: 'Intersport', logo: '/logos/partners/intersport.svg' },
-  { name: 'Groupama', logo: '/logos/partners/groupama.svg' },
-  { name: 'Sarthou', logo: '/logos/partners/sarthou.svg' },
-  { name: 'Ville de Pau', logo: '/logos/partners/ville-pau.svg' },
+  { name: 'Joma', logo: '/logos/partners/Joma_Blue.png' },
+  { name: 'Holy', logo: '/logos/partners/Holy_Outline_Mono.png' },
+  { name: 'Intersport', logo: '/logos/partners/Intersport.png' },
+  { name: 'Groupama', logo: '/logos/partners/groupama-ws-2.png' },
+  { name: 'Sarthou', logo: '/logos/partners/sarthou-site-1.png' },
+  { name: 'Ville de Pau', logo: '/logos/partners/Pau.png' },
+  { name: 'PBM Concept', logo: '/logos/partners/pbm-concept.png' },
+  { name: 'Arobase Emploi', logo: '/logos/partners/arobase.png' },
+  { name: 'Assurance de Navarre', logo: '/logos/partners/assurance-navare.png' },
+  { name: 'Bullux Services', logo: '/logos/partners/bullux-services.png' },
 ];
 
 function PartnerCard({ name, logo }) {
