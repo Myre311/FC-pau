@@ -21,7 +21,7 @@ export default async function BoutiquePage() {
     .catch(() => []);
 
   return (
-    <div className="bg-pau-night">
+    <div className="bg-white">
       {/* Hero */}
       <section className="relative min-h-[400px] overflow-hidden bg-pau-night md:h-[70vh] md:min-h-[600px]">
         <Image
@@ -50,7 +50,7 @@ export default async function BoutiquePage() {
       </section>
 
       {/* Catégories */}
-      <section className="border-t border-white/10 bg-pau-night py-16 md:py-20">
+      <section className="border-t border-white/10 bg-white py-16 md:py-20">
         <div className="container-pau">
           <div className="mb-12 grid gap-6 md:grid-cols-3">
             <Link
@@ -65,7 +65,7 @@ export default async function BoutiquePage() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-pau-night via-pau-night/50 to-transparent" />
               <div className="absolute inset-0 flex flex-col justify-end p-6">
-                <h3 className="font-display text-2xl font-bold uppercase text-white">
+                <h3 className="font-display text-2xl font-bold uppercase text-pau-night">
                   Tenues 25/26
                 </h3>
               </div>
@@ -83,7 +83,7 @@ export default async function BoutiquePage() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-pau-night via-pau-night/50 to-transparent" />
               <div className="absolute inset-0 flex flex-col justify-end p-6">
-                <h3 className="font-display text-2xl font-bold uppercase text-white">
+                <h3 className="font-display text-2xl font-bold uppercase text-pau-night">
                   Training
                 </h3>
               </div>
@@ -101,7 +101,7 @@ export default async function BoutiquePage() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-pau-night via-pau-night/50 to-transparent" />
               <div className="absolute inset-0 flex flex-col justify-end p-6">
-                <h3 className="font-display text-2xl font-bold uppercase text-white">
+                <h3 className="font-display text-2xl font-bold uppercase text-pau-night">
                   Lifestyle
                 </h3>
               </div>
@@ -111,7 +111,7 @@ export default async function BoutiquePage() {
       </section>
 
       {/* Produits */}
-      <section className="bg-pau-night py-16 md:py-20">
+      <section className="bg-white py-16 md:py-20">
         <div className="container-pau">
           <div className="mb-12">
             <h2 className="font-display text-3xl font-bold uppercase text-pau-yellow md:text-4xl">
@@ -120,8 +120,8 @@ export default async function BoutiquePage() {
           </div>
 
           {products.length === 0 ? (
-            <div className="rounded-lg border-2 border-white/10 bg-pau-primary p-12 text-center">
-              <p className="font-sans text-lg text-white/70">
+            <div className="rounded-lg border-2 border-white/10 bg-white p-12 text-center">
+              <p className="font-sans text-lg text-pau-night/70">
                 La boutique sera bientôt disponible. Revenez prochainement!
               </p>
             </div>
@@ -131,7 +131,7 @@ export default async function BoutiquePage() {
                 <Link
                   key={product.id}
                   href={`/boutique/${product.slug}`}
-                  className="group overflow-hidden rounded-lg bg-pau-primary transition-all hover:bg-pau-primary-hover"
+                  className="group overflow-hidden rounded-lg bg-white transition-all hover:bg-white-hover"
                 >
                   {product.images?.[0] && (
                     <div className="relative aspect-square overflow-hidden">
@@ -150,10 +150,10 @@ export default async function BoutiquePage() {
                         {product.category.name}
                       </span>
                     )}
-                    <h3 className="mb-2 font-display text-lg font-bold uppercase text-white">
+                    <h3 className="mb-2 font-display text-lg font-bold uppercase text-pau-night">
                       {product.name}
                     </h3>
-                    <p className="font-mono text-sm font-bold text-white">
+                    <p className="font-mono text-sm font-bold text-pau-night">
                       {(product.basePrice / 100).toFixed(2)} €
                     </p>
                   </div>

@@ -63,7 +63,7 @@ export default function CalendrierPage() {
                 className={`border-2 px-4 py-2 font-display text-xs font-bold uppercase tracking-wide transition-all md:px-6 md:py-3 md:text-sm ${
                   filter === 'tous'
                     ? 'border-pau-yellow bg-pau-yellow text-pau-night'
-                    : 'border-white/20 bg-transparent text-white hover:border-white/20'
+                    : 'border-pau-night/20 bg-transparent text-white hover:border-pau-night/20'
                 }`}
               >
                 Tous les matchs
@@ -73,7 +73,7 @@ export default function CalendrierPage() {
                 className={`border-2 px-4 py-2 font-display text-xs font-bold uppercase tracking-wide transition-all md:px-6 md:py-3 md:text-sm ${
                   filter === 'domicile'
                     ? 'border-pau-yellow bg-pau-yellow text-pau-night'
-                    : 'border-white/20 bg-transparent text-white hover:border-white/20'
+                    : 'border-pau-night/20 bg-transparent text-white hover:border-pau-night/20'
                 }`}
               >
                 Domicile
@@ -83,7 +83,7 @@ export default function CalendrierPage() {
                 className={`border-2 px-4 py-2 font-display text-xs font-bold uppercase tracking-wide transition-all md:px-6 md:py-3 md:text-sm ${
                   filter === 'exterieur'
                     ? 'border-pau-yellow bg-pau-yellow text-pau-night'
-                    : 'border-white/20 bg-transparent text-white hover:border-white/20'
+                    : 'border-pau-night/20 bg-transparent text-white hover:border-pau-night/20'
                 }`}
               >
                 Extérieur
@@ -115,7 +115,7 @@ export default function CalendrierPage() {
                 Classement
               </h2>
 
-              <div className="border border-white/10 bg-pau-primary p-7">
+              <div className="border border-pau-night/10 bg-pau-primary p-7">
                 <div className="mb-6 flex items-center justify-center">
                   <Image
                     src="/images/homepage/Logo-Pau-FC-2023.png"
@@ -127,15 +127,15 @@ export default function CalendrierPage() {
                 </div>
 
                 <div className="space-y-4">
-                  <div className="flex items-center justify-between border-b border-white/10 pb-3">
+                  <div className="flex items-center justify-between border-b border-pau-night/10 pb-3">
                     <span className="font-sans text-sm text-white/70">Position</span>
                     <span className="font-display text-2xl font-bold text-pau-yellow">8e</span>
                   </div>
-                  <div className="flex items-center justify-between border-b border-white/10 pb-3">
+                  <div className="flex items-center justify-between border-b border-pau-night/10 pb-3">
                     <span className="font-sans text-sm text-white/70">Points</span>
                     <span className="font-display text-xl font-bold text-white">42</span>
                   </div>
-                  <div className="grid grid-cols-3 gap-4 border-b border-white/10 pb-3">
+                  <div className="grid grid-cols-3 gap-4 border-b border-pau-night/10 pb-3">
                     <div className="text-center">
                       <div className="mb-1 font-sans text-xs text-white/60">V</div>
                       <div className="font-display text-lg font-bold text-green-400">12</div>
@@ -197,7 +197,7 @@ function MatchCard({ match }) {
   const isPlayed = match.status === 'played';
 
   return (
-    <article className="border border-white/10 bg-pau-primary p-6 transition-all hover:border-white/20 md:p-7">
+    <article className="border border-pau-night/10 bg-pau-primary p-6 transition-all hover:border-pau-night/20 md:p-7">
       {/* Logo Ligue 2 BKT */}
       {match.competition && (
         <div className="mb-6 flex justify-center">
@@ -269,7 +269,7 @@ function MatchCard({ match }) {
       </div>
 
       {/* Infos lieu */}
-      <div className="flex items-center justify-between border-t border-white/10 pt-4 text-sm text-white/60">
+      <div className="flex items-center justify-between border-t border-pau-night/10 pt-4 text-sm text-white/60">
         <span>{match.venue || (match.isHome ? 'Nouste Camp' : 'Extérieur')}</span>
         <span className="font-mono text-xs uppercase">
           {match.isHome ? 'Domicile' : 'Extérieur'}

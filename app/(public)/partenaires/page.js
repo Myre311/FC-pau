@@ -50,7 +50,7 @@ export default async function PartenairesPage() {
       </section>
 
       {/* Statistiques */}
-      <section className="border-y border-pau-gold/20 bg-pau-primary py-18 md:py-24">
+      <section className="border-y border-pau-gold/20 bg-white py-18 md:py-24">
         <div className="container-pau">
           <div className="grid gap-10 md:grid-cols-5">
             <StatBox number="11,800" label="Sièges/match" />
@@ -63,7 +63,7 @@ export default async function PartenairesPage() {
       </section>
 
       {/* Nos Partenaires */}
-      <section className="bg-pau-night pb-20 pt-16 md:pb-28 md:pt-24">
+      <section className="bg-white pb-20 pt-16 md:pb-28 md:pt-24">
         <div className="container-pau">
           <h2 className="mb-14 text-center font-display text-3xl font-bold uppercase text-pau-gold md:text-4xl">
             Ils nous font confiance
@@ -114,13 +114,13 @@ export default async function PartenairesPage() {
       </section>
 
       {/* Formulaire Devenir Partenaire */}
-      <section className="border-t border-pau-gold/20 bg-pau-primary pb-22 pt-18 md:pb-28 md:pt-24">
+      <section className="border-t border-pau-gold/20 bg-white pb-22 pt-18 md:pb-28 md:pt-24">
         <div className="container-pau">
           <div className="mx-auto max-w-3xl">
             <h2 className="mb-5 text-center font-display text-3xl font-bold uppercase text-pau-gold md:text-4xl">
               Rejoignez nos partenaires
             </h2>
-            <p className="mb-14 text-center font-sans text-lg text-white/80">
+            <p className="mb-14 text-center font-sans text-lg text-pau-night/80">
               Présentez-nous votre projet, nous vous recontactons sous 48 heures.
             </p>
 
@@ -130,9 +130,9 @@ export default async function PartenairesPage() {
       </section>
 
       {/* Contact */}
-      <section className="bg-pau-night py-16">
+      <section className="bg-white py-16">
         <div className="container-pau text-center">
-          <p className="mb-4 font-sans text-base text-white/70">
+          <p className="mb-4 font-sans text-base text-pau-night/70">
             Pour toute question sur les partenariats
           </p>
           <div className="space-y-2">
@@ -143,7 +143,7 @@ export default async function PartenairesPage() {
               <a href="mailto:partenariats@paufc.fr" className="hover:underline">partenariats@paufc.fr</a>
             </p>
           </div>
-          <p className="mt-4 font-sans text-sm text-white/60">
+          <p className="mt-4 font-sans text-sm text-pau-night/60">
             Nouste Camp, 8 Boulevard de l'Aviation, 64320 Bizanos
           </p>
         </div>
@@ -156,7 +156,7 @@ function StatBox({ number, label }) {
   return (
     <div className="text-center">
       <div className="mb-2 font-display text-3xl font-bold text-pau-gold md:text-4xl">{number}</div>
-      <div className="font-sans text-sm text-white/70">{label}</div>
+      <div className="font-sans text-sm text-pau-night/70">{label}</div>
     </div>
   );
 }

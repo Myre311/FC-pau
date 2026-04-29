@@ -101,7 +101,7 @@ export default async function EquipePage() {
         )}
 
         {/* Staff */}
-        <section className="border-t border-white/10 pt-16">
+        <section className="border-t border-pau-night/10 pt-16">
           <h2 className="mb-12 font-display text-3xl font-bold uppercase text-pau-yellow">
             Le Staff
           </h2>
@@ -143,7 +143,7 @@ export default async function EquipePage() {
 // Composant Player Card
 function PlayerCard({ player }) {
   return (
-    <article className="group border border-white/10 bg-pau-primary transition-all hover:border-white/20">
+    <article className="group border border-pau-night/10 bg-pau-primary transition-all hover:border-pau-night/20">
       {/* Photo */}
       <div className="relative aspect-[3/4] overflow-hidden bg-pau-night/80">
         {player.photoUrl ? (
@@ -185,7 +185,7 @@ function PlayerCard({ player }) {
 // Composant Staff Member
 function StaffMember({ name, role, image }) {
   return (
-    <article className="border border-white/10 bg-pau-night p-5 transition-all hover:border-white/20">
+    <article className="border border-pau-night/10 bg-pau-night p-5 transition-all hover:border-pau-night/20">
       <div className="flex items-center gap-4">
         <div className="relative h-16 w-16 flex-shrink-0 overflow-hidden rounded-full bg-pau-primary">
           {image ? (

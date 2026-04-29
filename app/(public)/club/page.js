@@ -66,7 +66,7 @@ export default function ClubPage() {
         </div>
       </section>
 
-      <section className="border-t border-white/10 bg-pau-primary pb-22 pt-18 md:pb-28 md:pt-24">
+      <section className="border-t border-pau-night/10 bg-pau-primary pb-22 pt-18 md:pb-28 md:pt-24">
         <div className="container-pau">
           <h2 className="mb-14 font-display text-3xl font-bold uppercase text-pau-yellow md:text-4xl">
             Ils ont porté nos couleurs
@@ -94,7 +94,7 @@ export default function ClubPage() {
         </div>
       </section>
 
-      <section className="border-t border-white/10 bg-pau-primary pb-24 pt-18 md:pb-30 md:pt-24">
+      <section className="border-t border-pau-night/10 bg-pau-primary pb-24 pt-18 md:pb-30 md:pt-24">
         <div className="container-pau">
           <h2 className="mb-14 font-display text-3xl font-bold uppercase text-pau-yellow md:text-4xl">
             Nouste Camp · notre forteresse
@@ -107,13 +107,13 @@ export default function ClubPage() {
             <StatCard number="85%" label="Taux de remplissage" />
           </div>
 
-          <div className="relative aspect-[21/9] overflow-hidden border-2 border-white/10">
+          <div className="relative aspect-[21/9] overflow-hidden border-2 border-pau-night/10">
             <Image src="/images/homepage/Boutique.png" alt="Nouste Camp" fill className="object-cover object-[50%_40%]" />
           </div>
         </div>
       </section>
 
-      <div className="border-t border-white/10 bg-pau-night py-8">
+      <div className="border-t border-pau-night/10 bg-pau-night py-8">
         <div className="container-pau text-center">
           <a href="#" className="inline-block font-display text-sm font-bold uppercase tracking-wide text-white/60 transition-colors hover:text-pau-yellow">
             Retour en haut
@@ -126,7 +126,7 @@ export default function ClubPage() {
 
 function PlayerProfile({ name, position, years, description, image }) {
   return (
-    <article className="border border-white/10 bg-pau-night p-7 transition-all hover:border-white/20">
+    <article className="border border-pau-night/10 bg-pau-night p-7 transition-all hover:border-pau-night/20">
       <div className="relative mb-4 aspect-[3/4] overflow-hidden bg-pau-primary">
         {image ? (
           <Image
@@ -153,7 +153,7 @@ function PlayerProfile({ name, position, years, description, image }) {
 
 function DirectorProfile({ name, role, description, image }) {
   return (
-    <article className="border border-white/10 bg-pau-primary p-7 transition-all hover:border-white/20">
+    <article className="border border-pau-night/10 bg-pau-primary p-7 transition-all hover:border-pau-night/20">
       <div className="relative mb-4 aspect-square overflow-hidden bg-pau-night">
         {image ? (
           <Image
@@ -179,7 +179,7 @@ function DirectorProfile({ name, role, description, image }) {
 
 function StatCard({ number, label }) {
   return (
-    <div className="border-2 border-white/10 bg-pau-night p-6 text-center">
+    <div className="border-2 border-pau-night/10 bg-pau-night p-6 text-center">
       <div className="mb-2 font-display text-4xl font-bold text-pau-yellow">{number}</div>
       <div className="font-sans text-sm text-white/70">{label}</div>
     </div>

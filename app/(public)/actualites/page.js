@@ -66,7 +66,7 @@ export default async function ActualitesPage() {
 function ArticleCard({ article }) {
   return (
     <Link href={`/actualites/${article.slug}`}>
-      <article className="group border border-white/10 bg-pau-primary transition-all hover:border-white/20">
+      <article className="group border border-pau-night/10 bg-pau-primary transition-all hover:border-pau-night/20">
         {/* Image */}
         <div className="relative aspect-[16/9] overflow-hidden bg-pau-night/80">
           {article.coverImageUrl ? (
