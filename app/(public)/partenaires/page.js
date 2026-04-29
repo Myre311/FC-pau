@@ -163,13 +163,14 @@ function StatBox({ number, label }) {
 
 function PartnerLogo({ partner }) {
   return (
-    <div className="group relative flex aspect-[3/2] items-center justify-center overflow-hidden border-2 border-pau-gold/20 bg-pau-primary p-8 transition-all hover:border-pau-gold">
+    <div className="group relative flex aspect-[3/2] items-center justify-center overflow-hidden bg-transparent p-8">
       <Image
         src={partner.logoUrl}
         alt={partner.name}
         width={200}
         height={100}
-        className="h-auto w-full object-contain brightness-0 invert transition-opacity group-hover:opacity-80"
+        className="h-auto w-full object-contain transition-all"
+        style={{ filter: 'brightness(0) saturate(100%) invert(72%) sepia(32%) saturate(427%) hue-rotate(356deg) brightness(91%) contrast(88%)' }}
       />
     </div>
   );
@@ -177,13 +178,14 @@ function PartnerLogo({ partner }) {
 
 function PartnerLogoMedium({ partner }) {
   return (
-    <div className="group relative flex aspect-[3/2] items-center justify-center overflow-hidden border border-pau-gold/15 bg-pau-primary p-6 transition-all hover:border-pau-gold">
+    <div className="group relative flex aspect-[3/2] items-center justify-center overflow-hidden bg-transparent p-6">
       <Image
         src={partner.logoUrl}
         alt={partner.name}
         width={150}
         height={75}
-        className="h-auto w-full object-contain brightness-0 invert transition-opacity group-hover:opacity-80"
+        className="h-auto w-full object-contain transition-all"
+        style={{ filter: 'brightness(0) saturate(100%) invert(72%) sepia(32%) saturate(427%) hue-rotate(356deg) brightness(91%) contrast(88%)' }}
       />
     </div>
   );
@@ -191,13 +193,14 @@ function PartnerLogoMedium({ partner }) {
 
 function PartnerLogoSmall({ partner }) {
   return (
-    <div className="group relative flex aspect-square items-center justify-center overflow-hidden border border-pau-gold/10 bg-pau-primary p-4 transition-all hover:border-pau-gold">
+    <div className="group relative flex aspect-square items-center justify-center overflow-hidden bg-transparent p-4">
       <Image
         src={partner.logoUrl}
         alt={partner.name}
         width={100}
         height={50}
-        className="h-auto w-full object-contain brightness-0 invert transition-opacity group-hover:opacity-80"
+        className="h-auto w-full object-contain transition-all"
+        style={{ filter: 'brightness(0) saturate(100%) invert(72%) sepia(32%) saturate(427%) hue-rotate(356deg) brightness(91%) contrast(88%)' }}
       />
     </div>
   );
