@@ -57,11 +57,11 @@ Jamais utilisé ailleurs. Jamais.
 
 ### Typographies
 
-- **Deglion** — titres (police custom élégante)
+- **Morhena** — titres (police custom calligraphique élégante)
 - **Inter** — corps de texte (moderne, lisible)
 - **DM Mono** — détails techniques, badges, numéros, tags
 
-Deglion via fichier local, Inter et DM Mono via Google Fonts.
+Morhena via fichiers locaux (regular + italic), Inter et DM Mono via Google Fonts.
 
 ### Direction artistique
 
