@@ -4,6 +4,7 @@ import { prisma } from '@/lib/prisma';
 import { NewsletterPopup } from '@/components/ui/NewsletterPopup';
 import { ScrollingBanner } from '@/components/ui/ScrollingBanner';
 import { AnimateOnScroll, ScaleOnScroll } from '@/components/ui/AnimateOnScroll';
+import { InstagramGrid } from '@/components/home/InstagramGrid';
 
 export const dynamic = 'force-dynamic';
 
@@ -64,18 +65,6 @@ export default async function HomePage() {
       },
     })
     .catch(() => []);
-
-  // Posts Instagram avec images statiques placeholder
-  const instagramData = [
-    { url: 'https://www.instagram.com/reel/DVO30xjCCP9/', image: '/images/hero-equipe.jpg' },
-    { url: 'https://www.instagram.com/reel/DXtkscXMch2/', image: '/images/hero-boutique.jpg' },
-    { url: 'https://www.instagram.com/p/DXoYs2eCMKb/', image: '/images/hero-stade.jpg' },
-    { url: 'https://www.instagram.com/p/DXkRbWJDn9d/', image: '/images/hero-calendrier.jpg' },
-    { url: 'https://www.instagram.com/p/DXjublojM5a/', image: '/images/hero-actualites.jpg' },
-    { url: 'https://www.instagram.com/p/DXht_SpCAA6/', image: '/images/hero-club.jpg' },
-    { url: 'https://www.instagram.com/p/DXhf7AnCKwn/', image: '/images/hero-billetterie.jpg' },
-    { url: 'https://www.instagram.com/p/DXhantZiJGd/', image: '/images/hero-accueil.jpg' }
-  ];
 
   return (
     <>
@@ -427,26 +416,7 @@ export default async function HomePage() {
             <p className="mt-2 font-mono text-sm text-pau-yellow">@paufootballclub</p>
           </div>
 
-          <div className="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-4">
-            {instagramData.map((post, i) => (
-              <a
-                key={i}
-                href={post.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group relative block aspect-square overflow-hidden bg-pau-night"
-              >
-                <Image
-                  src={post.image}
-                  alt={`Post Instagram Pau FC`}
-                  fill
-                  sizes="(max-width: 768px) 50vw, 25vw"
-                  className="object-cover transition-transform duration-500 group-hover:scale-110 group-hover:brightness-110"
-                />
-                <div className="absolute inset-0 bg-pau-night/0 transition-colors group-hover:bg-pau-night/10" />
-              </a>
-            ))}
-          </div>
+          <InstagramGrid />
 
           <div className="mt-8 text-center">
             <a
