@@ -1,18 +1,18 @@
-import { Bodoni_Moda, Inter, DM_Mono } from 'next/font/google';
+import { Inter, DM_Mono } from 'next/font/google';
+import localFont from 'next/font/local';
 import { GoogleAnalytics } from '@next/third-parties/google';
 
 import { OrganizationJsonLd } from '@/components/seo/OrganizationJsonLd';
 
 import './globals.css';
 
-// Bodoni Moda - Titres (serif éditorial mode/luxe, fort contraste Vogue-style)
-const bodoni = Bodoni_Moda({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
+// Deglion - Titres (police custom élégante)
+const deglion = localFont({
+  src: '../public/fonts/Deglion-Regular.ttf',
   variable: '--font-display',
   display: 'swap',
   preload: true,
-  style: ['normal', 'italic'],
+  weight: '400',
 });
 
 // Inter - Corps de texte (moderne, lisible) - remplace Bicyclette
@@ -67,7 +67,7 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="fr"
-      className={`${bodoni.variable} ${inter.variable} ${dmMono.variable}`}
+      className={`${deglion.variable} ${inter.variable} ${dmMono.variable}`}
     >
       <body className="font-sans antialiased">
         {children}
