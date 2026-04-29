@@ -287,7 +287,7 @@ function MatchCardMaquette({ match }) {
   });
 
   return (
-    <article className="group border border-white/10 bg-pau-primary p-7 transition-all hover:border-2 hover:border-pau-yellow md:p-9">
+    <article className="group border border-white/10 bg-pau-primary p-7 transition-all hover:border-white/20 md:p-9">
       {/* Logo compétition */}
       {match.competition && (
         <div className="mb-6 flex justify-center">
@@ -372,7 +372,7 @@ function MatchCardMaquette({ match }) {
 // Composant Tarif Card style maquette
 function TarifCardMaquette({ title, price, description }) {
   return (
-    <div className="border border-white/10 bg-pau-night p-7 transition-all hover:border-2 hover:border-pau-yellow">
+    <div className="border border-white/10 bg-pau-night p-7 transition-all hover:border-white/20">
       <h3 className="mb-3 font-display text-2xl font-bold uppercase text-white">
         {title}
       </h3>

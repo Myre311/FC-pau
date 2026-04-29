@@ -126,7 +126,7 @@ export default function ClubPage() {
 
 function PlayerProfile({ name, position, years, description, image }) {
   return (
-    <article className="border border-white/10 bg-pau-night p-7 transition-all hover:border-2 hover:border-pau-yellow">
+    <article className="border border-white/10 bg-pau-night p-7 transition-all hover:border-white/20">
       <div className="relative mb-4 aspect-[3/4] overflow-hidden bg-pau-primary">
         {image ? (
           <Image
@@ -153,7 +153,7 @@ function PlayerProfile({ name, position, years, description, image }) {
 
 function DirectorProfile({ name, role, description, image }) {
   return (
-    <article className="border border-white/10 bg-pau-primary p-7 transition-all hover:border-2 hover:border-pau-yellow">
+    <article className="border border-white/10 bg-pau-primary p-7 transition-all hover:border-white/20">
       <div className="relative mb-4 aspect-square overflow-hidden bg-pau-night">
         {image ? (
           <Image

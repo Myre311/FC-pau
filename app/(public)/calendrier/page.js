@@ -197,7 +197,7 @@ function MatchCard({ match }) {
   const isPlayed = match.status === 'played';
 
   return (
-    <article className="border border-white/10 bg-pau-primary p-6 transition-all hover:border-2 hover:border-pau-yellow md:p-7">
+    <article className="border border-white/10 bg-pau-primary p-6 transition-all hover:border-white/20 md:p-7">
       {/* Logo Ligue 2 BKT */}
       {match.competition && (
         <div className="mb-6 flex justify-center">

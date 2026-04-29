@@ -143,7 +143,7 @@ export default async function EquipePage() {
 // Composant Player Card
 function PlayerCard({ player }) {
   return (
-    <article className="group border border-white/10 bg-pau-primary transition-all hover:border-2 hover:border-pau-yellow">
+    <article className="group border border-white/10 bg-pau-primary transition-all hover:border-white/20">
       {/* Photo */}
       <div className="relative aspect-[3/4] overflow-hidden bg-pau-night/80">
         {player.photoUrl ? (
@@ -185,7 +185,7 @@ function PlayerCard({ player }) {
 // Composant Staff Member
 function StaffMember({ name, role, image }) {
   return (
-    <article className="border border-white/10 bg-pau-night p-5 transition-all hover:border-2 hover:border-pau-yellow">
+    <article className="border border-white/10 bg-pau-night p-5 transition-all hover:border-white/20">
       <div className="flex items-center gap-4">
         <div className="relative h-16 w-16 flex-shrink-0 overflow-hidden rounded-full bg-pau-primary">
           {image ? (
