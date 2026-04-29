@@ -6,7 +6,7 @@ import { OrganizationJsonLd } from '@/components/seo/OrganizationJsonLd';
 
 import './globals.css';
 
-// Morhena - Titres (police custom calligraphique élégante)
+// Morhena - Police calligraphique élégante pour tous les titres
 const morhena = localFont({
   src: [
     {
@@ -23,6 +23,7 @@ const morhena = localFont({
   variable: '--font-display',
   display: 'swap',
   preload: true,
+  fallback: ['Georgia', 'serif'],
 });
 
 // Inter - Corps de texte (moderne, lisible) - remplace Bicyclette
