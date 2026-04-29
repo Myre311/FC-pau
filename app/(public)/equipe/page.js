@@ -2,8 +2,8 @@
 import Image from 'next/image';
 
 export const metadata = {
-  title: "L'Ã‰quipe Pro â€” Pau FC",
-  description: "L'effectif 2025/2026 du Pau FC : joueurs, staff technique et mÃ©dical au Nouste Camp.",
+  title: “L'Équipe Pro — Pau FC”,
+  description: “L'effectif 2025/2026 du Pau FC : joueurs, staff technique et médical au Nouste Camp.”,
 };
 
 export default async function EquipePage() {
@@ -26,7 +26,7 @@ export default async function EquipePage() {
       <section className="relative min-h-[400px] md:h-[60vh] md:min-h-[500px] bg-pau-night">
         <Image
           src="/images/hero-equipe.jpg"
-          alt="Ã‰quipe Pau FC"
+          alt="É‰quipe Pau FC"
           fill
           className="object-cover object-[50%_40%] brightness-50"
           priority
@@ -36,7 +36,7 @@ export default async function EquipePage() {
           <div>
             <span className="font-mono text-xs uppercase text-pau-yellow">Saison 2025/2026</span>
             <h1 className="mt-4 font-display text-5xl font-bold uppercase text-white md:text-6xl">
-              L'Ã‰quipe Pro
+              L'É‰quipe Pro
             </h1>
           </div>
         </div>
@@ -58,11 +58,11 @@ export default async function EquipePage() {
           </section>
         )}
 
-        {/* DÃ©fenseurs */}
+        {/* Défenseurs */}
         {defenseurs.length > 0 && (
           <section className="mb-18">
             <h2 className="mb-10 font-display text-3xl font-bold uppercase text-pau-yellow">
-              La dÃ©fense
+              La défense
             </h2>
             <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
               {defenseurs.map((player) => (
@@ -113,23 +113,23 @@ export default async function EquipePage() {
                 Staff Technique
               </h3>
               <div className="space-y-4">
-                <StaffMember name="Didier Tholot" role="EntraÃ®neur principal" image="/images/club/DSC00082.png" />
-                <StaffMember name="Vincent Bracigliano" role="EntraÃ®neur adjoint" image={null} />
-                <StaffMember name="Julien Cardy" role="PrÃ©parateur physique" image={null} />
-                <StaffMember name="Thomas Ayassamy" role="Analyste vidÃ©o" image={null} />
+                <StaffMember name="Didier Tholot" role="EntraÉ®neur principal" image="/images/club/DSC00082.png" />
+                <StaffMember name="Vincent Bracigliano" role="EntraÉ®neur adjoint" image={null} />
+                <StaffMember name="Julien Cardy" role="Préparateur physique" image={null} />
+                <StaffMember name="Thomas Ayassamy" role="Analyste vidéo" image={null} />
               </div>
             </div>
 
-            {/* Staff mÃ©dical */}
+            {/* Staff médical */}
             <div>
               <h3 className="mb-6 font-display text-xl font-bold uppercase text-pau-yellow">
-                Staff MÃ©dical
+                Staff Médical
               </h3>
               <div className="space-y-4">
-                <StaffMember name="Dr. Marc Laporte" role="MÃ©decin du club" image={null} />
-                <StaffMember name="Pierre Durand" role="KinÃ©sithÃ©rapeute" image={null} />
-                <StaffMember name="Sophie Martin" role="KinÃ©sithÃ©rapeute" image={null} />
-                <StaffMember name="Alexandre Petit" role="OstÃ©opathe" image={null} />
+                <StaffMember name="Dr. Marc Laporte" role="Médecin du club" image={null} />
+                <StaffMember name="Pierre Durand" role="Kinésithérapeute" image={null} />
+                <StaffMember name="Sophie Martin" role="Kinésithérapeute" image={null} />
+                <StaffMember name="Alexandre Petit" role="Ostéopathe" image={null} />
                 <StaffMember name="Julie Bernard" role="Podologue" image={null} />
               </div>
             </div>
@@ -161,7 +161,7 @@ function PlayerCard({ player }) {
           </div>
         )}
 
-        {/* NumÃ©ro overlay */}
+        {/* Numéro overlay */}
         <div className="absolute left-0 top-0 bg-pau-yellow px-3 py-1">
           <span className="font-display text-xl font-bold text-pau-night">
             {player.shirtNumber}
