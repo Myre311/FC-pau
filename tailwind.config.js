@@ -56,6 +56,15 @@ module.exports = {
         sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],
         mono: ['var(--font-mono)', 'ui-monospace', 'monospace'],
       },
+      fontWeight: {
+        light: '300',
+        normal: '400',
+        medium: '400',
+        semibold: '500',
+        bold: '600',
+        extrabold: '700',
+        black: '800',
+      },
       letterSpacing: {
         tightest: '-0.03em',
         'display-tight': '-0.02em',

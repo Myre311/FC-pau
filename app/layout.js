@@ -8,10 +8,11 @@ import './globals.css';
 // Bodoni Moda - Titres (serif éditorial mode/luxe, fort contraste Vogue-style)
 const bodoni = Bodoni_Moda({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700', '800', '900'],
+  weight: ['400', '500', '600', '700'],
   variable: '--font-display',
   display: 'swap',
   preload: true,
+  style: ['normal', 'italic'],
 });
 
 // Inter - Corps de texte (moderne, lisible) - remplace Bicyclette
