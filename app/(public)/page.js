@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { prisma } from '@/lib/prisma';
 import { NewsletterPopup } from '@/components/ui/NewsletterPopup';
 import { ScrollingBanner } from '@/components/ui/ScrollingBanner';
+import { AnimateOnScroll, ScaleOnScroll } from '@/components/ui/AnimateOnScroll';
 
 export const dynamic = 'force-dynamic';
 
@@ -151,7 +152,8 @@ export default async function HomePage() {
           <div className="grid gap-6 md:grid-cols-2 md:gap-10">
 
             {/* GAUCHE - NEWSLETTER avec photo stade */}
-            <div className="relative aspect-[4/3] overflow-hidden rounded-lg animate-fade-in-up">
+            <AnimateOnScroll delay={0.1}>
+            <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
               <Image
                 src="/images/hero-stade.jpg"
                 alt="Stade Nouste Camp"
@@ -182,6 +184,7 @@ export default async function HomePage() {
                 </div>
               </div>
             </div>
+            </AnimateOnScroll>
 
             {/* DROITE - CARDS + SECTION MATCH */}
             <div className="space-y-4">
@@ -190,9 +193,10 @@ export default async function HomePage() {
               <div className="grid gap-5 md:grid-cols-2">
 
                 {/* Card BILLETTERIE avec countdown */}
+                <ScaleOnScroll delay={0.1}>
                 <Link
                   href="/billetterie"
-                  className="group flex flex-col justify-between animate-cascade-1 bg-pau-primary p-6 transition-all hover:bg-pau-primary-hover hover:scale-[1.02] md:col-span-2"
+                  className="group flex flex-col justify-between bg-pau-primary p-6 transition-all hover:bg-pau-primary-hover hover:scale-[1.02] md:col-span-2"
                 >
                   <div>
                     <span className="mb-2 inline-block font-mono text-xs font-semibold uppercase tracking-wider text-pau-yellow">
@@ -204,11 +208,13 @@ export default async function HomePage() {
                     <p className="font-mono text-2xl font-bold text-white">08:00:00:00</p>
                   </div>
                 </Link>
+                </ScaleOnScroll>
 
                 {/* Card BOUTIQUE */}
+                <ScaleOnScroll delay={0.2}>
                 <Link
                   href="/boutique"
-                  className="group flex flex-col justify-between animate-cascade-2 bg-pau-primary p-6 transition-all hover:bg-pau-primary-hover hover:scale-[1.02]"
+                  className="group flex flex-col justify-between bg-pau-primary p-6 transition-all hover:bg-pau-primary-hover hover:scale-[1.02]"
                 >
                   <div>
                     <span className="mb-2 inline-block font-mono text-xs font-semibold uppercase tracking-wider text-pau-yellow">
@@ -222,11 +228,13 @@ export default async function HomePage() {
                     </button>
                   </div>
                 </Link>
+                </ScaleOnScroll>
 
                 {/* Card MATCH EXTÉRIEUR */}
+                <ScaleOnScroll delay={0.3}>
                 <Link
                   href="/calendrier"
-                  className="group flex flex-col justify-between animate-cascade-3 bg-pau-primary p-6 transition-all hover:bg-pau-primary-hover hover:scale-[1.02]"
+                  className="group flex flex-col justify-between bg-pau-primary p-6 transition-all hover:bg-pau-primary-hover hover:scale-[1.02]"
                 >
                   <div>
                     <h3 className="mb-3 font-display text-lg font-bold uppercase text-white">
@@ -242,11 +250,13 @@ export default async function HomePage() {
                     </div>
                   </div>
                 </Link>
+                </ScaleOnScroll>
 
               </div>
 
               {/* SECTION MATCH avec logos clubs */}
-              <div className="flex flex-col gap-4 rounded-lg animate-cascade-4 bg-pau-primary p-6">
+              <ScaleOnScroll delay={0.4}>
+              <div className="flex flex-col gap-4 rounded-lg bg-pau-primary p-6">
                 {/* Logo Ligue 2 BKT */}
                 <div className="flex justify-center">
                   <Image
@@ -303,6 +313,7 @@ export default async function HomePage() {
                   Billetterie
                 </Link>
               </div>
+              </ScaleOnScroll>
 
             </div>
           </div>
@@ -332,16 +343,10 @@ export default async function HomePage() {
 
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {recentArticles.map((article, index) => (
+              <AnimateOnScroll key={article.id} delay={index * 0.1}>
               <Link
-                key={article.id}
                 href={`/actualites/${article.slug}`}
-                className={`group overflow-hidden rounded-lg bg-pau-primary transition-all hover:bg-pau-primary-hover hover:scale-[1.02] ${
-                  index === 0 ? 'animate-cascade-1' :
-                  index === 1 ? 'animate-cascade-2' :
-                  index === 2 ? 'animate-cascade-3' :
-                  index === 3 ? 'animate-cascade-4' :
-                  index === 4 ? 'animate-cascade-5' : 'animate-fade-in-up'
-                }`}
+                className="group overflow-hidden rounded-lg bg-pau-primary transition-all hover:bg-pau-primary-hover hover:scale-[1.02]"
               >
                 {/* Image */}
                 <div className="relative aspect-[16/9] overflow-hidden">
@@ -382,6 +387,7 @@ export default async function HomePage() {
                   </p>
                 </div>
               </Link>
+              </AnimateOnScroll>
             ))}
           </div>
 
@@ -418,18 +424,12 @@ export default async function HomePage() {
               '/images/hero-billetterie.jpg',
               '/images/hero-accueil.jpg'
             ].map((img, i) => (
+              <ScaleOnScroll key={i} delay={i * 0.05}>
               <a
-                key={i}
                 href="https://www.instagram.com/paufootballclub/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`group relative aspect-square overflow-hidden ${
-                  i === 0 ? 'animate-cascade-1' :
-                  i === 1 ? 'animate-cascade-2' :
-                  i === 2 ? 'animate-cascade-3' :
-                  i === 3 ? 'animate-cascade-4' :
-                  i === 4 ? 'animate-cascade-5' : 'animate-fade-in-up'
-                }`}
+                className="group relative aspect-square overflow-hidden"
               >
                 <Image
                   src={img}
@@ -438,6 +438,7 @@ export default async function HomePage() {
                   className="object-cover transition-transform duration-500 group-hover:scale-110 group-hover:brightness-110"
                 />
               </a>
+              </ScaleOnScroll>
             ))}
           </div>
         </div>
