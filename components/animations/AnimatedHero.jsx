@@ -13,7 +13,7 @@ import Image from 'next/image';
  */
 export function AnimatedHero() {
   const title = "PAU FOOTBALL CLUB";
-  const letters = title.split(·);
+  const letters = title.split("");
 
   return (
     <section className="relative overflow-hidden border-b-4 border-pau-yellow">

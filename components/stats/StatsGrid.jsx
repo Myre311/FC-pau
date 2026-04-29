@@ -58,10 +58,10 @@ export function StatsGrid({ players }) {
               <SortButton column="assists" label="PD" />
             </th>
             <th className="p-3">
-              <SortButton column="yellowCards" label=· />
+              <SortButton column="yellowCards" label="" />
             </th>
             <th className="p-3">
-              <SortButton column="redCards" label=· />
+              <SortButton column="redCards" label="" />
             </th>
           </tr>
         </thead>
