@@ -5,7 +5,7 @@ import { prisma } from '@/lib/prisma';
 export const dynamic = 'force-dynamic';
 
 export const metadata = {
-  title: 'Boutique "” Pau FC',
+  title: 'Boutique "" Pau FC',
   description: 'Boutique officielle du Pau FC. Maillots, training, lifestyle et accessoires.',
 };
 

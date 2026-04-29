@@ -135,7 +135,7 @@ export default function PanierPage() {
         </Link>
 
         <p className="mt-4 font-mono text-[10px] tracking-[0.15em] text-white/40">
-          Paiement sécurisé Stripe — Visa, Mastercard, Apple Pay, Google Pay.
+          Paiement sécurisé Stripe - Visa, Mastercard, Apple Pay, Google Pay.
         </p>
       </aside>
     </div>
@@ -151,7 +151,7 @@ function EmptyState() {
       </h1>
       <p className="mt-6 max-w-md font-sans text-base text-white/60">
         Direction la boutique pour rejoindre les rangs. Maillots, lifestyle,
-        accessoires — il y a forcément quelque chose à votre taille.
+        accessoires - il y a forcément quelque chose à votre taille.
       </p>
       <Link href="/boutique" className="mt-10">
         <Button variant="primary" size="lg" cornerCut>

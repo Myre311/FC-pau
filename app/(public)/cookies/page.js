@@ -25,14 +25,14 @@ export default function CookiesPage() {
         </p>
         <ul className="ml-5 list-disc space-y-2">
           <li>
-            Session panier (localStorage) — mémorisation du contenu du panier
+            Session panier (localStorage) - mémorisation du contenu du panier
             entre deux visites
           </li>
           <li>
-            Authentification (Supabase) — maintien de session pour les
+            Authentification (Supabase) - maintien de session pour les
             utilisateurs connectés
           </li>
-          <li>Stripe — sécurité paiement et anti-fraude</li>
+          <li>Stripe - sécurité paiement et anti-fraude</li>
         </ul>
 
         <p className="mt-6 font-mono text-[11px] uppercase tracking-[0.2em] text-pau-yellow">
@@ -53,7 +53,7 @@ export default function CookiesPage() {
         </p>
         <p>
           Vous pouvez également bloquer les cookies via les paramètres de
-          votre navigateur — ce qui peut impacter le fonctionnement de
+          votre navigateur - ce qui peut impacter le fonctionnement de
           certaines fonctionnalités du site.
         </p>
       </LegalSection>

@@ -22,18 +22,18 @@ export default function RgpdPage() {
       <LegalSection title="Finalités et bases légales">
         <ul className="ml-5 list-disc space-y-2">
           <li>
-            Gestion de la boutique en ligne (commande, livraison, SAV) —
+            Gestion de la boutique en ligne (commande, livraison, SAV) -
             exécution du contrat
           </li>
           <li>
-            Newsletter et communication promotionnelle — consentement explicite
+            Newsletter et communication promotionnelle - consentement explicite
             (RGPD art. 6.1.a)
           </li>
           <li>
-            Sécurité du site, prévention de la fraude — intérêt légitime
+            Sécurité du site, prévention de la fraude - intérêt légitime
           </li>
           <li>
-            Statistiques d&apos;audience anonymisées — intérêt légitime
+            Statistiques d&apos;audience anonymisées - intérêt légitime
           </li>
         </ul>
       </LegalSection>
@@ -49,9 +49,9 @@ export default function RgpdPage() {
 
       <LegalSection title="Sous-traitants">
         <ul className="ml-5 list-disc space-y-2">
-          <li>Vercel Inc. — hébergement applicatif (UE Paris)</li>
-          <li>Supabase — base de données + authentification (UE Frankfurt)</li>
-          <li>Stripe Inc. — paiement (certifié PCI-DSS niveau 1)</li>
+          <li>Vercel Inc. - hébergement applicatif (UE Paris)</li>
+          <li>Supabase - base de données + authentification (UE Frankfurt)</li>
+          <li>Stripe Inc. - paiement (certifié PCI-DSS niveau 1)</li>
         </ul>
       </LegalSection>
 

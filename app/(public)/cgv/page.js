@@ -40,7 +40,7 @@ export default function CGVPage() {
       <LegalSection title="4. Commande et paiement">
         <p>
           La commande est validée après paiement complet. Les paiements sont
-          opérés via Stripe Inc. — aucune donnée bancaire n&apos;est stockée
+          opérés via Stripe Inc. - aucune donnée bancaire n&apos;est stockée
           sur les serveurs du club. Cartes acceptées : Visa, Mastercard,
           American Express, Apple Pay, Google Pay.
         </p>

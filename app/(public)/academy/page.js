@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Academy "” Pau FC',
+  title: 'Academy "" Pau FC',
   description:
     'L\'Academy du Pau FC forme les talents de demain. Pôle féminin, masculin, stages et intégration : découvrez notre centre de formation.',
 };
@@ -95,7 +95,7 @@ export default function AcademyPage() {
                 U13 Ã  U19 Â· Préformation et formation Â· Championnat National Â· Suivi scolaire renforcé Â· Internat
               </p>
               <div className="mt-6 font-mono text-sm uppercase tracking-wider text-pau-yellow transition-colors">
-                En savoir plus â†’
+                En savoir plus â†'
               </div>
             </Link>
 
@@ -110,7 +110,7 @@ export default function AcademyPage() {
                 U13 Ã  U19 Â· Formation féminine Â· Championnat régional et national Â· Projet sportif en développement
               </p>
               <div className="mt-6 font-mono text-sm uppercase tracking-wider text-pau-yellow transition-colors">
-                En savoir plus â†’
+                En savoir plus â†'
               </div>
             </Link>
           </div>
@@ -204,7 +204,7 @@ export default function AcademyPage() {
                 Engagement
               </h3>
               <p className="mt-4 font-sans text-base leading-relaxed text-white/70">
-                Travail, rigueur, dépassement de soi et esprit d'équipe sont au cÅ“ur de notre projet.
+                Travail, rigueur, dépassement de soi et esprit d'équipe sont au cÅ"ur de notre projet.
               </p>
             </div>
           </div>

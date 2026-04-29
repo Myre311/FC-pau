@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Le Club "” Pau FC',
+  title: 'Le Club "" Pau FC',
   description: "Notre histoire, le Nouste Camp, les légendes qui ont porté le maillot jaune et bleu.",
 };
 
@@ -87,7 +87,7 @@ export default function ClubPage() {
           </h2>
 
           <div className="grid gap-9 md:grid-cols-3">
-            <DirectorProfile name="Bernard Laporte-Fray" role="Président" description="À la tête du club depuis plusieurs années, il Å“uvre au quotidien pour le développement et le rayonnement du PAU FC." image="/images/club/BernardLaporte-Fray.png" />
+            <DirectorProfile name="Bernard Laporte-Fray" role="Président" description="À la tête du club depuis plusieurs années, il Å"uvre au quotidien pour le développement et le rayonnement du PAU FC." image="/images/club/BernardLaporte-Fray.png" />
             <DirectorProfile name="Luis de Sousa" role="Directeur Sportif" description="Responsable de la stratégie sportive du club, du recrutement et de la gestion de l'effectif professionnel." image="/images/club/luis-de-sousa-1.png" />
             <DirectorProfile name="Nicolas UsaÃ¯" role="Entraîneur Principal" description="À la tête de l'équipe professionnelle, il dirige les entraînements et la stratégie tactique sur le terrain." image="/images/club/DSC00082.png" />
           </div>
@@ -97,7 +97,7 @@ export default function ClubPage() {
       <section className="border-t border-white/10 bg-pau-primary pb-24 pt-18 md:pb-30 md:pt-24">
         <div className="container-pau">
           <h2 className="mb-14 font-display text-3xl font-bold uppercase text-pau-yellow md:text-4xl">
-            Nouste Camp "” notre forteresse
+            Nouste Camp "" notre forteresse
           </h2>
 
           <div className="mb-16 grid gap-8 md:grid-cols-4">

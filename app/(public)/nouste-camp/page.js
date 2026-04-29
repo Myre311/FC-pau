@@ -35,7 +35,7 @@ export default function NousteCampPage() {
             <Tribune
               name="Tribune Bearn"
               capacity="3 200 places"
-              note="En cours de modernisation — livraison ete 2026"
+              note="En cours de modernisation - livraison ete 2026"
             />
             <Tribune
               name="Tribune Presidentielle"

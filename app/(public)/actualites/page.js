@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Actualités "” Pau FC',
+  title: 'Actualités "" Pau FC',
   description: 'Toutes les actualités du Pau FC : équipe pro, academy, club.',
 };
 
@@ -115,7 +115,7 @@ function ArticleCard({ article }) {
 
           {/* Lien */}
           <span className="inline-block font-display text-sm font-bold uppercase tracking-wide text-pau-yellow transition-transform group-hover:translate-x-2">
-            Lire la suite â†’
+            Lire la suite â†'
           </span>
         </div>
       </article>

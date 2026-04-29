@@ -2,8 +2,8 @@
 import Image from 'next/image';
 
 export const metadata = {
-  title: “L'Équipe Pro — Pau FC”,
-  description: “L'effectif 2025/2026 du Pau FC : joueurs, staff technique et médical au Nouste Camp.”,
+  title: "L'Équipe Pro - Pau FC",
+  description: "L'effectif 2025/2026 du Pau FC : joueurs, staff technique et médical au Nouste Camp.",
 };
 
 export default async function EquipePage() {
