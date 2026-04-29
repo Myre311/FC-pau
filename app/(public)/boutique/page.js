@@ -1,16 +1,16 @@
-import Image from 'next/image';
+﻿import Image from 'next/image';
 import Link from 'next/link';
 import { prisma } from '@/lib/prisma';
 
 export const dynamic = 'force-dynamic';
 
 export const metadata = {
-  title: 'Boutique — Pau FC',
+  title: 'Boutique â€” Pau FC',
   description: 'Boutique officielle du Pau FC. Maillots, training, lifestyle et accessoires.',
 };
 
 export default async function BoutiquePage() {
-  // Récupérer les produits (avec fallback si erreur DB)
+  // RÃ©cupÃ©rer les produits (avec fallback si erreur DB)
   const products = await prisma.product
     .findMany({
       where: { status: 'active' },
@@ -28,7 +28,7 @@ export default async function BoutiquePage() {
           src="/images/boutique/Boutique-1.jpg"
           alt="Boutique Pau FC"
           fill
-          className="object-cover object-center brightness-50"
+          className="object-cover object-[50%_40%] brightness-50"
           priority
         />
 
@@ -43,13 +43,13 @@ export default async function BoutiquePage() {
               Boutique Officielle
             </h1>
             <p className="mt-4 font-sans text-lg leading-relaxed text-white/80 md:text-xl">
-              Maillots, équipements et accessoires aux couleurs du Pau FC
+              Maillots, Ã©quipements et accessoires aux couleurs du Pau FC
             </p>
           </div>
         </div>
       </section>
 
-      {/* Catégories */}
+      {/* CatÃ©gories */}
       <section className="border-t border-white/10 bg-pau-night py-16 md:py-20">
         <div className="container-pau">
           <div className="mb-12 grid gap-6 md:grid-cols-3">
@@ -122,7 +122,7 @@ export default async function BoutiquePage() {
           {products.length === 0 ? (
             <div className="rounded-lg border-2 border-white/10 bg-pau-primary p-12 text-center">
               <p className="font-sans text-lg text-white/70">
-                La boutique sera bientôt disponible. Revenez prochainement!
+                La boutique sera bientÃ´t disponible. Revenez prochainement!
               </p>
             </div>
           ) : (
@@ -154,7 +154,7 @@ export default async function BoutiquePage() {
                       {product.name}
                     </h3>
                     <p className="font-mono text-sm font-bold text-white">
-                      {(product.basePrice / 100).toFixed(2)} €
+                      {(product.basePrice / 100).toFixed(2)} â‚¬
                     </p>
                   </div>
                 </Link>

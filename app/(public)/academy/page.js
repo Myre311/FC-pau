@@ -1,10 +1,10 @@
-import Image from 'next/image';
+﻿import Image from 'next/image';
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Academy — Pau FC',
+  title: 'Academy â€” Pau FC',
   description:
-    'L\'Academy du Pau FC forme les talents de demain. Pôle féminin, masculin, stages et intégration : découvrez notre centre de formation.',
+    'L\'Academy du Pau FC forme les talents de demain. PÃ´le fÃ©minin, masculin, stages et intÃ©gration : dÃ©couvrez notre centre de formation.',
 };
 
 export default function AcademyPage() {
@@ -16,7 +16,7 @@ export default function AcademyPage() {
           src="/images/hero-academy.jpg"
           alt="Academy Pau FC"
           fill
-          className="object-cover object-center brightness-50"
+          className="object-cover object-[50%_40%] brightness-50"
           priority
         />
         <div className="absolute inset-0 bg-gradient-to-t from-pau-night via-pau-night/60 to-transparent" />
@@ -24,7 +24,7 @@ export default function AcademyPage() {
         <div className="container-pau relative flex h-full items-end pb-16 md:pb-20">
           <div className="max-w-3xl">
             <span className="font-mono text-xs font-semibold uppercase tracking-wider text-pau-yellow">
-              Formation · Excellence
+              Formation Â· Excellence
             </span>
             <h1 className="mt-4 font-display text-5xl font-bold uppercase leading-tight text-white md:text-6xl lg:text-7xl">
               Pau FC Academy
@@ -51,35 +51,35 @@ export default function AcademyPage() {
             <div className="space-y-5 font-sans text-base leading-relaxed text-pau-night/70 md:text-lg">
               <p>
                 L'Academy du Pau FC s'inscrit dans le projet global du club :
-                détecter, former et accompagner les jeunes joueurs et joueuses
+                dÃ©tecter, former et accompagner les jeunes joueurs et joueuses
                 vers le football professionnel ou de haut niveau amateur.
               </p>
               <p>
-                Depuis sa création, l'Academy a vu passer des dizaines de joueurs
+                Depuis sa crÃ©ation, l'Academy a vu passer des dizaines de joueurs
                 qui ont rejoint des clubs de Ligue 1, Ligue 2 ou des championnats
-                étrangers. La philosophie est claire : un encadrement
-                professionnel, un suivi scolaire rigoureux, et une éthique basée
-                sur le respect et le dépassement de soi.
+                Ã©trangers. La philosophie est claire : un encadrement
+                professionnel, un suivi scolaire rigoureux, et une Ã©thique basÃ©e
+                sur le respect et le dÃ©passement de soi.
               </p>
               <p>
-                Au-delà du terrain, l'Academy prépare les jeunes à devenir des
+                Au-delÃ  du terrain, l'Academy prÃ©pare les jeunes Ã  devenir des
                 adultes responsables et autonomes, capables de construire un
-                projet de vie équilibré.
+                projet de vie Ã©quilibrÃ©.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Pôles */}
+      {/* PÃ´les */}
       <section className="border-y border-white/10 bg-pau-primary py-14 md:py-20">
         <div className="container-pau">
           <div className="mb-12">
             <span className="font-mono text-xs font-semibold uppercase tracking-wider text-pau-yellow">
-              Nos pôles
+              Nos pÃ´les
             </span>
             <h2 className="mt-4 font-display text-4xl font-bold uppercase text-white md:text-5xl">
-              Deux pôles d'excellence
+              Deux pÃ´les d'excellence
             </h2>
           </div>
 
@@ -89,13 +89,13 @@ export default function AcademyPage() {
               className="group border border-white/10 bg-pau-night p-8 transition-all hover:border-pau-yellow md:p-10"
             >
               <h3 className="font-display text-3xl font-bold uppercase text-white md:text-4xl">
-                Pôle Masculin
+                PÃ´le Masculin
               </h3>
               <p className="mt-4 font-sans text-base leading-relaxed text-white/70">
-                U13 à U19 · Préformation et formation · Championnat National · Suivi scolaire renforcé · Internat
+                U13 Ã  U19 Â· PrÃ©formation et formation Â· Championnat National Â· Suivi scolaire renforcÃ© Â· Internat
               </p>
               <div className="mt-6 font-mono text-sm uppercase tracking-wider text-pau-yellow transition-colors">
-                En savoir plus →
+                En savoir plus â†’
               </div>
             </Link>
 
@@ -104,13 +104,13 @@ export default function AcademyPage() {
               className="group border border-white/10 bg-pau-night p-8 transition-all hover:border-pau-yellow md:p-10"
             >
               <h3 className="font-display text-3xl font-bold uppercase text-white md:text-4xl">
-                Pôle Féminin
+                PÃ´le FÃ©minin
               </h3>
               <p className="mt-4 font-sans text-base leading-relaxed text-white/70">
-                U13 à U19 · Formation féminine · Championnat régional et national · Projet sportif en développement
+                U13 Ã  U19 Â· Formation fÃ©minine Â· Championnat rÃ©gional et national Â· Projet sportif en dÃ©veloppement
               </p>
               <div className="mt-6 font-mono text-sm uppercase tracking-wider text-pau-yellow transition-colors">
-                En savoir plus →
+                En savoir plus â†’
               </div>
             </Link>
           </div>
@@ -126,11 +126,11 @@ export default function AcademyPage() {
                 Candidature
               </span>
               <h2 className="mt-4 font-display text-3xl font-bold uppercase text-pau-night md:text-4xl">
-                Intégrer l'Academy
+                IntÃ©grer l'Academy
               </h2>
               <p className="mt-6 font-sans text-base leading-relaxed text-pau-night/70">
-                Vous avez entre 12 et 18 ans, vous êtes passionné(e) de football et vous
-                souhaitez progresser dans un environnement professionnel ? Découvrez
+                Vous avez entre 12 et 18 ans, vous Ãªtes passionnÃ©(e) de football et vous
+                souhaitez progresser dans un environnement professionnel ? DÃ©couvrez
                 comment rejoindre l'Academy du Pau FC.
               </p>
               <div className="mt-8">
@@ -152,8 +152,8 @@ export default function AcademyPage() {
               </h2>
               <p className="mt-6 font-sans text-base leading-relaxed text-pau-night/70">
                 Des stages intensifs pendant les vacances scolaires pour les
-                jeunes de 8 à 16 ans : technique, tactique, physique et mental,
-                encadrés par le staff de l'Academy.
+                jeunes de 8 Ã  16 ans : technique, tactique, physique et mental,
+                encadrÃ©s par le staff de l'Academy.
               </p>
               <div className="mt-8">
                 <Link
@@ -186,7 +186,7 @@ export default function AcademyPage() {
                 Excellence
               </h3>
               <p className="mt-4 font-sans text-base leading-relaxed text-white/70">
-                Nous visons le plus haut niveau sportif tout en maintenant un équilibre scolaire et personnel.
+                Nous visons le plus haut niveau sportif tout en maintenant un Ã©quilibre scolaire et personnel.
               </p>
             </div>
 
@@ -195,7 +195,7 @@ export default function AcademyPage() {
                 Respect
               </h3>
               <p className="mt-4 font-sans text-base leading-relaxed text-white/70">
-                Respect des éducateurs, des coéquipiers, des adversaires et des règles du jeu.
+                Respect des Ã©ducateurs, des coÃ©quipiers, des adversaires et des rÃ¨gles du jeu.
               </p>
             </div>
 
@@ -204,7 +204,7 @@ export default function AcademyPage() {
                 Engagement
               </h3>
               <p className="mt-4 font-sans text-base leading-relaxed text-white/70">
-                Travail, rigueur, dépassement de soi et esprit d'équipe sont au cœur de notre projet.
+                Travail, rigueur, dÃ©passement de soi et esprit d'Ã©quipe sont au cÅ“ur de notre projet.
               </p>
             </div>
           </div>
@@ -222,7 +222,7 @@ export default function AcademyPage() {
               Une question ?
             </h2>
             <p className="mx-auto mt-6 max-w-xl font-sans text-lg leading-relaxed text-pau-night/70">
-              Pour toute question sur l'Academy, les pôles, les stages ou les candidatures
+              Pour toute question sur l'Academy, les pÃ´les, les stages ou les candidatures
             </p>
 
             <div className="mt-8 space-y-3 font-sans text-base text-pau-night/70">
@@ -236,7 +236,7 @@ export default function AcademyPage() {
                 </a>
               </p>
               <p>
-                Téléphone :{' '}
+                TÃ©lÃ©phone :{' '}
                 <a
                   href="tel:+33559000000"
                   className="font-medium text-pau-yellow hover:underline"
