@@ -57,11 +57,11 @@ Jamais utilisé ailleurs. Jamais.
 
 ### Typographies
 
-- **Big Shoulders Display** — titres (sport, condensed, musclé)
-- **Instrument Sans** — corps de texte
+- **Playfair Display** — titres (serif élégant, style Didot haute couture)
+- **Inter** — corps de texte (moderne, lisible)
 - **DM Mono** — détails techniques, badges, numéros, tags
 
-Toutes via Google Fonts. Jamais Inter, jamais Roboto, jamais Poppins.
+Toutes via Google Fonts.
 
 ### Direction artistique
 
