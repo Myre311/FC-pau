@@ -86,19 +86,33 @@ export default function PoleFemininPage() {
             </h2>
           </div>
 
-          <div className="space-y-8">
-            <CategoryItem
-              title="U13 · U14 · U15"
-              description="Initiation au haut niveau · Apprentissage des fondamentaux techniques et tactiques · Encadrement bienveillant · Championnat régional."
-            />
-            <CategoryItem
-              title="U16 · U17"
-              description="Perfectionnement · Intensification du volume d'entraînement · Compétitions régionales et nationales · Suivi renforcé (physique, mental, nutrition)."
-            />
-            <CategoryItem
-              title="U18 · U19"
-              description="Préparation au haut niveau amateur ou professionnel · Championnat national · Lien avec l'équipe senior féminine · Projet post-formation (université, club professionnel)."
-            />
+          <div className="space-y-6">
+            <div className="border-l-4 border-pau-yellow bg-pau-night p-6 md:p-8">
+              <h3 className="font-display text-2xl font-bold uppercase text-white md:text-3xl">
+                U13 · U14 · U15 — Initiation
+              </h3>
+              <p className="mt-4 font-sans text-base leading-relaxed text-white/70">
+                Initiation au haut niveau · Apprentissage des fondamentaux techniques et tactiques · Encadrement bienveillant · Championnat régional.
+              </p>
+            </div>
+
+            <div className="border-l-4 border-pau-yellow bg-pau-night p-6 md:p-8">
+              <h3 className="font-display text-2xl font-bold uppercase text-white md:text-3xl">
+                U16 · U17 — Perfectionnement
+              </h3>
+              <p className="mt-4 font-sans text-base leading-relaxed text-white/70">
+                Perfectionnement · Intensification du volume d'entraînement · Compétitions régionales et nationales · Suivi renforcé (physique, mental, nutrition).
+              </p>
+            </div>
+
+            <div className="border-l-4 border-pau-yellow bg-pau-night p-6 md:p-8">
+              <h3 className="font-display text-2xl font-bold uppercase text-white md:text-3xl">
+                U18 · U19 — Haut niveau
+              </h3>
+              <p className="mt-4 font-sans text-base leading-relaxed text-white/70">
+                Préparation au haut niveau amateur ou professionnel · Championnat national · Lien avec l'équipe senior féminine · Projet post-formation (université, club professionnel).
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -165,22 +179,108 @@ export default function PoleFemininPage() {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* Staff */}
       <section className="border-y border-pau-night/10 bg-white py-14 md:py-20">
         <div className="container-pau">
-          <div className="max-w-2xl">
+          <div className="mb-12">
             <span className="font-mono text-xs font-semibold uppercase tracking-wider text-pau-yellow">
-              Rejoindre
+              Encadrement professionnel
+            </span>
+            <h2 className="mt-4 font-display text-4xl font-bold uppercase text-pau-yellow md:text-5xl">
+              Un staff dédié
+            </h2>
+          </div>
+
+          <div className="grid gap-8 md:grid-cols-3">
+            <div className="border border-white/10 bg-pau-night p-6">
+              <h3 className="font-display text-2xl font-bold uppercase text-pau-yellow md:text-3xl">
+                Staff technique
+              </h3>
+              <ul className="mt-4 space-y-2 font-sans text-sm text-white/70">
+                <li className="flex items-start gap-2">
+                  <span className="mt-1.5 inline-block h-1.5 w-1.5 flex-shrink-0 bg-pau-yellow" />
+                  <span>Entraîneurs diplômés UEFA B/A</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="mt-1.5 inline-block h-1.5 w-1.5 flex-shrink-0 bg-pau-yellow" />
+                  <span>Coordinatrice pôle féminin</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="mt-1.5 inline-block h-1.5 w-1.5 flex-shrink-0 bg-pau-yellow" />
+                  <span>Entraîneure des gardiennes</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="mt-1.5 inline-block h-1.5 w-1.5 flex-shrink-0 bg-pau-yellow" />
+                  <span>Préparatrice physique</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="border border-white/10 bg-pau-night p-6">
+              <h3 className="font-display text-2xl font-bold uppercase text-pau-yellow md:text-3xl">
+                Staff médical
+              </h3>
+              <ul className="mt-4 space-y-2 font-sans text-sm text-white/70">
+                <li className="flex items-start gap-2">
+                  <span className="mt-1.5 inline-block h-1.5 w-1.5 flex-shrink-0 bg-pau-yellow" />
+                  <span>Médecin du sport</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="mt-1.5 inline-block h-1.5 w-1.5 flex-shrink-0 bg-pau-yellow" />
+                  <span>Kinésithérapeutes</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="mt-1.5 inline-block h-1.5 w-1.5 flex-shrink-0 bg-pau-yellow" />
+                  <span>Psychologue du sport</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="mt-1.5 inline-block h-1.5 w-1.5 flex-shrink-0 bg-pau-yellow" />
+                  <span>Nutritionniste</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="border border-white/10 bg-pau-night p-6">
+              <h3 className="font-display text-2xl font-bold uppercase text-pau-yellow md:text-3xl">
+                Suivi global
+              </h3>
+              <ul className="mt-4 space-y-2 font-sans text-sm text-white/70">
+                <li className="flex items-start gap-2">
+                  <span className="mt-1.5 inline-block h-1.5 w-1.5 flex-shrink-0 bg-pau-yellow" />
+                  <span>Responsable scolarité</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="mt-1.5 inline-block h-1.5 w-1.5 flex-shrink-0 bg-pau-yellow" />
+                  <span>Accès salle musculation</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="mt-1.5 inline-block h-1.5 w-1.5 flex-shrink-0 bg-pau-yellow" />
+                  <span>Salle vidéo dédiée</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="mt-1.5 inline-block h-1.5 w-1.5 flex-shrink-0 bg-pau-yellow" />
+                  <span>Vestiaires pôle féminin</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="bg-white py-14 md:py-20">
+        <div className="container-pau">
+          <div className="mx-auto max-w-3xl text-center">
+            <span className="font-mono text-xs font-semibold uppercase tracking-wider text-pau-yellow">
+              Rejoignez-nous
             </span>
             <h2 className="mt-4 font-display text-4xl font-bold uppercase text-pau-yellow md:text-5xl">
               Intégrer le pôle féminin
             </h2>
-            <p className="mt-6 font-sans text-base leading-relaxed text-pau-night/70 md:text-lg">
-              Vous avez entre 12 et 18 ans, vous êtes passionnée de football et vous souhaitez
-              intégrer un projet ambitieux ? Découvrez comment candidater au pôle
-              féminin de l'Academy Pau FC.
+            <p className="mx-auto mt-6 max-w-xl font-sans text-lg leading-relaxed text-pau-night/70">
+              Vous avez entre 12 et 18 ans et vous souhaitez intégrer un projet ambitieux dans un cadre professionnel ?
             </p>
-            <div className="mt-8 flex flex-wrap gap-4">
+            <div className="mt-8 flex flex-wrap justify-center gap-4">
               <Link
                 href="/academy/integrer"
                 className="inline-block border-2 border-pau-night bg-pau-night px-6 py-3 font-display text-sm font-bold uppercase tracking-wide text-white transition-all hover:bg-white hover:text-pau-night"
@@ -198,18 +298,5 @@ export default function PoleFemininPage() {
         </div>
       </section>
     </article>
-  );
-}
-
-function CategoryItem({ title, description }) {
-  return (
-    <div className="border-l-4 border-pau-yellow pl-6 md:pl-10">
-      <h3 className="font-display text-2xl font-bold uppercase text-pau-night md:text-3xl">
-        {title}
-      </h3>
-      <p className="mt-4 font-sans text-base leading-relaxed text-pau-night/70 md:text-lg">
-        {description}
-      </p>
-    </div>
   );
 }
